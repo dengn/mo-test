@@ -1,0 +1,137 @@
+{
+  "groups": [
+    {
+      "concurrency": 1,
+      "queries": 144,
+      "queries_per_second": 5.8257536358612425,
+      "latency_ms": {
+        "p50": 139.67609150131466,
+        "p95": 334.66470034945814,
+        "p99": 352.7202187192597,
+        "max": 359.319349998259
+      },
+      "counts": {
+        "pass": 144
+      }
+    },
+    {
+      "concurrency": 2,
+      "queries": 144,
+      "queries_per_second": 8.792833518424112,
+      "latency_ms": {
+        "p50": 186.20891599857714,
+        "p95": 399.3056329451064,
+        "p99": 469.0245265873818,
+        "max": 524.6054230010486
+      },
+      "counts": {
+        "pass": 144
+      }
+    },
+    {
+      "concurrency": 4,
+      "queries": 144,
+      "queries_per_second": 10.784214605874155,
+      "latency_ms": {
+        "p50": 316.30331599444617,
+        "p95": 586.4464152509754,
+        "p99": 782.5688106798768,
+        "max": 831.4086459940881
+      },
+      "counts": {
+        "pass": 144
+      }
+    },
+    {
+      "concurrency": 8,
+      "queries": 144,
+      "queries_per_second": 11.500019503633611,
+      "latency_ms": {
+        "p50": 558.8400774977345,
+        "p95": 1203.6854510486592,
+        "p99": 1338.9942712600164,
+        "max": 1487.2933939986979
+      },
+      "counts": {
+        "pass": 144
+      }
+    }
+  ],
+  "trials": [
+    {
+      "trial": 0,
+      "concurrency": 1,
+      "seconds": 8.047137581001152,
+      "qps": 5.964853902004279
+    },
+    {
+      "trial": 0,
+      "concurrency": 4,
+      "seconds": 4.628558033997251,
+      "qps": 10.370400381162966
+    },
+    {
+      "trial": 0,
+      "concurrency": 2,
+      "seconds": 5.24440770700312,
+      "qps": 9.152606487078264
+    },
+    {
+      "trial": 0,
+      "concurrency": 8,
+      "seconds": 4.629400386002089,
+      "qps": 10.368513413775469
+    },
+    {
+      "trial": 1,
+      "concurrency": 8,
+      "seconds": 3.597817233996466,
+      "qps": 13.34142255655423
+    },
+    {
+      "trial": 1,
+      "concurrency": 2,
+      "seconds": 5.136404520002543,
+      "qps": 9.345058360001644
+    },
+    {
+      "trial": 1,
+      "concurrency": 4,
+      "seconds": 4.251348573001451,
+      "qps": 11.29053503277244
+    },
+    {
+      "trial": 1,
+      "concurrency": 1,
+      "seconds": 8.145721911001601,
+      "qps": 5.892663722680155
+    },
+    {
+      "trial": 2,
+      "concurrency": 2,
+      "seconds": 5.996161099996243,
+      "qps": 8.005121810357977
+    },
+    {
+      "trial": 2,
+      "concurrency": 1,
+      "seconds": 8.524972569000965,
+      "qps": 5.630516651108131
+    },
+    {
+      "trial": 2,
+      "concurrency": 8,
+      "seconds": 4.294500274001621,
+      "qps": 11.177086258577308
+    },
+    {
+      "trial": 2,
+      "concurrency": 4,
+      "seconds": 4.472943392996967,
+      "qps": 10.73118879061847
+    }
+  ],
+  "measured_queries": 576,
+  "query_shapes": 12,
+  "scope": "warm local instance; long-query client-visible round trip; full query shape warmup and per-worker warmup excluded; three balanced-order trials; oracle and result assertions outside timed work"
+}

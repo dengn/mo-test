@@ -1,0 +1,393 @@
+{
+  "all_private_decisions_empty": true,
+  "decision_counts": {
+    "cross_decisions_0": 0,
+    "cross_decisions_1": 0,
+    "cross_decisions_2": 0,
+    "cross_decisions_3": 0,
+    "cross_decisions_4": 0,
+    "cross_decisions_5": 0,
+    "holistic_decisions_0": 0,
+    "holistic_decisions_1": 0,
+    "spark_cross_decisions": 0,
+    "joined_decisions_0": 0,
+    "joined_decisions_1": 0
+  },
+  "server_pid": "1384",
+  "server_version": "8.0.30-MatrixOne-v",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "panic_fatal": [],
+  "internal_trace_failed_loads": 403,
+  "internal_trace_events_sample": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:44.883658 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...75,65.9893\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a70625be:1791722564610939755-1",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afc-aa0f-7cf1-909f-43b06f2782f6",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:56.552061 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...7,138.2881\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a7062663:1791722576244495583-1",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afc-d6ab-7589-bb13-9c1176c0abe1",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:08.573566 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...4,133.5708\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a706278c:1791722588045477808-1",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afd-0482-7cf7-be23-fcdd85cfa268",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    }
+  ],
+  "other_errors": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:43.541805 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791712980_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_762296629.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:43.541933 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 4,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:43.541967 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:44.882854 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:44.883542 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afc-aa0f-7cf1-909f-43b06f2782f6",
+      "txn_id": "70f70f4866a9b62a18dd5146a70625be",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:54.926371 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791712565_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_948710544.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:56.550852 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:42:56.551875 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afc-d6ab-7589-bb13-9c1176c0abe1",
+      "txn_id": "70f70f4866a9b62a18dd5146a7062663",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:06.598132 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791713784_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_462984882.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:08.571927 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:08.573348 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 4904|127.0.0.1:44042|account sys:mo_logger|goRoutineId 2183236|migrate-goRoutineId 0|01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "role": "moadmin",
+      "session_id": "01a12afc-7d3a-7968-94e7-05e905c2280c",
+      "statement_id": "01a12afd-0482-7cf7-be23-fcdd85cfa268",
+      "txn_id": "70f70f4866a9b62a18dd5146a706278c",
+      "span": {
+        "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+        "span_id": "e5ed1916a4334f8a"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:18.611839 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791712603_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_750056953.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:20.836570 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "32ed137c-18c2-9196-a4e4-846540df322f",
+        "span_id": "574462b78d1abc54"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:20.837409 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 4916|127.0.0.1:34904|account sys:mo_logger|goRoutineId 2185745|migrate-goRoutineId 0|01a12afd-3156-7bc2-a446-99d710cee792",
+      "role": "moadmin",
+      "session_id": "01a12afd-3156-7bc2-a446-99d710cee792",
+      "statement_id": "01a12afd-3425-727f-bef0-e0cdebfd3260",
+      "txn_id": "70f70f4866a9b62a18dd5146a70628ed",
+      "span": {
+        "trace_id": "32ed137c-18c2-9196-a4e4-846540df322f",
+        "span_id": "574462b78d1abc54"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:26.830048 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334088 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "32ed137c-18c2-9196-a4e4-846540df322f",
+        "span_id": "574462b78d1abc54"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:26.830597 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334088 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 4916|127.0.0.1:34904|account sys:mo_logger|goRoutineId 2185745|migrate-goRoutineId 0|01a12afd-3156-7bc2-a446-99d710cee792",
+      "role": "moadmin",
+      "session_id": "01a12afd-3156-7bc2-a446-99d710cee792",
+      "statement_id": "01a12afd-4ee6-7216-8854-b8a78fc52c67",
+      "txn_id": "70f70f4866a9b62a18dd5146a7062976",
+      "span": {
+        "trace_id": "32ed137c-18c2-9196-a4e4-846540df322f",
+        "span_id": "574462b78d1abc54"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:30.869480 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791713036_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_288966222.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:30.869598 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 4,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:30.869612 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "8300d7df0e8d7747"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 12:43:41.201791 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334083 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "32ed137c-18c2-9196-a4e4-846540df322f",
+        "span_id": "574462b78d1abc54"
+      }
+    }
+  ],
+  "other_error_count": 1179,
+  "log_capture_start": 1791722554.79831,
+  "log_capture_end": 1791725880.0930996,
+  "log_bytes": 1044180,
+  "attribution_limit": "Internal logging failures are separate from recorded business outcomes. Abbreviated LOAD payloads do not prove exact source-file or case attribution; no permanent loss inferred.",
+  "existing_related_issues": [
+    "https://github.com/matrixorigin/matrixone/issues/29809",
+    "https://github.com/matrixorigin/matrixone/issues/29797"
+  ],
+  "error_taxonomy": {
+    "statement_info_text_overflow_context": 1497,
+    "statement_info_zero_success_batch_summary": 56,
+    "internal_rc_definition_retry": 25,
+    "tn_schedule_poll_error": 3,
+    "table_stats_task_context": 1
+  },
+  "unclassified_error_count": 0
+}

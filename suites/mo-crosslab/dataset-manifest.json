@@ -1,0 +1,157 @@
+{
+  "seed": 2026101105,
+  "tables": {
+    "customers": {
+      "rows": 1200,
+      "sha256": "2d294d61b733445471999acc6ddb7b6c6670ec5958edbba12c4be62861b12444"
+    },
+    "products": {
+      "rows": 80,
+      "sha256": "21cd92161745661111385d0c413a171f71e3806ba1f579cfbc6076b8beb5e6eb"
+    },
+    "orders": {
+      "rows": 12000,
+      "sha256": "56b704917f9bff01577976ef9fa2bffe7624a1eed72e15be077e5ef8e2fce6b6"
+    },
+    "items": {
+      "rows": 36000,
+      "sha256": "40b58a83e9954ca2f8daa63f5c9aea55088d058b71a0fab177e947719f632765"
+    },
+    "payments": {
+      "rows": 24000,
+      "sha256": "fa3863a76c0573b9297ae60bd9efe0450ed2c51dad1787559a43e89faedbd23e"
+    },
+    "refunds": {
+      "rows": 1574,
+      "sha256": "b251143ecb688fb1f31de7a3cd021c1b13f398f6feecae8d367a3c2acd19d822"
+    },
+    "events": {
+      "rows": 47536,
+      "sha256": "3450cc715747076e70caf41a5bfeccfb4d9aa2377035317ddfd6a71b94fe3bd7"
+    },
+    "edges": {
+      "rows": 3600,
+      "sha256": "631018ef269858ed37369d493d1ceb6293d226b3a70308b1de20b7510ad32c28"
+    },
+    "calendar": {
+      "rows": 96,
+      "sha256": "da0ad6a049b29939b47e3fbe96c9444c857ed76dbb8bb4177c6cd52a80fad0e6"
+    },
+    "market": {
+      "rows": 2920,
+      "sha256": "adb84a2f9910e294a70326a16c40012b80d3ed084de958eee1fcd9da67751601"
+    },
+    "inventory": {
+      "rows": 7680,
+      "sha256": "83b9bf57e9f878f1cf01b956a24e4eba6aae24832e56f9d9a3d5aca87955b48e"
+    },
+    "campaigns": {
+      "rows": 384,
+      "sha256": "8636672ea4c3669f0bee6f99492a08fc8348f8c65fc3b42629ce032167a3f430"
+    },
+    "subscriptions": {
+      "rows": 28800,
+      "sha256": "f0826877666344927406880c6d3a7e18b6d7a37785a9d3970d8b9ff72b80625f"
+    },
+    "targets": {
+      "rows": 42,
+      "sha256": "ffbddd27b4d17a77ba12e498249139ae2e0d746a6eb68b385ceb51ccbc3acc49"
+    },
+    "shipments": {
+      "rows": 12000,
+      "sha256": "276968b3b08998264ec4ccf90f3702e9d75c2fda5d0137391370109128342c1d"
+    },
+    "receivables": {
+      "rows": 12000,
+      "sha256": "d2038afc5ee9ec326e832f7fd9022ca578fe7feee492cd8c660c46e4478f3c4a"
+    },
+    "ledger": {
+      "rows": 12705,
+      "sha256": "b9faface58765295866a6b58fa09fb3e683166ac492df33f51d7df5c14b01684"
+    },
+    "experiment": {
+      "rows": 7200,
+      "sha256": "6bb672db57d153f58d1b7e0e0a3eca0ddf2d6802e40ec4334d950b9157804fc5"
+    },
+    "prices": {
+      "rows": 7680,
+      "sha256": "311c0ef0e33df6d1087bc637d6c71746f2642507429ac190743e10082e8bb938"
+    },
+    "suppliers": {
+      "rows": 80,
+      "sha256": "ce68177a25153a1e4dc2158f30fc823b41699df5b743818f2cc7b6f0d4ade10b"
+    },
+    "supply": {
+      "rows": 1120,
+      "sha256": "901ff306164e1d46507390cfd8dc313e080ec41aa74a620bf5abe1d4f8909ca2"
+    },
+    "loans": {
+      "rows": 3600,
+      "sha256": "4884da814c51f6ab36efce47c1fc459a56660f6453e07e10099a905172a9ec86"
+    },
+    "loan_performance": {
+      "rows": 10800,
+      "sha256": "ca0f136985cfd5a8dba74421540859a8cb28920f65f4bc230edcca05091d514d"
+    },
+    "machines": {
+      "rows": 64,
+      "sha256": "f0dee8341e9a43d4056b06d5f6448fe031344d7fae50fd330ad04bfbc243891f"
+    },
+    "sensors": {
+      "rows": 6144,
+      "sha256": "65ca17b7376527feba002169bd3b1f7260169a7a34789bd0d6db5ca9ec334a00"
+    },
+    "production": {
+      "rows": 6144,
+      "sha256": "179ef9cb474e5d35b5c9dddd87e18dc449ab292fa8361111656d0fe0e33552eb"
+    },
+    "energy": {
+      "rows": 18432,
+      "sha256": "ecbab2213d47a602930040276862a271c88659a908fa9fc6b6a9ab160c67e0c3"
+    },
+    "tickets": {
+      "rows": 12000,
+      "sha256": "b54b9831369da5da7765676cefa817ac3412e66345c327af41c960c2949ab9f4"
+    },
+    "contracts": {
+      "rows": 2400,
+      "sha256": "22d172080df8aba53cb82a594e9a4bf710613a22fdc940ce1d06974ce88c68e3"
+    },
+    "fraud_payments": {
+      "rows": 6000,
+      "sha256": "6baf8d592a84e89a135580f34464d5a388e0120ff6f60ee2e3db53e60b1d70cf"
+    }
+  },
+  "schema": {
+    "customers": "cid INT PRIMARY KEY,region INT,tier INT,signup INT,credit DOUBLE",
+    "products": "pid INT PRIMARY KEY,category INT,price DOUBLE",
+    "orders": "oid INT PRIMARY KEY,cid INT,day INT,amount DOUBLE,cost DOUBLE,cancelled INT,channel INT,ts DATETIME",
+    "items": "iid INT PRIMARY KEY,oid INT,pid INT,qty INT,price DOUBLE",
+    "payments": "payid INT PRIMARY KEY,oid INT,day INT,paid DOUBLE,success INT",
+    "refunds": "rid INT PRIMARY KEY,oid INT,day INT,refunded DOUBLE,reason INT",
+    "events": "eid INT PRIMARY KEY,cid INT,day INT,session_id INT,kind INT,value DOUBLE,ts DATETIME",
+    "edges": "src INT,dst INT,weight DOUBLE",
+    "calendar": "day INT PRIMARY KEY,week INT,weekday INT,date DATETIME",
+    "market": "asset INT,day INT,close_price DOUBLE,volume DOUBLE",
+    "inventory": "pid INT,day INT,on_hand INT,lead_days INT",
+    "campaigns": "channel INT,day INT,spend DOUBLE,impressions INT",
+    "subscriptions": "cid INT,month INT,billed DOUBLE,paid DOUBLE,active INT",
+    "targets": "tier INT,week INT,revenue_target DOUBLE,risk_budget DOUBLE",
+    "shipments": "oid INT,warehouse INT,carrier INT,promised_day INT,delivered_day INT,freight DOUBLE,lost INT",
+    "receivables": "oid INT,due_day INT,invoice DOUBLE,collected DOUBLE",
+    "ledger": "entry_id INT,event_id INT,oid INT,day INT,amount DOUBLE,revision_no INT",
+    "experiment": "cid INT,day INT,treatment INT,site INT,baseline DOUBLE,converted INT,revenue DOUBLE,latency DOUBLE,harm INT",
+    "prices": "pid INT,day INT,list_price DOUBLE,sale_price DOUBLE,units DOUBLE,promo INT,stockout INT",
+    "suppliers": "supplier INT,pid INT,country INT,lead_days INT,unit_cost DOUBLE",
+    "supply": "supplier INT,pid INT,day INT,ordered DOUBLE,received DOUBLE,delay DOUBLE",
+    "loans": "loan_id INT,cid INT,opened INT,principal DOUBLE,apr DOUBLE,term_days INT",
+    "loan_performance": "loan_id INT,day INT,balance DOUBLE,dpd INT,defaulted INT",
+    "machines": "machine INT,plant INT,kind INT,age DOUBLE,capacity DOUBLE",
+    "sensors": "machine INT,day INT,temperature DOUBLE,vibration DOUBLE,load_value DOUBLE,failure INT,downtime DOUBLE",
+    "production": "machine INT,day INT,output_units DOUBLE,defects DOUBLE,scrap_cost DOUBLE",
+    "energy": "site INT,day INT,hour INT,kwh DOUBLE,tariff DOUBLE,carbon DOUBLE,capacity DOUBLE",
+    "tickets": "ticket INT,cid INT,agent INT,kind INT,day INT,handle_minutes DOUBLE,wait_minutes DOUBLE,reopened INT,csat DOUBLE",
+    "contracts": "contract_id INT,cid INT,start_day INT,term_days INT,booked DOUBLE,cost_to_serve DOUBLE",
+    "fraud_payments": "payment INT,cid INT,merchant INT,device INT,day INT,amount DOUBLE,chargeback INT"
+  }
+}

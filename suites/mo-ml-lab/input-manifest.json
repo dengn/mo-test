@@ -1,0 +1,263 @@
+{
+  "seed": 2026101107,
+  "tables": {
+    "entities": {
+      "rows": 320,
+      "columns": [
+        "eid",
+        "sector",
+        "region",
+        "bias"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "sector": "int64",
+        "region": "int64",
+        "bias": "float64"
+      },
+      "ddl": "eid INT PRIMARY KEY,sector INT,region INT,bias DOUBLE",
+      "sha256": "d45f2a169a97e718bd9639ffffe60940ea7a809624c76e5f73154f6bfe839f60"
+    },
+    "readings": {
+      "rows": 25600,
+      "columns": [
+        "eid",
+        "day",
+        "x0",
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "x0": "float64",
+        "x1": "float64",
+        "x2": "float64",
+        "x3": "float64"
+      },
+      "ddl": "eid INT,day INT,x0 DOUBLE,x1 DOUBLE,x2 DOUBLE,x3 DOUBLE",
+      "sha256": "e7659b490a7c84bccd5d02faac23321ec73a92e8f84f88e079851fb0efb2398c"
+    },
+    "targets": {
+      "rows": 25600,
+      "columns": [
+        "eid",
+        "day",
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "c0": "float64",
+        "c1": "float64",
+        "c2": "float64",
+        "c3": "float64"
+      },
+      "ddl": "eid INT,day INT,c0 DOUBLE,c1 DOUBLE,c2 DOUBLE,c3 DOUBLE",
+      "sha256": "d3b3c889dca14f9842b70278c76c408eff40283404d4c177ef5dfdde7f49a50b"
+    },
+    "trades": {
+      "rows": 51200,
+      "columns": [
+        "tid",
+        "eid",
+        "day",
+        "amount",
+        "valid"
+      ],
+      "dtypes": {
+        "tid": "int64",
+        "eid": "int64",
+        "day": "int64",
+        "amount": "float64",
+        "valid": "int64"
+      },
+      "ddl": "tid INT,eid INT,day INT,amount DOUBLE,valid INT",
+      "sha256": "b1850fa6e93c0746139b51bf221d64222ba8f81a87a44ac1ba7f2aaf3691f0f9"
+    },
+    "maintenance": {
+      "rows": 3200,
+      "columns": [
+        "eid",
+        "day",
+        "score"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "score": "float64"
+      },
+      "ddl": "eid INT,day INT,score DOUBLE",
+      "sha256": "402d7c097edaa26cfea978a01cda591104a7ac81a820b081ba6ee8dc822c8d58"
+    },
+    "outages": {
+      "rows": 821,
+      "columns": [
+        "eid",
+        "day",
+        "minutes"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "minutes": "int64"
+      },
+      "ddl": "eid INT,day INT,minutes DOUBLE",
+      "sha256": "b8ff07a16abd79031ee1201382acefd91a24a6736a1d5def41593f7895f9f186"
+    },
+    "weather": {
+      "rows": 400,
+      "columns": [
+        "region",
+        "day",
+        "temp"
+      ],
+      "dtypes": {
+        "region": "int64",
+        "day": "int64",
+        "temp": "float64"
+      },
+      "ddl": "region INT,day INT,temp DOUBLE",
+      "sha256": "9e7e538af4e40ab177cc89d0a44253ce05daddea06bee635fdddc105ca8273f7"
+    },
+    "calendar": {
+      "rows": 80,
+      "columns": [
+        "day",
+        "weekday"
+      ],
+      "dtypes": {
+        "day": "int64",
+        "weekday": "int64"
+      },
+      "ddl": "day INT PRIMARY KEY,weekday INT",
+      "sha256": "50c1e331077993ec4ffd9a3fbe733fd35a457c9bd853fe470f8d1b79f1e7edb1"
+    },
+    "prices": {
+      "rows": 640,
+      "columns": [
+        "sector",
+        "day",
+        "price"
+      ],
+      "dtypes": {
+        "sector": "int64",
+        "day": "int64",
+        "price": "float64"
+      },
+      "ddl": "sector INT,day INT,price DOUBLE",
+      "sha256": "5a3597cc053ea1c257b5817057b7f991609ec2020daae0bc9e28691dd59dd8c9"
+    },
+    "exposures": {
+      "rows": 640,
+      "columns": [
+        "eid",
+        "sector",
+        "weight"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "sector": "int64",
+        "weight": "float64"
+      },
+      "ddl": "eid INT,sector INT,weight DOUBLE",
+      "sha256": "63427c197111dd23211ec50f542fbe7906f022db0137ac88cd9592cae83fff2c"
+    },
+    "segments": {
+      "rows": 8,
+      "columns": [
+        "sector",
+        "multiplier"
+      ],
+      "dtypes": {
+        "sector": "int64",
+        "multiplier": "float64"
+      },
+      "ddl": "sector INT PRIMARY KEY,multiplier DOUBLE",
+      "sha256": "602f4449287c6f147fd5b831dce074080fe7851b19cb47e39481fc1dd2ba48bc"
+    },
+    "policies": {
+      "rows": 5,
+      "columns": [
+        "region",
+        "cap"
+      ],
+      "dtypes": {
+        "region": "int64",
+        "cap": "float64"
+      },
+      "ddl": "region INT PRIMARY KEY,cap DOUBLE",
+      "sha256": "b4a9860e50d2e23a161fa2353803b70cfcdc97076d24f8f83de5701ced05ee88"
+    },
+    "events": {
+      "rows": 5120,
+      "columns": [
+        "eid",
+        "day",
+        "kind",
+        "value"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "kind": "int64",
+        "value": "float64"
+      },
+      "ddl": "eid INT,day INT,kind INT,value DOUBLE",
+      "sha256": "34fd72a4319df7de6ae45b11ac6f9c5951ceba3e35edf5c486388dabbe6045b2"
+    },
+    "interventions": {
+      "rows": 1969,
+      "columns": [
+        "eid",
+        "day",
+        "active"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "active": "int64"
+      },
+      "ddl": "eid INT,day INT,active INT",
+      "sha256": "709e4289f19033899d773eb8fdebe8b0bebda82555489baa59e308b198a6576e"
+    },
+    "edges": {
+      "rows": 960,
+      "columns": [
+        "src",
+        "dst",
+        "weight"
+      ],
+      "dtypes": {
+        "src": "int64",
+        "dst": "int64",
+        "weight": "float64"
+      },
+      "ddl": "src INT,dst INT,weight DOUBLE",
+      "sha256": "b021ffd3a80b66ae7ef4d42a335c9dcea7d22baefabb2af56411a8fd4ccd3fd2"
+    },
+    "labels": {
+      "rows": 25600,
+      "columns": [
+        "eid",
+        "day",
+        "response",
+        "risk",
+        "anomaly"
+      ],
+      "dtypes": {
+        "eid": "int64",
+        "day": "int64",
+        "response": "float64",
+        "risk": "int64",
+        "anomaly": "int64"
+      },
+      "ddl": "eid INT,day INT,response DOUBLE,risk INT,anomaly INT",
+      "sha256": "3930af8eb63d32a3c6ce044b0cbf23c0e045038714eb427f91fa4e0521b0d673"
+    }
+  }
+}

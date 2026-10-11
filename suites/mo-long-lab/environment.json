@@ -1,0 +1,28 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "duckdb": "1.3.2",
+    "pymysql": "1.2.0",
+    "sqlalchemy": "2.0.43",
+    "pyspark": "3.5.3",
+    "apache-flink": "2.1.1",
+    "psutil": "7.2.2",
+    "matplotlib": "3.10.8",
+    "playwright": "1.62.0"
+  },
+  "cpu_max": "400000 100000",
+  "memory_max": "17179869184",
+  "server_binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+  "server_binary_build_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "source_checkout_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+  "build_source_note": "Results apply to the binary build commit. Checkout differs and was not rebuilt for this batch.",
+  "database": "ds_long_20261011",
+  "source_rows": 153656,
+  "source_tables": 14,
+  "jdbc_mysql_version": "8.0.33",
+  "flink_jdbc_version": "4.1.0-2.1",
+  "java_major": 21
+}

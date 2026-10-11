@@ -1,0 +1,181 @@
+{
+  "counting": "Only canonical 50×200 belongs to the requested 10000. Supplemental 2×1000 output checks per completed engine variant are separate. Incomplete planner attempts do not create successful/failed MO SQL cases.",
+  "spark_default_analyzer": {
+    "classification": "Spark client Resolution iteration cap, not MO server error",
+    "setting": 100,
+    "evidence": {
+      "output_assertions": {
+        "pass": 1000,
+        "pipeline_error": 1000
+      },
+      "meta.json": {
+        "tool": "spark",
+        "cases": 2000,
+        "pipelines": 2,
+        "seconds": 44.50954723358154,
+        "setup_and_execution_seconds": 65.9444694519043,
+        "started_at": 1791712246.0594401,
+        "ended_at": 1791712312.0039098,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+        "isolation": "READ_COMMITTED"
+      },
+      "jobs.json": [
+        {
+          "family": "long_chain_30",
+          "status": "executed",
+          "pipeline_ms": 40407.89688299992,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "long_chain_38",
+          "status": "pipeline_error",
+          "pipeline_ms": 2886.778170002799,
+          "groups_returned": 0,
+          "error": "An error occurred while calling o36.sql.\n: java.lang.RuntimeException: Max iterations (100) reached for batch Resolution, please set 'spark.sql.analyzer.maxIterations' to a larger value.\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:265)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:211)\n\tat scala.collection.immutable.List.foreach(List.scala:431)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:211)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.org$apache$spark$sql$catalyst$analysis$Analyzer$$executeSameContext(Analyzer.scala:240)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$execute$1(Analyzer.scala:236)\n\tat org.apache.spark.sql.catalyst.analysis.AnalysisContext$.withNewAnalysisContext(Analyzer.scala:187)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:236)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:202)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:182)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:182)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:223)\n\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)\n\tat org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)\n\tat org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)\n\tat org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)\n\tat org.apache.spark.sql.SparkSession.$anonfun$sql$1(SparkSession.scala:638)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.SparkSession.sql(SparkSession.scala:629)\n\tat org.apache.spark.sql.SparkSession.sql(SparkSession.scala:659)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat py4j.Gateway.invoke(Gateway.java:282)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)\n\tat py4j.ClientServerConnection.run(ClientServerConnection.java:106)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n"
+        }
+      ]
+    }
+  },
+  "spark_tuned": {
+    "classification": "Completed JDBC pipelines after client configuration adjustment",
+    "setting": 500,
+    "isolation": "READ_COMMITTED",
+    "evidence": {
+      "output_assertions": {
+        "pass": 2000
+      },
+      "meta.json": {
+        "tool": "spark",
+        "cases": 2000,
+        "pipelines": 2,
+        "seconds": 63.6639883518219,
+        "setup_and_execution_seconds": 79.21526002883911,
+        "started_at": 1791712457.192261,
+        "ended_at": 1791712536.4075215,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+        "isolation": "READ_COMMITTED",
+        "spark_analyzer_max_iterations": 500
+      },
+      "jobs.json": [
+        {
+          "family": "long_chain_30",
+          "status": "executed",
+          "pipeline_ms": 33697.74181899993,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "long_chain_38",
+          "status": "executed",
+          "pipeline_ms": 28973.92307800328,
+          "groups_returned": 1000,
+          "error": null
+        }
+      ]
+    }
+  },
+  "flink_identifier_pilot": {
+    "classification": "Flink Calcite reserved identifiers; quoted harness identifiers before retry",
+    "evidence": {
+      "output_assertions": {
+        "pipeline_error": 2000
+      },
+      "meta.json": {
+        "tool": "flink",
+        "cases": 2000,
+        "pipelines": 2,
+        "seconds": 1.195720911026001,
+        "setup_and_execution_seconds": 10.717745780944824,
+        "started_at": 1791712466.3534086,
+        "ended_at": 1791712477.0711806,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+        "isolation": "Flink JDBC default",
+        "spark_analyzer_max_iterations": null
+      },
+      "jobs.json": [
+        {
+          "family": "long_chain_30",
+          "status": "pipeline_error",
+          "pipeline_ms": 203.90999000665033,
+          "groups_returned": 0,
+          "error": "An error occurred while calling o8.sqlQuery.\n: org.apache.flink.table.api.SqlParserException: SQL parse failed. Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:81)\n\tat org.apache.flink.table.planner.delegation.ParserImpl.parse(ParserImpl.java:102)\n\tat org.apache.flink.table.api.internal.TableEnvironmentImpl.sqlQuery(TableEnvironmentImpl.java:846)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat org.apache.flink.api.python.shaded.py4j.Gateway.invoke(Gateway.java:282)\n\tat org.apache.flink.api.python.shaded.py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat org.apache.flink.api.python.shaded.py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat org.apache.flink.api.python.shaded.py4j.GatewayConnection.run(GatewayConnection.java:238)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nCaused by: org.apache.calcite.sql.parser.SqlParseException: Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.convertException(FlinkSqlParserImpl.java:551)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.normalizeException(FlinkSqlParserImpl.java:297)\n\tat org.apache.calcite.sql.parser.SqlParser.handleException(SqlParser.java:159)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:214)\n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:76)\n\t... 11 more\nCaused by: org.apache.flink.sql.parser.impl.ParseException: Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.generateParseException(FlinkSqlParserImpl.java:52913)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.jj_consume_token(FlinkSqlParserImpl.java:52718)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.ParenthesizedExpression(FlinkSqlParserImpl.java:952)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.AddWithItem(FlinkSqlParserImpl.java:26876)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.WithList(FlinkSqlParserImpl.java:26856)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.QueryOrExpr(FlinkSqlParserImpl.java:26729)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.OrderedQueryOrExpr(FlinkSqlParserImpl.java:721)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmt(FlinkSqlParserImpl.java:4383)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmtList(FlinkSqlParserImpl.java:3232)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.parseSqlStmtList(FlinkSqlParserImpl.java:349)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:212)\n\t... 12 more\n"
+        },
+        {
+          "family": "long_chain_38",
+          "status": "pipeline_error",
+          "pipeline_ms": 96.65832199971192,
+          "groups_returned": 0,
+          "error": "An error occurred while calling o8.sqlQuery.\n: org.apache.flink.table.api.SqlParserException: SQL parse failed. Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:81)\n\tat org.apache.flink.table.planner.delegation.ParserImpl.parse(ParserImpl.java:102)\n\tat org.apache.flink.table.api.internal.TableEnvironmentImpl.sqlQuery(TableEnvironmentImpl.java:846)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat org.apache.flink.api.python.shaded.py4j.Gateway.invoke(Gateway.java:282)\n\tat org.apache.flink.api.python.shaded.py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat org.apache.flink.api.python.shaded.py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat org.apache.flink.api.python.shaded.py4j.GatewayConnection.run(GatewayConnection.java:238)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nCaused by: org.apache.calcite.sql.parser.SqlParseException: Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.convertException(FlinkSqlParserImpl.java:551)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.normalizeException(FlinkSqlParserImpl.java:297)\n\tat org.apache.calcite.sql.parser.SqlParser.handleException(SqlParser.java:159)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:214)\n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:76)\n\t... 11 more\nCaused by: org.apache.flink.sql.parser.impl.ParseException: Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.generateParseException(FlinkSqlParserImpl.java:52913)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.jj_consume_token(FlinkSqlParserImpl.java:52718)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.ParenthesizedExpression(FlinkSqlParserImpl.java:952)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.AddWithItem(FlinkSqlParserImpl.java:26876)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.WithList(FlinkSqlParserImpl.java:26856)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.QueryOrExpr(FlinkSqlParserImpl.java:26729)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.OrderedQueryOrExpr(FlinkSqlParserImpl.java:721)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmt(FlinkSqlParserImpl.java:4383)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmtList(FlinkSqlParserImpl.java:3232)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.parseSqlStmtList(FlinkSqlParserImpl.java:349)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:212)\n\t... 12 more\n"
+        }
+      ]
+    }
+  },
+  "flink_monolithic": {
+    "classification": "Incomplete planning; explicitly terminated test-owned Python/JVM after excessive memory/time. No result equivalence claim; not a natural crash or proven MO defect.",
+    "resource_evidence": "flink-resource-limit.json",
+    "log": "flink-quoted.log"
+  },
+  "flink_features_only": {
+    "classification": "Six feature outputs matched, but downstream scoring planning crossed the configured client RSS guard. Incomplete final pipeline; no 2000-case success claim.",
+    "guard": {
+      "script": "flink_staged.py",
+      "returncode": 0,
+      "resource_stop_reason": "client process-tree RSS limit",
+      "seconds": 215.63888144493103,
+      "peak_tree_rss_mib": 4199.34765625,
+      "limits": {
+        "seconds": 600,
+        "tree_rss_mib": 4096
+      }
+    },
+    "log": "flink-staged.log"
+  },
+  "flink_bounded": {
+    "classification": "Feature materialization plus normalization and feedback groups of 3; exact same score recurrence. Every intermediate table and final output compared independently.",
+    "guard": {
+      "script": "flink_bounded.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "seconds": 258.64039301872253,
+      "peak_tree_rss_mib": 2955.91796875,
+      "limits": {
+        "seconds": 600,
+        "tree_rss_mib": 4096
+      }
+    },
+    "evidence": {
+      "output_assertions": {
+        "pass": 2000
+      },
+      "meta.json": {
+        "tool": "flink-bounded",
+        "cases": 2000,
+        "pipelines": 2,
+        "counts": {
+          "pass": 2000
+        },
+        "seconds": 255.78885221481323,
+        "started_at": 1791713513.2687407,
+        "ended_at": 1791713769.057594,
+        "feedback_chunk": 3,
+        "scope": "14 JDBC sources, each feature block materialized, independent normalization, feedback chunks of 3, final JDBC sink; all intermediate values and final unmaterialized reference verified; excluded from canonical 10000"
+      },
+      "jobs.json": [
+        {
+          "family": "long_chain_30",
+          "pipeline_ms": 120987.82815400045,
+          "error": null,
+          "groups_returned": 1000
+        },
+        {
+          "family": "long_chain_38",
+          "pipeline_ms": 122622.93040600343,
+          "error": null,
+          "groups_returned": 1000
+        }
+      ]
+    }
+  },
+  "timing": "Supplemental engines overlap canonical workload; canonical times are observed mixed-load times. performance.json is a separate test after all compatibility clients ended."
+}

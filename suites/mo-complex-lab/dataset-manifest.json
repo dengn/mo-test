@@ -1,0 +1,52 @@
+{
+  "seed": 2026101102,
+  "tables": {
+    "customers": {
+      "rows": 1200,
+      "sha256": "11da8170621933c6b5f6558de054542f005d0696d6c7cebd941e0b8c5d9aeac8"
+    },
+    "products": {
+      "rows": 80,
+      "sha256": "21cd92161745661111385d0c413a171f71e3806ba1f579cfbc6076b8beb5e6eb"
+    },
+    "orders": {
+      "rows": 12000,
+      "sha256": "9a235a8368c65afcbf59004a375398f4da393d8f2dfcd624634376cfff8b8aaf"
+    },
+    "items": {
+      "rows": 36000,
+      "sha256": "c5998a08d7a506a4e6041fa9f59c904724ac573a2ca39424dd6bfe68f909a14f"
+    },
+    "payments": {
+      "rows": 24000,
+      "sha256": "9babe5563f0d4d7b2288eae95e9b0c9a3f232ce69374db0ca3dffb907c1854a0"
+    },
+    "refunds": {
+      "rows": 1574,
+      "sha256": "1e3ebfa99ee6f954a1e96871ce09047d3d5c362becc2b16632e79d884ec65d57"
+    },
+    "events": {
+      "rows": 35280,
+      "sha256": "76b0ddfbea4234ecf4d117eeb935f622894c704cec90d6fe1036a95c5dd76d50"
+    },
+    "edges": {
+      "rows": 3600,
+      "sha256": "dff6d0bf9a267f8621e820bb6fb44ca7384505842529d581c47653142a9ea6a9"
+    },
+    "calendar": {
+      "rows": 96,
+      "sha256": "da0ad6a049b29939b47e3fbe96c9444c857ed76dbb8bb4177c6cd52a80fad0e6"
+    }
+  },
+  "schema": {
+    "customers": "cid INT PRIMARY KEY,region INT,tier INT,signup INT,credit DOUBLE",
+    "products": "pid INT PRIMARY KEY,category INT,price DOUBLE",
+    "orders": "oid INT PRIMARY KEY,cid INT,day INT,amount DOUBLE,cost DOUBLE,cancelled INT,channel INT,ts DATETIME",
+    "items": "iid INT PRIMARY KEY,oid INT,pid INT,qty INT,price DOUBLE",
+    "payments": "payid INT PRIMARY KEY,oid INT,day INT,paid DOUBLE,success INT",
+    "refunds": "rid INT PRIMARY KEY,oid INT,day INT,refunded DOUBLE,reason INT",
+    "events": "eid INT PRIMARY KEY,cid INT,day INT,session_id INT,kind INT,value DOUBLE,ts DATETIME",
+    "edges": "src INT,dst INT,weight DOUBLE",
+    "calendar": "day INT PRIMARY KEY,week INT,weekday INT,date DATETIME"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "groups": [
+    {
+      "concurrency": 1,
+      "queries": 512,
+      "warmups_excluded": 2,
+      "seconds": 4.864660503997584,
+      "queries_per_second": 105.24886568739151,
+      "latency_ms": {
+        "p50": 7.397393001156161,
+        "p95": 22.412611795152763,
+        "p99": 36.52841030052512,
+        "max": 227.3377489982522
+      },
+      "counts": {
+        "pass": 512
+      }
+    },
+    {
+      "concurrency": 2,
+      "queries": 512,
+      "warmups_excluded": 4,
+      "seconds": 3.469675462998566,
+      "queries_per_second": 147.56423344491097,
+      "latency_ms": {
+        "p50": 8.211847001803108,
+        "p95": 37.153400150054935,
+        "p99": 101.87688728619827,
+        "max": 135.15967300190823
+      },
+      "counts": {
+        "pass": 512
+      }
+    },
+    {
+      "concurrency": 4,
+      "queries": 512,
+      "warmups_excluded": 8,
+      "seconds": 1.6340014569941559,
+      "queries_per_second": 313.3412138700628,
+      "latency_ms": {
+        "p50": 8.357274000445614,
+        "p95": 20.104443851596436,
+        "p99": 42.82179713605726,
+        "max": 148.26365900080418
+      },
+      "counts": {
+        "pass": 512
+      }
+    },
+    {
+      "concurrency": 8,
+      "queries": 512,
+      "warmups_excluded": 16,
+      "seconds": 1.7512500700031524,
+      "queries_per_second": 292.36258645750024,
+      "latency_ms": {
+        "p50": 15.610166999977082,
+        "p95": 40.86292475076332,
+        "p99": 117.49254494483462,
+        "max": 215.5364069985808
+      },
+      "counts": {
+        "pass": 512
+      }
+    }
+  ],
+  "queries_total": 2048,
+  "query_mix": [
+    "net_revenue_reconciliation",
+    "daily_rolling_sales",
+    "recursive_bounded_reachability",
+    "multi_fact_customer_features"
+  ],
+  "source_rows": 113830,
+  "scope": "client-visible latency; post compatibility and connectors; oracle precomputed, no model fitting during measurement; warm standalone single instance; no external database baseline"
+}

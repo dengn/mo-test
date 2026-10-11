@@ -1,0 +1,300 @@
+{
+  "groups": [
+    {
+      "concurrency": 1,
+      "queries": 3072,
+      "seconds": 23.86999135399674,
+      "queries_per_second": 128.6971559579401,
+      "latency_ms": {
+        "p50": 6.9094870013941545,
+        "p95": 18.102377399191024,
+        "p99": 31.033299222253834,
+        "max": 131.475219001004
+      },
+      "counts": {
+        "pass": 3072
+      },
+      "trial_qps": [
+        122.95573475699236,
+        122.99694062048223,
+        141.89938891303692
+      ]
+    },
+    {
+      "concurrency": 2,
+      "queries": 3072,
+      "seconds": 14.836542323006142,
+      "queries_per_second": 207.05632977816083,
+      "latency_ms": {
+        "p50": 7.131229998776689,
+        "p95": 18.456635649636144,
+        "p99": 49.026939837785875,
+        "max": 159.56793900113553
+      },
+      "counts": {
+        "pass": 3072
+      },
+      "trial_qps": [
+        188.06607395822383,
+        211.04696052723256,
+        225.56821134105994
+      ]
+    },
+    {
+      "concurrency": 4,
+      "queries": 3072,
+      "seconds": 13.191782515998057,
+      "queries_per_second": 232.87224423799412,
+      "latency_ms": {
+        "p50": 8.527751502697356,
+        "p95": 35.873298398291794,
+        "p99": 121.30719987158955,
+        "max": 621.1774309995235
+      },
+      "counts": {
+        "pass": 3072
+      },
+      "trial_qps": [
+        255.71755912493222,
+        193.06668931976822,
+        263.67982507063937
+      ]
+    },
+    {
+      "concurrency": 8,
+      "queries": 3072,
+      "seconds": 11.019197573994461,
+      "queries_per_second": 278.78618015253534,
+      "latency_ms": {
+        "p50": 15.67637699918123,
+        "p95": 68.98821860158932,
+        "p99": 145.06230733022676,
+        "max": 416.8183380024857
+      },
+      "counts": {
+        "pass": 3072
+      },
+      "trial_qps": [
+        301.45173734097057,
+        269.5019621297587,
+        267.8734252162406
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "trial": 0,
+      "concurrency": 1,
+      "queries": 1024,
+      "warmups_excluded": 2,
+      "seconds": 8.328200404997915,
+      "queries_per_second": 122.95573475699236,
+      "latency_ms": {
+        "p50": 7.041069500701269,
+        "p95": 19.9757270995178,
+        "p99": 29.73229467817873,
+        "max": 131.475219001004
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 0,
+      "concurrency": 4,
+      "queries": 1024,
+      "warmups_excluded": 8,
+      "seconds": 4.00441801299894,
+      "queries_per_second": 255.71755912493222,
+      "latency_ms": {
+        "p50": 8.744386999751441,
+        "p95": 27.689668600214638,
+        "p99": 80.79160623114132,
+        "max": 437.4833230031072
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 0,
+      "concurrency": 2,
+      "queries": 1024,
+      "warmups_excluded": 4,
+      "seconds": 5.444894863001537,
+      "queries_per_second": 188.06607395822383,
+      "latency_ms": {
+        "p50": 7.153646500228206,
+        "p95": 23.294765647369783,
+        "p99": 78.97156486913441,
+        "max": 139.1878810027265
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 0,
+      "concurrency": 8,
+      "queries": 1024,
+      "warmups_excluded": 16,
+      "seconds": 3.396895334000874,
+      "queries_per_second": 301.45173734097057,
+      "latency_ms": {
+        "p50": 16.486330998304766,
+        "p95": 60.93489424747521,
+        "p99": 132.3703720523189,
+        "max": 220.3662030005944
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 1,
+      "concurrency": 8,
+      "queries": 1024,
+      "warmups_excluded": 16,
+      "seconds": 3.7996012789953966,
+      "queries_per_second": 269.5019621297587,
+      "latency_ms": {
+        "p50": 15.370190998510225,
+        "p95": 71.11369324666134,
+        "p99": 145.12876555112598,
+        "max": 416.8183380024857
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 1,
+      "concurrency": 2,
+      "queries": 1024,
+      "warmups_excluded": 4,
+      "seconds": 4.8520006990002,
+      "queries_per_second": 211.04696052723256,
+      "latency_ms": {
+        "p50": 7.112881496141199,
+        "p95": 17.71591880060441,
+        "p99": 32.72833704926597,
+        "max": 159.56793900113553
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 1,
+      "concurrency": 4,
+      "queries": 1024,
+      "warmups_excluded": 8,
+      "seconds": 5.303866780996032,
+      "queries_per_second": 193.06668931976822,
+      "latency_ms": {
+        "p50": 9.073380500922212,
+        "p95": 48.31531650015677,
+        "p99": 141.27943897146892,
+        "max": 621.1774309995235
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 1,
+      "concurrency": 1,
+      "queries": 1024,
+      "warmups_excluded": 2,
+      "seconds": 8.325410329998704,
+      "queries_per_second": 122.99694062048223,
+      "latency_ms": {
+        "p50": 6.996486499701859,
+        "p95": 18.6506020982051,
+        "p99": 33.69871116759895,
+        "max": 79.2514860004303
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 2,
+      "concurrency": 2,
+      "queries": 1024,
+      "warmups_excluded": 4,
+      "seconds": 4.539646761004406,
+      "queries_per_second": 225.56821134105994,
+      "latency_ms": {
+        "p50": 7.131229998776689,
+        "p95": 14.091633604039082,
+        "p99": 38.35660760014433,
+        "max": 124.53761299548205
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 2,
+      "concurrency": 1,
+      "queries": 1024,
+      "warmups_excluded": 2,
+      "seconds": 7.21638061900012,
+      "queries_per_second": 141.89938891303692,
+      "latency_ms": {
+        "p50": 6.7645365015778225,
+        "p95": 14.00070379895623,
+        "p99": 29.906002078714625,
+        "max": 87.77351299795555
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 2,
+      "concurrency": 8,
+      "queries": 1024,
+      "warmups_excluded": 16,
+      "seconds": 3.8227009609981906,
+      "queries_per_second": 267.8734252162406,
+      "latency_ms": {
+        "p50": 15.086471499671461,
+        "p95": 74.22623235033817,
+        "p99": 149.64843772853777,
+        "max": 268.0939780038898
+      },
+      "counts": {
+        "pass": 1024
+      }
+    },
+    {
+      "trial": 2,
+      "concurrency": 4,
+      "queries": 1024,
+      "warmups_excluded": 8,
+      "seconds": 3.883497722003085,
+      "queries_per_second": 263.67982507063937,
+      "latency_ms": {
+        "p50": 7.820029997674283,
+        "p95": 32.868892149053856,
+        "p99": 120.1518767738161,
+        "max": 155.52625399868703
+      },
+      "counts": {
+        "pass": 1024
+      }
+    }
+  ],
+  "queries_total": 12288,
+  "query_mix": [
+    "net_revenue_reconciliation",
+    "daily_rolling_sales",
+    "recursive_bounded_reachability",
+    "multi_fact_customer_features"
+  ],
+  "source_rows": 113830,
+  "warm_query_shapes": 64,
+  "scope": "client-visible latency; post compatibility and connectors; three balanced-order trials per concurrency with 1024 queries each; every query shape prewarmed; oracle precomputed and verification outside timing; warm standalone single instance; no external database baseline"
+}

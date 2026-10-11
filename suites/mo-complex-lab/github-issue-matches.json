@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-11",
+  "correlated_topk_orders": {
+    "canonical_affected_cases": 1000,
+    "closest_existing_issue": "https://github.com/matrixorigin/matrixone/issues/28298",
+    "state": "open",
+    "match_strength": "same compatibility family; existing issue covers narrow non-equality scalar aggregate decorrelation shapes, but does not list the exact OR/tie-breaking predicate used here",
+    "action": "link existing issue; no new issue created for this new suite"
+  },
+  "floating_window_order_and_peers": {
+    "canonical_affected_cases": 8,
+    "historical_function_support_issue": "https://github.com/matrixorigin/matrixone/issues/23011",
+    "match_strength": "historical CUME_DIST support request, not a duplicate of floating aggregate peer-key sensitivity",
+    "action": "retain raw mismatches and key-rounding control; no demonstrated window algorithm defect and no new issue created",
+    "historical_issue_state": "closed"
+  },
+  "issues_created_on_user_request_from_previous_batch": [
+    {
+      "url": "https://github.com/matrixorigin/matrixone/issues/29838",
+      "topic": "Spark default READ_UNCOMMITTED compatibility; explicit READ_COMMITTED passes"
+    },
+    {
+      "url": "https://github.com/matrixorigin/matrixone/issues/29839",
+      "topic": "SQL TANH function support request"
+    }
+  ]
+}

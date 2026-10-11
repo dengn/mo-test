@@ -1,0 +1,126 @@
+{
+  "time": 1791722554.7954874,
+  "tables": {
+    "customers": {
+      "rows": 1200,
+      "full_content": "pass"
+    },
+    "products": {
+      "rows": 80,
+      "full_content": "pass"
+    },
+    "orders": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "items": {
+      "rows": 36000,
+      "full_content": "pass"
+    },
+    "payments": {
+      "rows": 24000,
+      "full_content": "pass"
+    },
+    "refunds": {
+      "rows": 1574,
+      "full_content": "pass"
+    },
+    "events": {
+      "rows": 47536,
+      "full_content": "pass"
+    },
+    "edges": {
+      "rows": 3600,
+      "full_content": "pass"
+    },
+    "calendar": {
+      "rows": 96,
+      "full_content": "pass"
+    },
+    "market": {
+      "rows": 2920,
+      "full_content": "pass"
+    },
+    "inventory": {
+      "rows": 7680,
+      "full_content": "pass"
+    },
+    "campaigns": {
+      "rows": 384,
+      "full_content": "pass"
+    },
+    "subscriptions": {
+      "rows": 28800,
+      "full_content": "pass"
+    },
+    "targets": {
+      "rows": 42,
+      "full_content": "pass"
+    },
+    "shipments": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "receivables": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "ledger": {
+      "rows": 12705,
+      "full_content": "pass"
+    },
+    "experiment": {
+      "rows": 7200,
+      "full_content": "pass"
+    },
+    "prices": {
+      "rows": 7680,
+      "full_content": "pass"
+    },
+    "suppliers": {
+      "rows": 80,
+      "full_content": "pass"
+    },
+    "supply": {
+      "rows": 1120,
+      "full_content": "pass"
+    },
+    "loans": {
+      "rows": 3600,
+      "full_content": "pass"
+    },
+    "loan_performance": {
+      "rows": 10800,
+      "full_content": "pass"
+    },
+    "machines": {
+      "rows": 64,
+      "full_content": "pass"
+    },
+    "sensors": {
+      "rows": 6144,
+      "full_content": "pass"
+    },
+    "production": {
+      "rows": 6144,
+      "full_content": "pass"
+    },
+    "energy": {
+      "rows": 18432,
+      "full_content": "pass"
+    },
+    "tickets": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "contracts": {
+      "rows": 2400,
+      "full_content": "pass"
+    },
+    "fraud_payments": {
+      "rows": 6000,
+      "full_content": "pass"
+    }
+  },
+  "rows": 284281
+}

@@ -1,0 +1,5 @@
+	mod	github.com/matrixorigin/matrixone	v0.0.0-20261009004723-23d8f61252f3	
+	build	-ldflags=" -extldflags ' -L/workspace/matrixone/cgo -lmo -L/workspace/matrixone/thirdparties/install/lib  -Wl,-rpath,${ORIGIN}/lib -fopenmp' -X 'github.com/matrixorigin/matrixone/pkg/version.GoVersion=go version go1.27.1 linux/amd64' -X 'github.com/matrixorigin/matrixone/pkg/version.BranchName=work' -X 'github.com/matrixorigin/matrixone/pkg/version.CommitID=23d8f61252' -X 'github.com/matrixorigin/matrixone/pkg/version.BuildTime=1791511588' -X 'github.com/matrixorigin/matrixone/pkg/version.Version=work'"
+	build	vcs.revision=23d8f61252f3017dff218b530817a240206fd762
+	build	vcs.time=2026-10-09T00:47:23Z
+	build	vcs.modified=false

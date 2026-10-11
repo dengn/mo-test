@@ -1,0 +1,144 @@
+[
+  {
+    "case_id": 64390,
+    "family": "correlated_topk_orders",
+    "category": "subqueries_sets",
+    "parameter": 390,
+    "client": "numpy",
+    "params": {
+      "lo": 431,
+      "hi": 531,
+      "d0": 0,
+      "d1": 28,
+      "r": 0,
+      "k": 7,
+      "threshold": 585.625,
+      "alpha": 0.01,
+      "start": "2024-01-01"
+    },
+    "oracle_ms": 46.951079999416834,
+    "status": "sql_error",
+    "error": "(20102, 'non-equality correlated aggregate with outer composition cannot be safely decorrelated is not yet implemented')",
+    "query_ms": 4.484168999624671,
+    "sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=431 AND cid<531 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<28),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<28) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<7",
+    "total_ms": 52.83781999969506
+  },
+  {
+    "case_id": 49625,
+    "family": "ordinal_rank_correlation",
+    "category": "statistical_models",
+    "parameter": 625,
+    "client": "pandas",
+    "params": {
+      "lo": 926,
+      "hi": 1061,
+      "d0": 0,
+      "d1": 25,
+      "r": 0,
+      "k": 4,
+      "threshold": 331.25,
+      "alpha": 0.025,
+      "start": "2024-01-01"
+    },
+    "oracle_ms": 4.547505999653367,
+    "query_ms": 13.108974000715534,
+    "source_rows": 1,
+    "feature_equal": false,
+    "compute_ms": 0.05916800000704825,
+    "status": "mismatch",
+    "expected": [
+      [
+        26,
+        0.06598290598290582
+      ]
+    ],
+    "actual": [
+      [
+        26,
+        0.07897435897435875
+      ]
+    ],
+    "sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=926 AND cid<1061 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<25),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<25), a AS (SELECT cid,COUNT(*) frequency,SUM(amount) revenue FROM oo GROUP BY cid),b AS (SELECT cid,RANK() OVER(ORDER BY frequency,cid) x,RANK() OVER(ORDER BY revenue,cid) y FROM a)\nSELECT COUNT(*),(AVG(CAST(x*y AS DOUBLE))-AVG(CAST(x AS DOUBLE))*AVG(CAST(y AS DOUBLE)))/NULLIF(SQRT(VAR_POP(x)*VAR_POP(y)),0) FROM b",
+    "total_ms": 17.725616999086924
+  },
+  {
+    "case_id": 19131,
+    "family": "cume_dist_threshold",
+    "category": "window_analytics",
+    "parameter": 131,
+    "client": "pandas",
+    "params": {
+      "lo": 918,
+      "hi": 1053,
+      "d0": 11,
+      "d1": 35,
+      "r": 1,
+      "k": 7,
+      "threshold": 285.0,
+      "alpha": 0.025,
+      "start": "2024-01-12"
+    },
+    "oracle_ms": 22.919344999536406,
+    "query_ms": 14.073722000830458,
+    "source_rows": 1,
+    "feature_equal": false,
+    "compute_ms": 0.06302800102275796,
+    "status": "mismatch",
+    "expected": [
+      [
+        32,
+        16.5,
+        49900.0718
+      ]
+    ],
+    "actual": [
+      [
+        32,
+        16.53125,
+        49900.0718
+      ]
+    ],
+    "sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=918 AND cid<1053 AND region<>1),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=11 AND o.day<35),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=11 AND e.day<35), a AS (SELECT cid,SUM(amount) rev FROM oo GROUP BY cid),b AS (SELECT cid,rev,CUME_DIST() OVER(ORDER BY rev) p FROM a)\nSELECT COUNT(*),SUM(p),SUM(CASE WHEN p<=CAST(0.5 AS DOUBLE) THEN rev ELSE 0 END) FROM b",
+    "total_ms": 37.067594999825815
+  },
+  {
+    "case_id": 3334,
+    "family": "rfm_quantile_scoring",
+    "category": "multi_table_commerce",
+    "parameter": 334,
+    "client": "numpy",
+    "params": {
+      "lo": 39,
+      "hi": 144,
+      "d0": 44,
+      "d1": 67,
+      "r": 4,
+      "k": 7,
+      "threshold": 238.75,
+      "alpha": 0.145,
+      "start": "2024-02-17"
+    },
+    "oracle_ms": 8.565288999307086,
+    "query_ms": 9.016715999678127,
+    "source_rows": 1,
+    "feature_equal": false,
+    "compute_ms": 0.1029009999911068,
+    "status": "mismatch",
+    "expected": [
+      [
+        27,
+        234,
+        7
+      ]
+    ],
+    "actual": [
+      [
+        27,
+        234.0,
+        6.0
+      ]
+    ],
+    "sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=39 AND cid<144 AND region<>4),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=44 AND o.day<67),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=44 AND e.day<67), a AS (SELECT cid,67-MAX(day) recency,COUNT(*) frequency,SUM(amount) monetary FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,NTILE(5) OVER(ORDER BY recency DESC,cid) r,NTILE(5) OVER(ORDER BY frequency,cid) f,NTILE(5) OVER(ORDER BY monetary,cid) m FROM a)\nSELECT COUNT(*),SUM(r+f+m),SUM(CASE WHEN r+f+m>=11 THEN 1 ELSE 0 END) FROM b",
+    "total_ms": 17.698891999316402
+  }
+]

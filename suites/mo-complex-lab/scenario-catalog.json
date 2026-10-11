@@ -1,0 +1,802 @@
+[
+  {
+    "family": 0,
+    "name": "net_revenue_reconciliation",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), p AS (SELECT oid,SUM(CASE WHEN success=1 THEN paid ELSE 0 END) paid FROM payments GROUP BY oid),\nr AS (SELECT oid,SUM(refunded) refunded FROM refunds GROUP BY oid),\nb AS (SELECT o.cid,SUM(o.amount) gross,SUM(COALESCE(p.paid,0)-COALESCE(r.refunded,0)) net FROM oo o LEFT JOIN p ON o.oid=p.oid LEFT JOIN r ON o.oid=r.oid WHERE o.cancelled=0 GROUP BY o.cid)\nSELECT COUNT(*),SUM(gross),SUM(net),AVG(CAST(net AS DOUBLE)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 1,
+    "name": "category_weighted_revenue",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT p.category,SUM(i.qty*i.price) revenue,SUM(i.qty) units FROM oo o JOIN items i ON o.oid=i.oid JOIN products p ON i.pid=p.pid WHERE o.cancelled=0 GROUP BY p.category)\nSELECT COUNT(*),SUM(revenue),SUM(revenue)/NULLIF(SUM(units),0) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 2,
+    "name": "margin_segment_mix",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.channel,SUM(o.amount-o.cost) margin,SUM(o.amount) rev FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier,o.channel)\nSELECT COUNT(*),SUM(margin),AVG(CAST(margin/NULLIF(rev,0) AS DOUBLE)) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 3,
+    "name": "rfm_quantile_scoring",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,12-MAX(day) recency,COUNT(*) frequency,SUM(amount) monetary FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,NTILE(5) OVER(ORDER BY recency DESC,cid) r,NTILE(5) OVER(ORDER BY frequency,cid) f,NTILE(5) OVER(ORDER BY monetary,cid) m FROM a)\nSELECT COUNT(*),SUM(r+f+m),SUM(CASE WHEN r+f+m>=11 THEN 1 ELSE 0 END) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 4,
+    "name": "basket_product_cooccurrence",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT i.pid p1,j.pid p2,COUNT(DISTINCT o.oid) n FROM oo o JOIN items i ON o.oid=i.oid JOIN items j ON i.oid=j.oid AND i.pid<j.pid GROUP BY i.pid,j.pid),\nb AS (SELECT p1,p2,n,ROW_NUMBER() OVER(ORDER BY n DESC,p1,p2) rn FROM a)\nSELECT COUNT(*),SUM(n) FROM b WHERE rn<=2",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 5,
+    "name": "repeat_purchase_intervals",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,oid,day,LAG(day) OVER(PARTITION BY cid ORDER BY day,oid) prev FROM oo WHERE cancelled=0)\nSELECT COUNT(prev),AVG(CAST(day-prev AS DOUBLE)),VAR_POP(day-prev),MAX(day-prev) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 6,
+    "name": "refund_rate_by_category",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), r AS (SELECT DISTINCT oid FROM refunds),a AS (SELECT p.category,COUNT(DISTINCT o.oid) n,COUNT(DISTINCT r.oid) returned FROM oo o JOIN items i ON o.oid=i.oid JOIN products p ON i.pid=p.pid LEFT JOIN r ON o.oid=r.oid GROUP BY p.category)\nSELECT COUNT(*),SUM(returned),AVG(CAST(returned*CAST(1.0 AS DOUBLE)/NULLIF(n,0) AS DOUBLE)) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 7,
+    "name": "payment_coverage_anomaly",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), p AS (SELECT oid,SUM(CASE WHEN success=1 THEN paid ELSE 0 END) paid FROM payments GROUP BY oid),a AS (SELECT o.cid,o.amount,COALESCE(p.paid,0) paid FROM oo o LEFT JOIN p ON o.oid=p.oid)\nSELECT COUNT(*),SUM(CASE WHEN paid<amount-CAST(0.000001 AS DOUBLE) THEN 1 ELSE 0 END),SUM(amount-paid) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 8,
+    "name": "cancelled_customer_anti_join",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(c.credit) FROM scope c WHERE EXISTS(SELECT 1 FROM oo o WHERE o.cid=c.cid AND o.cancelled=1) AND NOT EXISTS(SELECT 1 FROM oo o WHERE o.cid=c.cid AND o.cancelled=0)",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 9,
+    "name": "purchase_without_payment",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE NOT EXISTS(SELECT 1 FROM payments p WHERE p.oid=o.oid AND p.success=1) AND o.cancelled=0",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 10,
+    "name": "top_category_per_customer",
+    "category": "multi_table_commerce",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT o.cid,p.category,SUM(i.qty*i.price) rev FROM oo o JOIN items i ON o.oid=i.oid JOIN products p ON i.pid=p.pid GROUP BY o.cid,p.category),\nb AS (SELECT cid,category,rev,ROW_NUMBER() OVER(PARTITION BY cid ORDER BY rev DESC,category) rn FROM a)\nSELECT COUNT(*),SUM(category),SUM(rev) FROM b WHERE rn=1",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 11,
+    "name": "daily_rolling_sales",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT day,SUM(amount) rev FROM oo WHERE cancelled=0 GROUP BY day),\nb AS (SELECT d.day,COALESCE(a.rev,0) rev FROM calendar d LEFT JOIN a ON d.day=a.day WHERE d.day>=0 AND d.day<12),\nc AS (SELECT day,AVG(CAST(rev AS DOUBLE)) OVER(ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) ma FROM b)\nSELECT COUNT(*),SUM(ma),MAX(ma) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 12,
+    "name": "cumulative_revenue_share",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT day,SUM(amount) rev FROM oo GROUP BY day),\nb AS (SELECT day,rev,SUM(rev) OVER(ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) cumulative,SUM(rev) OVER() total FROM a)\nSELECT COUNT(*),SUM(cumulative/NULLIF(total,0)),MAX(cumulative) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 13,
+    "name": "week_over_week_growth",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT d.week,SUM(o.amount) rev FROM oo o JOIN calendar d ON o.day=d.day GROUP BY d.week),\nb AS (SELECT week,rev,LAG(rev) OVER(ORDER BY week) prev FROM a)\nSELECT COUNT(prev),SUM((rev-prev)/NULLIF(ABS(prev),0)),SUM(rev-prev) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 14,
+    "name": "calendar_gap_detection",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT DISTINCT day FROM oo),b AS (SELECT d.day,CASE WHEN a.day IS NULL THEN 1 ELSE 0 END missing FROM calendar d LEFT JOIN a ON d.day=a.day WHERE d.day>=0 AND d.day<12),\nc AS (SELECT day,missing,SUM(missing) OVER(ORDER BY day ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) gaps FROM b)\nSELECT SUM(missing),MAX(gaps),SUM(gaps) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 15,
+    "name": "daily_zscore_outliers",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT day,SUM(amount) rev FROM oo GROUP BY day),b AS (SELECT day,rev,AVG(CAST(rev AS DOUBLE)) OVER() mean,STDDEV_POP(rev) OVER() sd FROM a)\nSELECT COUNT(*),SUM(CASE WHEN ABS(rev-mean)>2*sd THEN 1 ELSE 0 END),SUM((rev-mean)/NULLIF(sd,0)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 16,
+    "name": "event_session_cumulative",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,session_id,eid,day,SUM(value) OVER(PARTITION BY cid,session_id ORDER BY day,eid ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) v FROM ee)\nSELECT COUNT(*),SUM(v),MAX(v),MIN(v) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 17,
+    "name": "customer_dense_rank_ties",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) n,SUM(amount) rev FROM oo GROUP BY cid),\nb AS (SELECT cid,n,rev,RANK() OVER(ORDER BY n DESC) r,DENSE_RANK() OVER(ORDER BY n DESC) dr FROM a)\nSELECT COUNT(*),SUM(r),SUM(dr),SUM(rev*dr) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 18,
+    "name": "percent_rank_distribution",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,SUM(amount) rev FROM oo GROUP BY cid),b AS (SELECT cid,rev,PERCENT_RANK() OVER(ORDER BY rev,cid) p FROM a)\nSELECT COUNT(*),SUM(p),SUM(CASE WHEN p>=CAST(0.9 AS DOUBLE) THEN rev ELSE 0 END) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 19,
+    "name": "cume_dist_threshold",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,SUM(amount) rev FROM oo GROUP BY cid),b AS (SELECT cid,rev,CUME_DIST() OVER(ORDER BY rev) p FROM a)\nSELECT COUNT(*),SUM(p),SUM(CASE WHEN p<=CAST(0.5 AS DOUBLE) THEN rev ELSE 0 END) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 20,
+    "name": "row_frame_vs_range_ties",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT oid,day,amount,SUM(amount) OVER(ORDER BY day,oid ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) vr,SUM(amount) OVER(ORDER BY day RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) vg FROM oo)\nSELECT COUNT(*),SUM(vr),SUM(vg),MAX(vg) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 21,
+    "name": "window_first_last_touch",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,eid,kind,FIRST_VALUE(kind) OVER(PARTITION BY cid ORDER BY day,eid ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) first_kind,LAST_VALUE(kind) OVER(PARTITION BY cid ORDER BY day,eid ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) last_kind FROM ee)\nSELECT COUNT(*),SUM(first_kind),SUM(last_kind),SUM(CASE WHEN first_kind=last_kind THEN 1 ELSE 0 END) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 22,
+    "name": "second_purchase_nth_value",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,oid,amount,NTH_VALUE(amount,2) OVER(PARTITION BY cid ORDER BY day,oid ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) second_amount FROM oo)\nSELECT COUNT(second_amount),SUM(second_amount),MAX(second_amount) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 23,
+    "name": "nested_window_rolling_rank",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,oid,amount,AVG(CAST(amount AS DOUBLE)) OVER(PARTITION BY cid ORDER BY day,oid ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) ma FROM oo),\nb AS (SELECT cid,oid,ma,ROW_NUMBER() OVER(PARTITION BY cid ORDER BY ma DESC,oid) rn FROM a)\nSELECT COUNT(*),SUM(ma) FROM b WHERE rn<=2",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 24,
+    "name": "window_differencing_volatility",
+    "category": "time_series",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT day,SUM(amount) rev FROM oo GROUP BY day),b AS (SELECT day,rev-LAG(rev) OVER(ORDER BY day) delta FROM a),\nc AS (SELECT day,delta,AVG(CAST(delta AS DOUBLE)) OVER(ORDER BY day ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) trend FROM b)\nSELECT COUNT(delta),SUM(delta),VAR_POP(delta),SUM(trend) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 25,
+    "name": "ntile_cross_segment",
+    "category": "window_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.cid,SUM(o.amount) rev FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier,o.cid),\nb AS (SELECT tier,cid,rev,NTILE(2) OVER(PARTITION BY tier ORDER BY rev,cid) bucket FROM a),\nc AS (SELECT tier,bucket,COUNT(*) n,AVG(CAST(rev AS DOUBLE)) rev FROM b GROUP BY tier,bucket)\nSELECT COUNT(*),SUM(n),SUM(rev) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 26,
+    "name": "cohort_age_retention",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.signup,e.day-c.signup age,COUNT(DISTINCT e.cid) active FROM ee e JOIN scope c ON e.cid=c.cid GROUP BY c.signup,e.day-c.signup),\nb AS (SELECT signup,COUNT(*) n FROM scope GROUP BY signup)\nSELECT COUNT(*),SUM(active),SUM(active*CAST(1.0 AS DOUBLE)/n) FROM a JOIN b ON a.signup=b.signup",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 27,
+    "name": "rolling_retention_any_later",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,MIN(day) first_day FROM ee GROUP BY cid)\nSELECT COUNT(*),SUM(CASE WHEN EXISTS(SELECT 1 FROM ee e WHERE e.cid=a.cid AND e.day>=a.first_day+2) THEN 1 ELSE 0 END) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 28,
+    "name": "exact_day_retention",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,MIN(day) first_day FROM ee GROUP BY cid),b AS (SELECT DISTINCT cid,day FROM ee)\nSELECT COUNT(*),SUM(CASE WHEN b.cid IS NOT NULL THEN 1 ELSE 0 END) FROM a LEFT JOIN b ON a.cid=b.cid AND b.day=a.first_day+2",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 29,
+    "name": "consecutive_activity_islands",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT DISTINCT cid,day FROM ee),b AS (SELECT cid,day,day-ROW_NUMBER() OVER(PARTITION BY cid ORDER BY day) island FROM a),\nc AS (SELECT cid,island,COUNT(*) streak FROM b GROUP BY cid,island)\nSELECT COUNT(*),MAX(streak),SUM(CASE WHEN streak>=2 THEN 1 ELSE 0 END) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 30,
+    "name": "churn_inactivity_threshold",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,MAX(day) last_day FROM ee GROUP BY cid)\nSELECT COUNT(*),SUM(CASE WHEN 12-COALESCE(a.last_day,0)>2 THEN 1 ELSE 0 END),SUM(12-COALESCE(a.last_day,0)) FROM scope c LEFT JOIN a ON c.cid=a.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 31,
+    "name": "reactivation_after_gap",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,eid,day,LAG(day) OVER(PARTITION BY cid ORDER BY day,eid) prev FROM ee),b AS (SELECT cid,COUNT(*) n FROM a WHERE day-prev>2 GROUP BY cid)\nSELECT COUNT(*),SUM(n),MAX(n) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 32,
+    "name": "retention_revenue_weighted",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,SUM(amount) revenue FROM oo GROUP BY cid),b AS (SELECT cid,COUNT(DISTINCT day) active_days FROM ee GROUP BY cid)\nSELECT COUNT(*),SUM(a.revenue*b.active_days)/NULLIF(SUM(a.revenue),0),SUM(CASE WHEN b.active_days>=2 THEN a.revenue ELSE 0 END) FROM a JOIN b ON a.cid=b.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 33,
+    "name": "cohort_survival_hazard",
+    "category": "cohort_retention",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.cid,c.signup,COALESCE(MAX(e.day),0) last_day FROM scope c LEFT JOIN ee e ON c.cid=e.cid GROUP BY c.cid,c.signup),\nb AS (SELECT signup,COUNT(*) n,SUM(CASE WHEN last_day<12-2 THEN 1 ELSE 0 END) churn FROM a GROUP BY signup)\nSELECT COUNT(*),SUM(churn),SUM(churn*CAST(1.0 AS DOUBLE)/NULLIF(n,0)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 34,
+    "name": "ordered_three_stage_funnel",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT v.cid,MIN(v.day) start_day FROM ee v WHERE v.kind=0 GROUP BY v.cid),\nb AS (SELECT a.cid,a.start_day,MIN(e.day) cart_day FROM a JOIN ee e ON a.cid=e.cid AND e.kind=1 AND e.day>=a.start_day GROUP BY a.cid,a.start_day),\nc AS (SELECT b.cid,MIN(e.day) purchase_day FROM b JOIN ee e ON b.cid=e.cid AND e.kind=3 AND e.day>=b.cart_day AND e.day<=b.start_day+2 GROUP BY b.cid)\nSELECT (SELECT COUNT(*) FROM a),(SELECT COUNT(*) FROM b),(SELECT COUNT(*) FROM c)",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 35,
+    "name": "same_session_conversion",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,session_id,MIN(CASE WHEN kind=0 THEN day END) viewed,MIN(CASE WHEN kind=1 THEN day END) carted,MAX(CASE WHEN kind=3 THEN day END) purchased FROM ee GROUP BY cid,session_id)\nSELECT COUNT(*),SUM(CASE WHEN viewed IS NOT NULL AND purchased>=viewed THEN 1 ELSE 0 END),SUM(CASE WHEN carted IS NOT NULL AND purchased>=carted THEN 1 ELSE 0 END) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 36,
+    "name": "time_to_conversion_quantiles",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,MIN(CASE WHEN kind=0 THEN day END) viewed,MAX(CASE WHEN kind=3 THEN day END) purchased FROM ee GROUP BY cid),\nb AS (SELECT cid,purchased-viewed delta FROM a WHERE purchased>=viewed),c AS (SELECT delta,ROW_NUMBER() OVER(ORDER BY delta,cid) rn,COUNT(*) OVER() n FROM b)\nSELECT COUNT(*),AVG(CAST(delta AS DOUBLE)),AVG(CAST(CASE WHEN rn IN(FLOOR((n+1)/2),FLOOR((n+2)/2)) THEN delta END AS DOUBLE)) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 37,
+    "name": "last_touch_order_attribution",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT o.oid,o.amount,e.kind,e.eid,ROW_NUMBER() OVER(PARTITION BY o.oid ORDER BY e.day DESC,e.eid DESC) rn FROM oo o JOIN ee e ON o.cid=e.cid AND e.day<=o.day AND e.day>=o.day-2)\nSELECT COUNT(*),SUM(kind),SUM(amount) FROM a WHERE rn=1",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 38,
+    "name": "linear_multitouch_attribution",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT o.oid,o.amount,e.kind,COUNT(*) OVER(PARTITION BY o.oid) touches FROM oo o JOIN ee e ON o.cid=e.cid AND e.day<=o.day AND e.day>=o.day-2),b AS (SELECT kind,SUM(amount/touches) revenue FROM a GROUP BY kind)\nSELECT COUNT(*),SUM(revenue),MAX(revenue) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 39,
+    "name": "decay_multitouch_attribution",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT o.oid,o.amount,e.kind,EXP(-CAST(0.01 AS DOUBLE)*(o.day-e.day)) w FROM oo o JOIN ee e ON o.cid=e.cid AND e.day<=o.day AND e.day>=o.day-2),\nb AS (SELECT oid,amount,kind,w,SUM(w) OVER(PARTITION BY oid) total_w FROM a),c AS (SELECT kind,SUM(amount*w/total_w) revenue FROM b GROUP BY kind)\nSELECT COUNT(*),SUM(revenue),MAX(revenue) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 40,
+    "name": "funnel_dropout_segments",
+    "category": "funnel_attribution",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,e.cid,MAX(CASE WHEN e.kind=0 THEN 1 ELSE 0 END) viewed,MAX(CASE WHEN e.kind=3 THEN 1 ELSE 0 END) purchased FROM ee e JOIN scope c ON e.cid=c.cid GROUP BY c.tier,e.cid),\nb AS (SELECT tier,SUM(viewed) visits,SUM(CASE WHEN viewed=1 AND purchased=0 THEN 1 ELSE 0 END) dropouts FROM a GROUP BY tier)\nSELECT COUNT(*),SUM(dropouts),SUM(dropouts*CAST(1.0 AS DOUBLE)/NULLIF(visits,0)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 41,
+    "name": "ols_regression_sufficient_stats",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) x,SUM(amount) y FROM oo GROUP BY cid),b AS (SELECT COUNT(*) n,SUM(x) sx,SUM(y) sy,SUM(x*x) sxx,SUM(x*y) sxy FROM a)\nSELECT n,(n*sxy-sx*sy)/NULLIF(n*sxx-sx*sx,0),(sy-((n*sxy-sx*sy)/NULLIF(n*sxx-sx*sx,0))*sx)/NULLIF(n,0) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 42,
+    "name": "regression_residual_distribution",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) x,SUM(amount) y FROM oo GROUP BY cid),b AS (SELECT AVG(CAST(x AS DOUBLE)) mx,AVG(CAST(y AS DOUBLE)) my,AVG(CAST(x*y AS DOUBLE))-AVG(CAST(x AS DOUBLE))*AVG(CAST(y AS DOUBLE)) cov,VAR_POP(x) vx FROM a),\nc AS (SELECT a.cid,a.y-(b.my+(a.x-b.mx)*b.cov/NULLIF(b.vx,0)) residual FROM a CROSS JOIN b)\nSELECT COUNT(*),SUM(residual),AVG(CAST(residual*residual AS DOUBLE)),MAX(ABS(residual)) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 43,
+    "name": "pooled_vs_within_variance",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.amount x FROM oo o JOIN scope c ON o.cid=c.cid),b AS (SELECT tier,AVG(CAST(x AS DOUBLE)) mean,VAR_POP(x) variance,COUNT(*) n FROM a GROUP BY tier)\nSELECT (SELECT VAR_POP(x) FROM a),SUM(variance*n)/NULLIF(SUM(n),0),SUM(n*mean)/NULLIF(SUM(n),0) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 44,
+    "name": "welch_segment_t_statistic",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,AVG(CAST(o.amount AS DOUBLE)) mean,VAR_SAMP(o.amount) variance,COUNT(*) n FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier)\nSELECT (a.mean-b.mean)/NULLIF(SQRT(a.variance/a.n+b.variance/b.n),0),a.n,b.n FROM a JOIN a b ON a.tier=0 AND b.tier=1",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 45,
+    "name": "bernoulli_wilson_interval",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT COUNT(*) n,SUM(CASE WHEN cancelled=0 THEN 1 ELSE 0 END) x FROM oo),b AS (SELECT n,x,x*CAST(1.0 AS DOUBLE)/NULLIF(n,0) p FROM a)\nSELECT n,p,(p+CAST(1.9208 AS DOUBLE)/NULLIF(n,0)-CAST(1.96 AS DOUBLE)*SQRT(p*(1-p)/NULLIF(n,0)+CAST(0.9604 AS DOUBLE)/NULLIF(n*n,0)))/(1+CAST(3.8416 AS DOUBLE)/NULLIF(n,0)),(p+CAST(1.9208 AS DOUBLE)/NULLIF(n,0)+CAST(1.96 AS DOUBLE)*SQRT(p*(1-p)/NULLIF(n,0)+CAST(0.9604 AS DOUBLE)/NULLIF(n*n,0)))/(1+CAST(3.8416 AS DOUBLE)/NULLIF(n,0)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 46,
+    "name": "empirical_entropy_of_channels",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT channel,COUNT(*) n FROM oo GROUP BY channel),b AS (SELECT channel,n,n*CAST(1.0 AS DOUBLE)/SUM(n) OVER() p FROM a)\nSELECT COUNT(*),-SUM(p*LN(p)),SUM(p*p) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 47,
+    "name": "mutual_information_tier_channel",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.channel,COUNT(*) n FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier,o.channel),\nb AS (SELECT tier,channel,n,SUM(n) OVER() total,SUM(n) OVER(PARTITION BY tier) nt,SUM(n) OVER(PARTITION BY channel) nc FROM a)\nSELECT COUNT(*),SUM(n*CAST(1.0 AS DOUBLE)/total*LN(n*CAST(1.0 AS DOUBLE)*total/(nt*nc))) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 48,
+    "name": "observed_cell_chi_square_statistic",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.channel,COUNT(*) n FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier,o.channel),\nb AS (SELECT tier,channel,n,SUM(n) OVER() total,SUM(n) OVER(PARTITION BY tier) nt,SUM(n) OVER(PARTITION BY channel) nc FROM a),c AS (SELECT n,nt*CAST(1.0 AS DOUBLE)*nc/total expected FROM b)\nSELECT COUNT(*),SUM((n-expected)*(n-expected)/NULLIF(expected,0)) FROM c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 49,
+    "name": "ordinal_rank_correlation",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) frequency,SUM(amount) revenue FROM oo GROUP BY cid),b AS (SELECT cid,RANK() OVER(ORDER BY frequency,cid) x,RANK() OVER(ORDER BY revenue,cid) y FROM a)\nSELECT COUNT(*),(AVG(CAST(x*y AS DOUBLE))-AVG(CAST(x AS DOUBLE))*AVG(CAST(y AS DOUBLE)))/NULLIF(SQRT(VAR_POP(x)*VAR_POP(y)),0) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 50,
+    "name": "histogram_population_stability",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT FLOOR(amount/100) bucket,SUM(CASE WHEN day<0+2 THEN 1 ELSE 0 END) early,SUM(CASE WHEN day>=0+2 THEN 1 ELSE 0 END) late FROM oo GROUP BY FLOOR(amount/100)),\nb AS (SELECT bucket,(early+CAST(1.0 AS DOUBLE))/(SUM(early) OVER()+COUNT(*) OVER()) p,(late+CAST(1.0 AS DOUBLE))/(SUM(late) OVER()+COUNT(*) OVER()) q FROM a)\nSELECT COUNT(*),SUM((p-q)*LN(p/q)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 51,
+    "name": "customer_winsorized_revenue",
+    "category": "feature_engineering",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,SUM(amount) revenue FROM oo GROUP BY cid),b AS (SELECT cid,revenue,ROW_NUMBER() OVER(ORDER BY revenue,cid) rn,COUNT(*) OVER() n FROM a),\nc AS (SELECT MIN(CASE WHEN rn>=CEIL(n*CAST(0.1 AS DOUBLE)) THEN revenue END) lo,MAX(CASE WHEN rn<=FLOOR(n*CAST(0.9 AS DOUBLE)) THEN revenue END) hi FROM b)\nSELECT COUNT(*),AVG(CAST(CASE WHEN b.revenue<c.lo THEN c.lo WHEN b.revenue>c.hi THEN c.hi ELSE b.revenue END AS DOUBLE)) FROM b CROSS JOIN c",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 52,
+    "name": "customer_median_absolute_deviation",
+    "category": "feature_engineering",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,SUM(amount) rev FROM oo GROUP BY cid),b AS (SELECT cid,rev,ROW_NUMBER() OVER(ORDER BY rev,cid) rn,COUNT(*) OVER() n FROM a),\nc AS (SELECT AVG(CAST(rev AS DOUBLE)) median FROM b WHERE rn IN(FLOOR((n+1)/2),FLOOR((n+2)/2))),d AS (SELECT cid,ABS(rev-median) dev FROM a CROSS JOIN c),\ne AS (SELECT dev,ROW_NUMBER() OVER(ORDER BY dev,cid) rn,COUNT(*) OVER() n FROM d)\nSELECT COUNT(*),AVG(CAST(CASE WHEN rn IN(FLOOR((n+1)/2),FLOOR((n+2)/2)) THEN dev END AS DOUBLE)),SUM(dev) FROM e",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 53,
+    "name": "cross_feature_normalization",
+    "category": "feature_engineering",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) frequency,SUM(amount) revenue FROM oo GROUP BY cid),b AS (SELECT cid,frequency,revenue,AVG(CAST(revenue AS DOUBLE)) OVER() mean,STDDEV_POP(revenue) OVER() sd FROM a)\nSELECT COUNT(*),SUM((revenue-mean)/NULLIF(sd,0)*LN(frequency+1)),AVG(CAST((revenue-mean)*(revenue-mean)/NULLIF(sd*sd,0) AS DOUBLE)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 54,
+    "name": "missing_credit_tier_imputation",
+    "category": "feature_engineering",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT tier,AVG(CAST(credit AS DOUBLE)) mean FROM scope GROUP BY tier),b AS (SELECT c.cid,c.credit,COALESCE(c.credit,a.mean) imputed FROM scope c LEFT JOIN a ON c.tier=a.tier)\nSELECT COUNT(*),COUNT(credit),SUM(imputed),VAR_POP(imputed) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 55,
+    "name": "leave_one_out_customer_encoding",
+    "category": "feature_engineering",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,o.oid,o.cancelled,SUM(1-o.cancelled) OVER(PARTITION BY c.tier) s,COUNT(*) OVER(PARTITION BY c.tier) n FROM oo o JOIN scope c ON o.cid=c.cid)\nSELECT COUNT(*),SUM((s-(1-cancelled)+CAST(0.01 AS DOUBLE))/(n-1+2*CAST(0.01 AS DOUBLE))),MIN(n) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 56,
+    "name": "two_hop_neighbor_revenue",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT DISTINCT e2.dst cid FROM scope c JOIN edges e1 ON c.cid=e1.src JOIN edges e2 ON e1.dst=e2.src),b AS (SELECT o.cid,SUM(o.amount) rev FROM orders o JOIN a ON o.cid=a.cid WHERE o.day>=0 AND o.day<12 GROUP BY o.cid)\nSELECT COUNT(*),SUM(rev),MAX(rev) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 57,
+    "name": "triangle_motif_count",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(e1.weight*e2.weight*e3.weight) FROM scope c JOIN edges e1 ON c.cid=e1.src JOIN edges e2 ON e1.dst=e2.src JOIN edges e3 ON e2.dst=e3.src AND e3.dst=c.cid WHERE e1.src<e1.dst AND e1.src<e2.dst",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 58,
+    "name": "mutual_edges_weight",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(a.weight*b.weight) FROM scope c JOIN edges a ON c.cid=a.src JOIN edges b ON a.dst=b.src AND b.dst=a.src WHERE a.src<a.dst",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 59,
+    "name": "common_neighbor_similarity",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT e1.src s1,e2.src s2,COUNT(DISTINCT e1.dst) shared FROM edges e1 JOIN edges e2 ON e1.dst=e2.dst AND e1.src<e2.src JOIN scope c ON e1.src=c.cid GROUP BY e1.src,e2.src)\nSELECT COUNT(*),SUM(shared),MAX(shared) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 60,
+    "name": "weighted_neighbor_credit",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.cid,SUM(n.credit*e.weight)/NULLIF(SUM(CASE WHEN n.credit IS NOT NULL THEN e.weight ELSE 0 END),0) weighted FROM scope c JOIN edges e ON c.cid=e.src JOIN customers n ON e.dst=n.cid GROUP BY c.cid)\nSELECT COUNT(*),SUM(weighted),VAR_POP(weighted) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 61,
+    "name": "three_hop_path_weight",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(e1.weight*e2.weight*e3.weight) FROM scope c JOIN edges e1 ON c.cid=e1.src JOIN edges e2 ON e1.dst=e2.src JOIN edges e3 ON e2.dst=e3.src WHERE e1.dst<>c.cid AND e2.dst<>c.cid AND e3.dst<>c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 62,
+    "name": "in_out_degree_rank",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT src cid,COUNT(*) d FROM edges GROUP BY src),b AS (SELECT dst cid,COUNT(*) d FROM edges GROUP BY dst),\nd AS (SELECT c.cid,COALESCE(a.d,0) outd,COALESCE(b.d,0) ind FROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid),\ne AS (SELECT cid,ind,outd,DENSE_RANK() OVER(ORDER BY ind DESC) r FROM d)\nSELECT COUNT(*),SUM(ind),SUM(outd),SUM(r) FROM e",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 63,
+    "name": "recursive_bounded_reachability",
+    "category": "graph_analytics",
+    "sql_parameter_0": "WITH RECURSIVE roots AS (SELECT cid FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\nwalk AS (SELECT cid root,cid node,0 depth FROM roots UNION ALL SELECT w.root,e.dst,w.depth+1 FROM walk w JOIN edges e ON w.node=e.src WHERE w.depth<3)\nSELECT COUNT(*),COUNT(DISTINCT node),SUM(depth) FROM walk",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 64,
+    "name": "correlated_topk_orders",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<2",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 65,
+    "name": "correlated_above_peer_average",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(o.amount),AVG(CAST(o.amount AS DOUBLE)) FROM oo o WHERE o.amount>(SELECT AVG(CAST(x.amount AS DOUBLE)) FROM oo x WHERE x.channel=o.channel)",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 66,
+    "name": "not_exists_double_negation",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT COUNT(*),SUM(c.credit) FROM scope c WHERE NOT EXISTS(SELECT 1 FROM oo o WHERE o.cid=c.cid AND NOT EXISTS(SELECT 1 FROM payments p WHERE p.oid=o.oid AND p.success=1))",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 67,
+    "name": "active_buyers_intersection",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid FROM ee INTERSECT SELECT cid FROM oo)\nSELECT COUNT(*),SUM(c.credit) FROM a JOIN scope c ON a.cid=c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 68,
+    "name": "visitors_without_buyers_except",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid FROM ee EXCEPT SELECT cid FROM oo)\nSELECT COUNT(*),SUM(c.credit) FROM a JOIN scope c ON a.cid=c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 69,
+    "name": "union_all_multisource_weight",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,amount v FROM oo UNION ALL SELECT cid,ABS(value) v FROM ee),b AS (SELECT cid,SUM(v) v,COUNT(*) n FROM a GROUP BY cid)\nSELECT COUNT(*),SUM(v),SUM(v/NULLIF(n,0)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 70,
+    "name": "full_outer_fact_reconciliation",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) n FROM oo GROUP BY cid),b AS (SELECT cid,COUNT(*) n FROM ee GROUP BY cid)\nSELECT COUNT(*),SUM(COALESCE(a.n,0)),SUM(COALESCE(b.n,0)),SUM(CASE WHEN a.cid IS NULL OR b.cid IS NULL THEN 1 ELSE 0 END) FROM a FULL OUTER JOIN b ON a.cid=b.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 71,
+    "name": "cte_self_join_aggregate",
+    "category": "subqueries_sets",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,channel,SUM(amount) v FROM oo GROUP BY cid,channel)\nSELECT COUNT(*),SUM(a.v*b.v),AVG(CAST(a.v-b.v AS DOUBLE)) FROM a JOIN a b ON a.cid=b.cid AND a.channel<b.channel",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 72,
+    "name": "multi_dimensional_rollup",
+    "category": "advanced_grouping",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT tier,channel,COUNT(*) n,SUM(amount) v FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY ROLLUP(tier,channel) ORDER BY COALESCE(tier,-1),COALESCE(channel,-1)",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 73,
+    "name": "grouping_sets_sales_cube",
+    "category": "advanced_grouping",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT tier,channel,COUNT(*) n,SUM(amount) v FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY GROUPING SETS((tier,channel),(tier),(channel),()) ORDER BY COALESCE(tier,-1),COALESCE(channel,-1)",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 74,
+    "name": "ordered_percentile_cont",
+    "category": "advanced_grouping",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12) SELECT channel,COUNT(*),PERCENTILE_CONT(CAST(0.9 AS DOUBLE)) WITHIN GROUP(ORDER BY amount),PERCENTILE_CONT(CAST(0.5 AS DOUBLE)) WITHIN GROUP(ORDER BY amount) FROM oo GROUP BY channel ORDER BY channel",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 75,
+    "name": "median_by_manual_order_statistics",
+    "category": "advanced_grouping",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT channel,amount,ROW_NUMBER() OVER(PARTITION BY channel ORDER BY amount,oid) rn,COUNT(*) OVER(PARTITION BY channel) n FROM oo)\nSELECT channel,AVG(CAST(amount AS DOUBLE)) FROM a WHERE rn IN(FLOOR((n+1)/2),FLOOR((n+2)/2)) GROUP BY channel ORDER BY channel",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 76,
+    "name": "payment_delay_asof_candidates",
+    "category": "temporal_joins",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT o.oid,o.amount,p.day-o.day delay,p.payid,ROW_NUMBER() OVER(PARTITION BY o.oid ORDER BY p.day,p.payid) rn FROM oo o JOIN payments p ON o.oid=p.oid AND p.success=1 AND p.day>=o.day)\nSELECT COUNT(*),AVG(CAST(delay AS DOUBLE)),SUM(amount*delay) FROM a WHERE rn=1",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 77,
+    "name": "interval_event_purchase_join",
+    "category": "temporal_joins",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT e.cid,e.eid,COUNT(o.oid) purchases,SUM(o.amount) rev FROM ee e LEFT JOIN oo o ON e.cid=o.cid AND o.day BETWEEN e.day AND e.day+2 GROUP BY e.cid,e.eid)\nSELECT COUNT(*),SUM(purchases),SUM(rev),MAX(purchases) FROM a",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 78,
+    "name": "logistic_probability_cross_features",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) frequency,AVG(CAST(amount AS DOUBLE)) avg_amount FROM oo GROUP BY cid),\nb AS (SELECT c.cid,CAST(1.0 AS DOUBLE)/(1+EXP(-(CAST(0.01 AS DOUBLE)*COALESCE(a.frequency,0)+COALESCE(a.avg_amount,0)/1000-c.tier))) p FROM scope c LEFT JOIN a ON c.cid=a.cid)\nSELECT COUNT(*),SUM(p),SUM(p*(1-p)),SUM(CASE WHEN p>CAST(0.5 AS DOUBLE) THEN 1 ELSE 0 END) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 79,
+    "name": "huber_loss_with_segment_baseline",
+    "category": "statistical_models",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT c.tier,AVG(CAST(o.amount AS DOUBLE)) mean FROM oo o JOIN scope c ON o.cid=c.cid GROUP BY c.tier),b AS (SELECT o.oid,o.amount-a.mean residual FROM oo o JOIN scope c ON o.cid=c.cid JOIN a ON c.tier=a.tier)\nSELECT COUNT(*),SUM(CASE WHEN ABS(residual)<=CAST(100.0 AS DOUBLE) THEN residual*residual/2 ELSE CAST(100.0 AS DOUBLE)*(ABS(residual)-CAST(100.0 AS DOUBLE)/2) END),MAX(ABS(residual)) FROM b",
+    "parameter_count": 1000,
+    "compute_scope": "MO SQL only"
+  },
+  {
+    "family": 80,
+    "name": "covariance_eigenvalues",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 81,
+    "name": "correlation_matrix",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 82,
+    "name": "pca_explained_variance",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 83,
+    "name": "svd_spectrum",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 84,
+    "name": "truncated_svd_error",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 85,
+    "name": "qr_orthogonality",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 86,
+    "name": "ols_coefficients",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 87,
+    "name": "ridge_coefficients",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 88,
+    "name": "weighted_least_squares",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 89,
+    "name": "huber_irls",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 90,
+    "name": "logistic_irls",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 91,
+    "name": "kmeans_centroids",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 92,
+    "name": "pairwise_cosine_distribution",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 93,
+    "name": "mahalanobis_distance",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 94,
+    "name": "fft_activity_power",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 95,
+    "name": "convolution_activity",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 96,
+    "name": "bootstrap_mean_interval",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 97,
+    "name": "quantile_scaling",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 98,
+    "name": "gaussian_kernel_mmd",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  },
+  {
+    "family": 99,
+    "name": "feature_missingness_imputation",
+    "category": "client_numerical_ml",
+    "sql_parameter_0": "WITH scope AS (SELECT * FROM customers WHERE cid>=1 AND cid<51 AND region<>0),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=0 AND o.day<12),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=0 AND e.day<12), a AS (SELECT cid,COUNT(*) orders,SUM(amount) revenue,AVG(CAST(amount-cost AS DOUBLE)) margin,STDDEV_POP(amount) volatility FROM oo WHERE cancelled=0 GROUP BY cid),\nb AS (SELECT cid,COUNT(*) events,COUNT(DISTINCT day) active_days,AVG(CAST(value AS DOUBLE)) activity FROM ee GROUP BY cid)\nSELECT c.cid,c.tier,c.credit,COALESCE(a.orders,0),COALESCE(a.revenue,0),COALESCE(a.volatility,0),COALESCE(b.events,0),COALESCE(b.active_days,0),COALESCE(b.activity,0),COALESCE(a.margin,0)\nFROM scope c LEFT JOIN a ON c.cid=a.cid LEFT JOIN b ON c.cid=b.cid ORDER BY c.cid",
+    "parameter_count": 1000,
+    "compute_scope": "MO feature SQL -> NumPy numerical/ML client computation"
+  }
+]

@@ -1,0 +1,214 @@
+{
+  "passed": 200,
+  "failed": 0,
+  "native_ml": [
+    {
+      "i": 0,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 0,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 55,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 55,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 111,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 111,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 199,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 199,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 333,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 333,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 443,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 443,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 555,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 555,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 777,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 777,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 888,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 888,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 999,
+      "task": "classification",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    },
+    {
+      "i": 999,
+      "task": "forecast",
+      "status": "pass",
+      "train_entities": 40,
+      "holdout_entities": 24,
+      "pca_dimensions": 6,
+      "independent_coefficient_inference": true,
+      "serialized_pipeline_reload_exact": true
+    }
+  ],
+  "seconds": 203.81717681884766,
+  "driver_pid": 33518,
+  "worker_pids": [
+    34472,
+    34476
+  ],
+  "isolation": "READ_COMMITTED",
+  "java": "/workspace/cache/jre17"
+}

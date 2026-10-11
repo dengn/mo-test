@@ -1,0 +1,526 @@
+{
+  "created_at": "2026-10-11T08:27:00.638451+08:00",
+  "canonical_cases": 100000,
+  "case_id_integrity": "complete, unique, contiguous [0,99999]",
+  "statuses": {
+    "pass": 97000,
+    "sql_or_client_error": 2000,
+    "pipeline_error": 1000
+  },
+  "tools": {
+    "pandas": {
+      "cases": 49000,
+      "statuses": {
+        "pass": 48000,
+        "sql_or_client_error": 1000
+      },
+      "passed_query_latency": {
+        "p50_ms": 8.327402500071912,
+        "p95_ms": 20.816072450179483,
+        "p99_ms": 35.523550830357664
+      }
+    },
+    "numpy": {
+      "cases": 49000,
+      "statuses": {
+        "pass": 48000,
+        "sql_or_client_error": 1000
+      },
+      "passed_query_latency": {
+        "p50_ms": 4.629949999980454,
+        "p95_ms": 13.763371749655562,
+        "p99_ms": 25.02581442037809
+      }
+    },
+    "spark": {
+      "cases": 1000,
+      "statuses": {
+        "pipeline_error": 1000
+      },
+      "passed_query_latency": {}
+    },
+    "flink": {
+      "cases": 1000,
+      "statuses": {
+        "pass": 1000
+      },
+      "passed_query_latency": {}
+    }
+  },
+  "core_metadata": {
+    "seed": 20261011,
+    "mo_version": "8.0.30-MatrixOne-v",
+    "workers": 8,
+    "planned": 98000,
+    "oracle_seconds": 8.180644273757935,
+    "families": 49,
+    "parameters_per_family": 1000,
+    "binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+    "versions": {
+      "pandas": "2.2.3",
+      "numpy": "2.1.3",
+      "sqlalchemy": "2.0.43",
+      "pymysql": "1.2.0"
+    },
+    "cpu_quota": "400000 100000",
+    "memory_limit": "17179869184",
+    "timing_scope": "client SQL execution plus result fetch (pandas includes DataFrame conversion); oracle generation excluded",
+    "execution_seconds": 110.11481404304504,
+    "completed_at": 1791677897.071703
+  },
+  "binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "spark_read_committed": {
+    "pass": 1000
+  },
+  "benchmark": {
+    "rows": 1048576,
+    "load_seconds": 2.384185791015625e-07,
+    "summary": [
+      {
+        "concurrency": 1,
+        "measured": 512,
+        "warmup": 2,
+        "measured_wall_seconds": 8.983401775360107,
+        "measured_qps": 56.99399991263065,
+        "p50_ms": 18.43214100017576,
+        "p95_ms": 31.63777209970248,
+        "p99_ms": 39.80559872027697
+      },
+      {
+        "concurrency": 2,
+        "measured": 512,
+        "warmup": 4,
+        "measured_wall_seconds": 6.653742790222168,
+        "measured_qps": 76.94917223917884,
+        "p50_ms": 25.29520500002036,
+        "p95_ms": 42.945447249940116,
+        "p99_ms": 61.983262370067656
+      },
+      {
+        "concurrency": 4,
+        "measured": 512,
+        "warmup": 8,
+        "measured_wall_seconds": 6.168902397155762,
+        "measured_qps": 82.99693641385267,
+        "p50_ms": 47.690110000530694,
+        "p95_ms": 88.39737035023063,
+        "p99_ms": 108.73886275008763
+      },
+      {
+        "concurrency": 8,
+        "measured": 512,
+        "warmup": 16,
+        "measured_wall_seconds": 6.8063805103302,
+        "measured_qps": 75.2235346265061,
+        "p50_ms": 100.62164950022634,
+        "p95_ms": 208.96036530025404,
+        "p99_ms": 289.207362559673
+      }
+    ],
+    "scope": "isolated single-node MO client query+fetch time, three mixed workloads; two warmups per worker, no JVM engines running"
+  },
+  "soak": {
+    "requested_seconds": 120,
+    "elapsed_seconds": 120.07737731933594,
+    "concurrency": 8,
+    "workers": [
+      {
+        "worker": 0,
+        "committed_cycles": 7142,
+        "errors": [],
+        "cycle_p50_ms": 15.018557499843155,
+        "cycle_p95_ms": 30.685891950543006
+      },
+      {
+        "worker": 1,
+        "committed_cycles": 7190,
+        "errors": [],
+        "cycle_p50_ms": 15.030281000690593,
+        "cycle_p95_ms": 29.764667299514247
+      },
+      {
+        "worker": 2,
+        "committed_cycles": 7220,
+        "errors": [],
+        "cycle_p50_ms": 14.933381999981066,
+        "cycle_p95_ms": 29.727087349465364
+      },
+      {
+        "worker": 3,
+        "committed_cycles": 7186,
+        "errors": [],
+        "cycle_p50_ms": 14.906137499565375,
+        "cycle_p95_ms": 29.85248400045748
+      },
+      {
+        "worker": 4,
+        "committed_cycles": 7221,
+        "errors": [],
+        "cycle_p50_ms": 14.880622000418953,
+        "cycle_p95_ms": 30.06757299954188
+      },
+      {
+        "worker": 5,
+        "committed_cycles": 7206,
+        "errors": [],
+        "cycle_p50_ms": 14.976543499869877,
+        "cycle_p95_ms": 29.743435000000318
+      },
+      {
+        "worker": 6,
+        "committed_cycles": 7166,
+        "errors": [],
+        "cycle_p50_ms": 14.892179000526085,
+        "cycle_p95_ms": 30.80077275012627
+      },
+      {
+        "worker": 7,
+        "committed_cycles": 7226,
+        "errors": [],
+        "cycle_p50_ms": 14.911325499724626,
+        "cycle_p95_ms": 29.556110249814083
+      }
+    ],
+    "final_rows": [
+      [
+        0,
+        7142
+      ],
+      [
+        1,
+        7190
+      ],
+      [
+        2,
+        7220
+      ],
+      [
+        3,
+        7186
+      ],
+      [
+        4,
+        7221
+      ],
+      [
+        5,
+        7206
+      ],
+      [
+        6,
+        7166
+      ],
+      [
+        7,
+        7226
+      ]
+    ],
+    "cycles": 57557,
+    "counter_verification": true,
+    "scope": "8 independent rows, commit/rollback/readback; does not establish hot-row conflict handling or long-term reliability"
+  },
+  "health": {
+    "samples": 48,
+    "ping_errors": 0,
+    "observed_pids": [
+      1384
+    ],
+    "rss_peak_mib": 1180.09375,
+    "first_time": 1791677786.9594617,
+    "last_time": 1791678141.0026116,
+    "first_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "last_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "coverage": "samples every 5 seconds during core and supplemental runs; connector runs not continuously sampled"
+  },
+  "supplemental_types": [
+    {
+      "name": "pandas_full_dataframe_roundtrip",
+      "status": "pass",
+      "detail": {
+        "rows": 8192,
+        "types": {
+          "id": "int64",
+          "g": "int64",
+          "x": "float64",
+          "y": "float64",
+          "nx": "float64",
+          "k": "int64",
+          "txt": "object",
+          "ts": "datetime64[ns]",
+          "js": "object"
+        }
+      }
+    },
+    {
+      "name": "pandas_decimal38_exact_roundtrip",
+      "status": "pass",
+      "detail": {
+        "rows": 4,
+        "coerce_float": false
+      }
+    },
+    {
+      "name": "integer_unicode_binary_datetime_boundaries",
+      "status": "pass",
+      "detail": {
+        "rows": 3,
+        "covers": [
+          "int64_min",
+          "int64_max",
+          "uint64_max",
+          "unicode",
+          "nul_byte",
+          "binary",
+          "leap_date",
+          "NULL"
+        ]
+      }
+    },
+    {
+      "name": "numpy_vector_l2_distance",
+      "status": "pass",
+      "detail": {
+        "rows": 32,
+        "dimensions": 8
+      }
+    },
+    {
+      "name": "numpy_vector_cosine_distance",
+      "status": "pass",
+      "detail": {
+        "rows": 32,
+        "dimensions": 8
+      }
+    },
+    {
+      "name": "numpy_vector_inner_product",
+      "status": "failure",
+      "error": "\nNot equal to tolerance rtol=1e-07, atol=1e-07\n\nMismatched elements: 32 / 32 (100%)\nMax absolute difference among violations: 19.53295862\nMax relative difference among violations: 2.00000004\n ACTUAL: array([ 0.938661,  0.011391,  1.841006, -0.681893,  2.463355, -5.407887,\n       -0.222143, -2.198471, -0.262911,  2.205958,  9.766479,  3.745247,\n       -1.165009, -0.360997, -0.851914,  0.436996, -2.27983 ,  2.360219,...\n DESIRED: array([-0.938661, -0.011391, -1.841006,  0.681893, -2.463355,  5.407886,\n        0.222143,  2.198471,  0.262911, -2.205958, -9.766479, -3.745247,\n        1.165009,  0.360997,  0.851914, -0.436996,  2.27983 , -2.360219,..."
+    },
+    {
+      "name": "tanh_bounded_domain_workaround",
+      "status": "pass",
+      "detail": {
+        "expression": "(EXP(2*z)-1)/(EXP(2*z)+1)",
+        "expected": 0.04126003977950583,
+        "actual": 0.041260039779505826,
+        "domain": "z=x/100, bounded test values only"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "id": "TANH",
+      "canonical_affected": 2000,
+      "kind": "unsupported SQL function",
+      "remedy": "客户端 np.tanh，或在经过验证的有界输入上使用 EXP 表达式"
+    },
+    {
+      "id": "SPARK_ISOLATION",
+      "canonical_affected": 1000,
+      "shared_failed_pipelines": 10,
+      "kind": "default JDBC write incompatibility",
+      "remedy": "isolationLevel=READ_COMMITTED; 独立补测1000例通过"
+    },
+    {
+      "id": "VECTOR_INNER_PRODUCT",
+      "canonical_affected": 0,
+      "supplemental_affected": 32,
+      "kind": "NumPy dot compatibility/semantic difference",
+      "detail": "此二进制的向量距离语义是 -dot，且输出按 float32 距离域舍入；不是在主批次发现的错误。"
+    }
+  ],
+  "scope_notes": [
+    "100000 为参数化断言，核心 98000 例逐条执行；Spark/Flink 各10 pipeline ×100 group，不是100000种算法。",
+    "通过数不是宣称完全兼容。未定义性能SLA、对照数据库或目标容量，性能仅报告观察值。",
+    "核心批次后段与初次Spark有时间重叠；百万行最终测量时核心、Spark/Flink及事务soak均已结束。首档测量初期额外执行2条向量语义复核查询，其余无额外测试负载。",
+    "120秒8线程独立行事务 soak 不能推断生产环境或长期稳定性。",
+    "旧数据目录启动失败及Flink缺JAR配置失败单独保留，不计入数据库兼容性通过/失败。"
+  ],
+  "vector_semantics": {
+    "kind": "NumPy dot semantic difference, not counted in canonical cases",
+    "simple_vectors": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6
+      ]
+    ],
+    "numpy_dot": 32,
+    "mo_inner_product": -32.0,
+    "rows": 32,
+    "negative_f32_matches": true,
+    "negated_results_match_numpy_at_f32_tolerance": true,
+    "max_absolute_error_after_negation": 3.5999283376497715e-07,
+    "values": [
+      {
+        "id": 0,
+        "numpy_dot": -0.9386608539837581,
+        "mo_inner_product": 0.9386608600616455
+      },
+      {
+        "id": 1,
+        "numpy_dot": -0.011391220454933793,
+        "mo_inner_product": 0.01139122061431408
+      },
+      {
+        "id": 2,
+        "numpy_dot": -1.8410055585503526,
+        "mo_inner_product": 1.841005563735962
+      },
+      {
+        "id": 3,
+        "numpy_dot": 0.6818934364936942,
+        "mo_inner_product": -0.6818934082984924
+      },
+      {
+        "id": 4,
+        "numpy_dot": -2.4633547351508236,
+        "mo_inner_product": 2.4633548259735107
+      },
+      {
+        "id": 5,
+        "numpy_dot": 5.407886269368211,
+        "mo_inner_product": -5.407886505126953
+      },
+      {
+        "id": 6,
+        "numpy_dot": 0.2221427919740414,
+        "mo_inner_product": -0.2221427857875824
+      },
+      {
+        "id": 7,
+        "numpy_dot": 2.1984708499107475,
+        "mo_inner_product": -2.1984708309173584
+      },
+      {
+        "id": 8,
+        "numpy_dot": 0.2629107445676233,
+        "mo_inner_product": -0.26291075348854065
+      },
+      {
+        "id": 9,
+        "numpy_dot": -2.2059581928205443,
+        "mo_inner_product": 2.205958127975464
+      },
+      {
+        "id": 10,
+        "numpy_dot": -9.766479132194666,
+        "mo_inner_product": 9.7664794921875
+      },
+      {
+        "id": 11,
+        "numpy_dot": -3.745247153379279,
+        "mo_inner_product": 3.7452471256256104
+      },
+      {
+        "id": 12,
+        "numpy_dot": 1.1650092461516532,
+        "mo_inner_product": -1.1650092601776123
+      },
+      {
+        "id": 13,
+        "numpy_dot": 0.3609967809922905,
+        "mo_inner_product": -0.3609967827796936
+      },
+      {
+        "id": 14,
+        "numpy_dot": 0.8519140534622183,
+        "mo_inner_product": -0.8519140481948853
+      },
+      {
+        "id": 15,
+        "numpy_dot": -0.43699576148777886,
+        "mo_inner_product": 0.4369957745075226
+      },
+      {
+        "id": 16,
+        "numpy_dot": 2.2798296141929297,
+        "mo_inner_product": -2.279829502105713
+      },
+      {
+        "id": 17,
+        "numpy_dot": -2.3602190628159074,
+        "mo_inner_product": 2.3602190017700195
+      },
+      {
+        "id": 18,
+        "numpy_dot": -0.11443171545423003,
+        "mo_inner_product": 0.1144317165017128
+      },
+      {
+        "id": 19,
+        "numpy_dot": 0.16157243843376845,
+        "mo_inner_product": -0.1615724414587021
+      },
+      {
+        "id": 20,
+        "numpy_dot": 3.936929357864182,
+        "mo_inner_product": -3.93692946434021
+      },
+      {
+        "id": 21,
+        "numpy_dot": -0.068624464926153,
+        "mo_inner_product": 0.06862446665763855
+      },
+      {
+        "id": 22,
+        "numpy_dot": 0.40973711241310873,
+        "mo_inner_product": -0.40973711013793945
+      },
+      {
+        "id": 23,
+        "numpy_dot": 0.22984296286071193,
+        "mo_inner_product": -0.22984296083450317
+      },
+      {
+        "id": 24,
+        "numpy_dot": 3.0238050200530937,
+        "mo_inner_product": -3.0238049030303955
+      },
+      {
+        "id": 25,
+        "numpy_dot": 2.9525390566907648,
+        "mo_inner_product": -2.9525389671325684
+      },
+      {
+        "id": 26,
+        "numpy_dot": 3.533118698431952,
+        "mo_inner_product": -3.533118724822998
+      },
+      {
+        "id": 27,
+        "numpy_dot": 0.24857299569569402,
+        "mo_inner_product": -0.24857299029827118
+      },
+      {
+        "id": 28,
+        "numpy_dot": -0.4461812199418045,
+        "mo_inner_product": 0.44618120789527893
+      },
+      {
+        "id": 29,
+        "numpy_dot": -0.8385412803923837,
+        "mo_inner_product": 0.8385412693023682
+      },
+      {
+        "id": 30,
+        "numpy_dot": 2.8322777859454513,
+        "mo_inner_product": -2.832277774810791
+      },
+      {
+        "id": 31,
+        "numpy_dot": 1.7650884250654408,
+        "mo_inner_product": -1.765088438987732
+      }
+    ],
+    "source_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "matching_source_excerpt": "func InnerProductUnrolled[T types.RealNumbers](p, q []T) (T, error) {\n\tif len(p) != len(q) {\n\t\treturn T(0), moerr.NewInternalErrorNoCtx(\"vector dimension not matched\")\n\t}\n\n\tvar sum T\n\tn := len(p)\n\ti := 0\n\n\tfor i <= n-8 {\n\t\tpp := p[i : i+8 : i+8]\n\t\tqq := q[i : i+8 : i+8]\n\n\t\tsum += pp[0]*qq[0] +\n\t\t\tpp[1]*qq[1] +\n\t\t\tpp[2]*qq[2] +\n\t\t\tpp[3]*qq[3] +\n\t\t\tpp[4]*qq[4] +\n\t\t\tpp[5]*qq[5] +\n\t\t\tpp[6]*qq[6] +\n\t\t\tpp[7]*qq[7]\n\t\ti += 8\n\t}\n\n\tfor i < n {\n\t\tsum += p[i] * q[i]\n\t\ti++\n\t}\n\n\treturn nanToPosInf(-sum), nil\n}\n\n// CosineDistanceUnrolled returns 1 - cosine similarity, dot and squared norms summed in one pass,\n// unrolled by 4, with the float64 norm recompute for subnormal/overflow norms. It finalizes through\n// cosineDistClamped (the shared cosine finalizer), so a NaN dot from block overflow maps to +Inf\n// rather than reaching ranking.\nfunc CosineDistanceUnrolled[T types.RealNumbers](p, q []T) (T, error) {\n\tif len(p) == 0 {\n\t\treturn 0, nil\n\t}\n\n\tif len(p) != len(q) {\n\t\treturn T(0), moerr.NewInternalErrorNoCtx(\"vector dimension not matched\")\n\t}\n\n\tvar (\n\t\tdotProduct T\n\t\tnormV1Sq   T\n\t\tnormV2Sq   T\n\t)\n\n\tn := len(p)\n\ti := 0\n\n\tfor i <= n-4 {\n\t\tpp := p[i : i+4 : i+4]\n\t\tqq := q[i : i+4 : i+4]\n\n\t\tdotProduct += pp[0]*qq[0] + pp[1]*qq[1] + pp[2]*qq[2] + pp[3]*qq[3]\n\t\tnormV1Sq += pp[0]*pp[0] + pp[1]*pp[1] + pp[2]*pp[2] + pp[3]*pp[3]\n\t\tnormV2Sq += qq[0]*qq[0] + qq[1]*qq[1] + qq[2]*qq[2] + qq[3]*qq[3]\n\t\ti += 4\n\t}\n\n\tfor i < n {\n\t\tdotProduct += p[i] * q[i]\n\t\tnormV1Sq += p[i] * p[i]\n\t\tnormV2Sq += q[i] * q[i]\n\t\ti++\n\t}\n\n\tdot := float64(dotProduct)\n\tdenominator := math.Sqrt(float64(normV1Sq)) * math.Sqrt(float64(normV2Sq))\n\tif !cosineNormsOK(float64(normV1Sq), float64(normV2Sq), smallestNormalOf[T]()) {\n\t\tvar normP, normQ float64\n\t\tvar ok bool\n\t\tif dot, normP, normQ, ok = cosineRecomputeF64(p, q); !ok {",
+    "reference": "https://docs.matrixorigin.cn/mo/en/v26.4.2.4/MatrixOne/Reference/Functions-and-Operators/Vector/inner_product.html"
+  }
+}

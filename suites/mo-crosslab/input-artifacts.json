@@ -1,0 +1,152 @@
+{
+  "customers.csv.gz": {
+    "rows": 1200,
+    "bytes": 9334,
+    "sha256": "75a464b77c5774046458187b2cf46cd85b533d6b47cf44ccc7fb646e10f0e97b"
+  },
+  "products.csv.gz": {
+    "rows": 80,
+    "bytes": 460,
+    "sha256": "2d9fe604277d883f748e6923c2ced8048528d47dff781e837f942bb8f608aea8"
+  },
+  "orders.csv.gz": {
+    "rows": 12000,
+    "bytes": 185092,
+    "sha256": "3d24d0c945c506fae68250745cdf8750f079c9d8da4518aba3665cf9aa9a6ac9"
+  },
+  "items.csv.gz": {
+    "rows": 36000,
+    "bytes": 197413,
+    "sha256": "b836083216ad78d9d983f06e6bfb919b0321043faac6aa9c4f20510b9eb83458"
+  },
+  "payments.csv.gz": {
+    "rows": 24000,
+    "bytes": 190957,
+    "sha256": "5e6e021f1a636aa2cb73734646661901a30afb9be7e9dd2cd0af3d8068027d71"
+  },
+  "refunds.csv.gz": {
+    "rows": 1574,
+    "bytes": 15100,
+    "sha256": "77299e33b4793ec70b3fab4cf4d3faf87af641facacf5d175c5c381c7f86faee"
+  },
+  "events.csv.gz": {
+    "rows": 47536,
+    "bytes": 894535,
+    "sha256": "4761c81013f0004086930c3dd648cdd6b2b4dcbda17ee2e18b1f1a3d9a57cbf0"
+  },
+  "edges.csv.gz": {
+    "rows": 3600,
+    "bytes": 28408,
+    "sha256": "e38f4df3527136362633a93839f8a1ac1f5a2bfbad5e2dac713fa310a919eb71"
+  },
+  "calendar.csv.gz": {
+    "rows": 96,
+    "bytes": 598,
+    "sha256": "d0fcfe1363ad619409d690360217b71323c7a4089ce65a19d482c5f2638ec0bf"
+  },
+  "market.csv.gz": {
+    "rows": 2920,
+    "bytes": 52841,
+    "sha256": "73e72f96ac0487b5cd5aba151c03bf754ce0de329756cb9b9026be36063c1290"
+  },
+  "inventory.csv.gz": {
+    "rows": 7680,
+    "bytes": 28728,
+    "sha256": "ad38113316ec6434f385883f7b63eaf871cb36d8cfe509031ed1433a1de0f68c"
+  },
+  "campaigns.csv.gz": {
+    "rows": 384,
+    "bytes": 5778,
+    "sha256": "ccd923333f1c13573d7dba906bdec0b7d0db4a934ad615590f614d9e8e4288fb"
+  },
+  "subscriptions.csv.gz": {
+    "rows": 28800,
+    "bytes": 118308,
+    "sha256": "efa125f02e7f849a61e035c467d2ea03e7c3b0ef0498e740b36e3529227b2701"
+  },
+  "targets.csv.gz": {
+    "rows": 42,
+    "bytes": 1011,
+    "sha256": "adbbc2515eb2c1b7f21a1881af90686bcfbf8ba1a475d90a82dc7d90b9f3bf90"
+  },
+  "shipments.csv.gz": {
+    "rows": 12000,
+    "bytes": 80089,
+    "sha256": "38e3dee831346ea5a9c244e5e9bf8dfe6de33b5c285ed25a990cf99502d48a26"
+  },
+  "receivables.csv.gz": {
+    "rows": 12000,
+    "bytes": 76723,
+    "sha256": "080be9b33d3147bd73899c509a2f7cdf9a25427849001c75d2c18f6297460996"
+  },
+  "ledger.csv.gz": {
+    "rows": 12705,
+    "bytes": 94715,
+    "sha256": "5c45c8972ab5f7509dd30bdc603fd1d961a58e9c6d01dcd393df83cc15f524a2"
+  },
+  "experiment.csv.gz": {
+    "rows": 7200,
+    "bytes": 134261,
+    "sha256": "620d279d437881ef748bdc6837400eb6ab771dc2069af3fb52d883c5fa96aa44"
+  },
+  "prices.csv.gz": {
+    "rows": 7680,
+    "bytes": 172777,
+    "sha256": "cc5788fcfb49b1aa466154244db7965023d2d7a98334e8ddfd4a8c14e86be3ae"
+  },
+  "suppliers.csv.gz": {
+    "rows": 80,
+    "bytes": 822,
+    "sha256": "6c480c5a18bff47b8e68897e2e7e2fd7a3bd829c700739511a1c6fd037670f41"
+  },
+  "supply.csv.gz": {
+    "rows": 1120,
+    "bytes": 25457,
+    "sha256": "de6c05f1dd6ea4a80e50e55d98cf9ea2fd7ca296430dedbe57d76bd1441cbbc3"
+  },
+  "loans.csv.gz": {
+    "rows": 3600,
+    "bytes": 24357,
+    "sha256": "fe6858547ff9cdfa3bc337e97b4901b97738a4addc425ad459dac6472877aa0a"
+  },
+  "loan_performance.csv.gz": {
+    "rows": 10800,
+    "bytes": 38870,
+    "sha256": "e094645b203b415e0ea3dde44b62a87028fcfa303d3d93af8be2509af8388729"
+  },
+  "machines.csv.gz": {
+    "rows": 64,
+    "bytes": 560,
+    "sha256": "04c76071ec5685bee2b2b53a8a69917bcfc5192679881366ab536683ff21c523"
+  },
+  "sensors.csv.gz": {
+    "rows": 6144,
+    "bytes": 188838,
+    "sha256": "0b36851ab9599c12d35d4deb2c6f2d183921031d2125b7718d3676c452346428"
+  },
+  "production.csv.gz": {
+    "rows": 6144,
+    "bytes": 167324,
+    "sha256": "9b6198043c4c649f14b48f71fd508be5d63138bf44f3cc87629e48e407130d7f"
+  },
+  "energy.csv.gz": {
+    "rows": 18432,
+    "bytes": 266754,
+    "sha256": "67fba8e9c6943cbd6ea405d863e3780ffbc918ca809ee494f450919c15baf8f9"
+  },
+  "tickets.csv.gz": {
+    "rows": 12000,
+    "bytes": 423526,
+    "sha256": "f68ac2b3057f7d452cfed0c51a98c3f4e656fe630705afab347d15dae40d6758"
+  },
+  "contracts.csv.gz": {
+    "rows": 2400,
+    "bytes": 15966,
+    "sha256": "5f02f798e6b1dce843fde8d3f9ec3016ceff61468cb23d481a71a8384de14220"
+  },
+  "fraud_payments.csv.gz": {
+    "rows": 6000,
+    "bytes": 109889,
+    "sha256": "2fde99289d8fb712b443b98b02458adcbc2056c3bd3cbc75ad627a63f2580294"
+  }
+}

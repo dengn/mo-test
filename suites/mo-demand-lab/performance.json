@@ -1,0 +1,137 @@
+{
+  "groups": [
+    {
+      "concurrency": 1,
+      "workflows": 120,
+      "workflows_per_second": 14.8575542847337,
+      "latency_ms": {
+        "p50": 74.25964600042789,
+        "p95": 109.67498660029378,
+        "p99": 129.54334930516782,
+        "max": 136.11725199734792
+      },
+      "counts": {
+        "pass": 120
+      }
+    },
+    {
+      "concurrency": 2,
+      "workflows": 120,
+      "workflows_per_second": 19.576373228038005,
+      "latency_ms": {
+        "p50": 104.7489244992903,
+        "p95": 181.06187605153536,
+        "p99": 189.01747837742732,
+        "max": 194.35948000318604
+      },
+      "counts": {
+        "pass": 120
+      }
+    },
+    {
+      "concurrency": 4,
+      "workflows": 120,
+      "workflows_per_second": 21.632255863220895,
+      "latency_ms": {
+        "p50": 171.29469100109418,
+        "p95": 376.61307134658273,
+        "p99": 429.75580775542767,
+        "max": 467.19928099628305
+      },
+      "counts": {
+        "pass": 120
+      }
+    },
+    {
+      "concurrency": 8,
+      "workflows": 120,
+      "workflows_per_second": 16.370636391947595,
+      "latency_ms": {
+        "p50": 273.0237944961118,
+        "p95": 1114.8903010544018,
+        "p99": 1185.0006706645945,
+        "max": 1278.1435450015124
+      },
+      "counts": {
+        "pass": 120
+      }
+    }
+  ],
+  "trials": [
+    {
+      "trial": 0,
+      "concurrency": 1,
+      "seconds": 2.785951586003648,
+      "workflows_per_second": 14.357751297960862
+    },
+    {
+      "trial": 0,
+      "concurrency": 4,
+      "seconds": 1.937011980000534,
+      "workflows_per_second": 20.650362730327032
+    },
+    {
+      "trial": 0,
+      "concurrency": 2,
+      "seconds": 1.9398154509981396,
+      "workflows_per_second": 20.620518296943064
+    },
+    {
+      "trial": 0,
+      "concurrency": 8,
+      "seconds": 2.408764637002605,
+      "workflows_per_second": 16.606022599939365
+    },
+    {
+      "trial": 1,
+      "concurrency": 8,
+      "seconds": 2.529218358002254,
+      "workflows_per_second": 15.815162764987473
+    },
+    {
+      "trial": 1,
+      "concurrency": 2,
+      "seconds": 2.108284312998876,
+      "workflows_per_second": 18.97277314704439
+    },
+    {
+      "trial": 1,
+      "concurrency": 4,
+      "seconds": 1.8692827189952368,
+      "workflows_per_second": 21.39858224415647
+    },
+    {
+      "trial": 1,
+      "concurrency": 1,
+      "seconds": 2.623375503004354,
+      "workflows_per_second": 15.247531264278035
+    },
+    {
+      "trial": 2,
+      "concurrency": 2,
+      "seconds": 2.081738414002757,
+      "workflows_per_second": 19.21471003798608
+    },
+    {
+      "trial": 2,
+      "concurrency": 1,
+      "seconds": 2.6673723260028055,
+      "workflows_per_second": 14.996031716330377
+    },
+    {
+      "trial": 2,
+      "concurrency": 8,
+      "seconds": 2.3922146299955784,
+      "workflows_per_second": 16.720907688819683
+    },
+    {
+      "trial": 2,
+      "concurrency": 4,
+      "seconds": 1.7409769660007441,
+      "workflows_per_second": 22.975605525606305
+    }
+  ],
+  "measured_workflows": 480,
+  "business_shapes": 10,
+  "scope": "Local warm end-to-end reads plus Pandas/NumPy/SciPy decisions. No publication writes in this timed benchmark. Independent reference models precomputed; assertions after timed work. Measures the full local analysis stack, not pure MO server QPS."
+}

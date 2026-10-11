@@ -1,0 +1,18 @@
+{
+  "flink": {
+    "excluded_attempts": [
+      "results/flink-harness-first",
+      "results/flink-harness-second"
+    ],
+    "cause": [
+      "nested CTE parser form rejected by Flink Calcite",
+      "SCOPE is reserved in Flink SQL"
+    ],
+    "resolution": "top-level Table API view; quote Calcite reserved identifiers",
+    "mo_failures": false,
+    "final_pipelines": 10,
+    "final_cases": 10000
+  },
+  "connector_overlap_main": false,
+  "main_run_scope": "Pandas/NumPy clients and DuckDB oracle run concurrently; Spark/Flink successfully run afterward"
+}

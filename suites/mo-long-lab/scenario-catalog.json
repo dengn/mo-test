@@ -1,0 +1,1040 @@
+[
+  {
+    "family": 0,
+    "name": "chain_0_cohort_statistics_graph_market",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6526,
+      "sql_lines": 39,
+      "cte_count": 34,
+      "feedback_depth": 3,
+      "analytical_blocks": [
+        "cohort",
+        "statistics",
+        "graph",
+        "market"
+      ],
+      "window_expressions": 33,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 1,
+    "name": "chain_1_cohort_graph_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6641,
+      "sql_lines": 39,
+      "cte_count": 34,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "cohort",
+        "graph",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 29,
+      "join_count": 19
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 2,
+    "name": "chain_2_attribution_statistics_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6872,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 5,
+      "analytical_blocks": [
+        "attribution",
+        "statistics",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 32,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 3,
+    "name": "chain_3_commerce_cohort_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7026,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 4,
+    "name": "chain_4_attribution_graph_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7200,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 7,
+      "analytical_blocks": [
+        "attribution",
+        "graph",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 32,
+      "join_count": 17
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 5,
+    "name": "chain_5_time_series_graph_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7547,
+      "sql_lines": 43,
+      "cte_count": 38,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "time_series",
+        "graph",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 33,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 6,
+    "name": "chain_6_cohort_graph_inventory_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6353,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 3,
+      "analytical_blocks": [
+        "cohort",
+        "graph",
+        "inventory",
+        "marketing"
+      ],
+      "window_expressions": 27,
+      "join_count": 20
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 7,
+    "name": "chain_7_cohort_attribution_time_series_market",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6613,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "cohort",
+        "attribution",
+        "time_series",
+        "market"
+      ],
+      "window_expressions": 36,
+      "join_count": 13
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 8,
+    "name": "chain_8_market_inventory_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7258,
+      "sql_lines": 39,
+      "cte_count": 34,
+      "feedback_depth": 5,
+      "analytical_blocks": [
+        "market",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 32,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 9,
+    "name": "chain_9_commerce_cohort_statistics_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6828,
+      "sql_lines": 40,
+      "cte_count": 35,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "statistics",
+        "marketing"
+      ],
+      "window_expressions": 29,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 10,
+    "name": "chain_10_time_series_statistics_graph_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7171,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 7,
+      "analytical_blocks": [
+        "time_series",
+        "statistics",
+        "graph",
+        "marketing"
+      ],
+      "window_expressions": 31,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 11,
+    "name": "chain_11_commerce_time_series_statistics_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7275,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "commerce",
+        "time_series",
+        "statistics",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 17
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 12,
+    "name": "chain_12_commerce_inventory_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6265,
+      "sql_lines": 35,
+      "cte_count": 30,
+      "feedback_depth": 3,
+      "analytical_blocks": [
+        "commerce",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 28,
+      "join_count": 19
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 13,
+    "name": "chain_13_commerce_cohort_attribution_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6296,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "inventory"
+      ],
+      "window_expressions": 29,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 14,
+    "name": "chain_14_commerce_market_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6779,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 5,
+      "analytical_blocks": [
+        "commerce",
+        "market",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 32,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 15,
+    "name": "chain_15_cohort_time_series_statistics_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7338,
+      "sql_lines": 42,
+      "cte_count": 37,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "cohort",
+        "time_series",
+        "statistics",
+        "subscription"
+      ],
+      "window_expressions": 34,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 16,
+    "name": "chain_16_commerce_graph_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6966,
+      "sql_lines": 40,
+      "cte_count": 35,
+      "feedback_depth": 7,
+      "analytical_blocks": [
+        "commerce",
+        "graph",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 30,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 17,
+    "name": "chain_17_commerce_attribution_time_series_statistics",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7020,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "commerce",
+        "attribution",
+        "time_series",
+        "statistics"
+      ],
+      "window_expressions": 33,
+      "join_count": 14
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 18,
+    "name": "chain_18_commerce_cohort_attribution_statistics",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6081,
+      "sql_lines": 37,
+      "cte_count": 32,
+      "feedback_depth": 3,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "statistics"
+      ],
+      "window_expressions": 31,
+      "join_count": 14
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 19,
+    "name": "chain_19_attribution_time_series_graph_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6428,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "attribution",
+        "time_series",
+        "graph",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 20,
+    "name": "chain_20_commerce_time_series_statistics_graph",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6419,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 5,
+      "analytical_blocks": [
+        "commerce",
+        "time_series",
+        "statistics",
+        "graph"
+      ],
+      "window_expressions": 31,
+      "join_count": 17
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 21,
+    "name": "chain_21_cohort_statistics_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7382,
+      "sql_lines": 42,
+      "cte_count": 37,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "cohort",
+        "statistics",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 33,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 22,
+    "name": "chain_22_time_series_graph_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7240,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 7,
+      "analytical_blocks": [
+        "time_series",
+        "graph",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 31,
+      "join_count": 19
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 23,
+    "name": "chain_23_attribution_statistics_graph_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7403,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "attribution",
+        "statistics",
+        "graph",
+        "inventory"
+      ],
+      "window_expressions": 30,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 24,
+    "name": "chain_24_commerce_attribution_time_series_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 5884,
+      "sql_lines": 36,
+      "cte_count": 31,
+      "feedback_depth": 3,
+      "analytical_blocks": [
+        "commerce",
+        "attribution",
+        "time_series",
+        "marketing"
+      ],
+      "window_expressions": 31,
+      "join_count": 15
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 25,
+    "name": "chain_25_attribution_market_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6830,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "attribution",
+        "market",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 34,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 26,
+    "name": "chain_26_commerce_cohort_time_series_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 6669,
+      "sql_lines": 40,
+      "cte_count": 35,
+      "feedback_depth": 5,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "time_series",
+        "subscription"
+      ],
+      "window_expressions": 32,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 27,
+    "name": "chain_27_attribution_market_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7130,
+      "sql_lines": 40,
+      "cte_count": 35,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "attribution",
+        "market",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 34,
+      "join_count": 15
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 28,
+    "name": "chain_28_commerce_cohort_attribution_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7010,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 7,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "subscription"
+      ],
+      "window_expressions": 31,
+      "join_count": 15
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 29,
+    "name": "chain_29_attribution_statistics_inventory_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 7481,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "attribution",
+        "statistics",
+        "inventory",
+        "marketing"
+      ],
+      "window_expressions": 30,
+      "join_count": 17
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 30,
+    "name": "chain_30_time_series_statistics_graph_market_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 11332,
+      "sql_lines": 59,
+      "cte_count": 52,
+      "feedback_depth": 12,
+      "analytical_blocks": [
+        "time_series",
+        "statistics",
+        "graph",
+        "market",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 49,
+      "join_count": 25
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 31,
+    "name": "chain_31_cohort_statistics_graph_market_inventory_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 12959,
+      "sql_lines": 67,
+      "cte_count": 59,
+      "feedback_depth": 13,
+      "analytical_blocks": [
+        "cohort",
+        "statistics",
+        "graph",
+        "market",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 53,
+      "join_count": 29
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 32,
+    "name": "chain_32_commerce_attribution_time_series_statistics_market_inventory_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 14110,
+      "sql_lines": 72,
+      "cte_count": 63,
+      "feedback_depth": 14,
+      "analytical_blocks": [
+        "commerce",
+        "attribution",
+        "time_series",
+        "statistics",
+        "market",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 63,
+      "join_count": 29
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 33,
+    "name": "chain_33_commerce_cohort_time_series_statistics_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 11872,
+      "sql_lines": 62,
+      "cte_count": 55,
+      "feedback_depth": 15,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "time_series",
+        "statistics",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 46,
+      "join_count": 24
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 34,
+    "name": "chain_34_cohort_attribution_statistics_graph_market_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 13587,
+      "sql_lines": 70,
+      "cte_count": 62,
+      "feedback_depth": 16,
+      "analytical_blocks": [
+        "cohort",
+        "attribution",
+        "statistics",
+        "graph",
+        "market",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 55,
+      "join_count": 27
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 35,
+    "name": "chain_35_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 14517,
+      "sql_lines": 76,
+      "cte_count": 67,
+      "feedback_depth": 17,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "time_series",
+        "statistics",
+        "graph",
+        "inventory",
+        "marketing"
+      ],
+      "window_expressions": 58,
+      "join_count": 31
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 36,
+    "name": "chain_36_commerce_cohort_attribution_time_series_market_inventory",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 12190,
+      "sql_lines": 66,
+      "cte_count": 59,
+      "feedback_depth": 18,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "time_series",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 48,
+      "join_count": 21
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 37,
+    "name": "chain_37_attribution_time_series_statistics_graph_market_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 14252,
+      "sql_lines": 72,
+      "cte_count": 64,
+      "feedback_depth": 19,
+      "analytical_blocks": [
+        "attribution",
+        "time_series",
+        "statistics",
+        "graph",
+        "market",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 57,
+      "join_count": 27
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 38,
+    "name": "chain_38_commerce_attribution_time_series_statistics_market_inventory_marketing_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 15870,
+      "sql_lines": 78,
+      "cte_count": 69,
+      "feedback_depth": 20,
+      "analytical_blocks": [
+        "commerce",
+        "attribution",
+        "time_series",
+        "statistics",
+        "market",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 63,
+      "join_count": 29
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 39,
+    "name": "chain_39_commerce_cohort_attribution_graph_inventory_subscription",
+    "category": "long_sql",
+    "complexity": {
+      "sql_bytes": 12825,
+      "sql_lines": 67,
+      "cte_count": 60,
+      "feedback_depth": 21,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "graph",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 43,
+      "join_count": 25
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 40,
+    "name": "chain_40_commerce_cohort_market_inventory",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 6975,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "market",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 41,
+    "name": "chain_41_cohort_attribution_time_series_market",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 6642,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "cohort",
+        "attribution",
+        "time_series",
+        "market"
+      ],
+      "window_expressions": 36,
+      "join_count": 13
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 42,
+    "name": "chain_42_commerce_time_series_statistics_inventory",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 7310,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "commerce",
+        "time_series",
+        "statistics",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 17
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 43,
+    "name": "chain_43_cohort_time_series_statistics_subscription",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 7359,
+      "sql_lines": 42,
+      "cte_count": 37,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "cohort",
+        "time_series",
+        "statistics",
+        "subscription"
+      ],
+      "window_expressions": 34,
+      "join_count": 16
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 44,
+    "name": "chain_44_attribution_time_series_graph_inventory",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 6412,
+      "sql_lines": 38,
+      "cte_count": 33,
+      "feedback_depth": 4,
+      "analytical_blocks": [
+        "attribution",
+        "time_series",
+        "graph",
+        "inventory"
+      ],
+      "window_expressions": 31,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 45,
+    "name": "chain_45_attribution_statistics_graph_inventory",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 7352,
+      "sql_lines": 41,
+      "cte_count": 36,
+      "feedback_depth": 8,
+      "analytical_blocks": [
+        "attribution",
+        "statistics",
+        "graph",
+        "inventory"
+      ],
+      "window_expressions": 30,
+      "join_count": 18
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 46,
+    "name": "chain_46_attribution_market_marketing_subscription",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 7159,
+      "sql_lines": 40,
+      "cte_count": 35,
+      "feedback_depth": 6,
+      "analytical_blocks": [
+        "attribution",
+        "market",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 34,
+      "join_count": 15
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 47,
+    "name": "chain_47_cohort_statistics_graph_market_inventory_marketing_subscription",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 13030,
+      "sql_lines": 67,
+      "cte_count": 59,
+      "feedback_depth": 13,
+      "analytical_blocks": [
+        "cohort",
+        "statistics",
+        "graph",
+        "market",
+        "inventory",
+        "marketing",
+        "subscription"
+      ],
+      "window_expressions": 53,
+      "join_count": 29
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 48,
+    "name": "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 14634,
+      "sql_lines": 76,
+      "cte_count": 67,
+      "feedback_depth": 17,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "time_series",
+        "statistics",
+        "graph",
+        "inventory",
+        "marketing"
+      ],
+      "window_expressions": 58,
+      "join_count": 31
+    },
+    "parameter_count": 200
+  },
+  {
+    "family": 49,
+    "name": "chain_49_commerce_cohort_attribution_graph_inventory_subscription",
+    "category": "multi_stage_commit_rollback",
+    "complexity": {
+      "sql_bytes": 12857,
+      "sql_lines": 67,
+      "cte_count": 60,
+      "feedback_depth": 21,
+      "analytical_blocks": [
+        "commerce",
+        "cohort",
+        "attribution",
+        "graph",
+        "inventory",
+        "subscription"
+      ],
+      "window_expressions": 43,
+      "join_count": 25
+    },
+    "parameter_count": 200
+  }
+]

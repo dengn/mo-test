@@ -1,0 +1,2774 @@
+[
+  {
+    "path": "suites/mo-ds-lab/README.md",
+    "zip_member": "README.md",
+    "bytes": 4975,
+    "sha256": "bab2757e0e44174899f19c044919ee65d6320eddc00efb1aaa71498de9c89505"
+  },
+  {
+    "path": "suites/mo-ds-lab/artifact-manifest.json",
+    "zip_member": "artifact-manifest.json",
+    "bytes": 10397,
+    "sha256": "1bf7f7f32c68810d0b61ce390c45d5d6d60a2ed8b1ed8a7ac0887ce7e64c609a"
+  },
+  {
+    "path": "suites/mo-ds-lab/binary-build-info.txt",
+    "zip_member": "binary-build-info.txt",
+    "bytes": 715,
+    "sha256": "9734e26df9a2c2b201de2447966caa41e5ce3589f9b9c4f0f3772781cef3b911"
+  },
+  {
+    "path": "suites/mo-ds-lab/common.py",
+    "zip_member": "common.py",
+    "bytes": 4328,
+    "sha256": "8a42173136798e5f870efa982c6e39bf55989c66a6f15699ec1a19d537ae966f"
+  },
+  {
+    "path": "suites/mo-ds-lab/config/cn.toml",
+    "zip_member": "config/cn.toml",
+    "bytes": 1128,
+    "sha256": "1c2d31b832240089d11314e56ca30a0c4c4812d467790236a246f0f74d62a363"
+  },
+  {
+    "path": "suites/mo-ds-lab/config/launch.toml",
+    "zip_member": "config/launch.toml",
+    "bytes": 183,
+    "sha256": "e885ab3f6effaf1555a4bf656732ac3eee2a839c3b7a64246067f102b245fdbf"
+  },
+  {
+    "path": "suites/mo-ds-lab/config/log.toml",
+    "zip_member": "config/log.toml",
+    "bytes": 261,
+    "sha256": "c86643870b7658b35029351eb356926cfe7e8aa8fbcfe029652a7c7543e3475a"
+  },
+  {
+    "path": "suites/mo-ds-lab/config/tn.toml",
+    "zip_member": "config/tn.toml",
+    "bytes": 711,
+    "sha256": "be4e9d54070d5b8cc253b6d99a38f106254786763a9cbf80b6caccb6cc682628"
+  },
+  {
+    "path": "suites/mo-ds-lab/failure-representatives.json",
+    "zip_member": "failure-representatives.json",
+    "bytes": 112735,
+    "sha256": "6283aef78b6e36c7da298e708b269dbf551c510f8f6a241e30f3eb2c71e04c19"
+  },
+  {
+    "path": "suites/mo-ds-lab/jars-sha256.txt",
+    "zip_member": "jars-sha256.txt",
+    "bytes": 630,
+    "sha256": "51bced37ed834ed79e4f0b7597c81cd4c41800b28d2a7f7d9aa442026bea7d24"
+  },
+  {
+    "path": "suites/mo-ds-lab/performance.png",
+    "zip_member": "performance.png",
+    "bytes": 95189,
+    "sha256": "04ee18d928dac30a184216229f55adba5d442d47e0705a3aaee547519706a7fd"
+  },
+  {
+    "path": "suites/mo-ds-lab/performance.svg",
+    "zip_member": "performance.svg",
+    "bytes": 53751,
+    "sha256": "472915309291ad381f80880da8715a3f13c18c612752b019b3128394c7e5e5b8"
+  },
+  {
+    "path": "suites/mo-ds-lab/plot_performance.py",
+    "zip_member": "plot_performance.py",
+    "bytes": 1480,
+    "sha256": "29842b5a5a1d4f8b7f1a61a72f61418147c8c29bdc1e6b8e32d66a4379163c77"
+  },
+  {
+    "path": "suites/mo-ds-lab/render-verification.json",
+    "zip_member": "render-verification.json",
+    "bytes": 191,
+    "sha256": "d136282226870847308b67d4258de00dd7506ac94def6c285bb4c5517872eca9"
+  },
+  {
+    "path": "suites/mo-ds-lab/report.html",
+    "zip_member": "report.html",
+    "bytes": 132585,
+    "sha256": "b6ce230a2b483f46c8334f1041e34bdbf25d7217b971b1f9c9412fa8104a1562"
+  },
+  {
+    "path": "suites/mo-ds-lab/report.json",
+    "zip_member": "report.json",
+    "bytes": 16413,
+    "sha256": "1a64b34ef244bca1dd13d46c13d6c346977276c946d7b7901dd44cf8ca46568c"
+  },
+  {
+    "path": "suites/mo-ds-lab/requirements-lock.txt",
+    "zip_member": "requirements-lock.txt",
+    "bytes": 603,
+    "sha256": "6148dd57bd0342e0c1f9b55b91f2de1911ba9335f02573e1949586189d3ea934"
+  },
+  {
+    "path": "suites/mo-ds-lab/requirements.txt",
+    "zip_member": "requirements.txt",
+    "bytes": 173,
+    "sha256": "1722d96f800c5c1461f8f60865393613deb674db58d1127d5444141906a0470b"
+  },
+  {
+    "path": "suites/mo-ds-lab/run_all.sh",
+    "zip_member": "run_all.sh",
+    "bytes": 696,
+    "sha256": "11a0726e556aa352ab06f63f4ea287398504f04dd5a09d0326f30ee109aa2ca0"
+  },
+  {
+    "path": "suites/mo-ds-lab/run_connectors.py",
+    "zip_member": "run_connectors.py",
+    "bytes": 6801,
+    "sha256": "d0371c535b0c69de0b60bbd151f97c4a9f6ee47a29e98999c67015c1445153e8"
+  },
+  {
+    "path": "suites/mo-ds-lab/run_core.py",
+    "zip_member": "run_core.py",
+    "bytes": 11827,
+    "sha256": "6d7d37673ac22c663aca4af9e62051c6362d09121438920930393d6f07e5bdc5"
+  },
+  {
+    "path": "suites/mo-ds-lab/run_supplemental.py",
+    "zip_member": "run_supplemental.py",
+    "bytes": 12291,
+    "sha256": "09ba7179813aa4bb808eab92680988fe6049728fc388e8d3a2db7781e16e6f13"
+  },
+  {
+    "path": "suites/mo-ds-lab/server-log-analysis.json",
+    "zip_member": "server-log-analysis.json",
+    "bytes": 1373,
+    "sha256": "998b01b0566a4b0c14010839ae73738ce5d14ec905d400f7501fd4698e6f915a"
+  },
+  {
+    "path": "suites/mo-ds-lab/summarize.py",
+    "zip_member": "summarize.py",
+    "bytes": 11159,
+    "sha256": "4127d155a9a1c86b9a243de7498c1cf52b79741372c72a1646d55d88cf1632ab"
+  },
+  {
+    "path": "suites/mo-complex-lab/README.md",
+    "zip_member": "mo-complex-lab/README.md",
+    "bytes": 3996,
+    "sha256": "17f370b936b314f186576612a4c960b5c75f98f1140cbe9f2933fefc220e81da"
+  },
+  {
+    "path": "suites/mo-complex-lab/analyze_failures.py",
+    "zip_member": "mo-complex-lab/analyze_failures.py",
+    "bytes": 3783,
+    "sha256": "527a80e84134b614baa4defef7ce0d090228448967b434afdc90aaad9de0c140"
+  },
+  {
+    "path": "suites/mo-complex-lab/artifact-manifest.json",
+    "zip_member": "mo-complex-lab/artifact-manifest.json",
+    "bytes": 13026,
+    "sha256": "e5abb3772e278df727b075df7050c31e60e45a078d8139ad8413b5ebd6182249"
+  },
+  {
+    "path": "suites/mo-complex-lab/client-setup-notes.json",
+    "zip_member": "mo-complex-lab/client-setup-notes.json",
+    "bytes": 561,
+    "sha256": "a55079f959d0abaa2a7a8f164298444fd51b0b3b03c01aa93eb1d78818981a52"
+  },
+  {
+    "path": "suites/mo-complex-lab/connectors.py",
+    "zip_member": "mo-complex-lab/connectors.py",
+    "bytes": 9321,
+    "sha256": "2f22cfe3fb3df873760b844fbaa39feb764287f0ba63e0c5ae010de4fe533561"
+  },
+  {
+    "path": "suites/mo-complex-lab/data-integrity.json",
+    "zip_member": "mo-complex-lab/data-integrity.json",
+    "bytes": 19029,
+    "sha256": "760cc50f33942d467f2027b17e8832609a7a148cfffe6af8e99472fd7e4581d7"
+  },
+  {
+    "path": "suites/mo-complex-lab/data.py",
+    "zip_member": "mo-complex-lab/data.py",
+    "bytes": 6769,
+    "sha256": "3a4c1267312c727592d1195f7bcaa63c8355704002519d3cb1391eb76445f18f"
+  },
+  {
+    "path": "suites/mo-complex-lab/dataset-manifest.json",
+    "zip_member": "mo-complex-lab/dataset-manifest.json",
+    "bytes": 1926,
+    "sha256": "0ffddd72c47bbfb5818cacf84c7dcad02c4a2aae41232a15da8cb504eab419ef"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/calendar.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/calendar.csv.gz",
+    "bytes": 598,
+    "sha256": "6db3ac62841551fad89581569d0c75e483792733cebee7764cc4e9e05bc0d1bd"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/customers.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/customers.csv.gz",
+    "bytes": 9346,
+    "sha256": "760bc07f10f1da5c52212b47ed36e3d1757a57469258bf077b10aaeeb1aaf676"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/edges.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/edges.csv.gz",
+    "bytes": 28407,
+    "sha256": "dbbd9c5ab69a77fa9b9a75a3fe8d5bfe7ad363469ce44112765307fece6efd45"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/events.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/events.csv.gz",
+    "bytes": 521430,
+    "sha256": "f623597d4b1166c7218038ebd8117a18872a241f9c9fecaf8b749a5b9f9b7ea6"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/items.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/items.csv.gz",
+    "bytes": 197606,
+    "sha256": "b199e31de63c2ab4b3cd722df5badf0f5b37cfa8f6af06563a538af252607040"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/orders.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/orders.csv.gz",
+    "bytes": 185106,
+    "sha256": "1d52a6f496d63a215d7cc19e998886b62ac99e878ba51ec5a2395872163da599"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/payments.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/payments.csv.gz",
+    "bytes": 191437,
+    "sha256": "9f9571163b6c00bcfe698f859a1cb88a48046eeaeeb9c469b07e7f33de843b84"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/products.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/products.csv.gz",
+    "bytes": 460,
+    "sha256": "206629e256ddcecdb4ba98a794c3c9818e43b284d4a354625fe255d8ca67e5cf"
+  },
+  {
+    "path": "suites/mo-complex-lab/datasets/refunds.csv.gz",
+    "zip_member": "mo-complex-lab/datasets/refunds.csv.gz",
+    "bytes": 15135,
+    "sha256": "ff7aef8f0060560a3b359a1865c7a706c0c9c521566c1f9cfe0109648232a70e"
+  },
+  {
+    "path": "suites/mo-complex-lab/failure-analysis.json",
+    "zip_member": "mo-complex-lab/failure-analysis.json",
+    "bytes": 36726,
+    "sha256": "6285708b5b6c7087dfa8f3c7c8a7e9cd62fc74ae9961d393557b83fd754ba0fa"
+  },
+  {
+    "path": "suites/mo-complex-lab/failure-representatives.json",
+    "zip_member": "mo-complex-lab/failure-representatives.json",
+    "bytes": 4945,
+    "sha256": "674034d9f3ed34c305b798a24b5bd310a82faaca48bb41b1a6dbaf80e4d0d83e"
+  },
+  {
+    "path": "suites/mo-complex-lab/github-issue-matches.json",
+    "zip_member": "mo-complex-lab/github-issue-matches.json",
+    "bytes": 1332,
+    "sha256": "a410750c4f21802b2c91f1f398a49aef1f8ff4691d217c8e4c7ed94a6ca99b16"
+  },
+  {
+    "path": "suites/mo-complex-lab/package.py",
+    "zip_member": "mo-complex-lab/package.py",
+    "bytes": 1939,
+    "sha256": "65fb9458baf4fcc6024032b9f369397d39dbcfd03ca0ebb8ea7cb3f5bdccb286"
+  },
+  {
+    "path": "suites/mo-complex-lab/performance-calibration.json",
+    "zip_member": "mo-complex-lab/performance-calibration.json",
+    "bytes": 1965,
+    "sha256": "c9fc8ef72609862776b48c7ed333a502bf7f1c8b6de79a34865740feff4ec1a4"
+  },
+  {
+    "path": "suites/mo-complex-lab/performance.json",
+    "zip_member": "mo-complex-lab/performance.json",
+    "bytes": 7303,
+    "sha256": "384ed655f9a7d2eb28bb2422d0a23ba8b2b7d11f71908beb6a5f4878e62757e6"
+  },
+  {
+    "path": "suites/mo-complex-lab/performance.png",
+    "zip_member": "mo-complex-lab/performance.png",
+    "bytes": 91696,
+    "sha256": "8d2e8ca8cc8defcdd786aa142b77962357d3e3c34574a18f0ae35cbf1630986c"
+  },
+  {
+    "path": "suites/mo-complex-lab/performance.py",
+    "zip_member": "mo-complex-lab/performance.py",
+    "bytes": 4050,
+    "sha256": "c49f00c513180164e757fd3eab6bcf7fa5adc5f120bc304309501f59bbe2128c"
+  },
+  {
+    "path": "suites/mo-complex-lab/plot.py",
+    "zip_member": "mo-complex-lab/plot.py",
+    "bytes": 1075,
+    "sha256": "6c89b043e99637fcbd1dd4f5d69e772a8a2d42df1529e468b8f1af70032f6d7f"
+  },
+  {
+    "path": "suites/mo-complex-lab/render-validation.json",
+    "zip_member": "mo-complex-lab/render-validation.json",
+    "bytes": 188,
+    "sha256": "269956eebec08fea85d1df7b6dfe6cbb77b3363f98715834c0cdf662f540a97d"
+  },
+  {
+    "path": "suites/mo-complex-lab/render.py",
+    "zip_member": "mo-complex-lab/render.py",
+    "bytes": 1564,
+    "sha256": "2b9f98b65f08be2dc3f8bad4fbd4325655a84d69d711e72fd9fd4fbb068aa863"
+  },
+  {
+    "path": "suites/mo-complex-lab/report.html",
+    "zip_member": "mo-complex-lab/report.html",
+    "bytes": 189706,
+    "sha256": "1172c4588c6cb80f68bb7b1976e83d918603883d0164e670e26a2d0ef108f7ab"
+  },
+  {
+    "path": "suites/mo-complex-lab/report.json",
+    "zip_member": "mo-complex-lab/report.json",
+    "bytes": 97360,
+    "sha256": "8698a87ce2da06a498bc368ad41267ec9efeb31cd7e8800c52cbdc105f7288ab"
+  },
+  {
+    "path": "suites/mo-complex-lab/requirements.txt",
+    "zip_member": "mo-complex-lab/requirements.txt",
+    "bytes": 124,
+    "sha256": "fa008cfb88d265f965bb73faa40a5e2aec54d549771b03d5b099d046cc4e2c1b"
+  },
+  {
+    "path": "suites/mo-complex-lab/run.py",
+    "zip_member": "mo-complex-lab/run.py",
+    "bytes": 5703,
+    "sha256": "a6f8ac8d89f85fac77957cb14dfd282e031ac4bfed435eb64dca0d7667b70d8b"
+  },
+  {
+    "path": "suites/mo-complex-lab/scenario-catalog.json",
+    "zip_member": "mo-complex-lab/scenario-catalog.json",
+    "bytes": 79415,
+    "sha256": "10abd870f29b4ba598f28526b650d22b8ce631d217febccd0618b896cb6c8063"
+  },
+  {
+    "path": "suites/mo-complex-lab/scenarios.py",
+    "zip_member": "mo-complex-lab/scenarios.py",
+    "bytes": 29984,
+    "sha256": "38c436ff7f01349ab4c3fdde36397fe1a093a8ceafefbef760d18a52260e7287"
+  },
+  {
+    "path": "suites/mo-complex-lab/science.py",
+    "zip_member": "mo-complex-lab/science.py",
+    "bytes": 3236,
+    "sha256": "0b887dfe55385f68c14f2c7534bf3740adea2a53260998e36fe395fb145433cd"
+  },
+  {
+    "path": "suites/mo-complex-lab/server-log-analysis.json",
+    "zip_member": "mo-complex-lab/server-log-analysis.json",
+    "bytes": 248,
+    "sha256": "8d6df24d40f241123e41a4783acbc9773f5daafe6d654402304ec8da79eb16fe"
+  },
+  {
+    "path": "suites/mo-complex-lab/summarize.py",
+    "zip_member": "mo-complex-lab/summarize.py",
+    "bytes": 11279,
+    "sha256": "c20cdb6d9ad8bd55f1381215513f51c7dc1b5d508b4843500e70fd507ccd0fe1"
+  },
+  {
+    "path": "suites/mo-complex-lab/verify_data.py",
+    "zip_member": "mo-complex-lab/verify_data.py",
+    "bytes": 3417,
+    "sha256": "a5bd86f048eb7bf6744fda9617f30aaec401aa77ef10289346925d6c6f7bd213"
+  },
+  {
+    "path": "suites/mo-complex-lab/versions.json",
+    "zip_member": "mo-complex-lab/versions.json",
+    "bytes": 182,
+    "sha256": "261c0e1ea7fc2cca99e963c12b36a256ec2ef6c33d13a9764139bf40f98775b4"
+  },
+  {
+    "path": "suites/mo-complex-lab/issues/spark-isolation.md",
+    "zip_member": "mo-complex-lab/issues/spark-isolation.md",
+    "bytes": 3602,
+    "sha256": "f5752cfd21f94ed459e334ad49e7aac235f3da382be5ccdf58274ea88c0ff824"
+  },
+  {
+    "path": "suites/mo-complex-lab/issues/tanh.md",
+    "zip_member": "mo-complex-lab/issues/tanh.md",
+    "bytes": 2919,
+    "sha256": "4d103993fdbbc96375c03648aa4ddfa4ba004e4a9381c259e781c18ce04a4c0c"
+  },
+  {
+    "path": "suites/mo-complex-lab/issues/reproduce_spark_and_tanh.py",
+    "zip_member": "mo-complex-lab/issues/reproduce_spark_and_tanh.py",
+    "bytes": 2075,
+    "sha256": "d1857a8315001cd9fa2fa580152057da01e89e4dd2340f881b8e667d3dc2c476"
+  },
+  {
+    "path": "suites/mo-complex-lab/issues/fresh-reproduction.json",
+    "zip_member": "mo-complex-lab/issues/fresh-reproduction.json",
+    "bytes": 11687,
+    "sha256": "91db5632ac4ea67edd3d26ae5dd3053cbcb6c527e5de4277480a36e98f54e6ad"
+  },
+  {
+    "path": "suites/mo-long-lab/README.md",
+    "zip_member": "mo-long-lab/README.md",
+    "bytes": 5226,
+    "sha256": "cedcd496ec10ab7b3645264fe41236c898acc43e36d2b89b788611eda72f656f"
+  },
+  {
+    "path": "suites/mo-long-lab/artifact-manifest.json",
+    "zip_member": "mo-long-lab/artifact-manifest.json",
+    "bytes": 21778,
+    "sha256": "b7db07a50d90ab863b8579d66adef2c7007b7b3cd248cb8c2ee5c086103b1be6"
+  },
+  {
+    "path": "suites/mo-long-lab/client-setup-notes.json",
+    "zip_member": "mo-long-lab/client-setup-notes.json",
+    "bytes": 23041,
+    "sha256": "d90cc92bd755dec0ed2670f23387d2fc14ff74162995f4ec1f599f5498420d36"
+  },
+  {
+    "path": "suites/mo-long-lab/client_notes.py",
+    "zip_member": "mo-long-lab/client_notes.py",
+    "bytes": 2369,
+    "sha256": "f466429d61948f15d72477ef594645c2798dae97eb2ca37d7edb29dd80f86b83"
+  },
+  {
+    "path": "suites/mo-long-lab/connectors.py",
+    "zip_member": "mo-long-lab/connectors.py",
+    "bytes": 6527,
+    "sha256": "13be64f222bcb9ca86a272cd9e79e5c216703684818caa00d0dccd68891c7469"
+  },
+  {
+    "path": "suites/mo-long-lab/data-integrity.json",
+    "zip_member": "mo-long-lab/data-integrity.json",
+    "bytes": 2145,
+    "sha256": "7dcd23f0c6291da6fa010772715c8830534967fb2b3fdb0113cfb5336416d00c"
+  },
+  {
+    "path": "suites/mo-long-lab/data.py",
+    "zip_member": "mo-long-lab/data.py",
+    "bytes": 8328,
+    "sha256": "7d49cdca76829de79dbb2ec53a7b4a7f5471e35dfc6db048fc1d2e3e99558fe4"
+  },
+  {
+    "path": "suites/mo-long-lab/dataset-manifest.json",
+    "zip_member": "mo-long-lab/dataset-manifest.json",
+    "bytes": 2923,
+    "sha256": "ed39097a76b5db5ff7f0a9d639340895b914ca96f3b55bab7fe2bf9575781091"
+  },
+  {
+    "path": "suites/mo-long-lab/environment.json",
+    "zip_member": "mo-long-lab/environment.json",
+    "bytes": 947,
+    "sha256": "6a6886bfea786103423604b98fe044ec713c2b6a3b66ef02a872f9d4080357a5"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/00.sql",
+    "zip_member": "mo-long-lab/examples/00.sql",
+    "bytes": 6570,
+    "sha256": "cd1a40ce9ca0fc0c6ff9d20520b031b99daf1cbbe13478ffc260319852388ecc"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/01.sql",
+    "zip_member": "mo-long-lab/examples/01.sql",
+    "bytes": 6690,
+    "sha256": "f46926a72354f7d3befd2cfd2717bb6663094c4cd7dfe41fcfcdc78cf5d813c4"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/02.sql",
+    "zip_member": "mo-long-lab/examples/02.sql",
+    "bytes": 6931,
+    "sha256": "79ae0ea5b0f960977880fbb54cc5eb066bc6e655a588036d7ed0683a80f01c6d"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/03.sql",
+    "zip_member": "mo-long-lab/examples/03.sql",
+    "bytes": 7072,
+    "sha256": "2c3bd4c96463c19e6dadc73f18456318cbbfb28fed59915f625ad4bd115eccd3"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/04.sql",
+    "zip_member": "mo-long-lab/examples/04.sql",
+    "bytes": 7248,
+    "sha256": "224efa50f82f1d35d2a0d4e9c27739526053323127151c664f87c8f64d8a4407"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/05.sql",
+    "zip_member": "mo-long-lab/examples/05.sql",
+    "bytes": 7595,
+    "sha256": "56ae5582c46796423e7f560795940e04f6d07b4d9469ad5770a7e060f3c0eab4"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/06.sql",
+    "zip_member": "mo-long-lab/examples/06.sql",
+    "bytes": 6399,
+    "sha256": "0901ff8a685254f7d2a5575bcc5b1a57cc4ec564674b9f897b6bcc3c4c5eb3b0"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/07.sql",
+    "zip_member": "mo-long-lab/examples/07.sql",
+    "bytes": 6664,
+    "sha256": "31d8454887c1a9a2464e4a2e994b807b25e1fbe5716335ab81668f837672fdb4"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/08.sql",
+    "zip_member": "mo-long-lab/examples/08.sql",
+    "bytes": 7311,
+    "sha256": "f96c34af7ce6a17eab70ec3b417bdc3b6a79f6bbe6fa79a7d6d5f389cc68d08e"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/09.sql",
+    "zip_member": "mo-long-lab/examples/09.sql",
+    "bytes": 6878,
+    "sha256": "18bea6d659b081d70049de73bb2f56cdeb3598e36187d477ddaf26e70137331e"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/10.sql",
+    "zip_member": "mo-long-lab/examples/10.sql",
+    "bytes": 7224,
+    "sha256": "99da393f62fa9f556702a41b846bb66101eb82e83bcc05ccfdc186d1a4dbeef8"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/11.sql",
+    "zip_member": "mo-long-lab/examples/11.sql",
+    "bytes": 7331,
+    "sha256": "701a5a08c72fcd2c6c6902e363a7ec9d213bd31f22880da3fcc4c666ae14e406"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/12.sql",
+    "zip_member": "mo-long-lab/examples/12.sql",
+    "bytes": 6321,
+    "sha256": "95c11f08d6bbd3662d757c014e9d5b2c852fb910b8413f12aa54684c9a34f521"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/13.sql",
+    "zip_member": "mo-long-lab/examples/13.sql",
+    "bytes": 6348,
+    "sha256": "ef620c225131bb89c6a9b89e0bebb4f8a155bc2f3ec813ecbc2887f319d0f4c8"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/14.sql",
+    "zip_member": "mo-long-lab/examples/14.sql",
+    "bytes": 6832,
+    "sha256": "764face6446d4f2a92f4711dbaae446477b35f5c72a7ed61a6e68ee6c91af5df"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/15.sql",
+    "zip_member": "mo-long-lab/examples/15.sql",
+    "bytes": 7395,
+    "sha256": "a5e12abd63aa210d6b79b0bdd62fd883f5baed9b0317b7695b247dc1bf753ca3"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/16.sql",
+    "zip_member": "mo-long-lab/examples/16.sql",
+    "bytes": 7012,
+    "sha256": "5cb3faa78183ebe031f1d7cd9f5a9b639fddd6e7960e9d999d1fa1e39170bf42"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/17.sql",
+    "zip_member": "mo-long-lab/examples/17.sql",
+    "bytes": 7078,
+    "sha256": "b0d97583da0c9cf7845b181bd3f0e7fd3d85add0c34bc49b558f86a9395db9cf"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/18.sql",
+    "zip_member": "mo-long-lab/examples/18.sql",
+    "bytes": 6134,
+    "sha256": "3e3e650bab43e8a0ee089365ab281fc628672a7cf7458fa0ad4dc5e279e6c7b5"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/19.sql",
+    "zip_member": "mo-long-lab/examples/19.sql",
+    "bytes": 6482,
+    "sha256": "09751ec671fe2cb1272c3c448f47ee231ef4c2bc28cce9319fdd503ac1f680f4"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/20.sql",
+    "zip_member": "mo-long-lab/examples/20.sql",
+    "bytes": 6471,
+    "sha256": "196a70958b78e77b90347a9ccc3a1f02811236f7a6957905b73a5b8e08b608ed"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/21.sql",
+    "zip_member": "mo-long-lab/examples/21.sql",
+    "bytes": 7431,
+    "sha256": "51c670612013aab39eec418f83f1246649a804568d181b9d28611a0b917979ec"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/22.sql",
+    "zip_member": "mo-long-lab/examples/22.sql",
+    "bytes": 7295,
+    "sha256": "35c50ef3d75ed0606c272b95e267e417d77144549f792b1f54edbec2b3482617"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/23.sql",
+    "zip_member": "mo-long-lab/examples/23.sql",
+    "bytes": 7456,
+    "sha256": "e19632d0d3c85f81f6c561b697e8e95839f6fd1ae0a1e33e62be84e8266648a6"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/24.sql",
+    "zip_member": "mo-long-lab/examples/24.sql",
+    "bytes": 5941,
+    "sha256": "9812d1283527c75238292ab2c866c43af8967e00dcc472bc4afb6057ed978e12"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/25.sql",
+    "zip_member": "mo-long-lab/examples/25.sql",
+    "bytes": 6886,
+    "sha256": "3d1bbe797c39882c2dff58475cb81fdf9a0c5ec107038bd006133949128127e6"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/26.sql",
+    "zip_member": "mo-long-lab/examples/26.sql",
+    "bytes": 6724,
+    "sha256": "cd41b913a56a7ec107e01cb220211388362c200fe07a5f76c46621e968525a04"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/27.sql",
+    "zip_member": "mo-long-lab/examples/27.sql",
+    "bytes": 7186,
+    "sha256": "2f3829785c1a92dca48bf407d75011d89b45f65bf95fe7bac7da89fdd9472162"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/28.sql",
+    "zip_member": "mo-long-lab/examples/28.sql",
+    "bytes": 7065,
+    "sha256": "db2ebd43553e32742610b04306373c860a922a99661cdd5c556eb8ab927e9ca8"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/29.sql",
+    "zip_member": "mo-long-lab/examples/29.sql",
+    "bytes": 7538,
+    "sha256": "5e74ebd123aa86b3601c0db5efa05f90732edbb96dbf06a1e03f4bfd23ef8814"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/30.sql",
+    "zip_member": "mo-long-lab/examples/30.sql",
+    "bytes": 11405,
+    "sha256": "4137910ffeef303aa3ec61fe3e6cfe0c1de3f56340725173099ffc868f0e97b2"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/31.sql",
+    "zip_member": "mo-long-lab/examples/31.sql",
+    "bytes": 13037,
+    "sha256": "e8bad53bb89d30b2117a3ece950a7c34ea40159e76cd9d9d3b3125f415773422"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/32.sql",
+    "zip_member": "mo-long-lab/examples/32.sql",
+    "bytes": 14208,
+    "sha256": "1248aade3ee4703734e908eb4355c017805c809784c00fa479b006df4f5fd9ce"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/33.sql",
+    "zip_member": "mo-long-lab/examples/33.sql",
+    "bytes": 11948,
+    "sha256": "81601711ce86b23a048d1cb2661504b2275698c12a6279f5ae351c08a244ef90"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/34.sql",
+    "zip_member": "mo-long-lab/examples/34.sql",
+    "bytes": 13667,
+    "sha256": "b205c277d5a3d076063bd6e71e13d5518ad9a368d9185bcc4f7a1798666fcf8b"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/35.sql",
+    "zip_member": "mo-long-lab/examples/35.sql",
+    "bytes": 14608,
+    "sha256": "d21b9c5de97a252705b3951b47587e0a4d4152483f44b28faaf75ddd14a1bf63"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/36.sql",
+    "zip_member": "mo-long-lab/examples/36.sql",
+    "bytes": 12261,
+    "sha256": "9087eeaa9acd30ac5d76a3aff9ab6bd3737dee4a7d827876c007ba64e222a36a"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/37.sql",
+    "zip_member": "mo-long-lab/examples/37.sql",
+    "bytes": 14337,
+    "sha256": "04e9b062327ebfa092ae775e3d16ef611a758805f97a7a402a7c82b61ab0c3d7"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/38.sql",
+    "zip_member": "mo-long-lab/examples/38.sql",
+    "bytes": 15968,
+    "sha256": "184f626ce1e44508a1813976c860de075aac801603b6f24cdb6e61795d6f7d0b"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/39.sql",
+    "zip_member": "mo-long-lab/examples/39.sql",
+    "bytes": 12896,
+    "sha256": "3b98fb0927616dd28f20e235b26c4cabfbba60fe20ffde5f4ddf9f0c272b57a3"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/40.sql",
+    "zip_member": "mo-long-lab/examples/40.sql",
+    "bytes": 7022,
+    "sha256": "5d0d87a23300e1c373c17bc10eb72f467fd5c3b8244842584f66fcd1598c9e01"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/41.sql",
+    "zip_member": "mo-long-lab/examples/41.sql",
+    "bytes": 6694,
+    "sha256": "a63d5802393ff9c78f0f334df7e7c1f17b8dab0658ba5bab5e1942824a9f4936"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/42.sql",
+    "zip_member": "mo-long-lab/examples/42.sql",
+    "bytes": 7366,
+    "sha256": "bd6c16714f77b813c7c5e11b12f0e5ce4d38275c29c431c6582470c5cf652034"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/43.sql",
+    "zip_member": "mo-long-lab/examples/43.sql",
+    "bytes": 7416,
+    "sha256": "d5a5f32a0833493ffb758c1a86b7040f3bce62cdb17d12eae0c953600b7d6ec4"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/44.sql",
+    "zip_member": "mo-long-lab/examples/44.sql",
+    "bytes": 6466,
+    "sha256": "0c332cc7d9616044a1df7f6dd99350a3a33b072f5c58fae4d275e900e0ce31d5"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/45.sql",
+    "zip_member": "mo-long-lab/examples/45.sql",
+    "bytes": 7405,
+    "sha256": "bf32bcb9a3b8d39213f47026f62fcf385954d7326171448aaf1ed156755a22c9"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/46.sql",
+    "zip_member": "mo-long-lab/examples/46.sql",
+    "bytes": 7215,
+    "sha256": "0c9485bf1b5ded32347e8b1296855bbe1c661bfcf31bf8442282167ded896e9e"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/47.sql",
+    "zip_member": "mo-long-lab/examples/47.sql",
+    "bytes": 13108,
+    "sha256": "4f8ada9486911ab78427d0d7bc91f31e666d69cfeafb41ab876297a2fe4f7938"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/48.sql",
+    "zip_member": "mo-long-lab/examples/48.sql",
+    "bytes": 14725,
+    "sha256": "52078f677d6badfc0b4a73c6c5007c4a0de7718cf0df26c284d47a3cfbb3f8cf"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/49.sql",
+    "zip_member": "mo-long-lab/examples/49.sql",
+    "bytes": 12928,
+    "sha256": "5726f95122e542bc1b5c9946491103b1dc89297c8f570763c95f2063952626cf"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/longest.sql",
+    "zip_member": "mo-long-lab/examples/longest.sql",
+    "bytes": 15872,
+    "sha256": "d90c7c3a8d0439bd2b7ca8a7a73df84e75eddc6e784ea01895d9d183d40747aa"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/multi-stage-complete.sql",
+    "zip_member": "mo-long-lab/examples/multi-stage-complete.sql",
+    "bytes": 26471,
+    "sha256": "e77fb4d1f8ccca1b8fe6b593a7217034fb0eb640dea82c36e429f779296f71c5"
+  },
+  {
+    "path": "suites/mo-long-lab/examples/multi-stage-example.json",
+    "zip_member": "mo-long-lab/examples/multi-stage-example.json",
+    "bytes": 67943,
+    "sha256": "e7608fd4408b21a9eda7b3a7a3e157f4eb87bdccbc421730b1bfe337e177a6aa"
+  },
+  {
+    "path": "suites/mo-long-lab/export_inputs.py",
+    "zip_member": "mo-long-lab/export_inputs.py",
+    "bytes": 567,
+    "sha256": "eaba52e809097ac6280d6908f69978faf1b3333fd85a10f8bcdd02b247b8bad4"
+  },
+  {
+    "path": "suites/mo-long-lab/failure-analysis.json",
+    "zip_member": "mo-long-lab/failure-analysis.json",
+    "bytes": 33514,
+    "sha256": "7fe3081dab589d9fd0899482bc0f624df839116b68e2311bf1aed650f408f97b"
+  },
+  {
+    "path": "suites/mo-long-lab/failure-representatives.json",
+    "zip_member": "mo-long-lab/failure-representatives.json",
+    "bytes": 2,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "path": "suites/mo-long-lab/final-state.json",
+    "zip_member": "mo-long-lab/final-state.json",
+    "bytes": 66645,
+    "sha256": "8a3bf28011eb47a531173d768d29be6165ffd6ed7ec75ffba92b71274e859b5b"
+  },
+  {
+    "path": "suites/mo-long-lab/final_check.py",
+    "zip_member": "mo-long-lab/final_check.py",
+    "bytes": 1519,
+    "sha256": "6433018ec450f1b6653e280f7dd7fe09b72380a4c58357b5ac457cc01aaa5ee5"
+  },
+  {
+    "path": "suites/mo-long-lab/flink-resource-limit.json",
+    "zip_member": "mo-long-lab/flink-resource-limit.json",
+    "bytes": 3011,
+    "sha256": "03dd304a2ef3c626ac8019db5a48a4f1836ade8811c754ce88c8d37a79dff3d3"
+  },
+  {
+    "path": "suites/mo-long-lab/flink_bounded-guard.json",
+    "zip_member": "mo-long-lab/flink_bounded-guard.json",
+    "bytes": 220,
+    "sha256": "8c39b35b9ed348d172207bb3c3aee441bdcb186d6b29e923b9b081b0e305945e"
+  },
+  {
+    "path": "suites/mo-long-lab/flink_bounded.py",
+    "zip_member": "mo-long-lab/flink_bounded.py",
+    "bytes": 6224,
+    "sha256": "407357e2ce874b2040f94d6a2f3e85aad3512cd8c16be1e9ae65ef8fe4dbe18b"
+  },
+  {
+    "path": "suites/mo-long-lab/flink_staged-guard.json",
+    "zip_member": "mo-long-lab/flink_staged-guard.json",
+    "bytes": 246,
+    "sha256": "e49cbae267f655d5dc6c750b192b622e3e86b905bcc3debbd17a32e8609910b5"
+  },
+  {
+    "path": "suites/mo-long-lab/flink_staged.py",
+    "zip_member": "mo-long-lab/flink_staged.py",
+    "bytes": 5797,
+    "sha256": "604c60cd5478e903ea7fb76b0777faa1bedc75aaa4cdbadcd2333256379f1ecf"
+  },
+  {
+    "path": "suites/mo-long-lab/guard.py",
+    "zip_member": "mo-long-lab/guard.py",
+    "bytes": 1531,
+    "sha256": "c6bc4304aec1c648dd3b9251b449661ec6a48fe243044198805a87531850a6e1"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/calendar.csv.gz",
+    "zip_member": "mo-long-lab/inputs/calendar.csv.gz",
+    "bytes": 598,
+    "sha256": "d0fcfe1363ad619409d690360217b71323c7a4089ce65a19d482c5f2638ec0bf"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/campaigns.csv.gz",
+    "zip_member": "mo-long-lab/inputs/campaigns.csv.gz",
+    "bytes": 5594,
+    "sha256": "f1a3213c0bb2ce4f191ac0792f38d99abfbdc388c4cedb7c5dece7c1b76a2fc4"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/customers.csv.gz",
+    "zip_member": "mo-long-lab/inputs/customers.csv.gz",
+    "bytes": 8027,
+    "sha256": "c76d8766a986ca9e5b61711bd18b996b9bd319e424e8e9e7f48ced45329b2c6b"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/edges.csv.gz",
+    "zip_member": "mo-long-lab/inputs/edges.csv.gz",
+    "bytes": 23515,
+    "sha256": "c781a997de70e1d322f985ec3fa39014413ab9245c972d92fadff59da843c673"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/events.csv.gz",
+    "zip_member": "mo-long-lab/inputs/events.csv.gz",
+    "bytes": 480901,
+    "sha256": "0d0b0807537ca0a11dee1efed0685bcd1f4aeb7e53a8aea01dcb3466f91d5291"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/inventory.csv.gz",
+    "zip_member": "mo-long-lab/inputs/inventory.csv.gz",
+    "bytes": 28728,
+    "sha256": "ad38113316ec6434f385883f7b63eaf871cb36d8cfe509031ed1433a1de0f68c"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/items.csv.gz",
+    "zip_member": "mo-long-lab/inputs/items.csv.gz",
+    "bytes": 189395,
+    "sha256": "a7fceef242cfd56463b55b774b61a57d51b262b96ef463795fe5de0c13d46a3f"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/market.csv.gz",
+    "zip_member": "mo-long-lab/inputs/market.csv.gz",
+    "bytes": 48544,
+    "sha256": "d9157e928ccd1748176a4a6bb4b29962a3b4b2ff5f56082e964ef3a3bba03832"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/orders.csv.gz",
+    "zip_member": "mo-long-lab/inputs/orders.csv.gz",
+    "bytes": 172060,
+    "sha256": "224923a34d85021b8c570f9799afd05e6d12cc23bfc646512134df9e5cb6ce7a"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/payments.csv.gz",
+    "zip_member": "mo-long-lab/inputs/payments.csv.gz",
+    "bytes": 192287,
+    "sha256": "d6f4ac98d13ced4559789aa07be7187709231bacae16b5519d647748272d0128"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/products.csv.gz",
+    "zip_member": "mo-long-lab/inputs/products.csv.gz",
+    "bytes": 422,
+    "sha256": "5005512a20a68a482df0014b7ff41681022d8474e92b645d76c2aa4beae745c3"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/refunds.csv.gz",
+    "zip_member": "mo-long-lab/inputs/refunds.csv.gz",
+    "bytes": 14818,
+    "sha256": "24740a9fed89ced33914d66221f2e0064bd51f666229d97a183a6aa3cc461d28"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/subscriptions.csv.gz",
+    "zip_member": "mo-long-lab/inputs/subscriptions.csv.gz",
+    "bytes": 104074,
+    "sha256": "08ed3ff8c7d565701e86477a6115a2099533bafb76f6b640f1b26ee05bb9ed0f"
+  },
+  {
+    "path": "suites/mo-long-lab/inputs/targets.csv.gz",
+    "zip_member": "mo-long-lab/inputs/targets.csv.gz",
+    "bytes": 973,
+    "sha256": "cb03594f49c9703111d801e420fb369f2acbc80d377f47e29cde98a27342fc8f"
+  },
+  {
+    "path": "suites/mo-long-lab/issue-dedup.json",
+    "zip_member": "mo-long-lab/issue-dedup.json",
+    "bytes": 5243,
+    "sha256": "34d71077042a8883dba438c52a1bc96e00ceac8fb4f84758cb258da4e9ca60e7"
+  },
+  {
+    "path": "suites/mo-long-lab/log_analysis.py",
+    "zip_member": "mo-long-lab/log_analysis.py",
+    "bytes": 3353,
+    "sha256": "a26f6931670efff2cec65aac8bdc870f1147c0249490a4cdbe0d56ac2614aaa3"
+  },
+  {
+    "path": "suites/mo-long-lab/package.py",
+    "zip_member": "mo-long-lab/package.py",
+    "bytes": 2066,
+    "sha256": "d99fa2b1bb7e6fb7de054efee170e3651b9d3d4740044d5d14265fdbdbee14b8"
+  },
+  {
+    "path": "suites/mo-long-lab/performance.json",
+    "zip_member": "mo-long-lab/performance.json",
+    "bytes": 3040,
+    "sha256": "fa8c3db524c3366890a5e3da771cef9a5d94ff655160a06f231de4dc8627de3f"
+  },
+  {
+    "path": "suites/mo-long-lab/performance.png",
+    "zip_member": "mo-long-lab/performance.png",
+    "bytes": 90814,
+    "sha256": "5af52da013a268fac56fb67e402cb8dd144eb75d8ddbbd66b8a4d98219eec76c"
+  },
+  {
+    "path": "suites/mo-long-lab/performance.py",
+    "zip_member": "mo-long-lab/performance.py",
+    "bytes": 3033,
+    "sha256": "8fed53b281b52dc82c248f9263f910c0e7cc5a9c8ac2228e157968246e66285e"
+  },
+  {
+    "path": "suites/mo-long-lab/plot.py",
+    "zip_member": "mo-long-lab/plot.py",
+    "bytes": 1064,
+    "sha256": "71f74ed829fc56a6971c3b6809ad493908336186e2d8d980dac49ee3cd61550f"
+  },
+  {
+    "path": "suites/mo-long-lab/render-validation.json",
+    "zip_member": "mo-long-lab/render-validation.json",
+    "bytes": 141,
+    "sha256": "7074c027648795b828f30cf45979183a929485fddd90e2082fd62f63634339d3"
+  },
+  {
+    "path": "suites/mo-long-lab/render.py",
+    "zip_member": "mo-long-lab/render.py",
+    "bytes": 1224,
+    "sha256": "4638a60d4d8900a6f664251f42cbdaa43b377d13b56d7847c567c5cec87401df"
+  },
+  {
+    "path": "suites/mo-long-lab/report.html",
+    "zip_member": "mo-long-lab/report.html",
+    "bytes": 280684,
+    "sha256": "dc899562bfb8520e6d94e1215b5d79b3f98cb913a4f0f588819e8b00d440dc0f"
+  },
+  {
+    "path": "suites/mo-long-lab/report.json",
+    "zip_member": "mo-long-lab/report.json",
+    "bytes": 146589,
+    "sha256": "93fe8b2037a94ec4277596ea3d879bf7d03e6707f4c6392786fe1ab9810555a1"
+  },
+  {
+    "path": "suites/mo-long-lab/report.py",
+    "zip_member": "mo-long-lab/report.py",
+    "bytes": 11530,
+    "sha256": "525b38e4dc1cf4a3e9d0eb433eb221afc44b79dacf716ca2e80f310ba3383973"
+  },
+  {
+    "path": "suites/mo-long-lab/requirements.txt",
+    "zip_member": "mo-long-lab/requirements.txt",
+    "bytes": 124,
+    "sha256": "fa008cfb88d265f965bb73faa40a5e2aec54d549771b03d5b099d046cc4e2c1b"
+  },
+  {
+    "path": "suites/mo-long-lab/run.py",
+    "zip_member": "mo-long-lab/run.py",
+    "bytes": 8895,
+    "sha256": "e0000ef10fede13468cf0cab13380c40cafa8900fffd2266a8c7ac0d56636862"
+  },
+  {
+    "path": "suites/mo-long-lab/scenario-catalog.json",
+    "zip_member": "mo-long-lab/scenario-catalog.json",
+    "bytes": 23612,
+    "sha256": "a61120d4db9d0d809ae8f74cce888e037650b2654ae7ac571d1e342ed96cf6c2"
+  },
+  {
+    "path": "suites/mo-long-lab/scenarios.py",
+    "zip_member": "mo-long-lab/scenarios.py",
+    "bytes": 13760,
+    "sha256": "90d6e4a954c2cf8c20da536b02df4f114d4852e3a2841c11e76eb5751235e324"
+  },
+  {
+    "path": "suites/mo-long-lab/setup.py",
+    "zip_member": "mo-long-lab/setup.py",
+    "bytes": 64,
+    "sha256": "50e210c96d45357f1b3b7c215d1d2bd6b2979a00ff09449128e920691038eb6a"
+  },
+  {
+    "path": "suites/mo-long-lab/status.py",
+    "zip_member": "mo-long-lab/status.py",
+    "bytes": 670,
+    "sha256": "264f70f5de9356355f9b80975017e8f6039ec2f39342f3422373ec257bef45a7"
+  },
+  {
+    "path": "suites/mo-long-lab/verify_data.py",
+    "zip_member": "mo-long-lab/verify_data.py",
+    "bytes": 3344,
+    "sha256": "1aa0b4fa53cc7a39536f1d9f9684f090fdcac2510853ae23afbb97007f805263"
+  },
+  {
+    "path": "suites/mo-demand-lab/README.md",
+    "zip_member": "mo-demand-lab/README.md",
+    "bytes": 6375,
+    "sha256": "2cc071e4f787a5b00dd49fa3e919a6ae1ef6c9d209556edd4d6be96feafb192c"
+  },
+  {
+    "path": "suites/mo-demand-lab/analysis.py",
+    "zip_member": "mo-demand-lab/analysis.py",
+    "bytes": 34375,
+    "sha256": "f0bbcee749dd60dc1e88606e4c43a7324d54ed5dd8dd9dca9128d6114d779a81"
+  },
+  {
+    "path": "suites/mo-demand-lab/artifact-manifest.json",
+    "zip_member": "mo-demand-lab/artifact-manifest.json",
+    "bytes": 23483,
+    "sha256": "236bd2342640079ff4e4c2161f0cff91f37cdbf58b88ec0739fb46f8a4cc62b0"
+  },
+  {
+    "path": "suites/mo-demand-lab/base_data.py",
+    "zip_member": "mo-demand-lab/base_data.py",
+    "bytes": 8328,
+    "sha256": "7d49cdca76829de79dbb2ec53a7b4a7f5471e35dfc6db048fc1d2e3e99558fe4"
+  },
+  {
+    "path": "suites/mo-demand-lab/business-scenario-catalog.json",
+    "zip_member": "mo-demand-lab/business-scenario-catalog.json",
+    "bytes": 10088,
+    "sha256": "1ed4386993c1c70984302f420045336852481aa5249c7a2a4036a7ed52e8665a"
+  },
+  {
+    "path": "suites/mo-demand-lab/calendar-correction-validation.json",
+    "zip_member": "mo-demand-lab/calendar-correction-validation.json",
+    "bytes": 1978,
+    "sha256": "ae81d3a0e4b838437165a2416b3c7f19a4e56dee0256ae68a3c113705aa2bd10"
+  },
+  {
+    "path": "suites/mo-demand-lab/canonical-code-manifest.json",
+    "zip_member": "mo-demand-lab/canonical-code-manifest.json",
+    "bytes": 500,
+    "sha256": "1ca25dd8b08b09a8366d962fa82d9a17ff6e4044b9fd28499f80498ece306b72"
+  },
+  {
+    "path": "suites/mo-demand-lab/catalog.py",
+    "zip_member": "mo-demand-lab/catalog.py",
+    "bytes": 18712,
+    "sha256": "3deab5dd2cc00022e009b940f6b0337aebb78cea21071788df4f771e8c53602c"
+  },
+  {
+    "path": "suites/mo-demand-lab/client-notes.json",
+    "zip_member": "mo-demand-lab/client-notes.json",
+    "bytes": 2518,
+    "sha256": "f7f1d29606045083a5dbcaee340d8c85a2c5b980e0c74fd0e8bed57b67c8f063"
+  },
+  {
+    "path": "suites/mo-demand-lab/connectors.py",
+    "zip_member": "mo-demand-lab/connectors.py",
+    "bytes": 6221,
+    "sha256": "b9eccb4a57ffa647031ccd8fc9e193a36883da9ff2dbcd7cb1605f2fcb9d275d"
+  },
+  {
+    "path": "suites/mo-demand-lab/data-integrity-final.json",
+    "zip_member": "mo-demand-lab/data-integrity-final.json",
+    "bytes": 3137,
+    "sha256": "518aa5026bc8f646eb6f977d9e5004d6e37610590d4ee640ecd270e59f5e2185"
+  },
+  {
+    "path": "suites/mo-demand-lab/data-integrity.json",
+    "zip_member": "mo-demand-lab/data-integrity.json",
+    "bytes": 2921,
+    "sha256": "5b3a6ebc9626e49e217afea35ff11caf414c47978c30a11d0480082b3402051d"
+  },
+  {
+    "path": "suites/mo-demand-lab/data.py",
+    "zip_member": "mo-demand-lab/data.py",
+    "bytes": 8107,
+    "sha256": "83e0d3e2cb639f5a9a75223d9a32efaef929f706d2aab97ddffde2c20817c9bd"
+  },
+  {
+    "path": "suites/mo-demand-lab/dataset-manifest.json",
+    "zip_member": "mo-demand-lab/dataset-manifest.json",
+    "bytes": 6574,
+    "sha256": "6d9024988a0aa49b6f1843a76cc46d26e5387b020a065fe4578ab7d0d6c509b8"
+  },
+  {
+    "path": "suites/mo-demand-lab/environment.json",
+    "zip_member": "mo-demand-lab/environment.json",
+    "bytes": 972,
+    "sha256": "9daba06d90550678ed59d3b14dd2790b4517a5bd50ae790dd00fc6bc7b1085ad"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/anomalies.sql",
+    "zip_member": "mo-demand-lab/examples/anomalies.sql",
+    "bytes": 5096,
+    "sha256": "d0715731e23dab1d4a442a31fcb5c0d8da607a3d8c81fcb8e2f857fcee9da411"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/assortment.sql",
+    "zip_member": "mo-demand-lab/examples/assortment.sql",
+    "bytes": 5006,
+    "sha256": "d447fe97718e5633b598cd394d46fe6abea5039f5cf081584cd913ae857ecd65"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/attribution.sql",
+    "zip_member": "mo-demand-lab/examples/attribution.sql",
+    "bytes": 6525,
+    "sha256": "d428d5039f2f7df6654f7062fb780ac20db98b9ee862b94093929ca280300c09"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/cannibalization.sql",
+    "zip_member": "mo-demand-lab/examples/cannibalization.sql",
+    "bytes": 1925,
+    "sha256": "2362c1b9ae101d84a170d2ec1e2ff9a851fdcc543ccb8a68321dcfea1452f30d"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/capacity.sql",
+    "zip_member": "mo-demand-lab/examples/capacity.sql",
+    "bytes": 5169,
+    "sha256": "5fb3e0813d75e54f2f1a7e103f33315e7ec35037b8fb0ed825e837be3a39771b"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/cash_reconcile.sql",
+    "zip_member": "mo-demand-lab/examples/cash_reconcile.sql",
+    "bytes": 5077,
+    "sha256": "e76e26e2636859ada0e518a62c509c655dce69b4de411b7fc46cc050e994c5bd"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/cohort_retention.sql",
+    "zip_member": "mo-demand-lab/examples/cohort_retention.sql",
+    "bytes": 6074,
+    "sha256": "bf60af62a7df77371817e81b22442f18878be8b1a714f1e857e84ca7b33a39bc"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/collections.sql",
+    "zip_member": "mo-demand-lab/examples/collections.sql",
+    "bytes": 5165,
+    "sha256": "920733ac75b40775cedb17342f3e0afae9420ae9faf213fb1995a288f32a3396"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/concentration.sql",
+    "zip_member": "mo-demand-lab/examples/concentration.sql",
+    "bytes": 5842,
+    "sha256": "e436d883e73e5be4bb591dcbb6c7fdf8bbff430f0595e6d354e4d069839e23e7"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/credit.sql",
+    "zip_member": "mo-demand-lab/examples/credit.sql",
+    "bytes": 5826,
+    "sha256": "8d038111a9479d6a4491f25fbcc3c638e4d1e8c277a8952f05b64b56699dc3c3"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/elasticity.sql",
+    "zip_member": "mo-demand-lab/examples/elasticity.sql",
+    "bytes": 1824,
+    "sha256": "ef4f1632ab18e3a9e8ff2cb26a2afee9d2a20714bf26c125b5cec7807555d63c"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/energy.sql",
+    "zip_member": "mo-demand-lab/examples/energy.sql",
+    "bytes": 418,
+    "sha256": "4602761cc82368fefb7b9f40acb928bd864d84435ab6e3f1c3a63628cbf3eba5"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/expansion.sql",
+    "zip_member": "mo-demand-lab/examples/expansion.sql",
+    "bytes": 7800,
+    "sha256": "a5528500373c4f8988c1ef9402a27d3f8130802089b9b9414792032e07ef8769"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/experiment.sql",
+    "zip_member": "mo-demand-lab/examples/experiment.sql",
+    "bytes": 5288,
+    "sha256": "ed4c67afd91ea79d535187fe7631e47a8f19248732605afcc28e7fd36c121ff6"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/forecast.sql",
+    "zip_member": "mo-demand-lab/examples/forecast.sql",
+    "bytes": 1894,
+    "sha256": "9cdd8de73df2853d1f02a76bfec9e173d90cc22343c48869bba85287fe226cc3"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/fraud.sql",
+    "zip_member": "mo-demand-lab/examples/fraud.sql",
+    "bytes": 6282,
+    "sha256": "fa11f9c0613354633022dfd648d485a35573580d27572ad2210cc84f1a1bf3ec"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/funnel.sql",
+    "zip_member": "mo-demand-lab/examples/funnel.sql",
+    "bytes": 5944,
+    "sha256": "12296455b4269c90d6fba6fc88a9af7b324ff0eaacc8fa64981597de5f0a181b"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/guardrails.sql",
+    "zip_member": "mo-demand-lab/examples/guardrails.sql",
+    "bytes": 5301,
+    "sha256": "447a90588029b179a488090c3e02bf268da5dfb0ff40ab5f721793ef56b679a6"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/health.sql",
+    "zip_member": "mo-demand-lab/examples/health.sql",
+    "bytes": 7657,
+    "sha256": "549d55aaae2d46021ec9cc558b83b09c7d273908cf817a73d02729f802119618"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/journey.sql",
+    "zip_member": "mo-demand-lab/examples/journey.sql",
+    "bytes": 5889,
+    "sha256": "344a543e857cce93915c480c2dbbd200a04c5533de451b6463a525e3f931c5b3"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/liquidity.sql",
+    "zip_member": "mo-demand-lab/examples/liquidity.sql",
+    "bytes": 5098,
+    "sha256": "7fba525f00cd40fe0f5e1256277d076be67677da456f15507d8df1d485753cbf"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/ltv.sql",
+    "zip_member": "mo-demand-lab/examples/ltv.sql",
+    "bytes": 6839,
+    "sha256": "56e1c6cf7d0635f5e4cab057a0cd5c317f12ca56b50577c8c482c959baa2b6b8"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/maintenance.sql",
+    "zip_member": "mo-demand-lab/examples/maintenance.sql",
+    "bytes": 2433,
+    "sha256": "2f512efc73e277208fb5ace638fceafac8d0f8d625f4026031cb75f55954f76a"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/marketing_budget.sql",
+    "zip_member": "mo-demand-lab/examples/marketing_budget.sql",
+    "bytes": 4973,
+    "sha256": "e65c1bf1669a2dec8f465c851aff23a57f1343d37a73867a0b917a09c561e341"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/pairs.sql",
+    "zip_member": "mo-demand-lab/examples/pairs.sql",
+    "bytes": 1028,
+    "sha256": "15af38fe93302cb864225e4e719093e1d77021a6ddb23224483dd73979e94b1a"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/planning.sql",
+    "zip_member": "mo-demand-lab/examples/planning.sql",
+    "bytes": 9661,
+    "sha256": "e2ac6e3b6ebe72c00951c0c7eebd4768c361eb3a4b9d5415b949599fe8087a7f"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/portfolio_alloc.sql",
+    "zip_member": "mo-demand-lab/examples/portfolio_alloc.sql",
+    "bytes": 1030,
+    "sha256": "ebd1613ec27d5d6a8d0d924a5c566f674211190f4b2c8356b6537df75ef02093"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/portfolio_risk.sql",
+    "zip_member": "mo-demand-lab/examples/portfolio_risk.sql",
+    "bytes": 1053,
+    "sha256": "87bc1681d637f18998254a2f430727697302b6e521859a29dd23004e07d10ab9"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/profit_bridge.sql",
+    "zip_member": "mo-demand-lab/examples/profit_bridge.sql",
+    "bytes": 5193,
+    "sha256": "edd3d99c82e154293149b799d34a165228edcee8a950651955bde9dd60523dc8"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/quality.sql",
+    "zip_member": "mo-demand-lab/examples/quality.sql",
+    "bytes": 2452,
+    "sha256": "82894f0a8e408e1dd6705ffc188a58387d19893a47ea4d963a63e55a93de3c98"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/recognition.sql",
+    "zip_member": "mo-demand-lab/examples/recognition.sql",
+    "bytes": 5212,
+    "sha256": "dad28e9395132471c752abec41dc0786798d4fdda54107edb716d0a82d6632fd"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/reliability.sql",
+    "zip_member": "mo-demand-lab/examples/reliability.sql",
+    "bytes": 2403,
+    "sha256": "8c35987548bcaa23aaea5d241a0a53698c7f244745c061b664f466c6e504bb9a"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/replenishment.sql",
+    "zip_member": "mo-demand-lab/examples/replenishment.sql",
+    "bytes": 1863,
+    "sha256": "d2c51be096d0b2aaffe57d045c1786a735cf9660084cee872a667eda2636f8db"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/returns.sql",
+    "zip_member": "mo-demand-lab/examples/returns.sql",
+    "bytes": 5029,
+    "sha256": "1accec4605d04b3829085584c00c7aee10efc48dc36679230434b5b634772445"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/rfm.sql",
+    "zip_member": "mo-demand-lab/examples/rfm.sql",
+    "bytes": 5127,
+    "sha256": "8ac934f9c4af311090e41ba430e1bb6458ed04b89956511ee940cb4468ba3366"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/sla.sql",
+    "zip_member": "mo-demand-lab/examples/sla.sql",
+    "bytes": 5171,
+    "sha256": "8520ea0a4ca025ddc2cebb34d4929753944e6d38c60f48540c38f916a372bf78"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/stress.sql",
+    "zip_member": "mo-demand-lab/examples/stress.sql",
+    "bytes": 6169,
+    "sha256": "359d0a4f263f739f99f83acecdb6667b7e030c153b20c5ced8d5aa4ca7ab2b51"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/supplier_risk.sql",
+    "zip_member": "mo-demand-lab/examples/supplier_risk.sql",
+    "bytes": 2042,
+    "sha256": "f525c13e669bd4dc442eb83fa9356fcf18a5f495c3acbd4dc470979fc7f940af"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/support_staff.sql",
+    "zip_member": "mo-demand-lab/examples/support_staff.sql",
+    "bytes": 7746,
+    "sha256": "22e60b479d89578dcf29894bf1cc1099758be83ebefe316304ec333db5f422fe"
+  },
+  {
+    "path": "suites/mo-demand-lab/examples/survival.sql",
+    "zip_member": "mo-demand-lab/examples/survival.sql",
+    "bytes": 6610,
+    "sha256": "99c8a4c4dc5ad3da2911b250882a271dcb66d5fcaddc78f207c3bb84a68e403e"
+  },
+  {
+    "path": "suites/mo-demand-lab/export_inputs.py",
+    "zip_member": "mo-demand-lab/export_inputs.py",
+    "bytes": 476,
+    "sha256": "a8b15aeeaa76b807b4be2504dfc01204933e255fa40f92bf5d82aecbd4f086fe"
+  },
+  {
+    "path": "suites/mo-demand-lab/facts.py",
+    "zip_member": "mo-demand-lab/facts.py",
+    "bytes": 8601,
+    "sha256": "d820e7a51087aa930cbc6b1399e1aaadeea2585ff67c57fb7eaa5787178df317"
+  },
+  {
+    "path": "suites/mo-demand-lab/failure-analysis.json",
+    "zip_member": "mo-demand-lab/failure-analysis.json",
+    "bytes": 1369,
+    "sha256": "b429cea2f553ab2c4845d9fb78904c4a45c971f8db4e5dd9d1101d80cd3b3c71"
+  },
+  {
+    "path": "suites/mo-demand-lab/final-state.json",
+    "zip_member": "mo-demand-lab/final-state.json",
+    "bytes": 3935,
+    "sha256": "473963130b3898226c68da14f2176ca3c4be509ed7ae28e11a966f77d049fccb"
+  },
+  {
+    "path": "suites/mo-demand-lab/final_check.py",
+    "zip_member": "mo-demand-lab/final_check.py",
+    "bytes": 2026,
+    "sha256": "140e088539738dce16d8540b24e00517dbda7e38bd36b50ea6e2ecab34bc76d1"
+  },
+  {
+    "path": "suites/mo-demand-lab/flink_supplement-guard.json",
+    "zip_member": "mo-demand-lab/flink_supplement-guard.json",
+    "bytes": 224,
+    "sha256": "6f147c111c07a8579108729bf571afb8c8c1c34a233c2702393337ee4a3a53f7"
+  },
+  {
+    "path": "suites/mo-demand-lab/flink_supplement.py",
+    "zip_member": "mo-demand-lab/flink_supplement.py",
+    "bytes": 42,
+    "sha256": "e6836e1ae94c3b7abd110859b8353abdf543768b5db619d7d30533c3211aefee"
+  },
+  {
+    "path": "suites/mo-demand-lab/guard.py",
+    "zip_member": "mo-demand-lab/guard.py",
+    "bytes": 1531,
+    "sha256": "c6bc4304aec1c648dd3b9251b449661ec6a48fe243044198805a87531850a6e1"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/calendar.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/calendar.csv.gz",
+    "bytes": 598,
+    "sha256": "d0fcfe1363ad619409d690360217b71323c7a4089ce65a19d482c5f2638ec0bf"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/campaigns.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/campaigns.csv.gz",
+    "bytes": 5633,
+    "sha256": "33f2fff431a05a7823b24e406dee113a86e8371677cb598083c84198df5bb963"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/contracts.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/contracts.csv.gz",
+    "bytes": 16330,
+    "sha256": "d1396ded1018a3fe94357d513be2898ca41420eb5ef72697dd65da7429406e2c"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/customers.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/customers.csv.gz",
+    "bytes": 8078,
+    "sha256": "1a319c145f9ff121bd0efd85661030d61048d511bb314b0a4df77a1c2ee7b672"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/edges.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/edges.csv.gz",
+    "bytes": 23528,
+    "sha256": "e85eef925bd76d8d91d5c63c111a91c98cce875634693723dee2cefb16b18083"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/energy.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/energy.csv.gz",
+    "bytes": 256054,
+    "sha256": "dd3713b048ee0b8afbfab1bb81fe99d9a7d43f86d13c3a5750ec3f22d26955c7"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/events.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/events.csv.gz",
+    "bytes": 883445,
+    "sha256": "c328227567c82e0422e2bea8344f44365acdf76e2ab8ca8da188e983e4f7378b"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/experiment.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/experiment.csv.gz",
+    "bytes": 129943,
+    "sha256": "8c12dd3de8f3b7db6c4a760497e4110ec78e7db25663ef04bff345e6c5881d5b"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/fraud_payments.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/fraud_payments.csv.gz",
+    "bytes": 108007,
+    "sha256": "dd3019cd4f735a38d5da308c7c4cd4f24e586a6162a541639fffaab19610c7ae"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/inventory.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/inventory.csv.gz",
+    "bytes": 28728,
+    "sha256": "ad38113316ec6434f385883f7b63eaf871cb36d8cfe509031ed1433a1de0f68c"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/items.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/items.csv.gz",
+    "bytes": 189217,
+    "sha256": "96cbc8948c1266fc6f5ed2045fd40c00bf4fa4786b463dbaa7f678fe85d0bee7"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/ledger.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/ledger.csv.gz",
+    "bytes": 93835,
+    "sha256": "6d2e19fc3044f57fcaaf6af0e0abf8a005e0902c00df0c6e706d1ee2e7796683"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/loan_performance.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/loan_performance.csv.gz",
+    "bytes": 41182,
+    "sha256": "edd7df3151fa43488a13b0269a24263bd9116b83b44675bdbcb570e561387ad6"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/loans.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/loans.csv.gz",
+    "bytes": 22784,
+    "sha256": "5f91ac8f9e2f4aa6b3266e42a7666be648f4af5bd0066ba1e6514cf14c6f6fbe"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/machines.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/machines.csv.gz",
+    "bytes": 501,
+    "sha256": "a1447139fbed94b890fd09bc03e87415b1e54b9206bd49b9bc401d3123ede927"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/market.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/market.csv.gz",
+    "bytes": 48543,
+    "sha256": "a2a27a1aa9d291d282a56ee8aedd59892cc820d4ac4913dc30b3ec2ac1997070"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/orders.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/orders.csv.gz",
+    "bytes": 171584,
+    "sha256": "eb899c32b10e4a8ad9700455f8c1db27cb4a99d00c8b571b8abfa45f571dd206"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/payments.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/payments.csv.gz",
+    "bytes": 191759,
+    "sha256": "e7957b8380c70c1419f963e50a9dcc165f31961c977118352056ae074d1c891c"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/prices.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/prices.csv.gz",
+    "bytes": 164379,
+    "sha256": "1ca09cfb571cbe27e1ac8b27ba754777c8738f28c9be9278c66e4b0f92ca43b4"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/production.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/production.csv.gz",
+    "bytes": 163085,
+    "sha256": "9aa2aba4b9b8cb9bda27ed2f39a6c2152ee60a1348cdf0ad3591e98b49410a8f"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/products.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/products.csv.gz",
+    "bytes": 422,
+    "sha256": "5005512a20a68a482df0014b7ff41681022d8474e92b645d76c2aa4beae745c3"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/receivables.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/receivables.csv.gz",
+    "bytes": 73378,
+    "sha256": "1d74694e661be169492c24a0aef4b02d44ef7bbcfb1bd5eb5d3c521226532a97"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/refunds.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/refunds.csv.gz",
+    "bytes": 14762,
+    "sha256": "39e61736da45d8877f27503381eebe6b223df721b14fff9554877333bc20a20a"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/sensors.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/sensors.csv.gz",
+    "bytes": 181884,
+    "sha256": "5e51da571c5be703cf420e2b26eab23794876fdc05deca3936fb3847a2eaa7ed"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/shipments.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/shipments.csv.gz",
+    "bytes": 77953,
+    "sha256": "fef0858a19bf992879d4e7f6438314ca0210caffd6f6b05f0e4938a08637d658"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/subscriptions.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/subscriptions.csv.gz",
+    "bytes": 104234,
+    "sha256": "f0bde5100ddd1f82c8276be21bcd46f6cfd4042a2f09bca0a25306bf3bfc4f97"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/suppliers.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/suppliers.csv.gz",
+    "bytes": 776,
+    "sha256": "462a50998274a78e723869b850922b0bde5b856ba71b95bb422079f1e012d37c"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/supply.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/supply.csv.gz",
+    "bytes": 25314,
+    "sha256": "12a9a0640420f863bcc2321efdcf3c1d6d4b70f845e624662f021eefbd993c1b"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/targets.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/targets.csv.gz",
+    "bytes": 977,
+    "sha256": "b2299cef4800bdcdb89b6a7386829844550a4f9351fa86b43e7baef06a7eb9c3"
+  },
+  {
+    "path": "suites/mo-demand-lab/inputs/tickets.csv.gz",
+    "zip_member": "mo-demand-lab/inputs/tickets.csv.gz",
+    "bytes": 414809,
+    "sha256": "1be9875fd22251cf5fb8b9e08891b68e15520ff212c666438ded4dfa84040018"
+  },
+  {
+    "path": "suites/mo-demand-lab/package.py",
+    "zip_member": "mo-demand-lab/package.py",
+    "bytes": 1967,
+    "sha256": "43d3ed74a85292c0386d219b1ddcba3d8dacdfc6d3a99cb9fc1efa34ed00f05a"
+  },
+  {
+    "path": "suites/mo-demand-lab/performance.json",
+    "zip_member": "mo-demand-lab/performance.json",
+    "bytes": 3336,
+    "sha256": "a3f8d3313096d2f5f6ffd40158fdba685d60c3bc2b28f6ef1bcea67d83c52575"
+  },
+  {
+    "path": "suites/mo-demand-lab/performance.png",
+    "zip_member": "mo-demand-lab/performance.png",
+    "bytes": 95990,
+    "sha256": "7f6f296cb629a5812fa19b17ee6405d1ca36bba955cfbb364eb74b3f528ca3fc"
+  },
+  {
+    "path": "suites/mo-demand-lab/performance.py",
+    "zip_member": "mo-demand-lab/performance.py",
+    "bytes": 3540,
+    "sha256": "1885b52132bfeb89fd8b22d6610f6cc22e2977081b4f0f06548f33da5dfc3561"
+  },
+  {
+    "path": "suites/mo-demand-lab/plot.py",
+    "zip_member": "mo-demand-lab/plot.py",
+    "bytes": 903,
+    "sha256": "e0d1c692f5be481d5fec764f412a3617e499124b41ef02282e6fc249e97addbf"
+  },
+  {
+    "path": "suites/mo-demand-lab/preflight-changes.json",
+    "zip_member": "mo-demand-lab/preflight-changes.json",
+    "bytes": 2351,
+    "sha256": "09a7b5e7c8cc927b063620f764fcffc1fd21cf5c7bd4b16889be2c4de8d44ecb"
+  },
+  {
+    "path": "suites/mo-demand-lab/render-validation.json",
+    "zip_member": "mo-demand-lab/render-validation.json",
+    "bytes": 158,
+    "sha256": "d16ea320c57d6e5c25625dbe533eba009f36fc3eaa1d8ede1f9bb573858e1325"
+  },
+  {
+    "path": "suites/mo-demand-lab/render.py",
+    "zip_member": "mo-demand-lab/render.py",
+    "bytes": 1403,
+    "sha256": "d4e20c3a9d9eafa7d2509705508a662c0779bc236858f95c5f91e13d47c0da95"
+  },
+  {
+    "path": "suites/mo-demand-lab/report.html",
+    "zip_member": "mo-demand-lab/report.html",
+    "bytes": 7811673,
+    "sha256": "2a1e4c627de8bdd89edef85472c6309badf924898d047dfcc508648aba05f547"
+  },
+  {
+    "path": "suites/mo-demand-lab/report.json",
+    "zip_member": "mo-demand-lab/report.json",
+    "bytes": 295830,
+    "sha256": "fa14d5d97e1532fa8a3e14ff84f8a533fc77f6d81bc61be6b4b4b839a7bc6958"
+  },
+  {
+    "path": "suites/mo-demand-lab/report.py",
+    "zip_member": "mo-demand-lab/report.py",
+    "bytes": 12529,
+    "sha256": "5c1242f46d63965a50e1d1c93ec61dcf158ede101b9beb38dad341002bef9ed1"
+  },
+  {
+    "path": "suites/mo-demand-lab/requirements-catalog.json",
+    "zip_member": "mo-demand-lab/requirements-catalog.json",
+    "bytes": 10088,
+    "sha256": "1ed4386993c1c70984302f420045336852481aa5249c7a2a4036a7ed52e8665a"
+  },
+  {
+    "path": "suites/mo-demand-lab/requirements.txt",
+    "zip_member": "mo-demand-lab/requirements.txt",
+    "bytes": 176,
+    "sha256": "80a5ab492d459029a450f9ca813a59a9d103bf15d6c175c0b3ecf69f0afb54e7"
+  },
+  {
+    "path": "suites/mo-demand-lab/results/canonical-before-calendar/catalog-before-calendar.py",
+    "zip_member": "mo-demand-lab/results/canonical-before-calendar/catalog-before-calendar.py",
+    "bytes": 18568,
+    "sha256": "3ef0b780825f461b95ef9b9ae9522822ac7ca47a3d229551401d0e67e9fa5412"
+  },
+  {
+    "path": "suites/mo-demand-lab/run.py",
+    "zip_member": "mo-demand-lab/run.py",
+    "bytes": 10806,
+    "sha256": "155cfa46e449331ac20ea20b95f7f6751d178cbdf62686b616e493307cb0f1b3"
+  },
+  {
+    "path": "suites/mo-demand-lab/spark_supplement-guard.json",
+    "zip_member": "mo-demand-lab/spark_supplement-guard.json",
+    "bytes": 225,
+    "sha256": "f0d62cf70f3108b448ccaaadb0c3af69a79a54a38e639124561343b46c9394a1"
+  },
+  {
+    "path": "suites/mo-demand-lab/spark_supplement.py",
+    "zip_member": "mo-demand-lab/spark_supplement.py",
+    "bytes": 42,
+    "sha256": "6814c9e39a2158b8d52ee90db639016de25d99a32c9b077f556a5d9236ee9d07"
+  },
+  {
+    "path": "suites/mo-demand-lab/status.py",
+    "zip_member": "mo-demand-lab/status.py",
+    "bytes": 670,
+    "sha256": "264f70f5de9356355f9b80975017e8f6039ec2f39342f3422373ec257bef45a7"
+  },
+  {
+    "path": "suites/mo-demand-lab/trace_analysis.py",
+    "zip_member": "mo-demand-lab/trace_analysis.py",
+    "bytes": 2496,
+    "sha256": "7f23b22802bb3f54b12fe5f01d6d6dc01eea0ba4f92ec2a5036e63d925748f2a"
+  },
+  {
+    "path": "suites/mo-demand-lab/verify.py",
+    "zip_member": "mo-demand-lab/verify.py",
+    "bytes": 3444,
+    "sha256": "983b710c0862a05650238904245a89a0ca33c4262fe2dd2ecc3040c6d9557c81"
+  },
+  {
+    "path": "suites/mo-crosslab/README.md",
+    "zip_member": "mo-crosslab/README.md",
+    "bytes": 9403,
+    "sha256": "9cc8cda7e7c0a4262e44db5df3a2f0d2a56eff6844f171eed3585ae92c1b6dcb"
+  },
+  {
+    "path": "suites/mo-crosslab/attempts/implicit-integer-avg-graphs.py",
+    "zip_member": "mo-crosslab/attempts/implicit-integer-avg-graphs.py",
+    "bytes": 14447,
+    "sha256": "11cccb9f55287f904c337479b6226ff85871f7dc18cbaf8aa6beded572ed80c1"
+  },
+  {
+    "path": "suites/mo-crosslab/attempts/performance-with-check-overhead.py",
+    "zip_member": "mo-crosslab/attempts/performance-with-check-overhead.py",
+    "bytes": 3575,
+    "sha256": "c65b791b1065dae316e688a15ef4af506ea0dd5e5f07de8e66a2108b48b8552f"
+  },
+  {
+    "path": "suites/mo-crosslab/attempts/spark-constant-feature-code.py",
+    "zip_member": "mo-crosslab/attempts/spark-constant-feature-code.py",
+    "bytes": 9036,
+    "sha256": "9a8054dc7c0bb873b32ea489b81737ba86efea6550f58820819cabd34478f84e"
+  },
+  {
+    "path": "suites/mo-crosslab/audit.py",
+    "zip_member": "mo-crosslab/audit.py",
+    "bytes": 1318,
+    "sha256": "65b14df6dea73e9bda6ac00c703704257f1293f8f2218a519d254814b794f646"
+  },
+  {
+    "path": "suites/mo-crosslab/base_data.py",
+    "zip_member": "mo-crosslab/base_data.py",
+    "bytes": 8328,
+    "sha256": "7d49cdca76829de79dbb2ec53a7b4a7f5471e35dfc6db048fc1d2e3e99558fe4"
+  },
+  {
+    "path": "suites/mo-crosslab/canonical-code-manifest.json",
+    "zip_member": "mo-crosslab/canonical-code-manifest.json",
+    "bytes": 670,
+    "sha256": "1482da69d1eda2ae61b4814cc414e1e5a8acb40574a10089ed3c7bd0d72623ad"
+  },
+  {
+    "path": "suites/mo-crosslab/capture_trace_sample.py",
+    "zip_member": "mo-crosslab/capture_trace_sample.py",
+    "bytes": 2393,
+    "sha256": "27dd6d561a5babbaa8e99824203112097b276c7409d1dfc17d90f56aabe288fc"
+  },
+  {
+    "path": "suites/mo-crosslab/client-analysis.json",
+    "zip_member": "mo-crosslab/client-analysis.json",
+    "bytes": 5122,
+    "sha256": "4386435c19019da3931a41db5a7a575369c343f5400393d0ccc339bf8cfd9fd9"
+  },
+  {
+    "path": "suites/mo-crosslab/common.py",
+    "zip_member": "mo-crosslab/common.py",
+    "bytes": 1377,
+    "sha256": "93aee3d2ef30ef44bbf04bca422c9ef5ef9b1d70aa9d1640452147384da05030"
+  },
+  {
+    "path": "suites/mo-crosslab/complexity.json",
+    "zip_member": "mo-crosslab/complexity.json",
+    "bytes": 1757,
+    "sha256": "29c3ec381e369d13b6fca3a328221066a93190996e46ad85a56579d5a66f8e84"
+  },
+  {
+    "path": "suites/mo-crosslab/data.py",
+    "zip_member": "mo-crosslab/data.py",
+    "bytes": 8105,
+    "sha256": "7412cb51efb56d75b98b9020d8bb17cb28ab527eed39cbe0dd2f3037b0d4d553"
+  },
+  {
+    "path": "suites/mo-crosslab/dataset-manifest.json",
+    "zip_member": "mo-crosslab/dataset-manifest.json",
+    "bytes": 6574,
+    "sha256": "6d9024988a0aa49b6f1843a76cc46d26e5387b020a065fe4578ab7d0d6c509b8"
+  },
+  {
+    "path": "suites/mo-crosslab/environment.json",
+    "zip_member": "mo-crosslab/environment.json",
+    "bytes": 1127,
+    "sha256": "ef0064efadea657588eeb2fdab20d100a84c472c9060e7213e6370f9aa5d7c79"
+  },
+  {
+    "path": "suites/mo-crosslab/error-taxonomy.json",
+    "zip_member": "mo-crosslab/error-taxonomy.json",
+    "bytes": 95523,
+    "sha256": "47b82669a03564115196c7e2bd11fd68243c818f9c6a3c7c366afc084ae4e4a6"
+  },
+  {
+    "path": "suites/mo-crosslab/examples/customer-multi-table.sql",
+    "zip_member": "mo-crosslab/examples/customer-multi-table.sql",
+    "bytes": 6645,
+    "sha256": "742d3a2cf30dc5b33775accb7125be8bcc348b5774d815614cc611ac221933ec"
+  },
+  {
+    "path": "suites/mo-crosslab/examples/product-multi-table.sql",
+    "zip_member": "mo-crosslab/examples/product-multi-table.sql",
+    "bytes": 5307,
+    "sha256": "16732dfb236a216890c41437b098058cd51acc01ebf0507604d32f4e6e1cb702"
+  },
+  {
+    "path": "suites/mo-crosslab/examples/thirty-source-cvar-plan.sql",
+    "zip_member": "mo-crosslab/examples/thirty-source-cvar-plan.sql",
+    "bytes": 12746,
+    "sha256": "17291542157c6fdc6ce8c413a6bdb3ed27efb404572978b3c61054e46acc890f"
+  },
+  {
+    "path": "suites/mo-crosslab/examples/thirty-table-single-query.sql",
+    "zip_member": "mo-crosslab/examples/thirty-table-single-query.sql",
+    "bytes": 14990,
+    "sha256": "f4f51cd2864f9bb9f83b95644abe1fa17c8c23d0055cdfc9faaebc61044c9f23"
+  },
+  {
+    "path": "suites/mo-crosslab/export.py",
+    "zip_member": "mo-crosslab/export.py",
+    "bytes": 887,
+    "sha256": "23901fd06910f8e446d976066dadb022c290fd98b29c1856adebb117e4426e5c"
+  },
+  {
+    "path": "suites/mo-crosslab/final-state.json",
+    "zip_member": "mo-crosslab/final-state.json",
+    "bytes": 18000,
+    "sha256": "c5bcc35aee0f75ea1f83e207fee945e6f40570f7b4cc040423e492830939c853"
+  },
+  {
+    "path": "suites/mo-crosslab/final_check.py",
+    "zip_member": "mo-crosslab/final_check.py",
+    "bytes": 2605,
+    "sha256": "cc9523d6b859b92926a7af6566b35ca15d54619c371a048c39d7a748b064f8ab"
+  },
+  {
+    "path": "suites/mo-crosslab/graphs.py",
+    "zip_member": "mo-crosslab/graphs.py",
+    "bytes": 14867,
+    "sha256": "58ee10e39e685100236b129a9f6c17e2ff91b498a95fed2b2187e6580efc8640"
+  },
+  {
+    "path": "suites/mo-crosslab/guard.py",
+    "zip_member": "mo-crosslab/guard.py",
+    "bytes": 1531,
+    "sha256": "c6bc4304aec1c648dd3b9251b449661ec6a48fe243044198805a87531850a6e1"
+  },
+  {
+    "path": "suites/mo-crosslab/holistic.py",
+    "zip_member": "mo-crosslab/holistic.py",
+    "bytes": 10675,
+    "sha256": "7c69d0f5bfa5d6625c9aadebf66f619ef43dfc6f07a4b6a3e0e14bc096cdf569"
+  },
+  {
+    "path": "suites/mo-crosslab/input-artifacts.json",
+    "zip_member": "mo-crosslab/input-artifacts.json",
+    "bytes": 4418,
+    "sha256": "f66b21f9e8a441d5447dabe3930a396b6c975d6b453e43b5f35680c1a722bc31"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/calendar.csv.gz",
+    "zip_member": "mo-crosslab/inputs/calendar.csv.gz",
+    "bytes": 598,
+    "sha256": "d0fcfe1363ad619409d690360217b71323c7a4089ce65a19d482c5f2638ec0bf"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/campaigns.csv.gz",
+    "zip_member": "mo-crosslab/inputs/campaigns.csv.gz",
+    "bytes": 5778,
+    "sha256": "ccd923333f1c13573d7dba906bdec0b7d0db4a934ad615590f614d9e8e4288fb"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/contracts.csv.gz",
+    "zip_member": "mo-crosslab/inputs/contracts.csv.gz",
+    "bytes": 15966,
+    "sha256": "5f02f798e6b1dce843fde8d3f9ec3016ceff61468cb23d481a71a8384de14220"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/customers.csv.gz",
+    "zip_member": "mo-crosslab/inputs/customers.csv.gz",
+    "bytes": 9334,
+    "sha256": "75a464b77c5774046458187b2cf46cd85b533d6b47cf44ccc7fb646e10f0e97b"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/edges.csv.gz",
+    "zip_member": "mo-crosslab/inputs/edges.csv.gz",
+    "bytes": 28408,
+    "sha256": "e38f4df3527136362633a93839f8a1ac1f5a2bfbad5e2dac713fa310a919eb71"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/energy.csv.gz",
+    "zip_member": "mo-crosslab/inputs/energy.csv.gz",
+    "bytes": 266754,
+    "sha256": "67fba8e9c6943cbd6ea405d863e3780ffbc918ca809ee494f450919c15baf8f9"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/events.csv.gz",
+    "zip_member": "mo-crosslab/inputs/events.csv.gz",
+    "bytes": 894535,
+    "sha256": "4761c81013f0004086930c3dd648cdd6b2b4dcbda17ee2e18b1f1a3d9a57cbf0"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/experiment.csv.gz",
+    "zip_member": "mo-crosslab/inputs/experiment.csv.gz",
+    "bytes": 134261,
+    "sha256": "620d279d437881ef748bdc6837400eb6ab771dc2069af3fb52d883c5fa96aa44"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/fraud_payments.csv.gz",
+    "zip_member": "mo-crosslab/inputs/fraud_payments.csv.gz",
+    "bytes": 109889,
+    "sha256": "2fde99289d8fb712b443b98b02458adcbc2056c3bd3cbc75ad627a63f2580294"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/inventory.csv.gz",
+    "zip_member": "mo-crosslab/inputs/inventory.csv.gz",
+    "bytes": 28728,
+    "sha256": "ad38113316ec6434f385883f7b63eaf871cb36d8cfe509031ed1433a1de0f68c"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/items.csv.gz",
+    "zip_member": "mo-crosslab/inputs/items.csv.gz",
+    "bytes": 197413,
+    "sha256": "b836083216ad78d9d983f06e6bfb919b0321043faac6aa9c4f20510b9eb83458"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/ledger.csv.gz",
+    "zip_member": "mo-crosslab/inputs/ledger.csv.gz",
+    "bytes": 94715,
+    "sha256": "5c45c8972ab5f7509dd30bdc603fd1d961a58e9c6d01dcd393df83cc15f524a2"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/loan_performance.csv.gz",
+    "zip_member": "mo-crosslab/inputs/loan_performance.csv.gz",
+    "bytes": 38870,
+    "sha256": "e094645b203b415e0ea3dde44b62a87028fcfa303d3d93af8be2509af8388729"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/loans.csv.gz",
+    "zip_member": "mo-crosslab/inputs/loans.csv.gz",
+    "bytes": 24357,
+    "sha256": "fe6858547ff9cdfa3bc337e97b4901b97738a4addc425ad459dac6472877aa0a"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/machines.csv.gz",
+    "zip_member": "mo-crosslab/inputs/machines.csv.gz",
+    "bytes": 560,
+    "sha256": "04c76071ec5685bee2b2b53a8a69917bcfc5192679881366ab536683ff21c523"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/market.csv.gz",
+    "zip_member": "mo-crosslab/inputs/market.csv.gz",
+    "bytes": 52841,
+    "sha256": "73e72f96ac0487b5cd5aba151c03bf754ce0de329756cb9b9026be36063c1290"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/orders.csv.gz",
+    "zip_member": "mo-crosslab/inputs/orders.csv.gz",
+    "bytes": 185092,
+    "sha256": "3d24d0c945c506fae68250745cdf8750f079c9d8da4518aba3665cf9aa9a6ac9"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/payments.csv.gz",
+    "zip_member": "mo-crosslab/inputs/payments.csv.gz",
+    "bytes": 190957,
+    "sha256": "5e6e021f1a636aa2cb73734646661901a30afb9be7e9dd2cd0af3d8068027d71"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/prices.csv.gz",
+    "zip_member": "mo-crosslab/inputs/prices.csv.gz",
+    "bytes": 172777,
+    "sha256": "cc5788fcfb49b1aa466154244db7965023d2d7a98334e8ddfd4a8c14e86be3ae"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/production.csv.gz",
+    "zip_member": "mo-crosslab/inputs/production.csv.gz",
+    "bytes": 167324,
+    "sha256": "9b6198043c4c649f14b48f71fd508be5d63138bf44f3cc87629e48e407130d7f"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/products.csv.gz",
+    "zip_member": "mo-crosslab/inputs/products.csv.gz",
+    "bytes": 460,
+    "sha256": "2d9fe604277d883f748e6923c2ced8048528d47dff781e837f942bb8f608aea8"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/receivables.csv.gz",
+    "zip_member": "mo-crosslab/inputs/receivables.csv.gz",
+    "bytes": 76723,
+    "sha256": "080be9b33d3147bd73899c509a2f7cdf9a25427849001c75d2c18f6297460996"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/refunds.csv.gz",
+    "zip_member": "mo-crosslab/inputs/refunds.csv.gz",
+    "bytes": 15100,
+    "sha256": "77299e33b4793ec70b3fab4cf4d3faf87af641facacf5d175c5c381c7f86faee"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/sensors.csv.gz",
+    "zip_member": "mo-crosslab/inputs/sensors.csv.gz",
+    "bytes": 188838,
+    "sha256": "0b36851ab9599c12d35d4deb2c6f2d183921031d2125b7718d3676c452346428"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/shipments.csv.gz",
+    "zip_member": "mo-crosslab/inputs/shipments.csv.gz",
+    "bytes": 80089,
+    "sha256": "38e3dee831346ea5a9c244e5e9bf8dfe6de33b5c285ed25a990cf99502d48a26"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/subscriptions.csv.gz",
+    "zip_member": "mo-crosslab/inputs/subscriptions.csv.gz",
+    "bytes": 118308,
+    "sha256": "efa125f02e7f849a61e035c467d2ea03e7c3b0ef0498e740b36e3529227b2701"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/suppliers.csv.gz",
+    "zip_member": "mo-crosslab/inputs/suppliers.csv.gz",
+    "bytes": 822,
+    "sha256": "6c480c5a18bff47b8e68897e2e7e2fd7a3bd829c700739511a1c6fd037670f41"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/supply.csv.gz",
+    "zip_member": "mo-crosslab/inputs/supply.csv.gz",
+    "bytes": 25457,
+    "sha256": "de6c05f1dd6ea4a80e50e55d98cf9ea2fd7ca296430dedbe57d76bd1441cbbc3"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/targets.csv.gz",
+    "zip_member": "mo-crosslab/inputs/targets.csv.gz",
+    "bytes": 1011,
+    "sha256": "adbbc2515eb2c1b7f21a1881af90686bcfbf8ba1a475d90a82dc7d90b9f3bf90"
+  },
+  {
+    "path": "suites/mo-crosslab/inputs/tickets.csv.gz",
+    "zip_member": "mo-crosslab/inputs/tickets.csv.gz",
+    "bytes": 423526,
+    "sha256": "f68ac2b3057f7d452cfed0c51a98c3f4e656fe630705afab347d15dae40d6758"
+  },
+  {
+    "path": "suites/mo-crosslab/joined.py",
+    "zip_member": "mo-crosslab/joined.py",
+    "bytes": 7863,
+    "sha256": "6b67fd4ad58d79a430a6a8b0f23c0cad2db8dc4f867cbc504f2e2a5caee43980"
+  },
+  {
+    "path": "suites/mo-crosslab/log_taxonomy.py",
+    "zip_member": "mo-crosslab/log_taxonomy.py",
+    "bytes": 2934,
+    "sha256": "b98c4b8a3c7b2eb340061f0e87a560b878db538eeca1801f8a2f53c2a491ab4d"
+  },
+  {
+    "path": "suites/mo-crosslab/models.py",
+    "zip_member": "mo-crosslab/models.py",
+    "bytes": 16489,
+    "sha256": "12fbb06bc9dd9c088b82afc4e368859c80798d5698a00f221a8d751d2821082c"
+  },
+  {
+    "path": "suites/mo-crosslab/package.py",
+    "zip_member": "mo-crosslab/package.py",
+    "bytes": 1509,
+    "sha256": "82ea2d6bd25f6cd0152c5d9382e749d7ecf511ae3648b3bb68a9d3a66d3387c9"
+  },
+  {
+    "path": "suites/mo-crosslab/pandas_graphs.py",
+    "zip_member": "mo-crosslab/pandas_graphs.py",
+    "bytes": 12341,
+    "sha256": "b974dd0a7cc089971ec051844733de0c712636cf195b04210e0a051329a62cb4"
+  },
+  {
+    "path": "suites/mo-crosslab/performance.json",
+    "zip_member": "mo-crosslab/performance.json",
+    "bytes": 96552,
+    "sha256": "20c64dcb60b613a491a65aaf0394a231f228a15ce9e7ba7984f99159f41988a1"
+  },
+  {
+    "path": "suites/mo-crosslab/performance.png",
+    "zip_member": "mo-crosslab/performance.png",
+    "bytes": 117801,
+    "sha256": "b9c8bc1a26d3af9a0d73e9870f973e304f2dfb88ec25c397fc2297a5803233c4"
+  },
+  {
+    "path": "suites/mo-crosslab/performance.py",
+    "zip_member": "mo-crosslab/performance.py",
+    "bytes": 4089,
+    "sha256": "f9c81244b892d0037f30f7d92dd1b63bca5e8b2ba366788862945082ac9332f8"
+  },
+  {
+    "path": "suites/mo-crosslab/performance.svg",
+    "zip_member": "mo-crosslab/performance.svg",
+    "bytes": 58396,
+    "sha256": "e217916d0dc2fa4961e08475b0462a1b95166ea4cd34a900ea89972d5c45acf5"
+  },
+  {
+    "path": "suites/mo-crosslab/plot.py",
+    "zip_member": "mo-crosslab/plot.py",
+    "bytes": 1222,
+    "sha256": "b77edd4e11886b50eb75b53dfad24e0910fc584388786fc459cfd4853ee35733"
+  },
+  {
+    "path": "suites/mo-crosslab/preflight.json",
+    "zip_member": "mo-crosslab/preflight.json",
+    "bytes": 5139,
+    "sha256": "28c0db78639dab34a01432fce9f31bf87e7de50197447d1f486970667cc2539e"
+  },
+  {
+    "path": "suites/mo-crosslab/preflight.py",
+    "zip_member": "mo-crosslab/preflight.py",
+    "bytes": 1585,
+    "sha256": "91c44e3541c47b78962134d6f9145f73e1b752bb659b297bc91dd99c33e78f55"
+  },
+  {
+    "path": "suites/mo-crosslab/render-validation.json",
+    "zip_member": "mo-crosslab/render-validation.json",
+    "bytes": 194,
+    "sha256": "db49418b73904c09a86bef741b545a50a439fd4a7485348fd7c86e16b1ed3c1b"
+  },
+  {
+    "path": "suites/mo-crosslab/render.py",
+    "zip_member": "mo-crosslab/render.py",
+    "bytes": 1636,
+    "sha256": "a781b0d42392503dde03e6a305f991977adee0edd18df42ce01c3af7e30b4eca"
+  },
+  {
+    "path": "suites/mo-crosslab/report.html",
+    "zip_member": "mo-crosslab/report.html",
+    "bytes": 11680835,
+    "sha256": "95bdfdf56cf010d0d84068bf34a259180eac9c12c3ab382d16d16d55213baa89"
+  },
+  {
+    "path": "suites/mo-crosslab/report.json",
+    "zip_member": "mo-crosslab/report.json",
+    "bytes": 235065,
+    "sha256": "2b0e0a79d874750c64db25c5965e38681a50e2216377ea4bb656b2439e06291e"
+  },
+  {
+    "path": "suites/mo-crosslab/report.py",
+    "zip_member": "mo-crosslab/report.py",
+    "bytes": 16923,
+    "sha256": "22c866ead0f88d0a4de543e28555f2f893edca192d25f1a02218731f669ed6ae"
+  },
+  {
+    "path": "suites/mo-crosslab/requirements-catalog.json",
+    "zip_member": "mo-crosslab/requirements-catalog.json",
+    "bytes": 20502,
+    "sha256": "c5f66efa1477031420ff9de775892339aa69bfbafc6c16bd043389dddc76988f"
+  },
+  {
+    "path": "suites/mo-crosslab/requirements.txt",
+    "zip_member": "mo-crosslab/requirements.txt",
+    "bytes": 192,
+    "sha256": "8c8ae5301a2de9b42e0f3713181540257623bf0802f91e6ec7a98444a6c0248c"
+  },
+  {
+    "path": "suites/mo-crosslab/run.py",
+    "zip_member": "mo-crosslab/run.py",
+    "bytes": 6728,
+    "sha256": "e993b7d2f749384ec19d0bda1270e8193257e7ca37a9e1e7bae62c593052f923"
+  },
+  {
+    "path": "suites/mo-crosslab/source-audit-final.json",
+    "zip_member": "mo-crosslab/source-audit-final.json",
+    "bytes": 2292,
+    "sha256": "f784f772fac9dcdc461d387322d8c3f336309b8b4c4b187455a95831118728fc"
+  },
+  {
+    "path": "suites/mo-crosslab/source-audit-holistic.json",
+    "zip_member": "mo-crosslab/source-audit-holistic.json",
+    "bytes": 2293,
+    "sha256": "b78694ef87dcbb31887af5410d1fe05328bdec58e24938840068627617224a18"
+  },
+  {
+    "path": "suites/mo-crosslab/source-audit-initial.json",
+    "zip_member": "mo-crosslab/source-audit-initial.json",
+    "bytes": 2293,
+    "sha256": "395ce4410417a1971c0e10cab9e4aef5b6722bd133a604e88939981e1e6c822d"
+  },
+  {
+    "path": "suites/mo-crosslab/source-audit-joined.json",
+    "zip_member": "mo-crosslab/source-audit-joined.json",
+    "bytes": 2293,
+    "sha256": "555de14ec21a53cbf1fed30589843e56be3e692f8826375b5cfa5a16a187dd73"
+  },
+  {
+    "path": "suites/mo-crosslab/source-audit-performance.json",
+    "zip_member": "mo-crosslab/source-audit-performance.json",
+    "bytes": 2293,
+    "sha256": "7d9da5fcf9ffe49470f89ef93298cd02f5a2a72659fd686b1afebf25e9e3d22e"
+  },
+  {
+    "path": "suites/mo-crosslab/spark-code-manifest.json",
+    "zip_member": "mo-crosslab/spark-code-manifest.json",
+    "bytes": 592,
+    "sha256": "7ccbc00bf099cd790c49027acdf91646e2ac6fbd8f1f7fd6d5a9b1a91cecdb03"
+  },
+  {
+    "path": "suites/mo-crosslab/spark-probe.json",
+    "zip_member": "mo-crosslab/spark-probe.json",
+    "bytes": 216,
+    "sha256": "b773e0353b1f8039464ed7fafeb7995d7cd9ed6caf9abb54d5e9fe4e9f7afa0b"
+  },
+  {
+    "path": "suites/mo-crosslab/spark_probe-guard.json",
+    "zip_member": "mo-crosslab/spark_probe-guard.json",
+    "bytes": 221,
+    "sha256": "c7194e4c9ae5f1458628432bdaa7062ead388bad3d76f83c672abf6ee6d9540a"
+  },
+  {
+    "path": "suites/mo-crosslab/spark_probe.py",
+    "zip_member": "mo-crosslab/spark_probe.py",
+    "bytes": 2682,
+    "sha256": "25826ca3401e01fe17f147eb11db25f7f458eeeb5874f0e7ea0546c45c9e6aa0"
+  },
+  {
+    "path": "suites/mo-crosslab/spark_run-guard.json",
+    "zip_member": "mo-crosslab/spark_run-guard.json",
+    "bytes": 218,
+    "sha256": "058c2be611b5ee27d04bdd21e205f46e92cf64ce191e705c9cc7f4186d23baf0"
+  },
+  {
+    "path": "suites/mo-crosslab/spark_run.py",
+    "zip_member": "mo-crosslab/spark_run.py",
+    "bytes": 9322,
+    "sha256": "7e5e278c84774e07e868d1f8549fa4873471f4cfe1aa217faee115b66bd298b4"
+  },
+  {
+    "path": "suites/mo-crosslab/statement-info-columns.json",
+    "zip_member": "mo-crosslab/statement-info-columns.json",
+    "bytes": 482,
+    "sha256": "6d1817fda7af95597f0c761f8d8aa9735041eb2bf062371c9a78616b323701bf"
+  },
+  {
+    "path": "suites/mo-crosslab/telemetry-analysis.json",
+    "zip_member": "mo-crosslab/telemetry-analysis.json",
+    "bytes": 1127,
+    "sha256": "ac05fc35632ecbb8f115191f0da3056de281b0051ae209e53fc397de416e81e6"
+  },
+  {
+    "path": "suites/mo-crosslab/artifact-manifest.json",
+    "zip_member": "mo-crosslab/artifact-manifest.json",
+    "bytes": 23614,
+    "sha256": "089378f73262b9411e0cd13b60488157775cb54c1c4124f4cda9dbbfae013dd6"
+  },
+  {
+    "path": "suites/mo-ml-lab/README.md",
+    "zip_member": "README.md",
+    "bytes": 8543,
+    "sha256": "ada2e4703bba82f1359a9eaef8bf915514077d165516be7a07ab45f6d4240b17"
+  },
+  {
+    "path": "suites/mo-ml-lab/attempts/spark-worker-python/guard.py",
+    "zip_member": "attempts/spark-worker-python/guard.py",
+    "bytes": 1585,
+    "sha256": "d361c04910eeb092aca8924f8633588804b86f0ed3e75a55ee85d50a7d051d95"
+  },
+  {
+    "path": "suites/mo-ml-lab/attempts/spark-worker-python/spark.py",
+    "zip_member": "attempts/spark-worker-python/spark.py",
+    "bytes": 9352,
+    "sha256": "562d140d0bee84657821f3560cd6386863fd37fc99d6e0f9480ef2bd588ee5c0"
+  },
+  {
+    "path": "suites/mo-ml-lab/attempts/static-scheduling/data.py",
+    "zip_member": "attempts/static-scheduling/data.py",
+    "bytes": 11223,
+    "sha256": "d7cc46c066ac8fe9b1da1ac7bfe948347d6edc4f15fa7ebe483a4b58432c69b3"
+  },
+  {
+    "path": "suites/mo-ml-lab/attempts/static-scheduling/models.py",
+    "zip_member": "attempts/static-scheduling/models.py",
+    "bytes": 11604,
+    "sha256": "1c93926bfee00c7ec47681210ef54d5ef884093fdacd74b6089fea8e7ec3a9de"
+  },
+  {
+    "path": "suites/mo-ml-lab/attempts/static-scheduling/run.py",
+    "zip_member": "attempts/static-scheduling/run.py",
+    "bytes": 8539,
+    "sha256": "301e03f06341d2a6ebfb7e42b68e1a97a7fdc447d44f9c6f63e273202a90e93c"
+  },
+  {
+    "path": "suites/mo-ml-lab/backend-log-notes.md",
+    "zip_member": "backend-log-notes.md",
+    "bytes": 3000,
+    "sha256": "0d2501f3b25e23ce6b41baabc91d53ade1774f0cfff4c01cdc068ec26138be5a"
+  },
+  {
+    "path": "suites/mo-ml-lab/capture_trace.py",
+    "zip_member": "capture_trace.py",
+    "bytes": 2442,
+    "sha256": "d10abd92470f19d4b079316ab1175aafb9d29dd9f29ba8a937e9267c8c9738fa"
+  },
+  {
+    "path": "suites/mo-ml-lab/classify_snapshot.py",
+    "zip_member": "classify_snapshot.py",
+    "bytes": 1914,
+    "sha256": "cfb5fd7b50b07cbc1749e76b9f78c11eaed02ff2833eb28aec4b99c226481438"
+  },
+  {
+    "path": "suites/mo-ml-lab/complexity.json",
+    "zip_member": "complexity.json",
+    "bytes": 317,
+    "sha256": "89fc0bd82d546316bf7214f1c5a90cfb69dfbb43688147a92982db2fb4afe9e3"
+  },
+  {
+    "path": "suites/mo-ml-lab/compound-guard.json",
+    "zip_member": "compound-guard.json",
+    "bytes": 297,
+    "sha256": "a392dbe449cd2e7d833dcc21c7d7f6ae724844ce0fdd9730412031e4fd1cc4d3"
+  },
+  {
+    "path": "suites/mo-ml-lab/compound-summary.json",
+    "zip_member": "compound-summary.json",
+    "bytes": 67,
+    "sha256": "90b9dc89af9828193fd2539eddf521ab13ad8849ae1039c9e018a69c37e311be"
+  },
+  {
+    "path": "suites/mo-ml-lab/compound.py",
+    "zip_member": "compound.py",
+    "bytes": 7542,
+    "sha256": "b00982adf4a786e13bc954c438dd75bd9a70112f7dfdff446f5a76b7d2fe33ad"
+  },
+  {
+    "path": "suites/mo-ml-lab/data.py",
+    "zip_member": "data.py",
+    "bytes": 11223,
+    "sha256": "d7cc46c066ac8fe9b1da1ac7bfe948347d6edc4f15fa7ebe483a4b58432c69b3"
+  },
+  {
+    "path": "suites/mo-ml-lab/dataset.json",
+    "zip_member": "dataset.json",
+    "bytes": 1352,
+    "sha256": "d569a17cb9c71aa1a452e915d1ab705c72c6d09304b0c4fad0f93dca9fc13510"
+  },
+  {
+    "path": "suites/mo-ml-lab/environment.json",
+    "zip_member": "environment.json",
+    "bytes": 2591,
+    "sha256": "cfacefea3f8d9e6225d32917445a2e3fffd3fa106cceadbe24501a22ef4ce24f"
+  },
+  {
+    "path": "suites/mo-ml-lab/error-samples.json",
+    "zip_member": "error-samples.json",
+    "bytes": 6359,
+    "sha256": "6aff6f8b89ad68a44b98d28359212a29af9eb2e0bd813c68829eb8b3be445907"
+  },
+  {
+    "path": "suites/mo-ml-lab/example.sql",
+    "zip_member": "example.sql",
+    "bytes": 2267,
+    "sha256": "ce4bfb00a527f678a4beae0a8f214152dfe15e119062f71455d4d5cc54ebdd80"
+  },
+  {
+    "path": "suites/mo-ml-lab/export.py",
+    "zip_member": "export.py",
+    "bytes": 1430,
+    "sha256": "ee2dd105b5eec8db708ea61bd1193e2dcef68e7e24514c79ba70dfe8f45e2035"
+  },
+  {
+    "path": "suites/mo-ml-lab/final-state.json",
+    "zip_member": "final-state.json",
+    "bytes": 2059,
+    "sha256": "aa30b5087480d1633c1634fa83326c3025868e7846ac23bbe6c9105455e7b440"
+  },
+  {
+    "path": "suites/mo-ml-lab/finalize.py",
+    "zip_member": "finalize.py",
+    "bytes": 4677,
+    "sha256": "02723e710965e1ecb92550e68993f1694c76b2099b87b113d1c3832d5112d2f5"
+  },
+  {
+    "path": "suites/mo-ml-lab/frontend-log-contexts.json",
+    "zip_member": "frontend-log-contexts.json",
+    "bytes": 3822,
+    "sha256": "59effceab559a72d437637020891f4e99dc9a543bf2c04b5befe7403488ee889"
+  },
+  {
+    "path": "suites/mo-ml-lab/github-frontend-search.json",
+    "zip_member": "github-frontend-search.json",
+    "bytes": 5253,
+    "sha256": "43531758f5979393c12fc2ac51ea72fb58cc8b134a4617a69942a60da3d9a329"
+  },
+  {
+    "path": "suites/mo-ml-lab/github-join-dependency-search.json",
+    "zip_member": "github-join-dependency-search.json",
+    "bytes": 612,
+    "sha256": "3b62449a2ad0b4a732c2b83fddf1432b5134e54c463d63ca91f7ee1201e09751"
+  },
+  {
+    "path": "suites/mo-ml-lab/github-known-issue-status.json",
+    "zip_member": "github-known-issue-status.json",
+    "bytes": 923,
+    "sha256": "03bdffcf0201a35b81a974467cc2e0d9ee74e58a4fa148c0f48557132121d489"
+  },
+  {
+    "path": "suites/mo-ml-lab/guard.py",
+    "zip_member": "guard.py",
+    "bytes": 1585,
+    "sha256": "d361c04910eeb092aca8924f8633588804b86f0ed3e75a55ee85d50a7d051d95"
+  },
+  {
+    "path": "suites/mo-ml-lab/input-manifest.json",
+    "zip_member": "input-manifest.json",
+    "bytes": 6187,
+    "sha256": "70018bf5eaf039fd7da01f76df3ee473a3e2f9f0ef9a8bee8125b8aac1b0b956"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/calendar.csv.gz",
+    "zip_member": "inputs/calendar.csv.gz",
+    "bytes": 230,
+    "sha256": "50c1e331077993ec4ffd9a3fbe733fd35a457c9bd853fe470f8d1b79f1e7edb1"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/edges.csv.gz",
+    "zip_member": "inputs/edges.csv.gz",
+    "bytes": 3326,
+    "sha256": "b021ffd3a80b66ae7ef4d42a335c9dcea7d22baefabb2af56411a8fd4ccd3fd2"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/entities.csv.gz",
+    "zip_member": "inputs/entities.csv.gz",
+    "bytes": 4308,
+    "sha256": "d45f2a169a97e718bd9639ffffe60940ea7a809624c76e5f73154f6bfe839f60"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/events.csv.gz",
+    "zip_member": "inputs/events.csv.gz",
+    "bytes": 46487,
+    "sha256": "34fd72a4319df7de6ae45b11ac6f9c5951ceba3e35edf5c486388dabbe6045b2"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/exposures.csv.gz",
+    "zip_member": "inputs/exposures.csv.gz",
+    "bytes": 1805,
+    "sha256": "63427c197111dd23211ec50f542fbe7906f022db0137ac88cd9592cae83fff2c"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/interventions.csv.gz",
+    "zip_member": "inputs/interventions.csv.gz",
+    "bytes": 5320,
+    "sha256": "709e4289f19033899d773eb8fdebe8b0bebda82555489baa59e308b198a6576e"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/labels.csv.gz",
+    "zip_member": "inputs/labels.csv.gz",
+    "bytes": 317770,
+    "sha256": "3930af8eb63d32a3c6ce044b0cbf23c0e045038714eb427f91fa4e0521b0d673"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/maintenance.csv.gz",
+    "zip_member": "inputs/maintenance.csv.gz",
+    "bytes": 36529,
+    "sha256": "402d7c097edaa26cfea978a01cda591104a7ac81a820b081ba6ee8dc822c8d58"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/outages.csv.gz",
+    "zip_member": "inputs/outages.csv.gz",
+    "bytes": 3076,
+    "sha256": "b8ff07a16abd79031ee1201382acefd91a24a6736a1d5def41593f7895f9f186"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/policies.csv.gz",
+    "zip_member": "inputs/policies.csv.gz",
+    "bytes": 87,
+    "sha256": "b4a9860e50d2e23a161fa2353803b70cfcdc97076d24f8f83de5701ced05ee88"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/prices.csv.gz",
+    "zip_member": "inputs/prices.csv.gz",
+    "bytes": 2620,
+    "sha256": "5a3597cc053ea1c257b5817057b7f991609ec2020daae0bc9e28691dd59dd8c9"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/readings.csv.gz",
+    "zip_member": "inputs/readings.csv.gz",
+    "bytes": 1016489,
+    "sha256": "e7659b490a7c84bccd5d02faac23321ec73a92e8f84f88e079851fb0efb2398c"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/segments.csv.gz",
+    "zip_member": "inputs/segments.csv.gz",
+    "bytes": 105,
+    "sha256": "602f4449287c6f147fd5b831dce074080fe7851b19cb47e39481fc1dd2ba48bc"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/targets.csv.gz",
+    "zip_member": "inputs/targets.csv.gz",
+    "bytes": 687958,
+    "sha256": "d3b3c889dca14f9842b70278c76c408eff40283404d4c177ef5dfdde7f49a50b"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/trades.csv.gz",
+    "zip_member": "inputs/trades.csv.gz",
+    "bytes": 593934,
+    "sha256": "b1850fa6e93c0746139b51bf221d64222ba8f81a87a44ac1ba7f2aaf3691f0f9"
+  },
+  {
+    "path": "suites/mo-ml-lab/inputs/weather.csv.gz",
+    "zip_member": "inputs/weather.csv.gz",
+    "bytes": 2561,
+    "sha256": "9e7e538af4e40ab177cc89d0a44253ce05daddea06bee635fdddc105ca8273f7"
+  },
+  {
+    "path": "suites/mo-ml-lab/main-start.json",
+    "zip_member": "main-start.json",
+    "bytes": 400,
+    "sha256": "eae15f483f36bf66eb817a5486968d1735def2cce03b38710382fd6d8cc140b7"
+  },
+  {
+    "path": "suites/mo-ml-lab/main-summary.json",
+    "zip_member": "main-summary.json",
+    "bytes": 809,
+    "sha256": "3c445d3028f378309a7b3f86e49ea20fffa5bd3eb27af115e39ae511b58bbdeb"
+  },
+  {
+    "path": "suites/mo-ml-lab/models.py",
+    "zip_member": "models.py",
+    "bytes": 11604,
+    "sha256": "1c93926bfee00c7ec47681210ef54d5ef884093fdacd74b6089fea8e7ec3a9de"
+  },
+  {
+    "path": "suites/mo-ml-lab/package.py",
+    "zip_member": "package.py",
+    "bytes": 1587,
+    "sha256": "10c1a22ccc443889625cf02a66e98db92ecaed979a40edb3388628d70a5a0db2"
+  },
+  {
+    "path": "suites/mo-ml-lab/performance-guard.json",
+    "zip_member": "performance-guard.json",
+    "bytes": 302,
+    "sha256": "9e3c30b166853313a97516387faa7e86909d8c85482720831c44f773a7af5a37"
+  },
+  {
+    "path": "suites/mo-ml-lab/performance-summary.json",
+    "zip_member": "performance-summary.json",
+    "bytes": 2370,
+    "sha256": "1f638e0239dab42099c5967c362d8cc6582ab1cda33d7f0a43e18c7c1a2c44c3"
+  },
+  {
+    "path": "suites/mo-ml-lab/performance.png",
+    "zip_member": "performance.png",
+    "bytes": 127190,
+    "sha256": "74e522f57ef833707c2c9d14a1d8686ed4f1ca36b98650ac620908963b38b0b6"
+  },
+  {
+    "path": "suites/mo-ml-lab/performance.py",
+    "zip_member": "performance.py",
+    "bytes": 2801,
+    "sha256": "d65cc116a825226768b7b5d144c2cf38aae291c676b8fb085edade50b4ff9850"
+  },
+  {
+    "path": "suites/mo-ml-lab/performance.svg",
+    "zip_member": "performance.svg",
+    "bytes": 59595,
+    "sha256": "fb9da559e6b3955f42975323d8b6727597eb33a9fd62d7a89c4690ad3d95f0f5"
+  },
+  {
+    "path": "suites/mo-ml-lab/pilot-start.json",
+    "zip_member": "pilot-start.json",
+    "bytes": 398,
+    "sha256": "03b8e547430a8c2860bd78dc99c7d75ee1db55f85a69145ed3a05eeff5cd4307"
+  },
+  {
+    "path": "suites/mo-ml-lab/pilot-summary.json",
+    "zip_member": "pilot-summary.json",
+    "bytes": 796,
+    "sha256": "65dc22a0ad9e4fb4d41e5892faf4f7eaab1e04c2b5a9740e183150eeb3403983"
+  },
+  {
+    "path": "suites/mo-ml-lab/plot.py",
+    "zip_member": "plot.py",
+    "bytes": 1108,
+    "sha256": "56481a1ae82c2d01843b09b014f9867176f00ed3ceff35db298ad7b8b5bef885"
+  },
+  {
+    "path": "suites/mo-ml-lab/preprocessing.json",
+    "zip_member": "preprocessing.json",
+    "bytes": 1148346,
+    "sha256": "e664df25f079e462f191c5263705410e72b4c32e9eaf5a83da3ddf06f5c81747"
+  },
+  {
+    "path": "suites/mo-ml-lab/progress.py",
+    "zip_member": "progress.py",
+    "bytes": 1412,
+    "sha256": "7195669618c3f113bdf623486078b92a895491c1f092c0dbe444554411030a24"
+  },
+  {
+    "path": "suites/mo-ml-lab/remaining-log-review.json",
+    "zip_member": "remaining-log-review.json",
+    "bytes": 1867,
+    "sha256": "18bc34e4da35f9b54d295b7ca65778cff7d4550f840ea81b136f250d62d8b7b3"
+  },
+  {
+    "path": "suites/mo-ml-lab/render-validation.json",
+    "zip_member": "render-validation.json",
+    "bytes": 353,
+    "sha256": "2bcb5d257a1ec423396d40810bfaee88e681445e8ceb51c24790a8c36541918d"
+  },
+  {
+    "path": "suites/mo-ml-lab/render.py",
+    "zip_member": "render.py",
+    "bytes": 2411,
+    "sha256": "eb486f057c9b2ba5808b552e226b93866d8472a654912989b395e240de81695d"
+  },
+  {
+    "path": "suites/mo-ml-lab/replay.py",
+    "zip_member": "replay.py",
+    "bytes": 2347,
+    "sha256": "a3bfb5748c18ab9376996d221bdaa62042412c28395a6353d4cda1d7bd6e9c02"
+  },
+  {
+    "path": "suites/mo-ml-lab/report.html",
+    "zip_member": "report.html",
+    "bytes": 32496262,
+    "sha256": "21842ea9c05b05bb919f516e72281c87f2b105c8f1e1a5cc352aa5e855e74790"
+  },
+  {
+    "path": "suites/mo-ml-lab/report.json",
+    "zip_member": "report.json",
+    "bytes": 41130,
+    "sha256": "4efc63d3372cf9a73eee102cf947b99319839d5ab0e6a22600d1e584a7c0ab9d"
+  },
+  {
+    "path": "suites/mo-ml-lab/report.py",
+    "zip_member": "report.py",
+    "bytes": 22640,
+    "sha256": "766432320086b58dcd2437ea282f321ab031e97e019d695d3aa3f2df7858f18c"
+  },
+  {
+    "path": "suites/mo-ml-lab/requirements.txt",
+    "zip_member": "requirements.txt",
+    "bytes": 176,
+    "sha256": "a664e89f916a30766ad9fb7195ac8b721498cdaf78f7e09b50e841c5af5ec7a5"
+  },
+  {
+    "path": "suites/mo-ml-lab/run.py",
+    "zip_member": "run.py",
+    "bytes": 8574,
+    "sha256": "8805858baaf23c04d0f31758f60cfcd79d4d67d0e9668ae6ae02737ce989a259"
+  },
+  {
+    "path": "suites/mo-ml-lab/scenario-catalog.json",
+    "zip_member": "scenario-catalog.json",
+    "bytes": 303931,
+    "sha256": "463f8ed614733bde0696befe4ae78f962f9f9c86b090114172619971d32f831e"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving-layout-finding.json",
+    "zip_member": "serving-layout-finding.json",
+    "bytes": 317,
+    "sha256": "79df71c73465c9c91aca061ce9132e2b34bdb31d85737d4d4727b4bfae5fd11e"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving-precheck.json",
+    "zip_member": "serving-precheck.json",
+    "bytes": 467,
+    "sha256": "d0409200bed95cf486b6a554b2b71cdcbc5bd77f623991cdcba4e367043a01c9"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving-summary.json",
+    "zip_member": "serving-summary.json",
+    "bytes": 443,
+    "sha256": "491029976ba762651c24a42e77fc8055a7d29505950de5848870bd35c1d8b883"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving.py",
+    "zip_member": "serving.py",
+    "bytes": 3278,
+    "sha256": "b7c5041f1feea6cf25d760a430c8c461655182706048ef86e8bb27deaa3692b7"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving_check-guard.json",
+    "zip_member": "serving_check-guard.json",
+    "bytes": 304,
+    "sha256": "99c3b2c4e5327c2b89611db4e4c853ebcd9fb3c84bbf2e2843f165e0efffd2d4"
+  },
+  {
+    "path": "suites/mo-ml-lab/serving_check.py",
+    "zip_member": "serving_check.py",
+    "bytes": 2934,
+    "sha256": "53419e3cdc3beebe024879585c30311d190c17d48c38f4a28df7be3f306d50e2"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-before.json",
+    "zip_member": "source-audit-before.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-benchmark-after.json",
+    "zip_member": "source-audit-benchmark-after.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-benchmark-before.json",
+    "zip_member": "source-audit-benchmark-before.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-final.json",
+    "zip_member": "source-audit-final.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-main-after.json",
+    "zip_member": "source-audit-main-after.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/source-audit-main-before.json",
+    "zip_member": "source-audit-main-before.json",
+    "bytes": 1907,
+    "sha256": "5a1dbaed2b3ff3c1e6f1f0e72b640dbe82ae44ff701cfdd58663d4c4cd2a3214"
+  },
+  {
+    "path": "suites/mo-ml-lab/spark-guard.json",
+    "zip_member": "spark-guard.json",
+    "bytes": 297,
+    "sha256": "929d58dc0d77aad400cda9463dc2daab6deb9700177a29753054a753f9e901ad"
+  },
+  {
+    "path": "suites/mo-ml-lab/spark-summary.json",
+    "zip_member": "spark-summary.json",
+    "bytes": 5479,
+    "sha256": "7597882c25c2adc46abbf0ae230d7269e27efa4f87642f12c3bb459293465d07"
+  },
+  {
+    "path": "suites/mo-ml-lab/spark.py",
+    "zip_member": "spark.py",
+    "bytes": 9497,
+    "sha256": "1bb12f6149a90d474780d9c3eca1d831759bb517a890a1ccad4c777d42d97549"
+  },
+  {
+    "path": "suites/mo-ml-lab/statement-info-columns.json",
+    "zip_member": "statement-info-columns.json",
+    "bytes": 482,
+    "sha256": "6d1817fda7af95597f0c761f8d8aa9735041eb2bf062371c9a78616b323701bf"
+  },
+  {
+    "path": "suites/mo-ml-lab/telemetry-analysis.json",
+    "zip_member": "telemetry-analysis.json",
+    "bytes": 275,
+    "sha256": "e8cd09c7ad3f3a2b6666595f7c3597e65cea29022444f7e3151e90ef37ae44fb"
+  },
+  {
+    "path": "suites/mo-ml-lab/trace-upload-failures.json",
+    "zip_member": "trace-upload-failures.json",
+    "bytes": 146864,
+    "sha256": "f4c020b8a5c7fcfffa845eab1218bd750f49152a8ef4a691d646883e2734fe10"
+  },
+  {
+    "path": "suites/mo-ml-lab/artifact-manifest.json",
+    "zip_member": "artifact-manifest.json",
+    "bytes": 2946374,
+    "sha256": "5dff40ac4889c686fb0fb655c8f7e34a4f6168338fc68188693611e5d54283e4"
+  }
+]

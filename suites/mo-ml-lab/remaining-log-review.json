@@ -1,0 +1,67 @@
+{
+  "counts": [
+    {
+      "msg": "error: internal error: cannot process request as routine is closed or busy",
+      "error": "",
+      "entries": 1
+    },
+    {
+      "msg": "frontend session handling failed",
+      "error": "",
+      "entries": 1
+    },
+    {
+      "msg": "frontend session read failed",
+      "error": "",
+      "entries": 1
+    },
+    {
+      "msg": "error: query interrupted",
+      "error": "",
+      "entries": 16
+    }
+  ],
+  "samples": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698180 +0000",
+      "caller": "frontend/routine_manager.go:453",
+      "msg": "error: internal error: cannot process request as routine is closed or busy",
+      "span": {
+        "trace_id": "28de1b7f-467b-8759-5830-bb0322b8ce42",
+        "span_id": "1682f368867e0f89"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698379 +0000",
+      "caller": "logutil/fields.go:98",
+      "msg": "frontend session handling failed",
+      "error-sha256": "63133846f06df5f82b752ce0787b5d4e324207ac1de392bb393d7865f4a3af7a",
+      "error-bytes": 67,
+      "error-type": "*moerr.Error",
+      "moerr-code": 20101,
+      "event": "frontend.session.handle.failed",
+      "occurrence": 3
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698539 +0000",
+      "caller": "logutil/fields.go:98",
+      "msg": "frontend session read failed",
+      "error-sha256": "63133846f06df5f82b752ce0787b5d4e324207ac1de392bb393d7865f4a3af7a",
+      "error-bytes": 67,
+      "error-type": "*moerr.Error",
+      "moerr-code": 20101,
+      "event": "frontend.session.read.failed",
+      "occurrence": 5,
+      "suppressed": 1
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:58:03.799236 +0000",
+      "caller": "message/joinMapDependency.go:344",
+      "msg": "error: query interrupted"
+    }
+  ]
+}

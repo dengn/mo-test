@@ -1,0 +1,90 @@
+{
+  "canonical_cases": 250000,
+  "canonical_passed": 245992,
+  "canonical_nonpass": 4008,
+  "suites": [
+    {
+      "name": "mo-ds-lab",
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 97000,
+        "sql_or_client_error": 2000,
+        "pipeline_error": 1000
+      },
+      "canonical_members": [
+        "results/core/core-00.jsonl",
+        "results/core/core-01.jsonl",
+        "results/core/core-02.jsonl",
+        "results/core/core-03.jsonl",
+        "results/core/core-04.jsonl",
+        "results/core/core-05.jsonl",
+        "results/core/core-06.jsonl",
+        "results/core/core-07.jsonl",
+        "results/spark/cases.jsonl",
+        "results/flink/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-ds-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-complex-lab",
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 98992,
+        "sql_error": 1000,
+        "mismatch": 8
+      },
+      "canonical_members": [
+        "mo-complex-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-complex-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-long-lab",
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-long-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-long-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-demand-lab",
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-demand-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-demand-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-crosslab",
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-crosslab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-crosslab.jsonl.gz"
+    },
+    {
+      "name": "mo-ml-lab",
+      "canonical_cases": 20000,
+      "canonical_statuses": {
+        "pass": 20000
+      },
+      "canonical_members": [
+        "cases.jsonl"
+      ],
+      "catalog": "catalog/mo-ml-lab.jsonl.gz"
+    }
+  ],
+  "case_ids": "Each suite independently covers unique contiguous [0, expected-1]. Global identifier is (suite, case_id).",
+  "supplemental": "Connector fixes, additional workflows, performance, serving and pilot/aborted runs are retained in original bundles and are excluded from canonical totals.",
+  "binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "workspace_source_head": "dd38098853ea197699ed3fac3e69dc53975ac061"
+}

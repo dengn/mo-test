@@ -1,0 +1,66 @@
+{
+  "methodology_correction": {
+    "reason": "Sparse observed-day averages inflated calendar-day income; dense date-grid now includes zero-sales days.",
+    "evidence": "calendar-correction-validation.json",
+    "retention_policy": "Unchanged analytical/data code hashes and exact SQL/parameters; changed cases reexecuted; final unique IDs verified."
+  },
+  "spark_harness_ordering": {
+    "classification": "Harness exact floating-row key lookup after successful fact tolerance check; corrected to restore SQL business ORDER BY keys. Not a MatrixOne defect.",
+    "evidence": "results/spark-harness-ordering",
+    "original_log": "spark-harness-ordering.log"
+  },
+  "configuration": {
+    "spark_isolation": "READ_COMMITTED",
+    "spark_analyzer_max_iterations": 500,
+    "flink_batch_parallelism": 2
+  },
+  "guards": {
+    "spark": {
+      "script": "spark_supplement.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "seconds": 102.23046708106995,
+      "peak_tree_rss_mib": 1355.73046875,
+      "limits": {
+        "seconds": 600.0,
+        "tree_rss_mib": 4096
+      }
+    },
+    "flink": {
+      "script": "flink_supplement.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "seconds": 112.23719453811646,
+      "peak_tree_rss_mib": 2756.8203125,
+      "limits": {
+        "seconds": 600.0,
+        "tree_rss_mib": 4096
+      }
+    }
+  },
+  "engines": {
+    "spark": {
+      "tool": "spark",
+      "workflows": 8,
+      "counts": {
+        "pass": 8
+      },
+      "started_at": 1791719002.8980854,
+      "ended_at": 1791719099.8083947,
+      "seconds": 96.9103102684021,
+      "scope": "Supplemental eight business workflows, excluded from canonical 10000. Engine SQL runs against JDBC source facts and writes them through JDBC. NumPy/SciPy scientific decisions run in Python, then persist through MySQL protocol. Final conclusions match an original-data DuckDB reference."
+    },
+    "flink": {
+      "tool": "flink",
+      "workflows": 8,
+      "counts": {
+        "pass": 8
+      },
+      "started_at": 1791719189.86795,
+      "ended_at": 1791719296.909306,
+      "seconds": 107.04135632514954,
+      "scope": "Supplemental eight business workflows, excluded from canonical 10000. Engine SQL runs against JDBC source facts and writes them through JDBC. NumPy/SciPy scientific decisions run in Python, then persist through MySQL protocol. Final conclusions match an original-data DuckDB reference."
+    }
+  },
+  "all_supplemental_cases_excluded_from_main_10000": true
+}

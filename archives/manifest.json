@@ -1,0 +1,254 @@
+{
+  "format": 1,
+  "description": "Byte-exact original bundles split into 40 MiB parts; all pieces are tracked Git files.",
+  "suites": [
+    {
+      "name": "mo-ds-lab",
+      "archive_name": "matrixone-ds-validation.zip",
+      "archive_bytes": 23300392,
+      "archive_sha256": "79769cc9e44a0776821beae89264e4ea7ca561284ff8711fe08fae1939ba4949",
+      "zip_prefix": "",
+      "zip_entries": 102,
+      "uncompressed_bytes": 79992993,
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 97000,
+        "sql_or_client_error": 2000,
+        "pipeline_error": 1000
+      },
+      "canonical_members": [
+        "results/core/core-00.jsonl",
+        "results/core/core-01.jsonl",
+        "results/core/core-02.jsonl",
+        "results/core/core-03.jsonl",
+        "results/core/core-04.jsonl",
+        "results/core/core-05.jsonl",
+        "results/core/core-06.jsonl",
+        "results/core/core-07.jsonl",
+        "results/spark/cases.jsonl",
+        "results/flink/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-ds-lab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-ds-lab/matrixone-ds-validation.zip.part000",
+          "bytes": 23300392,
+          "sha256": "79769cc9e44a0776821beae89264e4ea7ca561284ff8711fe08fae1939ba4949"
+        }
+      ],
+      "catalog_sha256": "e922f4edbe3053639c15496fe0ca55554e791042bc466a6f9d1b3a2e86c9271c"
+    },
+    {
+      "name": "mo-complex-lab",
+      "archive_name": "matrixone-complex-100000.zip",
+      "archive_bytes": 47321709,
+      "archive_sha256": "bdab3abd05fbb9fd6532c2b88faf34a6ae3c7042999bb2c28fe5ad3e401575c6",
+      "zip_prefix": "mo-complex-lab/",
+      "zip_entries": 105,
+      "uncompressed_bytes": 221790272,
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 98992,
+        "sql_error": 1000,
+        "mismatch": 8
+      },
+      "canonical_members": [
+        "mo-complex-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-complex-lab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-complex-lab/matrixone-complex-100000.zip.part000",
+          "bytes": 41943040,
+          "sha256": "54f4fd5665f119064b70e4b9f530385c2c892200e0f9f9bda1e665cf43de42b8"
+        },
+        {
+          "path": "archives/mo-complex-lab/matrixone-complex-100000.zip.part001",
+          "bytes": 5378669,
+          "sha256": "b65531be16e6a4cf1e388afc484fb1da16057a9d8d078c46ab2c2eef7e11335a"
+        }
+      ],
+      "catalog_sha256": "e3b2a94a509c6aca4aaf123b9bdfa53e20195cd74042ba2f5711e8ec6c5630a9"
+    },
+    {
+      "name": "mo-long-lab",
+      "archive_name": "matrixone-long-10000.zip",
+      "archive_bytes": 50716142,
+      "archive_sha256": "8fd2222bfe6d2bac7424cdc7ad92511abc3b7f43c0f54f85a44f724e77468d72",
+      "zip_prefix": "mo-long-lab/",
+      "zip_entries": 163,
+      "uncompressed_bytes": 215480915,
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-long-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-long-lab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-long-lab/matrixone-long-10000.zip.part000",
+          "bytes": 41943040,
+          "sha256": "b7a782530754e2ccac5b5b9b9ac1f6863e88b5f81ab9be983e0610b46414eed4"
+        },
+        {
+          "path": "archives/mo-long-lab/matrixone-long-10000.zip.part001",
+          "bytes": 8773102,
+          "sha256": "00c5e54fbd0f083e5e9da96c756e5964de5966630871f4157da7e0c9fe71d3e0"
+        }
+      ],
+      "catalog_sha256": "378d6ce2323d8e59352045703aa79bb79424a648ea64481e98d4489963fd180f"
+    },
+    {
+      "name": "mo-demand-lab",
+      "archive_name": "matrixone-demand-10000.zip",
+      "archive_bytes": 50634584,
+      "archive_sha256": "42f15f71fa300c609561a27b986986c24a3c1f13112f922e794ca498313e923d",
+      "zip_prefix": "mo-demand-lab/",
+      "zip_entries": 172,
+      "uncompressed_bytes": 209763737,
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-demand-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-demand-lab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-demand-lab/matrixone-demand-10000.zip.part000",
+          "bytes": 41943040,
+          "sha256": "c4ff15bb633fa6a253cd3734e02e143fdaa1f0d50004f3d1581263a9f896605b"
+        },
+        {
+          "path": "archives/mo-demand-lab/matrixone-demand-10000.zip.part001",
+          "bytes": 8691544,
+          "sha256": "94ca8cc70856a1bc25945c3c64c98159bd42fd6f5a3f29a0b7055c69455d59fc"
+        }
+      ],
+      "catalog_sha256": "e6b2f19df84e7a8c28cedd7802ef42ac97c8bb24fc5cc833a3e5feb358f34599"
+    },
+    {
+      "name": "mo-crosslab",
+      "archive_name": "matrixone-cross-domain-complex.zip",
+      "archive_bytes": 179127756,
+      "archive_sha256": "c1e40d04a4cf38b6d74fc20e040acd0a173f1abc5003daf0983b87b50f3cbe09",
+      "zip_prefix": "mo-crosslab/",
+      "zip_entries": 170,
+      "uncompressed_bytes": 771252051,
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 10000
+      },
+      "canonical_members": [
+        "mo-crosslab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-crosslab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-crosslab/matrixone-cross-domain-complex.zip.part000",
+          "bytes": 41943040,
+          "sha256": "316486559b4cbb9f70be9669c04f6b7db0f9cbf053fd2b650e0a4db673fd7166"
+        },
+        {
+          "path": "archives/mo-crosslab/matrixone-cross-domain-complex.zip.part001",
+          "bytes": 41943040,
+          "sha256": "d4856912ce765acfb9371285c205f676b3d0c58613230fe2cee3f5ca3186b841"
+        },
+        {
+          "path": "archives/mo-crosslab/matrixone-cross-domain-complex.zip.part002",
+          "bytes": 41943040,
+          "sha256": "245743f0a044fbecb76aeb6db13ca504c6a13566bad76325e8d1bd740aae4c63"
+        },
+        {
+          "path": "archives/mo-crosslab/matrixone-cross-domain-complex.zip.part003",
+          "bytes": 41943040,
+          "sha256": "27f45bb68a2b2e488c5093c0e6b11f782b0eade23feb1f9102c92d21a63ca71e"
+        },
+        {
+          "path": "archives/mo-crosslab/matrixone-cross-domain-complex.zip.part004",
+          "bytes": 11355596,
+          "sha256": "a9c282a593052990f819716c23da0b668c06a759af5316d0786011c2fe20e69f"
+        }
+      ],
+      "catalog_sha256": "c343a1e310ac4a8bec088340d0c09980e4c45139a8f83e52198cc2fd2bcb3fb2"
+    },
+    {
+      "name": "mo-ml-lab",
+      "archive_name": "matrixone-deep-ml.zip",
+      "archive_bytes": 447708929,
+      "archive_sha256": "b061614f601b64bde946d6e6b1c5e6d00703d432571132c8d0cbdf91500db8b2",
+      "zip_prefix": "",
+      "zip_entries": 22207,
+      "uncompressed_bytes": 670059080,
+      "canonical_cases": 20000,
+      "canonical_statuses": {
+        "pass": 20000
+      },
+      "canonical_members": [
+        "cases.jsonl"
+      ],
+      "catalog": "catalog/mo-ml-lab.jsonl.gz",
+      "parts": [
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part000",
+          "bytes": 41943040,
+          "sha256": "275aa2e40aa38898d0d1f55be1d145e51b07cb4dde91838de184b859819591cc"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part001",
+          "bytes": 41943040,
+          "sha256": "8fd8d098393149b7d8a31c8bc80eb2ad9302d0c15129ba8c98567aba1e465aaa"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part002",
+          "bytes": 41943040,
+          "sha256": "7218e9fe7599c5af70de6280dcd42e2c6c076d607acab98c7d1d6ff023242e41"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part003",
+          "bytes": 41943040,
+          "sha256": "cf37f191070956cc7d01fc8b44fd9255f7509c6d5473e9add7a714877a6e4e4a"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part004",
+          "bytes": 41943040,
+          "sha256": "4a49baa34188fb57248e011965691f6ccdd9bea08c95a43f79a90a247d9f958e"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part005",
+          "bytes": 41943040,
+          "sha256": "8552eee954d7004fd33d1b6311a75b23fc918f84a5d9fc4613dff1127f7b96d5"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part006",
+          "bytes": 41943040,
+          "sha256": "68a2819714816b131af971318af3b4d140ebaa63929f7b7a5e7a8ef0b8334ed5"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part007",
+          "bytes": 41943040,
+          "sha256": "eba14d23d40cd2bef1a0f366498cafeca6c51f9ffd33cb20d7db61f815fe0da7"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part008",
+          "bytes": 41943040,
+          "sha256": "72d13fa3b115bf311010cb24432442b677811bfadfbc23ee85694cfaeb3816d8"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part009",
+          "bytes": 41943040,
+          "sha256": "a931b45d6ecbc54b8e8445db023e82444a42c13176c60b6eafaaafa73e5dba23"
+        },
+        {
+          "path": "archives/mo-ml-lab/matrixone-deep-ml.zip.part010",
+          "bytes": 28278529,
+          "sha256": "58982f0e343f685903f6c801652680a2e7742eab74b2661390e0708ce02dfd18"
+        }
+      ],
+      "catalog_sha256": "7d5a5d57c384f9c2e622e8a568150ff557bd4fe9cac60852902dc8275d766916"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checked_new_epoch_files": 1,
+  "current_batch_sample": {
+    "file": "/workspace/mo-ds-lab/mo-data/etl/sys/logs/2026/10/11/statement_info/1791722665_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_991632823.csv",
+    "file_sha256": "c2bb6e7c374967a1d858a175af805d38c1556999dcc516acb81fd4e512319627",
+    "database": "ds_cross_20261011",
+    "statement_id": "01a12afd-ff5f-721a-812b-ee06fa009c2f",
+    "request_at": "2026-10-11 12:44:11.485964",
+    "stored_user_status": "Success",
+    "exec_plan_bytes": 334391,
+    "statement_bytes": 1027,
+    "exec_plan_valid_json": true,
+    "etl_upload_error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334391 is larger than Dest length 65535",
+    "plan_size_matches_upload_error": true
+  },
+  "scope": "Sample directly identifies the current synthetic database and a trace plan over TEXT capacity in a failed ETL upload file. Not every 403 LOAD failure is attributed to this sample; several earlier files predate the batch. Business outcomes are evaluated independently; no permanent data loss inferred."
+}

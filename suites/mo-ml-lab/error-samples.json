@@ -1,0 +1,183 @@
+{
+  "statement_info_text_overflow_context": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:57:07.843041 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791723506_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_031152821.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 333530 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "ca8a317cee48597f"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:57:10.682698 +0000",
+      "caller": "function/func_cast.go:10503",
+      "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "5e2b9723-bc42-a33c-9951-7cbbcc88797f",
+        "span_id": "e04833964f223447"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:57:10.683593 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 8200|127.0.0.1:53310|account sys:mo_logger|goRoutineId 2544694|migrate-goRoutineId 0|01a12b77-b343-7968-819b-d0c4b5f82962",
+      "role": "moadmin",
+      "session_id": "01a12b77-b343-7968-819b-d0c4b5f82962",
+      "statement_id": "01a12b77-b9c1-7acf-bc10-7683d4dbc410",
+      "txn_id": "70f70f4866a9b62a18dd5146a707fb60",
+      "span": {
+        "trace_id": "5e2b9723-bc42-a33c-9951-7cbbcc88797f",
+        "span_id": "e04833964f223447"
+      }
+    }
+  ],
+  "statement_info_zero_success_batch_summary": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:57:33.895901 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 6,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "ca8a317cee48597f"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:58:42.605707 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 6,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "ca8a317cee48597f"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 14:59:40.593296 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 5,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "ca8a317cee48597f"
+      }
+    }
+  ],
+  "table_stats_task_context": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:04:05.784282 +0000",
+      "caller": "disttae/mo_table_stats.go:2171",
+      "msg": "mo.table.stats.task",
+      "source": "gama insert new table",
+      "cnt": 0
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:26:05.786554 +0000",
+      "caller": "disttae/mo_table_stats.go:2171",
+      "msg": "mo.table.stats.task",
+      "source": "gama insert new table",
+      "cnt": 0
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:53:05.765583 +0000",
+      "caller": "disttae/mo_table_stats.go:2171",
+      "msg": "mo.table.stats.task",
+      "source": "gama insert new table",
+      "cnt": 0
+    }
+  ],
+  "frontend_routine_closed_or_busy_context": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698180 +0000",
+      "caller": "frontend/routine_manager.go:453",
+      "msg": "error: internal error: cannot process request as routine is closed or busy",
+      "span": {
+        "trace_id": "28de1b7f-467b-8759-5830-bb0322b8ce42",
+        "span_id": "1682f368867e0f89"
+      }
+    }
+  ],
+  "frontend_session_failure_context": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698379 +0000",
+      "caller": "logutil/fields.go:98",
+      "msg": "frontend session handling failed",
+      "error-sha256": "63133846f06df5f82b752ce0787b5d4e324207ac1de392bb393d7865f4a3af7a",
+      "error-bytes": 67,
+      "error-type": "*moerr.Error",
+      "moerr-code": 20101,
+      "event": "frontend.session.handle.failed",
+      "occurrence": 3
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:49:22.698539 +0000",
+      "caller": "logutil/fields.go:98",
+      "msg": "frontend session read failed",
+      "error-sha256": "63133846f06df5f82b752ce0787b5d4e324207ac1de392bb393d7865f4a3af7a",
+      "error-bytes": 67,
+      "error-type": "*moerr.Error",
+      "moerr-code": 20101,
+      "event": "frontend.session.read.failed",
+      "occurrence": 5,
+      "suppressed": 1
+    }
+  ],
+  "join_dependency_interrupted_context": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:58:03.799236 +0000",
+      "caller": "message/joinMapDependency.go:344",
+      "msg": "error: query interrupted"
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:58:03.799887 +0000",
+      "caller": "message/joinMapDependency.go:344",
+      "msg": "error: query interrupted"
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 15:58:03.800162 +0000",
+      "caller": "message/joinMapDependency.go:344",
+      "msg": "error: query interrupted"
+    }
+  ]
+}

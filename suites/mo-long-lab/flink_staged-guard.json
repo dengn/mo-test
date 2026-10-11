@@ -1,0 +1,11 @@
+{
+  "script": "flink_staged.py",
+  "returncode": 0,
+  "resource_stop_reason": "client process-tree RSS limit",
+  "seconds": 215.63888144493103,
+  "peak_tree_rss_mib": 4199.34765625,
+  "limits": {
+    "seconds": 600,
+    "tree_rss_mib": 4096
+  }
+}

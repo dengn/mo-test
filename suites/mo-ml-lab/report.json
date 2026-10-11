@@ -1,0 +1,1201 @@
+{
+  "main": {
+    "expected": 20000,
+    "passed": 20000,
+    "failed": 0,
+    "seconds": 3616.785885334015,
+    "workers": [
+      {
+        "worker": 0,
+        "passed": 5040,
+        "failed": 0,
+        "seconds": 3597.1316995620728
+      },
+      {
+        "worker": 1,
+        "passed": 5040,
+        "failed": 0,
+        "seconds": 3611.3003726005554
+      },
+      {
+        "worker": 2,
+        "passed": 4960,
+        "failed": 0,
+        "seconds": 3571.993688583374
+      },
+      {
+        "worker": 3,
+        "passed": 4960,
+        "failed": 0,
+        "seconds": 3542.3208611011505
+      }
+    ],
+    "code": {
+      "data.py": "d7cc46c066ac8fe9b1da1ac7bfe948347d6edc4f15fa7ebe483a4b58432c69b3",
+      "models.py": "1c93926bfee00c7ec47681210ef54d5ef884093fdacd74b6089fea8e7ec3a9de",
+      "run.py": "8805858baaf23c04d0f31758f60cfcd79d4d67d0e9668ae6ae02737ce989a259"
+    }
+  },
+  "spark": {
+    "passed": 200,
+    "failed": 0,
+    "native_ml": [
+      {
+        "i": 0,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 0,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 55,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 55,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 111,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 111,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 199,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 199,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 333,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 333,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 443,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 443,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 555,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 555,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 777,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 777,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 888,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 888,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 999,
+        "task": "classification",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      },
+      {
+        "i": 999,
+        "task": "forecast",
+        "status": "pass",
+        "train_entities": 40,
+        "holdout_entities": 24,
+        "pca_dimensions": 6,
+        "independent_coefficient_inference": true,
+        "serialized_pipeline_reload_exact": true
+      }
+    ],
+    "seconds": 203.81717681884766,
+    "driver_pid": 33518,
+    "worker_pids": [
+      34472,
+      34476
+    ],
+    "isolation": "READ_COMMITTED",
+    "java": "/workspace/cache/jre17"
+  },
+  "compound": {
+    "passed": 100,
+    "failed": 0,
+    "seconds": 184.40925550460815
+  },
+  "performance": {
+    "measurements": 240,
+    "passed": 240,
+    "failed": 0,
+    "seconds": 59.019943952560425,
+    "batches": [
+      {
+        "client": "numpy",
+        "concurrency": 1,
+        "workflows": 30,
+        "elapsed_seconds": 13.781965852998837,
+        "throughput": 2.1767576788381215,
+        "median_ms": 297.6107345020864,
+        "p95_ms": 922.772830400936
+      },
+      {
+        "client": "numpy",
+        "concurrency": 2,
+        "workflows": 30,
+        "elapsed_seconds": 6.34692916199856,
+        "throughput": 4.726695262272853,
+        "median_ms": 273.14552999814623,
+        "p95_ms": 878.4323527026571
+      },
+      {
+        "client": "numpy",
+        "concurrency": 4,
+        "workflows": 30,
+        "elapsed_seconds": 4.856420222000452,
+        "throughput": 6.177389646821466,
+        "median_ms": 364.9443565009278,
+        "p95_ms": 1175.0898588994457
+      },
+      {
+        "client": "numpy",
+        "concurrency": 8,
+        "workflows": 30,
+        "elapsed_seconds": 5.426894244999858,
+        "throughput": 5.528023699308478,
+        "median_ms": 868.0813510000007,
+        "p95_ms": 2344.193496950538
+      },
+      {
+        "client": "pandas",
+        "concurrency": 1,
+        "workflows": 30,
+        "elapsed_seconds": 12.19343586400646,
+        "throughput": 2.460340164543478,
+        "median_ms": 263.07227600045735,
+        "p95_ms": 864.720168252461
+      },
+      {
+        "client": "pandas",
+        "concurrency": 2,
+        "workflows": 30,
+        "elapsed_seconds": 6.370930523000425,
+        "throughput": 4.708888268627883,
+        "median_ms": 264.36931149874,
+        "p95_ms": 866.0214382995035
+      },
+      {
+        "client": "pandas",
+        "concurrency": 4,
+        "workflows": 30,
+        "elapsed_seconds": 5.21408751099807,
+        "throughput": 5.753643362663367,
+        "median_ms": 414.3530715009547,
+        "p95_ms": 1160.7955779469191
+      },
+      {
+        "client": "pandas",
+        "concurrency": 8,
+        "workflows": 30,
+        "elapsed_seconds": 4.820410037995316,
+        "throughput": 6.2235369529842375,
+        "median_ms": 708.333954000409,
+        "p95_ms": 2606.018293350644
+      }
+    ],
+    "scope": "SQL read + train-only preprocessing + one deep fit + binary model/prediction transaction + reload/visibility checks; precomputed reference comparisons outside latency, but batch throughput includes comparisons, scheduling and connection lifecycle. These are workflows/s, not pure MO QPS or large-model training throughput."
+  },
+  "environment": {
+    "frameworks": {
+      "torch": "2.5.1+cpu",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "scipy": "1.17.0",
+      "scikit-learn": "1.8.0",
+      "pymysql": "1.2.0",
+      "sqlalchemy": "2.0.43",
+      "pyspark": "3.5.3"
+    },
+    "python": "3.12.14",
+    "server_pid": 1384,
+    "server_binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+    "server_binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "cpu_quota": "400000 100000",
+    "memory_max_bytes": 17179869184,
+    "unique_fact_sql": 1000,
+    "missions": [
+      {
+        "id": 0,
+        "architecture": "residual",
+        "task": "forecast"
+      },
+      {
+        "id": 1,
+        "architecture": "residual",
+        "task": "classification"
+      },
+      {
+        "id": 2,
+        "architecture": "residual",
+        "task": "multitask"
+      },
+      {
+        "id": 3,
+        "architecture": "residual",
+        "task": "denoising"
+      },
+      {
+        "id": 4,
+        "architecture": "temporal_cnn",
+        "task": "forecast"
+      },
+      {
+        "id": 5,
+        "architecture": "temporal_cnn",
+        "task": "classification"
+      },
+      {
+        "id": 6,
+        "architecture": "temporal_cnn",
+        "task": "multitask"
+      },
+      {
+        "id": 7,
+        "architecture": "temporal_cnn",
+        "task": "denoising"
+      },
+      {
+        "id": 8,
+        "architecture": "gru",
+        "task": "forecast"
+      },
+      {
+        "id": 9,
+        "architecture": "gru",
+        "task": "classification"
+      },
+      {
+        "id": 10,
+        "architecture": "gru",
+        "task": "multitask"
+      },
+      {
+        "id": 11,
+        "architecture": "gru",
+        "task": "denoising"
+      },
+      {
+        "id": 12,
+        "architecture": "attention",
+        "task": "forecast"
+      },
+      {
+        "id": 13,
+        "architecture": "attention",
+        "task": "classification"
+      },
+      {
+        "id": 14,
+        "architecture": "attention",
+        "task": "multitask"
+      },
+      {
+        "id": 15,
+        "architecture": "attention",
+        "task": "denoising"
+      },
+      {
+        "id": 16,
+        "architecture": "gcn",
+        "task": "forecast"
+      },
+      {
+        "id": 17,
+        "architecture": "gcn",
+        "task": "classification"
+      },
+      {
+        "id": 18,
+        "architecture": "gcn",
+        "task": "multitask"
+      },
+      {
+        "id": 19,
+        "architecture": "gcn",
+        "task": "denoising"
+      }
+    ],
+    "source_rows": 142163,
+    "note": "20 model/task templates x 1000 meaningful configurations, each reads MO anew and fits two deterministic models; duplicate oracle feature construction reused across templates. Model training occurs in external CPU PyTorch, not inside MO."
+  },
+  "stability": {
+    "start_utc_epoch": 1791730620.4027307,
+    "end_utc_epoch": 1791735379.3832893,
+    "server_pid": 1384,
+    "same_server_alive": true,
+    "source_content_unchanged": true,
+    "empty_private_tables": {
+      "ml_hybrid_models": 0,
+      "ml_hybrid_predictions": 0,
+      "ml_models_0": 0,
+      "ml_models_1": 0,
+      "ml_models_2": 0,
+      "ml_models_3": 0,
+      "ml_models_4": 0,
+      "ml_models_5": 0,
+      "ml_models_6": 0,
+      "ml_models_7": 0,
+      "ml_predictions_0": 0,
+      "ml_predictions_1": 0,
+      "ml_predictions_2": 0,
+      "ml_predictions_3": 0,
+      "ml_predictions_4": 0,
+      "ml_predictions_5": 0,
+      "ml_predictions_6": 0,
+      "ml_predictions_7": 0,
+      "ml_spark_models": 0
+    },
+    "health_samples": 711,
+    "health_errors": 0,
+    "server_peak_rss": 2912825344,
+    "client_peak_rss": 1849831424,
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "panic_fatal_entries": 0,
+    "log_entries": 1778,
+    "error_entries": 1778,
+    "error_taxonomy": {
+      "statement_info_text_overflow_context": 1673,
+      "statement_info_zero_success_batch_summary": 82,
+      "table_stats_task_context": 4,
+      "frontend_routine_closed_or_busy_context": 1,
+      "frontend_session_failure_context": 2,
+      "join_dependency_interrupted_context": 16
+    },
+    "internal_trace_failed_load_calls": 398,
+    "etl_failed_upload_entries": 398,
+    "distinct_upload_files_predating_main": 375,
+    "distinct_upload_files_created_in_main_window": 0,
+    "server_binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+    "notes": "Server log context counts are not business case failures. Files predating this batch can be retried during its window. No permanent trace loss or automatic retry recovery inferred. External PyTorch/Spark train models; MO stores data, model binaries and serving predictions. Frontend busy/closed and join-dependency interruption messages retained separately. No failed business result, request attribution, normal-cleanup conclusion or automatic recovery inferred from these contexts.",
+    "unclassified_error_entries": 0
+  },
+  "complexity": {
+    "source_tables": 16,
+    "join_keywords": 22,
+    "select_keywords": 9,
+    "exists_keywords": 1,
+    "bytes": 2267,
+    "interpretation": "SQL text keyword counts, not executed physical operator counts; 1000 distinct feature SQL shared by 20 different model/task pipelines, but every main case executes a fresh MO read."
+  },
+  "missions": [
+    {
+      "id": 0,
+      "architecture": "residual",
+      "task": "forecast",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.41730325349999475,
+      "p95_seconds": 1.0382001943486099,
+      "actual_train_median_seconds": 0.09911260749868234,
+      "initial_checkpoint_selected": 8,
+      "mean_test_metrics": {
+        "rmse": 0.4369065839201212,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.36506382035464047,
+        "interval_halfwidth": 0.6618653497397899,
+        "coverage": 0.8264166666666667
+      },
+      "forecast_beats_baseline": 948
+    },
+    {
+      "id": 1,
+      "architecture": "residual",
+      "task": "classification",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.41372960949956905,
+      "p95_seconds": 0.9319016245990496,
+      "actual_train_median_seconds": 0.0942074969971145,
+      "initial_checkpoint_selected": 65,
+      "mean_test_metrics": {
+        "accuracy": 0.7738333333333334,
+        "brier": 0.17578552126058516,
+        "threshold": 0.34014999999999995,
+        "positive_test": 3.883
+      }
+    },
+    {
+      "id": 2,
+      "architecture": "residual",
+      "task": "multitask",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.4211088474985445,
+      "p95_seconds": 0.9488007291049142,
+      "actual_train_median_seconds": 0.10643199950209237,
+      "initial_checkpoint_selected": 11,
+      "mean_test_metrics": {
+        "rmse": 0.4460861654654145,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.3732422019317746,
+        "interval_halfwidth": 0.6909723465889692,
+        "coverage": 0.8319166666666666,
+        "accuracy": 0.7718333333333333,
+        "brier": 0.17552107599321534,
+        "threshold": 0.3691999999999999,
+        "positive_test": 3.883
+      },
+      "forecast_beats_baseline": 936
+    },
+    {
+      "id": 3,
+      "architecture": "residual",
+      "task": "denoising",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.40611391050333623,
+      "p95_seconds": 0.9353646322037091,
+      "actual_train_median_seconds": 0.09642617050121771,
+      "initial_checkpoint_selected": 57,
+      "mean_test_metrics": {
+        "reconstruction_rmse": 0.5191139745116233,
+        "anomalies_in_holdout": 0.254
+      }
+    },
+    {
+      "id": 4,
+      "architecture": "temporal_cnn",
+      "task": "forecast",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.4252752225002041,
+      "p95_seconds": 0.990283431748321,
+      "actual_train_median_seconds": 0.10659632600072655,
+      "initial_checkpoint_selected": 10,
+      "mean_test_metrics": {
+        "rmse": 0.45902034544944764,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.38437629511207344,
+        "interval_halfwidth": 0.6955722731649876,
+        "coverage": 0.814
+      },
+      "forecast_beats_baseline": 937
+    },
+    {
+      "id": 5,
+      "architecture": "temporal_cnn",
+      "task": "classification",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.4169842734991107,
+      "p95_seconds": 0.987054549845925,
+      "actual_train_median_seconds": 0.10004682799626607,
+      "initial_checkpoint_selected": 62,
+      "mean_test_metrics": {
+        "accuracy": 0.7595833333333333,
+        "brier": 0.18652808860370398,
+        "threshold": 0.34390000000000004,
+        "positive_test": 3.883
+      }
+    },
+    {
+      "id": 6,
+      "architecture": "temporal_cnn",
+      "task": "multitask",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.4378556629999366,
+      "p95_seconds": 1.032748076548887,
+      "actual_train_median_seconds": 0.11223544099993887,
+      "initial_checkpoint_selected": 5,
+      "mean_test_metrics": {
+        "rmse": 0.4814014264419675,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.40372676798701285,
+        "interval_halfwidth": 0.729173782736063,
+        "coverage": 0.82175,
+        "accuracy": 0.7743333333333333,
+        "brier": 0.18085743522625447,
+        "threshold": 0.40014999999999995,
+        "positive_test": 3.883
+      },
+      "forecast_beats_baseline": 895
+    },
+    {
+      "id": 7,
+      "architecture": "temporal_cnn",
+      "task": "denoising",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.4192391469987342,
+      "p95_seconds": 1.0451070749499185,
+      "actual_train_median_seconds": 0.10390314149844926,
+      "initial_checkpoint_selected": 60,
+      "mean_test_metrics": {
+        "reconstruction_rmse": 0.5613533563762904,
+        "anomalies_in_holdout": 0.254
+      }
+    },
+    {
+      "id": 8,
+      "architecture": "gru",
+      "task": "forecast",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.7446237315016333,
+      "p95_seconds": 2.346569741393978,
+      "actual_train_median_seconds": 0.2634580195044691,
+      "initial_checkpoint_selected": 14,
+      "mean_test_metrics": {
+        "rmse": 0.5333422042876482,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.4404577000513673,
+        "interval_halfwidth": 0.8612545575201511,
+        "coverage": 0.8343333333333333
+      },
+      "forecast_beats_baseline": 884
+    },
+    {
+      "id": 9,
+      "architecture": "gru",
+      "task": "classification",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.7391225739993388,
+      "p95_seconds": 2.2178451401035995,
+      "actual_train_median_seconds": 0.25476815450019785,
+      "initial_checkpoint_selected": 40,
+      "mean_test_metrics": {
+        "accuracy": 0.76125,
+        "brier": 0.18956759834339085,
+        "threshold": 0.3335,
+        "positive_test": 3.883
+      }
+    },
+    {
+      "id": 10,
+      "architecture": "gru",
+      "task": "multitask",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.7589822120025929,
+      "p95_seconds": 2.408147020243996,
+      "actual_train_median_seconds": 0.2623294819968578,
+      "initial_checkpoint_selected": 14,
+      "mean_test_metrics": {
+        "rmse": 0.5410260146260262,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.4483067954033613,
+        "interval_halfwidth": 0.8784850336313248,
+        "coverage": 0.8380833333333333,
+        "accuracy": 0.7675833333333333,
+        "brier": 0.18801559795119102,
+        "threshold": 0.38370000000000004,
+        "positive_test": 3.883
+      },
+      "forecast_beats_baseline": 895
+    },
+    {
+      "id": 11,
+      "architecture": "gru",
+      "task": "denoising",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.737110574500548,
+      "p95_seconds": 2.3148713401504204,
+      "actual_train_median_seconds": 0.2530932560002839,
+      "initial_checkpoint_selected": 92,
+      "mean_test_metrics": {
+        "reconstruction_rmse": 0.6008387601673603,
+        "anomalies_in_holdout": 0.254
+      }
+    },
+    {
+      "id": 12,
+      "architecture": "attention",
+      "task": "forecast",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.9621657540010347,
+      "p95_seconds": 2.684025015901351,
+      "actual_train_median_seconds": 0.34416635549860075,
+      "initial_checkpoint_selected": 4,
+      "mean_test_metrics": {
+        "rmse": 0.4488372476994991,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.3723866949379444,
+        "interval_halfwidth": 0.6619038802236319,
+        "coverage": 0.8016666666666666
+      },
+      "forecast_beats_baseline": 934
+    },
+    {
+      "id": 13,
+      "architecture": "attention",
+      "task": "classification",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.9671718175013666,
+      "p95_seconds": 2.6675382781955688,
+      "actual_train_median_seconds": 0.3525645664994954,
+      "initial_checkpoint_selected": 60,
+      "mean_test_metrics": {
+        "accuracy": 0.783,
+        "brier": 0.16449965291201535,
+        "threshold": 0.3036999999999999,
+        "positive_test": 3.883
+      }
+    },
+    {
+      "id": 14,
+      "architecture": "attention",
+      "task": "multitask",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.9277234879991738,
+      "p95_seconds": 2.689720538847541,
+      "actual_train_median_seconds": 0.3385969599985401,
+      "initial_checkpoint_selected": 2,
+      "mean_test_metrics": {
+        "rmse": 0.4599388183280826,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.38070380698144435,
+        "interval_halfwidth": 0.7199965313822031,
+        "coverage": 0.8269166666666666,
+        "accuracy": 0.7894166666666668,
+        "brier": 0.16117526002840896,
+        "threshold": 0.3459,
+        "positive_test": 3.883
+      },
+      "forecast_beats_baseline": 937
+    },
+    {
+      "id": 15,
+      "architecture": "attention",
+      "task": "denoising",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.9405809074960416,
+      "p95_seconds": 2.6529290781509185,
+      "actual_train_median_seconds": 0.34907268949973513,
+      "initial_checkpoint_selected": 52,
+      "mean_test_metrics": {
+        "reconstruction_rmse": 0.5401394283473492,
+        "anomalies_in_holdout": 0.254
+      }
+    },
+    {
+      "id": 16,
+      "architecture": "gcn",
+      "task": "forecast",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.3408469050009444,
+      "p95_seconds": 0.7783125911562819,
+      "actual_train_median_seconds": 0.06927658150016214,
+      "initial_checkpoint_selected": 21,
+      "mean_test_metrics": {
+        "rmse": 0.48343953454494476,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.402954266898334,
+        "interval_halfwidth": 0.7476787503957748,
+        "coverage": 0.8335
+      },
+      "forecast_beats_baseline": 909
+    },
+    {
+      "id": 17,
+      "architecture": "gcn",
+      "task": "classification",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.33601452950097155,
+      "p95_seconds": 0.7630111345988551,
+      "actual_train_median_seconds": 0.06772102399918367,
+      "initial_checkpoint_selected": 70,
+      "mean_test_metrics": {
+        "accuracy": 0.7325,
+        "brier": 0.1891273107632957,
+        "threshold": 0.36254999999999993,
+        "positive_test": 3.883
+      }
+    },
+    {
+      "id": 18,
+      "architecture": "gcn",
+      "task": "multitask",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.3446942010014027,
+      "p95_seconds": 0.7685985461990632,
+      "actual_train_median_seconds": 0.07188003799819853,
+      "initial_checkpoint_selected": 12,
+      "mean_test_metrics": {
+        "rmse": 0.49212909968197344,
+        "baseline_rmse": 0.7006903870403767,
+        "mae": 0.41096773955225946,
+        "interval_halfwidth": 0.7813898435533047,
+        "coverage": 0.8434166666666666,
+        "accuracy": 0.7283333333333334,
+        "brier": 0.19546207820222986,
+        "threshold": 0.3741,
+        "positive_test": 3.883
+      },
+      "forecast_beats_baseline": 899
+    },
+    {
+      "id": 19,
+      "architecture": "gcn",
+      "task": "denoising",
+      "cases": 1000,
+      "passed": 1000,
+      "median_seconds": 0.3333317315009481,
+      "p95_seconds": 0.7046025596013351,
+      "actual_train_median_seconds": 0.06604738299938617,
+      "initial_checkpoint_selected": 61,
+      "mean_test_metrics": {
+        "reconstruction_rmse": 0.5660454126745462,
+        "anomalies_in_holdout": 0.254
+      }
+    }
+  ],
+  "total_compatibility_workflows": 20300,
+  "training_epochs": 219940,
+  "actual_optimizer_steps": 439940,
+  "source_fact_rows_checked": 11520000,
+  "model_bytes_written_read_verified": 463896000,
+  "holdout_prediction_rows_verified": 240000,
+  "commits": 10000,
+  "rollbacks": 10000,
+  "numpy_inference_max_abs_error": 3.825137736157558e-05,
+  "validation_initial_checkpoint_selected": 720,
+  "model_binary_hash_verified": 20000,
+  "methodology": [
+    "Deterministic synthetic 16-table dataset with 320 entities and 80 days, including sparse events, multiple trades/day, interventions, as-of maintenance, missing readings and noisy/anomalous signals.",
+    "40 training / 12 validation / 12 test entities are disjoint. Training label time is earlier than validation feature anchor; validation label time is earlier than test feature anchor.",
+    "Only declared 18 feature columns enter the networks; future labels/clean targets are used solely as supervision/evaluation. Denoising is supervised against known synthetic clean signals, not an unsupervised anomaly detector.",
+    "Raw full 29-column facts compared at rtol=atol=1e-8 BEFORE float32 training-input conversion. Train-only median imputation, scaling, target normalization, graph split isolation and test-label perturbation checks.",
+    "CPU networks have 2-5 configured blocks/layers, width 8-20, length 6-12, 8-14 epochs, varying batch size, horizon, optimizer learning rate/L2, gradient clipping, noise and missingness.",
+    "MO-fed actual and independently assembled native-pandas reference features undergo separate deterministic PyTorch fits with exact weight/output equality. Network algorithms are shared for this comparison.",
+    "Separately implemented NumPy forward passes for all 5 architectures compared to PyTorch at rtol=atol=3e-5 (float32-versus-float64 arithmetic). Every raw feature and trained weight is checked separately.",
+    "Validation selects the checkpoint and classification threshold/conformal residual quantile. Test targets never select checkpoints; cases selecting initial weights are reported explicitly. Finite gradients, nonzero optimizer updates and training loss decrease required.",
+    "Each model state and all 12 holdout predictions written to MO, read in full, reloaded with weights_only=True, and required to reproduce bit-exact inference. Alternate commit/rollback externally checked with another connection, followed by cleanup.",
+    "Spark loads and fully verifies all 16 source tables via JDBC, computes equivalent native Spark SQL, also pushes 10 feature SQL directly through MO JDBC, fits 20 native scaler/PCA/linear or logistic pipelines on training entities, and trains 200 deep models inside Python workers. Actual worker model blobs and full predictions go through Spark JDBC.",
+    "100 separate hybrid models join CNN, GRU, attention, graph and multi-head prediction, quantile forecast and masked reconstruction, with MC dropout, integrated gradients and bounded PGD. These checks establish consistency/finite outputs/bounds, not certified robustness or attribution completeness.",
+    "External PyTorch/Spark perform training. MO is evaluated as the data/feature/model/serving store. Compact synthetic CPU workloads do not establish production accuracy, GPU scaling or large-model performance.",
+    "140 pilot cases and the interrupted 1079-case scheduling attempt are excluded from the final 20000. An initial Spark worker-environment startup failure was archived and excluded; the full 200-case Spark batch reran with PYSPARK_PYTHON fixed to the test virtual environment. Execution sources frozen and checked; all 20000 canonical model artifacts hashed.",
+    "All 20000 exact models subsequently replayed on 1000 freshly read MO feature datasets, using saved preprocessing without refitting and with ALL outcome columns stripped before inference; bit-exact full predictions and independent NumPy verified again. C-contiguous float32 input layout fixed a preliminary client replay discrepancy of 4.3e-7, without widening tolerances. Validation residual interval coverage is measured empirically; temporal/domain shift does not assume exchangeability or guarantee nominal coverage."
+  ],
+  "known_issues": [
+    {
+      "issue": 29838,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29838",
+      "scope": "Spark default JDBC isolation remains a known compatibility limitation; this batch explicitly uses READ_COMMITTED."
+    },
+    {
+      "issue": 29809,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29809",
+      "scope": "Internal statement_info TEXT 65535 capacity issue can coexist with passing user workflows. This window includes old-file retries; logs alone do not prove permanent loss or recovery."
+    },
+    {
+      "issue": 29797,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29797",
+      "scope": "Related statement trace capacity issue."
+    }
+  ],
+  "serving_replay": {
+    "replayed": 20000,
+    "passed": 20000,
+    "failed": 0,
+    "seconds": 139.1761405467987,
+    "fresh_mo_feature_queries": 1000,
+    "model_binary_hashes": 20000,
+    "bit_exact_predictions": 20000,
+    "ground_truth_columns_supplied": false,
+    "preprocessing_refitted": false,
+    "scope": "Post-training phase on the same canonical IDs, not 20000 additional distinct training cases. Preprocessing registry loaded unchanged, no labels enter inference."
+  },
+  "resource_guards": {
+    "spark": {
+      "script": "spark.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "start_utc_epoch": 1791734437.2610047,
+      "end_utc_epoch": 1791734645.6506906,
+      "seconds": 208.38968634605408,
+      "peak_tree_rss_mib": 3332.44921875,
+      "limits": {
+        "seconds": 2400.0,
+        "tree_rss_mib": 4096.0
+      }
+    },
+    "compound": {
+      "script": "compound.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "start_utc_epoch": 1791734733.2463877,
+      "end_utc_epoch": 1791734921.526383,
+      "seconds": 188.27999544143677,
+      "peak_tree_rss_mib": 432.6171875,
+      "limits": {
+        "seconds": 1200.0,
+        "tree_rss_mib": 2048.0
+      }
+    },
+    "serving_check": {
+      "script": "serving_check.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "start_utc_epoch": 1791734990.1464324,
+      "end_utc_epoch": 1791735134.3225067,
+      "seconds": 144.1760745048523,
+      "peak_tree_rss_mib": 1157.65234375,
+      "limits": {
+        "seconds": 1200.0,
+        "tree_rss_mib": 3072.0
+      }
+    },
+    "performance": {
+      "script": "performance.py",
+      "returncode": 0,
+      "resource_stop_reason": null,
+      "start_utc_epoch": 1791735207.1284966,
+      "end_utc_epoch": 1791735275.3062243,
+      "seconds": 68.17772793769836,
+      "peak_tree_rss_mib": 3094.21484375,
+      "limits": {
+        "seconds": 1200.0,
+        "tree_rss_mib": 4096.0
+      }
+    }
+  },
+  "telemetry": {
+    "new_files_checked": 0,
+    "current_ml_batch_sample": null,
+    "scope": "Matches the ML synthetic database, Success status and request timestamp inside the canonical window. One sample does not attribute all background errors to this batch or prove permanent trace loss."
+  },
+  "client_layout_finding": {
+    "phase": "preliminary serving replay",
+    "classification": "client floating-point layout issue, not an MO result discrepancy",
+    "initial_max_difference": 4.3213367e-07,
+    "fix": "C-contiguous float32 input tensor, same contract as original training",
+    "tolerance_widened": false,
+    "verified_architectures": 5
+  },
+  "github_issue_status": [
+    {
+      "number": 29838,
+      "title": "[Compatibility]: Spark JDBC default READ_UNCOMMITTED write fails; document and test READ_COMMITTED integration",
+      "state": "open",
+      "html_url": "https://github.com/matrixorigin/matrixone/issues/29838",
+      "updated_at": "2026-10-11T01:47:30Z",
+      "closed_at": null
+    },
+    {
+      "number": 29809,
+      "title": "[Bug]: system.statement_info ingestion fails with TEXT length overflow during BF16 EXPLAIN ANALYZE diagnostics",
+      "state": "open",
+      "html_url": "https://github.com/matrixorigin/matrixone/issues/29809",
+      "updated_at": "2026-10-10T13:52:45Z",
+      "closed_at": null
+    },
+    {
+      "number": 29797,
+      "title": "[Bug]: statement_info ETL rejects internal reports exceeding ordinary TEXT capacity",
+      "state": "open",
+      "html_url": "https://github.com/matrixorigin/matrixone/issues/29797",
+      "updated_at": "2026-10-10T04:57:08Z",
+      "closed_at": null
+    }
+  ],
+  "frontend_issue_search": [
+    {
+      "query": "\"routine is closed or busy\"",
+      "total_count": 1,
+      "items": [
+        {
+          "number": 20022,
+          "title": "[Bug]: config proxy cache connection mo hung",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/20022"
+        }
+      ]
+    },
+    {
+      "query": "\"query interrupted\"",
+      "total_count": 20,
+      "items": [
+        {
+          "number": 29693,
+          "title": "[Bug]: multi-CN KILL QUERY returns 1105/HY000 instead of 1317/70100",
+          "state": "open",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/29693"
+        },
+        {
+          "number": 27776,
+          "title": "[Bug]: CN \u5782\u76f4\u6269\u5bb9\u8fc1\u79fb\u7834\u574f\u5728\u9014\u5206\u5e03\u5f0f Pipeline",
+          "state": "open",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/27776"
+        },
+        {
+          "number": 27084,
+          "title": "[Bug] Stability: TPCH \u957f\u7a33\u6d4b\u8bd5\u56e0 RemoteRun query interrupted \u53cd\u590d\u4e2d\u65ad\u9000\u51fa\uff08\u5173\u8054 #26202\uff09",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/27084"
+        },
+        {
+          "number": 27083,
+          "title": "[Bug] Stability 4.2-dev: TPCH \u957f\u7a33\u6d4b\u8bd5\u56e0 RemoteRun query interrupted \u9000\u51fa\uff08remoterunClient.go:693\uff09",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/27083"
+        },
+        {
+          "number": 28378,
+          "title": "[Bug]: IVFFlat SIFT128 queries close RPC streams on main",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28378"
+        },
+        {
+          "number": 28313,
+          "title": "[Bug] dev:distributed join aborts when remote dispatch targets another local pipeline tree",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28313"
+        },
+        {
+          "number": 28277,
+          "title": "[Bug]: PROXY multi-CN pipeline intermittently drops composite-key INSERT SELECT errors",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28277"
+        },
+        {
+          "number": 28659,
+          "title": "[Bug]: 10Y composite-PK INSERT SELECT exceeds 7200s under sustained CN memory-limit pressure",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28659"
+        },
+        {
+          "number": 27115,
+          "title": "[Bug]: multi-CN remote pipeline can report duplicate-key INSERT as success",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/27115"
+        },
+        {
+          "number": 27757,
+          "title": "[Bug]: 10M IVFFlat workload intermittently closes RPC/backend connections",
+          "state": "open",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/27757"
+        },
+        {
+          "number": 26678,
+          "title": "[Bug]: max_execution_time is accepted but not enforced, breaking ODBC query timeout",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/26678"
+        },
+        {
+          "number": 26828,
+          "title": "[Bug]: CTAS ignores NULLs synthesized by outer joins and scalar subqueries",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/26828"
+        },
+        {
+          "number": 28516,
+          "title": "[Bug]: statement timeout can leak into next session query",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28516"
+        },
+        {
+          "number": 28712,
+          "title": "[Bug]: ASOF JOIN returns non-nearest predecessors on 100M multi-CN data",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28712"
+        },
+        {
+          "number": 26285,
+          "title": "[Bug] Merge CTE emits buffered prior-run batch after reset",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/26285"
+        },
+        {
+          "number": 28715,
+          "title": "[Bug]: ASOF over generated CTE inputs can panic while probing empty Int64HashMap cells",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/28715"
+        },
+        {
+          "number": 26394,
+          "title": "[Bug]: mergerecursive Free retains copied recursive batches",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/26394"
+        },
+        {
+          "number": 24919,
+          "title": "[Bug]: Cross-CN shuffle INSERT ... SELECT join hangs forever on multi-CN cluster (large tables)",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/24919"
+        },
+        {
+          "number": 5009,
+          "title": "[Feature Request]: Support first batch error code ",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/5009"
+        },
+        {
+          "number": 407,
+          "title": "(AOE): solution to resolve read and write conflicts occurred by raft group rebalance.",
+          "state": "closed",
+          "html_url": "https://github.com/matrixorigin/matrixone/issues/407"
+        }
+      ]
+    }
+  ],
+  "join_dependency_issue_search": {
+    "query": "repo:matrixorigin/matrixone is:issue \"joinMapDependency.go\"",
+    "http_status": 200,
+    "total_count": 2,
+    "items": [
+      {
+        "number": 27646,
+        "title": "fix: preserve root execution errors when JoinMapBuildError wraps cancellation",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27646"
+      },
+      {
+        "number": 27524,
+        "title": "[Bug]: distributed INSERT SELECT can replace foreign-key violation with context canceled",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27524"
+      }
+    ]
+  }
+}

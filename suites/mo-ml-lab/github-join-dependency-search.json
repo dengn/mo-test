@@ -1,0 +1,19 @@
+{
+  "query": "repo:matrixorigin/matrixone is:issue \"joinMapDependency.go\"",
+  "http_status": 200,
+  "total_count": 2,
+  "items": [
+    {
+      "number": 27646,
+      "title": "fix: preserve root execution errors when JoinMapBuildError wraps cancellation",
+      "state": "closed",
+      "html_url": "https://github.com/matrixorigin/matrixone/issues/27646"
+    },
+    {
+      "number": 27524,
+      "title": "[Bug]: distributed INSERT SELECT can replace foreign-key violation with context canceled",
+      "state": "closed",
+      "html_url": "https://github.com/matrixorigin/matrixone/issues/27524"
+    }
+  ]
+}

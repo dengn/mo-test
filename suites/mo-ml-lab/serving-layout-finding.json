@@ -1,0 +1,8 @@
+{
+  "phase": "preliminary serving replay",
+  "classification": "client floating-point layout issue, not an MO result discrepancy",
+  "initial_max_difference": 4.3213367e-07,
+  "fix": "C-contiguous float32 input tensor, same contract as original training",
+  "tolerance_widened": false,
+  "verified_architectures": 5
+}

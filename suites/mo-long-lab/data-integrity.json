@@ -1,0 +1,122 @@
+{
+  "tables": {
+    "customers": {
+      "rows": 1200,
+      "full_content": "pass"
+    },
+    "products": {
+      "rows": 80,
+      "full_content": "pass"
+    },
+    "orders": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "items": {
+      "rows": 36000,
+      "full_content": "pass"
+    },
+    "payments": {
+      "rows": 24000,
+      "full_content": "pass"
+    },
+    "refunds": {
+      "rows": 1574,
+      "full_content": "pass"
+    },
+    "events": {
+      "rows": 35280,
+      "full_content": "pass"
+    },
+    "edges": {
+      "rows": 3600,
+      "full_content": "pass"
+    },
+    "calendar": {
+      "rows": 96,
+      "full_content": "pass"
+    },
+    "market": {
+      "rows": 2920,
+      "full_content": "pass"
+    },
+    "inventory": {
+      "rows": 7680,
+      "full_content": "pass"
+    },
+    "campaigns": {
+      "rows": 384,
+      "full_content": "pass"
+    },
+    "subscriptions": {
+      "rows": 28800,
+      "full_content": "pass"
+    },
+    "targets": {
+      "rows": 42,
+      "full_content": "pass"
+    }
+  },
+  "independent_pandas_checks": [
+    {
+      "parameter": 0,
+      "block": "market",
+      "rows": 90,
+      "status": "pass"
+    },
+    {
+      "parameter": 0,
+      "block": "subscription",
+      "rows": 90,
+      "status": "pass"
+    },
+    {
+      "parameter": 23,
+      "block": "market",
+      "rows": 215,
+      "status": "pass"
+    },
+    {
+      "parameter": 23,
+      "block": "subscription",
+      "rows": 215,
+      "status": "pass"
+    },
+    {
+      "parameter": 68,
+      "block": "market",
+      "rows": 215,
+      "status": "pass"
+    },
+    {
+      "parameter": 68,
+      "block": "subscription",
+      "rows": 215,
+      "status": "pass"
+    },
+    {
+      "parameter": 123,
+      "block": "market",
+      "rows": 240,
+      "status": "pass"
+    },
+    {
+      "parameter": 123,
+      "block": "subscription",
+      "rows": 240,
+      "status": "pass"
+    },
+    {
+      "parameter": 199,
+      "block": "market",
+      "rows": 115,
+      "status": "pass"
+    },
+    {
+      "parameter": 199,
+      "block": "subscription",
+      "rows": 115,
+      "status": "pass"
+    }
+  ]
+}

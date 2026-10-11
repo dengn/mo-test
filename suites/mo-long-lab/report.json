@@ -1,0 +1,1626 @@
+{
+  "canonical": {
+    "cases": 10000,
+    "unique_cases": 10000,
+    "counts": {
+      "pass": 10000
+    },
+    "seconds": 1842.0327954292297,
+    "workers": 8,
+    "families": 50,
+    "parameters_per_family": 200,
+    "log_start_offset": 7196690,
+    "log_end_offset": 15409967,
+    "started_at": 1791712136.8815897,
+    "ended_at": 1791713978.9144752,
+    "sql_cases": 8000,
+    "multi_stage_cases": 2000
+  },
+  "verified_case_count": 10000,
+  "unique_sql_hashes": 10000,
+  "counts": {
+    "pass": 10000
+  },
+  "by_client": {
+    "pandas": {
+      "pass": 5000
+    },
+    "numpy": {
+      "pass": 5000
+    }
+  },
+  "by_family": {
+    "chain_34_cohort_attribution_statistics_graph_market_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_5_time_series_graph_market_inventory": {
+      "pass": 200
+    },
+    "chain_49_commerce_cohort_attribution_graph_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_3_commerce_cohort_market_inventory": {
+      "pass": 200
+    },
+    "chain_45_attribution_statistics_graph_inventory": {
+      "pass": 200
+    },
+    "chain_46_attribution_market_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_37_attribution_time_series_statistics_graph_market_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_0_cohort_statistics_graph_market": {
+      "pass": 200
+    },
+    "chain_23_attribution_statistics_graph_inventory": {
+      "pass": 200
+    },
+    "chain_17_commerce_attribution_time_series_statistics": {
+      "pass": 200
+    },
+    "chain_4_attribution_graph_market_inventory": {
+      "pass": 200
+    },
+    "chain_42_commerce_time_series_statistics_inventory": {
+      "pass": 200
+    },
+    "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing": {
+      "pass": 200
+    },
+    "chain_28_commerce_cohort_attribution_subscription": {
+      "pass": 200
+    },
+    "chain_35_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing": {
+      "pass": 200
+    },
+    "chain_41_cohort_attribution_time_series_market": {
+      "pass": 200
+    },
+    "chain_38_commerce_attribution_time_series_statistics_market_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_9_commerce_cohort_statistics_marketing": {
+      "pass": 200
+    },
+    "chain_44_attribution_time_series_graph_inventory": {
+      "pass": 200
+    },
+    "chain_16_commerce_graph_market_inventory": {
+      "pass": 200
+    },
+    "chain_32_commerce_attribution_time_series_statistics_market_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_39_commerce_cohort_attribution_graph_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_20_commerce_time_series_statistics_graph": {
+      "pass": 200
+    },
+    "chain_47_cohort_statistics_graph_market_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_30_time_series_statistics_graph_market_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_19_attribution_time_series_graph_inventory": {
+      "pass": 200
+    },
+    "chain_8_market_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_14_commerce_market_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_36_commerce_cohort_attribution_time_series_market_inventory": {
+      "pass": 200
+    },
+    "chain_40_commerce_cohort_market_inventory": {
+      "pass": 200
+    },
+    "chain_18_commerce_cohort_attribution_statistics": {
+      "pass": 200
+    },
+    "chain_24_commerce_attribution_time_series_marketing": {
+      "pass": 200
+    },
+    "chain_43_cohort_time_series_statistics_subscription": {
+      "pass": 200
+    },
+    "chain_7_cohort_attribution_time_series_market": {
+      "pass": 200
+    },
+    "chain_12_commerce_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_31_cohort_statistics_graph_market_inventory_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_1_cohort_graph_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_33_commerce_cohort_time_series_statistics_inventory_subscription": {
+      "pass": 200
+    },
+    "chain_2_attribution_statistics_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_10_time_series_statistics_graph_marketing": {
+      "pass": 200
+    },
+    "chain_15_cohort_time_series_statistics_subscription": {
+      "pass": 200
+    },
+    "chain_26_commerce_cohort_time_series_subscription": {
+      "pass": 200
+    },
+    "chain_27_attribution_market_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_22_time_series_graph_marketing_subscription": {
+      "pass": 200
+    },
+    "chain_21_cohort_statistics_market_inventory": {
+      "pass": 200
+    },
+    "chain_13_commerce_cohort_attribution_inventory": {
+      "pass": 200
+    },
+    "chain_29_attribution_statistics_inventory_marketing": {
+      "pass": 200
+    },
+    "chain_6_cohort_graph_inventory_marketing": {
+      "pass": 200
+    },
+    "chain_11_commerce_time_series_statistics_inventory": {
+      "pass": 200
+    },
+    "chain_25_attribution_market_inventory_subscription": {
+      "pass": 200
+    }
+  },
+  "sql_complexity": {
+    "bytes": {
+      "p50": 7191.5,
+      "p95": 14526.0,
+      "p99": 15880.0,
+      "max": 15897.0
+    },
+    "cte_count": {
+      "p50": 36.0,
+      "p95": 67.0,
+      "p99": 69.0,
+      "max": 69.0
+    },
+    "joins": {
+      "p50": 17.5,
+      "p95": 29.0,
+      "p99": 31.0,
+      "max": 31.0
+    },
+    "windows": {
+      "p50": 32.0,
+      "p95": 58.0,
+      "p99": 63.0,
+      "max": 63.0
+    }
+  },
+  "observed_latency_ms": {
+    "query": {
+      "p50": 919.4506275016465,
+      "p95": 2407.9341855969683,
+      "p99": 3402.742078862139,
+      "max": 6423.958886996843
+    },
+    "oracle": {
+      "p50": 185.71889949816978,
+      "p95": 488.3067878061411,
+      "p99": 739.1468435229767,
+      "max": 1775.619550004194
+    },
+    "complete_case": {
+      "p50": 1253.3970959993894,
+      "p95": 3094.6415643014907,
+      "p99": 4361.0546227498,
+      "max": 7601.676949001558
+    },
+    "stage_statement": {
+      "p50": 20.683546503278194,
+      "p95": 136.84229774844425,
+      "p99": 266.97035174009216,
+      "max": 1652.754424001614
+    }
+  },
+  "result_rows_checked": 477606,
+  "multi_stage": {
+    "completed_cases": 2000,
+    "steps_min": 15,
+    "steps_max": 16,
+    "database_operations": 31000,
+    "commit_cases": 1000,
+    "rollback_cases": 1000
+  },
+  "health": {
+    "samples": 366,
+    "errors": [],
+    "pids": [
+      1384
+    ],
+    "peak_rss_mib": 2839.65234375
+  },
+  "supplemental_engines": {
+    "spark": {
+      "counts": {
+        "pass": 2000
+      },
+      "meta": {
+        "tool": "spark",
+        "cases": 2000,
+        "pipelines": 2,
+        "seconds": 63.6639883518219,
+        "setup_and_execution_seconds": 79.21526002883911,
+        "started_at": 1791712457.192261,
+        "ended_at": 1791712536.4075215,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+        "isolation": "READ_COMMITTED",
+        "spark_analyzer_max_iterations": 500
+      },
+      "jobs": [
+        {
+          "family": "long_chain_30",
+          "status": "executed",
+          "pipeline_ms": 33697.74181899993,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "long_chain_38",
+          "status": "executed",
+          "pipeline_ms": 28973.92307800328,
+          "groups_returned": 1000,
+          "error": null
+        }
+      ]
+    },
+    "flink-bounded": {
+      "counts": {
+        "pass": 2000
+      },
+      "meta": {
+        "tool": "flink-bounded",
+        "cases": 2000,
+        "pipelines": 2,
+        "counts": {
+          "pass": 2000
+        },
+        "seconds": 255.78885221481323,
+        "started_at": 1791713513.2687407,
+        "ended_at": 1791713769.057594,
+        "feedback_chunk": 3,
+        "scope": "14 JDBC sources, each feature block materialized, independent normalization, feedback chunks of 3, final JDBC sink; all intermediate values and final unmaterialized reference verified; excluded from canonical 10000"
+      },
+      "jobs": [
+        {
+          "family": "long_chain_30",
+          "pipeline_ms": 120987.82815400045,
+          "error": null,
+          "groups_returned": 1000
+        },
+        {
+          "family": "long_chain_38",
+          "pipeline_ms": 122622.93040600343,
+          "error": null,
+          "groups_returned": 1000
+        }
+      ]
+    }
+  },
+  "slowest_cases": [
+    [
+      7601.676949001558,
+      9632,
+      "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ],
+    [
+      7289.234326999576,
+      9641,
+      "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ],
+    [
+      7213.368830001855,
+      8805,
+      "chain_44_attribution_time_series_graph_inventory"
+    ],
+    [
+      7191.759780005668,
+      9158,
+      "chain_45_attribution_statistics_graph_inventory"
+    ],
+    [
+      7137.992563999433,
+      6853,
+      "chain_34_cohort_attribution_statistics_graph_market_inventory_subscription"
+    ],
+    [
+      6721.273579001718,
+      7035,
+      "chain_35_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ],
+    [
+      6668.755742997746,
+      9859,
+      "chain_49_commerce_cohort_attribution_graph_inventory_subscription"
+    ],
+    [
+      6613.586434999888,
+      9612,
+      "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ],
+    [
+      6388.369628999499,
+      9614,
+      "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ],
+    [
+      6216.573921999952,
+      9767,
+      "chain_48_commerce_cohort_attribution_time_series_statistics_graph_inventory_marketing"
+    ]
+  ],
+  "independent_data_check": {
+    "tables": {
+      "customers": {
+        "rows": 1200,
+        "full_content": "pass"
+      },
+      "products": {
+        "rows": 80,
+        "full_content": "pass"
+      },
+      "orders": {
+        "rows": 12000,
+        "full_content": "pass"
+      },
+      "items": {
+        "rows": 36000,
+        "full_content": "pass"
+      },
+      "payments": {
+        "rows": 24000,
+        "full_content": "pass"
+      },
+      "refunds": {
+        "rows": 1574,
+        "full_content": "pass"
+      },
+      "events": {
+        "rows": 35280,
+        "full_content": "pass"
+      },
+      "edges": {
+        "rows": 3600,
+        "full_content": "pass"
+      },
+      "calendar": {
+        "rows": 96,
+        "full_content": "pass"
+      },
+      "market": {
+        "rows": 2920,
+        "full_content": "pass"
+      },
+      "inventory": {
+        "rows": 7680,
+        "full_content": "pass"
+      },
+      "campaigns": {
+        "rows": 384,
+        "full_content": "pass"
+      },
+      "subscriptions": {
+        "rows": 28800,
+        "full_content": "pass"
+      },
+      "targets": {
+        "rows": 42,
+        "full_content": "pass"
+      }
+    },
+    "independent_pandas_checks": [
+      {
+        "parameter": 0,
+        "block": "market",
+        "rows": 90,
+        "status": "pass"
+      },
+      {
+        "parameter": 0,
+        "block": "subscription",
+        "rows": 90,
+        "status": "pass"
+      },
+      {
+        "parameter": 23,
+        "block": "market",
+        "rows": 215,
+        "status": "pass"
+      },
+      {
+        "parameter": 23,
+        "block": "subscription",
+        "rows": 215,
+        "status": "pass"
+      },
+      {
+        "parameter": 68,
+        "block": "market",
+        "rows": 215,
+        "status": "pass"
+      },
+      {
+        "parameter": 68,
+        "block": "subscription",
+        "rows": 215,
+        "status": "pass"
+      },
+      {
+        "parameter": 123,
+        "block": "market",
+        "rows": 240,
+        "status": "pass"
+      },
+      {
+        "parameter": 123,
+        "block": "subscription",
+        "rows": 240,
+        "status": "pass"
+      },
+      {
+        "parameter": 199,
+        "block": "market",
+        "rows": 115,
+        "status": "pass"
+      },
+      {
+        "parameter": 199,
+        "block": "subscription",
+        "rows": 115,
+        "status": "pass"
+      }
+    ]
+  },
+  "scope": {
+    "definition": "50 definitions \u00d7200 parameter tuples: 8000 long SQL reads +2000 staged transactional analyses. Every case executes its own full query; stage operations are not counted as extra cases.",
+    "oracle": "DuckDB 1.3.2 built from original deterministic data; numerical tolerance rtol/atol 1e-7; integral counts exact. Full source table comparison plus independently coded market/subscription calculations.",
+    "risk_scores": "Synthetic analytical scoring recurrences; not production model validation. Every feedback step changes the output score.",
+    "pilot_changes": "Reserved alias RETENTION renamed to active_retention, and activity-island subtraction explicitly casts ROW_NUMBER to signed BIGINT. Initial pilot failures remain separate, not counted in canonical results.",
+    "observational_timing": "Main-run query and case times include contention from local DuckDB references and stage/engine work. Isolated measurements, if included, are separate.",
+    "stability_limit": "Local single-instance execution window; no HA, crash injection or production-size assurance.",
+    "build_commit": "23d8f61252f3017dff218b530817a240206fd762"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "packages": {
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "duckdb": "1.3.2",
+      "pymysql": "1.2.0",
+      "sqlalchemy": "2.0.43",
+      "pyspark": "3.5.3",
+      "apache-flink": "2.1.1",
+      "psutil": "7.2.2",
+      "matplotlib": "3.10.8",
+      "playwright": "1.62.0"
+    },
+    "cpu_max": "400000 100000",
+    "memory_max": "17179869184",
+    "server_binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+    "server_binary_build_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "source_checkout_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+    "build_source_note": "Results apply to the binary build commit. Checkout differs and was not rebuilt for this batch.",
+    "database": "ds_long_20261011",
+    "source_rows": 153656,
+    "source_tables": 14,
+    "jdbc_mysql_version": "8.0.33",
+    "flink_jdbc_version": "4.1.0-2.1",
+    "java_major": 21
+  },
+  "final-state": {
+    "stage_tables": {
+      "stage_input_0": 0,
+      "stage_output_0": 0,
+      "stage_input_1": 0,
+      "stage_output_1": 0,
+      "stage_input_2": 0,
+      "stage_output_2": 0,
+      "stage_input_3": 0,
+      "stage_output_3": 0,
+      "stage_input_4": 0,
+      "stage_output_4": 0,
+      "stage_input_5": 0,
+      "stage_output_5": 0,
+      "stage_input_6": 0,
+      "stage_output_6": 0,
+      "stage_input_7": 0,
+      "stage_output_7": 0
+    },
+    "all_stage_tables_empty": true,
+    "server_version": "8.0.30-MatrixOne-v",
+    "server_pid": "1384",
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "log_levels": {
+      "ERROR": 31413
+    },
+    "log_message_groups": {
+      "error: invalid argument operator between, bad value [INT BIGINT INT]": 7600,
+      "error: not supported: function or operator 'nullif'": 22800,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535": 3,
+      "query trace status": 282,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 481049 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 481049 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573568 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573568 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531510 is larger than Dest length 65535": 4,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531510 is larger than Dest length 65535": 4,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476942 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476942 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 534026 is larger than Dest length 65535": 4,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 534026 is larger than Dest length 65535": 4,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474514 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474514 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335174 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335174 is larger than Dest length 65535": 2,
+      "failed to upload file to MO": 85,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 571838 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 571838 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545012 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545012 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317083 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317083 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301530 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301530 is larger than Dest length 65535": 2,
+      "error: txn need retry in rc mode, def changed": 40,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322299 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322299 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545144 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545144 is larger than Dest length 65535": 2,
+      "upload files success": 21,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 323736 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 323736 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 572317 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 572317 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547669 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547669 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598652 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598652 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475077 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475077 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593546 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593546 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385264 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385264 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 599028 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 599028 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354805 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354805 is larger than Dest length 65535": 2,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478457 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478457 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474970 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474970 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384834 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384834 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465980 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465980 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354740 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354740 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476877 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476877 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574176 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574176 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382094 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382094 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474406 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474406 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643815 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643815 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583198 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583198 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 464090 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 464090 is larger than Dest length 65535": 3,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313473 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313473 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319515 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319515 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381885 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381885 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644645 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644645 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532483 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532483 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479398 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479398 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300762 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300762 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 581672 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 581672 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531409 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531409 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475077 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463100 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463100 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 595510 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 595510 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335495 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335495 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643850 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643850 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382094 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 533218 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 533218 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317005 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317005 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532679 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532679 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583997 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583997 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573962 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573962 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584437 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584437 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574186 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574186 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 534026 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 548163 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 548163 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300720 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300720 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598785 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598785 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596543 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596543 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529774 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529774 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301608 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301608 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 299825 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 299825 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308062 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308062 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381885 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302252 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302252 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342320 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342320 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313034 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313034 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308253 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308253 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 315696 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 315696 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385022 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385022 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317574 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317574 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324588 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324588 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335457 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335457 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598652 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308826 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308826 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377570 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377570 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354945 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354945 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324736 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324736 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354752 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354752 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316930 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316930 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381936 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381936 is larger than Dest length 65535": 2,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476877 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317251 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317251 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545396 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545396 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474664 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474664 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 309396 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 309396 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598727 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598727 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584021 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584021 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547256 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547256 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316781 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316781 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 321988 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 321988 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545144 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 311057 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 311057 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479270 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479270 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531571 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531571 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598830 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598830 is larger than Dest length 65535": 2,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385264 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596147 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596147 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590862 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590862 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354817 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354817 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317307 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317307 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596064 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596064 is larger than Dest length 65535": 2,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322299 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 306097 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 306097 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598774 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598774 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316904 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316904 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382015 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382015 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317269 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317269 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382151 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382151 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377775 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377775 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317139 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317139 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644316 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644316 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322201 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322201 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342290 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342290 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302159 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302159 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319946 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319946 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313443 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313443 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612668 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612668 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349556 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349556 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300789 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300789 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583146 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583146 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531609 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531609 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573887 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573887 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377989 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377989 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337981 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337981 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377607 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377607 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301431 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301431 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593365 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593365 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 325958 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 325958 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584027 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584027 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573585 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573585 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 591030 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 591030 is larger than Dest length 65535": 2,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531517 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531517 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317272 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317272 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573456 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573456 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 592271 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 592271 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532557 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532557 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476767 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476767 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 338615 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 338615 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573611 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573611 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 318686 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 318686 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381932 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381932 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349558 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349558 is larger than Dest length 65535": 1,
+      "mo.table.stats.task": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 326292 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 326292 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573892 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573892 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377989 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465939 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465939 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531537 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531537 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313347 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313347 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612834 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612834 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335257 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335257 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317329 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317329 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479270 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300734 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300734 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381943 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381943 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316970 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316970 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354675 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354675 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 466073 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 466073 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316925 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316925 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322648 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322648 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476975 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476975 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308826 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547244 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547244 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 473655 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 473655 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300853 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300853 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463191 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463191 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317225 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317225 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384809 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384809 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643656 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643656 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 591030 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 307995 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 307995 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320441 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320441 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337755 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337755 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 613477 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 613477 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381968 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381968 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474957 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474957 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643561 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643561 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474514 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476970 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476970 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377787 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377787 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596326 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596326 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478371 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478371 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342466 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342466 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313271 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313271 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317307 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377707 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377707 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463359 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463359 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644138 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644138 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573809 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573809 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322488 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322488 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574269 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574269 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 599028 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529757 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529757 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590918 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590918 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301475 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301475 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320522 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320522 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584218 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584218 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316904 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612905 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612905 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531822 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531822 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643056 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643056 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644571 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644571 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 597544 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 597544 is larger than Dest length 65535": 1,
+      "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 464090 is larger than Dest length 65535": 1,
+      "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584336 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584336 is larger than Dest length 65535": 1
+    },
+    "panic_fatal": [],
+    "canonical_log_bytes": 8213277
+  },
+  "performance": {
+    "groups": [
+      {
+        "concurrency": 1,
+        "queries": 144,
+        "queries_per_second": 5.8257536358612425,
+        "latency_ms": {
+          "p50": 139.67609150131466,
+          "p95": 334.66470034945814,
+          "p99": 352.7202187192597,
+          "max": 359.319349998259
+        },
+        "counts": {
+          "pass": 144
+        }
+      },
+      {
+        "concurrency": 2,
+        "queries": 144,
+        "queries_per_second": 8.792833518424112,
+        "latency_ms": {
+          "p50": 186.20891599857714,
+          "p95": 399.3056329451064,
+          "p99": 469.0245265873818,
+          "max": 524.6054230010486
+        },
+        "counts": {
+          "pass": 144
+        }
+      },
+      {
+        "concurrency": 4,
+        "queries": 144,
+        "queries_per_second": 10.784214605874155,
+        "latency_ms": {
+          "p50": 316.30331599444617,
+          "p95": 586.4464152509754,
+          "p99": 782.5688106798768,
+          "max": 831.4086459940881
+        },
+        "counts": {
+          "pass": 144
+        }
+      },
+      {
+        "concurrency": 8,
+        "queries": 144,
+        "queries_per_second": 11.500019503633611,
+        "latency_ms": {
+          "p50": 558.8400774977345,
+          "p95": 1203.6854510486592,
+          "p99": 1338.9942712600164,
+          "max": 1487.2933939986979
+        },
+        "counts": {
+          "pass": 144
+        }
+      }
+    ],
+    "trials": [
+      {
+        "trial": 0,
+        "concurrency": 1,
+        "seconds": 8.047137581001152,
+        "qps": 5.964853902004279
+      },
+      {
+        "trial": 0,
+        "concurrency": 4,
+        "seconds": 4.628558033997251,
+        "qps": 10.370400381162966
+      },
+      {
+        "trial": 0,
+        "concurrency": 2,
+        "seconds": 5.24440770700312,
+        "qps": 9.152606487078264
+      },
+      {
+        "trial": 0,
+        "concurrency": 8,
+        "seconds": 4.629400386002089,
+        "qps": 10.368513413775469
+      },
+      {
+        "trial": 1,
+        "concurrency": 8,
+        "seconds": 3.597817233996466,
+        "qps": 13.34142255655423
+      },
+      {
+        "trial": 1,
+        "concurrency": 2,
+        "seconds": 5.136404520002543,
+        "qps": 9.345058360001644
+      },
+      {
+        "trial": 1,
+        "concurrency": 4,
+        "seconds": 4.251348573001451,
+        "qps": 11.29053503277244
+      },
+      {
+        "trial": 1,
+        "concurrency": 1,
+        "seconds": 8.145721911001601,
+        "qps": 5.892663722680155
+      },
+      {
+        "trial": 2,
+        "concurrency": 2,
+        "seconds": 5.996161099996243,
+        "qps": 8.005121810357977
+      },
+      {
+        "trial": 2,
+        "concurrency": 1,
+        "seconds": 8.524972569000965,
+        "qps": 5.630516651108131
+      },
+      {
+        "trial": 2,
+        "concurrency": 8,
+        "seconds": 4.294500274001621,
+        "qps": 11.177086258577308
+      },
+      {
+        "trial": 2,
+        "concurrency": 4,
+        "seconds": 4.472943392996967,
+        "qps": 10.73118879061847
+      }
+    ],
+    "measured_queries": 576,
+    "query_shapes": 12,
+    "scope": "warm local instance; long-query client-visible round trip; full query shape warmup and per-worker warmup excluded; three balanced-order trials; oracle and result assertions outside timed work"
+  },
+  "failure-analysis": {
+    "canonical_user_outcome": {
+      "pass": 10000
+    },
+    "internal_trace_failed_load_events": 282,
+    "trace_error_groups": {
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 481049 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573568 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531510 is larger than Dest length 65535": 4,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476942 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 534026 is larger than Dest length 65535": 4,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474514 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335174 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 571838 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545012 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317083 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301530 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322299 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545144 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 323736 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 572317 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547669 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598652 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475077 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593546 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385264 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 599028 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354805 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478457 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474970 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384834 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465980 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354740 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476877 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574176 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382094 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474406 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643815 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583198 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 464090 is larger than Dest length 65535": 3,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313473 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319515 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381885 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644645 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532483 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479398 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300762 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 581672 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531409 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463100 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 595510 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335495 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643850 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 533218 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317005 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532679 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583997 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573962 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584437 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574186 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 548163 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300720 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598785 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596543 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529774 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301608 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 299825 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308062 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302252 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342320 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313034 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308253 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 315696 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385022 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317574 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324588 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335457 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308826 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377570 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354945 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324736 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354752 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316930 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381936 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317251 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545396 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474664 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 309396 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598727 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584021 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547256 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316781 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 321988 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 311057 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479270 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531571 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598830 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596147 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590862 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354817 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317307 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596064 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 306097 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598774 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316904 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382015 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317269 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382151 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377775 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317139 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644316 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322201 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342290 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302159 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319946 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313443 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612668 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349556 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300789 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583146 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531609 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573887 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377989 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337981 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377607 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301431 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593365 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 325958 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584027 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573585 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 591030 is larger than Dest length 65535": 2,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531517 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317272 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573456 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 592271 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532557 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476767 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 338615 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573611 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 318686 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381932 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349558 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 326292 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573892 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465939 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531537 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313347 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612834 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335257 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317329 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300734 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381943 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316970 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354675 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 466073 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316925 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322648 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476975 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547244 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 473655 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300853 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463191 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317225 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384809 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643656 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 307995 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320441 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337755 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 613477 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381968 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474957 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643561 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476970 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377787 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596326 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478371 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342466 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313271 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377707 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463359 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644138 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573809 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322488 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574269 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529757 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590918 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301475 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320522 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584218 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612905 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531822 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643056 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644571 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 597544 is larger than Dest length 65535": 1,
+      "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584336 is larger than Dest length 65535": 1
+    },
+    "first_event": {
+      "level": "ERROR",
+      "time": "2026/10/11 09:49:05.651645 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...69,36.9568\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a703a4b5:1791712145138563742-1",
+      "session_info": "connectionId 3363|127.0.0.1:55210|account sys:mo_logger|goRoutineId 1222680|migrate-goRoutineId 0|01a12a5d-3fc6-72a5-943a-14a46bcd6360",
+      "role": "moadmin",
+      "session_id": "01a12a5d-3fc6-72a5-943a-14a46bcd6360",
+      "statement_id": "01a12a5d-a8d2-79d0-85b5-bf75f836c574",
+      "span": {
+        "trace_id": "8eb6a44a-7cb7-6140-9891-7d741adaf32e",
+        "span_id": "faf9ea0ae40bf01f"
+      }
+    },
+    "raw_record_evidence": {
+      "original_file": "/workspace/mo-ds-lab/mo-data/etl/sys/logs/2026/10/11/statement_info/1791712142_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_757078519.csv",
+      "original_file_sha256": "2bdffc8950c4fd30d692dbae33e01eed8799f09ff7c5c6adea49295c36b5d5c8",
+      "statement_id": "01a12a5d-9170-7c79-9a66-ba08ee095958",
+      "field_bytes": {
+        "statement_id": 36,
+        "transaction_id": 32,
+        "session_id": 36,
+        "account": 3,
+        "account_id": 1,
+        "user": 4,
+        "host": 15,
+        "database": 16,
+        "statement": 1027,
+        "statement_tag": 0,
+        "statement_fingerprint": 0,
+        "node_uuid": 36,
+        "node_type": 3,
+        "request_at": 26,
+        "response_at": 26,
+        "duration": 10,
+        "status": 7,
+        "err_code": 1,
+        "error": 0,
+        "exec_plan": 598222,
+        "rows_read": 6,
+        "bytes_scan": 7,
+        "stats": 76,
+        "statement_type": 6,
+        "query_type": 3,
+        "role_id": 1,
+        "sql_source_type": 12,
+        "aggr_count": 1,
+        "result_count": 3,
+        "connection_id": 4,
+        "cu": 8
+      },
+      "oversized_fields": {
+        "exec_plan": 598222
+      },
+      "stored_user_query_status": "Success",
+      "exec_plan_valid_json": true
+    },
+    "related_existing_issues": [
+      {
+        "number": 29797,
+        "url": "https://github.com/matrixorigin/matrixone/issues/29797"
+      },
+      {
+        "number": 29809,
+        "url": "https://github.com/matrixorigin/matrixone/issues/29809"
+      }
+    ],
+    "classification": "User queries passed; internal statement_info ingestion failed for oversized TEXT. Existing MO observability defect, separately recorded. No duplicate issue posted. No permanent-loss claim.",
+    "other_error_log_groups": {
+      "between_signature_probe": 7600,
+      "nullif_resolution": 22800,
+      "interpretation": "These messages occurred alongside successful independently verified queries; they do not prove these SQL expressions are unsupported. Their internal logging/rewriting behavior was not separately fixed or exhaustively diagnosed."
+    },
+    "panic_fatal": [],
+    "oom_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+  },
+  "client-setup-notes": {
+    "counting": "Only canonical 50\u00d7200 belongs to the requested 10000. Supplemental 2\u00d71000 output checks per completed engine variant are separate. Incomplete planner attempts do not create successful/failed MO SQL cases.",
+    "spark_default_analyzer": {
+      "classification": "Spark client Resolution iteration cap, not MO server error",
+      "setting": 100,
+      "evidence": {
+        "output_assertions": {
+          "pass": 1000,
+          "pipeline_error": 1000
+        },
+        "meta.json": {
+          "tool": "spark",
+          "cases": 2000,
+          "pipelines": 2,
+          "seconds": 44.50954723358154,
+          "setup_and_execution_seconds": 65.9444694519043,
+          "started_at": 1791712246.0594401,
+          "ended_at": 1791712312.0039098,
+          "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+          "isolation": "READ_COMMITTED"
+        },
+        "jobs.json": [
+          {
+            "family": "long_chain_30",
+            "status": "executed",
+            "pipeline_ms": 40407.89688299992,
+            "groups_returned": 1000,
+            "error": null
+          },
+          {
+            "family": "long_chain_38",
+            "status": "pipeline_error",
+            "pipeline_ms": 2886.778170002799,
+            "groups_returned": 0,
+            "error": "An error occurred while calling o36.sql.\n: java.lang.RuntimeException: Max iterations (100) reached for batch Resolution, please set 'spark.sql.analyzer.maxIterations' to a larger value.\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1(RuleExecutor.scala:265)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$execute$1$adapted(RuleExecutor.scala:211)\n\tat scala.collection.immutable.List.foreach(List.scala:431)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:211)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.org$apache$spark$sql$catalyst$analysis$Analyzer$$executeSameContext(Analyzer.scala:240)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$execute$1(Analyzer.scala:236)\n\tat org.apache.spark.sql.catalyst.analysis.AnalysisContext$.withNewAnalysisContext(Analyzer.scala:187)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:236)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.execute(Analyzer.scala:202)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.$anonfun$executeAndTrack$1(RuleExecutor.scala:182)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker$.withTracker(QueryPlanningTracker.scala:89)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.executeAndTrack(RuleExecutor.scala:182)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:223)\n\tat org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)\n\tat org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)\n\tat org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)\n\tat org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)\n\tat org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)\n\tat org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)\n\tat org.apache.spark.sql.SparkSession.$anonfun$sql$1(SparkSession.scala:638)\n\tat org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)\n\tat org.apache.spark.sql.SparkSession.sql(SparkSession.scala:629)\n\tat org.apache.spark.sql.SparkSession.sql(SparkSession.scala:659)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:75)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:52)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat py4j.Gateway.invoke(Gateway.java:282)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)\n\tat py4j.ClientServerConnection.run(ClientServerConnection.java:106)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n"
+          }
+        ]
+      }
+    },
+    "spark_tuned": {
+      "classification": "Completed JDBC pipelines after client configuration adjustment",
+      "setting": 500,
+      "isolation": "READ_COMMITTED",
+      "evidence": {
+        "output_assertions": {
+          "pass": 2000
+        },
+        "meta.json": {
+          "tool": "spark",
+          "cases": 2000,
+          "pipelines": 2,
+          "seconds": 63.6639883518219,
+          "setup_and_execution_seconds": 79.21526002883911,
+          "started_at": 1791712457.192261,
+          "ended_at": 1791712536.4075215,
+          "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+          "isolation": "READ_COMMITTED",
+          "spark_analyzer_max_iterations": 500
+        },
+        "jobs.json": [
+          {
+            "family": "long_chain_30",
+            "status": "executed",
+            "pipeline_ms": 33697.74181899993,
+            "groups_returned": 1000,
+            "error": null
+          },
+          {
+            "family": "long_chain_38",
+            "status": "executed",
+            "pipeline_ms": 28973.92307800328,
+            "groups_returned": 1000,
+            "error": null
+          }
+        ]
+      }
+    },
+    "flink_identifier_pilot": {
+      "classification": "Flink Calcite reserved identifiers; quoted harness identifiers before retry",
+      "evidence": {
+        "output_assertions": {
+          "pipeline_error": 2000
+        },
+        "meta.json": {
+          "tool": "flink",
+          "cases": 2000,
+          "pipelines": 2,
+          "seconds": 1.195720911026001,
+          "setup_and_execution_seconds": 10.717745780944824,
+          "started_at": 1791712466.3534086,
+          "ended_at": 1791712477.0711806,
+          "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; not included in canonical 10000; actual overlap recorded from timestamps",
+          "isolation": "Flink JDBC default",
+          "spark_analyzer_max_iterations": null
+        },
+        "jobs.json": [
+          {
+            "family": "long_chain_30",
+            "status": "pipeline_error",
+            "pipeline_ms": 203.90999000665033,
+            "groups_returned": 0,
+            "error": "An error occurred while calling o8.sqlQuery.\n: org.apache.flink.table.api.SqlParserException: SQL parse failed. Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:81)\n\tat org.apache.flink.table.planner.delegation.ParserImpl.parse(ParserImpl.java:102)\n\tat org.apache.flink.table.api.internal.TableEnvironmentImpl.sqlQuery(TableEnvironmentImpl.java:846)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat org.apache.flink.api.python.shaded.py4j.Gateway.invoke(Gateway.java:282)\n\tat org.apache.flink.api.python.shaded.py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat org.apache.flink.api.python.shaded.py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat org.apache.flink.api.python.shaded.py4j.GatewayConnection.run(GatewayConnection.java:238)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nCaused by: org.apache.calcite.sql.parser.SqlParseException: Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.convertException(FlinkSqlParserImpl.java:551)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.normalizeException(FlinkSqlParserImpl.java:297)\n\tat org.apache.calcite.sql.parser.SqlParser.handleException(SqlParser.java:159)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:214)\n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:76)\n\t... 11 more\nCaused by: org.apache.flink.sql.parser.impl.ParseException: Encountered \"prev\" at line 24, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.generateParseException(FlinkSqlParserImpl.java:52913)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.jj_consume_token(FlinkSqlParserImpl.java:52718)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.ParenthesizedExpression(FlinkSqlParserImpl.java:952)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.AddWithItem(FlinkSqlParserImpl.java:26876)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.WithList(FlinkSqlParserImpl.java:26856)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.QueryOrExpr(FlinkSqlParserImpl.java:26729)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.OrderedQueryOrExpr(FlinkSqlParserImpl.java:721)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmt(FlinkSqlParserImpl.java:4383)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmtList(FlinkSqlParserImpl.java:3232)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.parseSqlStmtList(FlinkSqlParserImpl.java:349)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:212)\n\t... 12 more\n"
+          },
+          {
+            "family": "long_chain_38",
+            "status": "pipeline_error",
+            "pipeline_ms": 96.65832199971192,
+            "groups_returned": 0,
+            "error": "An error occurred while calling o8.sqlQuery.\n: org.apache.flink.table.api.SqlParserException: SQL parse failed. Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:81)\n\tat org.apache.flink.table.planner.delegation.ParserImpl.parse(ParserImpl.java:102)\n\tat org.apache.flink.table.api.internal.TableEnvironmentImpl.sqlQuery(TableEnvironmentImpl.java:846)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)\n\tat org.apache.flink.api.python.shaded.py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)\n\tat org.apache.flink.api.python.shaded.py4j.Gateway.invoke(Gateway.java:282)\n\tat org.apache.flink.api.python.shaded.py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)\n\tat org.apache.flink.api.python.shaded.py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat org.apache.flink.api.python.shaded.py4j.GatewayConnection.run(GatewayConnection.java:238)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\nCaused by: org.apache.calcite.sql.parser.SqlParseException: Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.convertException(FlinkSqlParserImpl.java:551)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.normalizeException(FlinkSqlParserImpl.java:297)\n\tat org.apache.calcite.sql.parser.SqlParser.handleException(SqlParser.java:159)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:214)\n\tat org.apache.flink.table.planner.parse.CalciteParser.parseSqlList(CalciteParser.java:76)\n\t... 11 more\nCaused by: org.apache.flink.sql.parser.impl.ParseException: Encountered \"prev\" at line 29, column 104.\nWas expecting one of:\n    \"AS\" ...\n    \"EXCEPT\" ...\n    \"FETCH\" ...\n    \"FROM\" ...\n    \"INTERSECT\" ...\n    \"LIMIT\" ...\n    \"OFFSET\" ...\n    \"ORDER\" ...\n    \"MINUS\" ...\n    \"UNION\" ...\n    <QUOTED_STRING> ...\n    \")\" ...\n    \",\" ...\n    <BRACKET_QUOTED_IDENTIFIER> ...\n    <QUOTED_IDENTIFIER> ...\n    <BACK_QUOTED_IDENTIFIER> ...\n    <BIG_QUERY_BACK_QUOTED_IDENTIFIER> ...\n    <HYPHENATED_IDENTIFIER> ...\n    <IDENTIFIER> ...\n    <UNICODE_QUOTED_IDENTIFIER> ...\n    \".\" ...\n    \"NOT\" ...\n    \"IN\" ...\n    \"<\" ...\n    \"<=\" ...\n    \">\" ...\n    \">=\" ...\n    \"=\" ...\n    \"<>\" ...\n    \"!=\" ...\n    \"BETWEEN\" ...\n    \"LIKE\" ...\n    \"ILIKE\" ...\n    \"RLIKE\" ...\n    \"SIMILAR\" ...\n    \"+\" ...\n    \"-\" ...\n    \"*\" ...\n    \"/\" ...\n    \"%\" ...\n    \"||\" ...\n    \"AND\" ...\n    \"OR\" ...\n    \"IS\" ...\n    \"MEMBER\" ...\n    \"SUBMULTISET\" ...\n    \"CONTAINS\" ...\n    \"OVERLAPS\" ...\n    \"EQUALS\" ...\n    \"PRECEDES\" ...\n    \"SUCCEEDS\" ...\n    \"MULTISET\" ...\n    \"[\" ...\n    \n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.generateParseException(FlinkSqlParserImpl.java:52913)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.jj_consume_token(FlinkSqlParserImpl.java:52718)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.ParenthesizedExpression(FlinkSqlParserImpl.java:952)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.AddWithItem(FlinkSqlParserImpl.java:26876)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.WithList(FlinkSqlParserImpl.java:26856)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.QueryOrExpr(FlinkSqlParserImpl.java:26729)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.OrderedQueryOrExpr(FlinkSqlParserImpl.java:721)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmt(FlinkSqlParserImpl.java:4383)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.SqlStmtList(FlinkSqlParserImpl.java:3232)\n\tat org.apache.flink.sql.parser.impl.FlinkSqlParserImpl.parseSqlStmtList(FlinkSqlParserImpl.java:349)\n\tat org.apache.calcite.sql.parser.SqlParser.parseStmtList(SqlParser.java:212)\n\t... 12 more\n"
+          }
+        ]
+      }
+    },
+    "flink_monolithic": {
+      "classification": "Incomplete planning; explicitly terminated test-owned Python/JVM after excessive memory/time. No result equivalence claim; not a natural crash or proven MO defect.",
+      "resource_evidence": "flink-resource-limit.json",
+      "log": "flink-quoted.log"
+    },
+    "flink_features_only": {
+      "classification": "Six feature outputs matched, but downstream scoring planning crossed the configured client RSS guard. Incomplete final pipeline; no 2000-case success claim.",
+      "guard": {
+        "script": "flink_staged.py",
+        "returncode": 0,
+        "resource_stop_reason": "client process-tree RSS limit",
+        "seconds": 215.63888144493103,
+        "peak_tree_rss_mib": 4199.34765625,
+        "limits": {
+          "seconds": 600,
+          "tree_rss_mib": 4096
+        }
+      },
+      "log": "flink-staged.log"
+    },
+    "flink_bounded": {
+      "classification": "Feature materialization plus normalization and feedback groups of 3; exact same score recurrence. Every intermediate table and final output compared independently.",
+      "guard": {
+        "script": "flink_bounded.py",
+        "returncode": 0,
+        "resource_stop_reason": null,
+        "seconds": 258.64039301872253,
+        "peak_tree_rss_mib": 2955.91796875,
+        "limits": {
+          "seconds": 600,
+          "tree_rss_mib": 4096
+        }
+      },
+      "evidence": {
+        "output_assertions": {
+          "pass": 2000
+        },
+        "meta.json": {
+          "tool": "flink-bounded",
+          "cases": 2000,
+          "pipelines": 2,
+          "counts": {
+            "pass": 2000
+          },
+          "seconds": 255.78885221481323,
+          "started_at": 1791713513.2687407,
+          "ended_at": 1791713769.057594,
+          "feedback_chunk": 3,
+          "scope": "14 JDBC sources, each feature block materialized, independent normalization, feedback chunks of 3, final JDBC sink; all intermediate values and final unmaterialized reference verified; excluded from canonical 10000"
+        },
+        "jobs.json": [
+          {
+            "family": "long_chain_30",
+            "pipeline_ms": 120987.82815400045,
+            "error": null,
+            "groups_returned": 1000
+          },
+          {
+            "family": "long_chain_38",
+            "pipeline_ms": 122622.93040600343,
+            "error": null,
+            "groups_returned": 1000
+          }
+        ]
+      }
+    },
+    "timing": "Supplemental engines overlap canonical workload; canonical times are observed mixed-load times. performance.json is a separate test after all compatibility clients ended."
+  },
+  "flink-resource-limit": {
+    "memory_current": "8824930304",
+    "processes": [
+      {
+        "pid": 10842,
+        "status": "Name:\tpython\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t10842\nNgid:\t0\nPid:\t10842\nPPid:\t10839\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t \nNStgid:\t10842\nNSpid:\t10842\nNSpgid:\t10839\nNSsid:\t10839\nKthread:\t0\nVmPeak:\t 1477056 kB\nVmSize:\t 1477056 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  281680 kB\nVmRSS:\t  281680 kB\nRssAnon:\t  160624 kB\nRssFile:\t  121056 kB\nRssShmem:\t       0 kB\nVmData:\t  376192 kB\nVmStk:\t     144 kB\nVmExe:\t   27308 kB\nVmLib:\t  147576 kB\nVmPTE:\t    1128 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t14\nSigQ:\t0/71955\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000100000002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1f\nCpus_allowed_list:\t0-4\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1171\nnonvoluntary_ctxt_switches:\t845\n",
+        "command_classification": "test-owned Flink client"
+      },
+      {
+        "pid": 10844,
+        "status": "Name:\tjava\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t10844\nNgid:\t0\nPid:\t10844\nPPid:\t10842\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t \nNStgid:\t10844\nNSpid:\t10844\nNSpgid:\t10839\nNSsid:\t10839\nKthread:\t0\nVmPeak:\t 7727916 kB\nVmSize:\t 7662380 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 4347860 kB\nVmRSS:\t  636888 kB\nRssAnon:\t  618308 kB\nRssFile:\t   18548 kB\nRssShmem:\t      32 kB\nVmData:\t  810872 kB\nVmStk:\t     136 kB\nVmExe:\t       4 kB\nVmLib:\t   19164 kB\nVmPTE:\t    1760 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t27\nSigQ:\t0/71955\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000000002\nSigCgt:\t2000000101005ccd\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1f\nCpus_allowed_list:\t0-4\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1\nnonvoluntary_ctxt_switches:\t2\n",
+        "command_classification": "test-owned Flink JVM"
+      }
+    ],
+    "action": "Stop only the test-owned Flink frontend after excessive planning memory growth; preserve MO PID 1384 and canonical runner PID 9912"
+  },
+  "flink_staged-guard": {
+    "script": "flink_staged.py",
+    "returncode": 0,
+    "resource_stop_reason": "client process-tree RSS limit",
+    "seconds": 215.63888144493103,
+    "peak_tree_rss_mib": 4199.34765625,
+    "limits": {
+      "seconds": 600,
+      "tree_rss_mib": 4096
+    }
+  },
+  "flink_bounded-guard": {
+    "script": "flink_bounded.py",
+    "returncode": 0,
+    "resource_stop_reason": null,
+    "seconds": 258.64039301872253,
+    "peak_tree_rss_mib": 2955.91796875,
+    "limits": {
+      "seconds": 600,
+      "tree_rss_mib": 4096
+    }
+  }
+}

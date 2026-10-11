@@ -1,0 +1,1571 @@
+{
+  "error_entries": 1582,
+  "categories": {
+    "statement_info_text_overflow_context": 1497,
+    "statement_info_zero_success_batch_summary": 56,
+    "internal_rc_definition_retry": 25,
+    "tn_schedule_poll_error": 3,
+    "table_stats_task_context": 1
+  },
+  "samples": {
+    "statement_info_text_overflow_context": [
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:42:43.541805 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "failed to upload file to MO",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "table": "system.statement_info",
+        "path": "sys/logs/2026/10/11/statement_info/1791712980_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_762296629.csv",
+        "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535",
+        "span": {
+          "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+          "span_id": "8300d7df0e8d7747"
+        }
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:42:43.541967 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "merge task meet error: Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "span": {
+          "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+          "span_id": "8300d7df0e8d7747"
+        }
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:42:44.882854 +0000",
+        "caller": "function/func_cast.go:10503",
+        "msg": "error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535",
+        "span": {
+          "trace_id": "3be9c6f7-ae10-f92b-48df-56445206d4d9",
+          "span_id": "e5ed1916a4334f8a"
+        }
+      }
+    ],
+    "statement_info_zero_success_batch_summary": [
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:42:43.541933 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "upload files success",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "table": "system.statement_info",
+        "total": 4,
+        "success": 0,
+        "span": {
+          "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+          "span_id": "8300d7df0e8d7747"
+        }
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:43:30.869598 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "upload files success",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "table": "system.statement_info",
+        "total": 4,
+        "success": 0,
+        "span": {
+          "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+          "span_id": "8300d7df0e8d7747"
+        }
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:46:14.852462 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "upload files success",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "table": "system.statement_info",
+        "total": 4,
+        "success": 0,
+        "span": {
+          "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+          "span_id": "d95ad9944b6538b4"
+        }
+      }
+    ],
+    "internal_rc_definition_retry": [
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:46:10.786605 +0000",
+        "caller": "incrservice/service.go:615",
+        "msg": "error: txn need retry in rc mode, def changed"
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:47:03.653951 +0000",
+        "caller": "incrservice/service.go:615",
+        "msg": "error: txn need retry in rc mode, def changed"
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:51:06.291840 +0000",
+        "caller": "incrservice/service.go:615",
+        "msg": "error: txn need retry in rc mode, def changed"
+      }
+    ],
+    "tn_schedule_poll_error": [
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:51:44.590429 +0000",
+        "caller": "tnservice/store_heartbeat.go:93",
+        "msg": "failed to poll tn schedule commands",
+        "uuid": "dd4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "error": "internal error: morpc backend is being created",
+        "event": "tn.schedule-command.poll.failed",
+        "occurrence": 1
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 12:53:46.096392 +0000",
+        "caller": "tnservice/store_heartbeat.go:93",
+        "msg": "failed to poll tn schedule commands",
+        "uuid": "dd4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "error": "internal error: morpc backend is being created",
+        "event": "tn.schedule-command.poll.failed",
+        "occurrence": 2
+      },
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 13:12:34.637075 +0000",
+        "caller": "tnservice/store_heartbeat.go:93",
+        "msg": "failed to poll tn schedule commands",
+        "uuid": "dd4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "error": "internal error: morpc backend is being created",
+        "event": "tn.schedule-command.poll.failed",
+        "occurrence": 3
+      }
+    ],
+    "table_stats_task_context": [
+      {
+        "level": "ERROR",
+        "time": "2026/10/11 13:06:05.776114 +0000",
+        "caller": "disttae/mo_table_stats.go:2171",
+        "msg": "mo.table.stats.task",
+        "source": "gama insert new table",
+        "cnt": 0
+      }
+    ]
+  },
+  "internal_trace_failed_load_calls": 403,
+  "etl_failed_upload_entries": 233,
+  "failed_upload_entries_predating_current_batch": 213,
+  "distinct_failed_upload_files": 224,
+  "failed_upload_files_predating_current_batch": 204,
+  "failed_upload_records": [
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712980_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_762296629.csv",
+      "file_epoch": 1791712980,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712565_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_948710544.csv",
+      "file_epoch": 1791712565,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713784_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_462984882.csv",
+      "file_epoch": 1791713784,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712603_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_750056953.csv",
+      "file_epoch": 1791712603,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713036_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_288966222.csv",
+      "file_epoch": 1791713036,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712420_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_339171192.csv",
+      "file_epoch": 1791712420,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574176 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712390_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_301357779.csv",
+      "file_epoch": 1791712390,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354740 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713517_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_093566536.csv",
+      "file_epoch": 1791713517,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335257 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712885_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_077419519.csv",
+      "file_epoch": 1791712885,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381936 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713263_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_415495207.csv",
+      "file_epoch": 1791713263,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377989 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713016_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_896179990.csv",
+      "file_epoch": 1791713016,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598830 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712177_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_387281693.csv",
+      "file_epoch": 1791712177,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531510 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712286_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_278945842.csv",
+      "file_epoch": 1791712286,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475077 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712994_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_280420503.csv",
+      "file_epoch": 1791712994,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479270 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712593_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_899880667.csv",
+      "file_epoch": 1791712593,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335495 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713072_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_334683588.csv",
+      "file_epoch": 1791713072,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596064 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713706_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_466283214.csv",
+      "file_epoch": 1791713706,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381968 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712953_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_178242901.csv",
+      "file_epoch": 1791712953,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316781 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713950_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_230842971.csv",
+      "file_epoch": 1791713950,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 597544 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712834_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_162442215.csv",
+      "file_epoch": 1791712834,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308826 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712816_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_431926933.csv",
+      "file_epoch": 1791712816,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324588 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712260_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_960279344.csv",
+      "file_epoch": 1791712260,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 323736 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713043_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_339870078.csv",
+      "file_epoch": 1791713043,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590862 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713524_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_663587396.csv",
+      "file_epoch": 1791713524,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317329 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713833_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_909145500.csv",
+      "file_epoch": 1791713833,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322488 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713488_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_917701092.csv",
+      "file_epoch": 1791713488,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531537 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713894_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_155025511.csv",
+      "file_epoch": 1791713894,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584218 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713603_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_061527496.csv",
+      "file_epoch": 1791713603,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547244 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713560_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_846414049.csv",
+      "file_epoch": 1791713560,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354675 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713433_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_368772343.csv",
+      "file_epoch": 1791713433,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 318686 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713340_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_948702217.csv",
+      "file_epoch": 1791713340,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 591030 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713236_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_789956952.csv",
+      "file_epoch": 1791713236,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583146 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712635_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_300199578.csv",
+      "file_epoch": 1791712635,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532679 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713825_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_054216384.csv",
+      "file_epoch": 1791713825,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573809 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713653_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_690075076.csv",
+      "file_epoch": 1791713653,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384809 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712361_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_777165144.csv",
+      "file_epoch": 1791712361,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384834 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712203_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_977581483.csv",
+      "file_epoch": 1791712203,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474514 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712435_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_353083726.csv",
+      "file_epoch": 1791712435,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382094 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713682_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_879355656.csv",
+      "file_epoch": 1791713682,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320441 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712788_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_413817460.csv",
+      "file_epoch": 1791712788,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 315696 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712687_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_094508847.csv",
+      "file_epoch": 1791712687,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300720 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722485_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_961197946.csv",
+      "file_epoch": 1791722485,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 333788 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713637_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_341832444.csv",
+      "file_epoch": 1791713637,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598748 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713063_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_788147684.csv",
+      "file_epoch": 1791713063,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317307 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712296_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_585600146.csv",
+      "file_epoch": 1791712296,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593546 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712097_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_730018959.csv",
+      "file_epoch": 1791712097,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 571838 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713026_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_157318028.csv",
+      "file_epoch": 1791713026,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596147 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712313_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_551029049.csv",
+      "file_epoch": 1791712313,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 599028 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712194_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_061634988.csv",
+      "file_epoch": 1791712194,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 534026 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722665_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_991632823.csv",
+      "file_epoch": 1791722665,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334391 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712807_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_409226092.csv",
+      "file_epoch": 1791712807,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317574 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713244_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_064316742.csv",
+      "file_epoch": 1791713244,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531609 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713100_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_700585630.csv",
+      "file_epoch": 1791713100,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316904 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713442_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_035787262.csv",
+      "file_epoch": 1791713442,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381932 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713055_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_774215033.csv",
+      "file_epoch": 1791713055,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354817 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713091_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_412951657.csv",
+      "file_epoch": 1791713091,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598774 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713304_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_175789908.csv",
+      "file_epoch": 1791713304,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 593365 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712474_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_044926065.csv",
+      "file_epoch": 1791712474,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 464090 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713749_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_216735148.csv",
+      "file_epoch": 1791713749,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596326 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722680_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_991911253.csv",
+      "file_epoch": 1791722680,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334512 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712627_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_853241954.csv",
+      "file_epoch": 1791712627,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317005 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713611_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_760688591.csv",
+      "file_epoch": 1791713611,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 473655 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713173_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_000514038.csv",
+      "file_epoch": 1791713173,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342290 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713108_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_884804777.csv",
+      "file_epoch": 1791713108,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382015 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713479_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_994000550.csv",
+      "file_epoch": 1791713479,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465939 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713507_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_750073551.csv",
+      "file_epoch": 1791713507,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612834 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713207_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_334839192.csv",
+      "file_epoch": 1791713207,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612668 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713286_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_748926271.csv",
+      "file_epoch": 1791713286,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377607 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712723_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_550077682.csv",
+      "file_epoch": 1791712723,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301608 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722635_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_981987459.csv",
+      "file_epoch": 1791722635,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334154 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712353_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_857262149.csv",
+      "file_epoch": 1791712353,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474970 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712796_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_703780343.csv",
+      "file_epoch": 1791712796,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385022 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712534_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_348464640.csv",
+      "file_epoch": 1791712534,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300762 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712450_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_354193296.csv",
+      "file_epoch": 1791712450,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474406 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712610_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_800034198.csv",
+      "file_epoch": 1791712610,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643850 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712499_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_752615034.csv",
+      "file_epoch": 1791712499,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381885 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712152_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_804301942.csv",
+      "file_epoch": 1791712152,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722605_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_978792677.csv",
+      "file_epoch": 1791722605,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334088 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713845_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_379562142.csv",
+      "file_epoch": 1791713845,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574269 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712895_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_251614991.csv",
+      "file_epoch": 1791712895,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317251 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713688_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_942841323.csv",
+      "file_epoch": 1791713688,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337755 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791714055_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_264246329.csv",
+      "file_epoch": 1791714055,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612754 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713255_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_322801660.csv",
+      "file_epoch": 1791713255,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573887 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712213_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_983217213.csv",
+      "file_epoch": 1791712213,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335174 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713227_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_103982928.csv",
+      "file_epoch": 1791713227,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300789 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713619_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_732157179.csv",
+      "file_epoch": 1791713619,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300853 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713875_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_171528864.csv",
+      "file_epoch": 1791713875,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301475 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713423_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_650402391.csv",
+      "file_epoch": 1791713423,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573611 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712972_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_217826010.csv",
+      "file_epoch": 1791712972,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 311057 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713965_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_222711791.csv",
+      "file_epoch": 1791713965,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584336 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712577_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_893091643.csv",
+      "file_epoch": 1791712577,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463100 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713382_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_775290140.csv",
+      "file_epoch": 1791713382,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 592271 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712183_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_660123234.csv",
+      "file_epoch": 1791712183,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476942 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713586_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_400465806.csv",
+      "file_epoch": 1791713586,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322648 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713570_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_564020552.csv",
+      "file_epoch": 1791713570,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 466073 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712715_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_277985722.csv",
+      "file_epoch": 1791712715,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529774 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712514_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_870866790.csv",
+      "file_epoch": 1791712514,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532483 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713082_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_330332589.csv",
+      "file_epoch": 1791713082,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 306097 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713312_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_822536522.csv",
+      "file_epoch": 1791713312,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 325958 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712933_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_555013069.csv",
+      "file_epoch": 1791712933,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584021 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712925_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_575105380.csv",
+      "file_epoch": 1791712925,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598727 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712824_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_951345987.csv",
+      "file_epoch": 1791712824,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335457 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713147_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_548904445.csv",
+      "file_epoch": 1791713147,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317139 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713391_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_060263578.csv",
+      "file_epoch": 1791713391,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 532557 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713372_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_158841240.csv",
+      "file_epoch": 1791713372,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573456 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712668_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_683694316.csv",
+      "file_epoch": 1791712668,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574186 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712644_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_355667400.csv",
+      "file_epoch": 1791712644,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583997 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712542_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_135033974.csv",
+      "file_epoch": 1791712542,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 581672 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712585_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_445614539.csv",
+      "file_epoch": 1791712585,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 595510 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713714_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_535135585.csv",
+      "file_epoch": 1791713714,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474957 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713673_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_370185361.csv",
+      "file_epoch": 1791713673,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 307995 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712276_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_850054477.csv",
+      "file_epoch": 1791712276,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598652 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713532_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_237240010.csv",
+      "file_epoch": 1791713532,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 300734 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713541_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_409431993.csv",
+      "file_epoch": 1791713541,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381943 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713003_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_802472742.csv",
+      "file_epoch": 1791713003,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531571 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791714085_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_264332225.csv",
+      "file_epoch": 1791714085,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612836 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712659_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_240747997.csv",
+      "file_epoch": 1791712659,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584437 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713330_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_954335568.csv",
+      "file_epoch": 1791713330,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573585 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712943_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_763747587.csv",
+      "file_epoch": 1791712943,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547256 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712523_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_996076618.csv",
+      "file_epoch": 1791712523,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 479398 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713127_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_243108758.csv",
+      "file_epoch": 1791713127,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 382151 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713903_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_796771435.csv",
+      "file_epoch": 1791713903,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 612905 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712778_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_909631494.csv",
+      "file_epoch": 1791712778,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308253 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713866_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_189009740.csv",
+      "file_epoch": 1791713866,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 590918 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713498_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_796631105.csv",
+      "file_epoch": 1791713498,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313347 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713577_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_857330013.csv",
+      "file_epoch": 1791713577,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316925 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713595_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_351624149.csv",
+      "file_epoch": 1791713595,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476975 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713295_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_005997152.csv",
+      "file_epoch": 1791713295,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301431 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712553_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_540059666.csv",
+      "file_epoch": 1791712553,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531409 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712268_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_607109587.csv",
+      "file_epoch": 1791712268,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 572317 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713137_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_782723402.csv",
+      "file_epoch": 1791713137,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377775 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712910_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_128822792.csv",
+      "file_epoch": 1791712910,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 474664 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713629_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_294133855.csv",
+      "file_epoch": 1791713629,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463191 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712760_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_075518711.csv",
+      "file_epoch": 1791712760,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342320 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713815_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_990953002.csv",
+      "file_epoch": 1791713815,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644138 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713775_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_025808184.csv",
+      "file_epoch": 1791713775,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313271 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713406_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_932314470.csv",
+      "file_epoch": 1791713406,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476767 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712222_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_440572841.csv",
+      "file_epoch": 1791712222,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545012 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713698_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_312863360.csv",
+      "file_epoch": 1791713698,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 613477 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712236_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_903225390.csv",
+      "file_epoch": 1791712236,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 301530 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712619_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_152127099.csv",
+      "file_epoch": 1791712619,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 533218 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712843_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_748901720.csv",
+      "file_epoch": 1791712843,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377570 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712902_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_387790274.csv",
+      "file_epoch": 1791712902,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545396 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713470_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_943278264.csv",
+      "file_epoch": 1791713470,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573892 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713757_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_580271366.csv",
+      "file_epoch": 1791713757,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478371 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712734_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_285103983.csv",
+      "file_epoch": 1791712734,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 299825 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713855_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_798429345.csv",
+      "file_epoch": 1791713855,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 529757 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712867_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_452903158.csv",
+      "file_epoch": 1791712867,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354752 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712695_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_633287024.csv",
+      "file_epoch": 1791712695,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598785 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712405_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_338718547.csv",
+      "file_epoch": 1791712405,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476877 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712375_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_289735047.csv",
+      "file_epoch": 1791712375,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 465980 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713462_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_147100517.csv",
+      "file_epoch": 1791713462,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 326292 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712082_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_729380787.csv",
+      "file_epoch": 1791712082,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547669 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713723_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_442478200.csv",
+      "file_epoch": 1791713723,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643561 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712859_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_735179659.csv",
+      "file_epoch": 1791712859,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 324736 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713361_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_181521344.csv",
+      "file_epoch": 1791713361,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317272 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713925_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_899830873.csv",
+      "file_epoch": 1791713925,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643056 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713398_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_938229443.csv",
+      "file_epoch": 1791713398,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302159 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722620_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_981169627.csv",
+      "file_epoch": 1791722620,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334083 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712678_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_601817394.csv",
+      "file_epoch": 1791712678,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 548163 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713164_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_742442103.csv",
+      "file_epoch": 1791713164,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322201 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712483_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_235839317.csv",
+      "file_epoch": 1791712483,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313473 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713804_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_562823038.csv",
+      "file_epoch": 1791713804,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463359 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713935_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_648425013.csv",
+      "file_epoch": 1791713935,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644571 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712703_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_898949803.csv",
+      "file_epoch": 1791712703,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 596543 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722650_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_984912858.csv",
+      "file_epoch": 1791722650,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334277 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791714040_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_233175758.csv",
+      "file_epoch": 1791714040,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463131 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722711_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_035813452.csv",
+      "file_epoch": 1791722711,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334432 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712458_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_805879551.csv",
+      "file_epoch": 1791712458,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643815 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712506_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_730938914.csv",
+      "file_epoch": 1791712506,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644645 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712917_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_781448482.csv",
+      "file_epoch": 1791712917,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 309396 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713192_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_098445751.csv",
+      "file_epoch": 1791713192,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319946 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712253_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_928539169.csv",
+      "file_epoch": 1791712253,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 545144 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712465_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_776063563.csv",
+      "file_epoch": 1791712465,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 583198 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713915_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_030159924.csv",
+      "file_epoch": 1791713915,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531822 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713883_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_738726120.csv",
+      "file_epoch": 1791713883,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320522 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712491_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_774606701.csv",
+      "file_epoch": 1791712491,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 319515 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713450_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_689258417.csv",
+      "file_epoch": 1791713450,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349558 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713322_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_637997362.csv",
+      "file_epoch": 1791713322,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584027 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713662_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_271280674.csv",
+      "file_epoch": 1791713662,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 643656 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712769_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_636317025.csv",
+      "file_epoch": 1791712769,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313034 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712651_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_690350951.csv",
+      "file_epoch": 1791712651,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573962 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713794_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_609923422.csv",
+      "file_epoch": 1791713794,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377707 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713732_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_807132808.csv",
+      "file_epoch": 1791713732,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 476970 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713349_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_054343518.csv",
+      "file_epoch": 1791713349,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 531517 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712328_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_551117652.csv",
+      "file_epoch": 1791712328,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354805 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791719260_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_643389034.csv",
+      "file_epoch": 1791719260,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 180798 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713182_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_248976602.csv",
+      "file_epoch": 1791713182,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302159 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712302_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_998454390.csv",
+      "file_epoch": 1791712302,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 385264 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712875_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_912140179.csv",
+      "file_epoch": 1791712875,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316930 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713645_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_014722683.csv",
+      "file_epoch": 1791713645,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317225 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712751_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_889594421.csv",
+      "file_epoch": 1791712751,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 302252 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712169_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_089309885.csv",
+      "file_epoch": 1791712169,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 573568 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722696_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_033431559.csv",
+      "file_epoch": 1791722696,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334360 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712850_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_719033435.csv",
+      "file_epoch": 1791712850,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354945 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713552_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_096807886.csv",
+      "file_epoch": 1791713552,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 316970 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712961_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_095185096.csv",
+      "file_epoch": 1791712961,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 321988 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712743_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_378812692.csv",
+      "file_epoch": 1791712743,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 308062 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713217_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_837101813.csv",
+      "file_epoch": 1791713217,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 349556 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713740_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_966379192.csv",
+      "file_epoch": 1791713740,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 377787 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713413_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_683606298.csv",
+      "file_epoch": 1791713413,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 338615 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712228_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_534864010.csv",
+      "file_epoch": 1791712228,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317083 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713274_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_796244259.csv",
+      "file_epoch": 1791713274,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 337981 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712341_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_821261301.csv",
+      "file_epoch": 1791712341,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 478457 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712247_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_476730989.csv",
+      "file_epoch": 1791712247,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322299 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713157_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_146478218.csv",
+      "file_epoch": 1791713157,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 644316 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712161_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_588372528.csv",
+      "file_epoch": 1791712161,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 481049 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713200_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_049960549.csv",
+      "file_epoch": 1791713200,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 313443 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713116_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_447377654.csv",
+      "file_epoch": 1791713116,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317269 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712142_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_757078519.csv",
+      "file_epoch": 1791712142,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 598222 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713765_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_402373819.csv",
+      "file_epoch": 1791713765,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 342466 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722380_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_890205883.csv",
+      "file_epoch": 1791722380,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334362 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712980_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_762296629.csv",
+      "file_epoch": 1791712980,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 463436 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712565_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_948710544.csv",
+      "file_epoch": 1791712565,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 322064 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713784_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_462984882.csv",
+      "file_epoch": 1791713784,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547823 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712603_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_750056953.csv",
+      "file_epoch": 1791712603,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 384667 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713036_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_288966222.csv",
+      "file_epoch": 1791713036,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 475187 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791725106_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_605581893.csv",
+      "file_epoch": 1791725106,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334247 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712420_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_339171192.csv",
+      "file_epoch": 1791712420,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574176 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791724359_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_402431483.csv",
+      "file_epoch": 1791724359,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334299 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791724774_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_959124093.csv",
+      "file_epoch": 1791724774,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 214915 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712390_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_301357779.csv",
+      "file_epoch": 1791712390,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 354740 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722921_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_400304789.csv",
+      "file_epoch": 1791722921,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334149 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791724416_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_795108992.csv",
+      "file_epoch": 1791724416,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 584238 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791723999_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_035387487.csv",
+      "file_epoch": 1791723999,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 333732 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791713517_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_093566536.csv",
+      "file_epoch": 1791713517,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 335257 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791712885_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_077419519.csv",
+      "file_epoch": 1791712885,
+      "predates_current_batch": true,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 381936 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791725181_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_874236451.csv",
+      "file_epoch": 1791725181,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 214791 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791724270_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_001844476.csv",
+      "file_epoch": 1791724270,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 214819 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722846_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_173206211.csv",
+      "file_epoch": 1791722846,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334241 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791722801_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_138950803.csv",
+      "file_epoch": 1791722801,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334221 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791723638_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_753800021.csv",
+      "file_epoch": 1791723638,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334427 is larger than Dest length 65535"
+    },
+    {
+      "path": "sys/logs/2026/10/11/statement_info/1791724344_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_406546511.csv",
+      "file_epoch": 1791724344,
+      "predates_current_batch": false,
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 334520 is larger than Dest length 65535"
+    }
+  ],
+  "interpretation": "Counts are ERROR log entries and may include several records for one failed internal LOAD/ETL operation; they are not additional failed business cases. RC metadata-retry and TN scheduling-poll messages are recorded separately; no successful recovery or new defect inferred solely from these logs. All recorded business results and health checks are independently evaluated."
+}

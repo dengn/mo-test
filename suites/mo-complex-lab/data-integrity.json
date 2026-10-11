@@ -1,0 +1,883 @@
+{
+  "tables": {
+    "customers": {
+      "rows": 1200,
+      "full_content": "pass"
+    },
+    "products": {
+      "rows": 80,
+      "full_content": "pass"
+    },
+    "orders": {
+      "rows": 12000,
+      "full_content": "pass"
+    },
+    "items": {
+      "rows": 36000,
+      "full_content": "pass"
+    },
+    "payments": {
+      "rows": 24000,
+      "full_content": "pass"
+    },
+    "refunds": {
+      "rows": 1574,
+      "full_content": "pass"
+    },
+    "events": {
+      "rows": 35280,
+      "full_content": "pass"
+    },
+    "edges": {
+      "rows": 3600,
+      "full_content": "pass"
+    },
+    "calendar": {
+      "rows": 96,
+      "full_content": "pass"
+    }
+  },
+  "numpy_pandas_cross_checks": [
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 0,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 37,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 74,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 111,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 148,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 185,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 222,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 259,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 296,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 333,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 370,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 407,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 444,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 481,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 518,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 555,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 592,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 629,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 666,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 703,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 740,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 777,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 814,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 851,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 888,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 925,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 962,
+      "status": "pass"
+    },
+    {
+      "family": "payment_coverage_anomaly",
+      "parameter": 999,
+      "status": "pass"
+    },
+    {
+      "family": "repeat_purchase_intervals",
+      "parameter": 999,
+      "status": "pass"
+    },
+    {
+      "family": "empirical_entropy_of_channels",
+      "parameter": 999,
+      "status": "pass"
+    },
+    {
+      "family": "ols_regression_sufficient_stats",
+      "parameter": 999,
+      "status": "pass"
+    },
+    {
+      "family": "missing_credit_tier_imputation",
+      "parameter": 999,
+      "status": "pass"
+    },
+    {
+      "family": "logistic_probability_cross_features",
+      "parameter": 999,
+      "status": "pass"
+    }
+  ],
+  "cross_check_count": 168
+}

@@ -1,0 +1,3624 @@
+{
+  "canonical": {
+    "count": 100000,
+    "unique_cases": 100000,
+    "counts": {
+      "pass": 98992,
+      "sql_error": 1000,
+      "mismatch": 8
+    },
+    "seconds": 797.825140953064,
+    "workers": 8,
+    "sql_families": 80,
+    "science_families": 20,
+    "log_start_offset": 4134477,
+    "log_end_offset": 6686294,
+    "scope": "80 complex SQL families + 20 MO-derived client numerical/ML pipelines; each 1000 unique parameter tuples; DuckDB independent SQL oracle; scientific compute on client",
+    "tolerance": {
+      "rtol": 1e-07,
+      "atol": 1e-07
+    },
+    "seed": 2026101102
+  },
+  "by_category": {
+    "client_numerical_ml": {
+      "pass": 20000
+    },
+    "window_analytics": {
+      "pass": 8997,
+      "mismatch": 3
+    },
+    "multi_table_commerce": {
+      "pass": 10998,
+      "mismatch": 2
+    },
+    "subqueries_sets": {
+      "pass": 7000,
+      "sql_error": 1000
+    },
+    "statistical_models": {
+      "pass": 11997,
+      "mismatch": 3
+    },
+    "temporal_joins": {
+      "pass": 2000
+    },
+    "time_series": {
+      "pass": 6000
+    },
+    "cohort_retention": {
+      "pass": 8000
+    },
+    "funnel_attribution": {
+      "pass": 7000
+    },
+    "advanced_grouping": {
+      "pass": 4000
+    },
+    "feature_engineering": {
+      "pass": 5000
+    },
+    "graph_analytics": {
+      "pass": 8000
+    }
+  },
+  "by_client": {
+    "pandas": {
+      "pass": 49496,
+      "sql_error": 500,
+      "mismatch": 4
+    },
+    "numpy": {
+      "pass": 49496,
+      "sql_error": 500,
+      "mismatch": 4
+    }
+  },
+  "by_family": {
+    "pca_explained_variance": {
+      "pass": 1000
+    },
+    "window_first_last_touch": {
+      "pass": 1000
+    },
+    "repeat_purchase_intervals": {
+      "pass": 1000
+    },
+    "correlated_above_peer_average": {
+      "pass": 1000
+    },
+    "bernoulli_wilson_interval": {
+      "pass": 1000
+    },
+    "interval_event_purchase_join": {
+      "pass": 1000
+    },
+    "net_revenue_reconciliation": {
+      "pass": 1000
+    },
+    "row_frame_vs_range_ties": {
+      "pass": 1000
+    },
+    "full_outer_fact_reconciliation": {
+      "pass": 1000
+    },
+    "pairwise_cosine_distribution": {
+      "pass": 1000
+    },
+    "daily_rolling_sales": {
+      "pass": 1000
+    },
+    "correlation_matrix": {
+      "pass": 1000
+    },
+    "rolling_retention_any_later": {
+      "pass": 1000
+    },
+    "visitors_without_buyers_except": {
+      "pass": 1000
+    },
+    "customer_dense_rank_ties": {
+      "pass": 1000
+    },
+    "window_differencing_volatility": {
+      "pass": 1000
+    },
+    "funnel_dropout_segments": {
+      "pass": 1000
+    },
+    "correlated_topk_orders": {
+      "sql_error": 1000
+    },
+    "week_over_week_growth": {
+      "pass": 1000
+    },
+    "huber_irls": {
+      "pass": 1000
+    },
+    "kmeans_centroids": {
+      "pass": 1000
+    },
+    "calendar_gap_detection": {
+      "pass": 1000
+    },
+    "ordered_percentile_cont": {
+      "pass": 1000
+    },
+    "missing_credit_tier_imputation": {
+      "pass": 1000
+    },
+    "payment_coverage_anomaly": {
+      "pass": 1000
+    },
+    "cumulative_revenue_share": {
+      "pass": 1000
+    },
+    "refund_rate_by_category": {
+      "pass": 1000
+    },
+    "mutual_edges_weight": {
+      "pass": 1000
+    },
+    "ordinal_rank_correlation": {
+      "pass": 997,
+      "mismatch": 3
+    },
+    "observed_cell_chi_square_statistic": {
+      "pass": 1000
+    },
+    "svd_spectrum": {
+      "pass": 1000
+    },
+    "truncated_svd_error": {
+      "pass": 1000
+    },
+    "event_session_cumulative": {
+      "pass": 1000
+    },
+    "percent_rank_distribution": {
+      "pass": 1000
+    },
+    "top_category_per_customer": {
+      "pass": 1000
+    },
+    "nested_window_rolling_rank": {
+      "pass": 1000
+    },
+    "category_weighted_revenue": {
+      "pass": 1000
+    },
+    "exact_day_retention": {
+      "pass": 1000
+    },
+    "ols_coefficients": {
+      "pass": 1000
+    },
+    "decay_multitouch_attribution": {
+      "pass": 1000
+    },
+    "triangle_motif_count": {
+      "pass": 1000
+    },
+    "gaussian_kernel_mmd": {
+      "pass": 1000
+    },
+    "customer_winsorized_revenue": {
+      "pass": 1000
+    },
+    "consecutive_activity_islands": {
+      "pass": 1000
+    },
+    "common_neighbor_similarity": {
+      "pass": 1000
+    },
+    "regression_residual_distribution": {
+      "pass": 1000
+    },
+    "pooled_vs_within_variance": {
+      "pass": 1000
+    },
+    "retention_revenue_weighted": {
+      "pass": 1000
+    },
+    "bootstrap_mean_interval": {
+      "pass": 1000
+    },
+    "payment_delay_asof_candidates": {
+      "pass": 1000
+    },
+    "feature_missingness_imputation": {
+      "pass": 1000
+    },
+    "covariance_eigenvalues": {
+      "pass": 1000
+    },
+    "recursive_bounded_reachability": {
+      "pass": 1000
+    },
+    "three_hop_path_weight": {
+      "pass": 1000
+    },
+    "huber_loss_with_segment_baseline": {
+      "pass": 1000
+    },
+    "fft_activity_power": {
+      "pass": 1000
+    },
+    "ordered_three_stage_funnel": {
+      "pass": 1000
+    },
+    "cte_self_join_aggregate": {
+      "pass": 1000
+    },
+    "median_by_manual_order_statistics": {
+      "pass": 1000
+    },
+    "quantile_scaling": {
+      "pass": 1000
+    },
+    "mahalanobis_distance": {
+      "pass": 1000
+    },
+    "linear_multitouch_attribution": {
+      "pass": 1000
+    },
+    "cross_feature_normalization": {
+      "pass": 1000
+    },
+    "weighted_least_squares": {
+      "pass": 1000
+    },
+    "ols_regression_sufficient_stats": {
+      "pass": 1000
+    },
+    "ntile_cross_segment": {
+      "pass": 1000
+    },
+    "cohort_survival_hazard": {
+      "pass": 1000
+    },
+    "empirical_entropy_of_channels": {
+      "pass": 1000
+    },
+    "customer_median_absolute_deviation": {
+      "pass": 1000
+    },
+    "mutual_information_tier_channel": {
+      "pass": 1000
+    },
+    "same_session_conversion": {
+      "pass": 1000
+    },
+    "not_exists_double_negation": {
+      "pass": 1000
+    },
+    "weighted_neighbor_credit": {
+      "pass": 1000
+    },
+    "cohort_age_retention": {
+      "pass": 1000
+    },
+    "logistic_irls": {
+      "pass": 1000
+    },
+    "qr_orthogonality": {
+      "pass": 1000
+    },
+    "daily_zscore_outliers": {
+      "pass": 1000
+    },
+    "welch_segment_t_statistic": {
+      "pass": 1000
+    },
+    "active_buyers_intersection": {
+      "pass": 1000
+    },
+    "grouping_sets_sales_cube": {
+      "pass": 1000
+    },
+    "second_purchase_nth_value": {
+      "pass": 1000
+    },
+    "ridge_coefficients": {
+      "pass": 1000
+    },
+    "basket_product_cooccurrence": {
+      "pass": 1000
+    },
+    "cume_dist_threshold": {
+      "pass": 997,
+      "mismatch": 3
+    },
+    "margin_segment_mix": {
+      "pass": 1000
+    },
+    "histogram_population_stability": {
+      "pass": 1000
+    },
+    "churn_inactivity_threshold": {
+      "pass": 1000
+    },
+    "in_out_degree_rank": {
+      "pass": 1000
+    },
+    "union_all_multisource_weight": {
+      "pass": 1000
+    },
+    "reactivation_after_gap": {
+      "pass": 1000
+    },
+    "logistic_probability_cross_features": {
+      "pass": 1000
+    },
+    "last_touch_order_attribution": {
+      "pass": 1000
+    },
+    "purchase_without_payment": {
+      "pass": 1000
+    },
+    "cancelled_customer_anti_join": {
+      "pass": 1000
+    },
+    "multi_dimensional_rollup": {
+      "pass": 1000
+    },
+    "rfm_quantile_scoring": {
+      "pass": 998,
+      "mismatch": 2
+    },
+    "convolution_activity": {
+      "pass": 1000
+    },
+    "time_to_conversion_quantiles": {
+      "pass": 1000
+    },
+    "leave_one_out_customer_encoding": {
+      "pass": 1000
+    },
+    "two_hop_neighbor_revenue": {
+      "pass": 1000
+    }
+  },
+  "query_latency_successful_ms": {
+    "p50": 21.194,
+    "p95": 90.228,
+    "p99": 163.507,
+    "max": 596.143
+  },
+  "oracle_latency_successful_ms": {
+    "p50": 17.773,
+    "p95": 82.572,
+    "p99": 165.041,
+    "max": 659.063
+  },
+  "client_compute_latency_ms": {
+    "p50": 0.1,
+    "p95": 27.804,
+    "p99": 67.516,
+    "max": 544.604
+  },
+  "family_query_latency_ms": {
+    "pca_explained_variance": {
+      "p50": 36.06,
+      "p95": 129.764,
+      "p99": 204.711,
+      "max": 480.181
+    },
+    "window_first_last_touch": {
+      "p50": 26.039,
+      "p95": 86.594,
+      "p99": 162.166,
+      "max": 262.001
+    },
+    "repeat_purchase_intervals": {
+      "p50": 16.071,
+      "p95": 73.342,
+      "p99": 156.055,
+      "max": 228.187
+    },
+    "correlated_above_peer_average": {
+      "p50": 17.967,
+      "p95": 67.765,
+      "p99": 139.843,
+      "max": 308.525
+    },
+    "bernoulli_wilson_interval": {
+      "p50": 20.999,
+      "p95": 85.549,
+      "p99": 154.814,
+      "max": 340.726
+    },
+    "interval_event_purchase_join": {
+      "p50": 25.916,
+      "p95": 96.916,
+      "p99": 172.37,
+      "max": 512.73
+    },
+    "net_revenue_reconciliation": {
+      "p50": 27.098,
+      "p95": 99.167,
+      "p99": 176.64,
+      "max": 490.325
+    },
+    "row_frame_vs_range_ties": {
+      "p50": 16.067,
+      "p95": 59.144,
+      "p99": 114.382,
+      "max": 225.839
+    },
+    "full_outer_fact_reconciliation": {
+      "p50": 18.793,
+      "p95": 82.941,
+      "p99": 140.077,
+      "max": 466.121
+    },
+    "pairwise_cosine_distribution": {
+      "p50": 34.252,
+      "p95": 120.884,
+      "p99": 206.888,
+      "max": 283.128
+    },
+    "daily_rolling_sales": {
+      "p50": 16.28,
+      "p95": 70.013,
+      "p99": 129.192,
+      "max": 187.784
+    },
+    "correlation_matrix": {
+      "p50": 35.454,
+      "p95": 131.161,
+      "p99": 198.51,
+      "max": 336.426
+    },
+    "rolling_retention_any_later": {
+      "p50": 25.306,
+      "p95": 90.123,
+      "p99": 151.335,
+      "max": 400.78
+    },
+    "visitors_without_buyers_except": {
+      "p50": 18.133,
+      "p95": 72.3,
+      "p99": 144.415,
+      "max": 220.616
+    },
+    "customer_dense_rank_ties": {
+      "p50": 15.324,
+      "p95": 63.602,
+      "p99": 129.167,
+      "max": 178.052
+    },
+    "window_differencing_volatility": {
+      "p50": 15.238,
+      "p95": 64.819,
+      "p99": 137.389,
+      "max": 204.108
+    },
+    "funnel_dropout_segments": {
+      "p50": 19.207,
+      "p95": 83.059,
+      "p99": 130.047,
+      "max": 370.395
+    },
+    "week_over_week_growth": {
+      "p50": 15.237,
+      "p95": 71.843,
+      "p99": 136.441,
+      "max": 290.297
+    },
+    "huber_irls": {
+      "p50": 35.596,
+      "p95": 127.587,
+      "p99": 213.055,
+      "max": 487.071
+    },
+    "kmeans_centroids": {
+      "p50": 37.225,
+      "p95": 130.544,
+      "p99": 215.137,
+      "max": 568.005
+    },
+    "calendar_gap_detection": {
+      "p50": 16.633,
+      "p95": 69.931,
+      "p99": 137.2,
+      "max": 185.892
+    },
+    "ordered_percentile_cont": {
+      "p50": 16.372,
+      "p95": 69.582,
+      "p99": 126.885,
+      "max": 248.524
+    },
+    "missing_credit_tier_imputation": {
+      "p50": 13.625,
+      "p95": 51.55,
+      "p99": 103.694,
+      "max": 223.818
+    },
+    "payment_coverage_anomaly": {
+      "p50": 23.919,
+      "p95": 102.803,
+      "p99": 158.611,
+      "max": 386.872
+    },
+    "cumulative_revenue_share": {
+      "p50": 14.879,
+      "p95": 59.691,
+      "p99": 123.644,
+      "max": 174.964
+    },
+    "refund_rate_by_category": {
+      "p50": 19.054,
+      "p95": 72.581,
+      "p99": 141.77,
+      "max": 248.781
+    },
+    "mutual_edges_weight": {
+      "p50": 12.775,
+      "p95": 51.061,
+      "p99": 123.893,
+      "max": 474.92
+    },
+    "ordinal_rank_correlation": {
+      "p50": 16.618,
+      "p95": 66.525,
+      "p99": 148.598,
+      "max": 344.433
+    },
+    "observed_cell_chi_square_statistic": {
+      "p50": 19.857,
+      "p95": 77.612,
+      "p99": 151.011,
+      "max": 252.96
+    },
+    "svd_spectrum": {
+      "p50": 36.854,
+      "p95": 136.559,
+      "p99": 197.12,
+      "max": 518.91
+    },
+    "truncated_svd_error": {
+      "p50": 36.194,
+      "p95": 128.731,
+      "p99": 196.621,
+      "max": 311.638
+    },
+    "event_session_cumulative": {
+      "p50": 32.635,
+      "p95": 111.276,
+      "p99": 167.482,
+      "max": 282.544
+    },
+    "percent_rank_distribution": {
+      "p50": 14.298,
+      "p95": 59.159,
+      "p99": 129.677,
+      "max": 480.979
+    },
+    "top_category_per_customer": {
+      "p50": 19.004,
+      "p95": 71.573,
+      "p99": 124.45,
+      "max": 443.209
+    },
+    "nested_window_rolling_rank": {
+      "p50": 17.546,
+      "p95": 69.921,
+      "p99": 123.83,
+      "max": 398.665
+    },
+    "category_weighted_revenue": {
+      "p50": 17.398,
+      "p95": 67.645,
+      "p99": 131.522,
+      "max": 267.272
+    },
+    "exact_day_retention": {
+      "p50": 18.898,
+      "p95": 68.364,
+      "p99": 112.933,
+      "max": 312.677
+    },
+    "ols_coefficients": {
+      "p50": 35.093,
+      "p95": 121.77,
+      "p99": 187.817,
+      "max": 386.956
+    },
+    "decay_multitouch_attribution": {
+      "p50": 27.146,
+      "p95": 105.215,
+      "p99": 161.402,
+      "max": 393.289
+    },
+    "triangle_motif_count": {
+      "p50": 14.344,
+      "p95": 53.256,
+      "p99": 116.306,
+      "max": 161.418
+    },
+    "gaussian_kernel_mmd": {
+      "p50": 35.13,
+      "p95": 140.25,
+      "p99": 191.121,
+      "max": 445.008
+    },
+    "customer_winsorized_revenue": {
+      "p50": 19.457,
+      "p95": 73.686,
+      "p99": 153.05,
+      "max": 253.719
+    },
+    "consecutive_activity_islands": {
+      "p50": 21.069,
+      "p95": 85.154,
+      "p99": 155.273,
+      "max": 314.996
+    },
+    "common_neighbor_similarity": {
+      "p50": 13.864,
+      "p95": 51.488,
+      "p99": 109.09,
+      "max": 350.638
+    },
+    "regression_residual_distribution": {
+      "p50": 19.799,
+      "p95": 61.182,
+      "p99": 139.352,
+      "max": 431.969
+    },
+    "pooled_vs_within_variance": {
+      "p50": 20.421,
+      "p95": 84.668,
+      "p99": 150.472,
+      "max": 343.048
+    },
+    "retention_revenue_weighted": {
+      "p50": 19.363,
+      "p95": 81.659,
+      "p99": 164.055,
+      "max": 211.121
+    },
+    "bootstrap_mean_interval": {
+      "p50": 35.973,
+      "p95": 126.39,
+      "p99": 204.844,
+      "max": 505.832
+    },
+    "payment_delay_asof_candidates": {
+      "p50": 18.575,
+      "p95": 81.375,
+      "p99": 137.01,
+      "max": 237.803
+    },
+    "feature_missingness_imputation": {
+      "p50": 37.578,
+      "p95": 125.729,
+      "p99": 194.271,
+      "max": 542.802
+    },
+    "covariance_eigenvalues": {
+      "p50": 35.667,
+      "p95": 139.018,
+      "p99": 196.409,
+      "max": 306.626
+    },
+    "recursive_bounded_reachability": {
+      "p50": 21.47,
+      "p95": 73.548,
+      "p99": 164.029,
+      "max": 271.47
+    },
+    "three_hop_path_weight": {
+      "p50": 16.613,
+      "p95": 68.922,
+      "p99": 138.496,
+      "max": 198.933
+    },
+    "huber_loss_with_segment_baseline": {
+      "p50": 21.288,
+      "p95": 91.114,
+      "p99": 175.854,
+      "max": 244.046
+    },
+    "fft_activity_power": {
+      "p50": 36.036,
+      "p95": 135.044,
+      "p99": 224.445,
+      "max": 325.733
+    },
+    "ordered_three_stage_funnel": {
+      "p50": 28.687,
+      "p95": 102.095,
+      "p99": 184.163,
+      "max": 364.748
+    },
+    "cte_self_join_aggregate": {
+      "p50": 17.342,
+      "p95": 75.353,
+      "p99": 150.744,
+      "max": 264.364
+    },
+    "median_by_manual_order_statistics": {
+      "p50": 17.598,
+      "p95": 74.04,
+      "p99": 146.13,
+      "max": 221.119
+    },
+    "quantile_scaling": {
+      "p50": 36.056,
+      "p95": 133.415,
+      "p99": 204.332,
+      "max": 388.805
+    },
+    "mahalanobis_distance": {
+      "p50": 36.181,
+      "p95": 108.485,
+      "p99": 178.837,
+      "max": 481.022
+    },
+    "linear_multitouch_attribution": {
+      "p50": 24.546,
+      "p95": 93.755,
+      "p99": 187.274,
+      "max": 336.921
+    },
+    "cross_feature_normalization": {
+      "p50": 15.659,
+      "p95": 69.877,
+      "p99": 137.28,
+      "max": 225.931
+    },
+    "weighted_least_squares": {
+      "p50": 36.012,
+      "p95": 116.227,
+      "p99": 174.242,
+      "max": 310.119
+    },
+    "ols_regression_sufficient_stats": {
+      "p50": 18.173,
+      "p95": 73.242,
+      "p99": 156.504,
+      "max": 248.97
+    },
+    "ntile_cross_segment": {
+      "p50": 17.612,
+      "p95": 70.307,
+      "p99": 129.155,
+      "max": 205.84
+    },
+    "cohort_survival_hazard": {
+      "p50": 18.682,
+      "p95": 79.193,
+      "p99": 158.419,
+      "max": 367.761
+    },
+    "empirical_entropy_of_channels": {
+      "p50": 15.016,
+      "p95": 69.152,
+      "p99": 124.925,
+      "max": 298.322
+    },
+    "customer_median_absolute_deviation": {
+      "p50": 21.208,
+      "p95": 80.256,
+      "p99": 154.981,
+      "max": 446.799
+    },
+    "mutual_information_tier_channel": {
+      "p50": 19.572,
+      "p95": 85.365,
+      "p99": 158.846,
+      "max": 514.489
+    },
+    "same_session_conversion": {
+      "p50": 17.064,
+      "p95": 78.22,
+      "p99": 152.028,
+      "max": 287.235
+    },
+    "not_exists_double_negation": {
+      "p50": 16.572,
+      "p95": 76.1,
+      "p99": 139.411,
+      "max": 294.935
+    },
+    "weighted_neighbor_credit": {
+      "p50": 14.379,
+      "p95": 58.587,
+      "p99": 122.833,
+      "max": 292.902
+    },
+    "cohort_age_retention": {
+      "p50": 19.517,
+      "p95": 74.346,
+      "p99": 165.881,
+      "max": 514.124
+    },
+    "logistic_irls": {
+      "p50": 36.152,
+      "p95": 136.217,
+      "p99": 188.977,
+      "max": 528.232
+    },
+    "qr_orthogonality": {
+      "p50": 34.075,
+      "p95": 115.251,
+      "p99": 179.928,
+      "max": 550.352
+    },
+    "daily_zscore_outliers": {
+      "p50": 14.928,
+      "p95": 55.949,
+      "p99": 126.86,
+      "max": 336.478
+    },
+    "welch_segment_t_statistic": {
+      "p50": 20.677,
+      "p95": 84.654,
+      "p99": 164.236,
+      "max": 322.313
+    },
+    "active_buyers_intersection": {
+      "p50": 17.724,
+      "p95": 83.766,
+      "p99": 143.446,
+      "max": 290.879
+    },
+    "grouping_sets_sales_cube": {
+      "p50": 23.31,
+      "p95": 93.036,
+      "p99": 159.309,
+      "max": 573.921
+    },
+    "second_purchase_nth_value": {
+      "p50": 15.671,
+      "p95": 66.145,
+      "p99": 123.706,
+      "max": 372.804
+    },
+    "ridge_coefficients": {
+      "p50": 34.741,
+      "p95": 138.655,
+      "p99": 224.188,
+      "max": 364.563
+    },
+    "basket_product_cooccurrence": {
+      "p50": 20.609,
+      "p95": 90.983,
+      "p99": 161.308,
+      "max": 274.68
+    },
+    "cume_dist_threshold": {
+      "p50": 14.568,
+      "p95": 62.023,
+      "p99": 132.418,
+      "max": 353.652
+    },
+    "margin_segment_mix": {
+      "p50": 16.639,
+      "p95": 73.808,
+      "p99": 121.88,
+      "max": 288.079
+    },
+    "histogram_population_stability": {
+      "p50": 17.805,
+      "p95": 65.506,
+      "p99": 143.94,
+      "max": 330.068
+    },
+    "churn_inactivity_threshold": {
+      "p50": 17.303,
+      "p95": 78.035,
+      "p99": 158.295,
+      "max": 321.917
+    },
+    "in_out_degree_rank": {
+      "p50": 15.706,
+      "p95": 56.676,
+      "p99": 136.806,
+      "max": 350.587
+    },
+    "union_all_multisource_weight": {
+      "p50": 18.279,
+      "p95": 88.117,
+      "p99": 165.624,
+      "max": 234.734
+    },
+    "reactivation_after_gap": {
+      "p50": 19.601,
+      "p95": 86.333,
+      "p99": 152.623,
+      "max": 228.585
+    },
+    "logistic_probability_cross_features": {
+      "p50": 18.338,
+      "p95": 72.273,
+      "p99": 141.77,
+      "max": 423.252
+    },
+    "last_touch_order_attribution": {
+      "p50": 21.591,
+      "p95": 84.754,
+      "p99": 167.324,
+      "max": 270.709
+    },
+    "purchase_without_payment": {
+      "p50": 14.832,
+      "p95": 55.247,
+      "p99": 108.876,
+      "max": 165.675
+    },
+    "cancelled_customer_anti_join": {
+      "p50": 16.754,
+      "p95": 74.256,
+      "p99": 132.999,
+      "max": 196.293
+    },
+    "multi_dimensional_rollup": {
+      "p50": 22.811,
+      "p95": 99.657,
+      "p99": 180.432,
+      "max": 324.677
+    },
+    "rfm_quantile_scoring": {
+      "p50": 16.862,
+      "p95": 73.873,
+      "p99": 158.889,
+      "max": 379.709
+    },
+    "convolution_activity": {
+      "p50": 35.99,
+      "p95": 117.648,
+      "p99": 188.07,
+      "max": 596.143
+    },
+    "time_to_conversion_quantiles": {
+      "p50": 17.075,
+      "p95": 61.363,
+      "p99": 117.672,
+      "max": 167.382
+    },
+    "leave_one_out_customer_encoding": {
+      "p50": 19.784,
+      "p95": 81.749,
+      "p99": 149.599,
+      "max": 228.879
+    },
+    "two_hop_neighbor_revenue": {
+      "p50": 15.049,
+      "p95": 59.522,
+      "p99": 123.151,
+      "max": 286.586
+    }
+  },
+  "observed_harness_cases_per_second": 125.34074807487546,
+  "health": {
+    "samples": 159,
+    "errors": [],
+    "pids": [
+      1384
+    ],
+    "peak_rss_mib": 1032.5625
+  },
+  "supplemental_connectors": {
+    "spark": {
+      "meta": {
+        "tool": "spark",
+        "cases": 10000,
+        "pipelines": 10,
+        "seconds": 21.975469827651978,
+        "setup_and_execution_seconds": 29.823994159698486,
+        "started_at": 1791706692.5425625,
+        "ended_at": 1791706722.3665583,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; excluded from canonical 100000; run after canonical workload completed",
+        "isolation": "READ_COMMITTED",
+        "overlapped_main": false
+      },
+      "counts": {
+        "pass": 10000
+      },
+      "jobs": [
+        {
+          "family": "net_revenue",
+          "status": "executed",
+          "pipeline_ms": 7029.221033000795,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "category_diversity",
+          "status": "executed",
+          "pipeline_ms": 2458.211938996101,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "rolling_order_mean",
+          "status": "executed",
+          "pipeline_ms": 1524.3237620015861,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "session_conversion",
+          "status": "executed",
+          "pipeline_ms": 1375.1316460038652,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "last_touch",
+          "status": "executed",
+          "pipeline_ms": 1715.2846409953781,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "activity_streak",
+          "status": "executed",
+          "pipeline_ms": 1524.3490720022237,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "credit_imputation",
+          "status": "executed",
+          "pipeline_ms": 1209.8015640003723,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "neighbor_credit",
+          "status": "executed",
+          "pipeline_ms": 1496.1115540063474,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "decay_attribution",
+          "status": "executed",
+          "pipeline_ms": 1639.3217829972855,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "channel_entropy",
+          "status": "executed",
+          "pipeline_ms": 1395.7502729972475,
+          "groups_returned": 1000,
+          "error": null
+        }
+      ]
+    },
+    "flink": {
+      "meta": {
+        "tool": "flink",
+        "cases": 10000,
+        "pipelines": 10,
+        "seconds": 27.06504249572754,
+        "setup_and_execution_seconds": 30.010672092437744,
+        "started_at": 1791706925.5118406,
+        "ended_at": 1791706955.522515,
+        "scope": "supplemental; JDBC multiple sources -> engine complex SQL -> JDBC sink -> DuckDB comparison; excluded from canonical 100000; run after canonical workload completed",
+        "isolation": "Flink JDBC default",
+        "overlapped_main": false
+      },
+      "counts": {
+        "pass": 10000
+      },
+      "jobs": [
+        {
+          "family": "net_revenue",
+          "status": "executed",
+          "pipeline_ms": 7128.566601997591,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "category_diversity",
+          "status": "executed",
+          "pipeline_ms": 2736.621933996503,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "rolling_order_mean",
+          "status": "executed",
+          "pipeline_ms": 2045.5231579981046,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "session_conversion",
+          "status": "executed",
+          "pipeline_ms": 2136.491744000523,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "last_touch",
+          "status": "executed",
+          "pipeline_ms": 2279.8177630029386,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "activity_streak",
+          "status": "executed",
+          "pipeline_ms": 2532.436688001326,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "credit_imputation",
+          "status": "executed",
+          "pipeline_ms": 1866.1128940002527,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "neighbor_credit",
+          "status": "executed",
+          "pipeline_ms": 1792.8422490003868,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "decay_attribution",
+          "status": "executed",
+          "pipeline_ms": 2187.5152310021804,
+          "groups_returned": 1000,
+          "error": null
+        },
+        {
+          "family": "channel_entropy",
+          "status": "executed",
+          "pipeline_ms": 2031.6448379962821,
+          "groups_returned": 1000,
+          "error": null
+        }
+      ]
+    }
+  },
+  "failure_groups": 4,
+  "data_integrity": {
+    "tables": {
+      "customers": {
+        "rows": 1200,
+        "full_content": "pass"
+      },
+      "products": {
+        "rows": 80,
+        "full_content": "pass"
+      },
+      "orders": {
+        "rows": 12000,
+        "full_content": "pass"
+      },
+      "items": {
+        "rows": 36000,
+        "full_content": "pass"
+      },
+      "payments": {
+        "rows": 24000,
+        "full_content": "pass"
+      },
+      "refunds": {
+        "rows": 1574,
+        "full_content": "pass"
+      },
+      "events": {
+        "rows": 35280,
+        "full_content": "pass"
+      },
+      "edges": {
+        "rows": 3600,
+        "full_content": "pass"
+      },
+      "calendar": {
+        "rows": 96,
+        "full_content": "pass"
+      }
+    },
+    "numpy_pandas_cross_checks": [
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 0,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 37,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 74,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 111,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 148,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 185,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 222,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 259,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 296,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 333,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 370,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 407,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 444,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 481,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 518,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 555,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 592,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 629,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 666,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 703,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 740,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 777,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 814,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 851,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 888,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 925,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 962,
+        "status": "pass"
+      },
+      {
+        "family": "payment_coverage_anomaly",
+        "parameter": 999,
+        "status": "pass"
+      },
+      {
+        "family": "repeat_purchase_intervals",
+        "parameter": 999,
+        "status": "pass"
+      },
+      {
+        "family": "empirical_entropy_of_channels",
+        "parameter": 999,
+        "status": "pass"
+      },
+      {
+        "family": "ols_regression_sufficient_stats",
+        "parameter": 999,
+        "status": "pass"
+      },
+      {
+        "family": "missing_credit_tier_imputation",
+        "parameter": 999,
+        "status": "pass"
+      },
+      {
+        "family": "logistic_probability_cross_features",
+        "parameter": 999,
+        "status": "pass"
+      }
+    ],
+    "cross_check_count": 168
+  },
+  "environment": {
+    "build_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+    "version": "8.0.30-MatrixOne-v",
+    "cpu_quota": 4,
+    "memory_gib": 16
+  },
+  "scope_limits": [
+    "100 scenario definitions \u00d71000 parameter tuples, not 100000 unrelated SQL grammars.",
+    "SQL-only oracle is DuckDB 1.3.2; six definitions cross-checked with NumPy/Pandas in 168 checks.",
+    "Client numerical/ML algorithms run in NumPy; MO provides SQL-derived features. Shared numerical implementation checks data interoperability, not independent algorithm correctness.",
+    "Explicit DOUBLE casts used for scientific arithmetic. Initial pilot decimal-scale differences are retained separately and not treated as engine wrong-result defects.",
+    "Main workload is read-only on 113830 deterministic rows across nine tables, 24 customers without facts, missing credits and skewed customers.",
+    "Local single-instance warm workload and simultaneous local oracle/client CPU use; no distributed HA, crash/restart, production-load or multi-node guarantee.",
+    "Query timings are client-visible observations under mixed load, not isolated MO engine benchmarks."
+  ],
+  "failure-analysis": {
+    "groups": [
+      {
+        "family": "correlated_topk_orders",
+        "canonical_affected_cases": 1000,
+        "status": "sql_error",
+        "representative_error": "(pymysql.err.OperationalError) (20102, 'non-equality correlated aggregate with outer composition cannot be safely decorrelated is not yet implemented')\n[SQL: WITH scope AS (SELECT * FROM customers WHERE cid>=1084 AND cid<1201 AND region<>4),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=44 AND o.day<69),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=44 AND e.day<69) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<6]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+        "representative_sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=1084 AND cid<1201 AND region<>4),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=44 AND o.day<69),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=44 AND e.day<69) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<6"
+      },
+      {
+        "family": "rfm_quantile_scoring",
+        "canonical_affected_cases": 2,
+        "status": "mismatch",
+        "repeats": [
+          {
+            "case_id": 3504,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                25,
+                225.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3504,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                25,
+                225.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3504,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                25,
+                225.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3334,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                27,
+                234.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3334,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                27,
+                234.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3334,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                27,
+                234.0,
+                6.0
+              ]
+            ]
+          }
+        ],
+        "rounded_key_control": [
+          {
+            "case_id": 3504,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                25,
+                225,
+                6
+              ]
+            ],
+            "actual": [
+              [
+                25,
+                225.0,
+                6.0
+              ]
+            ]
+          },
+          {
+            "case_id": 3334,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                27,
+                234,
+                6
+              ]
+            ],
+            "actual": [
+              [
+                27,
+                234.0,
+                6.0
+              ]
+            ]
+          }
+        ],
+        "floating_key_evidence": [
+          {
+            "case_id": 3504,
+            "changed_key_count": 10,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 95,
+                "duckdb_key": 3566.7486000000004,
+                "mo_key": 3566.7486,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.bdd7f487fcb93p+11",
+                "mo_hex": "0x1.bdd7f487fcb92p+11"
+              },
+              {
+                "cid": 112,
+                "duckdb_key": 3515.5018000000005,
+                "mo_key": 3515.5018,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b7700ebedfa45p+11",
+                "mo_hex": "0x1.b7700ebedfa44p+11"
+              },
+              {
+                "cid": 117,
+                "duckdb_key": 3097.5146,
+                "mo_key": 3097.5145999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.8330779a6b50bp+11",
+                "mo_hex": "0x1.8330779a6b50ap+11"
+              },
+              {
+                "cid": 125,
+                "duckdb_key": 3823.9954000000002,
+                "mo_key": 3823.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ddffda5119ce1p+11",
+                "mo_hex": "0x1.ddffda5119ce0p+11"
+              },
+              {
+                "cid": 141,
+                "duckdb_key": 3355.6252,
+                "mo_key": 3355.6252000000004,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.a37401a36e2ebp+11",
+                "mo_hex": "0x1.a37401a36e2ecp+11"
+              },
+              {
+                "cid": 142,
+                "duckdb_key": 3429.3784,
+                "mo_key": 3429.3783999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.acac1bda5119dp+11",
+                "mo_hex": "0x1.acac1bda5119cp+11"
+              },
+              {
+                "cid": 158,
+                "duckdb_key": 3126.1316,
+                "mo_key": 3126.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.86c436113404fp+11",
+                "mo_hex": "0x1.86c436113404ep+11"
+              },
+              {
+                "cid": 163,
+                "duckdb_key": 3093.8848000000003,
+                "mo_key": 3093.8848,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.82bc504816f01p+11",
+                "mo_hex": "0x1.82bc504816f00p+11"
+              },
+              {
+                "cid": 171,
+                "duckdb_key": 3063.1443999999997,
+                "mo_key": 3063.1444,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.7ee49eecbfb15p+11",
+                "mo_hex": "0x1.7ee49eecbfb16p+11"
+              },
+              {
+                "cid": 175,
+                "duckdb_key": 3080.2678,
+                "mo_key": 3080.2677999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.810891d14e3bdp+11",
+                "mo_hex": "0x1.810891d14e3bcp+11"
+              }
+            ]
+          },
+          {
+            "case_id": 3334,
+            "changed_key_count": 10,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 40,
+                "duckdb_key": 3027.2677999999996,
+                "mo_key": 3027.2678,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.7a6891d14e3bcp+11",
+                "mo_hex": "0x1.7a6891d14e3bdp+11"
+              },
+              {
+                "cid": 53,
+                "duckdb_key": 2930.1316,
+                "mo_key": 2930.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.6e4436113404fp+11",
+                "mo_hex": "0x1.6e4436113404ep+11"
+              },
+              {
+                "cid": 61,
+                "duckdb_key": 2616.5274000000004,
+                "mo_key": 2616.5274,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.4710e075f6fd3p+11",
+                "mo_hex": "0x1.4710e075f6fd2p+11"
+              },
+              {
+                "cid": 78,
+                "duckdb_key": 3224.0082000000007,
+                "mo_key": 3224.0082,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.9300432ca57a9p+11",
+                "mo_hex": "0x1.9300432ca57a8p+11"
+              },
+              {
+                "cid": 95,
+                "duckdb_key": 3566.7486000000004,
+                "mo_key": 3566.7486,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.bdd7f487fcb93p+11",
+                "mo_hex": "0x1.bdd7f487fcb92p+11"
+              },
+              {
+                "cid": 112,
+                "duckdb_key": 3515.5018000000005,
+                "mo_key": 3515.5018,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b7700ebedfa45p+11",
+                "mo_hex": "0x1.b7700ebedfa44p+11"
+              },
+              {
+                "cid": 117,
+                "duckdb_key": 3097.5146,
+                "mo_key": 3097.5145999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.8330779a6b50bp+11",
+                "mo_hex": "0x1.8330779a6b50ap+11"
+              },
+              {
+                "cid": 125,
+                "duckdb_key": 3823.9954000000002,
+                "mo_key": 3823.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ddffda5119ce1p+11",
+                "mo_hex": "0x1.ddffda5119ce0p+11"
+              },
+              {
+                "cid": 141,
+                "duckdb_key": 3355.6252,
+                "mo_key": 3355.6252000000004,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.a37401a36e2ebp+11",
+                "mo_hex": "0x1.a37401a36e2ecp+11"
+              },
+              {
+                "cid": 142,
+                "duckdb_key": 3429.3784,
+                "mo_key": 3429.3783999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.acac1bda5119dp+11",
+                "mo_hex": "0x1.acac1bda5119cp+11"
+              }
+            ]
+          }
+        ],
+        "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+      },
+      {
+        "family": "cume_dist_threshold",
+        "canonical_affected_cases": 3,
+        "status": "mismatch",
+        "repeats": [
+          {
+            "case_id": 19625,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                13.53846153846154,
+                40142.443
+              ]
+            ]
+          },
+          {
+            "case_id": 19625,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                13.53846153846154,
+                40142.443
+              ]
+            ]
+          },
+          {
+            "case_id": 19625,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                13.53846153846154,
+                40142.443
+              ]
+            ]
+          },
+          {
+            "case_id": 19130,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                11.545454545454545,
+                34011.784
+              ]
+            ]
+          },
+          {
+            "case_id": 19130,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                11.545454545454545,
+                34011.784
+              ]
+            ]
+          },
+          {
+            "case_id": 19130,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                11.545454545454545,
+                34011.784
+              ]
+            ]
+          },
+          {
+            "case_id": 19131,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                16.53125,
+                49900.0718
+              ]
+            ]
+          },
+          {
+            "case_id": 19131,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                16.53125,
+                49900.0718
+              ]
+            ]
+          },
+          {
+            "case_id": 19131,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                16.53125,
+                49900.0718
+              ]
+            ]
+          }
+        ],
+        "rounded_key_control": [
+          {
+            "case_id": 19625,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                26,
+                13.53846153846154,
+                40142.443
+              ]
+            ],
+            "actual": [
+              [
+                26,
+                13.53846153846154,
+                40142.443
+              ]
+            ]
+          },
+          {
+            "case_id": 19130,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                22,
+                11.545454545454545,
+                34011.784
+              ]
+            ],
+            "actual": [
+              [
+                22,
+                11.545454545454545,
+                34011.784
+              ]
+            ]
+          },
+          {
+            "case_id": 19131,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                32,
+                16.53125,
+                49900.0718
+              ]
+            ],
+            "actual": [
+              [
+                32,
+                16.53125,
+                49900.0718
+              ]
+            ]
+          }
+        ],
+        "floating_key_evidence": [
+          {
+            "case_id": 19625,
+            "changed_key_count": 10,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 956,
+                "duckdb_key": 3227.0081999999998,
+                "mo_key": 3227.0082,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.9360432ca57a7p+11",
+                "mo_hex": "0x1.9360432ca57a8p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 977,
+                "duckdb_key": 3687.5018,
+                "mo_key": 3687.5017999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+                "mo_hex": "0x1.ccf00ebedfa43p+11"
+              },
+              {
+                "cid": 1002,
+                "duckdb_key": 3189.391199999999,
+                "mo_key": 3189.3911999999996,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+                "mo_hex": "0x1.8eac84b5dcc63p+11"
+              },
+              {
+                "cid": 1003,
+                "duckdb_key": 3078.1316,
+                "mo_key": 3078.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.80c436113404fp+11",
+                "mo_hex": "0x1.80c436113404ep+11"
+              },
+              {
+                "cid": 1011,
+                "duckdb_key": 3400.9954000000002,
+                "mo_key": 3400.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a91fda5119ce1p+11",
+                "mo_hex": "0x1.a91fda5119ce0p+11"
+              },
+              {
+                "cid": 1041,
+                "duckdb_key": 3533.1316,
+                "mo_key": 3533.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b9a436113404fp+11",
+                "mo_hex": "0x1.b9a436113404ep+11"
+              },
+              {
+                "cid": 1057,
+                "duckdb_key": 2902.7742000000003,
+                "mo_key": 2902.7742,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.6ad8c63f14121p+11",
+                "mo_hex": "0x1.6ad8c63f14120p+11"
+              }
+            ]
+          },
+          {
+            "case_id": 19130,
+            "changed_key_count": 7,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 923,
+                "duckdb_key": 3273.6252,
+                "mo_key": 3273.6251999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.993401a36e2ebp+11",
+                "mo_hex": "0x1.993401a36e2eap+11"
+              },
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 956,
+                "duckdb_key": 3227.0081999999998,
+                "mo_key": 3227.0082,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.9360432ca57a7p+11",
+                "mo_hex": "0x1.9360432ca57a8p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 1003,
+                "duckdb_key": 3078.1316,
+                "mo_key": 3078.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.80c436113404fp+11",
+                "mo_hex": "0x1.80c436113404ep+11"
+              },
+              {
+                "cid": 1011,
+                "duckdb_key": 3400.9954000000002,
+                "mo_key": 3400.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a91fda5119ce1p+11",
+                "mo_hex": "0x1.a91fda5119ce0p+11"
+              }
+            ]
+          },
+          {
+            "case_id": 19131,
+            "changed_key_count": 14,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 918,
+                "duckdb_key": 3033.2550000000006,
+                "mo_key": 3033.255,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.7b2828f5c28f7p+11",
+                "mo_hex": "0x1.7b2828f5c28f6p+11"
+              },
+              {
+                "cid": 922,
+                "duckdb_key": 3777.1188,
+                "mo_key": 3777.1187999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.d823cd35a8588p+11",
+                "mo_hex": "0x1.d823cd35a8587p+11"
+              },
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 930,
+                "duckdb_key": 3463.3784,
+                "mo_key": 3463.3783999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b0ec1bda5119dp+11",
+                "mo_hex": "0x1.b0ec1bda5119cp+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 964,
+                "duckdb_key": 3937.8720000000003,
+                "mo_key": 3937.872,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ec3be76c8b43ap+11",
+                "mo_hex": "0x1.ec3be76c8b439p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 977,
+                "duckdb_key": 3687.5018,
+                "mo_key": 3687.5017999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+                "mo_hex": "0x1.ccf00ebedfa43p+11"
+              },
+              {
+                "cid": 985,
+                "duckdb_key": 3366.7486000000004,
+                "mo_key": 3366.7486,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a4d7f487fcb93p+11",
+                "mo_hex": "0x1.a4d7f487fcb92p+11"
+              },
+              {
+                "cid": 1002,
+                "duckdb_key": 3189.391199999999,
+                "mo_key": 3189.3911999999996,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+                "mo_hex": "0x1.8eac84b5dcc63p+11"
+              },
+              {
+                "cid": 1010,
+                "duckdb_key": 3113.6380000000004,
+                "mo_key": 3113.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.85346a7ef9db3p+11",
+                "mo_hex": "0x1.85346a7ef9db2p+11"
+              },
+              {
+                "cid": 1015,
+                "duckdb_key": 3147.0082,
+                "mo_key": 3147.0081999999998,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.8960432ca57a8p+11",
+                "mo_hex": "0x1.8960432ca57a7p+11"
+              },
+              {
+                "cid": 1023,
+                "duckdb_key": 3253.1316,
+                "mo_key": 3253.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.96a436113404fp+11",
+                "mo_hex": "0x1.96a436113404ep+11"
+              },
+              {
+                "cid": 1052,
+                "duckdb_key": 3544.1316,
+                "mo_key": 3544.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.bb0436113404fp+11",
+                "mo_hex": "0x1.bb0436113404ep+11"
+              }
+            ]
+          }
+        ],
+        "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+      },
+      {
+        "family": "ordinal_rank_correlation",
+        "canonical_affected_cases": 3,
+        "status": "mismatch",
+        "repeats": [
+          {
+            "case_id": 49625,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                0.07897435897435875
+              ]
+            ]
+          },
+          {
+            "case_id": 49625,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                0.07897435897435875
+              ]
+            ]
+          },
+          {
+            "case_id": 49625,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                26,
+                0.07897435897435875
+              ]
+            ]
+          },
+          {
+            "case_id": 49130,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                0.1259175607001693
+              ]
+            ]
+          },
+          {
+            "case_id": 49130,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                0.1259175607001693
+              ]
+            ]
+          },
+          {
+            "case_id": 49130,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                22,
+                0.1259175607001693
+              ]
+            ]
+          },
+          {
+            "case_id": 49131,
+            "attempt": 0,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                0.14846041055718476
+              ]
+            ]
+          },
+          {
+            "case_id": 49131,
+            "attempt": 1,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                0.14846041055718476
+              ]
+            ]
+          },
+          {
+            "case_id": 49131,
+            "attempt": 2,
+            "original_matches": false,
+            "actual": [
+              [
+                32,
+                0.14846041055718476
+              ]
+            ]
+          }
+        ],
+        "rounded_key_control": [
+          {
+            "case_id": 49625,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                26,
+                0.07897435897435874
+              ]
+            ],
+            "actual": [
+              [
+                26,
+                0.07897435897435875
+              ]
+            ]
+          },
+          {
+            "case_id": 49130,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                22,
+                0.12591756070016927
+              ]
+            ],
+            "actual": [
+              [
+                22,
+                0.1259175607001693
+              ]
+            ]
+          },
+          {
+            "case_id": 49131,
+            "tested": true,
+            "round6_match": true,
+            "expected": [
+              [
+                32,
+                0.14846041055718476
+              ]
+            ],
+            "actual": [
+              [
+                32,
+                0.14846041055718476
+              ]
+            ]
+          }
+        ],
+        "floating_key_evidence": [
+          {
+            "case_id": 49625,
+            "changed_key_count": 10,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 956,
+                "duckdb_key": 3227.0081999999998,
+                "mo_key": 3227.0082,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.9360432ca57a7p+11",
+                "mo_hex": "0x1.9360432ca57a8p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 977,
+                "duckdb_key": 3687.5018,
+                "mo_key": 3687.5017999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+                "mo_hex": "0x1.ccf00ebedfa43p+11"
+              },
+              {
+                "cid": 1002,
+                "duckdb_key": 3189.391199999999,
+                "mo_key": 3189.3911999999996,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+                "mo_hex": "0x1.8eac84b5dcc63p+11"
+              },
+              {
+                "cid": 1003,
+                "duckdb_key": 3078.1316,
+                "mo_key": 3078.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.80c436113404fp+11",
+                "mo_hex": "0x1.80c436113404ep+11"
+              },
+              {
+                "cid": 1011,
+                "duckdb_key": 3400.9954000000002,
+                "mo_key": 3400.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a91fda5119ce1p+11",
+                "mo_hex": "0x1.a91fda5119ce0p+11"
+              },
+              {
+                "cid": 1041,
+                "duckdb_key": 3533.1316,
+                "mo_key": 3533.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b9a436113404fp+11",
+                "mo_hex": "0x1.b9a436113404ep+11"
+              },
+              {
+                "cid": 1057,
+                "duckdb_key": 2902.7742000000003,
+                "mo_key": 2902.7742,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.6ad8c63f14121p+11",
+                "mo_hex": "0x1.6ad8c63f14120p+11"
+              }
+            ]
+          },
+          {
+            "case_id": 49130,
+            "changed_key_count": 7,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 923,
+                "duckdb_key": 3273.6252,
+                "mo_key": 3273.6251999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.993401a36e2ebp+11",
+                "mo_hex": "0x1.993401a36e2eap+11"
+              },
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 956,
+                "duckdb_key": 3227.0081999999998,
+                "mo_key": 3227.0082,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.9360432ca57a7p+11",
+                "mo_hex": "0x1.9360432ca57a8p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 1003,
+                "duckdb_key": 3078.1316,
+                "mo_key": 3078.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.80c436113404fp+11",
+                "mo_hex": "0x1.80c436113404ep+11"
+              },
+              {
+                "cid": 1011,
+                "duckdb_key": 3400.9954000000002,
+                "mo_key": 3400.9954,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a91fda5119ce1p+11",
+                "mo_hex": "0x1.a91fda5119ce0p+11"
+              }
+            ]
+          },
+          {
+            "case_id": 49131,
+            "changed_key_count": 14,
+            "max_abs_difference": 4.547473508864641e-13,
+            "keys": [
+              {
+                "cid": 918,
+                "duckdb_key": 3033.2550000000006,
+                "mo_key": 3033.255,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.7b2828f5c28f7p+11",
+                "mo_hex": "0x1.7b2828f5c28f6p+11"
+              },
+              {
+                "cid": 922,
+                "duckdb_key": 3777.1188,
+                "mo_key": 3777.1187999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.d823cd35a8588p+11",
+                "mo_hex": "0x1.d823cd35a8587p+11"
+              },
+              {
+                "cid": 927,
+                "duckdb_key": 3104.6380000000004,
+                "mo_key": 3104.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.84146a7ef9db3p+11",
+                "mo_hex": "0x1.84146a7ef9db2p+11"
+              },
+              {
+                "cid": 930,
+                "duckdb_key": 3463.3784,
+                "mo_key": 3463.3783999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.b0ec1bda5119dp+11",
+                "mo_hex": "0x1.b0ec1bda5119cp+11"
+              },
+              {
+                "cid": 952,
+                "duckdb_key": 2728.2806,
+                "mo_key": 2728.2805999999996,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.5508faacd9e84p+11",
+                "mo_hex": "0x1.5508faacd9e83p+11"
+              },
+              {
+                "cid": 964,
+                "duckdb_key": 3937.8720000000003,
+                "mo_key": 3937.872,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ec3be76c8b43ap+11",
+                "mo_hex": "0x1.ec3be76c8b439p+11"
+              },
+              {
+                "cid": 973,
+                "duckdb_key": 2856.3911999999996,
+                "mo_key": 2856.3912,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.650c84b5dcc63p+11",
+                "mo_hex": "0x1.650c84b5dcc64p+11"
+              },
+              {
+                "cid": 977,
+                "duckdb_key": 3687.5018,
+                "mo_key": 3687.5017999999995,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+                "mo_hex": "0x1.ccf00ebedfa43p+11"
+              },
+              {
+                "cid": 985,
+                "duckdb_key": 3366.7486000000004,
+                "mo_key": 3366.7486,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.a4d7f487fcb93p+11",
+                "mo_hex": "0x1.a4d7f487fcb92p+11"
+              },
+              {
+                "cid": 1002,
+                "duckdb_key": 3189.391199999999,
+                "mo_key": 3189.3911999999996,
+                "difference": 4.547473508864641e-13,
+                "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+                "mo_hex": "0x1.8eac84b5dcc63p+11"
+              },
+              {
+                "cid": 1010,
+                "duckdb_key": 3113.6380000000004,
+                "mo_key": 3113.638,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.85346a7ef9db3p+11",
+                "mo_hex": "0x1.85346a7ef9db2p+11"
+              },
+              {
+                "cid": 1015,
+                "duckdb_key": 3147.0082,
+                "mo_key": 3147.0081999999998,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.8960432ca57a8p+11",
+                "mo_hex": "0x1.8960432ca57a7p+11"
+              },
+              {
+                "cid": 1023,
+                "duckdb_key": 3253.1316,
+                "mo_key": 3253.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.96a436113404fp+11",
+                "mo_hex": "0x1.96a436113404ep+11"
+              },
+              {
+                "cid": 1052,
+                "duckdb_key": 3544.1316,
+                "mo_key": 3544.1315999999997,
+                "difference": -4.547473508864641e-13,
+                "duckdb_hex": "0x1.bb0436113404fp+11",
+                "mo_hex": "0x1.bb0436113404ep+11"
+              }
+            ]
+          }
+        ],
+        "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+      }
+    ]
+  },
+  "performance": {
+    "groups": [
+      {
+        "concurrency": 1,
+        "queries": 3072,
+        "seconds": 23.86999135399674,
+        "queries_per_second": 128.6971559579401,
+        "latency_ms": {
+          "p50": 6.9094870013941545,
+          "p95": 18.102377399191024,
+          "p99": 31.033299222253834,
+          "max": 131.475219001004
+        },
+        "counts": {
+          "pass": 3072
+        },
+        "trial_qps": [
+          122.95573475699236,
+          122.99694062048223,
+          141.89938891303692
+        ]
+      },
+      {
+        "concurrency": 2,
+        "queries": 3072,
+        "seconds": 14.836542323006142,
+        "queries_per_second": 207.05632977816083,
+        "latency_ms": {
+          "p50": 7.131229998776689,
+          "p95": 18.456635649636144,
+          "p99": 49.026939837785875,
+          "max": 159.56793900113553
+        },
+        "counts": {
+          "pass": 3072
+        },
+        "trial_qps": [
+          188.06607395822383,
+          211.04696052723256,
+          225.56821134105994
+        ]
+      },
+      {
+        "concurrency": 4,
+        "queries": 3072,
+        "seconds": 13.191782515998057,
+        "queries_per_second": 232.87224423799412,
+        "latency_ms": {
+          "p50": 8.527751502697356,
+          "p95": 35.873298398291794,
+          "p99": 121.30719987158955,
+          "max": 621.1774309995235
+        },
+        "counts": {
+          "pass": 3072
+        },
+        "trial_qps": [
+          255.71755912493222,
+          193.06668931976822,
+          263.67982507063937
+        ]
+      },
+      {
+        "concurrency": 8,
+        "queries": 3072,
+        "seconds": 11.019197573994461,
+        "queries_per_second": 278.78618015253534,
+        "latency_ms": {
+          "p50": 15.67637699918123,
+          "p95": 68.98821860158932,
+          "p99": 145.06230733022676,
+          "max": 416.8183380024857
+        },
+        "counts": {
+          "pass": 3072
+        },
+        "trial_qps": [
+          301.45173734097057,
+          269.5019621297587,
+          267.8734252162406
+        ]
+      }
+    ],
+    "trials": [
+      {
+        "trial": 0,
+        "concurrency": 1,
+        "queries": 1024,
+        "warmups_excluded": 2,
+        "seconds": 8.328200404997915,
+        "queries_per_second": 122.95573475699236,
+        "latency_ms": {
+          "p50": 7.041069500701269,
+          "p95": 19.9757270995178,
+          "p99": 29.73229467817873,
+          "max": 131.475219001004
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 0,
+        "concurrency": 4,
+        "queries": 1024,
+        "warmups_excluded": 8,
+        "seconds": 4.00441801299894,
+        "queries_per_second": 255.71755912493222,
+        "latency_ms": {
+          "p50": 8.744386999751441,
+          "p95": 27.689668600214638,
+          "p99": 80.79160623114132,
+          "max": 437.4833230031072
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 0,
+        "concurrency": 2,
+        "queries": 1024,
+        "warmups_excluded": 4,
+        "seconds": 5.444894863001537,
+        "queries_per_second": 188.06607395822383,
+        "latency_ms": {
+          "p50": 7.153646500228206,
+          "p95": 23.294765647369783,
+          "p99": 78.97156486913441,
+          "max": 139.1878810027265
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 0,
+        "concurrency": 8,
+        "queries": 1024,
+        "warmups_excluded": 16,
+        "seconds": 3.396895334000874,
+        "queries_per_second": 301.45173734097057,
+        "latency_ms": {
+          "p50": 16.486330998304766,
+          "p95": 60.93489424747521,
+          "p99": 132.3703720523189,
+          "max": 220.3662030005944
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 1,
+        "concurrency": 8,
+        "queries": 1024,
+        "warmups_excluded": 16,
+        "seconds": 3.7996012789953966,
+        "queries_per_second": 269.5019621297587,
+        "latency_ms": {
+          "p50": 15.370190998510225,
+          "p95": 71.11369324666134,
+          "p99": 145.12876555112598,
+          "max": 416.8183380024857
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 1,
+        "concurrency": 2,
+        "queries": 1024,
+        "warmups_excluded": 4,
+        "seconds": 4.8520006990002,
+        "queries_per_second": 211.04696052723256,
+        "latency_ms": {
+          "p50": 7.112881496141199,
+          "p95": 17.71591880060441,
+          "p99": 32.72833704926597,
+          "max": 159.56793900113553
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 1,
+        "concurrency": 4,
+        "queries": 1024,
+        "warmups_excluded": 8,
+        "seconds": 5.303866780996032,
+        "queries_per_second": 193.06668931976822,
+        "latency_ms": {
+          "p50": 9.073380500922212,
+          "p95": 48.31531650015677,
+          "p99": 141.27943897146892,
+          "max": 621.1774309995235
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 1,
+        "concurrency": 1,
+        "queries": 1024,
+        "warmups_excluded": 2,
+        "seconds": 8.325410329998704,
+        "queries_per_second": 122.99694062048223,
+        "latency_ms": {
+          "p50": 6.996486499701859,
+          "p95": 18.6506020982051,
+          "p99": 33.69871116759895,
+          "max": 79.2514860004303
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 2,
+        "concurrency": 2,
+        "queries": 1024,
+        "warmups_excluded": 4,
+        "seconds": 4.539646761004406,
+        "queries_per_second": 225.56821134105994,
+        "latency_ms": {
+          "p50": 7.131229998776689,
+          "p95": 14.091633604039082,
+          "p99": 38.35660760014433,
+          "max": 124.53761299548205
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 2,
+        "concurrency": 1,
+        "queries": 1024,
+        "warmups_excluded": 2,
+        "seconds": 7.21638061900012,
+        "queries_per_second": 141.89938891303692,
+        "latency_ms": {
+          "p50": 6.7645365015778225,
+          "p95": 14.00070379895623,
+          "p99": 29.906002078714625,
+          "max": 87.77351299795555
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 2,
+        "concurrency": 8,
+        "queries": 1024,
+        "warmups_excluded": 16,
+        "seconds": 3.8227009609981906,
+        "queries_per_second": 267.8734252162406,
+        "latency_ms": {
+          "p50": 15.086471499671461,
+          "p95": 74.22623235033817,
+          "p99": 149.64843772853777,
+          "max": 268.0939780038898
+        },
+        "counts": {
+          "pass": 1024
+        }
+      },
+      {
+        "trial": 2,
+        "concurrency": 4,
+        "queries": 1024,
+        "warmups_excluded": 8,
+        "seconds": 3.883497722003085,
+        "queries_per_second": 263.67982507063937,
+        "latency_ms": {
+          "p50": 7.820029997674283,
+          "p95": 32.868892149053856,
+          "p99": 120.1518767738161,
+          "max": 155.52625399868703
+        },
+        "counts": {
+          "pass": 1024
+        }
+      }
+    ],
+    "queries_total": 12288,
+    "query_mix": [
+      "net_revenue_reconciliation",
+      "daily_rolling_sales",
+      "recursive_bounded_reachability",
+      "multi_fact_customer_features"
+    ],
+    "source_rows": 113830,
+    "warm_query_shapes": 64,
+    "scope": "client-visible latency; post compatibility and connectors; three balanced-order trials per concurrency with 1024 queries each; every query shape prewarmed; oracle precomputed and verification outside timing; warm standalone single instance; no external database baseline"
+  },
+  "github-issue-matches": {
+    "checked_at": "2026-10-11",
+    "correlated_topk_orders": {
+      "canonical_affected_cases": 1000,
+      "closest_existing_issue": "https://github.com/matrixorigin/matrixone/issues/28298",
+      "state": "open",
+      "match_strength": "same compatibility family; existing issue covers narrow non-equality scalar aggregate decorrelation shapes, but does not list the exact OR/tie-breaking predicate used here",
+      "action": "link existing issue; no new issue created for this new suite"
+    },
+    "floating_window_order_and_peers": {
+      "canonical_affected_cases": 8,
+      "historical_function_support_issue": "https://github.com/matrixorigin/matrixone/issues/23011",
+      "match_strength": "historical CUME_DIST support request, not a duplicate of floating aggregate peer-key sensitivity",
+      "action": "retain raw mismatches and key-rounding control; no demonstrated window algorithm defect and no new issue created",
+      "historical_issue_state": "closed"
+    },
+    "issues_created_on_user_request_from_previous_batch": [
+      {
+        "url": "https://github.com/matrixorigin/matrixone/issues/29838",
+        "topic": "Spark default READ_UNCOMMITTED compatibility; explicit READ_COMMITTED passes"
+      },
+      {
+        "url": "https://github.com/matrixorigin/matrixone/issues/29839",
+        "topic": "SQL TANH function support request"
+      }
+    ]
+  },
+  "server-log-analysis": {
+    "canonical_log_bytes": 2551817,
+    "levels": {
+      "ERROR": 4000
+    },
+    "panic_or_fatal_lines": [],
+    "current_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "server_pid": "1384",
+    "source_table_rows": 113830
+  },
+  "client-setup-notes": {
+    "flink": {
+      "excluded_attempts": [
+        "results/flink-harness-first",
+        "results/flink-harness-second"
+      ],
+      "cause": [
+        "nested CTE parser form rejected by Flink Calcite",
+        "SCOPE is reserved in Flink SQL"
+      ],
+      "resolution": "top-level Table API view; quote Calcite reserved identifiers",
+      "mo_failures": false,
+      "final_pipelines": 10,
+      "final_cases": 10000
+    },
+    "connector_overlap_main": false,
+    "main_run_scope": "Pandas/NumPy clients and DuckDB oracle run concurrently; Spark/Flink successfully run afterward"
+  }
+}

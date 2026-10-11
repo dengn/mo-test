@@ -1,0 +1,12 @@
+{
+  "replayed": 20000,
+  "passed": 20000,
+  "failed": 0,
+  "seconds": 139.1761405467987,
+  "fresh_mo_feature_queries": 1000,
+  "model_binary_hashes": 20000,
+  "bit_exact_predictions": 20000,
+  "ground_truth_columns_supplied": false,
+  "preprocessing_refitted": false,
+  "scope": "Post-training phase on the same canonical IDs, not 20000 additional distinct training cases. Preprocessing registry loaded unchanged, no labels enter inference."
+}

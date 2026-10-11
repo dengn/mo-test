@@ -1,0 +1,110 @@
+[
+  {
+    "requirement": "forecast",
+    "parameter": 0,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "forecast",
+    "parameter": 123,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "forecast",
+    "parameter": 249,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "replenishment",
+    "parameter": 0,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "replenishment",
+    "parameter": 123,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "replenishment",
+    "parameter": 249,
+    "status": "pass",
+    "checks": {
+      "nonnegative_forecast": true,
+      "budget": true,
+      "integer_replenishment": true,
+      "service_monotonic": true,
+      "forecast_interval": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "stress",
+    "parameter": 0,
+    "status": "pass",
+    "checks": {
+      "stress_monotonic": true,
+      "cash_identity": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "stress",
+    "parameter": 123,
+    "status": "pass",
+    "checks": {
+      "stress_monotonic": true,
+      "cash_identity": true
+    },
+    "publication_steps": 7
+  },
+  {
+    "requirement": "stress",
+    "parameter": 249,
+    "status": "pass",
+    "checks": {
+      "stress_monotonic": true,
+      "cash_identity": true
+    },
+    "publication_steps": 7
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "memory_current": "8824930304",
+  "processes": [
+    {
+      "pid": 10842,
+      "status": "Name:\tpython\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t10842\nNgid:\t0\nPid:\t10842\nPPid:\t10839\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t \nNStgid:\t10842\nNSpid:\t10842\nNSpgid:\t10839\nNSsid:\t10839\nKthread:\t0\nVmPeak:\t 1477056 kB\nVmSize:\t 1477056 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  281680 kB\nVmRSS:\t  281680 kB\nRssAnon:\t  160624 kB\nRssFile:\t  121056 kB\nRssShmem:\t       0 kB\nVmData:\t  376192 kB\nVmStk:\t     144 kB\nVmExe:\t   27308 kB\nVmLib:\t  147576 kB\nVmPTE:\t    1128 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t14\nSigQ:\t0/71955\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000001001000\nSigCgt:\t0000000100000002\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1f\nCpus_allowed_list:\t0-4\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1171\nnonvoluntary_ctxt_switches:\t845\n",
+      "command_classification": "test-owned Flink client"
+    },
+    {
+      "pid": 10844,
+      "status": "Name:\tjava\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t10844\nNgid:\t0\nPid:\t10844\nPPid:\t10842\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t \nNStgid:\t10844\nNSpid:\t10844\nNSpgid:\t10839\nNSsid:\t10839\nKthread:\t0\nVmPeak:\t 7727916 kB\nVmSize:\t 7662380 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 4347860 kB\nVmRSS:\t  636888 kB\nRssAnon:\t  618308 kB\nRssFile:\t   18548 kB\nRssShmem:\t      32 kB\nVmData:\t  810872 kB\nVmStk:\t     136 kB\nVmExe:\t       4 kB\nVmLib:\t   19164 kB\nVmPTE:\t    1760 kB\nVmSwap:\t       0 kB\nHugetlbPages:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t27\nSigQ:\t0/71955\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000000000000\nSigIgn:\t0000000000000002\nSigCgt:\t2000000101005ccd\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t000001ffffffffff\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t0\nSeccomp_filters:\t0\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t1f\nCpus_allowed_list:\t0-4\nMems_allowed:\t00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1\nnonvoluntary_ctxt_switches:\t2\n",
+      "command_classification": "test-owned Flink JVM"
+    }
+  ],
+  "action": "Stop only the test-owned Flink frontend after excessive planning memory growth; preserve MO PID 1384 and canonical runner PID 9912"
+}

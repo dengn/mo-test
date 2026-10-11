@@ -1,0 +1,29 @@
+{
+  "json_log_levels": {
+    "ERROR": 8233
+  },
+  "messages": {
+    "error: cannot locate ha keeper": 1,
+    "hakeeper not ready, err: cannot locate ha keeper": 1,
+    "error: file hk_data is not found": 1,
+    "failed to get tn shard ID": 8,
+    "hakeeper.checker.cnservice.no.cn.found": 4,
+    "error: file tnservice/dd4dccb4-4d3c-41f8-b482-5251dc7a41bf is not found": 1,
+    "error: invalid state no CN in the cluster": 7,
+    "taskservice.holder.refresh.failed": 7,
+    "error: dn shard uuid , id 2 not reported": 2,
+    "Wal-Replay-Truncate-Loop": 1,
+    "failed to query tasks": 6,
+    "error: file cnservice/dd1dccb4-4d3c-41f8-b482-5251dc7a41bf is not found": 1,
+    "query sql tasks failed": 2,
+    "query cron tasks failed": 2,
+    "error: not supported: function or operator 'tanh'": 4076,
+    "not supported: function or operator 'tanh'": 2038,
+    "query trace status": 2048,
+    "error: txn need retry in rc mode, def changed": 7,
+    "error: not supported: transaction isolation level READ-UNCOMMITTED is not supported": 10,
+    "not supported: transaction isolation level READ-UNCOMMITTED is not supported": 10
+  },
+  "internal_definition_change_retries": 7,
+  "note": "日志事件数不等于失败case数；TANH错误多层重复记录，客户端主批次失败以JSONL为准。内部definition-change重试未导致客户端case或事务soak失败。"
+}

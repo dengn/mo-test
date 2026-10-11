@@ -1,0 +1,4597 @@
+{
+  "total": 480,
+  "counts": {
+    "pass": 480
+  },
+  "groups": [
+    {
+      "client": "pymysql_numpy",
+      "concurrency": 1,
+      "workflows": 60,
+      "workflows_per_second": 4.412529430651882,
+      "latency_ms": {
+        "p50": 241.4347784979327,
+        "p95": 310.9438591553044,
+        "p99": 348.33447520999454,
+        "max": 380.74475699977484
+      }
+    },
+    {
+      "client": "pymysql_numpy",
+      "concurrency": 2,
+      "workflows": 60,
+      "workflows_per_second": 7.083136824885486,
+      "latency_ms": {
+        "p50": 281.8134765002469,
+        "p95": 401.07211350004945,
+        "p99": 423.40380343892315,
+        "max": 429.9871319963131
+      }
+    },
+    {
+      "client": "pymysql_numpy",
+      "concurrency": 4,
+      "workflows": 60,
+      "workflows_per_second": 7.916779699537754,
+      "latency_ms": {
+        "p50": 457.88579099826165,
+        "p95": 722.9677607992926,
+        "p99": 770.0040272616752,
+        "max": 777.5748990025022
+      }
+    },
+    {
+      "client": "pymysql_numpy",
+      "concurrency": 8,
+      "workflows": 60,
+      "workflows_per_second": 8.516881690416062,
+      "latency_ms": {
+        "p50": 893.7436439955491,
+        "p95": 1267.583349498818,
+        "p99": 1340.940929862627,
+        "max": 1345.4652540021925
+      }
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "concurrency": 1,
+      "workflows": 60,
+      "workflows_per_second": 1.9346896887136937,
+      "latency_ms": {
+        "p50": 484.1649275040254,
+        "p95": 761.8975584002327,
+        "p99": 878.9907640421733,
+        "max": 890.4308310011402
+      }
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "concurrency": 2,
+      "workflows": 60,
+      "workflows_per_second": 2.309657305231378,
+      "latency_ms": {
+        "p50": 780.5792014987674,
+        "p95": 1412.6018625007418,
+        "p99": 1647.5948622232672,
+        "max": 1799.0835230011726
+      }
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "concurrency": 4,
+      "workflows": 60,
+      "workflows_per_second": 2.522116630204014,
+      "latency_ms": {
+        "p50": 1498.3211609978753,
+        "p95": 2338.747963203786,
+        "p99": 2508.3901386089565,
+        "max": 2537.762769999972
+      }
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "concurrency": 8,
+      "workflows": 60,
+      "workflows_per_second": 2.0648298631712465,
+      "latency_ms": {
+        "p50": 3521.0028765031893,
+        "p95": 5200.877311300064,
+        "p99": 5335.936647863782,
+        "max": 5399.4984370001475
+      }
+    }
+  ],
+  "trials": [
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 4.356532417994458
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 2.272738675994333
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 3.0243021010028315
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 2.20183311800065
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 2.3073957019951195
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 2.7113622809993103
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 2.5926442929994664
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 4.362732368004799
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 2.735158853996836
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 2.5356031010014703
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 4.878378230998351
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 2.7134561900020344
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 9.417559387999063
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 6.660588177997852
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 8.011224011002923
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 10.249478530000488
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 8.838600207003765
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 8.809216017994913
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 8.504157445000601
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 10.89461953400314
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "workflows": 20,
+      "seconds": 9.157439834001707
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "workflows": 20,
+      "seconds": 9.970005451999896
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "workflows": 20,
+      "seconds": 10.700546452004346
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "workflows": 20,
+      "seconds": 8.624796574003994
+    }
+  ],
+  "records": [
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 244.1087469997001,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 252.0318119932199,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 245.57137700321618,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 249.21030800032895,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 234.2767790032667,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 292.7522250029142,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 111.579445998359,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 121.37042100221151,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 111.68419099703897,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 114.85792999883415,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 270.95524800097337,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 241.69016599626048,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 237.15935400105081,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 256.44956000178354,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 236.7794879974099,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 268.45002199843293,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 122.03830100042978,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 114.01190100150416,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 128.01111299631884,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 114.44602900155587,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 611.3847099986742,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 633.5619620003854,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 619.050649998826,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 633.1353739951737,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 416.9607680014451,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 578.1624090013793,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 234.0846830047667,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 234.06445100408746,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 288.86635300295893,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 341.3344029977452,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 442.5800530007109,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 470.6831279981998,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 402.15570599684725,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 438.333247002447,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 488.16361000353936,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 439.40028799988795,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 263.30473899724893,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 235.93570700177224,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 147.7057829979458,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 140.71183699707035,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 270.42773800349096,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 323.25829699402675,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 418.828948000737,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 405.58211500319885,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 429.9871319963131,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 360.1481489968137,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 135.40408600238152,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 152.64442899933783,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 155.12972700526007,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 181.2502430038876,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 323.91891199949896,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 353.00022100273054,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 273.16032600356266,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 309.9964759967406,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 309.37694299791474,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 310.8579660038231,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 143.93509799992898,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 192.9373509992729,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 183.75834299513372,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 127.98196699441178,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1070.7224390062038,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1129.6770709959674,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1026.202517998172,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1069.7144559962908,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 891.4737969971611,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1147.0759120056755,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 547.8075070059276,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 633.2930459975614,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 257.7731180062983,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 301.995234003698,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 904.2348740040325,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1068.1274100061273,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 890.3178879991174,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 985.5439320017467,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1022.6660500047728,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 755.2598359980038,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 309.65883300086716,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 232.8771590036922,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 227.7499470001203,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 231.2189770018449,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1090.163198998198,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1061.840023001423,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 768.5405160009395,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1105.7078300000285,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1179.9793829995906,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1263.9235489987186,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 658.7182209987077,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 635.9115699960967,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 274.9674410006264,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 293.00782900099875,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 972.1811519993935,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1028.0583889980335,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1057.0172640000237,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1001.1761089990614,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 723.0457019977621,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 736.7973009968409,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 294.9158970004646,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 411.4565889976802,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 223.2049339945661,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 210.1945809990866,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 310.4916769952979,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 315.2326900017215,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 309.9416429977282,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 313.4670700019342,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 374.06686499889474,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 400.8347449998837,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 111.77455900178757,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 140.62726400152314,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 129.258190994733,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 124.59040300018387,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 275.28617300413316,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 260.53898600366665,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 356.0197250044439,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 367.6494930041372,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 286.56428400427103,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 322.0857869964675,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 127.10178400448058,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 127.4863149956218,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 121.00010200083489,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 114.34243600524496,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 733.420758995635,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 722.4176029994851,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 688.2216419980978,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 764.7429130011005,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 554.8332390026189,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 600.2532460042858,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 243.22091200156137,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 209.5586089999415,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 250.4321649976191,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 310.6622609993792,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 635.3069929973572,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 539.6810469974298,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 479.95584499585675,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 466.46690699708415,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 449.30467499943916,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 512.2471279973979,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 255.7250940008089,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 237.5255590013694,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 146.9747200026177,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 126.8652629951248,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 243.0703150021145,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 249.30542599759065,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 245.25974999414757,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 298.0461330007529,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 241.17939099960495,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 300.6106120010372,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 116.33009299839614,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 122.83031699917046,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 110.88080899935449,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 116.45444799796678,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 274.21279400005005,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 244.27729000308318,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 222.59205300360918,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 244.57521400472615,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 243.95150499913143,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 265.6669999996666,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 111.88270599814132,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 116.11191400152165,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 113.49893899750896,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 110.50186600186862,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 312.312767993717,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 363.65896300412714,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 274.42550400155596,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 300.2551300014602,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 310.5380749984761,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 307.4685769970529,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 132.55761400068877,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 121.9984760027728,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 141.77218599797925,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 205.67728000605712,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 287.2817679963191,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 312.44045999483205,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 277.0626689962228,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 305.4225279993261,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 288.82820099534,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 346.0402310010977,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 173.45720499724848,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 163.98016500170343,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 142.16423900506925,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 118.45606599672465,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1075.9372660031659,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1109.118224994745,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1124.2532969990862,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 896.013490993937,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1176.462237002852,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1199.7678080006153,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 672.5881300008041,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 619.1090689972043,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 340.87612299481407,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 311.97939299454447,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1003.2379600015702,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1345.4652540021925,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1337.7969080029288,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1337.119559000712,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1252.7269639977021,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1130.1210370002082,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 647.13975199993,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 453.5759389982559,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 362.1133659980842,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 367.3251979998895,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 380.74475699977484,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 325.8120760001475,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 251.39988800219726,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 259.08866000099806,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 258.08189399685943,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 319.62000299972715,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 150.73144400230376,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 157.4337199999718,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 142.95273699826794,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 130.19176200032234,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 238.26286099938443,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 266.47131600475404,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 243.54097800096497,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 310.4872200055979,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 242.17831200076034,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 273.7491139996564,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 114.7147550000227,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 129.69390399666736,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 116.31610999756958,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 130.37648099998478,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 665.2645479989587,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 720.6338709947886,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 581.0231590003241,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 777.5748990025022,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 494.00603999674786,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 643.5994030034635,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 207.04087299964158,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 221.41803499835078,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 287.2671889999765,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 301.42945399711607,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 685.5338899986236,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 684.1002119981567,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 544.9251560057746,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 576.6954489954514,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 506.25129999389173,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 554.284120000375,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 199.21785799670033,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 305.20827299915254,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 212.78959899791516,
+      "status": "pass"
+    },
+    {
+      "client": "pymysql_numpy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 140.5165260002832,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 571.8032299992046,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 755.3489330020966,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 506.85433900071075,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 680.4621990013402,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 630.5799779947847,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 497.2368190065026,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 382.399173999147,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 285.1982959982706,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 274.97491800022544,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 288.3001099980902,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 452.80706599442055,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 465.66026200162014,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 447.5332719957805,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 534.0816600000835,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 464.5182489985018,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 495.3418130025966,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 280.5087739980081,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 279.7151810009382,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 281.21171300153947,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 355.71188500034623,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1734.7291599944583,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1810.2946439976222,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1570.9410269992077,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1870.2532129973406,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1425.4889790026937,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1505.8804259970202,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 992.6824840003974,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1056.9901569979265,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 702.0124059999944,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 825.9958010021364,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1310.2604629966663,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1194.06106799579,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1220.6799359992146,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1198.3038709950051,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1750.3978530003224,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1680.8006099963677,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 1180.3151940039243,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1127.6702379982453,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 386.7843330008327,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 390.4553130050772,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 872.1732880003401,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 886.1067580000963,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 885.0592759990832,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1106.2767219991656,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 779.5677370013436,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1316.0335620050319,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 607.2548520023702,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 420.6389909959398,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 478.3306309982436,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 337.0737189979991,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 707.0796690022689,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 718.365109001752,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 964.7099549983977,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 957.0752669969806,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 948.0478699988453,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1159.3996180017712,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 501.3779910004814,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 638.0902669989155,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 424.0943350014277,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 349.92033000162337,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 4154.245353005535,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 5181.3884360017255,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 4445.445163997647,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 4213.77303799818,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 4712.929977999011,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 5399.4984370001475,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 2469.5333569979994,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 2002.4136540014297,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 2753.129937002086,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 2806.643363997864,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1891.5553689948865,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 2176.479711000866,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 5172.205347000272,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 5036.675595001725,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 5061.064959998475,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 4416.667112003779,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 3322.711018998234,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 2316.78342899977,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 2900.8523619995685,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 0,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 2798.2330029990408,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 4949.453775996517,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 5014.526714003296,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 4790.985326006194,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 5106.197619999875,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 5146.271865000017,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 5243.16191199614,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 3762.186501000542,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1969.4943159993272,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 2952.3649140028283,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1632.5209400019958,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1164.2010040013702,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 3328.4725029952824,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 3322.4539209986688,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 3455.0663120026,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 3344.1800529981265,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 3461.2925100009306,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 2452.1310290001566,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 2353.165722997801,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 1862.1989309976925,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 814.7732380020898,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1242.5521759942058,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1215.603109994845,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1226.943797999411,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1155.800688000454,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1444.998790997488,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1410.896761000913,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 457.7272520036786,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 611.2549480021698,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 406.5380530009861,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 627.8506090020528,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 860.1912209996954,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 815.8259769988945,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 582.0710140033043,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 781.5906659961911,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 801.71697899641,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 881.1764790007146,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 583.1387200014433,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 497.64302000403404,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 533.5905250030919,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 390.3943109980901,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1610.7568750012433,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1603.656002000207,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1559.278777000145,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1693.0090110035962,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 2537.762769999972,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 2487.9786489982507,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 760.5774479961838,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1224.8982489982154,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 1266.0729929993977,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1227.074916001584,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1490.7618959987303,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1692.0786449991283,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1771.827217999089,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 2269.2001940013142,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1821.735332996468,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1891.1757780006155,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 958.1426770018879,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 933.0869420009549,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 1264.2953040049179,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1141.4807539986214,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 640.9411249987897,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 647.0088779969956,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 615.8478500001365,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 472.32748099486344,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 439.9732770034461,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 522.2097720034071,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 284.81500500492984,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 294.13416999886977,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 280.5464760022005,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 280.93742900091456,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 890.4308310011402,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 596.6117069983738,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 537.4309260005248,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 531.8865010049194,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 783.347786993545,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 760.7685990005848,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 450.1618750000489,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 441.10636800178327,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 405.8791830029804,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 1,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 520.6385920027969,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1799.0835230011726,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1157.112546999997,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 805.8210849994794,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1178.4260870044818,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1011.5681200040854,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 968.9294269992388,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 723.3642339997459,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 366.35377899801824,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 331.4811960008228,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 360.54401799628977,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 49,
+      "ms": 532.4478080001427,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 0,
+      "parameter": 449,
+      "ms": 522.9751079968992,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 49,
+      "ms": 721.9975600019097,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 3,
+      "parameter": 449,
+      "ms": 718.820007998147,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1542.3230810047244,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 7,
+      "parameter": 449,
+      "ms": 1296.0965399979614,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 49,
+      "ms": 675.2793619962176,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 11,
+      "parameter": 449,
+      "ms": 791.0678409971297,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 49,
+      "ms": 655.7550750003429,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 2,
+      "family": 19,
+      "parameter": 449,
+      "ms": 794.0950990014244,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 4764.785794999625,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 4655.617698997958,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 4652.172996000445,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 5198.651806000271,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 5077.0365389980725,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 5291.766591006308,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 3580.713243005448,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 2078.099834994646,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 2785.759075995884,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1761.9383729979745,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 49,
+      "ms": 3938.6389310020604,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 0,
+      "parameter": 449,
+      "ms": 3675.895339001727,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 49,
+      "ms": 3792.3492810004973,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 3,
+      "parameter": 449,
+      "ms": 3720.3357929975027,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 49,
+      "ms": 3704.9956589980866,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 7,
+      "parameter": 449,
+      "ms": 4164.337018999504,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 49,
+      "ms": 1920.402675998048,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1936.599026004842,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 49,
+      "ms": 2357.4506610020762,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 8,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1923.1462570023723,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 472.9880420054542,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 668.3704489987576,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 517.2779239946976,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 871.0408870028914,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 638.7226329970872,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 634.9853090068791,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 334.96963400102686,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 430.99963999702595,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 394.4773140028701,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 408.5629999972298,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 49,
+      "ms": 502.8198620057083,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 0,
+      "parameter": 449,
+      "ms": 515.8617239940213,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 49,
+      "ms": 455.12391200463753,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 3,
+      "parameter": 449,
+      "ms": 551.8485180000425,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 49,
+      "ms": 495.9178319986677,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 7,
+      "parameter": 449,
+      "ms": 510.76674600335537,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 49,
+      "ms": 350.2285499998834,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 11,
+      "parameter": 449,
+      "ms": 469.912929002021,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 49,
+      "ms": 321.6517510008998,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 1,
+      "family": 19,
+      "parameter": 449,
+      "ms": 518.0698949989164,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 2445.932572001766,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1965.2447990010842,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1882.6048849950894,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 2333.106668003893,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1759.9886349998997,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 2250.5103400035296,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 1235.7481170038227,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1643.208361005236,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 1028.3387359959306,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 1385.2061919969856,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 49,
+      "ms": 1249.9399699954665,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 0,
+      "parameter": 449,
+      "ms": 1580.6492070041713,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 49,
+      "ms": 1660.4422699965653,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 3,
+      "parameter": 449,
+      "ms": 1735.1315490013803,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 49,
+      "ms": 1708.8158999977168,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 7,
+      "parameter": 449,
+      "ms": 2298.2537520001642,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 49,
+      "ms": 1351.943369001674,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 11,
+      "parameter": 449,
+      "ms": 1160.1212449968443,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 49,
+      "ms": 1091.4065899996785,
+      "status": "pass"
+    },
+    {
+      "client": "pandas_sqlalchemy",
+      "trial": 2,
+      "concurrency": 4,
+      "family": 19,
+      "parameter": 449,
+      "ms": 586.5135450003436,
+      "status": "pass"
+    }
+  ],
+  "scope": "19-source-table SQL reads + DataFrame + science; pandas also includes its independent source-graph reconstruction from a verified shared source snapshot. Connection initialization, source snapshot acquisition, reference checking and transaction publication excluded from per-case latency. Throughput wall-time includes scheduling/connection/release overhead. Full reference/constraint checks run only after each timed batch ends. No concurrent compatibility clients or source audits."
+}

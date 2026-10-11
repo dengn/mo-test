@@ -1,0 +1,133 @@
+{
+  "searched_at_utc": "2026-10-11",
+  "matching_issues": [
+    29797,
+    29809
+  ],
+  "classification": "Existing internal statement_info TEXT-capacity defect; no duplicate issue created. Our failed LOAD logs identify the destination table, but do not by themselves identify the overflowing column.",
+  "searches": [
+    {
+      "query": "repo:matrixorigin/matrixone \"statement_info\" \"65535\"",
+      "issues": [
+        {
+          "number": 29797,
+          "title": "[Bug]: statement_info ETL rejects internal reports exceeding ordinary TEXT capacity",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29797",
+          "state": null
+        },
+        {
+          "number": 29809,
+          "title": "[Bug]: system.statement_info ingestion fails with TEXT length overflow during BF16 EXPLAIN ANALYZE diagnostics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29809",
+          "state": null
+        }
+      ]
+    },
+    {
+      "query": "repo:matrixorigin/matrixone \"exec_plan\" \"length\"",
+      "issues": [
+        {
+          "number": 29809,
+          "title": "[Bug]: system.statement_info ingestion fails with TEXT length overflow during BF16 EXPLAIN ANALYZE diagnostics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29809",
+          "state": null
+        },
+        {
+          "number": 29797,
+          "title": "[Bug]: statement_info ETL rejects internal reports exceeding ordinary TEXT capacity",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29797",
+          "state": null
+        },
+        {
+          "number": 27933,
+          "title": "[Bug]: ODKU with synchronous FULLTEXT takes 12 minutes for 1,000 rows due to unconditional posting rebuild",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27933",
+          "state": null
+        },
+        {
+          "number": 28647,
+          "title": "[Task] Maintain Top-ROI assigned bug groups",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28647",
+          "state": null
+        },
+        {
+          "number": 26741,
+          "title": "[Stability test Perf] Dump/monitor Top-N slow SQL: `system.statement_info` self-scan + `mo_cloud.storage` getSumStorage",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26741",
+          "state": null
+        },
+        {
+          "number": 7599,
+          "title": "[Bug]: external table query tae error: panic runtime error: index out of range [7] with length 2",
+          "url": "https://github.com/matrixorigin/matrixone/issues/7599",
+          "state": null
+        },
+        {
+          "number": 7600,
+          "title": "[Bug]: external table query tae data: different result with 'like' op",
+          "url": "https://github.com/matrixorigin/matrixone/issues/7600",
+          "state": null
+        },
+        {
+          "number": 7032,
+          "title": "[Bug]: dailybuild eks bvt test  error ",
+          "url": "https://github.com/matrixorigin/matrixone/issues/7032",
+          "state": null
+        }
+      ]
+    },
+    {
+      "query": "repo:matrixorigin/matrixone \"TEXT\" \"Src length\"",
+      "issues": [
+        {
+          "number": 29809,
+          "title": "[Bug]: system.statement_info ingestion fails with TEXT length overflow during BF16 EXPLAIN ANALYZE diagnostics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29809",
+          "state": null
+        },
+        {
+          "number": 29797,
+          "title": "[Bug]: statement_info ETL rejects internal reports exceeding ordinary TEXT capacity",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29797",
+          "state": null
+        },
+        {
+          "number": 29693,
+          "title": "[Bug]: multi-CN KILL QUERY returns 1105/HY000 instead of 1317/70100",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29693",
+          "state": null
+        },
+        {
+          "number": 27216,
+          "title": "[Subtask]: Complete ordinary binary-string and charset/collation semantics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27216",
+          "state": null
+        },
+        {
+          "number": 28483,
+          "title": "[Compatibility]: RANDOM_BYTES rejects Boolean and numeric text length arguments",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28483",
+          "state": null
+        },
+        {
+          "number": 29811,
+          "title": "[Bug]: Parquet LOAD and external tables bypass bounded string widths and BINARY padding",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29811",
+          "state": null
+        },
+        {
+          "number": 28653,
+          "title": "[Bug]: GROUP_CONCAT rejects a single string-like value above an internal uint16 limit",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28653",
+          "state": null
+        },
+        {
+          "number": 24910,
+          "title": "[Bug] COALESCE(TEXT, '') fails when TEXT value exceeds 255 bytes (implicit cast to CHAR(255))",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24910",
+          "state": null
+        }
+      ]
+    }
+  ]
+}

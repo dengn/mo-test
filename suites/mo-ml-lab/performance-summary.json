@@ -1,0 +1,81 @@
+{
+  "measurements": 240,
+  "passed": 240,
+  "failed": 0,
+  "seconds": 59.019943952560425,
+  "batches": [
+    {
+      "client": "numpy",
+      "concurrency": 1,
+      "workflows": 30,
+      "elapsed_seconds": 13.781965852998837,
+      "throughput": 2.1767576788381215,
+      "median_ms": 297.6107345020864,
+      "p95_ms": 922.772830400936
+    },
+    {
+      "client": "numpy",
+      "concurrency": 2,
+      "workflows": 30,
+      "elapsed_seconds": 6.34692916199856,
+      "throughput": 4.726695262272853,
+      "median_ms": 273.14552999814623,
+      "p95_ms": 878.4323527026571
+    },
+    {
+      "client": "numpy",
+      "concurrency": 4,
+      "workflows": 30,
+      "elapsed_seconds": 4.856420222000452,
+      "throughput": 6.177389646821466,
+      "median_ms": 364.9443565009278,
+      "p95_ms": 1175.0898588994457
+    },
+    {
+      "client": "numpy",
+      "concurrency": 8,
+      "workflows": 30,
+      "elapsed_seconds": 5.426894244999858,
+      "throughput": 5.528023699308478,
+      "median_ms": 868.0813510000007,
+      "p95_ms": 2344.193496950538
+    },
+    {
+      "client": "pandas",
+      "concurrency": 1,
+      "workflows": 30,
+      "elapsed_seconds": 12.19343586400646,
+      "throughput": 2.460340164543478,
+      "median_ms": 263.07227600045735,
+      "p95_ms": 864.720168252461
+    },
+    {
+      "client": "pandas",
+      "concurrency": 2,
+      "workflows": 30,
+      "elapsed_seconds": 6.370930523000425,
+      "throughput": 4.708888268627883,
+      "median_ms": 264.36931149874,
+      "p95_ms": 866.0214382995035
+    },
+    {
+      "client": "pandas",
+      "concurrency": 4,
+      "workflows": 30,
+      "elapsed_seconds": 5.21408751099807,
+      "throughput": 5.753643362663367,
+      "median_ms": 414.3530715009547,
+      "p95_ms": 1160.7955779469191
+    },
+    {
+      "client": "pandas",
+      "concurrency": 8,
+      "workflows": 30,
+      "elapsed_seconds": 4.820410037995316,
+      "throughput": 6.2235369529842375,
+      "median_ms": 708.333954000409,
+      "p95_ms": 2606.018293350644
+    }
+  ],
+  "scope": "SQL read + train-only preprocessing + one deep fit + binary model/prediction transaction + reload/visibility checks; precomputed reference comparisons outside latency, but batch throughput includes comparisons, scheduling and connection lifecycle. These are workflows/s, not pure MO QPS or large-model training throughput."
+}

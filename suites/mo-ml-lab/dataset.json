@@ -1,0 +1,40 @@
+{
+  "seed": 2026101107,
+  "database": "ds_ml_20261011",
+  "schemas": {
+    "entities": "eid INT PRIMARY KEY,sector INT,region INT,bias DOUBLE",
+    "readings": "eid INT,day INT,x0 DOUBLE,x1 DOUBLE,x2 DOUBLE,x3 DOUBLE",
+    "targets": "eid INT,day INT,c0 DOUBLE,c1 DOUBLE,c2 DOUBLE,c3 DOUBLE",
+    "trades": "tid INT,eid INT,day INT,amount DOUBLE,valid INT",
+    "maintenance": "eid INT,day INT,score DOUBLE",
+    "outages": "eid INT,day INT,minutes DOUBLE",
+    "weather": "region INT,day INT,temp DOUBLE",
+    "calendar": "day INT PRIMARY KEY,weekday INT",
+    "prices": "sector INT,day INT,price DOUBLE",
+    "exposures": "eid INT,sector INT,weight DOUBLE",
+    "segments": "sector INT PRIMARY KEY,multiplier DOUBLE",
+    "policies": "region INT PRIMARY KEY,cap DOUBLE",
+    "events": "eid INT,day INT,kind INT,value DOUBLE",
+    "interventions": "eid INT,day INT,active INT",
+    "edges": "src INT,dst INT,weight DOUBLE",
+    "labels": "eid INT,day INT,response DOUBLE,risk INT,anomaly INT"
+  },
+  "rows": {
+    "entities": 320,
+    "readings": 25600,
+    "targets": 25600,
+    "trades": 51200,
+    "maintenance": 3200,
+    "outages": 821,
+    "weather": 400,
+    "calendar": 80,
+    "prices": 640,
+    "exposures": 640,
+    "segments": 8,
+    "policies": 5,
+    "events": 5120,
+    "interventions": 1969,
+    "edges": 960,
+    "labels": 25600
+  }
+}

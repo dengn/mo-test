@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "rows": 320,
+    "sha256": "653b7fc02640ed7631849fbd21ae977ab309e2665243399cd7f98b36cd33c1bb"
+  },
+  "readings": {
+    "rows": 25600,
+    "sha256": "6c214ef4cdd3469a4bc537012608727af9f3a94e471d255c418c48ef74f60af2"
+  },
+  "targets": {
+    "rows": 25600,
+    "sha256": "6c69011ec73e36677df45bf087caf66de4a85d2d17a837ca6db7e91a491c1af5"
+  },
+  "trades": {
+    "rows": 51200,
+    "sha256": "c4ccb7fd2440aae094076cc43348dcb733c5822b50c9cb25e5a955117fd59ce7"
+  },
+  "maintenance": {
+    "rows": 3200,
+    "sha256": "792d82b4f3d19b7486e9a17cb97754989f3cd660784c6bc9f86c4332792e5b6b"
+  },
+  "outages": {
+    "rows": 821,
+    "sha256": "01856a20bf1150f80be36d751305a4ce994411b4878d43c1444b9df8cd376f3d"
+  },
+  "weather": {
+    "rows": 400,
+    "sha256": "788f527bc209a4909b8774bb033af0536715506ba04074ff7d0824d029206bcc"
+  },
+  "calendar": {
+    "rows": 80,
+    "sha256": "ed37a8b1591595cb5f8e25b2ce6bfcbe56a8d1b8b795a9ca413622def8501e53"
+  },
+  "prices": {
+    "rows": 640,
+    "sha256": "018d47944c2d284c168bf8b1bb08a279336fe2f7c8c22279f43de9e60e37ea0c"
+  },
+  "exposures": {
+    "rows": 640,
+    "sha256": "a718975703eb0aaad00aa84e3d5e8ace355d02ca779a2c60d6d82b840e21d582"
+  },
+  "segments": {
+    "rows": 8,
+    "sha256": "f9f5837db21fb463afa51905f5a25a29324206b4aafd89508085c401e1c836de"
+  },
+  "policies": {
+    "rows": 5,
+    "sha256": "1b4ce366f9e32c838e6a516f0565b6e4247c122506353efd283d3cda7015e600"
+  },
+  "events": {
+    "rows": 5120,
+    "sha256": "330ee137f3b55ebb0fee2faff77d817e9d09f9a1dc1bab0b9dfd1418a6dd932e"
+  },
+  "interventions": {
+    "rows": 1969,
+    "sha256": "f9ad32c9fc5b4a174fd0f624b09fb76eae7caff5dd3b02c4925bb427e8d98eeb"
+  },
+  "edges": {
+    "rows": 960,
+    "sha256": "30fc619f869dee19090f509c2ed93810bbeefc826a0afc9ad14e9c191977fe51"
+  },
+  "labels": {
+    "rows": 25600,
+    "sha256": "e2334fe7f3bdd3f5abab1d02f6d7521554515a1b794c22e4a40a647dfcbc9753"
+  }
+}

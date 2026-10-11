@@ -1,0 +1,8 @@
+{
+  "source_tables": 16,
+  "join_keywords": 22,
+  "select_keywords": 9,
+  "exists_keywords": 1,
+  "bytes": 2267,
+  "interpretation": "SQL text keyword counts, not executed physical operator counts; 1000 distinct feature SQL shared by 20 different model/task pipelines, but every main case executes a fresh MO read."
+}

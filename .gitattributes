@@ -1,0 +1,4 @@
+archives/**/*.part* binary -delta
+*.gz binary -delta
+*.png binary
+*.pt binary -delta

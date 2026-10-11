@@ -1,0 +1,31 @@
+{
+  "user_case_outcomes": {
+    "pass": 10000
+  },
+  "internal_trace_failed_load_events": 121,
+  "error_class": "Internal statement_info TEXT capacity 65535 exceeded",
+  "related_existing_issues": [
+    {
+      "number": 29797,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29797"
+    },
+    {
+      "number": 29809,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29809"
+    }
+  ],
+  "sample_historical_record": {
+    "file": "/workspace/mo-ds-lab/mo-data/etl/sys/logs/2026/10/11/statement_info/1791712152_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_804301942.csv",
+    "file_sha256": "0c8457285274e779c54ca65deed7cba964f83d9e9b0a967f0c062572490d6c17",
+    "statement_id": "01a12a5d-9f54-78fa-867f-cbf7f91e4785",
+    "source_database": "ds_long_20261011",
+    "request_at": "2026-10-11 09:49:01.134108",
+    "stored_user_status": "Success",
+    "exec_plan_bytes": 320365,
+    "statement_bytes": 1027,
+    "file_predates_this_batch": true,
+    "exec_plan_valid_json": true
+  },
+  "attribution_limit": "The retained historical record predates this demand batch and matches the first failure source length. Internal LOAD payloads are abbreviated; exact event-to-file identity and attribution of every event have not been established. No newly failed business case, permanent loss, or new defect is inferred.",
+  "new_issue_submitted": false
+}

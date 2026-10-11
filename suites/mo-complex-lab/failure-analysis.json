@@ -1,0 +1,1184 @@
+{
+  "groups": [
+    {
+      "family": "correlated_topk_orders",
+      "canonical_affected_cases": 1000,
+      "status": "sql_error",
+      "representative_error": "(pymysql.err.OperationalError) (20102, 'non-equality correlated aggregate with outer composition cannot be safely decorrelated is not yet implemented')\n[SQL: WITH scope AS (SELECT * FROM customers WHERE cid>=1084 AND cid<1201 AND region<>4),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=44 AND o.day<69),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=44 AND e.day<69) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<6]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)",
+      "representative_sql": "WITH scope AS (SELECT * FROM customers WHERE cid>=1084 AND cid<1201 AND region<>4),\noo AS (SELECT o.* FROM orders o JOIN scope c ON o.cid=c.cid WHERE o.day>=44 AND o.day<69),\nee AS (SELECT e.* FROM events e JOIN scope c ON e.cid=c.cid WHERE e.day>=44 AND e.day<69) SELECT COUNT(*),SUM(o.amount) FROM oo o WHERE (SELECT COUNT(*) FROM oo x WHERE x.cid=o.cid AND (x.amount>o.amount OR (x.amount=o.amount AND x.oid<o.oid)))<6"
+    },
+    {
+      "family": "rfm_quantile_scoring",
+      "canonical_affected_cases": 2,
+      "status": "mismatch",
+      "repeats": [
+        {
+          "case_id": 3504,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              25,
+              225.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3504,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              25,
+              225.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3504,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              25,
+              225.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3334,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              27,
+              234.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3334,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              27,
+              234.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3334,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              27,
+              234.0,
+              6.0
+            ]
+          ]
+        }
+      ],
+      "rounded_key_control": [
+        {
+          "case_id": 3504,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              25,
+              225,
+              6
+            ]
+          ],
+          "actual": [
+            [
+              25,
+              225.0,
+              6.0
+            ]
+          ]
+        },
+        {
+          "case_id": 3334,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              27,
+              234,
+              6
+            ]
+          ],
+          "actual": [
+            [
+              27,
+              234.0,
+              6.0
+            ]
+          ]
+        }
+      ],
+      "floating_key_evidence": [
+        {
+          "case_id": 3504,
+          "changed_key_count": 10,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 95,
+              "duckdb_key": 3566.7486000000004,
+              "mo_key": 3566.7486,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.bdd7f487fcb93p+11",
+              "mo_hex": "0x1.bdd7f487fcb92p+11"
+            },
+            {
+              "cid": 112,
+              "duckdb_key": 3515.5018000000005,
+              "mo_key": 3515.5018,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b7700ebedfa45p+11",
+              "mo_hex": "0x1.b7700ebedfa44p+11"
+            },
+            {
+              "cid": 117,
+              "duckdb_key": 3097.5146,
+              "mo_key": 3097.5145999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.8330779a6b50bp+11",
+              "mo_hex": "0x1.8330779a6b50ap+11"
+            },
+            {
+              "cid": 125,
+              "duckdb_key": 3823.9954000000002,
+              "mo_key": 3823.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ddffda5119ce1p+11",
+              "mo_hex": "0x1.ddffda5119ce0p+11"
+            },
+            {
+              "cid": 141,
+              "duckdb_key": 3355.6252,
+              "mo_key": 3355.6252000000004,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.a37401a36e2ebp+11",
+              "mo_hex": "0x1.a37401a36e2ecp+11"
+            },
+            {
+              "cid": 142,
+              "duckdb_key": 3429.3784,
+              "mo_key": 3429.3783999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.acac1bda5119dp+11",
+              "mo_hex": "0x1.acac1bda5119cp+11"
+            },
+            {
+              "cid": 158,
+              "duckdb_key": 3126.1316,
+              "mo_key": 3126.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.86c436113404fp+11",
+              "mo_hex": "0x1.86c436113404ep+11"
+            },
+            {
+              "cid": 163,
+              "duckdb_key": 3093.8848000000003,
+              "mo_key": 3093.8848,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.82bc504816f01p+11",
+              "mo_hex": "0x1.82bc504816f00p+11"
+            },
+            {
+              "cid": 171,
+              "duckdb_key": 3063.1443999999997,
+              "mo_key": 3063.1444,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.7ee49eecbfb15p+11",
+              "mo_hex": "0x1.7ee49eecbfb16p+11"
+            },
+            {
+              "cid": 175,
+              "duckdb_key": 3080.2678,
+              "mo_key": 3080.2677999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.810891d14e3bdp+11",
+              "mo_hex": "0x1.810891d14e3bcp+11"
+            }
+          ]
+        },
+        {
+          "case_id": 3334,
+          "changed_key_count": 10,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 40,
+              "duckdb_key": 3027.2677999999996,
+              "mo_key": 3027.2678,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.7a6891d14e3bcp+11",
+              "mo_hex": "0x1.7a6891d14e3bdp+11"
+            },
+            {
+              "cid": 53,
+              "duckdb_key": 2930.1316,
+              "mo_key": 2930.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.6e4436113404fp+11",
+              "mo_hex": "0x1.6e4436113404ep+11"
+            },
+            {
+              "cid": 61,
+              "duckdb_key": 2616.5274000000004,
+              "mo_key": 2616.5274,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.4710e075f6fd3p+11",
+              "mo_hex": "0x1.4710e075f6fd2p+11"
+            },
+            {
+              "cid": 78,
+              "duckdb_key": 3224.0082000000007,
+              "mo_key": 3224.0082,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.9300432ca57a9p+11",
+              "mo_hex": "0x1.9300432ca57a8p+11"
+            },
+            {
+              "cid": 95,
+              "duckdb_key": 3566.7486000000004,
+              "mo_key": 3566.7486,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.bdd7f487fcb93p+11",
+              "mo_hex": "0x1.bdd7f487fcb92p+11"
+            },
+            {
+              "cid": 112,
+              "duckdb_key": 3515.5018000000005,
+              "mo_key": 3515.5018,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b7700ebedfa45p+11",
+              "mo_hex": "0x1.b7700ebedfa44p+11"
+            },
+            {
+              "cid": 117,
+              "duckdb_key": 3097.5146,
+              "mo_key": 3097.5145999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.8330779a6b50bp+11",
+              "mo_hex": "0x1.8330779a6b50ap+11"
+            },
+            {
+              "cid": 125,
+              "duckdb_key": 3823.9954000000002,
+              "mo_key": 3823.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ddffda5119ce1p+11",
+              "mo_hex": "0x1.ddffda5119ce0p+11"
+            },
+            {
+              "cid": 141,
+              "duckdb_key": 3355.6252,
+              "mo_key": 3355.6252000000004,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.a37401a36e2ebp+11",
+              "mo_hex": "0x1.a37401a36e2ecp+11"
+            },
+            {
+              "cid": 142,
+              "duckdb_key": 3429.3784,
+              "mo_key": 3429.3783999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.acac1bda5119dp+11",
+              "mo_hex": "0x1.acac1bda5119cp+11"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+    },
+    {
+      "family": "cume_dist_threshold",
+      "canonical_affected_cases": 3,
+      "status": "mismatch",
+      "repeats": [
+        {
+          "case_id": 19625,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              13.53846153846154,
+              40142.443
+            ]
+          ]
+        },
+        {
+          "case_id": 19625,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              13.53846153846154,
+              40142.443
+            ]
+          ]
+        },
+        {
+          "case_id": 19625,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              13.53846153846154,
+              40142.443
+            ]
+          ]
+        },
+        {
+          "case_id": 19130,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              11.545454545454545,
+              34011.784
+            ]
+          ]
+        },
+        {
+          "case_id": 19130,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              11.545454545454545,
+              34011.784
+            ]
+          ]
+        },
+        {
+          "case_id": 19130,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              11.545454545454545,
+              34011.784
+            ]
+          ]
+        },
+        {
+          "case_id": 19131,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              16.53125,
+              49900.0718
+            ]
+          ]
+        },
+        {
+          "case_id": 19131,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              16.53125,
+              49900.0718
+            ]
+          ]
+        },
+        {
+          "case_id": 19131,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              16.53125,
+              49900.0718
+            ]
+          ]
+        }
+      ],
+      "rounded_key_control": [
+        {
+          "case_id": 19625,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              26,
+              13.53846153846154,
+              40142.443
+            ]
+          ],
+          "actual": [
+            [
+              26,
+              13.53846153846154,
+              40142.443
+            ]
+          ]
+        },
+        {
+          "case_id": 19130,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              22,
+              11.545454545454545,
+              34011.784
+            ]
+          ],
+          "actual": [
+            [
+              22,
+              11.545454545454545,
+              34011.784
+            ]
+          ]
+        },
+        {
+          "case_id": 19131,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              32,
+              16.53125,
+              49900.0718
+            ]
+          ],
+          "actual": [
+            [
+              32,
+              16.53125,
+              49900.0718
+            ]
+          ]
+        }
+      ],
+      "floating_key_evidence": [
+        {
+          "case_id": 19625,
+          "changed_key_count": 10,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 956,
+              "duckdb_key": 3227.0081999999998,
+              "mo_key": 3227.0082,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.9360432ca57a7p+11",
+              "mo_hex": "0x1.9360432ca57a8p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 977,
+              "duckdb_key": 3687.5018,
+              "mo_key": 3687.5017999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+              "mo_hex": "0x1.ccf00ebedfa43p+11"
+            },
+            {
+              "cid": 1002,
+              "duckdb_key": 3189.391199999999,
+              "mo_key": 3189.3911999999996,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+              "mo_hex": "0x1.8eac84b5dcc63p+11"
+            },
+            {
+              "cid": 1003,
+              "duckdb_key": 3078.1316,
+              "mo_key": 3078.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.80c436113404fp+11",
+              "mo_hex": "0x1.80c436113404ep+11"
+            },
+            {
+              "cid": 1011,
+              "duckdb_key": 3400.9954000000002,
+              "mo_key": 3400.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a91fda5119ce1p+11",
+              "mo_hex": "0x1.a91fda5119ce0p+11"
+            },
+            {
+              "cid": 1041,
+              "duckdb_key": 3533.1316,
+              "mo_key": 3533.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b9a436113404fp+11",
+              "mo_hex": "0x1.b9a436113404ep+11"
+            },
+            {
+              "cid": 1057,
+              "duckdb_key": 2902.7742000000003,
+              "mo_key": 2902.7742,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.6ad8c63f14121p+11",
+              "mo_hex": "0x1.6ad8c63f14120p+11"
+            }
+          ]
+        },
+        {
+          "case_id": 19130,
+          "changed_key_count": 7,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 923,
+              "duckdb_key": 3273.6252,
+              "mo_key": 3273.6251999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.993401a36e2ebp+11",
+              "mo_hex": "0x1.993401a36e2eap+11"
+            },
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 956,
+              "duckdb_key": 3227.0081999999998,
+              "mo_key": 3227.0082,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.9360432ca57a7p+11",
+              "mo_hex": "0x1.9360432ca57a8p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 1003,
+              "duckdb_key": 3078.1316,
+              "mo_key": 3078.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.80c436113404fp+11",
+              "mo_hex": "0x1.80c436113404ep+11"
+            },
+            {
+              "cid": 1011,
+              "duckdb_key": 3400.9954000000002,
+              "mo_key": 3400.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a91fda5119ce1p+11",
+              "mo_hex": "0x1.a91fda5119ce0p+11"
+            }
+          ]
+        },
+        {
+          "case_id": 19131,
+          "changed_key_count": 14,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 918,
+              "duckdb_key": 3033.2550000000006,
+              "mo_key": 3033.255,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.7b2828f5c28f7p+11",
+              "mo_hex": "0x1.7b2828f5c28f6p+11"
+            },
+            {
+              "cid": 922,
+              "duckdb_key": 3777.1188,
+              "mo_key": 3777.1187999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.d823cd35a8588p+11",
+              "mo_hex": "0x1.d823cd35a8587p+11"
+            },
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 930,
+              "duckdb_key": 3463.3784,
+              "mo_key": 3463.3783999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b0ec1bda5119dp+11",
+              "mo_hex": "0x1.b0ec1bda5119cp+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 964,
+              "duckdb_key": 3937.8720000000003,
+              "mo_key": 3937.872,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ec3be76c8b43ap+11",
+              "mo_hex": "0x1.ec3be76c8b439p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 977,
+              "duckdb_key": 3687.5018,
+              "mo_key": 3687.5017999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+              "mo_hex": "0x1.ccf00ebedfa43p+11"
+            },
+            {
+              "cid": 985,
+              "duckdb_key": 3366.7486000000004,
+              "mo_key": 3366.7486,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a4d7f487fcb93p+11",
+              "mo_hex": "0x1.a4d7f487fcb92p+11"
+            },
+            {
+              "cid": 1002,
+              "duckdb_key": 3189.391199999999,
+              "mo_key": 3189.3911999999996,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+              "mo_hex": "0x1.8eac84b5dcc63p+11"
+            },
+            {
+              "cid": 1010,
+              "duckdb_key": 3113.6380000000004,
+              "mo_key": 3113.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.85346a7ef9db3p+11",
+              "mo_hex": "0x1.85346a7ef9db2p+11"
+            },
+            {
+              "cid": 1015,
+              "duckdb_key": 3147.0082,
+              "mo_key": 3147.0081999999998,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.8960432ca57a8p+11",
+              "mo_hex": "0x1.8960432ca57a7p+11"
+            },
+            {
+              "cid": 1023,
+              "duckdb_key": 3253.1316,
+              "mo_key": 3253.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.96a436113404fp+11",
+              "mo_hex": "0x1.96a436113404ep+11"
+            },
+            {
+              "cid": 1052,
+              "duckdb_key": 3544.1316,
+              "mo_key": 3544.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.bb0436113404fp+11",
+              "mo_hex": "0x1.bb0436113404ep+11"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+    },
+    {
+      "family": "ordinal_rank_correlation",
+      "canonical_affected_cases": 3,
+      "status": "mismatch",
+      "repeats": [
+        {
+          "case_id": 49625,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              0.07897435897435875
+            ]
+          ]
+        },
+        {
+          "case_id": 49625,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              0.07897435897435875
+            ]
+          ]
+        },
+        {
+          "case_id": 49625,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              26,
+              0.07897435897435875
+            ]
+          ]
+        },
+        {
+          "case_id": 49130,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              0.1259175607001693
+            ]
+          ]
+        },
+        {
+          "case_id": 49130,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              0.1259175607001693
+            ]
+          ]
+        },
+        {
+          "case_id": 49130,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              22,
+              0.1259175607001693
+            ]
+          ]
+        },
+        {
+          "case_id": 49131,
+          "attempt": 0,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              0.14846041055718476
+            ]
+          ]
+        },
+        {
+          "case_id": 49131,
+          "attempt": 1,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              0.14846041055718476
+            ]
+          ]
+        },
+        {
+          "case_id": 49131,
+          "attempt": 2,
+          "original_matches": false,
+          "actual": [
+            [
+              32,
+              0.14846041055718476
+            ]
+          ]
+        }
+      ],
+      "rounded_key_control": [
+        {
+          "case_id": 49625,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              26,
+              0.07897435897435874
+            ]
+          ],
+          "actual": [
+            [
+              26,
+              0.07897435897435875
+            ]
+          ]
+        },
+        {
+          "case_id": 49130,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              22,
+              0.12591756070016927
+            ]
+          ],
+          "actual": [
+            [
+              22,
+              0.1259175607001693
+            ]
+          ]
+        },
+        {
+          "case_id": 49131,
+          "tested": true,
+          "round6_match": true,
+          "expected": [
+            [
+              32,
+              0.14846041055718476
+            ]
+          ],
+          "actual": [
+            [
+              32,
+              0.14846041055718476
+            ]
+          ]
+        }
+      ],
+      "floating_key_evidence": [
+        {
+          "case_id": 49625,
+          "changed_key_count": 10,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 956,
+              "duckdb_key": 3227.0081999999998,
+              "mo_key": 3227.0082,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.9360432ca57a7p+11",
+              "mo_hex": "0x1.9360432ca57a8p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 977,
+              "duckdb_key": 3687.5018,
+              "mo_key": 3687.5017999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+              "mo_hex": "0x1.ccf00ebedfa43p+11"
+            },
+            {
+              "cid": 1002,
+              "duckdb_key": 3189.391199999999,
+              "mo_key": 3189.3911999999996,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+              "mo_hex": "0x1.8eac84b5dcc63p+11"
+            },
+            {
+              "cid": 1003,
+              "duckdb_key": 3078.1316,
+              "mo_key": 3078.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.80c436113404fp+11",
+              "mo_hex": "0x1.80c436113404ep+11"
+            },
+            {
+              "cid": 1011,
+              "duckdb_key": 3400.9954000000002,
+              "mo_key": 3400.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a91fda5119ce1p+11",
+              "mo_hex": "0x1.a91fda5119ce0p+11"
+            },
+            {
+              "cid": 1041,
+              "duckdb_key": 3533.1316,
+              "mo_key": 3533.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b9a436113404fp+11",
+              "mo_hex": "0x1.b9a436113404ep+11"
+            },
+            {
+              "cid": 1057,
+              "duckdb_key": 2902.7742000000003,
+              "mo_key": 2902.7742,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.6ad8c63f14121p+11",
+              "mo_hex": "0x1.6ad8c63f14120p+11"
+            }
+          ]
+        },
+        {
+          "case_id": 49130,
+          "changed_key_count": 7,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 923,
+              "duckdb_key": 3273.6252,
+              "mo_key": 3273.6251999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.993401a36e2ebp+11",
+              "mo_hex": "0x1.993401a36e2eap+11"
+            },
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 956,
+              "duckdb_key": 3227.0081999999998,
+              "mo_key": 3227.0082,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.9360432ca57a7p+11",
+              "mo_hex": "0x1.9360432ca57a8p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 1003,
+              "duckdb_key": 3078.1316,
+              "mo_key": 3078.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.80c436113404fp+11",
+              "mo_hex": "0x1.80c436113404ep+11"
+            },
+            {
+              "cid": 1011,
+              "duckdb_key": 3400.9954000000002,
+              "mo_key": 3400.9954,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a91fda5119ce1p+11",
+              "mo_hex": "0x1.a91fda5119ce0p+11"
+            }
+          ]
+        },
+        {
+          "case_id": 49131,
+          "changed_key_count": 14,
+          "max_abs_difference": 4.547473508864641e-13,
+          "keys": [
+            {
+              "cid": 918,
+              "duckdb_key": 3033.2550000000006,
+              "mo_key": 3033.255,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.7b2828f5c28f7p+11",
+              "mo_hex": "0x1.7b2828f5c28f6p+11"
+            },
+            {
+              "cid": 922,
+              "duckdb_key": 3777.1188,
+              "mo_key": 3777.1187999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.d823cd35a8588p+11",
+              "mo_hex": "0x1.d823cd35a8587p+11"
+            },
+            {
+              "cid": 927,
+              "duckdb_key": 3104.6380000000004,
+              "mo_key": 3104.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.84146a7ef9db3p+11",
+              "mo_hex": "0x1.84146a7ef9db2p+11"
+            },
+            {
+              "cid": 930,
+              "duckdb_key": 3463.3784,
+              "mo_key": 3463.3783999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.b0ec1bda5119dp+11",
+              "mo_hex": "0x1.b0ec1bda5119cp+11"
+            },
+            {
+              "cid": 952,
+              "duckdb_key": 2728.2806,
+              "mo_key": 2728.2805999999996,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.5508faacd9e84p+11",
+              "mo_hex": "0x1.5508faacd9e83p+11"
+            },
+            {
+              "cid": 964,
+              "duckdb_key": 3937.8720000000003,
+              "mo_key": 3937.872,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ec3be76c8b43ap+11",
+              "mo_hex": "0x1.ec3be76c8b439p+11"
+            },
+            {
+              "cid": 973,
+              "duckdb_key": 2856.3911999999996,
+              "mo_key": 2856.3912,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.650c84b5dcc63p+11",
+              "mo_hex": "0x1.650c84b5dcc64p+11"
+            },
+            {
+              "cid": 977,
+              "duckdb_key": 3687.5018,
+              "mo_key": 3687.5017999999995,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.ccf00ebedfa44p+11",
+              "mo_hex": "0x1.ccf00ebedfa43p+11"
+            },
+            {
+              "cid": 985,
+              "duckdb_key": 3366.7486000000004,
+              "mo_key": 3366.7486,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.a4d7f487fcb93p+11",
+              "mo_hex": "0x1.a4d7f487fcb92p+11"
+            },
+            {
+              "cid": 1002,
+              "duckdb_key": 3189.391199999999,
+              "mo_key": 3189.3911999999996,
+              "difference": 4.547473508864641e-13,
+              "duckdb_hex": "0x1.8eac84b5dcc62p+11",
+              "mo_hex": "0x1.8eac84b5dcc63p+11"
+            },
+            {
+              "cid": 1010,
+              "duckdb_key": 3113.6380000000004,
+              "mo_key": 3113.638,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.85346a7ef9db3p+11",
+              "mo_hex": "0x1.85346a7ef9db2p+11"
+            },
+            {
+              "cid": 1015,
+              "duckdb_key": 3147.0082,
+              "mo_key": 3147.0081999999998,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.8960432ca57a8p+11",
+              "mo_hex": "0x1.8960432ca57a7p+11"
+            },
+            {
+              "cid": 1023,
+              "duckdb_key": 3253.1316,
+              "mo_key": 3253.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.96a436113404fp+11",
+              "mo_hex": "0x1.96a436113404ep+11"
+            },
+            {
+              "cid": 1052,
+              "duckdb_key": 3544.1316,
+              "mo_key": 3544.1315999999997,
+              "difference": -4.547473508864641e-13,
+              "duckdb_hex": "0x1.bb0436113404fp+11",
+              "mo_hex": "0x1.bb0436113404ep+11"
+            }
+          ]
+        }
+      ],
+      "interpretation": "Original mismatches reproduce; all affected cases match when SUM peer/order keys are rounded to 6 decimal places. Floating SUM reductions differ by a few ulps, changing eligibility/order near mathematical ties. Treat as floating-key portability sensitivity, not a demonstrated CUME_DIST/RANK algorithm defect. Canonical counts remain unchanged."
+    }
+  ]
+}

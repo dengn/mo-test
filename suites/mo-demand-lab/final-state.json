@@ -1,0 +1,85 @@
+{
+  "all_decision_tables_empty": true,
+  "decision_counts": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+  },
+  "server_pid": "1384",
+  "server_version": "8.0.30-MatrixOne-v",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "panic_fatal": [],
+  "internal_trace_failed_loads": 121,
+  "internal_trace_events_sample": [
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 11:32:52.005283 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...9,115.4479\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 320365 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a704b34e:1791718371619481234-1",
+      "session_info": "connectionId 3886|127.0.0.1:38238|account sys:mo_logger|goRoutineId 1991858|migrate-goRoutineId 0|01a12abc-1fc3-7cbd-8285-c118d5c25bcf",
+      "role": "moadmin",
+      "session_id": "01a12abc-1fc3-7cbd-8285-c118d5c25bcf",
+      "statement_id": "01a12abc-abef-7c7e-86be-c125b520dc63",
+      "span": {
+        "trace_id": "2c7381ee-9f5d-954c-a52a-c336dd4f88ce",
+        "span_id": "a9be62b3b9d7470b"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 11:33:04.280162 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...3,115.6977\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 574269 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a704b56b:1791718383895283262-1",
+      "session_info": "connectionId 3902|127.0.0.1:51042|account sys:mo_logger|goRoutineId 1994132|migrate-goRoutineId 0|01a12abc-da42-7457-be37-7828606437a0",
+      "role": "moadmin",
+      "session_id": "01a12abc-da42-7457-be37-7828606437a0",
+      "statement_id": "01a12abc-de50-780b-b064-8cbb81ab9433",
+      "span": {
+        "trace_id": "28ea4b35-1f75-b1d6-fe09-d6544e734217",
+        "span_id": "8cecb689b64573ec"
+      }
+    },
+    {
+      "level": "ERROR",
+      "time": "2026/10/11 11:33:16.595503 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "query trace status",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "statement": "LOAD DATA INLINE FORMAT='csv', DATA='01a...66,78.0651\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','",
+      "status": "fail",
+      "error": "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 317251 is larger than Dest length 65535",
+      "txn_info": "70f70f4866a9b62a18dd5146a704b727:1791718396017243937-1",
+      "session_info": "connectionId 3902|127.0.0.1:51042|account sys:mo_logger|goRoutineId 1994132|migrate-goRoutineId 0|01a12abc-da42-7457-be37-7828606437a0",
+      "role": "moadmin",
+      "session_id": "01a12abc-da42-7457-be37-7828606437a0",
+      "statement_id": "01a12abd-0e11-7a3d-af7e-a0a6b1122751",
+      "span": {
+        "trace_id": "28ea4b35-1f75-b1d6-fe09-d6544e734217",
+        "span_id": "8cecb689b64573ec"
+      }
+    }
+  ],
+  "log_capture_start": 1791718365.6990657,
+  "log_capture_end": 1791719844.3208106,
+  "log_capture_includes_checkpoint_gap": true,
+  "log_bytes": 502974
+}

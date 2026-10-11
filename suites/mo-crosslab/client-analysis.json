@@ -1,0 +1,185 @@
+{
+  "precision_contract": {
+    "feature": "AVG(integer)",
+    "scientific_fix": "Explicit AVG(CAST(... AS DOUBLE)); raw thresholds unchanged",
+    "evidence": "attempts/implicit-integer-avg.json"
+  },
+  "java_arrow": {
+    "failed_java": "21",
+    "successful_java": "Temurin 17.0.20.1+1",
+    "classification": "Spark/Arrow runtime compatibility",
+    "evidence": "attempts/spark-java-arrow.json"
+  },
+  "constant_feature_checker": {
+    "parameter": 55,
+    "feature": "stockout_rate",
+    "exact_training_range": 0.0,
+    "numpy_two_pass_std": 2.0981243021257878e-17,
+    "fix": "Mathematically zero variance for exact constant columns; match StandardScaler zero output behavior. Numerical thresholds unchanged.",
+    "original_passed_workflows": 30,
+    "original_attempt": "attempts/spark-constant-feature",
+    "final_full_rerun": 200,
+    "verified_constant_feature_records": [
+      {
+        "parameter": 55,
+        "domain": "product",
+        "rows": 80,
+        "constant_training_features": [
+          "stockout_rate"
+        ],
+        "checks": {
+          "native_scale": true,
+          "native_pca_variance": true,
+          "native_pca_projection": true,
+          "native_pca_orthogonal": true,
+          "native_cluster_distance": true,
+          "native_cluster_memberships": true
+        },
+        "explained_variance": [
+          0.2219722953518618,
+          0.17811927031350414,
+          0.1263660138614156,
+          0.09254961597411866,
+          0.08388932264215669,
+          0.06167550942995426
+        ],
+        "centers": [
+          [
+            2.0677202658377634,
+            1.3165497343388313,
+            1.3722117239304403,
+            -0.20901128153938464,
+            0.39975713037195054,
+            0.01450393279178567
+          ],
+          [
+            -2.764761724124841,
+            -0.7257475121167412,
+            0.4148096429776973,
+            -0.5235694835994746,
+            0.7107869084140891,
+            -0.04571428997998903
+          ],
+          [
+            -0.8076516810770983,
+            2.2834603914612077,
+            -1.5367608405719977,
+            1.1270036094721476,
+            -0.28590307824097855,
+            -0.20623599113938182
+          ],
+          [
+            1.1323085155116945,
+            -1.1721880369708586,
+            -0.24796502914065865,
+            -0.060471703525182045,
+            -0.5209896895375183,
+            0.11303909394846401
+          ]
+        ],
+        "memberships": [
+          13,
+          20,
+          14,
+          33
+        ],
+        "stages": [
+          "window ranking",
+          "group aggregation",
+          "segment join",
+          "repartition",
+          "VectorAssembler",
+          "StandardScaler",
+          "PCA",
+          "KMeans"
+        ]
+      },
+      {
+        "parameter": 443,
+        "domain": "product",
+        "rows": 80,
+        "constant_training_features": [
+          "promo_rate"
+        ],
+        "checks": {
+          "native_scale": true,
+          "native_pca_variance": true,
+          "native_pca_projection": true,
+          "native_pca_orthogonal": true,
+          "native_cluster_distance": true,
+          "native_cluster_memberships": true
+        },
+        "explained_variance": [
+          0.21656376165865604,
+          0.17326775625887644,
+          0.12245787579801358,
+          0.10441657982823294,
+          0.07927351854508706,
+          0.06305758665799184
+        ],
+        "centers": [
+          [
+            2.4793602613093073,
+            2.322702468063659,
+            0.557412004380853,
+            -1.8015659597128213,
+            -1.6321406209309877,
+            -0.41527535520270425
+          ],
+          [
+            -2.2352094502410846,
+            -0.30443969300808793,
+            -0.1892283984416407,
+            -0.336998201503161,
+            -0.298239945665018,
+            -0.0020486566345849035
+          ],
+          [
+            1.1755471071137622,
+            -0.12841333826166285,
+            -0.3221180953107393,
+            0.32252418626800616,
+            0.6712715120523427,
+            -0.010593436093839927
+          ],
+          [
+            1.5275195832270816,
+            0.5312423960781791,
+            3.154903148754894,
+            1.2433616785877175,
+            -1.9485918014976316,
+            0.5123147837609872
+          ]
+        ],
+        "memberships": [
+          5,
+          29,
+          41,
+          5
+        ],
+        "stages": [
+          "window ranking",
+          "group aggregation",
+          "segment join",
+          "repartition",
+          "VectorAssembler",
+          "StandardScaler",
+          "PCA",
+          "KMeans"
+        ]
+      }
+    ]
+  },
+  "no_new_issue_submitted": true,
+  "distinct_engine_and_scientific_case_counts": true,
+  "performance_protocol": {
+    "initial_attempt": "attempts/performance-audit-overlap.json",
+    "initial_measurement_excluded": true,
+    "final_workflows": 480,
+    "final_counts": {
+      "pass": 480
+    },
+    "final_checking_after_each_timed_batch": true,
+    "final_no_concurrent_audits_or_compatibility_clients": true
+  }
+}

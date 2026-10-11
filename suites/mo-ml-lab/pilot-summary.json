@@ -1,0 +1,37 @@
+{
+  "expected": 140,
+  "passed": 140,
+  "failed": 0,
+  "seconds": 45.36503887176514,
+  "workers": [
+    {
+      "worker": 0,
+      "passed": 40,
+      "failed": 0,
+      "seconds": 29.193647384643555
+    },
+    {
+      "worker": 1,
+      "passed": 40,
+      "failed": 0,
+      "seconds": 28.12846350669861
+    },
+    {
+      "worker": 2,
+      "passed": 40,
+      "failed": 0,
+      "seconds": 43.00733470916748
+    },
+    {
+      "worker": 3,
+      "passed": 20,
+      "failed": 0,
+      "seconds": 25.118467092514038
+    }
+  ],
+  "code": {
+    "data.py": "d7cc46c066ac8fe9b1da1ac7bfe948347d6edc4f15fa7ebe483a4b58432c69b3",
+    "models.py": "e56a65e86e8e5ac399ef38170411f689caf3b31b2f6ddceba6245537dab09ca6",
+    "run.py": "695b90b9019a00ce2a91efc2db97a6096e545d6fecbcdfe67ee24cc2dc8112a9"
+  }
+}

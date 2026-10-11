@@ -1,0 +1,123 @@
+{
+  "frameworks": {
+    "torch": "2.5.1+cpu",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "pymysql": "1.2.0",
+    "sqlalchemy": "2.0.43",
+    "pyspark": "3.5.3"
+  },
+  "python": "3.12.14",
+  "server_pid": 1384,
+  "server_binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+  "server_binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "cpu_quota": "400000 100000",
+  "memory_max_bytes": 17179869184,
+  "unique_fact_sql": 1000,
+  "missions": [
+    {
+      "id": 0,
+      "architecture": "residual",
+      "task": "forecast"
+    },
+    {
+      "id": 1,
+      "architecture": "residual",
+      "task": "classification"
+    },
+    {
+      "id": 2,
+      "architecture": "residual",
+      "task": "multitask"
+    },
+    {
+      "id": 3,
+      "architecture": "residual",
+      "task": "denoising"
+    },
+    {
+      "id": 4,
+      "architecture": "temporal_cnn",
+      "task": "forecast"
+    },
+    {
+      "id": 5,
+      "architecture": "temporal_cnn",
+      "task": "classification"
+    },
+    {
+      "id": 6,
+      "architecture": "temporal_cnn",
+      "task": "multitask"
+    },
+    {
+      "id": 7,
+      "architecture": "temporal_cnn",
+      "task": "denoising"
+    },
+    {
+      "id": 8,
+      "architecture": "gru",
+      "task": "forecast"
+    },
+    {
+      "id": 9,
+      "architecture": "gru",
+      "task": "classification"
+    },
+    {
+      "id": 10,
+      "architecture": "gru",
+      "task": "multitask"
+    },
+    {
+      "id": 11,
+      "architecture": "gru",
+      "task": "denoising"
+    },
+    {
+      "id": 12,
+      "architecture": "attention",
+      "task": "forecast"
+    },
+    {
+      "id": 13,
+      "architecture": "attention",
+      "task": "classification"
+    },
+    {
+      "id": 14,
+      "architecture": "attention",
+      "task": "multitask"
+    },
+    {
+      "id": 15,
+      "architecture": "attention",
+      "task": "denoising"
+    },
+    {
+      "id": 16,
+      "architecture": "gcn",
+      "task": "forecast"
+    },
+    {
+      "id": 17,
+      "architecture": "gcn",
+      "task": "classification"
+    },
+    {
+      "id": 18,
+      "architecture": "gcn",
+      "task": "multitask"
+    },
+    {
+      "id": 19,
+      "architecture": "gcn",
+      "task": "denoising"
+    }
+  ],
+  "source_rows": 142163,
+  "note": "20 model/task templates x 1000 meaningful configurations, each reads MO anew and fits two deterministic models; duplicate oracle feature construction reused across templates. Model training occurs in external CPU PyTorch, not inside MO."
+}

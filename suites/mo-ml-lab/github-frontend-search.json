@@ -1,0 +1,140 @@
+[
+  {
+    "query": "\"routine is closed or busy\"",
+    "total_count": 1,
+    "items": [
+      {
+        "number": 20022,
+        "title": "[Bug]: config proxy cache connection mo hung",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/20022"
+      }
+    ]
+  },
+  {
+    "query": "\"query interrupted\"",
+    "total_count": 20,
+    "items": [
+      {
+        "number": 29693,
+        "title": "[Bug]: multi-CN KILL QUERY returns 1105/HY000 instead of 1317/70100",
+        "state": "open",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/29693"
+      },
+      {
+        "number": 27776,
+        "title": "[Bug]: CN 垂直扩容迁移破坏在途分布式 Pipeline",
+        "state": "open",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27776"
+      },
+      {
+        "number": 27084,
+        "title": "[Bug] Stability: TPCH 长稳测试因 RemoteRun query interrupted 反复中断退出（关联 #26202）",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27084"
+      },
+      {
+        "number": 27083,
+        "title": "[Bug] Stability 4.2-dev: TPCH 长稳测试因 RemoteRun query interrupted 退出（remoterunClient.go:693）",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27083"
+      },
+      {
+        "number": 28378,
+        "title": "[Bug]: IVFFlat SIFT128 queries close RPC streams on main",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28378"
+      },
+      {
+        "number": 28313,
+        "title": "[Bug] dev:distributed join aborts when remote dispatch targets another local pipeline tree",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28313"
+      },
+      {
+        "number": 28277,
+        "title": "[Bug]: PROXY multi-CN pipeline intermittently drops composite-key INSERT SELECT errors",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28277"
+      },
+      {
+        "number": 28659,
+        "title": "[Bug]: 10Y composite-PK INSERT SELECT exceeds 7200s under sustained CN memory-limit pressure",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28659"
+      },
+      {
+        "number": 27115,
+        "title": "[Bug]: multi-CN remote pipeline can report duplicate-key INSERT as success",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27115"
+      },
+      {
+        "number": 27757,
+        "title": "[Bug]: 10M IVFFlat workload intermittently closes RPC/backend connections",
+        "state": "open",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/27757"
+      },
+      {
+        "number": 26678,
+        "title": "[Bug]: max_execution_time is accepted but not enforced, breaking ODBC query timeout",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/26678"
+      },
+      {
+        "number": 26828,
+        "title": "[Bug]: CTAS ignores NULLs synthesized by outer joins and scalar subqueries",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/26828"
+      },
+      {
+        "number": 28516,
+        "title": "[Bug]: statement timeout can leak into next session query",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28516"
+      },
+      {
+        "number": 28712,
+        "title": "[Bug]: ASOF JOIN returns non-nearest predecessors on 100M multi-CN data",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28712"
+      },
+      {
+        "number": 26285,
+        "title": "[Bug] Merge CTE emits buffered prior-run batch after reset",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/26285"
+      },
+      {
+        "number": 28715,
+        "title": "[Bug]: ASOF over generated CTE inputs can panic while probing empty Int64HashMap cells",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/28715"
+      },
+      {
+        "number": 26394,
+        "title": "[Bug]: mergerecursive Free retains copied recursive batches",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/26394"
+      },
+      {
+        "number": 24919,
+        "title": "[Bug]: Cross-CN shuffle INSERT ... SELECT join hangs forever on multi-CN cluster (large tables)",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/24919"
+      },
+      {
+        "number": 5009,
+        "title": "[Feature Request]: Support first batch error code ",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/5009"
+      },
+      {
+        "number": 407,
+        "title": "(AOE): solution to resolve read and write conflicts occurred by raft group rebalance.",
+        "state": "closed",
+        "html_url": "https://github.com/matrixorigin/matrixone/issues/407"
+      }
+    ]
+  }
+]
