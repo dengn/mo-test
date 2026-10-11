@@ -1,0 +1,3194 @@
+{
+  "database": "mo_vecft_1791526357965790259",
+  "tested_commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "cpu_quota_cores": 4,
+  "memory_limit_gib": 32,
+  "phases": [
+    {
+      "kind": "phase",
+      "epoch": 1791526701.0526187,
+      "name": "vector_16",
+      "workers": 16,
+      "requested_seconds": 60,
+      "seconds": 60.06202012099857,
+      "success": 38799,
+      "errors": {},
+      "ops_s": 645.9822683592239,
+      "p50_ms": 17.57595399976708,
+      "p99_ms": 139.528484819857
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791526776.334711,
+      "name": "vector_128",
+      "workers": 128,
+      "requested_seconds": 75,
+      "seconds": 75.27349335599865,
+      "success": 41272,
+      "errors": {},
+      "ops_s": 548.2939366824401,
+      "p50_ms": 188.86897699940164,
+      "p99_ms": 855.5570259902199
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791526823.7492867,
+      "name": "ft_16",
+      "workers": 16,
+      "requested_seconds": 45,
+      "seconds": 47.36294493799869,
+      "success": 146,
+      "errors": {
+        "(2013, 'Lost connection to MySQL server during query (timed out)')": 16
+      },
+      "ops_s": 3.082578589467439,
+      "p50_ms": 2077.161797998997,
+      "p99_ms": 15090.0840856598
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791526896.1019979,
+      "name": "ft_128",
+      "workers": 128,
+      "requested_seconds": 60,
+      "seconds": 72.34730000200034,
+      "success": 466,
+      "errors": {
+        "(2013, 'Lost connection to MySQL server during query (timed out)')": 110
+      },
+      "ops_s": 6.441152606760936,
+      "p50_ms": 12620.420701000512,
+      "p99_ms": 43327.11184624986
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791526941.3613293,
+      "name": "ft2_16",
+      "workers": 16,
+      "requested_seconds": 45,
+      "seconds": 45.25640789400131,
+      "success": 4229,
+      "errors": {},
+      "ops_s": 93.44533065693332,
+      "p50_ms": 143.59255300041696,
+      "p99_ms": 573.588066120283
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527003.649796,
+      "name": "ft2_128",
+      "workers": 128,
+      "requested_seconds": 60,
+      "seconds": 62.27667126799861,
+      "success": 5128,
+      "errors": {},
+      "ops_s": 82.34223017367766,
+      "p50_ms": 1496.9469054994988,
+      "p99_ms": 2785.413742600085
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527063.8170183,
+      "name": "vector_1536dim_64",
+      "workers": 64,
+      "requested_seconds": 60,
+      "seconds": 60.16013134899913,
+      "success": 20883,
+      "errors": {},
+      "ops_s": 347.1235772218344,
+      "p50_ms": 149.34403499864857,
+      "p99_ms": 731.5799806408905
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527168.3024182,
+      "name": "vector_fulltext_256",
+      "workers": 256,
+      "requested_seconds": 90,
+      "seconds": 104.42035116399893,
+      "success": 5079,
+      "errors": {
+        "(2013, 'Lost connection to MySQL server during query (timed out)')": 200
+      },
+      "ops_s": 48.63994368322992,
+      "p50_ms": 3084.6716949999973,
+      "p99_ms": 16558.251294140075
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527188.3202782,
+      "name": "cooldown_probe_4",
+      "workers": 4,
+      "requested_seconds": 20,
+      "seconds": 20.0043270820006,
+      "success": 108247,
+      "errors": {},
+      "ops_s": 5411.179269179116,
+      "p50_ms": 0.5374569991545286,
+      "p99_ms": 3.813470100649253
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527378.7810376,
+      "name": "index_write_normal",
+      "workers": 32,
+      "requested_seconds": 90,
+      "seconds": 90.221019351,
+      "success": 123180,
+      "errors": {},
+      "ops_s": 1365.3137692977605,
+      "p50_ms": 11.08392200058006,
+      "p99_ms": 218.5963291209546
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791527766.8212907,
+      "name": "index_write_crash",
+      "workers": 32,
+      "requested_seconds": 150,
+      "seconds": 150.08018113900107,
+      "success": 131333,
+      "errors": {
+        "(2013, 'Lost connection to MySQL server during query')": 8,
+        "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")": 3234,
+        "(2013, 'Lost connection to MySQL server during query (timed out)')": 64,
+        "(2013, 'Lost connection to MySQL server during query ([Errno 104] Connection reset by peer)')": 24
+      },
+      "ops_s": 875.0855642848817,
+      "p50_ms": 13.596339000287117,
+      "p99_ms": 242.1932953405122
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791528046.7498536,
+      "name": "concurrent_reindex_16",
+      "workers": 16,
+      "requested_seconds": 75,
+      "seconds": 75.06736739500047,
+      "success": 93686,
+      "errors": {},
+      "ops_s": 1248.0256501740535,
+      "p50_ms": 10.564431999227963,
+      "p99_ms": 40.67989780141941
+    },
+    {
+      "kind": "phase",
+      "epoch": 1791528281.1136522,
+      "name": "hnsw_tuned_16",
+      "workers": 16,
+      "requested_seconds": 45,
+      "seconds": 45.06928188599886,
+      "success": 15483,
+      "errors": {},
+      "ops_s": 343.5377568065916,
+      "p50_ms": 40.510863000235986,
+      "p99_ms": 133.19350812034835
+    }
+  ],
+  "recall": [
+    {
+      "kind": "recall",
+      "epoch": 1791526566.35701,
+      "label": "baseline",
+      "table": "vh",
+      "queries": 30,
+      "recall10_mean": 0.21666666666666667,
+      "recall10_min": 0.0,
+      "max_score_error": 9.936457345816052e-08,
+      "p99_ms": 451.3759479095466,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791526573.3481429,
+      "label": "baseline",
+      "table": "vc",
+      "queries": 30,
+      "recall10_mean": 0.23333333333333336,
+      "recall10_min": 0.0,
+      "max_score_error": 1.0355114188342895e-07,
+      "p99_ms": 577.7328032096381,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791526577.7587128,
+      "label": "baseline",
+      "table": "vi",
+      "queries": 30,
+      "recall10_mean": 0.2766666666666666,
+      "recall10_min": 0.1,
+      "max_score_error": 1.0711345965752628e-07,
+      "p99_ms": 76.58314920070553,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528053.632505,
+      "label": "after_recovery",
+      "table": "vh",
+      "queries": 30,
+      "recall10_mean": 0.21666666666666667,
+      "recall10_min": 0.0,
+      "max_score_error": 9.936457345816052e-08,
+      "p99_ms": 530.3585165404917,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528057.6204307,
+      "label": "after_recovery",
+      "table": "vc",
+      "queries": 30,
+      "recall10_mean": 0.23333333333333336,
+      "recall10_min": 0.0,
+      "max_score_error": 1.0355114188342895e-07,
+      "p99_ms": 420.95204104010963,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528060.806892,
+      "label": "after_recovery",
+      "table": "vi",
+      "queries": 30,
+      "recall10_mean": 0.2766666666666666,
+      "recall10_min": 0.1,
+      "max_score_error": 1.0711345965752628e-07,
+      "p99_ms": 40.651323290985616,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528226.3225522,
+      "label": "tuned",
+      "table": "vh",
+      "queries": 30,
+      "recall10_mean": 0.9866666666666667,
+      "recall10_min": 0.9,
+      "max_score_error": 1.1780477593426042e-07,
+      "p99_ms": 738.4067080299619,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528230.6001534,
+      "label": "tuned",
+      "table": "vc",
+      "queries": 30,
+      "recall10_mean": 0.98,
+      "recall10_min": 0.9,
+      "max_score_error": 9.98104039418024e-08,
+      "p99_ms": 551.8319142903426,
+      "errors": []
+    },
+    {
+      "kind": "recall",
+      "epoch": 1791528233.5844193,
+      "label": "tuned",
+      "table": "vi",
+      "queries": 30,
+      "recall10_mean": 0.2766666666666666,
+      "recall10_min": 0.1,
+      "max_score_error": 1.0711345965752628e-07,
+      "p99_ms": 20.817741281098282,
+      "errors": []
+    }
+  ],
+  "ivf_full_probe": [
+    {
+      "kind": "ivf_full_probe",
+      "epoch": 1791526578.5619195,
+      "label": "baseline",
+      "queries": 10,
+      "mean_recall": 1.0,
+      "minimum": 1.0
+    },
+    {
+      "kind": "ivf_full_probe",
+      "epoch": 1791528061.465782,
+      "label": "after_recovery",
+      "queries": 10,
+      "mean_recall": 1.0,
+      "minimum": 1.0
+    },
+    {
+      "kind": "ivf_full_probe",
+      "epoch": 1791528234.2618551,
+      "label": "tuned",
+      "queries": 10,
+      "mean_recall": 1.0,
+      "minimum": 1.0
+    }
+  ],
+  "edges_canonical": [
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2693431,
+      "name": "dimension_short",
+      "sql": "insert into edgev values(1,'[1,2]')",
+      "seconds": 0.0011142049988848157,
+      "accepted": false,
+      "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 2.')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2702382,
+      "name": "dimension_long",
+      "sql": "insert into edgev values(2,'[1,2,3,4]')",
+      "seconds": 0.0005960939997748937,
+      "accepted": false,
+      "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 4.')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2709932,
+      "name": "nan",
+      "sql": "insert into edgev values(3,'[NaN,1,2]')",
+      "seconds": 0.0006693890009046299,
+      "accepted": false,
+      "error": "(20101, 'internal error: vector element cannot be NaN or Inf: NaN')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2720003,
+      "name": "inf",
+      "sql": "insert into edgev values(4,'[Inf,1,2]')",
+      "seconds": 0.0007760469998174813,
+      "accepted": false,
+      "error": "(20101, 'internal error: vector element cannot be NaN or Inf: +Inf')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2731407,
+      "name": "overflow_literal",
+      "sql": "insert into edgev values(5,'[1e100,1,2]')",
+      "seconds": 0.0009960779989341972,
+      "accepted": false,
+      "error": "(20101, 'internal error: error while casting 1e100 to FLOAT')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2737536,
+      "name": "atomic_bad_batch",
+      "sql": "insert into edgev values(6,'[1,2,3]'),(7,'[1,2]')",
+      "seconds": 0.00047273299969674554,
+      "accepted": false,
+      "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 2.')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2784688,
+      "name": "invalid_batch_no_partial",
+      "sql": "select count(*) from edgev",
+      "seconds": 0.004618368000592454,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          0
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2797241,
+      "name": "float32_distance_overflow",
+      "sql": "select l2_distance(cast('[2e19,2e19]' as vecf32(2)),cast('[0,0]' as vecf32(2)))",
+      "seconds": 0.0010967250000248896,
+      "accepted": false,
+      "error": "(20101, 'internal error: l2 distance: vector magnitude is too large, the result overflows the element domain')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2804477,
+      "name": "subnormal_cosine_constant",
+      "sql": "select cosine_distance(cast('[3e-23,3e-23]' as vecf32(2)),cast('[3e-23,0]' as vecf32(2)))",
+      "seconds": 0.0006092959993111435,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          0.2928932309150696
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2813215,
+      "name": "zero_cosine_convention",
+      "sql": "select cosine_distance(cast('[0,0,0]' as vecf32(3)),cast('[1,0,0]' as vecf32(3)))",
+      "seconds": 0.0006377729987434577,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          1.0
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2821422,
+      "name": "ordinary_l2",
+      "sql": "select l2_distance(cast('[3,4]' as vecf32(2)),cast('[0,0]' as vecf32(2)))",
+      "seconds": 0.0007108619993232423,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          5.0
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2847788,
+      "name": "dimension_65536",
+      "sql": "create table dimension_bad(v vecf32(65536))",
+      "seconds": 0.0025244289990951074,
+      "accepted": false,
+      "error": "(1690, 'data out of range: data type vecf32,  typeLen is over the MaxVectorLen : 65535')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.2874014,
+      "name": "dimension_65535",
+      "sql": "create table if not exists dimension_max(id int primary key,v vecf32(65535))",
+      "seconds": 0.0025084530007006833,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.3609338,
+      "name": "max_dimension_insert",
+      "sql": "insert into dimension_max values(1,%s)",
+      "seconds": 0.03233098899909237,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.3631063,
+      "name": "max_dimension_norm",
+      "sql": "select l2_norm(v) from dimension_max",
+      "seconds": 0.0020403170001372928,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          1.0
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.4141414,
+      "name": "subnormal_cosine_column",
+      "sql": "select cosine_distance(v,'[3e-23,0]') from subnormalv order by id",
+      "seconds": 0.0023338669998338446,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          0.2928932309150696
+        ],
+        [
+          0.4000000059604645
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.5156755,
+      "name": "hnsw_null_build",
+      "sql": "create index ann using hnsw on edgev(v) op_type 'vector_cosine_ops'",
+      "seconds": 0.09585370100103319,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.5260022,
+      "name": "hnsw_zero_query",
+      "sql": "select id from edgev order by cosine_distance(v,'[0,0,0]') limit 2",
+      "seconds": 0.010170602001380757,
+      "accepted": false,
+      "error": "(20101, 'internal error: hnsw cosine search requires a normalized (non-zero, non-subnormal) query vector; its L2 norm 0 underflows the float32 domain the index computes in')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.5274744,
+      "name": "hnsw_subnormal_query",
+      "sql": "select id from edgev order by cosine_distance(v,'[1e-20,1e-20,1e-20]') limit 2",
+      "seconds": 0.0013221079989307327,
+      "accepted": false,
+      "error": "(20101, 'internal error: hnsw cosine search requires a normalized (non-zero, non-subnormal) query vector; its L2 norm 1.73205075260315e-20 underflows the float32 domain the index computes in')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.529227,
+      "name": "hnsw_null_not_returned",
+      "sql": "select id from edgev order by cosine_distance(v,'[1,0,0]') limit 10",
+      "seconds": 0.0015831019991310313,
+      "accepted": true,
+      "rows": 3,
+      "result": [
+        [
+          10
+        ],
+        [
+          12
+        ],
+        [
+          11
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.5302815,
+      "name": "hnsw_limit_zero",
+      "sql": "select id from edgev order by cosine_distance(v,'[1,0,0]') limit 0",
+      "seconds": 0.0009213200009980937,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.660618,
+      "name": "ngram_build",
+      "sql": "create fulltext2 index txt on cjk_ngram(body) with parser ngram",
+      "seconds": 0.03554227300082857,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.6829288,
+      "name": "ngram_苹果香蕉*",
+      "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.022122623999166535,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.6845188,
+      "name": "ngram_+苹果香蕉*",
+      "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.001383811999403406,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.6860232,
+      "name": "ngram_苹果*",
+      "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0013564500004576985,
+      "accepted": true,
+      "rows": 4,
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.8011367,
+      "name": "gojieba_build",
+      "sql": "create fulltext2 index txt on cjk_gojieba(body) with parser gojieba",
+      "seconds": 0.06530936900162487,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.8347836,
+      "name": "gojieba_苹果香蕉*",
+      "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.03349695200085989,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.836303,
+      "name": "gojieba_+苹果香蕉*",
+      "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0013733670002693543,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.8377354,
+      "name": "gojieba_苹果*",
+      "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0012972650001756847,
+      "accepted": true,
+      "rows": 4,
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526639.9163318,
+      "name": "text_over_65535",
+      "sql": "insert into longft values(8,%s)",
+      "seconds": 0.022199785998964217,
+      "accepted": false,
+      "error": "(1406, \"Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 140000 is larger than Dest length 65535\")",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0587003,
+      "name": "long_fulltext2_build",
+      "sql": "create fulltext2 index txt on longft(body)",
+      "seconds": 0.13193504300033965,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.085495,
+      "name": "fulltext_boundary_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.025729554999998072,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.087014,
+      "name": "fulltext_boundary_aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0013554249999288004,
+      "accepted": true,
+      "rows": 2,
+      "result": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.08968,
+      "name": "fulltext_boundary_",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0025332449986308347,
+      "accepted": false,
+      "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. SQL syntax error: AGAINST(\\'pattern\\') pattern is empty. at line 1 column 67 near \") order by id\";')",
+      "pass_check": true
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0911684,
+      "name": "fulltext_boundary_😀",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0013035590000072261,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          6
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0932174,
+      "name": "fulltext_boundary_数据库",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0019014890003745677,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          6
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0950353,
+      "name": "fulltext_boundary_repeat",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0015741460010758601,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          7
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0962825,
+      "name": "fulltext_boundary_+hello -world",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0011245490004512249,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0987291,
+      "name": "fulltext_boundary_\"hello world\"",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0023337509992416017,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          3
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.0999765,
+      "name": "fulltext_boundary_+",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.001124218000768451,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.1012282,
+      "name": "fulltext_boundary_\"",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0011351699995429954,
+      "accepted": true,
+      "rows": 0,
+      "result": [],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.1026688,
+      "name": "fulltext_boundary_((((((((((((((((((((((((((((((((hel",
+      "sql": "select id from longft where match(body) against(%s in boolean mode) order by id",
+      "seconds": 0.0013197610005590832,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          3
+        ]
+      ],
+      "pass_check": null
+    },
+    {
+      "kind": "edge",
+      "epoch": 1791526640.1034708,
+      "name": "edge_recovery_probe",
+      "sql": "select 1",
+      "seconds": 0.0006839880006737076,
+      "accepted": true,
+      "rows": 1,
+      "result": [
+        [
+          1
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "sql",
+      "epoch": 1791527281.2728996,
+      "sql": "create index ann using hnsw on dimension_h(v) op_type 'vector_l2_ops'",
+      "seconds": 0.06853968799987342,
+      "rows": 0,
+      "sample": []
+    },
+    {
+      "kind": "max_dimension_hnsw",
+      "epoch": 1791527281.33068,
+      "dimension": 65535,
+      "result": [
+        [
+          1,
+          0.0
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "sql",
+      "epoch": 1791527281.3696012,
+      "sql": "create fulltext index txt on utf_ft(body) with parser ngram",
+      "seconds": 0.022070111999710207,
+      "rows": 0,
+      "sample": []
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.377902,
+      "table": "utf_ft",
+      "query": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "mode": "",
+      "ids": [
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.3814626,
+      "table": "utf_ft",
+      "query": "\"bbbbbbbbbbbbbbbbbbbbbbbbbb\"",
+      "mode": " in boolean mode",
+      "ids": [
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.3847494,
+      "table": "utf_ft",
+      "query": "aяяяяяяяяяяяя",
+      "mode": "",
+      "ids": [
+        3
+      ],
+      "expected": [
+        3
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.3880415,
+      "table": "utf_ft",
+      "query": "\"aяяяяяяяяяяяя\"",
+      "mode": " in boolean mode",
+      "ids": [
+        3
+      ],
+      "expected": [
+        3
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.3912807,
+      "table": "utf_ft",
+      "query": "ȺȺȺȺȺȺȺȺ",
+      "mode": "",
+      "ids": [
+        4
+      ],
+      "expected": [
+        4
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.3946002,
+      "table": "utf_ft",
+      "query": "\"ȺȺȺȺȺȺȺȺ\"",
+      "mode": " in boolean mode",
+      "ids": [
+        4
+      ],
+      "expected": [
+        4
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "sql",
+      "epoch": 1791527281.4416752,
+      "sql": "create fulltext2 index txt on utf_ft2(body) with parser ngram",
+      "seconds": 0.029975065001053736,
+      "rows": 0,
+      "sample": []
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4583874,
+      "table": "utf_ft2",
+      "query": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "mode": "",
+      "ids": [
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4595993,
+      "table": "utf_ft2",
+      "query": "\"bbbbbbbbbbbbbbbbbbbbbbbbbb\"",
+      "mode": " in boolean mode",
+      "ids": [
+        1,
+        2
+      ],
+      "expected": [
+        1,
+        2
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4607768,
+      "table": "utf_ft2",
+      "query": "aяяяяяяяяяяяя",
+      "mode": "",
+      "ids": [
+        3
+      ],
+      "expected": [
+        3
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4621644,
+      "table": "utf_ft2",
+      "query": "\"aяяяяяяяяяяяя\"",
+      "mode": " in boolean mode",
+      "ids": [
+        3
+      ],
+      "expected": [
+        3
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4633157,
+      "table": "utf_ft2",
+      "query": "ȺȺȺȺȺȺȺȺ",
+      "mode": "",
+      "ids": [
+        4
+      ],
+      "expected": [
+        4
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "unicode_token",
+      "epoch": 1791527281.4643927,
+      "table": "utf_ft2",
+      "query": "\"ȺȺȺȺȺȺȺȺ\"",
+      "mode": " in boolean mode",
+      "ids": [
+        4
+      ],
+      "expected": [
+        4
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "sql",
+      "epoch": 1791527281.511409,
+      "sql": "create fulltext2 index txt on jft(a,b) with parser json_value",
+      "seconds": 0.03145650199985539,
+      "rows": 0,
+      "sample": []
+    },
+    {
+      "kind": "json_fulltext",
+      "epoch": 1791527281.5267596,
+      "query": "rightonly",
+      "ids": [
+        1
+      ],
+      "expected": [
+        1
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "json_fulltext",
+      "epoch": 1791527281.5282433,
+      "query": "leftonly",
+      "ids": [
+        2
+      ],
+      "expected": [
+        2
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "json_fulltext",
+      "epoch": 1791527281.5296652,
+      "query": "+leftboth +rightboth",
+      "ids": [
+        3
+      ],
+      "expected": [
+        3
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "json_fulltext",
+      "epoch": 1791527281.530678,
+      "query": "null",
+      "ids": [],
+      "expected": [],
+      "pass_check": true
+    }
+  ],
+  "filter_controls": [
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.0329785,
+      "on": 0,
+      "table": "vh",
+      "nprobe": 8,
+      "predicate": "where grp=99",
+      "counts": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recall10_mean": 0.04
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.078034,
+      "on": 0,
+      "table": "vh",
+      "nprobe": 8,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recall10_mean": 0.0
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.2740839,
+      "on": 0,
+      "table": "vi",
+      "nprobe": 8,
+      "predicate": "where grp=99",
+      "counts": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "recall10_mean": 0.05
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.3199067,
+      "on": 0,
+      "table": "vi",
+      "nprobe": 8,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        6,
+        2,
+        10,
+        6,
+        10,
+        7,
+        6,
+        6,
+        5,
+        10
+      ],
+      "recall10_mean": 0.11000000000000001
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.7987282,
+      "on": 0,
+      "table": "vi",
+      "nprobe": 128,
+      "predicate": "where grp=99",
+      "counts": [
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recall10_mean": 0.07
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527448.9482763,
+      "on": 0,
+      "table": "vi",
+      "nprobe": 128,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "recall10_mean": 1.0
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.0047178,
+      "on": 1,
+      "table": "vh",
+      "nprobe": 8,
+      "predicate": "where grp=99",
+      "counts": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recall10_mean": 0.04
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.0474942,
+      "on": 1,
+      "table": "vh",
+      "nprobe": 8,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "recall10_mean": 0.0
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.178087,
+      "on": 1,
+      "table": "vi",
+      "nprobe": 8,
+      "predicate": "where grp=99",
+      "counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "recall10_mean": 0.15000000000000002
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.2314997,
+      "on": 1,
+      "table": "vi",
+      "nprobe": 8,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        6,
+        2,
+        10,
+        6,
+        10,
+        7,
+        6,
+        6,
+        5,
+        10
+      ],
+      "recall10_mean": 0.11000000000000001
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.4024072,
+      "on": 1,
+      "table": "vi",
+      "nprobe": 128,
+      "predicate": "where grp=99",
+      "counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "recall10_mean": 1.0
+    },
+    {
+      "kind": "prefilter_control",
+      "epoch": 1791527449.533142,
+      "on": 1,
+      "table": "vi",
+      "nprobe": 128,
+      "predicate": "where id between 1 and 100",
+      "counts": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "recall10_mean": 1.0
+    }
+  ],
+  "topk_boundaries": [
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.086862,
+      "table": "vh",
+      "k": 0,
+      "count": 0,
+      "seconds": 0.0011661589996947441,
+      "unique": 0,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.0887496,
+      "table": "vh",
+      "k": 1,
+      "count": 1,
+      "seconds": 0.0017854779998742742,
+      "unique": 1,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.1101608,
+      "table": "vh",
+      "k": 1000,
+      "count": 1000,
+      "seconds": 0.021211272998698405,
+      "unique": 1000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.1922417,
+      "table": "vh",
+      "k": 10000,
+      "count": 10000,
+      "seconds": 0.0797162170001684,
+      "unique": 10000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.5715468,
+      "table": "vh",
+      "k": 100001,
+      "seconds": 0.3791746469996724,
+      "error": "(3015, 'error: resource exhausted: top spill disk budget exceeded (requested=65536, used=0, limit=1); free spill storage or increase processLimitationSpillSize')"
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.731197,
+      "table": "vc",
+      "k": 0,
+      "count": 0,
+      "seconds": 0.0012463049988582497,
+      "unique": 0,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.7332273,
+      "table": "vc",
+      "k": 1,
+      "count": 1,
+      "seconds": 0.0019438559993432136,
+      "unique": 1,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.7548945,
+      "table": "vc",
+      "k": 1000,
+      "count": 1000,
+      "seconds": 0.021482095999090234,
+      "unique": 1000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527228.8371937,
+      "table": "vc",
+      "k": 10000,
+      "count": 10000,
+      "seconds": 0.0804079779991298,
+      "unique": 10000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.2240043,
+      "table": "vc",
+      "k": 100001,
+      "seconds": 0.38666270799876656,
+      "error": "(3015, 'error: resource exhausted: top spill disk budget exceeded (requested=65536, used=0, limit=1); free spill storage or increase processLimitationSpillSize')"
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.4288366,
+      "table": "vi",
+      "k": 0,
+      "count": 0,
+      "seconds": 0.0018447840011504013,
+      "unique": 0,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.4324129,
+      "table": "vi",
+      "k": 1,
+      "count": 1,
+      "seconds": 0.0034489310000935802,
+      "unique": 1,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.5118284,
+      "table": "vi",
+      "k": 1000,
+      "count": 1000,
+      "seconds": 0.0791692820002936,
+      "unique": 1000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.6318216,
+      "table": "vi",
+      "k": 10000,
+      "count": 10000,
+      "seconds": 0.11878307400002086,
+      "unique": 10000,
+      "scores_sorted": true,
+      "ids_valid": true
+    },
+    {
+      "kind": "limit_boundary",
+      "epoch": 1791527229.852473,
+      "table": "vi",
+      "k": 100001,
+      "seconds": 0.2204844209991279,
+      "error": "(3015, 'error: resource exhausted: top spill disk budget exceeded (requested=65536, used=0, limit=1); free spill storage or increase processLimitationSpillSize')"
+    }
+  ],
+  "fulltext_single_controls": [
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527226.554746,
+      "table": "ft",
+      "query": "+alpha +beta",
+      "seconds": 0.16282909200162976,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527226.6965306,
+      "table": "ft",
+      "query": "quic*",
+      "seconds": 0.14155502399989928,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527226.8216739,
+      "table": "ft",
+      "query": "+quick +fox",
+      "seconds": 0.12494602300102997,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527226.9106457,
+      "table": "ft",
+      "query": "+omega -beta",
+      "seconds": 0.08880775999932666,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.7000756,
+      "table": "ft",
+      "query": "\"quick brown fox\"",
+      "seconds": 0.7892520129989862,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.7110357,
+      "table": "ft2",
+      "query": "+alpha +beta",
+      "seconds": 0.010737493001215626,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.7236838,
+      "table": "ft2",
+      "query": "quic*",
+      "seconds": 0.012475456998799928,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.732164,
+      "table": "ft2",
+      "query": "+quick +fox",
+      "seconds": 0.008335258999068174,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.7378829,
+      "table": "ft2",
+      "query": "+omega -beta",
+      "seconds": 0.005601113000011537,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    },
+    {
+      "kind": "ft_single_control",
+      "epoch": 1791527227.7885454,
+      "table": "ft2",
+      "query": "\"quick brown fox\"",
+      "seconds": 0.050507264999396284,
+      "count": 100,
+      "membership_valid": true,
+      "unique": 100,
+      "finite_scores": true,
+      "scores_sorted": true
+    }
+  ],
+  "quantization": [
+    {
+      "kind": "int8_quantization",
+      "epoch": 1791527284.7857804,
+      "label": "initial",
+      "queries": 10,
+      "nprobe": 128,
+      "recall10_mean": 0.89,
+      "recall10_min": 0.7,
+      "max_score_error": 0.05279033106849784
+    },
+    {
+      "kind": "int8_quantization",
+      "epoch": 1791527288.320918,
+      "label": "after_alter_reindex",
+      "queries": 10,
+      "nprobe": 128,
+      "recall10_mean": 0.9,
+      "recall10_min": 0.7,
+      "max_score_error": 0.054192947569352334
+    }
+  ],
+  "cache_repro": [
+    {
+      "kind": "cache_repro_warm",
+      "epoch": 1791527548.994222,
+      "result": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "kind": "cache_repro_cdc_ready",
+      "epoch": 1791527552.0148268,
+      "wait_seconds": 3.01461592799933,
+      "tail": {
+        "cache_early": 1,
+        "cache_late": 1
+      }
+    },
+    {
+      "kind": "cache_repro_search",
+      "epoch": 1791527552.0359051,
+      "table": "cache_early",
+      "warmed_before_insert": true,
+      "result": [],
+      "expected": [
+        [
+          2
+        ]
+      ],
+      "pass_check": false
+    },
+    {
+      "kind": "cache_repro_search",
+      "epoch": 1791527552.047424,
+      "table": "cache_late",
+      "warmed_before_insert": false,
+      "result": [
+        [
+          2
+        ]
+      ],
+      "expected": [
+        [
+          2
+        ]
+      ],
+      "pass_check": true
+    },
+    {
+      "kind": "sql",
+      "epoch": 1791527552.0714364,
+      "sql": "alter table cache_early alter reindex txt fulltext2 force_sync",
+      "seconds": 0.02388163999967219,
+      "rows": 0,
+      "sample": []
+    },
+    {
+      "kind": "cache_repro_after_rebuild",
+      "epoch": 1791527552.0827062,
+      "result": [
+        [
+          2
+        ]
+      ],
+      "pass_check": true
+    }
+  ],
+  "freshness_cadence_controls": [
+    {
+      "kind": "cadence_cdc_ready",
+      "epoch": 1791528311.706553,
+      "ready": true,
+      "seconds": 9.098440458999903,
+      "tail": 1,
+      "hnsw_watermarks": [
+        [
+          "1791528310874673730-1"
+        ]
+      ]
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528311.7223036,
+      "label": "default_after_durable_cdc",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_override",
+      "epoch": 1791528311.7264645,
+      "result": [
+        [
+          "{\n  \"method\": \"SETVECTORINDEXFRESHNESSINTERVAL\",\n  \"result\": \"applied=[127.0.0.1:18002:1000000000]\"\n}\n"
+        ]
+      ]
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528311.732164,
+      "label": "shortened_cadence",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528312.7379985,
+      "label": "shortened_cadence",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528313.743189,
+      "label": "shortened_cadence",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528314.7480483,
+      "label": "shortened_cadence",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528315.7522967,
+      "label": "shortened_cadence",
+      "fulltext_result": [],
+      "fulltext_new_visible": false,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_control",
+      "epoch": 1791528316.768253,
+      "label": "shortened_cadence",
+      "fulltext_result": [
+        [
+          2
+        ]
+      ],
+      "fulltext_new_visible": true,
+      "hnsw_new_id_visible": true
+    },
+    {
+      "kind": "freshness_convergence",
+      "epoch": 1791528316.7684255,
+      "seconds": 5.041808958998445
+    },
+    {
+      "kind": "freshness_restored",
+      "epoch": 1791528316.7697783,
+      "result": [
+        [
+          "{\n  \"method\": \"SETVECTORINDEXFRESHNESSINTERVAL\",\n  \"result\": \"applied=[127.0.0.1:18002:0]\"\n}\n"
+        ]
+      ]
+    }
+  ],
+  "exact_vector_posting_samples": [
+    {
+      "kind": "vector_posting_ack_sample",
+      "epoch": 1791528109.3925588,
+      "table": "vhm",
+      "sampled": 30,
+      "missing_exact_ack_ids": [
+        1100000228
+      ],
+      "controls": [
+        {
+          "id": 1000000000,
+          "source_id": 1,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1010000084,
+          "source_id": 85,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1020000164,
+          "source_id": 165,
+          "same_source_rows": 16,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1030000251,
+          "source_id": 252,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1040000333,
+          "source_id": 334,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1050000427,
+          "source_id": 428,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1060000514,
+          "source_id": 515,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1080000056,
+          "source_id": 57,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1090000141,
+          "source_id": 142,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1100000228,
+          "source_id": 229,
+          "same_source_rows": 17,
+          "exact_ack_id_found": false
+        },
+        {
+          "id": 1110000322,
+          "source_id": 323,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1120000401,
+          "source_id": 402,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1130000487,
+          "source_id": 488,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1150000025,
+          "source_id": 26,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1200000113,
+          "source_id": 114,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1210000096,
+          "source_id": 97,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1220000085,
+          "source_id": 86,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1230000083,
+          "source_id": 84,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1240000075,
+          "source_id": 76,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1250000059,
+          "source_id": 60,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1260000057,
+          "source_id": 58,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1270000047,
+          "source_id": 48,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1280000045,
+          "source_id": 46,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1290000032,
+          "source_id": 33,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1300000022,
+          "source_id": 23,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1310000014,
+          "source_id": 15,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1320000007,
+          "source_id": 8,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000001,
+          "source_id": 2,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000747,
+          "source_id": 748,
+          "same_source_rows": 7,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1340000727,
+          "source_id": 728,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        }
+      ]
+    },
+    {
+      "kind": "vector_posting_ack_sample",
+      "epoch": 1791528109.763432,
+      "table": "vim",
+      "sampled": 30,
+      "missing_exact_ack_ids": [],
+      "controls": [
+        {
+          "id": 1000000000,
+          "source_id": 1,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1010000084,
+          "source_id": 85,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1020000164,
+          "source_id": 165,
+          "same_source_rows": 16,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1030000251,
+          "source_id": 252,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1040000333,
+          "source_id": 334,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1050000427,
+          "source_id": 428,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1060000514,
+          "source_id": 515,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1080000056,
+          "source_id": 57,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1090000141,
+          "source_id": 142,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1100000228,
+          "source_id": 229,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1110000322,
+          "source_id": 323,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1120000401,
+          "source_id": 402,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1130000487,
+          "source_id": 488,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1150000025,
+          "source_id": 26,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1200000113,
+          "source_id": 114,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1210000096,
+          "source_id": 97,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1220000085,
+          "source_id": 86,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1230000083,
+          "source_id": 84,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1240000075,
+          "source_id": 76,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1250000059,
+          "source_id": 60,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1260000057,
+          "source_id": 58,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1270000047,
+          "source_id": 48,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1280000045,
+          "source_id": 46,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1290000032,
+          "source_id": 33,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1300000022,
+          "source_id": 23,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1310000014,
+          "source_id": 15,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1320000007,
+          "source_id": 8,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000001,
+          "source_id": 2,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000747,
+          "source_id": 748,
+          "same_source_rows": 7,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1340000727,
+          "source_id": 728,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        }
+      ]
+    },
+    {
+      "kind": "vector_posting_ack_sample",
+      "epoch": 1791528320.1474693,
+      "table": "vhm",
+      "sampled": 30,
+      "missing_exact_ack_ids": [],
+      "controls": [
+        {
+          "id": 1000000000,
+          "source_id": 1,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1010000084,
+          "source_id": 85,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1020000164,
+          "source_id": 165,
+          "same_source_rows": 16,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1030000251,
+          "source_id": 252,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1040000333,
+          "source_id": 334,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1050000427,
+          "source_id": 428,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1060000514,
+          "source_id": 515,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1080000056,
+          "source_id": 57,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1090000141,
+          "source_id": 142,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1100000228,
+          "source_id": 229,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1110000322,
+          "source_id": 323,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1120000401,
+          "source_id": 402,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1130000487,
+          "source_id": 488,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1150000025,
+          "source_id": 26,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1200000113,
+          "source_id": 114,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1210000096,
+          "source_id": 97,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1220000085,
+          "source_id": 86,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1230000083,
+          "source_id": 84,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1240000075,
+          "source_id": 76,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1250000059,
+          "source_id": 60,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1260000057,
+          "source_id": 58,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1270000047,
+          "source_id": 48,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1280000045,
+          "source_id": 46,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1290000032,
+          "source_id": 33,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1300000022,
+          "source_id": 23,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1310000014,
+          "source_id": 15,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1320000007,
+          "source_id": 8,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000001,
+          "source_id": 2,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000747,
+          "source_id": 748,
+          "same_source_rows": 7,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1340000727,
+          "source_id": 728,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        }
+      ]
+    },
+    {
+      "kind": "vector_posting_ack_sample",
+      "epoch": 1791528320.387972,
+      "table": "vim",
+      "sampled": 30,
+      "missing_exact_ack_ids": [],
+      "controls": [
+        {
+          "id": 1000000000,
+          "source_id": 1,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1010000084,
+          "source_id": 85,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1020000164,
+          "source_id": 165,
+          "same_source_rows": 16,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1030000251,
+          "source_id": 252,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1040000333,
+          "source_id": 334,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1050000427,
+          "source_id": 428,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1060000514,
+          "source_id": 515,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1080000056,
+          "source_id": 57,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1090000141,
+          "source_id": 142,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1100000228,
+          "source_id": 229,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1110000322,
+          "source_id": 323,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1120000401,
+          "source_id": 402,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1130000487,
+          "source_id": 488,
+          "same_source_rows": 33,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1150000025,
+          "source_id": 26,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1200000113,
+          "source_id": 114,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1210000096,
+          "source_id": 97,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1220000085,
+          "source_id": 86,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1230000083,
+          "source_id": 84,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1240000075,
+          "source_id": 76,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1250000059,
+          "source_id": 60,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1260000057,
+          "source_id": 58,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1270000047,
+          "source_id": 48,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1280000045,
+          "source_id": 46,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1290000032,
+          "source_id": 33,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1300000022,
+          "source_id": 23,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1310000014,
+          "source_id": 15,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1320000007,
+          "source_id": 8,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000001,
+          "source_id": 2,
+          "same_source_rows": 32,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1330000747,
+          "source_id": 748,
+          "same_source_rows": 7,
+          "exact_ack_id_found": true
+        },
+        {
+          "id": 1340000727,
+          "source_id": 728,
+          "same_source_rows": 17,
+          "exact_ack_id_found": true
+        }
+      ]
+    }
+  ],
+  "ack_audits": [
+    {
+      "kind": "ack_audit",
+      "epoch": 1791527379.1113493,
+      "label": "before_crash",
+      "acknowledged": 8735,
+      "ledger": 8735,
+      "missing": 0,
+      "ambiguous_commits": 0
+    },
+    {
+      "kind": "ack_audit",
+      "epoch": 1791527404.196308,
+      "label": "before_crash",
+      "acknowledged": 8735,
+      "ledger": 8735,
+      "missing": 0,
+      "ambiguous_commits": 0
+    },
+    {
+      "kind": "ack_audit",
+      "epoch": 1791527845.7650468,
+      "label": "after_crash",
+      "acknowledged": 18981,
+      "ledger": 18983,
+      "missing": 0,
+      "ambiguous_commits": 2
+    },
+    {
+      "kind": "ack_audit",
+      "epoch": 1791527970.8103168,
+      "label": "after_maintenance",
+      "acknowledged": 18981,
+      "ledger": 18983,
+      "missing": 0,
+      "ambiguous_commits": 2
+    },
+    {
+      "kind": "ack_audit",
+      "epoch": 1791528047.2757113,
+      "label": "after_concurrent_reindex",
+      "acknowledged": 18981,
+      "ledger": 18983,
+      "missing": 0,
+      "ambiguous_commits": 2
+    },
+    {
+      "kind": "ack_audit",
+      "epoch": 1791528320.6090097,
+      "label": "final",
+      "acknowledged": 18981,
+      "ledger": 18983,
+      "missing": 0,
+      "ambiguous_commits": 2
+    }
+  ],
+  "transaction_audits": [
+    {
+      "kind": "transaction_audit",
+      "epoch": 1791527404.3968055,
+      "label": "before_crash",
+      "checks": {
+        "vhm": [
+          [
+            8735,
+            0,
+            0
+          ]
+        ],
+        "vim": [
+          [
+            8735,
+            0,
+            0
+          ]
+        ],
+        "ftm": [
+          [
+            8735,
+            0,
+            0
+          ]
+        ],
+        "ft2m": [
+          [
+            8735,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "transaction_audit",
+      "epoch": 1791527846.05044,
+      "label": "after_crash",
+      "checks": {
+        "vhm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "vim": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ftm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ft2m": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "transaction_audit",
+      "epoch": 1791527971.0636377,
+      "label": "after_maintenance",
+      "checks": {
+        "vhm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "vim": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ftm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ft2m": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "transaction_audit",
+      "epoch": 1791528047.532685,
+      "label": "after_concurrent_reindex",
+      "checks": {
+        "vhm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "vim": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ftm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ft2m": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "transaction_audit",
+      "epoch": 1791528320.9283912,
+      "label": "final",
+      "checks": {
+        "vhm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "vim": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ftm": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ],
+        "ft2m": [
+          [
+            18983,
+            0,
+            0
+          ]
+        ]
+      }
+    }
+  ],
+  "fulltext_dml_visibility": [
+    {
+      "kind": "fulltext_dml_visibility",
+      "epoch": 1791527465.0145283,
+      "label": "before_crash",
+      "observed_wait_seconds": 60.617518021999786,
+      "result": {
+        "ftm": {
+          "found": 8735,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        },
+        "ft2m": {
+          "found": 0,
+          "missing_ledger": 8735,
+          "extra": 0,
+          "pass_check": false
+        }
+      }
+    },
+    {
+      "kind": "fulltext_dml_visibility",
+      "epoch": 1791527906.0689502,
+      "label": "after_crash",
+      "observed_wait_seconds": 60.01825870799985,
+      "result": {
+        "ftm": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        },
+        "ft2m": {
+          "found": 11199,
+          "missing_ledger": 7784,
+          "extra": 0,
+          "pass_check": false
+        }
+      }
+    },
+    {
+      "kind": "fulltext_dml_visibility",
+      "epoch": 1791527971.235282,
+      "label": "after_maintenance",
+      "observed_wait_seconds": 0.17143206899891084,
+      "result": {
+        "ftm": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        },
+        "ft2m": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        }
+      }
+    },
+    {
+      "kind": "fulltext_dml_visibility",
+      "epoch": 1791528047.6512725,
+      "label": "after_concurrent_reindex",
+      "observed_wait_seconds": 0.11837649100016279,
+      "result": {
+        "ftm": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        },
+        "ft2m": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        }
+      }
+    },
+    {
+      "kind": "fulltext_dml_visibility",
+      "epoch": 1791528321.0788887,
+      "label": "final",
+      "observed_wait_seconds": 0.15022966200012888,
+      "result": {
+        "ftm": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        },
+        "ft2m": {
+          "found": 18983,
+          "missing_ledger": 0,
+          "extra": 0,
+          "pass_check": true
+        }
+      }
+    }
+  ],
+  "vector_dml_visibility": [
+    {
+      "kind": "vector_dml_visibility",
+      "epoch": 1791527465.5526636,
+      "label": "before_crash",
+      "result": {
+        "vhm": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        },
+        "vim": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        }
+      }
+    },
+    {
+      "kind": "vector_dml_visibility",
+      "epoch": 1791527906.306432,
+      "label": "after_crash",
+      "result": {
+        "vhm": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        },
+        "vim": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        }
+      }
+    },
+    {
+      "kind": "vector_dml_visibility",
+      "epoch": 1791527971.5121367,
+      "label": "after_maintenance",
+      "result": {
+        "vhm": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        },
+        "vim": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        }
+      }
+    },
+    {
+      "kind": "vector_dml_visibility",
+      "epoch": 1791528047.8235,
+      "label": "after_concurrent_reindex",
+      "result": {
+        "vhm": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        },
+        "vim": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        }
+      }
+    },
+    {
+      "kind": "vector_dml_visibility",
+      "epoch": 1791528321.2369015,
+      "label": "final",
+      "result": {
+        "vhm": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        },
+        "vim": {
+          "sampled": 20,
+          "distance_zero_misses": []
+        }
+      }
+    }
+  ],
+  "delete_update_visibility": [
+    {
+      "kind": "delete_update_visibility",
+      "epoch": 1791527967.44707,
+      "seconds": 60.78989083799934,
+      "result": {
+        "ftm": {
+          "changed_count": 100,
+          "original_count": 800,
+          "pass_check": true
+        },
+        "ft2m": {
+          "changed_count": 0,
+          "original_count": 900,
+          "pass_check": false
+        }
+      }
+    }
+  ],
+  "delete_update_after_rebuild": [
+    {
+      "kind": "delete_update_after_rebuild",
+      "epoch": 1791527970.7203271,
+      "result": {
+        "ftm": {
+          "changed_count": 100,
+          "original_count": 800,
+          "pass_check": true
+        },
+        "ft2m": {
+          "changed_count": 100,
+          "original_count": 800,
+          "pass_check": true
+        }
+      }
+    }
+  ],
+  "server_logs": {
+    "server-before-crash.log": {
+      "error_messages": {
+        "query trace status": 388,
+        "internal sql executor error": 298,
+        "error: internal error: context cancelled": 296,
+        "internal error: context cancelled": 296,
+        "HandShake error": 40,
+        "context canceled": 34,
+        "error: internal error: iscp job consumer canceled": 9,
+        "error: invalid input: expected vector dimension 3 != actual dimension 2.": 8,
+        "invalid input: expected vector dimension 3 != actual dimension 2.": 8,
+        "error: internal error: l2 distance: vector magnitude is too large, the result overflows the element domain": 8,
+        "error: SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. S": 6,
+        "error: invalid state no CN in the cluster": 5,
+        "query cron tasks failed": 4,
+        "query sql tasks failed": 4,
+        "upload files success": 4,
+        "mo.table.stats.task": 4,
+        "error: invalid input: expected vector dimension 3 != actual dimension 4.": 4,
+        "invalid input: expected vector dimension 3 != actual dimension 4.": 4,
+        "error: internal error: vector element cannot be NaN or Inf: NaN": 4,
+        "internal error: vector element cannot be NaN or Inf: NaN": 4,
+        "error: internal error: vector element cannot be NaN or Inf: +Inf": 4,
+        "internal error: vector element cannot be NaN or Inf: +Inf": 4,
+        "error: internal error: error while casting 1e100 to FLOAT": 4,
+        "internal error: error while casting 1e100 to FLOAT": 4,
+        "internal error: l2 distance: vector magnitude is too large, the result overflows the element domain": 4
+      },
+      "panic_lines": []
+    },
+    "server.log": {
+      "error_messages": {
+        "HandShake error": 73,
+        "failed to get tn shard ID": 8,
+        "failed to query tasks": 6,
+        "error: invalid state no CN in the cluster": 6,
+        "internal sql executor error": 4,
+        "ISCP-Task flush watermark failed": 4,
+        "error: dn shard uuid , id 2 not reported": 3,
+        "query cron tasks failed": 3,
+        "query sql tasks failed": 3,
+        "taskservice.holder.refresh.failed": 3,
+        "init remote connection failed, retry later": 2,
+        "connect to remote failed": 2,
+        "task service is nil": 2,
+        "upload files success": 2,
+        "ISCP-Task UnregisterJob": 2,
+        "error: file hk_data is not found": 1,
+        "initial cluster info already set": 1,
+        "Wal-Replay-Truncate-Loop": 1
+      },
+      "panic_lines": []
+    }
+  },
+  "resource_peak": {
+    "server_rss_gib": 4.924007415771484,
+    "cgroup_memory_gib": 10.718013763427734,
+    "disk_free_min_gib": 10.822925567626953,
+    "goroutines": 2270.0,
+    "resource_guard_triggered": false,
+    "memory_events_last": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "crash_recovery": {
+    "method": "SIGKILL during 16 cross-index transaction writers and 16 vector/fulltext readers",
+    "cut_epoch": 1791527642.8658812,
+    "old_pid": 18199,
+    "new_pid": 25792,
+    "acknowledged_at_cut": 11306,
+    "ready_epoch": 1791527678.0129921,
+    "readiness_seconds": 35.14711141586304,
+    "lock_wait_seconds": 0.2172837257385254,
+    "lock_errors": [
+      {
+        "errno": 11,
+        "error": "[Errno 11] Resource temporarily unavailable"
+      },
+      {
+        "errno": 11,
+        "error": "[Errno 11] Resource temporarily unavailable"
+      }
+    ],
+    "ready": true
+  }
+}

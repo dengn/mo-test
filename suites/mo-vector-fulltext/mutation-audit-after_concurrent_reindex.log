@@ -1,0 +1,4 @@
+{"kind": "ack_audit", "epoch": 1791528047.2757113, "label": "after_concurrent_reindex", "acknowledged": 18981, "ledger": 18983, "missing": 0, "ambiguous_commits": 2}
+{"kind": "transaction_audit", "epoch": 1791528047.532685, "label": "after_concurrent_reindex", "checks": {"vhm": [[18983, 0, 0]], "vim": [[18983, 0, 0]], "ftm": [[18983, 0, 0]], "ft2m": [[18983, 0, 0]]}}
+{"kind": "fulltext_dml_visibility", "epoch": 1791528047.6512725, "label": "after_concurrent_reindex", "observed_wait_seconds": 0.11837649100016279, "result": {"ftm": {"found": 18983, "missing_ledger": 0, "extra": 0, "pass_check": true}, "ft2m": {"found": 18983, "missing_ledger": 0, "extra": 0, "pass_check": true}}}
+{"kind": "vector_dml_visibility", "epoch": 1791528047.8235, "label": "after_concurrent_reindex", "result": {"vhm": {"sampled": 20, "distance_zero_misses": []}, "vim": {"sampled": 20, "distance_zero_misses": []}}}

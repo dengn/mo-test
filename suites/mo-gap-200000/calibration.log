@@ -1,0 +1,46 @@
+module constraints 100 workers 4
+module done constraints {'pass_expected_rejection': 50, 'pass': 50}
+module joins_ctes 180 workers 32
+module done joins_ctes {'pass_expected_rejection': 50, 'pass': 230}
+module windows_sets 200 workers 32
+module done windows_sets {'pass_expected_rejection': 50, 'pass': 430}
+module mixed_types 248 workers 32
+Traceback (most recent call last):
+  File "/workspace/mo-gap-200000/runner.py", line 81, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/mo-gap-200000/runner.py", line 75, in main
+    for r in ex.map(runone,batch):
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gap-200000/runner.py", line 54, in runone
+    if policy=='normal':return base.runone(case)
+                               ^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-cases-50000/runner.py", line 118, in runone
+    result={'id':case['id'],'module':case['module'],'family':case['family'],'status':status,'seconds':round(time.monotonic()-t,6),'mo_error':ae,'mysql_error':be,'retries':retries,'initial_error':first_error if retries else None,'mo_rows':len(a) if a is not None else None,'mysql_rows':len(b) if b is not None else None,'mo_result_sha256':hashlib.sha256(json.dumps(norm(a),ensure_ascii=False,sort_keys=True).encode()).hexdigest()}
+                                                                                                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type timedelta is not JSON serializable

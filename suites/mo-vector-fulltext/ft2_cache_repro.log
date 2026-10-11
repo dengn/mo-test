@@ -1,0 +1,6 @@
+{"kind": "cache_repro_warm", "epoch": 1791527548.994222, "result": [[1]]}
+{"kind": "cache_repro_cdc_ready", "epoch": 1791527552.0148268, "wait_seconds": 3.01461592799933, "tail": {"cache_early": 1, "cache_late": 1}}
+{"kind": "cache_repro_search", "epoch": 1791527552.0359051, "table": "cache_early", "warmed_before_insert": true, "result": [], "expected": [[2]], "pass_check": false}
+{"kind": "cache_repro_search", "epoch": 1791527552.047424, "table": "cache_late", "warmed_before_insert": false, "result": [[2]], "expected": [[2]], "pass_check": true}
+{"kind": "sql", "epoch": 1791527552.0714364, "sql": "alter table cache_early alter reindex txt fulltext2 force_sync", "seconds": 0.02388163999967219, "rows": 0, "sample": []}
+{"kind": "cache_repro_after_rebuild", "epoch": 1791527552.0827062, "result": [[2]], "pass_check": true}

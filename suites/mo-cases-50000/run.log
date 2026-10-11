@@ -1,0 +1,135 @@
+module numeric cases 5000 workers 12
+{"completed": 500, "counts": {"pass": 500}, "elapsed": 1.06}
+{"completed": 1000, "counts": {"pass": 999, "candidate_wrong_result": 1}, "elapsed": 1.72}
+{"completed": 1500, "counts": {"pass": 1499, "candidate_wrong_result": 1}, "elapsed": 2.11}
+{"completed": 2000, "counts": {"pass": 1996, "candidate_wrong_result": 4}, "elapsed": 2.45}
+{"completed": 2500, "counts": {"pass": 2495, "candidate_wrong_result": 5}, "elapsed": 2.79}
+{"completed": 3000, "counts": {"pass": 2995, "candidate_wrong_result": 5}, "elapsed": 3.18}
+{"completed": 3500, "counts": {"pass": 3494, "candidate_wrong_result": 6}, "elapsed": 3.54}
+{"completed": 4000, "counts": {"pass": 3994, "candidate_wrong_result": 6}, "elapsed": 3.93}
+{"completed": 4500, "counts": {"pass": 4494, "candidate_wrong_result": 6}, "elapsed": 4.36}
+{"completed": 5000, "counts": {"pass": 4993, "candidate_wrong_result": 7}, "elapsed": 4.72}
+module done numeric {'pass': 4993, 'candidate_wrong_result': 7}
+module strings cases 7000 workers 12
+{"completed": 5500, "counts": {"pass": 5493, "candidate_wrong_result": 7}, "elapsed": 5.47}
+{"completed": 6000, "counts": {"pass": 5993, "candidate_wrong_result": 7}, "elapsed": 5.81}
+{"completed": 6500, "counts": {"pass": 6493, "candidate_wrong_result": 7}, "elapsed": 6.15}
+{"completed": 7000, "counts": {"pass": 6993, "candidate_wrong_result": 7}, "elapsed": 6.54}
+{"completed": 7500, "counts": {"pass": 7493, "candidate_wrong_result": 7}, "elapsed": 6.8}
+{"completed": 8000, "counts": {"pass": 7993, "candidate_wrong_result": 7}, "elapsed": 7.06}
+{"completed": 8500, "counts": {"pass": 8493, "candidate_wrong_result": 7}, "elapsed": 7.37}
+{"completed": 9000, "counts": {"pass": 8993, "candidate_wrong_result": 7}, "elapsed": 7.6}
+{"completed": 9500, "counts": {"pass": 9493, "candidate_wrong_result": 7}, "elapsed": 7.83}
+{"completed": 10000, "counts": {"pass": 9993, "candidate_wrong_result": 7}, "elapsed": 8.08}
+{"completed": 10500, "counts": {"pass": 10493, "candidate_wrong_result": 7}, "elapsed": 8.35}
+{"completed": 11000, "counts": {"pass": 10993, "candidate_wrong_result": 7}, "elapsed": 8.6}
+{"completed": 11500, "counts": {"pass": 11493, "candidate_wrong_result": 7}, "elapsed": 8.9}
+{"completed": 12000, "counts": {"pass": 11993, "candidate_wrong_result": 7}, "elapsed": 9.33}
+module done strings {'pass': 11993, 'candidate_wrong_result': 7}
+module types cases 5000 workers 12
+{"completed": 12500, "counts": {"pass": 12493, "candidate_wrong_result": 7}, "elapsed": 10.29}
+{"completed": 13000, "counts": {"pass": 12993, "candidate_wrong_result": 7}, "elapsed": 10.91}
+{"completed": 13500, "counts": {"pass": 13493, "candidate_wrong_result": 7}, "elapsed": 11.48}
+{"completed": 14000, "counts": {"pass": 13993, "candidate_wrong_result": 7}, "elapsed": 11.85}
+{"completed": 14500, "counts": {"pass": 14493, "candidate_wrong_result": 7}, "elapsed": 12.26}
+{"completed": 15000, "counts": {"pass": 14993, "candidate_wrong_result": 7}, "elapsed": 12.6}
+{"completed": 15500, "counts": {"pass": 15493, "candidate_wrong_result": 7}, "elapsed": 12.95}
+{"completed": 16000, "counts": {"pass": 15993, "candidate_wrong_result": 7}, "elapsed": 13.32}
+{"completed": 16500, "counts": {"pass": 16493, "candidate_wrong_result": 7}, "elapsed": 13.85}
+{"completed": 17000, "counts": {"pass": 16993, "candidate_wrong_result": 7}, "elapsed": 14.29}
+module done types {'pass': 16993, 'candidate_wrong_result': 7}
+module dates cases 3000 workers 12
+{"completed": 17500, "counts": {"pass": 17493, "candidate_wrong_result": 7}, "elapsed": 15.07}
+{"completed": 18000, "counts": {"pass": 17993, "candidate_wrong_result": 7}, "elapsed": 15.48}
+{"completed": 18500, "counts": {"pass": 18493, "candidate_wrong_result": 7}, "elapsed": 15.83}
+{"completed": 19000, "counts": {"pass": 18993, "candidate_wrong_result": 7}, "elapsed": 16.26}
+{"completed": 19500, "counts": {"pass": 19493, "candidate_wrong_result": 7}, "elapsed": 16.75}
+{"completed": 20000, "counts": {"pass": 19993, "candidate_wrong_result": 7}, "elapsed": 17.38}
+module done dates {'pass': 19993, 'candidate_wrong_result': 7}
+module relational cases 10000 workers 12
+{"completed": 20500, "counts": {"pass": 20493, "candidate_wrong_result": 7}, "elapsed": 18.66}
+{"completed": 21000, "counts": {"pass": 20993, "candidate_wrong_result": 7}, "elapsed": 19.12}
+{"completed": 21500, "counts": {"pass": 21493, "candidate_wrong_result": 7}, "elapsed": 19.66}
+{"completed": 22000, "counts": {"pass": 21993, "candidate_wrong_result": 7}, "elapsed": 20.15}
+{"completed": 22500, "counts": {"pass": 22493, "candidate_wrong_result": 7}, "elapsed": 20.59}
+{"completed": 23000, "counts": {"pass": 22993, "candidate_wrong_result": 7}, "elapsed": 21.14}
+{"completed": 23500, "counts": {"pass": 23493, "candidate_wrong_result": 7}, "elapsed": 22.81}
+{"completed": 24000, "counts": {"pass": 23993, "candidate_wrong_result": 7}, "elapsed": 23.71}
+{"completed": 24500, "counts": {"pass": 24493, "candidate_wrong_result": 7}, "elapsed": 24.59}
+{"completed": 25000, "counts": {"pass": 24993, "candidate_wrong_result": 7}, "elapsed": 25.42}
+{"completed": 25500, "counts": {"pass": 25493, "candidate_wrong_result": 7}, "elapsed": 25.96}
+{"completed": 26000, "counts": {"pass": 25993, "candidate_wrong_result": 7}, "elapsed": 26.69}
+{"completed": 26500, "counts": {"pass": 26493, "candidate_wrong_result": 7}, "elapsed": 27.41}
+{"completed": 27000, "counts": {"pass": 26993, "candidate_wrong_result": 7}, "elapsed": 28.15}
+{"completed": 27500, "counts": {"pass": 27493, "candidate_wrong_result": 7}, "elapsed": 28.86}
+{"completed": 28000, "counts": {"pass": 27993, "candidate_wrong_result": 7}, "elapsed": 29.51}
+{"completed": 28500, "counts": {"pass": 28493, "candidate_wrong_result": 7}, "elapsed": 30.35}
+{"completed": 29000, "counts": {"pass": 28993, "candidate_wrong_result": 7}, "elapsed": 30.79}
+{"completed": 29500, "counts": {"pass": 29493, "candidate_wrong_result": 7}, "elapsed": 31.24}
+{"completed": 30000, "counts": {"pass": 29993, "candidate_wrong_result": 7}, "elapsed": 31.76}
+module done relational {'pass': 29993, 'candidate_wrong_result': 7}
+module json cases 4000 workers 12
+{"completed": 30500, "counts": {"pass": 30493, "candidate_wrong_result": 7}, "elapsed": 32.35}
+{"completed": 31000, "counts": {"pass": 30993, "candidate_wrong_result": 7}, "elapsed": 32.59}
+{"completed": 31500, "counts": {"pass": 31493, "candidate_wrong_result": 7}, "elapsed": 32.84}
+{"completed": 32000, "counts": {"pass": 31993, "candidate_wrong_result": 7}, "elapsed": 33.16}
+{"completed": 32500, "counts": {"pass": 32493, "candidate_wrong_result": 7}, "elapsed": 33.71}
+{"completed": 33000, "counts": {"pass": 32993, "candidate_wrong_result": 7}, "elapsed": 34.11}
+{"completed": 33500, "counts": {"pass": 33493, "candidate_wrong_result": 7}, "elapsed": 34.9}
+{"completed": 34000, "counts": {"pass": 33993, "candidate_wrong_result": 7}, "elapsed": 35.69}
+module done json {'pass': 33993, 'candidate_wrong_result': 7}
+module vectors cases 6000 workers 12
+{"completed": 34500, "counts": {"pass": 34467, "candidate_wrong_result": 7, "pass_expected_error": 26}, "elapsed": 36.22}
+{"completed": 35000, "counts": {"pass": 34942, "candidate_wrong_result": 7, "pass_expected_error": 51}, "elapsed": 36.51}
+{"completed": 35500, "counts": {"pass": 35417, "candidate_wrong_result": 7, "pass_expected_error": 76}, "elapsed": 36.78}
+{"completed": 36000, "counts": {"pass": 35893, "candidate_wrong_result": 7, "pass_expected_error": 100}, "elapsed": 37.22}
+{"completed": 36500, "counts": {"pass": 36368, "candidate_wrong_result": 7, "pass_expected_error": 125}, "elapsed": 37.48}
+{"completed": 37000, "counts": {"pass": 36843, "candidate_wrong_result": 7, "pass_expected_error": 150}, "elapsed": 37.73}
+{"completed": 37500, "counts": {"pass": 37319, "candidate_wrong_result": 7, "pass_expected_error": 174}, "elapsed": 37.99}
+{"completed": 38000, "counts": {"pass": 37794, "candidate_wrong_result": 7, "pass_expected_error": 199}, "elapsed": 38.28}
+{"completed": 38500, "counts": {"pass": 38272, "candidate_wrong_result": 7, "pass_expected_error": 221}, "elapsed": 38.56}
+{"completed": 39000, "counts": {"pass": 38747, "candidate_wrong_result": 7, "pass_expected_error": 246}, "elapsed": 38.9}
+{"completed": 39500, "counts": {"pass": 39222, "candidate_wrong_result": 7, "pass_expected_error": 271}, "elapsed": 39.17}
+{"completed": 40000, "counts": {"pass": 39697, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 39.34}
+module done vectors {'pass': 39697, 'candidate_wrong_result': 7, 'pass_expected_error': 296}
+module fulltext cases 4000 workers 12
+{"completed": 40500, "counts": {"pass": 40197, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 42.4}
+{"completed": 41000, "counts": {"pass": 40697, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 43.29}
+{"completed": 41500, "counts": {"pass": 41197, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 44.17}
+{"completed": 42000, "counts": {"pass": 41697, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 44.97}
+{"completed": 42500, "counts": {"pass": 42197, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 46.6}
+{"completed": 43000, "counts": {"pass": 42697, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 48.29}
+{"completed": 43500, "counts": {"pass": 43197, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 49.79}
+{"completed": 44000, "counts": {"pass": 43697, "candidate_wrong_result": 7, "pass_expected_error": 296}, "elapsed": 51.32}
+module done fulltext {'pass': 43697, 'candidate_wrong_result': 7, 'pass_expected_error': 296}
+module ddl_transactions cases 3500 workers 4
+{"completed": 44241, "counts": {"pass": 43937, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 1}, "elapsed": 66.33}
+{"completed": 44500, "counts": {"pass": 44196, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 1}, "elapsed": 80.43}
+{"completed": 44757, "counts": {"pass": 44453, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 1}, "elapsed": 95.56}
+{"completed": 44981, "counts": {"pass": 44676, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 2}, "elapsed": 110.67}
+{"completed": 45000, "counts": {"pass": 44695, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 2}, "elapsed": 112.05}
+{"completed": 45251, "counts": {"pass": 44945, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 3}, "elapsed": 127.06}
+{"completed": 45490, "counts": {"pass": 45184, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 3}, "elapsed": 142.08}
+{"completed": 45500, "counts": {"pass": 45194, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 3}, "elapsed": 143.13}
+{"completed": 45635, "counts": {"pass": 45329, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 3}, "elapsed": 158.21}
+{"completed": 45730, "counts": {"pass": 45424, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 3}, "elapsed": 173.55}
+{"completed": 45893, "counts": {"pass": 45586, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 4}, "elapsed": 188.71}
+{"completed": 46000, "counts": {"pass": 45692, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 5}, "elapsed": 197.77}
+{"completed": 46160, "counts": {"pass": 45852, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 5}, "elapsed": 212.85}
+{"completed": 46356, "counts": {"pass": 46047, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 6}, "elapsed": 227.94}
+{"completed": 46500, "counts": {"pass": 46188, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 9}, "elapsed": 239.7}
+{"completed": 46710, "counts": {"pass": 46398, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 9}, "elapsed": 254.79}
+{"completed": 46972, "counts": {"pass": 46659, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 10}, "elapsed": 269.8}
+{"completed": 47000, "counts": {"pass": 46687, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 10}, "elapsed": 271.63}
+{"completed": 47213, "counts": {"pass": 46899, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 11}, "elapsed": 286.64}
+{"completed": 47477, "counts": {"pass": 47162, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 12}, "elapsed": 301.65}
+{"completed": 47500, "counts": {"pass": 47185, "candidate_wrong_result": 7, "pass_expected_error": 296, "mo_execution_error": 12}, "elapsed": 303.66}
+module done ddl_transactions {'pass': 47185, 'candidate_wrong_result': 7, 'pass_expected_error': 296, 'mo_execution_error': 12}
+module compatibility cases 2500 workers 12
+{"completed": 48000, "counts": {"pass": 47513, "candidate_wrong_result": 12, "pass_expected_error": 296, "mo_execution_error": 112, "both_rejected": 58, "reference_rejected": 9}, "elapsed": 304.77}
+{"completed": 48500, "counts": {"pass": 47960, "candidate_wrong_result": 24, "pass_expected_error": 296, "mo_execution_error": 150, "both_rejected": 61, "reference_rejected": 9}, "elapsed": 305.33}
+{"completed": 49000, "counts": {"pass": 48460, "candidate_wrong_result": 24, "pass_expected_error": 296, "mo_execution_error": 150, "both_rejected": 61, "reference_rejected": 9}, "elapsed": 305.67}
+{"completed": 49500, "counts": {"pass": 48960, "candidate_wrong_result": 24, "pass_expected_error": 296, "mo_execution_error": 150, "both_rejected": 61, "reference_rejected": 9}, "elapsed": 306.05}
+{"completed": 50000, "counts": {"pass": 49460, "candidate_wrong_result": 24, "pass_expected_error": 296, "mo_execution_error": 150, "both_rejected": 61, "reference_rejected": 9}, "elapsed": 306.75}
+module done compatibility {'pass': 49460, 'candidate_wrong_result': 24, 'pass_expected_error': 296, 'mo_execution_error': 150, 'both_rejected': 61, 'reference_rejected': 9}
+DONE 50000 {'pass': 49460, 'candidate_wrong_result': 24, 'pass_expected_error': 296, 'mo_execution_error': 150, 'both_rejected': 61, 'reference_rejected': 9} seconds 306.81547355651855

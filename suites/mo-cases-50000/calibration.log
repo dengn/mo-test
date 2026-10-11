@@ -1,0 +1,23 @@
+module numeric cases 160 workers 8
+module done numeric {'pass': 160}
+module strings cases 180 workers 8
+module done strings {'pass': 340}
+module types cases 120 workers 8
+module done types {'pass': 457, 'candidate_wrong_result': 3}
+module dates cases 100 workers 8
+{"completed": 500, "counts": {"pass": 497, "candidate_wrong_result": 3}, "elapsed": 1.37}
+module done dates {'pass': 557, 'candidate_wrong_result': 3}
+module relational cases 160 workers 8
+module done relational {'pass': 717, 'candidate_wrong_result': 3}
+module json cases 120 workers 8
+module done json {'pass': 837, 'candidate_wrong_result': 3}
+module vectors cases 150 workers 8
+module done vectors {'pass': 967, 'candidate_wrong_result': 13, 'pass_expected_error': 9, 'candidate_missing_error': 1}
+module fulltext cases 100 workers 8
+{"completed": 1000, "counts": {"pass": 977, "candidate_wrong_result": 13, "pass_expected_error": 9, "candidate_missing_error": 1}, "elapsed": 2.62}
+module done fulltext {'pass': 1067, 'candidate_wrong_result': 13, 'pass_expected_error': 9, 'candidate_missing_error': 1}
+module ddl_transactions cases 100 workers 4
+module done ddl_transactions {'pass': 1161, 'candidate_wrong_result': 13, 'pass_expected_error': 9, 'candidate_missing_error': 1, 'mo_execution_error': 6}
+module compatibility cases 110 workers 8
+module done compatibility {'pass': 1271, 'candidate_wrong_result': 13, 'pass_expected_error': 9, 'candidate_missing_error': 1, 'mo_execution_error': 6}
+DONE 1300 {'pass': 1271, 'candidate_wrong_result': 13, 'pass_expected_error': 9, 'candidate_missing_error': 1, 'mo_execution_error': 6} seconds 8.03645944595337

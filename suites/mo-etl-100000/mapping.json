@@ -1,0 +1,198 @@
+{
+  "ingest.native_csv_load": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-table",
+    "implementation": "Server LOAD DATA INFILE on real local CSV; independent Python CSV oracle"
+  },
+  "ingest.varchar_numeric_unicode": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.json_payload_types": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.utf8_encoding": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.quoted_delimiters": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.missing_fields": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.decimal_precision": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.null_literal_preserved": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "ingest.typed_batch_consistency": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Parameterized batch ingest of connector-shaped records; no live Fivetran connector"
+  },
+  "transform.staging_cast": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.delete_filter": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.json_flatten": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.json_array_to_rows": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.date_normalization": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.null_handling": {
+    "source": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "implementation": "SQL equivalent"
+  },
+  "transform.dimension_join": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.warehouse_aggregate": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.qualify_rewrite": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.not_null_test": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.unique_test": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.accepted_values_test": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.relationships_test": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.watermark_predicate": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.incremental_model_query": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.row_hash": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.whitespace_cleaning": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.schema_drift_json": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.moving_model": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "transform.full_refresh_equivalence": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "implementation": "SQL equivalent"
+  },
+  "incremental.duplicate_delivery_idempotent": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.out_of_order_lww": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.soft_delete_propagation": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.hard_delete_propagation": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.resurrection": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.failed_batch_rollback": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.atomic_batch_commit": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.watermark_gap": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.retry_unchanged": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "incremental.partial_update_preserves_columns": {
+    "source": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "implementation": "Explicit SQL LWW watermark and transaction policy; no vendor MERGE syntax assumed"
+  },
+  "snapshot.scd2_change": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "implementation": "SCD2 history SQL matching dbt snapshot semantics; no dbt adapter invocation"
+  },
+  "snapshot.snapshot_unchanged": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "implementation": "SCD2 history SQL matching dbt snapshot semantics; no dbt adapter invocation"
+  },
+  "snapshot.snapshot_delete": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "implementation": "SCD2 history SQL matching dbt snapshot semantics; no dbt adapter invocation"
+  },
+  "snapshot.point_in_time": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "implementation": "SCD2 history SQL matching dbt snapshot semantics; no dbt adapter invocation"
+  },
+  "snapshot.no_overlapping_validity": {
+    "source": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "implementation": "SCD2 history SQL matching dbt snapshot semantics; no dbt adapter invocation"
+  },
+  "export.native_csv_unload": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "implementation": "Real INTO OUTFILE CSV / JSONLINE / PARQUET"
+  },
+  "export.native_jsonline_unload": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "implementation": "Real INTO OUTFILE CSV / JSONLINE / PARQUET"
+  },
+  "export.native_parquet_unload": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "implementation": "Real INTO OUTFILE CSV / JSONLINE / PARQUET"
+  },
+  "export.client_json_roundtrip": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "implementation": "Application export of real query result and independent parser roundtrip"
+  },
+  "export.client_csv_roundtrip": {
+    "source": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "implementation": "Application export of real query result and independent parser roundtrip"
+  }
+}

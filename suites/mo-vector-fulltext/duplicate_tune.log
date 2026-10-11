@@ -1,0 +1,5 @@
+{"kind": "sql", "epoch": 1791528319.6381154, "sql": "alter table vhm alter reindex ann hnsw m=32 ef_construction=200 ef_search=1000 force_sync", "seconds": 2.6998196949989506, "rows": 0, "sample": []}
+{"kind": "duplicate_ann_control", "epoch": 1791528319.7796566, "label": "tuned_mutable", "table": "vhm", "id": 1100000228, "source_id": 229, "k": 10, "found": true, "distance_zero_rows": 10, "same_source_rows": 17}
+{"kind": "duplicate_ann_control", "epoch": 1791528319.7853353, "label": "tuned_mutable", "table": "vhm", "id": 1100000228, "source_id": 229, "k": 64, "found": true, "distance_zero_rows": 17, "same_source_rows": 17}
+{"kind": "duplicate_ann_control", "epoch": 1791528319.7904053, "label": "tuned_mutable", "table": "vhm", "id": 1100000228, "source_id": 229, "k": 128, "found": true, "distance_zero_rows": 17, "same_source_rows": 17}
+{"kind": "duplicate_ann_control", "epoch": 1791528319.7958033, "label": "tuned_mutable", "table": "vhm", "id": 1100000228, "source_id": 229, "k": 256, "found": true, "distance_zero_rows": 17, "same_source_rows": 17}

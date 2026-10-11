@@ -1,0 +1,196 @@
+{
+  "ddl_cases": [
+    {
+      "id": "R001",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "error": null,
+      "seconds": 7.132947595004225
+    },
+    {
+      "id": "R002",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "error": null,
+      "seconds": 1.4384190330165438
+    },
+    {
+      "id": "R003",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "error": null,
+      "seconds": 0.7631623329943977
+    },
+    {
+      "id": "R004",
+      "sql": "create index ridx_3 on race_h(n)",
+      "error": null,
+      "seconds": 12.19897317700088
+    },
+    {
+      "id": "R005",
+      "sql": "create index ridx_4 on race_ft(n)",
+      "error": null,
+      "seconds": 2.4409050319809467
+    },
+    {
+      "id": "R006",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "error": null,
+      "seconds": 8.94829357197159
+    },
+    {
+      "id": "R007",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "error": null,
+      "seconds": 6.837063265993493
+    },
+    {
+      "id": "R008",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "error": null,
+      "seconds": 1.6005319940159097
+    },
+    {
+      "id": "R009",
+      "sql": "create index ridx_8 on race_h(n)",
+      "error": null,
+      "seconds": 11.983915504009929
+    },
+    {
+      "id": "R010",
+      "sql": "create index ridx_9 on race_ft(n)",
+      "error": null,
+      "seconds": 5.020240398007445
+    },
+    {
+      "id": "R011",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "error": "(1146, 'no such table suite50_1791642084.__mo_index_secondary_01a127f5-a6f3-7253-8243-4948402df4f8')",
+      "seconds": 10.455260108981747
+    },
+    {
+      "id": "R012",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "error": null,
+      "seconds": 8.45094860100653
+    },
+    {
+      "id": "R013",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "error": null,
+      "seconds": 1.9708387129940093
+    },
+    {
+      "id": "R014",
+      "sql": "create index ridx_13 on race_h(n)",
+      "error": null,
+      "seconds": 10.31833019698388
+    },
+    {
+      "id": "R015",
+      "sql": "create index ridx_14 on race_ft(n)",
+      "error": null,
+      "seconds": 4.5301153309992515
+    },
+    {
+      "id": "R016",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "error": "(1146, 'no such table suite50_1791642084.__mo_index_secondary_01a127f5-a6f3-7253-8243-4948402df4f8')",
+      "seconds": 6.121311588998651
+    },
+    {
+      "id": "R017",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "error": null,
+      "seconds": 4.114349207986379
+    },
+    {
+      "id": "R018",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "error": null,
+      "seconds": 0.2770986219984479
+    },
+    {
+      "id": "R019",
+      "sql": "create index ridx_18 on race_h(n)",
+      "error": null,
+      "seconds": 7.4176918779849075
+    },
+    {
+      "id": "R020",
+      "sql": "create index ridx_19 on race_ft(n)",
+      "error": null,
+      "seconds": 4.835607007989893
+    },
+    {
+      "id": "R021",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "error": "(1146, 'no such table suite50_1791642084.__mo_index_secondary_01a127f5-a6f3-7253-8243-4948402df4f8')",
+      "seconds": 5.445435166009702
+    },
+    {
+      "id": "R022",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "error": null,
+      "seconds": 5.448421328008408
+    },
+    {
+      "id": "R023",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "error": null,
+      "seconds": 2.6223626229912043
+    },
+    {
+      "id": "R024",
+      "sql": "create index ridx_23 on race_h(n)",
+      "error": "(1062, \"Duplicate entry '01a127f5-af93-7c78-a043-00e54b928160-0-0-18' for key '__mo_%1_delete_rowid'\")",
+      "seconds": 3.342181244981475
+    },
+    {
+      "id": "R025",
+      "sql": "create index ridx_24 on race_ft(n)",
+      "error": null,
+      "seconds": 4.551078802003758
+    }
+  ],
+  "concurrency": 32,
+  "acknowledged_writes": 153,
+  "missing": [],
+  "corrupt": [],
+  "client_errors": {
+    "write:1146": 400
+  },
+  "source_counts": {
+    "race_h": [
+      [
+        526
+      ]
+    ],
+    "race_i": [
+      [
+        526
+      ]
+    ],
+    "race_ft": [
+      [
+        543
+      ]
+    ],
+    "race_ft2": [
+      [
+        558
+      ]
+    ]
+  },
+  "fulltext_counts": {
+    "race_ft": [
+      [
+        543
+      ]
+    ],
+    "race_ft2": [
+      [
+        520
+      ]
+    ]
+  },
+  "ft2_visibility_note": "Post-index DML is asynchronous; a stale FT2 query snapshot is a freshness observation, not durable data loss."
+}

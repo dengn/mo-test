@@ -1,0 +1,33 @@
+{"kind": "sql", "epoch": 1791528139.176925, "sql": "alter table vh alter reindex ann hnsw m=32 ef_construction=200 ef_search=1000 force_sync", "seconds": 75.68298624599993, "rows": 0, "sample": []}
+{"kind": "tuned_schema", "epoch": 1791528139.185479, "table": "vh", "schema": [["vh", "CREATE TABLE `vh` (\n  `id` bigint NOT NULL,\n  `v` vecf32(128) DEFAULT NULL,\n  `grp` int DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING hnsw (`v`) m = 32  ef_construction = 200  ef_search = 1000  op_type 'vector_l2_ops' \n)"]]}
+{"kind": "sql", "epoch": 1791528221.132781, "sql": "alter table vc alter reindex ann hnsw m=32 ef_construction=200 ef_search=1000 force_sync", "seconds": 81.94695642000079, "rows": 0, "sample": []}
+{"kind": "tuned_schema", "epoch": 1791528221.138056, "table": "vc", "schema": [["vc", "CREATE TABLE `vc` (\n  `id` bigint NOT NULL,\n  `v` vecf32(128) DEFAULT NULL,\n  `grp` int DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING hnsw (`v`) m = 32  ef_construction = 200  ef_search = 1000  op_type 'vector_cosine_ops' \n)"]]}
+{"kind": "exact_crosscheck", "epoch": 1791528222.8614452, "label": "tuned", "table": "vh", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528223.0095236, "label": "tuned", "table": "vh", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528223.1413682, "label": "tuned", "table": "vh", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528226.3225522, "label": "tuned", "table": "vh", "queries": 30, "recall10_mean": 0.9866666666666667, "recall10_min": 0.9, "max_score_error": 1.1780477593426042e-07, "p99_ms": 738.4067080299619, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791528227.2788308, "label": "tuned", "table": "vc", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528227.469697, "label": "tuned", "table": "vc", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528227.6579216, "label": "tuned", "table": "vc", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528230.6001534, "label": "tuned", "table": "vc", "queries": 30, "recall10_mean": 0.98, "recall10_min": 0.9, "max_score_error": 9.98104039418024e-08, "p99_ms": 551.8319142903426, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791528230.7430644, "label": "tuned", "table": "vi", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528230.8861277, "label": "tuned", "table": "vi", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528231.034187, "label": "tuned", "table": "vi", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528233.5844193, "label": "tuned", "table": "vi", "queries": 30, "recall10_mean": 0.2766666666666666, "recall10_min": 0.1, "max_score_error": 1.0711345965752628e-07, "p99_ms": 20.817741281098282, "errors": []}
+{"kind": "ivf_full_probe", "epoch": 1791528234.2618551, "label": "tuned", "queries": 10, "mean_recall": 1.0, "minimum": 1.0}
+{"kind": "ft_membership", "epoch": 1791528234.672614, "label": "tuned", "table": "ft", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528234.874304, "label": "tuned", "table": "ft", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.1350646, "label": "tuned", "table": "ft", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.3595285, "label": "tuned", "table": "ft", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.5942707, "label": "tuned", "table": "ft", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.6037984, "label": "tuned", "table": "ft", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.6695518, "label": "tuned", "table": "ft2", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.6915197, "label": "tuned", "table": "ft2", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.7681804, "label": "tuned", "table": "ft2", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.8331904, "label": "tuned", "table": "ft2", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.8938668, "label": "tuned", "table": "ft2", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528235.8983455, "label": "tuned", "table": "ft2", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528235.9815161, "label": "tuned", "query": "quick brown fox", "count": 15000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528236.0350544, "label": "tuned", "query": "brown quick", "count": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528236.0383282, "label": "tuned", "query": "quick missing", "count": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phase", "epoch": 1791528281.1136522, "name": "hnsw_tuned_16", "workers": 16, "requested_seconds": 45, "seconds": 45.06928188599886, "success": 15483, "errors": {}, "ops_s": 343.5377568065916, "p50_ms": 40.510863000235986, "p99_ms": 133.19350812034835}

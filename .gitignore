@@ -6,3 +6,13 @@ __pycache__/
 .env
 .env.*
 !*.example
+
+# Boundary/chaos local runtime material
+certs/
+*.key
+*.pem
+*.pid
+mo-data/
+.env
+.aws/
+.codex/

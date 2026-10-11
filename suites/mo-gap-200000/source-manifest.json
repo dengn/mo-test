@@ -1,0 +1,198 @@
+[
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/vector/vector_func.sql",
+    "sha256": "8e2df875eb5e38f198389af9c944c1d1ae73557d05ed3e76819b0ac03fc85d68",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/vector/vector_func.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/vector/vector_type.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/vector/vector_type.sql",
+    "sha256": "a4d862d397476f2b85b4fddd60f9131f575c55f4eab537efd84a828b2727821a",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/vector/vector_type.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/stage/export_format.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/stage/export_format.sql",
+    "sha256": "0fa7d7665e47f9be0cf802d3d514e6c6e47e0128853a8c72851d013169d9d6dc",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/stage/export_format.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/ddl/desc_table_with_foreign_key.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/ddl/desc_table_with_foreign_key.sql",
+    "sha256": "7003504b25302e98e4a5ee552512d6a96edde1ece0a279d78e6fcd3355233044",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/ddl/desc_table_with_foreign_key.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/ddl/alter_table_add_drop_constraint.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/ddl/alter_table_add_drop_constraint.sql",
+    "sha256": "4e5e72ed3f4cf7681f51cad1809ccd4ba7de50d89da843d2b155eade5bda9b5e",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/ddl/alter_table_add_drop_constraint.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/ddl/alter_table_check_prefixed_column.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/ddl/alter_table_check_prefixed_column.sql",
+    "sha256": "b63742620b6492a7daef45651030968d99434b7f1b09720b09426826fa5da994",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/ddl/alter_table_check_prefixed_column.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/ddl/alter_table_check_foreignkey_reference.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/ddl/alter_table_check_foreignkey_reference.sql",
+    "sha256": "ec3aff8479affa2455631b8393a0fb1721573439597423788f826176301b991e",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/ddl/alter_table_check_foreignkey_reference.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/ddl/alter_table_check_foreign_key.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/ddl/alter_table_check_foreign_key.sql",
+    "sha256": "48aa884c42341138717aa4711e3be185951255b12ac596a72fb7b7e3ff3291f5",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/ddl/alter_table_check_foreign_key.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_named_window.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_named_window.sql",
+    "sha256": "b2127c27b6bf82a185b40b8ecb1b1c65a4393f0765cd509246023492c3d5aacd",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_named_window.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/time_window.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/time_window.sql",
+    "sha256": "fda74929dfa3ffef07c2ffc90745fbcad6a1e7fcca01bc627039b27a8b181002",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/time_window.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/value_window_functions.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/value_window_functions.sql",
+    "sha256": "26d37ce9aa4b310bad8c0c773662ac1b6102556f365b213c16691e86b8fd6af6",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/value_window_functions.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_nth_value_arg.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_nth_value_arg.sql",
+    "sha256": "4fafa49d0edb3f5a547098457c3305f710a8380a1023870e505a2e6327d06833",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_nth_value_arg.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_decimal256_range.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_decimal256_range.sql",
+    "sha256": "c7fdd2cf6953016ddc1a80b8cf77cf8b6f9bcef9fbd582273409661753cf3d6a",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_decimal256_range.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_json_arrayagg.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_json_arrayagg.sql",
+    "sha256": "204787977a7b328fde578b1964d4d6119f276b069cfe333e11fd63f20ab68937",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_json_arrayagg.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_negative_interval.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_negative_interval.sql",
+    "sha256": "297a91304172c41b8ce83f26094c295dd54e58f1cabb93dc4289b9608ba6df07",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_negative_interval.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_default_frame.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_default_frame.sql",
+    "sha256": "70cc86a35f21e658d952d796ab35808b124fa59f29e557cd47fdda4d97e17587",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_default_frame.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_temporal_range_bound.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_temporal_range_bound.sql",
+    "sha256": "e4340a453d634c47f617b91fe5089905b6c642d9921cd6904aa32683fa05f1be",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_temporal_range_bound.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_null_window_aggregation.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_null_window_aggregation.sql",
+    "sha256": "1771000cecf7a5b941f565ae7592ff8aca8dbb87931f976f4a0ed96b894de472",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_null_window_aggregation.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_bit_xor.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_bit_xor.sql",
+    "sha256": "c2e34e8ef5423593f579ff7c411234bac95faba7aba38a025105c410512002da",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_bit_xor.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_default_modifiers.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_default_modifiers.sql",
+    "sha256": "07b551ada14a77a48a8886a925672fca9052db09785afb281493cdbf265b7b90",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_default_modifiers.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_variance.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_variance.sql",
+    "sha256": "22f992d48d6381fefc43a5b4a6dd20e78ab2ae882f5d2e6ef53a1d707ec42a0e",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_variance.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_split_result.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_split_result.sql",
+    "sha256": "aacd96c7573c7c7104c59880e4530dfe26fc32b7f463fda62f94ea46a5e8b467",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_split_result.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_lag_lead_negative_offset.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_lag_lead_negative_offset.sql",
+    "sha256": "67f41bf372880adec3db3bc5fb40cd8172b0369c55b99a4f6e87909d524334d2",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_lag_lead_negative_offset.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/mysql_compat_window_invalid_context.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/mysql_compat_window_invalid_context.sql",
+    "sha256": "8c043dbae06db8f4dd1dac8e6dcd179d3f034e460a3db7f2102c42bbb33728cf",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/mysql_compat_window_invalid_context.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_hash_partition.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_hash_partition.sql",
+    "sha256": "1757b65f4c9bf7f8340655ac91f2f9275187968c27d641b448044fe15dc913d5",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_hash_partition.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_char_pad_space.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_char_pad_space.sql",
+    "sha256": "34ea79553a6ccb3460b031ff1829707a28083e62df88e57fdad67199258e1f20",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_char_pad_space.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/stacked_window_filter.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/stacked_window_filter.sql",
+    "sha256": "ed5c0ed1c851baec4f7cb6cfbecbe30dcf2f1d308c7e225b3d7c6d7a3eede742",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/stacked_window_filter.sql"
+  },
+  {
+    "source_id": "matrixorigin/matrixone:test/distributed/cases/window/window_signed_range_bound.sql",
+    "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+    "path": "test/distributed/cases/window/window_signed_range_bound.sql",
+    "sha256": "12807f6412e24384648d9b6ce27a2041383d7d73ab32f0474585c11ff084659b",
+    "url": "https://github.com/matrixorigin/matrixone/blob/2726fb419b3afa1db2686ae1b2aaca563d1ae214/test/distributed/cases/window/window_signed_range_bound.sql"
+  }
+]

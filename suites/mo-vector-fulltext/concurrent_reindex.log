@@ -1,0 +1,5 @@
+{"kind": "sql", "epoch": 1791527971.8350601, "sql": "alter table ft2m alter reindex txt fulltext2 merge force_sync", "seconds": 0.04341146900151216, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527972.277788, "sql": "alter table ft2m alter reindex txt fulltext2 force_sync", "seconds": 0.4424298899994028, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527977.0441055, "sql": "alter table vhm alter reindex ann hnsw force_sync", "seconds": 4.765958339999997, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527978.1491947, "sql": "alter table vim alter reindex ann ivfflat lists=16", "seconds": 1.103335526000592, "rows": 0, "sample": []}
+{"kind": "phase", "epoch": 1791528046.7498536, "name": "concurrent_reindex_16", "workers": 16, "requested_seconds": 75, "seconds": 75.06736739500047, "success": 93686, "errors": {}, "ops_s": 1248.0256501740535, "p50_ms": 10.564431999227963, "p99_ms": 40.67989780141941}

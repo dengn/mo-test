@@ -1,0 +1,3 @@
+module chaos_mixed 40 workers 16
+module done chaos_mixed {'pass': 40}
+DONE 40 {'pass': 40} 0.2916111946105957

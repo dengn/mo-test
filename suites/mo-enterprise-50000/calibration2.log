@@ -1,0 +1,7 @@
+START users_roles 50 workers 4
+START multitenant 100 workers 24
+START transactions 150 workers 24
+START pubsub 100 workers 24
+START git4data 100 workers 4
+{"completed": 466, "counts": {"pass_expected_rejection": 149, "pass": 317}, "elapsed": 15.04}
+DONE 500 {"pass_expected_rejection": 160, "pass": 340} 20.14582085609436

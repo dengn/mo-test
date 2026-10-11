@@ -1,0 +1,21 @@
+{"kind": "sql", "epoch": 1791527281.2728996, "sql": "create index ann using hnsw on dimension_h(v) op_type 'vector_l2_ops'", "seconds": 0.06853968799987342, "rows": 0, "sample": []}
+{"kind": "max_dimension_hnsw", "epoch": 1791527281.33068, "dimension": 65535, "result": [[1, 0.0]], "pass_check": true}
+{"kind": "sql", "epoch": 1791527281.3696012, "sql": "create fulltext index txt on utf_ft(body) with parser ngram", "seconds": 0.022070111999710207, "rows": 0, "sample": []}
+{"kind": "unicode_token", "epoch": 1791527281.377902, "table": "utf_ft", "query": "bbbbbbbbbbbbbbbbbbbbbbbbbb", "mode": "", "ids": [1, 2], "expected": [1, 2], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.3814626, "table": "utf_ft", "query": "\"bbbbbbbbbbbbbbbbbbbbbbbbbb\"", "mode": " in boolean mode", "ids": [1, 2], "expected": [1, 2], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.3847494, "table": "utf_ft", "query": "aяяяяяяяяяяяя", "mode": "", "ids": [3], "expected": [3], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.3880415, "table": "utf_ft", "query": "\"aяяяяяяяяяяяя\"", "mode": " in boolean mode", "ids": [3], "expected": [3], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.3912807, "table": "utf_ft", "query": "ȺȺȺȺȺȺȺȺ", "mode": "", "ids": [4], "expected": [4], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.3946002, "table": "utf_ft", "query": "\"ȺȺȺȺȺȺȺȺ\"", "mode": " in boolean mode", "ids": [4], "expected": [4], "pass_check": true}
+{"kind": "sql", "epoch": 1791527281.4416752, "sql": "create fulltext2 index txt on utf_ft2(body) with parser ngram", "seconds": 0.029975065001053736, "rows": 0, "sample": []}
+{"kind": "unicode_token", "epoch": 1791527281.4583874, "table": "utf_ft2", "query": "bbbbbbbbbbbbbbbbbbbbbbbbbb", "mode": "", "ids": [1, 2], "expected": [1, 2], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.4595993, "table": "utf_ft2", "query": "\"bbbbbbbbbbbbbbbbbbbbbbbbbb\"", "mode": " in boolean mode", "ids": [1, 2], "expected": [1, 2], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.4607768, "table": "utf_ft2", "query": "aяяяяяяяяяяяя", "mode": "", "ids": [3], "expected": [3], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.4621644, "table": "utf_ft2", "query": "\"aяяяяяяяяяяяя\"", "mode": " in boolean mode", "ids": [3], "expected": [3], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.4633157, "table": "utf_ft2", "query": "ȺȺȺȺȺȺȺȺ", "mode": "", "ids": [4], "expected": [4], "pass_check": true}
+{"kind": "unicode_token", "epoch": 1791527281.4643927, "table": "utf_ft2", "query": "\"ȺȺȺȺȺȺȺȺ\"", "mode": " in boolean mode", "ids": [4], "expected": [4], "pass_check": true}
+{"kind": "sql", "epoch": 1791527281.511409, "sql": "create fulltext2 index txt on jft(a,b) with parser json_value", "seconds": 0.03145650199985539, "rows": 0, "sample": []}
+{"kind": "json_fulltext", "epoch": 1791527281.5267596, "query": "rightonly", "ids": [1], "expected": [1], "pass_check": true}
+{"kind": "json_fulltext", "epoch": 1791527281.5282433, "query": "leftonly", "ids": [2], "expected": [2], "pass_check": true}
+{"kind": "json_fulltext", "epoch": 1791527281.5296652, "query": "+leftboth +rightboth", "ids": [3], "expected": [3], "pass_check": true}
+{"kind": "json_fulltext", "epoch": 1791527281.530678, "query": "null", "ids": [], "expected": [], "pass_check": true}

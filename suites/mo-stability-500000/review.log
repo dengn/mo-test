@@ -1,0 +1,13 @@
+C44030 pass
+C44780 pass
+C45090 pass
+C45850 pass
+C45980 pass
+C46220 pass
+C46360 pass
+C46420 pass
+C46460 pass
+C46940 pass
+C47200 pass
+C47210 pass
+INDEX_REVIEW [{"sql": "show create table race_h", "params": null, "error": "(20101, 'internal error: missing visibility metadata for index \"ridx_3\" on table 380340')"}, {"sql": "insert into race_h values (%s,%s,%s)", "params": [99000002, 297000006, "[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]"], "error": "(1146, 'no such table suite50_1791642084.__mo_index_secondary_01a127f5-a6f3-7253-8243-4948402df4f8')"}, {"sql": "alter table race_h alter reindex ann hnsw force_sync", "params": null, "error": "(1146, 'no such table suite50_1791642084.__mo_index_secondary_01a127f5-a6f3-7253-8243-4948402df4f8')"}]

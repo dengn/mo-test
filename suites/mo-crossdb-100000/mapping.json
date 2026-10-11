@@ -1,0 +1,884 @@
+{
+  "doris.dense_l2_topk": {
+    "engine": "doris",
+    "scenario": "dense_l2_topk",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.lag_lead_timeseries": {
+    "engine": "doris",
+    "scenario": "lag_lead_timeseries",
+    "source": "apache/doris-website:docs/query-data/window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.moving_sum": {
+    "engine": "doris",
+    "scenario": "moving_sum",
+    "source": "apache/doris-website:docs/query-data/window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.asof_preceding_match": {
+    "engine": "doris",
+    "scenario": "asof_preceding_match",
+    "source": "apache/doris-website:docs/query-data/asof-join.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.time_bucket_downsample": {
+    "engine": "doris",
+    "scenario": "time_bucket_downsample",
+    "source": "apache/doris-website:docs/key-features/partitioning-and-bucketing.mdx",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.cosine_topk": {
+    "engine": "doris",
+    "scenario": "cosine_topk",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.latest_row_per_device": {
+    "engine": "doris",
+    "scenario": "latest_row_per_device",
+    "source": "apache/doris-website:docs/table-design/data-model/unique.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.fact_dimension_tag_join": {
+    "engine": "doris",
+    "scenario": "fact_dimension_tag_join",
+    "source": "apache/doris-website:docs/query-data/join.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.json_metadata_filter": {
+    "engine": "doris",
+    "scenario": "json_metadata_filter",
+    "source": "apache/doris-website:docs/data-operate/import/complex-types/json.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.array_unnest_mapping": {
+    "engine": "doris",
+    "scenario": "array_unnest_mapping",
+    "source": "apache/doris-website:docs/data-operate/import/complex-types/array.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.inner_product_topk": {
+    "engine": "doris",
+    "scenario": "inner_product_topk",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.event_funnel_pair_count": {
+    "engine": "doris",
+    "scenario": "event_funnel_pair_count",
+    "source": "apache/doris-website:docs/query-data/window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.time_partition_predicate_null": {
+    "engine": "doris",
+    "scenario": "time_partition_predicate_null",
+    "source": "apache/doris-website:docs/key-features/partitioning-and-bucketing.mdx",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.partial_update": {
+    "engine": "doris",
+    "scenario": "partial_update",
+    "source": "apache/doris-website:docs/table-design/data-model/unique.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "doris.multidimensional_aggregation": {
+    "engine": "doris",
+    "scenario": "multidimensional_aggregation",
+    "source": "apache/doris-website:docs/table-design/data-model/aggregate.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.scalar_prefilter": {
+    "engine": "doris",
+    "scenario": "scalar_prefilter",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.conditional_aggregate_exact_distinct": {
+    "engine": "doris",
+    "scenario": "conditional_aggregate_exact_distinct",
+    "source": "apache/doris-website:docs/table-design/data-model/aggregate.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.json_prefilter": {
+    "engine": "doris",
+    "scenario": "json_prefilter",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.session_window_emulation": {
+    "engine": "doris",
+    "scenario": "session_window_emulation",
+    "source": "apache/doris-website:docs/query-data/window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "doris.range_search": {
+    "engine": "doris",
+    "scenario": "range_search",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.upsert_latest": {
+    "engine": "doris",
+    "scenario": "upsert_latest",
+    "source": "apache/doris-website:docs/table-design/data-model/unique.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "doris.group_best_hit": {
+    "engine": "doris",
+    "scenario": "group_best_hit",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.multi_vector_weighted": {
+    "engine": "doris",
+    "scenario": "multi_vector_weighted",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.hybrid_text_vector": {
+    "engine": "doris",
+    "scenario": "hybrid_text_vector",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.rrf_two_dense_ranks": {
+    "engine": "doris",
+    "scenario": "rrf_two_dense_ranks",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.fulltext_boolean_filter": {
+    "engine": "doris",
+    "scenario": "fulltext_boolean_filter",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.array_tag_filter": {
+    "engine": "doris",
+    "scenario": "array_tag_filter",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.nullable_scalar_aggregate": {
+    "engine": "doris",
+    "scenario": "nullable_scalar_aggregate",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "doris.partition_key_filter": {
+    "engine": "doris",
+    "scenario": "partition_key_filter",
+    "source": "apache/doris-website:docs/key-features/vector-index.mdx",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.dense_l2_topk": {
+    "engine": "starrocks",
+    "scenario": "dense_l2_topk",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.lag_lead_timeseries": {
+    "engine": "starrocks",
+    "scenario": "lag_lead_timeseries",
+    "source": "StarRocks/starrocks:docs/en/sql-reference/sql-functions/Window_function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.moving_sum": {
+    "engine": "starrocks",
+    "scenario": "moving_sum",
+    "source": "StarRocks/starrocks:docs/en/sql-reference/sql-functions/Window_function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.asof_preceding_match": {
+    "engine": "starrocks",
+    "scenario": "asof_preceding_match",
+    "source": "StarRocks/starrocks:docs/en/best_practices/partitioning.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.time_bucket_downsample": {
+    "engine": "starrocks",
+    "scenario": "time_bucket_downsample",
+    "source": "StarRocks/starrocks:docs/en/best_practices/partitioning.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.cosine_topk": {
+    "engine": "starrocks",
+    "scenario": "cosine_topk",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.latest_row_per_device": {
+    "engine": "starrocks",
+    "scenario": "latest_row_per_device",
+    "source": "StarRocks/starrocks:docs/en/loading/Load_to_Primary_Key_tables.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.fact_dimension_tag_join": {
+    "engine": "starrocks",
+    "scenario": "fact_dimension_tag_join",
+    "source": "StarRocks/starrocks:docs/en/using_starrocks/Lateral_join.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.array_unnest_mapping": {
+    "engine": "starrocks",
+    "scenario": "array_unnest_mapping",
+    "source": "StarRocks/starrocks:docs/en/sql-reference/sql-functions/array-functions/unnest.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.inner_product_topk": {
+    "engine": "starrocks",
+    "scenario": "inner_product_topk",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.event_funnel_pair_count": {
+    "engine": "starrocks",
+    "scenario": "event_funnel_pair_count",
+    "source": "StarRocks/starrocks:docs/en/sql-reference/sql-functions/aggregate-functions/window_funnel.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.time_partition_predicate_null": {
+    "engine": "starrocks",
+    "scenario": "time_partition_predicate_null",
+    "source": "StarRocks/starrocks:docs/en/best_practices/partitioning.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.partial_update": {
+    "engine": "starrocks",
+    "scenario": "partial_update",
+    "source": "StarRocks/starrocks:docs/en/table_design/table_types/primary_key_table.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "starrocks.multidimensional_aggregation": {
+    "engine": "starrocks",
+    "scenario": "multidimensional_aggregation",
+    "source": "StarRocks/starrocks:docs/en/table_design/table_types/aggregate_table.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.scalar_prefilter": {
+    "engine": "starrocks",
+    "scenario": "scalar_prefilter",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.conditional_aggregate_exact_distinct": {
+    "engine": "starrocks",
+    "scenario": "conditional_aggregate_exact_distinct",
+    "source": "StarRocks/starrocks:docs/en/table_design/table_types/aggregate_table.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.json_prefilter": {
+    "engine": "starrocks",
+    "scenario": "json_prefilter",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.session_window_emulation": {
+    "engine": "starrocks",
+    "scenario": "session_window_emulation",
+    "source": "StarRocks/starrocks:docs/en/sql-reference/sql-functions/Window_function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.range_search": {
+    "engine": "starrocks",
+    "scenario": "range_search",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.upsert_latest": {
+    "engine": "starrocks",
+    "scenario": "upsert_latest",
+    "source": "StarRocks/starrocks:docs/en/table_design/table_types/primary_key_table.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "starrocks.group_best_hit": {
+    "engine": "starrocks",
+    "scenario": "group_best_hit",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.multi_vector_weighted": {
+    "engine": "starrocks",
+    "scenario": "multi_vector_weighted",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.hybrid_text_vector": {
+    "engine": "starrocks",
+    "scenario": "hybrid_text_vector",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.rrf_two_dense_ranks": {
+    "engine": "starrocks",
+    "scenario": "rrf_two_dense_ranks",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.fulltext_boolean_filter": {
+    "engine": "starrocks",
+    "scenario": "fulltext_boolean_filter",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.array_tag_filter": {
+    "engine": "starrocks",
+    "scenario": "array_tag_filter",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.nullable_scalar_aggregate": {
+    "engine": "starrocks",
+    "scenario": "nullable_scalar_aggregate",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "starrocks.json_metadata_filter": {
+    "engine": "starrocks",
+    "scenario": "json_metadata_filter",
+    "source": "StarRocks/starrocks:docs/en/using_starrocks/Flat_json.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "starrocks.partition_key_filter": {
+    "engine": "starrocks",
+    "scenario": "partition_key_filter",
+    "source": "StarRocks/starrocks:docs/en/table_design/indexes/vector_index.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.dense_l2_topk": {
+    "engine": "tidb",
+    "scenario": "dense_l2_topk",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.lag_lead_timeseries": {
+    "engine": "tidb",
+    "scenario": "lag_lead_timeseries",
+    "source": "pingcap/docs:functions-and-operators/window-functions.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.moving_sum": {
+    "engine": "tidb",
+    "scenario": "moving_sum",
+    "source": "pingcap/docs:functions-and-operators/window-functions.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.asof_preceding_match": {
+    "engine": "tidb",
+    "scenario": "asof_preceding_match",
+    "source": "pingcap/docs:explain-joins.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.time_bucket_downsample": {
+    "engine": "tidb",
+    "scenario": "time_bucket_downsample",
+    "source": "pingcap/docs:partition-pruning.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.cosine_topk": {
+    "engine": "tidb",
+    "scenario": "cosine_topk",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.latest_row_per_device": {
+    "engine": "tidb",
+    "scenario": "latest_row_per_device",
+    "source": "pingcap/docs:derive-topn-from-window.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.fact_dimension_tag_join": {
+    "engine": "tidb",
+    "scenario": "fact_dimension_tag_join",
+    "source": "pingcap/docs:explain-joins.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.array_unnest_mapping": {
+    "engine": "tidb",
+    "scenario": "array_unnest_mapping",
+    "source": "pingcap/docs:data-type-json.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.inner_product_topk": {
+    "engine": "tidb",
+    "scenario": "inner_product_topk",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.event_funnel_pair_count": {
+    "engine": "tidb",
+    "scenario": "event_funnel_pair_count",
+    "source": "pingcap/docs:explain-joins.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.time_partition_predicate_null": {
+    "engine": "tidb",
+    "scenario": "time_partition_predicate_null",
+    "source": "pingcap/docs:partition-pruning.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.partial_update": {
+    "engine": "tidb",
+    "scenario": "partial_update",
+    "source": "pingcap/docs:transaction-overview.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "tidb.multidimensional_aggregation": {
+    "engine": "tidb",
+    "scenario": "multidimensional_aggregation",
+    "source": "pingcap/docs:functions-and-operators/aggregate-group-by-functions.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.scalar_prefilter": {
+    "engine": "tidb",
+    "scenario": "scalar_prefilter",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.conditional_aggregate_exact_distinct": {
+    "engine": "tidb",
+    "scenario": "conditional_aggregate_exact_distinct",
+    "source": "pingcap/docs:functions-and-operators/aggregate-group-by-functions.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.json_prefilter": {
+    "engine": "tidb",
+    "scenario": "json_prefilter",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.session_window_emulation": {
+    "engine": "tidb",
+    "scenario": "session_window_emulation",
+    "source": "pingcap/docs:functions-and-operators/window-functions.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tidb.range_search": {
+    "engine": "tidb",
+    "scenario": "range_search",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.upsert_latest": {
+    "engine": "tidb",
+    "scenario": "upsert_latest",
+    "source": "pingcap/docs:transaction-overview.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "tidb.group_best_hit": {
+    "engine": "tidb",
+    "scenario": "group_best_hit",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.multi_vector_weighted": {
+    "engine": "tidb",
+    "scenario": "multi_vector_weighted",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.hybrid_text_vector": {
+    "engine": "tidb",
+    "scenario": "hybrid_text_vector",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.rrf_two_dense_ranks": {
+    "engine": "tidb",
+    "scenario": "rrf_two_dense_ranks",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.fulltext_boolean_filter": {
+    "engine": "tidb",
+    "scenario": "fulltext_boolean_filter",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.array_tag_filter": {
+    "engine": "tidb",
+    "scenario": "array_tag_filter",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.nullable_scalar_aggregate": {
+    "engine": "tidb",
+    "scenario": "nullable_scalar_aggregate",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.partition_key_filter": {
+    "engine": "tidb",
+    "scenario": "partition_key_filter",
+    "source": "pingcap/docs:ai/guides/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "tidb.json_metadata_filter": {
+    "engine": "tidb",
+    "scenario": "json_metadata_filter",
+    "source": "pingcap/docs:data-type-json.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.dense_l2_topk": {
+    "engine": "clickhouse",
+    "scenario": "dense_l2_topk",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.lag_lead_timeseries": {
+    "engine": "clickhouse",
+    "scenario": "lag_lead_timeseries",
+    "source": "ClickHouse/clickhouse-docs:i18n/zh/docusaurus-plugin-content-docs/current/sql-reference/window-functions/index.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.moving_sum": {
+    "engine": "clickhouse",
+    "scenario": "moving_sum",
+    "source": "ClickHouse/clickhouse-docs:i18n/zh/docusaurus-plugin-content-docs/current/sql-reference/window-functions/index.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.asof_preceding_match": {
+    "engine": "clickhouse",
+    "scenario": "asof_preceding_match",
+    "source": "ClickHouse/clickhouse-docs:docs/guides/joining-tables.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.time_bucket_downsample": {
+    "engine": "clickhouse",
+    "scenario": "time_bucket_downsample",
+    "source": "ClickHouse/clickhouse-docs:docs/faq/use-cases/time-series.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.cosine_topk": {
+    "engine": "clickhouse",
+    "scenario": "cosine_topk",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.latest_row_per_device": {
+    "engine": "clickhouse",
+    "scenario": "latest_row_per_device",
+    "source": "ClickHouse/clickhouse-docs:docs/best-practices/choosing_a_primary_key.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.fact_dimension_tag_join": {
+    "engine": "clickhouse",
+    "scenario": "fact_dimension_tag_join",
+    "source": "ClickHouse/clickhouse-docs:docs/guides/joining-tables.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.inner_product_topk": {
+    "engine": "clickhouse",
+    "scenario": "inner_product_topk",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.event_funnel_pair_count": {
+    "engine": "clickhouse",
+    "scenario": "event_funnel_pair_count",
+    "source": "ClickHouse/clickhouse-docs:docs/guides/joining-tables.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.time_partition_predicate_null": {
+    "engine": "clickhouse",
+    "scenario": "time_partition_predicate_null",
+    "source": "ClickHouse/clickhouse-docs:docs/best-practices/partitioning_keys.mdx",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.partial_update": {
+    "engine": "clickhouse",
+    "scenario": "partial_update",
+    "source": "ClickHouse/clickhouse-docs:docs/best-practices/choosing_a_primary_key.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "clickhouse.multidimensional_aggregation": {
+    "engine": "clickhouse",
+    "scenario": "multidimensional_aggregation",
+    "source": "ClickHouse/clickhouse-docs:docs/chdb/datastore/aggregation.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.scalar_prefilter": {
+    "engine": "clickhouse",
+    "scenario": "scalar_prefilter",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.conditional_aggregate_exact_distinct": {
+    "engine": "clickhouse",
+    "scenario": "conditional_aggregate_exact_distinct",
+    "source": "ClickHouse/clickhouse-docs:docs/guides/examples/aggregate_function_combinators/avgIf.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.json_prefilter": {
+    "engine": "clickhouse",
+    "scenario": "json_prefilter",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.session_window_emulation": {
+    "engine": "clickhouse",
+    "scenario": "session_window_emulation",
+    "source": "ClickHouse/clickhouse-docs:i18n/zh/docusaurus-plugin-content-docs/current/sql-reference/window-functions/index.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.range_search": {
+    "engine": "clickhouse",
+    "scenario": "range_search",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.upsert_latest": {
+    "engine": "clickhouse",
+    "scenario": "upsert_latest",
+    "source": "ClickHouse/clickhouse-docs:docs/best-practices/choosing_a_primary_key.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "clickhouse.group_best_hit": {
+    "engine": "clickhouse",
+    "scenario": "group_best_hit",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.multi_vector_weighted": {
+    "engine": "clickhouse",
+    "scenario": "multi_vector_weighted",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.hybrid_text_vector": {
+    "engine": "clickhouse",
+    "scenario": "hybrid_text_vector",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.rrf_two_dense_ranks": {
+    "engine": "clickhouse",
+    "scenario": "rrf_two_dense_ranks",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.fulltext_boolean_filter": {
+    "engine": "clickhouse",
+    "scenario": "fulltext_boolean_filter",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.array_tag_filter": {
+    "engine": "clickhouse",
+    "scenario": "array_tag_filter",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.nullable_scalar_aggregate": {
+    "engine": "clickhouse",
+    "scenario": "nullable_scalar_aggregate",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.json_metadata_filter": {
+    "engine": "clickhouse",
+    "scenario": "json_metadata_filter",
+    "source": "ClickHouse/clickhouse-docs:docs/best-practices/json_type.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "clickhouse.partition_key_filter": {
+    "engine": "clickhouse",
+    "scenario": "partition_key_filter",
+    "source": "ClickHouse/clickhouse-docs:docs/use-cases/AI_ML/vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "clickhouse.array_unnest_mapping": {
+    "engine": "clickhouse",
+    "scenario": "array_unnest_mapping",
+    "source": "ClickHouse/clickhouse-docs:docs/guides/starter_guides/working_with_arrays.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.multidimensional_aggregation": {
+    "engine": "tdengine",
+    "scenario": "multidimensional_aggregation",
+    "source": "taosdata/TDengine:docs/en/04-quick-start/05-query-and-aggregate.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.lag_lead_timeseries": {
+    "engine": "tdengine",
+    "scenario": "lag_lead_timeseries",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/06-window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.moving_sum": {
+    "engine": "tdengine",
+    "scenario": "moving_sum",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/06-window-function.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.asof_preceding_match": {
+    "engine": "tdengine",
+    "scenario": "asof_preceding_match",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/05-join.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.time_bucket_downsample": {
+    "engine": "tdengine",
+    "scenario": "time_bucket_downsample",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/04-distinguished.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.conditional_aggregate_exact_distinct": {
+    "engine": "tdengine",
+    "scenario": "conditional_aggregate_exact_distinct",
+    "source": "taosdata/TDengine:docs/en/04-quick-start/05-query-and-aggregate.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.latest_row_per_device": {
+    "engine": "tdengine",
+    "scenario": "latest_row_per_device",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/04-distinguished.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.fact_dimension_tag_join": {
+    "engine": "tdengine",
+    "scenario": "fact_dimension_tag_join",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/05-join.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.session_window_emulation": {
+    "engine": "tdengine",
+    "scenario": "session_window_emulation",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/04-distinguished.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.event_funnel_pair_count": {
+    "engine": "tdengine",
+    "scenario": "event_funnel_pair_count",
+    "source": "taosdata/TDengine:docs/en/05-tdengine-sql/04-data-query/04-distinguished.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.time_partition_predicate_null": {
+    "engine": "tdengine",
+    "scenario": "time_partition_predicate_null",
+    "source": "taosdata/TDengine:docs/en/04-quick-start/05-query-and-aggregate.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.partial_update": {
+    "engine": "tdengine",
+    "scenario": "partial_update",
+    "source": "taosdata/TDengine:docs/en/10-developer-guide/04-schemaless.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "tdengine.upsert_latest": {
+    "engine": "tdengine",
+    "scenario": "upsert_latest",
+    "source": "taosdata/TDengine:docs/en/10-developer-guide/04-schemaless.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "tdengine.array_unnest_mapping": {
+    "engine": "tdengine",
+    "scenario": "array_unnest_mapping",
+    "source": "taosdata/TDengine:docs/en/10-developer-guide/04-schemaless.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "tdengine.json_metadata_filter": {
+    "engine": "tdengine",
+    "scenario": "json_metadata_filter",
+    "source": "taosdata/TDengine:docs/en/10-developer-guide/04-schemaless.md",
+    "matrixone_strategy": "SQL rewrite; query-level semantic check, no physical-engine equivalence"
+  },
+  "milvus.dense_l2_topk": {
+    "engine": "milvus",
+    "scenario": "dense_l2_topk",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/single-vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.cosine_topk": {
+    "engine": "milvus",
+    "scenario": "cosine_topk",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/single-vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.inner_product_topk": {
+    "engine": "milvus",
+    "scenario": "inner_product_topk",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/single-vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.scalar_prefilter": {
+    "engine": "milvus",
+    "scenario": "scalar_prefilter",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/filtered-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.json_prefilter": {
+    "engine": "milvus",
+    "scenario": "json_prefilter",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/schema/json-indexing.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.range_search": {
+    "engine": "milvus",
+    "scenario": "range_search",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/range-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.group_best_hit": {
+    "engine": "milvus",
+    "scenario": "group_best_hit",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/grouping-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.multi_vector_weighted": {
+    "engine": "milvus",
+    "scenario": "multi_vector_weighted",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/multi-vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.hybrid_text_vector": {
+    "engine": "milvus",
+    "scenario": "hybrid_text_vector",
+    "source": "milvus-io/milvus-docs:site/en/tutorials/hybrid_search_with_milvus.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.rrf_two_dense_ranks": {
+    "engine": "milvus",
+    "scenario": "rrf_two_dense_ranks",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/multi-vector-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.fulltext_boolean_filter": {
+    "engine": "milvus",
+    "scenario": "fulltext_boolean_filter",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/full-text-search.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.array_tag_filter": {
+    "engine": "milvus",
+    "scenario": "array_tag_filter",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/schema/array_data_type.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.nullable_scalar_aggregate": {
+    "engine": "milvus",
+    "scenario": "nullable_scalar_aggregate",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/schema/nullable-and-default.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.partition_key_filter": {
+    "engine": "milvus",
+    "scenario": "partition_key_filter",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/search-query-get/use-partition-key.md",
+    "matrixone_strategy": "Exact SQL equivalent on vecf32 / scalar / FULLTEXT; ANN recall and cross-engine BM25 scores not asserted"
+  },
+  "milvus.partial_update": {
+    "engine": "milvus",
+    "scenario": "partial_update",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/insert-and-delete/upsert-entities.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  },
+  "milvus.upsert_latest": {
+    "engine": "milvus",
+    "scenario": "upsert_latest",
+    "source": "milvus-io/milvus-docs:site/en/userGuide/insert-and-delete/upsert-entities.md",
+    "matrixone_strategy": "PRIMARY KEY plus explicit UPDATE / INSERT ON DUPLICATE KEY UPDATE"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "root": {
+    "user": "root",
+    "password": "111",
+    "db": "corners50"
+  },
+  "reader": {
+    "user": "sys:corner_reader:corner_readrole",
+    "password": "111",
+    "db": "corners50"
+  },
+  "writer": {
+    "user": "sys:corner_writer:corner_writerole",
+    "password": "111",
+    "db": "corners50"
+  },
+  "enterprise_root": {
+    "user": "root",
+    "password": "111",
+    "db": "enterprise50"
+  },
+  "corner_a": {
+    "user": "corner_a:admin:accountadmin",
+    "password": "111",
+    "db": "enterprise50"
+  },
+  "corner_a_reader": {
+    "user": "corner_a:reader:readrole",
+    "password": "111",
+    "db": "enterprise50"
+  },
+  "corner_b": {
+    "user": "corner_b:admin:accountadmin",
+    "password": "111",
+    "db": "enterprise50"
+  },
+  "corner_b_reader": {
+    "user": "corner_b:reader:readrole",
+    "password": "111",
+    "db": "enterprise50"
+  }
+}

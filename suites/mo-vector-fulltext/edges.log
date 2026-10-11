@@ -1,0 +1,58 @@
+{"kind": "edge", "epoch": 1791526420.2704382, "name": "dimension_short", "sql": "insert into edgev values(1,'[1,2]')", "seconds": 0.0014846769990981556, "accepted": false, "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 2.')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.271619, "name": "dimension_long", "sql": "insert into edgev values(2,'[1,2,3,4]')", "seconds": 0.0008676220004417701, "accepted": false, "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 4.')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2726424, "name": "nan", "sql": "insert into edgev values(3,'[NaN,1,2]')", "seconds": 0.0008538330002920702, "accepted": false, "error": "(20101, 'internal error: vector element cannot be NaN or Inf: NaN')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2734592, "name": "inf", "sql": "insert into edgev values(4,'[Inf,1,2]')", "seconds": 0.0005445719998533605, "accepted": false, "error": "(20101, 'internal error: vector element cannot be NaN or Inf: +Inf')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2743294, "name": "overflow_literal", "sql": "insert into edgev values(5,'[1e100,1,2]')", "seconds": 0.0006997830005275318, "accepted": false, "error": "(20101, 'internal error: error while casting 1e100 to FLOAT')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2750103, "name": "atomic_bad_batch", "sql": "insert into edgev values(6,'[1,2,3]'),(7,'[1,2]')", "seconds": 0.000548633999642334, "accepted": false, "error": "(20301, 'invalid input: expected vector dimension 3 != actual dimension 2.')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2805521, "name": "invalid_batch_no_partial", "sql": "select count(*) from edgev", "seconds": 0.005409932000475237, "accepted": true, "rows": 1, "result": [[0]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2820375, "name": "float32_distance_overflow", "sql": "select l2_distance(cast('[2e19,2e19]' as vecf32(2)),cast('[0,0]' as vecf32(2)))", "seconds": 0.001311948000875418, "accepted": false, "error": "(20101, 'internal error: l2 distance: vector magnitude is too large, the result overflows the element domain')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2836838, "name": "subnormal_cosine", "sql": "select cosine_distance(cast('[3e-23,3e-23]' as vecf32(2)),cast('[3e-23,0]' as vecf32(2)))", "seconds": 0.0014564079992851475, "accepted": true, "rows": 1, "result": [[0.2928932309150696]], "pass_check": false}
+{"kind": "edge", "epoch": 1791526420.2847688, "name": "zero_cosine_convention", "sql": "select cosine_distance(cast('[0,0,0]' as vecf32(3)),cast('[1,0,0]' as vecf32(3)))", "seconds": 0.0009373379998578457, "accepted": true, "rows": 1, "result": [[1.0]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.2858343, "name": "ordinary_l2", "sql": "select l2_distance(cast('[3,4]' as vecf32(2)),cast('[0,0]' as vecf32(2)))", "seconds": 0.0009280520007450832, "accepted": true, "rows": 1, "result": [[5.0]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.291004, "name": "dimension_65536", "sql": "create table dimension_bad(v vecf32(65536))", "seconds": 0.004950287999236025, "accepted": false, "error": "(1690, 'data out of range: data type vecf32,  typeLen is over the MaxVectorLen : 65535')", "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.3042767, "name": "dimension_65535", "sql": "create table dimension_max(id int primary key,v vecf32(65535))", "seconds": 0.012508685000284459, "accepted": true, "rows": 0, "result": [], "pass_check": null}
+{"kind": "edge", "epoch": 1791526420.5336287, "name": "max_dimension_insert", "sql": "insert into dimension_max values(1,%s)", "seconds": 0.22731930700138037, "accepted": true, "rows": 0, "result": [], "pass_check": null}
+{"kind": "edge", "epoch": 1791526420.541715, "name": "max_dimension_norm", "sql": "select l2_norm(v) from dimension_max", "seconds": 0.007240367000122205, "accepted": true, "rows": 1, "result": [[1.0]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.565852, "name": "hnsw_null_build", "sql": "create index ann using hnsw on edgev(v) op_type 'vector_cosine_ops'", "seconds": 0.0014807339994149515, "accepted": false, "error": "(20101, 'internal error: type of primary key must be bigint')", "pass_check": false}
+{"kind": "edge", "epoch": 1791526420.5695424, "name": "hnsw_zero_query", "sql": "select id from edgev order by cosine_distance(v,'[0,0,0]') limit 2", "seconds": 0.0023634110002603848, "accepted": true, "rows": 2, "result": [[13], [11]], "pass_check": false}
+{"kind": "edge", "epoch": 1791526420.5750415, "name": "hnsw_subnormal_query", "sql": "select id from edgev order by cosine_distance(v,'[1e-20,1e-20,1e-20]') limit 2", "seconds": 0.005311109000103897, "accepted": true, "rows": 2, "result": [[13], [11]], "pass_check": false}
+{"kind": "edge", "epoch": 1791526420.5835223, "name": "hnsw_null_not_returned", "sql": "select id from edgev order by cosine_distance(v,'[1,0,0]') limit 10", "seconds": 0.008325710999997682, "accepted": true, "rows": 4, "result": [[13], [10], [12], [11]], "pass_check": null}
+{"kind": "edge", "epoch": 1791526420.5849805, "name": "hnsw_limit_zero", "sql": "select id from edgev order by cosine_distance(v,'[1,0,0]') limit 0", "seconds": 0.001240573999893968, "accepted": true, "rows": 0, "result": [], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.7137127, "name": "ngram_build", "sql": "create fulltext2 index txt on cjk_ngram(body) with parser ngram", "seconds": 0.08350479199907568, "accepted": true, "rows": 0, "result": [], "pass_check": null}
+{"kind": "edge", "epoch": 1791526420.7578614, "name": "ngram_苹果香蕉*", "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id", "seconds": 0.043872539999938454, "accepted": true, "rows": 2, "result": [[1], [3]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.7629983, "name": "ngram_+苹果香蕉*", "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id", "seconds": 0.00475895700037654, "accepted": true, "rows": 2, "result": [[1], [3]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526420.7670097, "name": "ngram_苹果*", "sql": "select id from cjk_ngram where match(body) against(%s in boolean mode) order by id", "seconds": 0.0038214630003494676, "accepted": true, "rows": 4, "result": [[1], [2], [3], [4]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526422.8627303, "name": "gojieba_build", "sql": "create fulltext2 index txt on cjk_gojieba(body) with parser gojieba", "seconds": 2.040830222000295, "accepted": true, "rows": 0, "result": [], "pass_check": null}
+{"kind": "edge", "epoch": 1791526422.935667, "name": "gojieba_苹果香蕉*", "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id", "seconds": 0.07186063199878845, "accepted": true, "rows": 2, "result": [[1], [3]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526422.9400625, "name": "gojieba_+苹果香蕉*", "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id", "seconds": 0.003874048999932711, "accepted": true, "rows": 2, "result": [[1], [3]], "pass_check": true}
+{"kind": "edge", "epoch": 1791526422.9451826, "name": "gojieba_苹果*", "sql": "select id from cjk_gojieba where match(body) against(%s in boolean mode) order by id", "seconds": 0.0048470879992237315, "accepted": true, "rows": 4, "result": [[1], [2], [3], [4]], "pass_check": true}
+Traceback (most recent call last):
+  File "/workspace/mo-vector-fulltext/edges.py", line 43, in <module>
+    with c.cursor() as q:q.executemany('insert into longft values(%s,%s)',rows)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/cursors.py", line 199, in executemany
+    return self._do_execute_many(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/cursors.py", line 231, in _do_execute_many
+    rows += self.execute(sql + postfix)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.DataError: (1406, "Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 140000 is larger than Dest length 65535")

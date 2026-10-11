@@ -1,0 +1,12 @@
+{
+  "type": "active_fault",
+  "method": "SIGKILL while 32 journaled transaction workers are active",
+  "cut_epoch": 1791519226.9168823,
+  "old_pid": 17705,
+  "new_pid": 18199,
+  "ready_epoch": 1791519261.9972541,
+  "readiness_seconds": 35.08037209510803,
+  "lock_release_wait_seconds": 0.1376798152923584,
+  "lock_retry_errors": [],
+  "ready": true
+}

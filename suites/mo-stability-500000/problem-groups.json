@@ -1,0 +1,1897 @@
+[
+  {
+    "category": "division_precision_difference",
+    "family": "number.divide",
+    "error_code": "None",
+    "count": 7,
+    "ids": [
+      "C00523",
+      "C01690",
+      "C01786",
+      "C01850",
+      "C02266",
+      "C03129",
+      "C04727"
+    ],
+    "sample": {
+      "case": {
+        "id": "C00523",
+        "module": "numeric",
+        "family": "number.divide",
+        "statements": [
+          {
+            "sql": "select %s/%s",
+            "params": [
+              292683,
+              6843
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_math.test"
+        ],
+        "sql_sha256": "517e5b908846ecc02b4e62c06d0c062ef7cd4c0cc8f9d83b0da7f753e40be648"
+      },
+      "result": {
+        "id": "C00523",
+        "module": "numeric",
+        "family": "number.divide",
+        "status": "candidate_wrong_result",
+        "seconds": 0.002669,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "9a00669cf27cd7d81d72adbbb8334dfd297e7b49c0b542a51922e59dcd0515ad",
+        "actual": [
+          [
+            42.77115300306883
+          ]
+        ],
+        "reference": [
+          [
+            "42.7712"
+          ]
+        ],
+        "expected": null,
+        "classification": "division_precision_difference"
+      }
+    }
+  },
+  {
+    "category": "concurrent_ddl_lock_conflict",
+    "family": "ddl.truncate",
+    "error_code": "20706",
+    "count": 12,
+    "ids": [
+      "C44030",
+      "C44780",
+      "C45090",
+      "C45850",
+      "C45980",
+      "C46220",
+      "C46360",
+      "C46420",
+      "C46460",
+      "C46940",
+      "C47200",
+      "C47210"
+    ],
+    "sample": {
+      "case": {
+        "id": "C44030",
+        "module": "ddl_transactions",
+        "family": "ddl.truncate",
+        "statements": [
+          {
+            "sql": "create table {table}(id bigint primary key,n bigint,body varchar(200))"
+          },
+          {
+            "sql": "insert into {table} values(1,%s,%s)",
+            "params": [
+              -259407,
+              "valuebe"
+            ]
+          },
+          {
+            "sql": "truncate table {table}",
+            "params": []
+          },
+          {
+            "sql": "select count(*) from {table} where n=%s",
+            "params": [
+              -259407
+            ]
+          }
+        ],
+        "expected": [
+          [
+            0
+          ]
+        ],
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "matrixorigin/mo-auto-test:result/sql/ddl.sql",
+          "matrixorigin/mo-nightly-regression:cases/replace_into.sql",
+          "mysql/mysql-server:mysql-test/t/insert.test"
+        ],
+        "sql_sha256": "9cfa221d17c1e396fdf66565ab56bf95e5712fe2d3c690d336919c7dffbf731b"
+      },
+      "result": {
+        "id": "C44030",
+        "module": "ddl_transactions",
+        "family": "ddl.truncate",
+        "status": "mo_execution_error",
+        "seconds": 0.796867,
+        "mo_error": {
+          "code": 20706,
+          "message": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 3,
+        "initial_error": {
+          "code": 20706,
+          "message": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "type": "OperationalError"
+        },
+        "mo_rows": 0,
+        "mysql_rows": 1,
+        "mo_result_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "actual": [],
+        "reference": [
+          [
+            0
+          ]
+        ],
+        "expected": [
+          [
+            0
+          ]
+        ],
+        "classification": "concurrent_ddl_lock_conflict"
+      }
+    }
+  },
+  {
+    "category": "unsigned_precision_compatibility_issue",
+    "family": "mysql.public_scalar",
+    "error_code": "1690",
+    "count": 5,
+    "ids": [
+      "C47545",
+      "C47547",
+      "C47559",
+      "C47560",
+      "C47561"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47545",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select round(4, cast(-2 as unsigned)), round(4, 18446744073709551614), round(4, -2)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_math.test"
+        ],
+        "sql_sha256": "d4aafab33886b1f157abde256c8a595c68eafabeecb5a9fd6efd14c70b059319"
+      },
+      "result": {
+        "id": "C47545",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.004397,
+        "mo_error": {
+          "code": 1690,
+          "message": "(1690, 'data out of range: data type int64, integer argument')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            4,
+            4,
+            0
+          ]
+        ],
+        "expected": null,
+        "classification": "unsigned_precision_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "reference_rejected_or_mysql_difference",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 9,
+    "ids": [
+      "C47571",
+      "C47572",
+      "C47579",
+      "C47580",
+      "C47657",
+      "C47658",
+      "C47741",
+      "C47742",
+      "C47746"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47571",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT EXP(750)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_math.test"
+        ],
+        "sql_sha256": "be8a743d51bad726c705aeacdeb2ead8d6220beb54c4383380ebbf19e883c07b"
+      },
+      "result": {
+        "id": "C47571",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "reference_rejected",
+        "seconds": 0.007948,
+        "mo_error": null,
+        "mysql_error": {
+          "code": 1690,
+          "message": "(1690, \"DOUBLE value is out of range in 'exp(750)'\")",
+          "type": "OperationalError"
+        },
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": null,
+        "mo_result_sha256": "0b99263f4bec935e7fb92342d0093bd0cd780cb3f12d3f6ce42c1d448e810e0e",
+        "actual": [
+          [
+            null
+          ]
+        ],
+        "reference": null,
+        "expected": null,
+        "classification": "reference_rejected_or_mysql_difference"
+      }
+    }
+  },
+  {
+    "category": "literal_concatenation_compatibility_issue",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 1,
+    "ids": [
+      "C47646"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47646",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select 'hello' 'monty'",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "7aa3a845cb7781fa256337a0a63a2c6e1f2df805e8bc28f0a5824025c7df58bb"
+      },
+      "result": {
+        "id": "C47646",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "candidate_wrong_result",
+        "seconds": 0.010821,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "8fe47a6a8a74a0dcbe2ccd5814679acdf003f5f7026739a726d74b79780b3cb2",
+        "actual": [
+          [
+            "hello"
+          ]
+        ],
+        "reference": [
+          [
+            "hellomonty"
+          ]
+        ],
+        "expected": null,
+        "classification": "literal_concatenation_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "unsupported_syntax_charset_or_alias",
+    "family": "mysql.public_scalar",
+    "error_code": "1064",
+    "count": 40,
+    "ids": [
+      "C47709",
+      "C47710",
+      "C47711",
+      "C47712",
+      "C47713",
+      "C47731",
+      "C47732",
+      "C47743",
+      "C47744",
+      "C47745",
+      "C47747",
+      "C47748"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47709",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select 'mood' sounds like 'mud'",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "c59b9ac1a330ab19833d9e891de54ed149db289431fdf5c3318acda743ddd3cb"
+      },
+      "result": {
+        "id": "C47709",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.002462,
+        "mo_error": {
+          "code": 1064,
+          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 25 near \" like \\'mud\\'\";')",
+          "type": "ProgrammingError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "unsupported_syntax_charset_or_alias"
+      }
+    }
+  },
+  {
+    "category": "unsupported_syntax_charset_or_alias",
+    "family": "mysql.public_scalar",
+    "error_code": "1054",
+    "count": 2,
+    "ids": [
+      "C47730",
+      "C47733"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47730",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select 1=_latin1'1'",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "48a63120327353f5cf2fb411b9f04180a2dce1d811ebe1a902e4ab87f3f8ca35"
+      },
+      "result": {
+        "id": "C47730",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.002293,
+        "mo_error": {
+          "code": 1054,
+          "message": "(1054, 'invalid input: column _latin1 does not exist')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "unsupported_syntax_charset_or_alias"
+      }
+    }
+  },
+  {
+    "category": "type_conversion_or_range_boundary",
+    "family": "mysql.public_scalar",
+    "error_code": "1690",
+    "count": 51,
+    "ids": [
+      "C47775",
+      "C47776",
+      "C47780",
+      "C47792",
+      "C47793",
+      "C47794",
+      "C47795",
+      "C47796",
+      "C47797",
+      "C47807",
+      "C47808",
+      "C47809"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47775",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select hex(29223372036854775809) as hex_signed,\n       hex(cast(29223372036854775809 as unsigned)) as hex_unsigned",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "c3a71e06935c5fb978fedd009fdf22a2fecbbbfe8e1f017ca0afda59d339b99d"
+      },
+      "result": {
+        "id": "C47775",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.006363,
+        "mo_error": {
+          "code": 1690,
+          "message": "(1690, 'data out of range: data type int64, integer argument')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            "7FFFFFFFFFFFFFFF",
+            "FFFFFFFFFFFFFFFF"
+          ]
+        ],
+        "expected": null,
+        "classification": "type_conversion_or_range_boundary"
+      }
+    }
+  },
+  {
+    "category": "needs_review",
+    "family": "mysql.public_scalar",
+    "error_code": "1064",
+    "count": 2,
+    "ids": [
+      "C47944",
+      "C48212"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47944",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT REPLACE('æøåæøå',_utf16 x'00e5', _gb18030 x'9439B937')",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "9793e9c4d1105b464b130404b0e367b0d20fa017a35085af0daab7898d68a036"
+      },
+      "result": {
+        "id": "C47944",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.002061,
+        "mo_error": {
+          "code": 1064,
+          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 44 near \" x\\'00e5\\', _gb18030 x\\'9439B937\\')\";')",
+          "type": "ProgrammingError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            "æø🍣æø🍣"
+          ]
+        ],
+        "expected": null,
+        "classification": "needs_review"
+      }
+    }
+  },
+  {
+    "category": "type_conversion_or_range_boundary",
+    "family": "mysql.public_scalar",
+    "error_code": "20203",
+    "count": 11,
+    "ids": [
+      "C47946",
+      "C47949",
+      "C47950",
+      "C47991",
+      "C47992",
+      "C47993",
+      "C47994",
+      "C47995",
+      "C48134",
+      "C48159",
+      "C48160"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47946",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT 'a' + 0",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "bc81a228a48af7aaf7e077ecf2cc682ddc2b21a1d7f88d1fd1a87c48056244c6"
+      },
+      "result": {
+        "id": "C47946",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.002345,
+        "mo_error": {
+          "code": 20203,
+          "message": "(20203, 'invalid argument cast to int, bad value a')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            0.0
+          ]
+        ],
+        "expected": null,
+        "classification": "type_conversion_or_range_boundary"
+      }
+    }
+  },
+  {
+    "category": "unsupported_syntax_charset_or_alias",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 1,
+    "ids": [
+      "C47952"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47952",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT _utf8mb4 'ß' COLLATE utf8mb4_0900_ai_ci = _utf8mb4 'ss' COLLATE utf8mb4_0900_ai_ci AS c",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_str.test"
+        ],
+        "sql_sha256": "11a43c564be3f1d71b32e13acc687af6176d3b52032a0711adc6bfb5496e355f"
+      },
+      "result": {
+        "id": "C47952",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "candidate_wrong_result",
+        "seconds": 0.008691,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "db407f11d7ede59abaab0e98e097ff2dae10a048207b801745d7199ef19c2387",
+        "actual": [
+          [
+            0
+          ]
+        ],
+        "reference": [
+          [
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "unsupported_syntax_charset_or_alias"
+      }
+    }
+  },
+  {
+    "category": "temporal_numeric_compatibility_issue",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 3,
+    "ids": [
+      "C47961",
+      "C47965",
+      "C47986"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47961",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select dayofmonth(\"1997-01-02\"),dayofmonth(19970323)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "6f3bb533358e2b1dda7b5a3a93446148c3d06aafd78b9d8f0f61f646a39deaf1"
+      },
+      "result": {
+        "id": "C47961",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "candidate_wrong_result",
+        "seconds": 0.006702,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "33116976d58b27f107d34b83704d34e232d81938c6d3993d0e8c52ce01f6dee2",
+        "actual": [
+          [
+            2,
+            20
+          ]
+        ],
+        "reference": [
+          [
+            2,
+            23
+          ]
+        ],
+        "expected": null,
+        "classification": "temporal_numeric_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "temporal_numeric_compatibility_issue",
+    "family": "mysql.public_scalar",
+    "error_code": "20203",
+    "count": 12,
+    "ids": [
+      "C47966",
+      "C47967",
+      "C47968",
+      "C47979",
+      "C47980",
+      "C47981",
+      "C47982",
+      "C47983",
+      "C47984",
+      "C47985",
+      "C47987",
+      "C47988"
+    ],
+    "sample": {
+      "case": {
+        "id": "C47966",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select week(19980101),week(19970101),week(19980101,1),week(19970101,1)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "e7d57e94b8bca7fa90f8e61c0bec6d7f954d2e2a99e9b112d6d99a413e61e437"
+      },
+      "result": {
+        "id": "C47966",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.003859,
+        "mo_error": {
+          "code": 20203,
+          "message": "(20203, 'invalid argument function week, bad value [BIGINT]')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "temporal_numeric_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "unsupported_syntax_charset_or_alias",
+    "family": "mysql.public_scalar",
+    "error_code": "20301",
+    "count": 6,
+    "ids": [
+      "C48071",
+      "C48072",
+      "C48073",
+      "C48074",
+      "C48075",
+      "C48076"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48071",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select timestampdiff(SQL_TSI_WEEK, '2001-02-01', '2001-05-01') as a",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "081a4a8eca81a857e665e7454ff4be681d56f95580c285ef550c7aba295fede7"
+      },
+      "result": {
+        "id": "C48071",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.053715,
+        "mo_error": {
+          "code": 20301,
+          "message": "(20301, 'invalid input: invalid time_stamp_unit input')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            12
+          ]
+        ],
+        "expected": null,
+        "classification": "unsupported_syntax_charset_or_alias"
+      }
+    }
+  },
+  {
+    "category": "type_conversion_or_range_boundary",
+    "family": "mysql.public_scalar",
+    "error_code": "20301",
+    "count": 7,
+    "ids": [
+      "C48102",
+      "C48154",
+      "C48155",
+      "C48156",
+      "C48183",
+      "C48184",
+      "C48224"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48102",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select last_day('2000-02-05') as a,\n       from_days(to_days(\"960101\")) as b",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "af7e640a1aabad80864a526d9a0835a5dfe2b4e29c646158760a15e6d7cad862"
+      },
+      "result": {
+        "id": "C48102",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.006387,
+        "mo_error": {
+          "code": 20301,
+          "message": "(20301, 'invalid input: invalid datetime value 960101')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            "2000-02-29",
+            "1996-01-01"
+          ]
+        ],
+        "expected": null,
+        "classification": "type_conversion_or_range_boundary"
+      }
+    }
+  },
+  {
+    "category": "invalid_zero_date_compatibility_issue",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 1,
+    "ids": [
+      "C48109"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48109",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select last_day('2005-01-00')",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "b0f280f4130087dc002b209484563968e235ba7705479f7222f9f8dbaa96b3bd"
+      },
+      "result": {
+        "id": "C48109",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "candidate_wrong_result",
+        "seconds": 0.001448,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "0b99263f4bec935e7fb92342d0093bd0cd780cb3f12d3f6ce42c1d448e810e0e",
+        "actual": [
+          [
+            null
+          ]
+        ],
+        "reference": [
+          [
+            "2005-01-31"
+          ]
+        ],
+        "expected": null,
+        "classification": "invalid_zero_date_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mysql.public_scalar",
+    "error_code": "None",
+    "count": 7,
+    "ids": [
+      "C48110",
+      "C48111",
+      "C48112",
+      "C48195",
+      "C48197",
+      "C48204",
+      "C48210"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48110",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT MAKETIME(916,0,0)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "4e302cfb107426628558550d8afef27696026baf7bdbb69407cdae305d08a166"
+      },
+      "result": {
+        "id": "C48110",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "candidate_wrong_result",
+        "seconds": 0.039953,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "0b99263f4bec935e7fb92342d0093bd0cd780cb3f12d3f6ce42c1d448e810e0e",
+        "actual": [
+          [
+            null
+          ]
+        ],
+        "reference": [
+          [
+            "34 days, 22:59:59"
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mysql.public_scalar",
+    "error_code": "1690",
+    "count": 1,
+    "ids": [
+      "C48115"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48115",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "SELECT MAKETIME(CAST(-1 AS UNSIGNED), 0, 0)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/func_time.test"
+        ],
+        "sql_sha256": "184cbc322d0a1168d2540305c06f44792f2d580a9cfe6beabb458baee273eb3c"
+      },
+      "result": {
+        "id": "C48115",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.005301,
+        "mo_error": {
+          "code": 1690,
+          "message": "(1690, 'data out of range: data type int64, integer argument')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            "34 days, 22:59:59"
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mysql.public_scalar",
+    "error_code": "1064",
+    "count": 1,
+    "ids": [
+      "C48208"
+    ],
+    "sample": {
+      "case": {
+        "id": "C48208",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "statements": [
+          {
+            "sql": "select CONVERT(_koi8r'����' USING utf8mb4) LIKE CONVERT(_koi8r'����' USING utf8mb4)",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 1e-06,
+        "sources": [
+          "mysql/mysql-server:mysql-test/t/ctype_utf8mb4.test"
+        ],
+        "sql_sha256": "7433dd74617329d904debbe21d0eb09353b5be641a805cda30e4b16aa54bf61e"
+      },
+      "result": {
+        "id": "C48208",
+        "module": "compatibility",
+        "family": "mysql.public_scalar",
+        "status": "mo_execution_error",
+        "seconds": 0.0049,
+        "mo_error": {
+          "code": 1064,
+          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 35 near \"\\'����\\' USING utf8mb4) LIKE CONVERT(_koi8r\\'����\\' USING utf8mb4)\";')",
+          "type": "ProgrammingError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mixed_types.boolean_arithmetic",
+    "error_code": "20203",
+    "count": 2550,
+    "ids": [
+      "G085008",
+      "G085033",
+      "G085058",
+      "G085083",
+      "G085108",
+      "G085133",
+      "G085158",
+      "G085183",
+      "G085208",
+      "G085232",
+      "G085256",
+      "G085280"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085008",
+        "module": "mixed_types",
+        "family": "mixed_types.boolean_arithmetic",
+        "statements": [
+          {
+            "sql": "select (%s>%s)+(%s is null),coalesce(null,%s)>0",
+            "params": [
+              -984940394870,
+              5226,
+              -984940394870,
+              5226
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "c3337d744c1b966e0e2f6f08dd20909a63f25d4b934bd5574394aa1c54ce6d93",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085008",
+        "module": "mixed_types",
+        "family": "mixed_types.boolean_arithmetic",
+        "status": "mo_execution_error",
+        "seconds": 0.449794,
+        "mo_error": {
+          "code": 20203,
+          "message": "(20203, 'invalid argument operator +, bad value [BOOL BOOL]')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            0,
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "temporal_numeric_compatibility_issue",
+    "family": "mixed_types.date_numeric_mysql",
+    "error_code": "None",
+    "count": 600,
+    "ids": [
+      "G085011",
+      "G085036",
+      "G085061",
+      "G085086",
+      "G085111",
+      "G085136",
+      "G085161",
+      "G085186",
+      "G085211",
+      "G085235",
+      "G085259",
+      "G085283"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085011",
+        "module": "mixed_types",
+        "family": "mixed_types.date_numeric_mysql",
+        "statements": [
+          {
+            "sql": "select dayofmonth(%s),yearweek(%s,3)",
+            "params": [
+              20000111,
+              20000111
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "259efb975308f1a772440e59a530b1db9a237009e332873cfe9dd279ce7772e9",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085011",
+        "module": "mixed_types",
+        "family": "mixed_types.date_numeric_mysql",
+        "status": "candidate_wrong_result",
+        "seconds": 0.723035,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "bf4680c160251f5226ea88783a03a643b9cb8e7c72d3f56c8176c86912586af7",
+        "actual": [
+          [
+            20,
+            197034
+          ]
+        ],
+        "reference": [
+          [
+            11,
+            200002
+          ]
+        ],
+        "expected": null,
+        "classification": "temporal_numeric_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "temporal_numeric_compatibility_issue",
+    "family": "mixed_types.time_numeric_mysql",
+    "error_code": "None",
+    "count": 24,
+    "ids": [
+      "G085012",
+      "G085037",
+      "G085062",
+      "G085087",
+      "G085112",
+      "G085137",
+      "G085162",
+      "G085187",
+      "G085212",
+      "G085236",
+      "G085260",
+      "G085284"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085012",
+        "module": "mixed_types",
+        "family": "mixed_types.time_numeric_mysql",
+        "statements": [
+          {
+            "sql": "select second(%s),minute(%s),hour(%s)",
+            "params": [
+              111111,
+              111111,
+              111111
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "674b231ff91cec557fd83a751d6f8ce763f40cafaae318d5fabd7c05694b713d",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085012",
+        "module": "mixed_types",
+        "family": "mixed_types.time_numeric_mysql",
+        "status": "candidate_wrong_result",
+        "seconds": 0.749254,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "6181387a22f0096fca5e5ff6988f18bf44b2036a9455853c2b19d9e45aa82e47",
+        "actual": [
+          [
+            51,
+            51,
+            6
+          ]
+        ],
+        "reference": [
+          [
+            11,
+            11,
+            11
+          ]
+        ],
+        "expected": null,
+        "classification": "temporal_numeric_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mixed_types.time_clip",
+    "error_code": "None",
+    "count": 36,
+    "ids": [
+      "G085013",
+      "G085038",
+      "G085063",
+      "G085088",
+      "G085113",
+      "G085138",
+      "G086746",
+      "G086769",
+      "G086792",
+      "G086815",
+      "G086838",
+      "G086861"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085013",
+        "module": "mixed_types",
+        "family": "mixed_types.time_clip",
+        "statements": [
+          {
+            "sql": "select maketime(%s,%s,%s)",
+            "params": [
+              -988,
+              12,
+              12
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "f6a8fa2975e8f0a4c640aeefadac49a5669e0b60cded447aca3f810343c83dea",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085013",
+        "module": "mixed_types",
+        "family": "mixed_types.time_clip",
+        "status": "candidate_wrong_result",
+        "seconds": 0.539105,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "0b99263f4bec935e7fb92342d0093bd0cd780cb3f12d3f6ce42c1d448e810e0e",
+        "actual": [
+          [
+            null
+          ]
+        ],
+        "reference": [
+          [
+            "-838:59:59"
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "unsigned_precision_compatibility_issue",
+    "family": "mixed_types.round_precision_unsigned",
+    "error_code": "1690",
+    "count": 2550,
+    "ids": [
+      "G085015",
+      "G085040",
+      "G085065",
+      "G085090",
+      "G085115",
+      "G085140",
+      "G085165",
+      "G085190",
+      "G085215",
+      "G085239",
+      "G085263",
+      "G085287"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085015",
+        "module": "mixed_types",
+        "family": "mixed_types.round_precision_unsigned",
+        "statements": [
+          {
+            "sql": "select round(%s,%s),truncate(%s,%s)",
+            "params": [
+              216931695776,
+              18446744073709551601,
+              216931695776,
+              18446744073709551601
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "cd2792a17f19eb47e56a8bcc02ac31c4dd1f2be3beae0604315f14a780ee4c8c",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085015",
+        "module": "mixed_types",
+        "family": "mixed_types.round_precision_unsigned",
+        "status": "mo_execution_error",
+        "seconds": 0.727012,
+        "mo_error": {
+          "code": 1690,
+          "message": "(1690, 'data out of range: data type int64, integer argument')",
+          "type": "OperationalError"
+        },
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": null,
+        "mysql_rows": 1,
+        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "actual": null,
+        "reference": [
+          [
+            216931695776,
+            216931695776
+          ]
+        ],
+        "expected": null,
+        "classification": "unsigned_precision_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "literal_concatenation_compatibility_issue",
+    "family": "mixed_types.concat_literal",
+    "error_code": "None",
+    "count": 2550,
+    "ids": [
+      "G085019",
+      "G085044",
+      "G085069",
+      "G085094",
+      "G085119",
+      "G085144",
+      "G085169",
+      "G085194",
+      "G085219",
+      "G085243",
+      "G085267",
+      "G085291"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085019",
+        "module": "mixed_types",
+        "family": "mixed_types.concat_literal",
+        "statements": [
+          {
+            "sql": "select 'a18' 'b18'",
+            "params": []
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "0f0dfbb12a0d36190fa601e1ad607cd8ff440ed75473aeff35ff8c439674f20d",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085019",
+        "module": "mixed_types",
+        "family": "mixed_types.concat_literal",
+        "status": "candidate_wrong_result",
+        "seconds": 0.638883,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "59b3c37b432be880f82b7c6052baeff9842214b29cd7a9363fafd91457c18e45",
+        "actual": [
+          [
+            "a18"
+          ]
+        ],
+        "reference": [
+          [
+            "a18b18"
+          ]
+        ],
+        "expected": null,
+        "classification": "literal_concatenation_compatibility_issue"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mixed_types.string_binary_compare",
+    "error_code": "None",
+    "count": 2118,
+    "ids": [
+      "G085023",
+      "G085048",
+      "G085073",
+      "G085098",
+      "G085123",
+      "G085148",
+      "G085222",
+      "G085246",
+      "G085270",
+      "G085294",
+      "G085318",
+      "G085342"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085023",
+        "module": "mixed_types",
+        "family": "mixed_types.string_binary_compare",
+        "statements": [
+          {
+            "sql": "select cast(%s as binary)=cast(%s as binary),strcmp(%s,%s)",
+            "params": [
+              "a\nb22",
+              "A\nB22",
+              "a\nb22",
+              "A\nB22"
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "7bf59dc0f87a8a762fac4875a3c3e755a7652bd94de2ab3914aba104081af1bd",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085023",
+        "module": "mixed_types",
+        "family": "mixed_types.string_binary_compare",
+        "status": "candidate_wrong_result",
+        "seconds": 0.561722,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "4b206b21939b457eb85499fb9142a2b2ff32d29b25b2a70733887616d179d748",
+        "actual": [
+          [
+            0,
+            1
+          ]
+        ],
+        "reference": [
+          [
+            0,
+            0
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "documented_behavior_difference",
+    "family": "mixed_types.unicode_collate",
+    "error_code": "None",
+    "count": 2151,
+    "ids": [
+      "G085043",
+      "G085068",
+      "G085093",
+      "G085118",
+      "G085143",
+      "G085168",
+      "G085193",
+      "G085218",
+      "G085242",
+      "G085266",
+      "G085290",
+      "G085314"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085043",
+        "module": "mixed_types",
+        "family": "mixed_types.unicode_collate",
+        "statements": [
+          {
+            "sql": "select locate(%s,%s collate utf8mb4_bin),%s like %s",
+            "params": [
+              "A,B42",
+              "a,b42",
+              "a,b42",
+              "A,B42"
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "f111e271d10e20346cea4d6a85f55ba6830cfa1827ab3306aee2a1d9076945d5",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085043",
+        "module": "mixed_types",
+        "family": "mixed_types.unicode_collate",
+        "status": "candidate_wrong_result",
+        "seconds": 0.069263,
+        "mo_error": null,
+        "mysql_error": null,
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": 1,
+        "mo_result_sha256": "182b77e38efae503abf58a12f7c83c1ff2a91b8d1a8fc47da71ae46d59e3621a",
+        "actual": [
+          [
+            1,
+            0
+          ]
+        ],
+        "reference": [
+          [
+            0,
+            1
+          ]
+        ],
+        "expected": null,
+        "classification": "documented_behavior_difference"
+      }
+    }
+  },
+  {
+    "category": "reference_rejected_or_mysql_difference",
+    "family": "mixed_types.float_overflow",
+    "error_code": "None",
+    "count": 36,
+    "ids": [
+      "G085310",
+      "G085334",
+      "G085358",
+      "G085382",
+      "G085689",
+      "G085712",
+      "G085735",
+      "G085758",
+      "G085781",
+      "G085804",
+      "G085827",
+      "G085850"
+    ],
+    "sample": {
+      "case": {
+        "id": "G085310",
+        "module": "mixed_types",
+        "family": "mixed_types.float_overflow",
+        "statements": [
+          {
+            "sql": "select exp(%s),power(10,%s)",
+            "params": [
+              313,
+              313
+            ]
+          }
+        ],
+        "expected": null,
+        "mysql_differential": true,
+        "expect_error": false,
+        "compare_mode": "ordered",
+        "tolerance": 2e-05,
+        "sources": [
+          "matrixorigin/matrixone:test/distributed/cases/vector/vector_func.sql"
+        ],
+        "sql_sha256": "d87583539c48f01158b6d5871c22d8af9b08dfd603652940c3069f56db671f75",
+        "oracle_policy": "normal",
+        "meta": null
+      },
+      "result": {
+        "id": "G085310",
+        "module": "mixed_types",
+        "family": "mixed_types.float_overflow",
+        "status": "reference_rejected",
+        "seconds": 0.064532,
+        "mo_error": null,
+        "mysql_error": {
+          "code": 1690,
+          "message": "(1690, \"DOUBLE value is out of range in 'pow(10,313)'\")",
+          "type": "OperationalError"
+        },
+        "retries": 0,
+        "initial_error": null,
+        "mo_rows": 1,
+        "mysql_rows": null,
+        "mo_result_sha256": "2dfa0039a93baa7c24f4534c83b4e20668e8ce5515b6898e45e4bced70315180",
+        "actual": [
+          [
+            8.593554502463442e+135,
+            null
+          ]
+        ],
+        "reference": null,
+        "expected": null,
+        "classification": "reference_rejected_or_mysql_difference"
+      }
+    }
+  }
+]

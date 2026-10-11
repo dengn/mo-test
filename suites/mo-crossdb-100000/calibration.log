@@ -1,0 +1,14 @@
+engine doris cases 270
+engine done doris {'pass': 269, 'candidate_wrong_result': 1}
+engine starrocks cases 270
+engine done starrocks {'pass': 537, 'candidate_wrong_result': 3}
+engine tidb cases 270
+engine done tidb {'pass': 806, 'candidate_wrong_result': 4}
+engine clickhouse cases 270
+{"completed": 1000, "counts": {"pass": 996, "candidate_wrong_result": 4}, "elapsed": 4.56}
+engine done clickhouse {'pass': 1076, 'candidate_wrong_result': 4}
+engine tdengine cases 130
+engine done tdengine {'pass': 1206, 'candidate_wrong_result': 4}
+engine milvus cases 140
+engine done milvus {'pass': 1346, 'candidate_wrong_result': 4}
+DONE 1350 {'pass': 1346, 'candidate_wrong_result': 4} 6.556059122085571

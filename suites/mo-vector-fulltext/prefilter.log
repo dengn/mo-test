@@ -1,0 +1,12 @@
+{"kind": "prefilter_control", "epoch": 1791527448.0329785, "on": 0, "table": "vh", "nprobe": 8, "predicate": "where grp=99", "counts": [1, 1, 0, 1, 0, 1, 0, 0, 0, 0], "recall10_mean": 0.04}
+{"kind": "prefilter_control", "epoch": 1791527448.078034, "on": 0, "table": "vh", "nprobe": 8, "predicate": "where id between 1 and 100", "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "recall10_mean": 0.0}
+{"kind": "prefilter_control", "epoch": 1791527448.2740839, "on": 0, "table": "vi", "nprobe": 8, "predicate": "where grp=99", "counts": [0, 1, 0, 0, 0, 2, 1, 0, 0, 1], "recall10_mean": 0.05}
+{"kind": "prefilter_control", "epoch": 1791527448.3199067, "on": 0, "table": "vi", "nprobe": 8, "predicate": "where id between 1 and 100", "counts": [6, 2, 10, 6, 10, 7, 6, 6, 5, 10], "recall10_mean": 0.11000000000000001}
+{"kind": "prefilter_control", "epoch": 1791527448.7987282, "on": 0, "table": "vi", "nprobe": 128, "predicate": "where grp=99", "counts": [1, 2, 1, 2, 0, 1, 0, 0, 0, 0], "recall10_mean": 0.07}
+{"kind": "prefilter_control", "epoch": 1791527448.9482763, "on": 0, "table": "vi", "nprobe": 128, "predicate": "where id between 1 and 100", "counts": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10], "recall10_mean": 1.0}
+{"kind": "prefilter_control", "epoch": 1791527449.0047178, "on": 1, "table": "vh", "nprobe": 8, "predicate": "where grp=99", "counts": [1, 1, 0, 1, 0, 1, 0, 0, 0, 0], "recall10_mean": 0.04}
+{"kind": "prefilter_control", "epoch": 1791527449.0474942, "on": 1, "table": "vh", "nprobe": 8, "predicate": "where id between 1 and 100", "counts": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "recall10_mean": 0.0}
+{"kind": "prefilter_control", "epoch": 1791527449.178087, "on": 1, "table": "vi", "nprobe": 8, "predicate": "where grp=99", "counts": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10], "recall10_mean": 0.15000000000000002}
+{"kind": "prefilter_control", "epoch": 1791527449.2314997, "on": 1, "table": "vi", "nprobe": 8, "predicate": "where id between 1 and 100", "counts": [6, 2, 10, 6, 10, 7, 6, 6, 5, 10], "recall10_mean": 0.11000000000000001}
+{"kind": "prefilter_control", "epoch": 1791527449.4024072, "on": 1, "table": "vi", "nprobe": 128, "predicate": "where grp=99", "counts": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10], "recall10_mean": 1.0}
+{"kind": "prefilter_control", "epoch": 1791527449.533142, "on": 1, "table": "vi", "nprobe": 128, "predicate": "where id between 1 and 100", "counts": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10], "recall10_mean": 1.0}

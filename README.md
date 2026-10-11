@@ -64,3 +64,17 @@ python serving.py 14999 --offline
 已关联问题：[Spark 隔离级别 #29838](https://github.com/matrixorigin/matrixone/issues/29838)、[TANH #29839](https://github.com/matrixorigin/matrixone/issues/29839)、[statement_info TEXT 容量 #29809](https://github.com/matrixorigin/matrixone/issues/29809)、[ETL 上传 #29797](https://github.com/matrixorigin/matrixone/issues/29797)。其他早期复杂批次的差异、去重检索和失败 SQL 保存在对应报告与失败分析中。
 
 通过意味着在记录的数据、容差和验收条件下兼容；不表示机器学习质量、生产规模、分布式容错或长期稳定性已获保证。性能基于同机 4 CPU / 16 GiB，许多指标包含客户端计算与往返，不能解释为 MO 纯 SQL QPS。后台日志事件与业务 case 失败分开计数，ML serving 对同一批模型的重放不新增 20,000 个训练 case。
+
+
+## 追加的边界与混沌测试
+
+另追加 **600,000 条主用例**（本轮 500,000 条已完成，后续两批各 50,000 条的完成状态见 manifest.json），覆盖极端 SQL、向量/全文、恢复、ETL、TLS/UDF/task/Iceberg、用户、多租户、发布订阅与 Git4Data。原有 250,000 条数据科学与 ML 测试保留；二者计数和报告分开。
+
+[新批次目录与重放说明](BOUNDARY-CHAOS-600000.md) · [新批次完整性清单](manifest.json) · [500,000 条完成报告](suites/mo-stability-500000/REPORT.md)
+
+~~~bash
+python3 tools/materialize.py --verify-only --output /tmp/mo-boundary-verify
+python3 tools/materialize.py --output /tmp/mo-boundary-replay
+~~~
+
+原有 tools/verify.py、tools/restore.py 和 archives/、catalog/ 不受影响。

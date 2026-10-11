@@ -1,0 +1,254 @@
+module constraints 5000 workers 4
+{"completed": 135, "counts": {"pass_expected_rejection": 68, "pass": 67}, "elapsed": 15.09}
+{"completed": 254, "counts": {"pass_expected_rejection": 128, "pass": 126}, "elapsed": 31.06}
+{"completed": 385, "counts": {"pass_expected_rejection": 193, "pass": 192}, "elapsed": 46.14}
+{"completed": 553, "counts": {"pass_expected_rejection": 278, "pass": 275}, "elapsed": 61.23}
+{"completed": 727, "counts": {"pass_expected_rejection": 364, "pass": 363}, "elapsed": 76.34}
+{"completed": 930, "counts": {"pass_expected_rejection": 465, "pass": 465}, "elapsed": 91.36}
+{"completed": 1000, "counts": {"pass_expected_rejection": 500, "pass": 500}, "elapsed": 95.58}
+{"completed": 1221, "counts": {"pass_expected_rejection": 611, "pass": 610}, "elapsed": 110.67}
+{"completed": 1441, "counts": {"pass_expected_rejection": 721, "pass": 720}, "elapsed": 125.82}
+{"completed": 1635, "counts": {"pass_expected_rejection": 818, "pass": 817}, "elapsed": 141.1}
+{"completed": 1845, "counts": {"pass_expected_rejection": 923, "pass": 922}, "elapsed": 156.22}
+{"completed": 2000, "counts": {"pass_expected_rejection": 1000, "pass": 1000}, "elapsed": 167.39}
+{"completed": 2170, "counts": {"pass_expected_rejection": 1085, "pass": 1085}, "elapsed": 182.45}
+{"completed": 2361, "counts": {"pass_expected_rejection": 1181, "pass": 1180}, "elapsed": 197.48}
+{"completed": 2556, "counts": {"pass_expected_rejection": 1279, "pass": 1277}, "elapsed": 212.61}
+{"completed": 2760, "counts": {"pass_expected_rejection": 1380, "pass": 1380}, "elapsed": 227.86}
+{"completed": 2930, "counts": {"pass_expected_rejection": 1465, "pass": 1465}, "elapsed": 243.14}
+{"completed": 3000, "counts": {"pass_expected_rejection": 1500, "pass": 1500}, "elapsed": 248.52}
+{"completed": 3195, "counts": {"pass_expected_rejection": 1598, "pass": 1597}, "elapsed": 263.58}
+{"completed": 3379, "counts": {"pass_expected_rejection": 1690, "pass": 1689}, "elapsed": 278.66}
+{"completed": 3584, "counts": {"pass_expected_rejection": 1793, "pass": 1791}, "elapsed": 293.82}
+{"completed": 3787, "counts": {"pass_expected_rejection": 1894, "pass": 1893}, "elapsed": 308.88}
+{"completed": 3890, "counts": {"pass_expected_rejection": 1945, "pass": 1945}, "elapsed": 323.91}
+{"completed": 4000, "counts": {"pass_expected_rejection": 2000, "pass": 2000}, "elapsed": 335.22}
+{"completed": 4176, "counts": {"pass_expected_rejection": 2089, "pass": 2087}, "elapsed": 350.43}
+{"completed": 4334, "counts": {"pass_expected_rejection": 2168, "pass": 2166}, "elapsed": 365.61}
+{"completed": 4509, "counts": {"pass_expected_rejection": 2255, "pass": 2254}, "elapsed": 380.77}
+{"completed": 4702, "counts": {"pass_expected_rejection": 2352, "pass": 2350}, "elapsed": 395.82}
+{"completed": 4885, "counts": {"pass_expected_rejection": 2443, "pass": 2442}, "elapsed": 412.13}
+{"completed": 5000, "counts": {"pass_expected_rejection": 2500, "pass": 2500}, "elapsed": 420.1}
+module done constraints {'pass_expected_rejection': 2500, 'pass': 2500}
+module joins_ctes 45000 workers 32
+{"completed": 6000, "counts": {"pass_expected_rejection": 2500, "pass": 3500}, "elapsed": 433.75}
+{"completed": 7000, "counts": {"pass_expected_rejection": 2500, "pass": 4500}, "elapsed": 440.07}
+{"completed": 8000, "counts": {"pass_expected_rejection": 2500, "pass": 5500}, "elapsed": 445.06}
+{"completed": 9000, "counts": {"pass_expected_rejection": 2500, "pass": 6500}, "elapsed": 453.08}
+{"completed": 10000, "counts": {"pass_expected_rejection": 2500, "pass": 7500}, "elapsed": 456.73}
+{"completed": 11000, "counts": {"pass_expected_rejection": 2500, "pass": 8500}, "elapsed": 462.58}
+{"completed": 12000, "counts": {"pass_expected_rejection": 2500, "pass": 9500}, "elapsed": 471.76}
+{"completed": 13000, "counts": {"pass_expected_rejection": 2500, "pass": 10500}, "elapsed": 479.87}
+{"completed": 14000, "counts": {"pass_expected_rejection": 2500, "pass": 11500}, "elapsed": 489.72}
+{"completed": 15000, "counts": {"pass_expected_rejection": 2500, "pass": 12500}, "elapsed": 496.38}
+{"completed": 16000, "counts": {"pass_expected_rejection": 2500, "pass": 13500}, "elapsed": 501.1}
+{"completed": 17000, "counts": {"pass_expected_rejection": 2500, "pass": 14500}, "elapsed": 509.07}
+{"completed": 18000, "counts": {"pass_expected_rejection": 2500, "pass": 15500}, "elapsed": 514.36}
+{"completed": 19000, "counts": {"pass_expected_rejection": 2500, "pass": 16500}, "elapsed": 521.28}
+{"completed": 20000, "counts": {"pass_expected_rejection": 2500, "pass": 17500}, "elapsed": 527.68}
+{"completed": 21000, "counts": {"pass_expected_rejection": 2500, "pass": 18500}, "elapsed": 531.53}
+{"completed": 22000, "counts": {"pass_expected_rejection": 2500, "pass": 19500}, "elapsed": 536.97}
+{"completed": 23000, "counts": {"pass_expected_rejection": 2500, "pass": 20500}, "elapsed": 544.28}
+{"completed": 24000, "counts": {"pass_expected_rejection": 2500, "pass": 21500}, "elapsed": 548.4}
+{"completed": 25000, "counts": {"pass_expected_rejection": 2500, "pass": 22500}, "elapsed": 553.35}
+{"completed": 26000, "counts": {"pass_expected_rejection": 2500, "pass": 23500}, "elapsed": 561.09}
+{"completed": 27000, "counts": {"pass_expected_rejection": 2500, "pass": 24500}, "elapsed": 565.82}
+{"completed": 28000, "counts": {"pass_expected_rejection": 2500, "pass": 25500}, "elapsed": 572.98}
+{"completed": 29000, "counts": {"pass_expected_rejection": 2500, "pass": 26500}, "elapsed": 578.08}
+{"completed": 30000, "counts": {"pass_expected_rejection": 2500, "pass": 27500}, "elapsed": 583.48}
+{"completed": 31000, "counts": {"pass_expected_rejection": 2500, "pass": 28500}, "elapsed": 589.6}
+{"completed": 32000, "counts": {"pass_expected_rejection": 2500, "pass": 29500}, "elapsed": 596.31}
+{"completed": 33000, "counts": {"pass_expected_rejection": 2500, "pass": 30500}, "elapsed": 600.86}
+{"completed": 34000, "counts": {"pass_expected_rejection": 2500, "pass": 31500}, "elapsed": 605.58}
+{"completed": 35000, "counts": {"pass_expected_rejection": 2500, "pass": 32500}, "elapsed": 610.7}
+{"completed": 36000, "counts": {"pass_expected_rejection": 2500, "pass": 33500}, "elapsed": 616.38}
+{"completed": 37000, "counts": {"pass_expected_rejection": 2500, "pass": 34500}, "elapsed": 621.98}
+{"completed": 38000, "counts": {"pass_expected_rejection": 2500, "pass": 35500}, "elapsed": 626.17}
+{"completed": 39000, "counts": {"pass_expected_rejection": 2500, "pass": 36500}, "elapsed": 628.88}
+{"completed": 40000, "counts": {"pass_expected_rejection": 2500, "pass": 37500}, "elapsed": 633.39}
+{"completed": 41000, "counts": {"pass_expected_rejection": 2500, "pass": 38500}, "elapsed": 639.99}
+{"completed": 42000, "counts": {"pass_expected_rejection": 2500, "pass": 39500}, "elapsed": 641.6}
+{"completed": 43000, "counts": {"pass_expected_rejection": 2500, "pass": 40500}, "elapsed": 649.77}
+{"completed": 44000, "counts": {"pass_expected_rejection": 2500, "pass": 41500}, "elapsed": 653.97}
+{"completed": 45000, "counts": {"pass_expected_rejection": 2500, "pass": 42500}, "elapsed": 661.25}
+{"completed": 46000, "counts": {"pass_expected_rejection": 2500, "pass": 43500}, "elapsed": 667.38}
+{"completed": 47000, "counts": {"pass_expected_rejection": 2500, "pass": 44500}, "elapsed": 676.87}
+{"completed": 48000, "counts": {"pass_expected_rejection": 2500, "pass": 45500}, "elapsed": 680.4}
+{"completed": 49000, "counts": {"pass_expected_rejection": 2500, "pass": 46500}, "elapsed": 687.7}
+{"completed": 50000, "counts": {"pass_expected_rejection": 2500, "pass": 47500}, "elapsed": 691.38}
+module done joins_ctes {'pass_expected_rejection': 2500, 'pass': 47500}
+module windows_sets 35000 workers 32
+{"completed": 51000, "counts": {"pass_expected_rejection": 2500, "pass": 48500}, "elapsed": 699.05}
+{"completed": 52000, "counts": {"pass_expected_rejection": 2500, "pass": 49500}, "elapsed": 702.38}
+{"completed": 53000, "counts": {"pass_expected_rejection": 2500, "pass": 50500}, "elapsed": 704.35}
+{"completed": 54000, "counts": {"pass_expected_rejection": 2500, "pass": 51500}, "elapsed": 708.12}
+{"completed": 55000, "counts": {"pass_expected_rejection": 2500, "pass": 52500}, "elapsed": 710.53}
+{"completed": 56000, "counts": {"pass_expected_rejection": 2500, "pass": 53500}, "elapsed": 713.47}
+{"completed": 57000, "counts": {"pass_expected_rejection": 2500, "pass": 54500}, "elapsed": 715.74}
+{"completed": 58000, "counts": {"pass_expected_rejection": 2500, "pass": 55500}, "elapsed": 718.01}
+{"completed": 59000, "counts": {"pass_expected_rejection": 2500, "pass": 56500}, "elapsed": 721.44}
+{"completed": 60000, "counts": {"pass_expected_rejection": 2500, "pass": 57500}, "elapsed": 724.08}
+{"completed": 61000, "counts": {"pass_expected_rejection": 2500, "pass": 58500}, "elapsed": 726.72}
+{"completed": 62000, "counts": {"pass_expected_rejection": 2500, "pass": 59500}, "elapsed": 728.74}
+{"completed": 63000, "counts": {"pass_expected_rejection": 2500, "pass": 60500}, "elapsed": 731.84}
+{"completed": 64000, "counts": {"pass_expected_rejection": 2500, "pass": 61500}, "elapsed": 734.68}
+{"completed": 65000, "counts": {"pass_expected_rejection": 2500, "pass": 62500}, "elapsed": 737.72}
+{"completed": 66000, "counts": {"pass_expected_rejection": 2500, "pass": 63500}, "elapsed": 739.7}
+{"completed": 67000, "counts": {"pass_expected_rejection": 2500, "pass": 64500}, "elapsed": 742.02}
+{"completed": 68000, "counts": {"pass_expected_rejection": 2500, "pass": 65500}, "elapsed": 744.82}
+{"completed": 69000, "counts": {"pass_expected_rejection": 2500, "pass": 66500}, "elapsed": 747.73}
+{"completed": 70000, "counts": {"pass_expected_rejection": 2500, "pass": 67500}, "elapsed": 750.41}
+{"completed": 71000, "counts": {"pass_expected_rejection": 2500, "pass": 68500}, "elapsed": 752.39}
+{"completed": 72000, "counts": {"pass_expected_rejection": 2500, "pass": 69500}, "elapsed": 755.08}
+{"completed": 73000, "counts": {"pass_expected_rejection": 2500, "pass": 70500}, "elapsed": 758.04}
+{"completed": 74000, "counts": {"pass_expected_rejection": 2500, "pass": 71500}, "elapsed": 760.82}
+{"completed": 75000, "counts": {"pass_expected_rejection": 2500, "pass": 72500}, "elapsed": 763.08}
+{"completed": 76000, "counts": {"pass_expected_rejection": 2500, "pass": 73500}, "elapsed": 765.04}
+{"completed": 77000, "counts": {"pass_expected_rejection": 2500, "pass": 74500}, "elapsed": 768.08}
+{"completed": 78000, "counts": {"pass_expected_rejection": 2500, "pass": 75500}, "elapsed": 770.55}
+{"completed": 79000, "counts": {"pass_expected_rejection": 2500, "pass": 76500}, "elapsed": 773.22}
+{"completed": 80000, "counts": {"pass_expected_rejection": 2500, "pass": 77500}, "elapsed": 775.46}
+{"completed": 81000, "counts": {"pass_expected_rejection": 2500, "pass": 78500}, "elapsed": 777.74}
+{"completed": 82000, "counts": {"pass_expected_rejection": 2500, "pass": 79500}, "elapsed": 781.0}
+{"completed": 83000, "counts": {"pass_expected_rejection": 2500, "pass": 80500}, "elapsed": 783.77}
+{"completed": 84000, "counts": {"pass_expected_rejection": 2500, "pass": 81500}, "elapsed": 786.32}
+{"completed": 85000, "counts": {"pass_expected_rejection": 2500, "pass": 82500}, "elapsed": 788.2}
+module done windows_sets {'pass_expected_rejection': 2500, 'pass': 82500}
+module mixed_types 50000 workers 32
+{"completed": 86000, "counts": {"pass_expected_rejection": 2500, "pass": 83216, "mo_execution_error": 84, "candidate_wrong_result": 184, "reference_rejected": 16}, "elapsed": 792.34}
+{"completed": 87000, "counts": {"pass_expected_rejection": 2500, "pass": 83937, "mo_execution_error": 172, "candidate_wrong_result": 355, "reference_rejected": 36}, "elapsed": 792.83}
+{"completed": 88000, "counts": {"pass_expected_rejection": 2500, "pass": 84676, "mo_execution_error": 262, "candidate_wrong_result": 526, "reference_rejected": 36}, "elapsed": 793.57}
+{"completed": 89000, "counts": {"pass_expected_rejection": 2500, "pass": 85404, "mo_execution_error": 354, "candidate_wrong_result": 706, "reference_rejected": 36}, "elapsed": 794.49}
+{"completed": 90000, "counts": {"pass_expected_rejection": 2500, "pass": 86143, "mo_execution_error": 444, "candidate_wrong_result": 877, "reference_rejected": 36}, "elapsed": 795.27}
+{"completed": 91000, "counts": {"pass_expected_rejection": 2500, "pass": 86873, "mo_execution_error": 538, "candidate_wrong_result": 1053, "reference_rejected": 36}, "elapsed": 795.88}
+{"completed": 92000, "counts": {"pass_expected_rejection": 2500, "pass": 87605, "mo_execution_error": 634, "candidate_wrong_result": 1225, "reference_rejected": 36}, "elapsed": 796.43}
+{"completed": 93000, "counts": {"pass_expected_rejection": 2500, "pass": 88335, "mo_execution_error": 728, "candidate_wrong_result": 1401, "reference_rejected": 36}, "elapsed": 797.32}
+{"completed": 94000, "counts": {"pass_expected_rejection": 2500, "pass": 89059, "mo_execution_error": 824, "candidate_wrong_result": 1581, "reference_rejected": 36}, "elapsed": 798.11}
+{"completed": 95000, "counts": {"pass_expected_rejection": 2500, "pass": 89786, "mo_execution_error": 919, "candidate_wrong_result": 1759, "reference_rejected": 36}, "elapsed": 798.57}
+{"completed": 96000, "counts": {"pass_expected_rejection": 2500, "pass": 90516, "mo_execution_error": 1014, "candidate_wrong_result": 1934, "reference_rejected": 36}, "elapsed": 799.0}
+{"completed": 97000, "counts": {"pass_expected_rejection": 2500, "pass": 91248, "mo_execution_error": 1110, "candidate_wrong_result": 2106, "reference_rejected": 36}, "elapsed": 799.48}
+{"completed": 98000, "counts": {"pass_expected_rejection": 2500, "pass": 91982, "mo_execution_error": 1206, "candidate_wrong_result": 2276, "reference_rejected": 36}, "elapsed": 800.09}
+{"completed": 99000, "counts": {"pass_expected_rejection": 2500, "pass": 92732, "mo_execution_error": 1310, "candidate_wrong_result": 2422, "reference_rejected": 36}, "elapsed": 800.53}
+{"completed": 100000, "counts": {"pass_expected_rejection": 2500, "pass": 93485, "mo_execution_error": 1416, "candidate_wrong_result": 2563, "reference_rejected": 36}, "elapsed": 800.92}
+{"completed": 101000, "counts": {"pass_expected_rejection": 2500, "pass": 94233, "mo_execution_error": 1521, "candidate_wrong_result": 2710, "reference_rejected": 36}, "elapsed": 801.83}
+{"completed": 102000, "counts": {"pass_expected_rejection": 2500, "pass": 94982, "mo_execution_error": 1626, "candidate_wrong_result": 2856, "reference_rejected": 36}, "elapsed": 803.46}
+{"completed": 103000, "counts": {"pass_expected_rejection": 2500, "pass": 95737, "mo_execution_error": 1732, "candidate_wrong_result": 2995, "reference_rejected": 36}, "elapsed": 804.09}
+{"completed": 104000, "counts": {"pass_expected_rejection": 2500, "pass": 96487, "mo_execution_error": 1836, "candidate_wrong_result": 3141, "reference_rejected": 36}, "elapsed": 804.94}
+{"completed": 105000, "counts": {"pass_expected_rejection": 2500, "pass": 97244, "mo_execution_error": 1942, "candidate_wrong_result": 3278, "reference_rejected": 36}, "elapsed": 805.76}
+{"completed": 106000, "counts": {"pass_expected_rejection": 2500, "pass": 97998, "mo_execution_error": 2048, "candidate_wrong_result": 3418, "reference_rejected": 36}, "elapsed": 806.43}
+{"completed": 107000, "counts": {"pass_expected_rejection": 2500, "pass": 98762, "mo_execution_error": 2152, "candidate_wrong_result": 3550, "reference_rejected": 36}, "elapsed": 807.38}
+{"completed": 108000, "counts": {"pass_expected_rejection": 2500, "pass": 99516, "mo_execution_error": 2258, "candidate_wrong_result": 3690, "reference_rejected": 36}, "elapsed": 808.02}
+{"completed": 109000, "counts": {"pass_expected_rejection": 2500, "pass": 100268, "mo_execution_error": 2363, "candidate_wrong_result": 3833, "reference_rejected": 36}, "elapsed": 808.78}
+{"completed": 110000, "counts": {"pass_expected_rejection": 2500, "pass": 101024, "mo_execution_error": 2468, "candidate_wrong_result": 3972, "reference_rejected": 36}, "elapsed": 809.68}
+{"completed": 111000, "counts": {"pass_expected_rejection": 2500, "pass": 101777, "mo_execution_error": 2574, "candidate_wrong_result": 4113, "reference_rejected": 36}, "elapsed": 810.57}
+{"completed": 112000, "counts": {"pass_expected_rejection": 2500, "pass": 102532, "mo_execution_error": 2678, "candidate_wrong_result": 4254, "reference_rejected": 36}, "elapsed": 811.07}
+{"completed": 113000, "counts": {"pass_expected_rejection": 2500, "pass": 103290, "mo_execution_error": 2784, "candidate_wrong_result": 4390, "reference_rejected": 36}, "elapsed": 811.6}
+{"completed": 114000, "counts": {"pass_expected_rejection": 2500, "pass": 104048, "mo_execution_error": 2890, "candidate_wrong_result": 4526, "reference_rejected": 36}, "elapsed": 812.14}
+{"completed": 115000, "counts": {"pass_expected_rejection": 2500, "pass": 104800, "mo_execution_error": 2994, "candidate_wrong_result": 4670, "reference_rejected": 36}, "elapsed": 812.56}
+{"completed": 116000, "counts": {"pass_expected_rejection": 2500, "pass": 105552, "mo_execution_error": 3100, "candidate_wrong_result": 4812, "reference_rejected": 36}, "elapsed": 812.96}
+{"completed": 117000, "counts": {"pass_expected_rejection": 2500, "pass": 106303, "mo_execution_error": 3206, "candidate_wrong_result": 4955, "reference_rejected": 36}, "elapsed": 813.89}
+{"completed": 118000, "counts": {"pass_expected_rejection": 2500, "pass": 107062, "mo_execution_error": 3310, "candidate_wrong_result": 5092, "reference_rejected": 36}, "elapsed": 814.85}
+{"completed": 119000, "counts": {"pass_expected_rejection": 2500, "pass": 107814, "mo_execution_error": 3416, "candidate_wrong_result": 5234, "reference_rejected": 36}, "elapsed": 815.49}
+{"completed": 120000, "counts": {"pass_expected_rejection": 2500, "pass": 108569, "mo_execution_error": 3521, "candidate_wrong_result": 5374, "reference_rejected": 36}, "elapsed": 816.54}
+{"completed": 121000, "counts": {"pass_expected_rejection": 2500, "pass": 109317, "mo_execution_error": 3626, "candidate_wrong_result": 5521, "reference_rejected": 36}, "elapsed": 817.35}
+{"completed": 122000, "counts": {"pass_expected_rejection": 2500, "pass": 110077, "mo_execution_error": 3732, "candidate_wrong_result": 5655, "reference_rejected": 36}, "elapsed": 818.33}
+{"completed": 123000, "counts": {"pass_expected_rejection": 2500, "pass": 110831, "mo_execution_error": 3836, "candidate_wrong_result": 5797, "reference_rejected": 36}, "elapsed": 819.0}
+{"completed": 124000, "counts": {"pass_expected_rejection": 2500, "pass": 111583, "mo_execution_error": 3942, "candidate_wrong_result": 5939, "reference_rejected": 36}, "elapsed": 819.61}
+{"completed": 125000, "counts": {"pass_expected_rejection": 2500, "pass": 112343, "mo_execution_error": 4048, "candidate_wrong_result": 6073, "reference_rejected": 36}, "elapsed": 820.39}
+{"completed": 126000, "counts": {"pass_expected_rejection": 2500, "pass": 113100, "mo_execution_error": 4152, "candidate_wrong_result": 6212, "reference_rejected": 36}, "elapsed": 820.98}
+{"completed": 127000, "counts": {"pass_expected_rejection": 2500, "pass": 113851, "mo_execution_error": 4258, "candidate_wrong_result": 6355, "reference_rejected": 36}, "elapsed": 821.7}
+{"completed": 128000, "counts": {"pass_expected_rejection": 2500, "pass": 114609, "mo_execution_error": 4363, "candidate_wrong_result": 6492, "reference_rejected": 36}, "elapsed": 822.4}
+{"completed": 129000, "counts": {"pass_expected_rejection": 2500, "pass": 115359, "mo_execution_error": 4468, "candidate_wrong_result": 6637, "reference_rejected": 36}, "elapsed": 822.86}
+{"completed": 130000, "counts": {"pass_expected_rejection": 2500, "pass": 116110, "mo_execution_error": 4574, "candidate_wrong_result": 6780, "reference_rejected": 36}, "elapsed": 823.32}
+{"completed": 131000, "counts": {"pass_expected_rejection": 2500, "pass": 116864, "mo_execution_error": 4678, "candidate_wrong_result": 6922, "reference_rejected": 36}, "elapsed": 823.79}
+{"completed": 132000, "counts": {"pass_expected_rejection": 2500, "pass": 117617, "mo_execution_error": 4784, "candidate_wrong_result": 7063, "reference_rejected": 36}, "elapsed": 824.41}
+{"completed": 133000, "counts": {"pass_expected_rejection": 2500, "pass": 118372, "mo_execution_error": 4890, "candidate_wrong_result": 7202, "reference_rejected": 36}, "elapsed": 825.05}
+{"completed": 134000, "counts": {"pass_expected_rejection": 2500, "pass": 119129, "mo_execution_error": 4994, "candidate_wrong_result": 7341, "reference_rejected": 36}, "elapsed": 825.96}
+{"completed": 135000, "counts": {"pass_expected_rejection": 2500, "pass": 119885, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36}, "elapsed": 826.67}
+module done mixed_types {'pass_expected_rejection': 2500, 'pass': 119885, 'mo_execution_error': 5100, 'candidate_wrong_result': 7479, 'reference_rejected': 36}
+module search_edges 50000 workers 32
+{"completed": 136000, "counts": {"pass_expected_rejection": 2500, "pass": 120488, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 67, "boundary_accepted": 330}, "elapsed": 832.88}
+{"completed": 137000, "counts": {"pass_expected_rejection": 2500, "pass": 121087, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 133, "boundary_accepted": 665}, "elapsed": 834.42}
+{"completed": 138000, "counts": {"pass_expected_rejection": 2500, "pass": 121685, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 200, "boundary_accepted": 1000}, "elapsed": 835.56}
+{"completed": 139000, "counts": {"pass_expected_rejection": 2500, "pass": 122288, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 267, "boundary_accepted": 1330}, "elapsed": 836.46}
+{"completed": 140000, "counts": {"pass_expected_rejection": 2500, "pass": 122889, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 333, "boundary_accepted": 1663}, "elapsed": 837.73}
+{"completed": 141000, "counts": {"pass_expected_rejection": 2500, "pass": 123489, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 400, "boundary_accepted": 1996}, "elapsed": 840.48}
+{"completed": 142000, "counts": {"pass_expected_rejection": 2500, "pass": 124089, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 467, "boundary_accepted": 2329}, "elapsed": 842.88}
+{"completed": 143000, "counts": {"pass_expected_rejection": 2500, "pass": 124691, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 534, "boundary_accepted": 2660}, "elapsed": 844.95}
+{"completed": 144000, "counts": {"pass_expected_rejection": 2500, "pass": 125293, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 600, "boundary_accepted": 2992}, "elapsed": 846.95}
+{"completed": 145000, "counts": {"pass_expected_rejection": 2500, "pass": 125892, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 667, "boundary_accepted": 3326}, "elapsed": 847.72}
+{"completed": 146000, "counts": {"pass_expected_rejection": 2500, "pass": 126492, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 734, "boundary_accepted": 3659}, "elapsed": 848.75}
+{"completed": 147000, "counts": {"pass_expected_rejection": 2500, "pass": 127094, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 801, "boundary_accepted": 3990}, "elapsed": 850.51}
+{"completed": 148000, "counts": {"pass_expected_rejection": 2500, "pass": 127694, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 867, "boundary_accepted": 4324}, "elapsed": 852.89}
+{"completed": 149000, "counts": {"pass_expected_rejection": 2500, "pass": 128292, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 934, "boundary_accepted": 4659}, "elapsed": 854.76}
+{"completed": 150000, "counts": {"pass_expected_rejection": 2500, "pass": 128894, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1001, "boundary_accepted": 4990}, "elapsed": 856.9}
+{"completed": 151000, "counts": {"pass_expected_rejection": 2500, "pass": 129496, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1067, "boundary_accepted": 5322}, "elapsed": 858.76}
+{"completed": 152000, "counts": {"pass_expected_rejection": 2500, "pass": 130094, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1134, "boundary_accepted": 5657}, "elapsed": 859.59}
+{"completed": 153000, "counts": {"pass_expected_rejection": 2500, "pass": 130694, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1201, "boundary_accepted": 5990}, "elapsed": 860.65}
+{"completed": 154000, "counts": {"pass_expected_rejection": 2500, "pass": 131297, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1268, "boundary_accepted": 6320}, "elapsed": 861.97}
+{"completed": 155000, "counts": {"pass_expected_rejection": 2500, "pass": 131900, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1334, "boundary_accepted": 6651}, "elapsed": 864.63}
+{"completed": 156000, "counts": {"pass_expected_rejection": 2500, "pass": 132499, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1401, "boundary_accepted": 6985}, "elapsed": 866.04}
+{"completed": 157000, "counts": {"pass_expected_rejection": 2500, "pass": 133099, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1468, "boundary_accepted": 7318}, "elapsed": 868.39}
+{"completed": 158000, "counts": {"pass_expected_rejection": 2500, "pass": 133700, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1535, "boundary_accepted": 7650}, "elapsed": 870.18}
+{"completed": 159000, "counts": {"pass_expected_rejection": 2500, "pass": 134303, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1602, "boundary_accepted": 7980}, "elapsed": 871.15}
+{"completed": 160000, "counts": {"pass_expected_rejection": 2500, "pass": 134906, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1669, "boundary_accepted": 8310}, "elapsed": 871.99}
+{"completed": 161000, "counts": {"pass_expected_rejection": 2500, "pass": 135506, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1735, "boundary_accepted": 8644}, "elapsed": 872.98}
+{"completed": 162000, "counts": {"pass_expected_rejection": 2500, "pass": 136106, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1802, "boundary_accepted": 8977}, "elapsed": 874.92}
+{"completed": 163000, "counts": {"pass_expected_rejection": 2500, "pass": 136706, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1869, "boundary_accepted": 9310}, "elapsed": 876.58}
+{"completed": 164000, "counts": {"pass_expected_rejection": 2500, "pass": 137309, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 1936, "boundary_accepted": 9640}, "elapsed": 878.39}
+{"completed": 165000, "counts": {"pass_expected_rejection": 2500, "pass": 137912, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2003, "boundary_accepted": 9970}, "elapsed": 879.45}
+{"completed": 166000, "counts": {"pass_expected_rejection": 2500, "pass": 138511, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2069, "boundary_accepted": 10305}, "elapsed": 881.46}
+{"completed": 167000, "counts": {"pass_expected_rejection": 2500, "pass": 139111, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2136, "boundary_accepted": 10638}, "elapsed": 882.69}
+{"completed": 168000, "counts": {"pass_expected_rejection": 2500, "pass": 139712, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2203, "boundary_accepted": 10970}, "elapsed": 883.75}
+{"completed": 169000, "counts": {"pass_expected_rejection": 2500, "pass": 140315, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2270, "boundary_accepted": 11300}, "elapsed": 884.78}
+{"completed": 170000, "counts": {"pass_expected_rejection": 2500, "pass": 140918, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2337, "boundary_accepted": 11630}, "elapsed": 886.95}
+{"completed": 171000, "counts": {"pass_expected_rejection": 2500, "pass": 141521, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2404, "boundary_accepted": 11960}, "elapsed": 889.28}
+{"completed": 172000, "counts": {"pass_expected_rejection": 2500, "pass": 142124, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2471, "boundary_accepted": 12290}, "elapsed": 890.79}
+{"completed": 173000, "counts": {"pass_expected_rejection": 2500, "pass": 142727, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2538, "boundary_accepted": 12620}, "elapsed": 893.09}
+{"completed": 174000, "counts": {"pass_expected_rejection": 2500, "pass": 143327, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2604, "boundary_accepted": 12954}, "elapsed": 894.21}
+{"completed": 175000, "counts": {"pass_expected_rejection": 2500, "pass": 143930, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2671, "boundary_accepted": 13284}, "elapsed": 895.48}
+{"completed": 176000, "counts": {"pass_expected_rejection": 2500, "pass": 144533, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2738, "boundary_accepted": 13614}, "elapsed": 896.25}
+{"completed": 177000, "counts": {"pass_expected_rejection": 2500, "pass": 145137, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2805, "boundary_accepted": 13943}, "elapsed": 897.91}
+{"completed": 178000, "counts": {"pass_expected_rejection": 2500, "pass": 145737, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2872, "boundary_accepted": 14276}, "elapsed": 899.82}
+{"completed": 179000, "counts": {"pass_expected_rejection": 2500, "pass": 146339, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 2939, "boundary_accepted": 14607}, "elapsed": 902.34}
+{"completed": 180000, "counts": {"pass_expected_rejection": 2500, "pass": 146941, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3006, "boundary_accepted": 14938}, "elapsed": 903.96}
+{"completed": 181000, "counts": {"pass_expected_rejection": 2500, "pass": 147542, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3073, "boundary_accepted": 15270}, "elapsed": 905.65}
+{"completed": 182000, "counts": {"pass_expected_rejection": 2500, "pass": 148145, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3140, "boundary_accepted": 15600}, "elapsed": 907.08}
+{"completed": 183000, "counts": {"pass_expected_rejection": 2500, "pass": 148748, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3207, "boundary_accepted": 15930}, "elapsed": 907.85}
+{"completed": 184000, "counts": {"pass_expected_rejection": 2500, "pass": 149351, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3274, "boundary_accepted": 16260}, "elapsed": 908.86}
+{"completed": 185000, "counts": {"pass_expected_rejection": 2500, "pass": 149954, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3341, "boundary_accepted": 16590}, "elapsed": 910.57}
+module done search_edges {'pass_expected_rejection': 2500, 'pass': 149954, 'mo_execution_error': 5100, 'candidate_wrong_result': 7479, 'reference_rejected': 36, 'boundary_rejected': 3341, 'boundary_accepted': 16590}
+module concurrency 15000 workers 16
+{"completed": 185421, "counts": {"pass_expected_rejection": 2500, "pass": 150038, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3425, "boundary_accepted": 16590, "pass_atomic": 85, "pass_disconnect_rollback": 84, "pass_cancel": 84}, "elapsed": 925.76}
+{"completed": 185986, "counts": {"pass_expected_rejection": 2500, "pass": 150151, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3538, "boundary_accepted": 16590, "pass_atomic": 198, "pass_disconnect_rollback": 197, "pass_cancel": 197}, "elapsed": 941.15}
+{"completed": 186000, "counts": {"pass_expected_rejection": 2500, "pass": 150154, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3541, "boundary_accepted": 16590, "pass_atomic": 200, "pass_disconnect_rollback": 200, "pass_cancel": 200}, "elapsed": 941.15}
+{"completed": 186771, "counts": {"pass_expected_rejection": 2500, "pass": 150308, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3695, "boundary_accepted": 16590, "pass_atomic": 355, "pass_disconnect_rollback": 354, "pass_cancel": 354}, "elapsed": 956.3}
+{"completed": 187000, "counts": {"pass_expected_rejection": 2500, "pass": 150354, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3741, "boundary_accepted": 16590, "pass_atomic": 400, "pass_disconnect_rollback": 400, "pass_cancel": 400}, "elapsed": 960.07}
+{"completed": 187846, "counts": {"pass_expected_rejection": 2500, "pass": 150523, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3910, "boundary_accepted": 16590, "pass_atomic": 570, "pass_disconnect_rollback": 569, "pass_cancel": 569}, "elapsed": 975.13}
+{"completed": 188000, "counts": {"pass_expected_rejection": 2500, "pass": 150554, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 3941, "boundary_accepted": 16590, "pass_atomic": 600, "pass_disconnect_rollback": 600, "pass_cancel": 600}, "elapsed": 978.15}
+{"completed": 188706, "counts": {"pass_expected_rejection": 2500, "pass": 150695, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4082, "boundary_accepted": 16590, "pass_atomic": 742, "pass_disconnect_rollback": 741, "pass_cancel": 741}, "elapsed": 993.2}
+{"completed": 189000, "counts": {"pass_expected_rejection": 2500, "pass": 150754, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4141, "boundary_accepted": 16590, "pass_atomic": 800, "pass_disconnect_rollback": 800, "pass_cancel": 800}, "elapsed": 998.33}
+{"completed": 189851, "counts": {"pass_expected_rejection": 2500, "pass": 150924, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4311, "boundary_accepted": 16590, "pass_atomic": 971, "pass_disconnect_rollback": 970, "pass_cancel": 970}, "elapsed": 1013.74}
+{"completed": 190000, "counts": {"pass_expected_rejection": 2500, "pass": 150954, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4341, "boundary_accepted": 16590, "pass_atomic": 1000, "pass_disconnect_rollback": 1000, "pass_cancel": 1000}, "elapsed": 1016.0}
+{"completed": 190806, "counts": {"pass_expected_rejection": 2500, "pass": 151115, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4502, "boundary_accepted": 16590, "pass_atomic": 1162, "pass_disconnect_rollback": 1161, "pass_cancel": 1161}, "elapsed": 1031.03}
+{"completed": 191000, "counts": {"pass_expected_rejection": 2500, "pass": 151154, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4541, "boundary_accepted": 16590, "pass_atomic": 1200, "pass_disconnect_rollback": 1200, "pass_cancel": 1200}, "elapsed": 1034.32}
+{"completed": 191816, "counts": {"pass_expected_rejection": 2500, "pass": 151317, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4704, "boundary_accepted": 16590, "pass_atomic": 1364, "pass_disconnect_rollback": 1363, "pass_cancel": 1363}, "elapsed": 1049.35}
+{"completed": 192000, "counts": {"pass_expected_rejection": 2500, "pass": 151354, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4741, "boundary_accepted": 16590, "pass_atomic": 1400, "pass_disconnect_rollback": 1400, "pass_cancel": 1400}, "elapsed": 1052.31}
+{"completed": 192886, "counts": {"pass_expected_rejection": 2500, "pass": 151531, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4918, "boundary_accepted": 16590, "pass_atomic": 1578, "pass_disconnect_rollback": 1577, "pass_cancel": 1577}, "elapsed": 1067.53}
+{"completed": 193000, "counts": {"pass_expected_rejection": 2500, "pass": 151554, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 4941, "boundary_accepted": 16590, "pass_atomic": 1600, "pass_disconnect_rollback": 1600, "pass_cancel": 1600}, "elapsed": 1069.57}
+{"completed": 193871, "counts": {"pass_expected_rejection": 2500, "pass": 151728, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5115, "boundary_accepted": 16590, "pass_atomic": 1775, "pass_disconnect_rollback": 1774, "pass_cancel": 1774}, "elapsed": 1084.61}
+{"completed": 194000, "counts": {"pass_expected_rejection": 2500, "pass": 151754, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5141, "boundary_accepted": 16590, "pass_atomic": 1800, "pass_disconnect_rollback": 1800, "pass_cancel": 1800}, "elapsed": 1086.72}
+{"completed": 194776, "counts": {"pass_expected_rejection": 2500, "pass": 151909, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5296, "boundary_accepted": 16590, "pass_atomic": 1956, "pass_disconnect_rollback": 1955, "pass_cancel": 1955}, "elapsed": 1101.77}
+{"completed": 195000, "counts": {"pass_expected_rejection": 2500, "pass": 151954, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5341, "boundary_accepted": 16590, "pass_atomic": 2000, "pass_disconnect_rollback": 2000, "pass_cancel": 2000}, "elapsed": 1106.16}
+{"completed": 195856, "counts": {"pass_expected_rejection": 2500, "pass": 152125, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5512, "boundary_accepted": 16590, "pass_atomic": 2172, "pass_disconnect_rollback": 2171, "pass_cancel": 2171}, "elapsed": 1121.42}
+{"completed": 196000, "counts": {"pass_expected_rejection": 2500, "pass": 152154, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5541, "boundary_accepted": 16590, "pass_atomic": 2200, "pass_disconnect_rollback": 2200, "pass_cancel": 2200}, "elapsed": 1123.55}
+{"completed": 196846, "counts": {"pass_expected_rejection": 2500, "pass": 152323, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5710, "boundary_accepted": 16590, "pass_atomic": 2370, "pass_disconnect_rollback": 2369, "pass_cancel": 2369}, "elapsed": 1138.58}
+{"completed": 197000, "counts": {"pass_expected_rejection": 2500, "pass": 152354, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5741, "boundary_accepted": 16590, "pass_atomic": 2400, "pass_disconnect_rollback": 2400, "pass_cancel": 2400}, "elapsed": 1141.62}
+{"completed": 197826, "counts": {"pass_expected_rejection": 2500, "pass": 152519, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5906, "boundary_accepted": 16590, "pass_atomic": 2566, "pass_disconnect_rollback": 2565, "pass_cancel": 2565}, "elapsed": 1156.77}
+{"completed": 198000, "counts": {"pass_expected_rejection": 2500, "pass": 152554, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 5941, "boundary_accepted": 16590, "pass_atomic": 2600, "pass_disconnect_rollback": 2600, "pass_cancel": 2600}, "elapsed": 1159.74}
+{"completed": 198831, "counts": {"pass_expected_rejection": 2500, "pass": 152720, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 6107, "boundary_accepted": 16590, "pass_atomic": 2767, "pass_disconnect_rollback": 2766, "pass_cancel": 2766}, "elapsed": 1174.76}
+{"completed": 199000, "counts": {"pass_expected_rejection": 2500, "pass": 152754, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 6141, "boundary_accepted": 16590, "pass_atomic": 2800, "pass_disconnect_rollback": 2800, "pass_cancel": 2800}, "elapsed": 1177.42}
+{"completed": 199886, "counts": {"pass_expected_rejection": 2500, "pass": 152931, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 6318, "boundary_accepted": 16590, "pass_atomic": 2978, "pass_disconnect_rollback": 2977, "pass_cancel": 2977}, "elapsed": 1192.53}
+{"completed": 200000, "counts": {"pass_expected_rejection": 2500, "pass": 152954, "mo_execution_error": 5100, "candidate_wrong_result": 7479, "reference_rejected": 36, "boundary_rejected": 6341, "boundary_accepted": 16590, "pass_atomic": 3000, "pass_disconnect_rollback": 3000, "pass_cancel": 3000}, "elapsed": 1193.93}
+module done concurrency {'pass_expected_rejection': 2500, 'pass': 152954, 'mo_execution_error': 5100, 'candidate_wrong_result': 7479, 'reference_rejected': 36, 'boundary_rejected': 6341, 'boundary_accepted': 16590, 'pass_atomic': 3000, 'pass_disconnect_rollback': 3000, 'pass_cancel': 3000}
+DONE 200000 {'pass_expected_rejection': 2500, 'pass': 152954, 'mo_execution_error': 5100, 'candidate_wrong_result': 7479, 'reference_rejected': 36, 'boundary_rejected': 6341, 'boundary_accepted': 16590, 'pass_atomic': 3000, 'pass_disconnect_rollback': 3000, 'pass_cancel': 3000} 1193.9689972400665

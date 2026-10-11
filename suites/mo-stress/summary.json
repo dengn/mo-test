@@ -1,0 +1,520 @@
+{
+  "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "cpu_quota_cores": 4,
+  "memory_limit_gib": 32,
+  "phases": [
+    {
+      "elapsed_seconds": 30.001483461,
+      "latency_success_ms": {
+        "max": 457.243,
+        "p50": 1.445,
+        "p95": 299.101,
+        "p99": 320.904
+      },
+      "offered_seconds": 30,
+      "phase": "baseline",
+      "results": {
+        "success": 917,
+        "errors": 0,
+        "cancelled": 1,
+        "success_by_kind": {
+          "aggregate": 93,
+          "insert": 123,
+          "lookup": 485,
+          "transfer": 216
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 30.566666666666666,
+      "time": "2026-10-09T03:21:51.238143534Z",
+      "type": "phase_end",
+      "workers": 1,
+      "resource_samples": {
+        "peak_server_rss_gib": 1.0604438781738281,
+        "average_server_cpu_cores": 1.1341119394077845
+      }
+    },
+    {
+      "elapsed_seconds": 60.0483487,
+      "latency_success_ms": {
+        "max": 7721.004,
+        "p50": 29.63,
+        "p95": 1442.705,
+        "p99": 1694.778
+      },
+      "offered_seconds": 60,
+      "phase": "mixed_16",
+      "results": {
+        "success": 4794,
+        "errors": 0,
+        "cancelled": 14,
+        "success_by_kind": {
+          "aggregate": 446,
+          "insert": 703,
+          "lookup": 2463,
+          "transfer": 1182
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 79.9,
+      "time": "2026-10-09T03:22:51.287134503Z",
+      "type": "phase_end",
+      "workers": 16,
+      "resource_samples": {
+        "peak_server_rss_gib": 2.641864776611328,
+        "average_server_cpu_cores": 3.7912431221666854
+      }
+    },
+    {
+      "elapsed_seconds": 90.090185631,
+      "latency_success_ms": {
+        "max": 15199.866,
+        "p50": 52.764,
+        "p95": 3375.808,
+        "p99": 3876.946
+      },
+      "offered_seconds": 90,
+      "phase": "mixed_32",
+      "results": {
+        "success": 6270,
+        "errors": 0,
+        "cancelled": 28,
+        "success_by_kind": {
+          "aggregate": 610,
+          "insert": 920,
+          "lookup": 3184,
+          "transfer": 1556
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 69.66666666666667,
+      "time": "2026-10-09T03:24:21.37754839Z",
+      "type": "phase_end",
+      "workers": 32,
+      "resource_samples": {
+        "peak_server_rss_gib": 4.350654602050781,
+        "average_server_cpu_cores": 3.9327719706729303
+      }
+    },
+    {
+      "elapsed_seconds": 120.184588766,
+      "latency_success_ms": {
+        "max": 18777.234,
+        "p50": 272.118,
+        "p95": 5576.221,
+        "p99": 6180.546
+      },
+      "offered_seconds": 120,
+      "phase": "mixed_64",
+      "results": {
+        "success": 8712,
+        "errors": 0,
+        "cancelled": 60,
+        "success_by_kind": {
+          "aggregate": 838,
+          "insert": 1310,
+          "lookup": 4403,
+          "transfer": 2161
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 72.6,
+      "time": "2026-10-09T03:26:21.56278864Z",
+      "type": "phase_end",
+      "workers": 64,
+      "resource_samples": {
+        "peak_server_rss_gib": 6.083026885986328,
+        "average_server_cpu_cores": 3.922970729549944
+      }
+    },
+    {
+      "elapsed_seconds": 180.133048018,
+      "latency_success_ms": {
+        "max": 12473.522,
+        "p50": 1128.988,
+        "p95": 6781.928,
+        "p99": 8284.141
+      },
+      "offered_seconds": 180,
+      "phase": "saturation_128",
+      "results": {
+        "success": 13190,
+        "errors": 0,
+        "cancelled": 125,
+        "success_by_kind": {
+          "aggregate": 1233,
+          "insert": 1975,
+          "lookup": 6652,
+          "transfer": 3330
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 73.27777777777777,
+      "time": "2026-10-09T03:29:21.696013944Z",
+      "type": "phase_end",
+      "workers": 128,
+      "resource_samples": {
+        "peak_server_rss_gib": 6.164478302001953,
+        "average_server_cpu_cores": 3.932215577877901
+      }
+    },
+    {
+      "elapsed_seconds": 180.073289456,
+      "latency_success_ms": {
+        "max": 16554.005,
+        "p50": 2815.638,
+        "p95": 8470.752,
+        "p99": 10153.311
+      },
+      "offered_seconds": 180,
+      "phase": "overload_256",
+      "results": {
+        "success": 13384,
+        "errors": 0,
+        "cancelled": 250,
+        "success_by_kind": {
+          "aggregate": 1273,
+          "insert": 2072,
+          "lookup": 6637,
+          "transfer": 3402
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 74.35555555555555,
+      "time": "2026-10-09T03:32:21.76987983Z",
+      "type": "phase_end",
+      "workers": 256,
+      "resource_samples": {
+        "peak_server_rss_gib": 6.377895355224609,
+        "average_server_cpu_cores": 3.923848446283101
+      }
+    },
+    {
+      "elapsed_seconds": 120.030674014,
+      "latency_success_ms": {
+        "max": 5855.11,
+        "p50": 3923.975,
+        "p95": 4628.114,
+        "p99": 5060.54
+      },
+      "offered_seconds": 120,
+      "phase": "analytical_pressure",
+      "results": {
+        "success": 951,
+        "errors": 0,
+        "cancelled": 32,
+        "success_by_kind": {
+          "aggregate": 951
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 7.925,
+      "time": "2026-10-09T03:34:21.800889455Z",
+      "type": "phase_end",
+      "workers": 32,
+      "resource_samples": {
+        "peak_server_rss_gib": 4.866497039794922,
+        "average_server_cpu_cores": 3.97157735731334
+      }
+    },
+    {
+      "elapsed_seconds": 60.003618265,
+      "latency_success_ms": {
+        "max": 1202.536,
+        "p50": 2.957,
+        "p95": 452.905,
+        "p99": 522.435
+      },
+      "offered_seconds": 60,
+      "phase": "recovery",
+      "results": {
+        "success": 4936,
+        "errors": 0,
+        "cancelled": 4,
+        "success_by_kind": {
+          "aggregate": 472,
+          "insert": 758,
+          "lookup": 2432,
+          "transfer": 1274
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 82.26666666666667,
+      "time": "2026-10-09T03:35:21.805217426Z",
+      "type": "phase_end",
+      "workers": 4,
+      "resource_samples": {
+        "peak_server_rss_gib": 2.5228271484375,
+        "average_server_cpu_cores": 3.88811380536677
+      }
+    },
+    {
+      "elapsed_seconds": 60.170105771,
+      "latency_success_ms": {
+        "max": 29726.9,
+        "p50": 7695.234,
+        "p95": 22189.714,
+        "p99": 23120.557
+      },
+      "offered_seconds": 60,
+      "phase": "overload_512",
+      "results": {
+        "success": 3218,
+        "errors": 10,
+        "cancelled": 509,
+        "success_by_kind": {
+          "aggregate": 287,
+          "insert": 503,
+          "lookup": 1589,
+          "transfer": 839
+        },
+        "error_kinds": {
+          "aggregate: context deadline exceeded": 10
+        }
+      },
+      "success_ops_per_second": 53.63333333333333,
+      "time": "2026-10-09T03:36:39.368938006Z",
+      "type": "phase_end",
+      "workers": 512,
+      "resource_samples": {
+        "peak_server_rss_gib": 6.402637481689453,
+        "average_server_cpu_cores": 3.859097819167264
+      }
+    },
+    {
+      "elapsed_seconds": 60.012984646,
+      "latency_success_ms": {
+        "max": 29674.429,
+        "p50": 13184.141,
+        "p95": 26569.878,
+        "p99": 28894.187
+      },
+      "offered_seconds": 60,
+      "phase": "overload_1024",
+      "results": {
+        "success": 3882,
+        "errors": 35,
+        "cancelled": 1024,
+        "success_by_kind": {
+          "aggregate": 324,
+          "insert": 592,
+          "lookup": 2003,
+          "transfer": 963
+        },
+        "error_kinds": {
+          "aggregate: context deadline exceeded": 35
+        }
+      },
+      "success_ops_per_second": 64.7,
+      "time": "2026-10-09T03:37:39.383447123Z",
+      "type": "phase_end",
+      "workers": 1024,
+      "resource_samples": {
+        "peak_server_rss_gib": 6.482906341552734,
+        "average_server_cpu_cores": 3.9358819018486995
+      }
+    },
+    {
+      "elapsed_seconds": 120.041788261,
+      "latency_success_ms": {
+        "max": 1253.692,
+        "p50": 115.087,
+        "p95": 210.718,
+        "p99": 271.777
+      },
+      "offered_seconds": 120,
+      "phase": "write_pressure_128",
+      "results": {
+        "success": 119024,
+        "errors": 0,
+        "cancelled": 96,
+        "success_by_kind": {
+          "insert": 44280,
+          "transfer": 74744
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 991.8666666666667,
+      "time": "2026-10-09T03:39:39.425299629Z",
+      "type": "phase_end",
+      "workers": 128,
+      "resource_samples": {
+        "peak_server_rss_gib": 2.6248245239257812,
+        "average_server_cpu_cores": 3.691303583855771
+      }
+    },
+    {
+      "elapsed_seconds": 30.000830179,
+      "latency_success_ms": {
+        "max": 1141.337,
+        "p50": 3.164,
+        "p95": 436.52,
+        "p99": 505.617
+      },
+      "offered_seconds": 30,
+      "phase": "write_recovery",
+      "results": {
+        "success": 2516,
+        "errors": 0,
+        "cancelled": 4,
+        "success_by_kind": {
+          "aggregate": 235,
+          "insert": 387,
+          "lookup": 1266,
+          "transfer": 628
+        },
+        "error_kinds": {}
+      },
+      "success_ops_per_second": 83.86666666666666,
+      "time": "2026-10-09T03:40:09.426190518Z",
+      "type": "phase_end",
+      "workers": 4,
+      "resource_samples": {
+        "peak_server_rss_gib": 2.9746742248535156,
+        "average_server_cpu_cores": 3.881276137865277
+      }
+    }
+  ],
+  "integrity": [
+    {
+      "account_balance_sum": 1000000000,
+      "acknowledged_events": 7861,
+      "distinct_events": 7873,
+      "event_attempts": 7901,
+      "events": 7873,
+      "item_count": 2000000,
+      "item_sum_id": 2000001000000,
+      "pass": true,
+      "time": "2026-10-09T03:35:21.896905809Z",
+      "type": "integrity"
+    },
+    {
+      "account_balance_sum": 1000000000,
+      "acknowledged_events": 53635,
+      "distinct_events": 53689,
+      "event_attempts": 53929,
+      "events": 53689,
+      "item_count": 2000000,
+      "item_sum_id": 2000001000000,
+      "pass": true,
+      "time": "2026-10-09T03:40:09.634380035Z",
+      "type": "integrity"
+    }
+  ],
+  "resources": {
+    "peak_server_rss_gib": 6.482906341552734,
+    "peak_cgroup_memory_gib": 9.92831802368164,
+    "peak_server_cpu_cores": 3.993359433120067,
+    "minimum_disk_free_gib": 26.285797119140625,
+    "guard_triggered": false,
+    "latest_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "server_error_logs": {
+    "counts": {
+      "request_cancellation": 3964,
+      "transaction_commit_unknown": 30,
+      "cron_trigger_mismatch": 5,
+      "closed_connection": 8,
+      "other": 23,
+      "cron_retry_exhausted": 2,
+      "background_task_fetch_error": 10,
+      "success_logged_at_error_level": 5
+    },
+    "examples": {
+      "request_cancellation": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:21:51.747110 +0000",
+        "name": "cn-service",
+        "caller": "frontend/session.go:4574",
+        "msg": "context canceled",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "session_info": "connectionId 10|127.0.0.1:54218|account sys:root|goRoutineId 4227|migrate-goRoutineId 0|01a11ead-fc56-7cfb-9466-315723956f6a",
+        "role": "moadmin",
+        "session_id": "01a11ead-fc56-7cfb-9466-315723956f6a",
+        "statement_id": "01a11eae-7184-754a-8e94-6ac85bfd195d",
+        "txn_id": "70f70f4866a9b62a18dcbe5b3093841a",
+        "span": {
+          "trace_id": "4e32e9fa-ba28-63ac-2d55-8e98d623718c",
+          "span_id": "fc3971250a448897"
+        }
+      },
+      "transaction_commit_unknown": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:29:21.708775 +0000",
+        "caller": "rpc/sender.go:239",
+        "msg": "error: txn commit status is unknown: 70f70f4866a9b62a18dcbe5b309414c8",
+        "span": {
+          "trace_id": "1ab76543-19d5-c4bc-9af2-3dcfe504b1ef",
+          "span_id": "7d5496201429e695"
+        }
+      },
+      "cron_trigger_mismatch": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:30:17.889930 +0000",
+        "caller": "taskservice/mysql_task_storage.go:647",
+        "msg": "error: internal error: cron task trigger times not match"
+      },
+      "closed_connection": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:30:18.561689 +0000",
+        "caller": "frontend/status_stmt.go:366",
+        "msg": "error: internal error: routine send response failed. error:write tcp 127.0.0.1:6001->127.0.0.1:55082: write: broken pipe ",
+        "span": {
+          "trace_id": "5d2d55cf-7c88-6a91-ae13-6d2989032df5",
+          "span_id": "c987469642e11450"
+        }
+      },
+      "other": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:30:18.562101 +0000",
+        "caller": "logutil/fields.go:98",
+        "msg": "frontend session handling failed",
+        "error-sha256": "148221e80c85569f52a7b95f3d2fe7c900125f38c034ed6db157d86ff725e153",
+        "error-bytes": 61,
+        "error-type": "*net.OpError",
+        "event": "frontend.session.handle.failed",
+        "occurrence": 1
+      },
+      "cron_retry_exhausted": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:30:50.393772 +0000",
+        "name": "log-service",
+        "caller": "log/logger.go:134",
+        "msg": "trigger cron task failed after retries",
+        "service": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "cron-task": "ETLMergeTask/1/0 */5 * * * *",
+        "attempts": 3,
+        "error": "internal error: cron task trigger times not match"
+      },
+      "background_task_fetch_error": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:30:53.166627 +0000",
+        "name": "log-service",
+        "caller": "log/logger.go:134",
+        "msg": "query sql tasks failed",
+        "service": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "error": "context deadline exceeded\ninternal error: fetch cron tasks"
+      },
+      "success_logged_at_error_level": {
+        "level": "ERROR",
+        "time": "2026/10/09 03:35:15.304945 +0000",
+        "name": "cn-service.ETLMerge",
+        "caller": "log/logger.go:134",
+        "msg": "upload files success",
+        "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+        "table": "system.statement_info",
+        "total": 1,
+        "success": 1,
+        "span": {
+          "trace_id": "fdbe38e0-c613-503c-5e9f-403bd42c48c6",
+          "span_id": "839eb7e6937564ab"
+        }
+      }
+    },
+    "errors_during_low_concurrency_recovery_after_5s": 0
+  }
+}

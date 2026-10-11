@@ -1,0 +1,28 @@
+{"kind": "exact_crosscheck", "epoch": 1791528049.9462502, "label": "after_recovery", "table": "vh", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528051.0086222, "label": "after_recovery", "table": "vh", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528051.1562529, "label": "after_recovery", "table": "vh", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528053.632505, "label": "after_recovery", "table": "vh", "queries": 30, "recall10_mean": 0.21666666666666667, "recall10_min": 0.0, "max_score_error": 9.936457345816052e-08, "p99_ms": 530.3585165404917, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791528054.4003205, "label": "after_recovery", "table": "vc", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528054.5931907, "label": "after_recovery", "table": "vc", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528054.7806695, "label": "after_recovery", "table": "vc", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528057.6204307, "label": "after_recovery", "table": "vc", "queries": 30, "recall10_mean": 0.23333333333333336, "recall10_min": 0.0, "max_score_error": 1.0355114188342895e-07, "p99_ms": 420.95204104010963, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791528057.8481376, "label": "after_recovery", "table": "vi", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528058.018437, "label": "after_recovery", "table": "vi", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791528058.1803067, "label": "after_recovery", "table": "vi", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791528060.806892, "label": "after_recovery", "table": "vi", "queries": 30, "recall10_mean": 0.2766666666666666, "recall10_min": 0.1, "max_score_error": 1.0711345965752628e-07, "p99_ms": 40.651323290985616, "errors": []}
+{"kind": "ivf_full_probe", "epoch": 1791528061.465782, "label": "after_recovery", "queries": 10, "mean_recall": 1.0, "minimum": 1.0}
+{"kind": "ft_membership", "epoch": 1791528061.7552435, "label": "after_recovery", "table": "ft", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528061.9541972, "label": "after_recovery", "table": "ft", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.1978874, "label": "after_recovery", "table": "ft", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.5048578, "label": "after_recovery", "table": "ft", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.7327094, "label": "after_recovery", "table": "ft", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.7460225, "label": "after_recovery", "table": "ft", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.9695232, "label": "after_recovery", "table": "ft2", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528062.9910395, "label": "after_recovery", "table": "ft2", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528063.0670824, "label": "after_recovery", "table": "ft2", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528063.1415362, "label": "after_recovery", "table": "ft2", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528063.2079706, "label": "after_recovery", "table": "ft2", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791528063.2152762, "label": "after_recovery", "table": "ft2", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528063.3012784, "label": "after_recovery", "query": "quick brown fox", "count": 15000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528063.351798, "label": "after_recovery", "query": "brown quick", "count": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791528063.354964, "label": "after_recovery", "query": "quick missing", "count": 0, "missing": 0, "extra": 0, "pass_check": true}

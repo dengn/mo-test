@@ -1,0 +1,322 @@
+[
+  {
+    "sql": "create database if not exists corners50",
+    "rows": []
+  },
+  {
+    "sql": "use corners50",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists fixtures(id int primary key,grp int,v bigint,label text,j json)",
+    "rows": []
+  },
+  {
+    "sql": "select count(*) from fixtures",
+    "rows": [
+      [
+        200
+      ]
+    ]
+  },
+  {
+    "sql": "create or replace view cv_read as select id,v from fixtures",
+    "rows": []
+  },
+  {
+    "sql": "create role if not exists corner_readrole",
+    "rows": []
+  },
+  {
+    "sql": "grant connect on account * to corner_readrole",
+    "rows": []
+  },
+  {
+    "sql": "create role if not exists corner_writerole",
+    "rows": []
+  },
+  {
+    "sql": "grant connect on account * to corner_writerole",
+    "rows": []
+  },
+  {
+    "sql": "create role if not exists corner_emptyrole",
+    "rows": []
+  },
+  {
+    "sql": "grant connect on account * to corner_emptyrole",
+    "rows": []
+  },
+  {
+    "sql": "create user if not exists corner_reader identified by '111' default role corner_readrole",
+    "rows": []
+  },
+  {
+    "sql": "create user if not exists corner_writer identified by '111' default role corner_writerole",
+    "rows": []
+  },
+  {
+    "sql": "grant select on table corners50.fixtures to corner_readrole",
+    "rows": []
+  },
+  {
+    "sql": "grant select on view corners50.cv_read to corner_readrole",
+    "rows": []
+  },
+  {
+    "sql": "grant select,insert,update,delete on table corners50.* to corner_writerole",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_sqladd(a bigint,b bigint) returns bigint language sql as '$1+$2'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_nested(a bigint,b bigint) returns bigint language sql as 'cu_sqladd($1,$2)*2'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_json(a varchar) returns bigint language sql as 'cast(json_extract($1,''$.v'') as bigint)'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pyadd(a bigint,b bigint) returns bigint language python as $$\ndef add(a,b):\n return None if a is None or b is None else a+b\n$$ handler 'add'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pystr(a text) returns text language python as $$\ndef echo(a):\n return None if a is None else a+'|中文😀'\n$$ handler 'echo'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pyvec(a bigint,b bigint) returns bigint language python as $$\ndef vadd(a,b):\n return [None if x is None or y is None else x+y for x,y in zip(a,b)]\nvadd.vector=True\n$$ handler 'vadd'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pyerr(a bigint) returns bigint language python as $$\ndef bad(a):\n raise ValueError('MO_CASE_INTENTIONAL_ERROR_'+str(a))\n$$ handler 'bad'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pyjson(a json) returns bigint language python as $$\ndef jval(a):\n import json\n if isinstance(a,str):a=json.loads(a)\n return a['v']\n$$ handler 'jval'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace function cu_pydec(a decimal(18,4)) returns decimal(18,4) language python as $$\ndef dval(a):\n import decimal\n return a*decimal.Decimal('2')\n$$ handler 'dval'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_if(in n bigint) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_sum(in n int) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_repeat(in n int) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_loop(in n int) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_scope(in n int) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_io(inout n bigint) %s",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_json(in j varchar) %s",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists cp_atomic_sink(id bigint primary key,n bigint)",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists cp_checkpoint(id int primary key,n bigint)",
+    "rows": []
+  },
+  {
+    "sql": "insert into cp_checkpoint values(1,0) on duplicate key update n=0",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_abort(in cid bigint,in val bigint) 'begin insert into cp_atomic_sink values(cid,val); update cp_checkpoint set n=val where id=1; insert into cp_missing values(1); end'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_star(in n bigint,out o bigint) language 'starlark' $$out_o = n*n + 3$$",
+    "rows": []
+  },
+  {
+    "sql": "set sql_mode='PIPES_AS_CONCAT'",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_mode(in s varchar) 'begin select s||''|mode''; end'",
+    "rows": []
+  },
+  {
+    "sql": "set sql_mode=''",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists ct_control(kind int primary key,cid bigint,v bigint,ready int)",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists ct_sink(kind int,cid bigint primary key,v bigint)",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "insert into ct_control values(%s,0,0,0) on duplicate key update cid=0,v=0,ready=0",
+    "rows": []
+  },
+  {
+    "sql": "create or replace procedure cp_task_abort() 'begin insert into ct_sink select kind,cid,v from ct_control where kind=3; update cp_checkpoint set n=99 where id=1; insert into ct_missing values(1); end'",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_success",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_success as begin insert into ct_sink select kind,cid,v from ct_control where kind=0; end",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_gate_false",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_gate_false when (exists(select 1 from ct_control where kind=1 and ready=1)) as begin insert into ct_sink select kind,cid,v from ct_control where kind=1; end",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_gate_true",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_gate_true when (exists(select 1 from ct_control where kind=2 and ready=1)) as begin insert into ct_sink select kind,cid,v from ct_control where kind=2; end",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_abort",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_abort as begin call cp_task_abort(); end",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_error",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_error as begin insert into ct_missing values(1); end",
+    "rows": []
+  },
+  {
+    "sql": "drop task if exists ct_idempotent",
+    "rows": []
+  },
+  {
+    "sql": "create task ct_idempotent as begin insert into ct_sink select kind,cid,v from ct_control where kind=5 and not exists(select 1 from ct_sink where cid=ct_control.cid); end",
+    "rows": []
+  },
+  {
+    "sql": "create database if not exists enterprise50",
+    "rows": []
+  },
+  {
+    "sql": "use enterprise50",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists tx_rows(id bigint primary key,n bigint,j json,v vecf32(3))",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists tx_hot(id int primary key,n bigint)",
+    "rows": []
+  },
+  {
+    "sql": "insert into tx_hot values(1,0) on duplicate key update n=0",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists user_target(id int primary key,n bigint)",
+    "rows": []
+  },
+  {
+    "sql": "insert into user_target values(1,100),(2,200) on duplicate key update n=values(n)",
+    "rows": []
+  },
+  {
+    "sql": "create database if not exists pub50",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists pub50.visible(id bigint primary key,n bigint,label text)",
+    "rows": []
+  },
+  {
+    "sql": "create table if not exists pub50.hidden(id bigint primary key,n bigint)",
+    "rows": []
+  },
+  {
+    "sql": "insert into pub50.visible values(1,13,'alpha'),(2,26,'中文😀') on duplicate key update n=values(n)",
+    "rows": []
+  },
+  {
+    "sql": "insert into pub50.hidden values(1,999) on duplicate key update n=values(n)",
+    "rows": []
+  },
+  {
+    "sql": "create account if not exists corner_a admin_name 'admin' identified by '111'",
+    "rows": []
+  },
+  {
+    "sql": "create account if not exists corner_b admin_name 'admin' identified by '111'",
+    "rows": []
+  },
+  {
+    "sql": "drop publication if exists pub50_allowed",
+    "rows": []
+  },
+  {
+    "sql": "create publication pub50_allowed database pub50 table visible account corner_a",
+    "rows": []
+  },
+  {
+    "sql": "drop publication if exists pub50_all",
+    "rows": []
+  },
+  {
+    "sql": "create publication pub50_all database pub50 table visible account all",
+    "rows": []
+  }
+]

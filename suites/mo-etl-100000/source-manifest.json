@@ -1,0 +1,170 @@
+[
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/user-guide/data-load-overview",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/data-load-overview.html",
+    "sha256": "8a3386646b037c5c15ad2881a268d386b5a7bb14951f381400f6b0585b71bbce",
+    "bytes": 266844,
+    "source_id": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-overview",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/sql-reference/sql/copy-into-table",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/copy-into-table.html",
+    "sha256": "5f04db1123cefbc07c2fcf3258ba247d2f9d3bdabe3a7263849c344bd82f8058",
+    "bytes": 699631,
+    "source_id": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-table",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/copy-into-location.html",
+    "sha256": "b296413ecf0a68eeda5c6e874427defa8add239554a66151233b93d4779bacb7",
+    "bytes": 374681,
+    "source_id": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/copy-into-location",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/sql-reference/sql/merge",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/merge.html",
+    "sha256": "c46f7c7665923a7d0ddfa734e26b3146132e6791290315c3f92255ba7557f4de",
+    "bytes": 274939,
+    "source_id": "snowflake:https://docs.snowflake.com/en/sql-reference/sql/merge",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/data-load-transform.html",
+    "sha256": "65f3a062814cace7af671590cb1e84a51f8f64d618c91841263d4d383200111b",
+    "bytes": 289030,
+    "source_id": "snowflake:https://docs.snowflake.com/en/user-guide/data-load-transform",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/user-guide/streams-intro",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/streams-intro.html",
+    "sha256": "b45b1f73a11d9dfe39d07c14aa430f242540f2e001bc20c9d14479a4e43117d9",
+    "bytes": 204688,
+    "source_id": "snowflake:https://docs.snowflake.com/en/user-guide/streams-intro",
+    "status": "downloaded"
+  },
+  {
+    "engine": "snowflake",
+    "url": "https://docs.snowflake.com/en/sql-reference/constructs/qualify",
+    "local_path": "/workspace/mo-etl-100000/sources/snowflake/qualify.html",
+    "sha256": "03b2427557337faaab7dffea9703abe6bb13f1e6232f6fed0e66f45ad053c400",
+    "bytes": 150257,
+    "source_id": "snowflake:https://docs.snowflake.com/en/sql-reference/constructs/qualify",
+    "status": "downloaded"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/core-concepts/sync-modes",
+    "local_path": "/workspace/mo-etl-100000/sources/fivetran/sync-modes.html",
+    "sha256": "0127f718a42210008e4c3de89820f900fde375fecb73bab2ecbfb9c259ef542f",
+    "bytes": 74221,
+    "source_id": "fivetran:https://fivetran.com/docs/core-concepts/sync-modes",
+    "status": "downloaded"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/core-concepts/synced-data",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/core-concepts/column-blocking-and-hashing",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/core-concepts/schema",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/connectors/databases/mysql",
+    "local_path": "/workspace/mo-etl-100000/sources/fivetran/mysql.html",
+    "sha256": "1d401497f4fa70246b0a069320cf0b03a11bf66ffefaebd2e8c8d8af5e6733e6",
+    "bytes": 356394,
+    "source_id": "fivetran:https://fivetran.com/docs/connectors/databases/mysql",
+    "status": "downloaded"
+  },
+  {
+    "engine": "fivetran",
+    "url": "https://fivetran.com/docs/connectors/files/csv",
+    "status": "failed",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/incremental-models.md",
+    "sha256": "2a8deda971136c8758c7fde5bee95ae130ddca749d8e9c9841e9d30e49e86124",
+    "bytes": 13256,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/incremental-models.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/snapshots.md",
+    "sha256": "974a0a7cf73cd401d3a94018634353280557bebd09115faa21b584f70ca47d05",
+    "bytes": 29059,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/snapshots.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/data-tests.md",
+    "sha256": "61250a04f8ca85fd94e46cd57d5b25ccf5db2947f81df5ef3ca316f4b27c317f",
+    "bytes": 18724,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/data-tests.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/seeds.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/seeds.md",
+    "sha256": "b8d5f17602f38d533fa179f42eed6defbb861af546e880b476abc2a2472c5001",
+    "bytes": 3122,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/seeds.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/sql-models.md",
+    "sha256": "d3f532c2e03dbaf1ad8d3ca9f50f6b52c49cd07634d07ca9eb0dfaf40f4bdaf1",
+    "bytes": 8347,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/docs.getdbt.com/current/website/docs/docs/build/sql-models.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/dbt-labs/dbt-core/main/README.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/README.md",
+    "sha256": "a003fe448ca06aebb748467227d2dc8b8be263173c6c070400efb95dfb9cb618",
+    "bytes": 4412,
+    "source_id": "dbt:https://raw.githubusercontent.com/dbt-labs/dbt-core/main/README.md",
+    "status": "downloaded"
+  },
+  {
+    "engine": "dbt",
+    "url": "https://raw.githubusercontent.com/fivetran/dbt_fivetran_utils/main/README.md",
+    "local_path": "/workspace/mo-etl-100000/sources/dbt/README.md",
+    "sha256": "811d5b59bd7ddfcb2e667afc5add8bb9fd07de63bcc5044fc3add527b7d6ba3e",
+    "bytes": 26967,
+    "source_id": "dbt:https://raw.githubusercontent.com/fivetran/dbt_fivetran_utils/main/README.md",
+    "status": "downloaded"
+  }
+]

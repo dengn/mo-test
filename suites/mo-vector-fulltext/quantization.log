@@ -1,0 +1,18 @@
+{"kind": "sql", "epoch": 1791527282.1756587, "sql": "insert into vq select * from vref", "seconds": 0.4367556899996998, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527284.1625104, "sql": "create index ann using ivfflat on vq(v) lists=128 op_type 'vector_l2_ops' quantization 'int8'", "seconds": 1.9865764509995643, "rows": 0, "sample": []}
+{"kind": "int8_quantization", "epoch": 1791527284.7857804, "label": "initial", "queries": 10, "nprobe": 128, "recall10_mean": 0.89, "recall10_min": 0.7, "max_score_error": 0.05279033106849784}
+{"kind": "sql", "epoch": 1791527284.819062, "sql": "create table vqclone clone vq", "seconds": 0.0330683490010415, "rows": 0, "sample": []}
+{"kind": "quantized_clone", "epoch": 1791527284.8782272, "query": 0, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527284.9279218, "query": 1, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527284.9808493, "query": 2, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.030757, "query": 3, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.0825431, "query": 4, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.131771, "query": 5, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.180669, "query": 6, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.2271192, "query": 7, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.2747934, "query": 8, "pass_check": true}
+{"kind": "quantized_clone", "epoch": 1791527285.32488, "query": 9, "pass_check": true}
+{"kind": "sql", "epoch": 1791527285.7350435, "sql": "alter table vq add column note varchar(10) default 'boundary'", "seconds": 0.41004115699979593, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527287.6707006, "sql": "alter table vq alter reindex ann ivfflat lists=128", "seconds": 1.9354648730004556, "rows": 0, "sample": []}
+{"kind": "int8_quantization", "epoch": 1791527288.320918, "label": "after_alter_reindex", "queries": 10, "nprobe": 128, "recall10_mean": 0.9, "recall10_min": 0.7, "max_score_error": 0.054192947569352334}
+{"kind": "quantization_schema", "epoch": 1791527288.3257155, "schema": [["vq", "CREATE TABLE `vq` (\n  `id` bigint NOT NULL,\n  `v` vecf32(128) DEFAULT NULL,\n  `grp` int DEFAULT NULL,\n  `note` varchar(10) DEFAULT 'boundary',\n  PRIMARY KEY (`id`),\n  KEY `ann` USING ivfflat (`v`) lists = 128  op_type 'vector_l2_ops'  quantization 'int8' \n)"]]}

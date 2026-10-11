@@ -1,0 +1,7 @@
+START tls 80 workers 24
+START permissions 80 workers 24
+START udf 100 workers 24
+START procedure 100 workers 24
+START task 60 workers 24
+START iceberg 80 workers 24
+DONE 500 {"pass": 246, "connection_or_runner_error": 14, "pass_expected_rejection": 140, "environment_or_unexpected_error": 10, "execution_error": 90} 10.424124956130981

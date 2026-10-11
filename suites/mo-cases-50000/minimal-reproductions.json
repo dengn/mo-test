@@ -1,0 +1,542 @@
+[
+  {
+    "label": "packed_numeric_date",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        20,
+        23,
+        197034,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_date",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        20,
+        23,
+        197034,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_date",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        20,
+        23,
+        197034,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_date",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        23,
+        23,
+        200052,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_date",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        23,
+        23,
+        200052,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_date",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select dayofmonth(19970323),dayofmonth('1997-03-23'),yearweek(20001231,3),yearweek('2000-12-31',3)",
+    "result": [
+      [
+        23,
+        23,
+        200052,
+        200052
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        42,
+        22,
+        58,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        42,
+        22,
+        58,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        42,
+        22,
+        58,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        22,
+        22,
+        3,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        22,
+        22,
+        3,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "packed_numeric_time",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select second(230322),second('23:03:22'),minute(230322),minute('23:03:22')",
+    "result": [
+      [
+        22,
+        22,
+        3,
+        3
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hello",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hello",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hello",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hellomonty",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hellomonty",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "adjacent_literals",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select 'hello' 'monty',concat('hello','monty')",
+    "result": [
+      [
+        "hellomonty",
+        "hellomonty"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        0,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        0,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "binary_locate",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select locate('HE','hello' collate utf8mb4_bin),locate('HE','hello' collate utf8mb4_general_ci)",
+    "result": [
+      [
+        0,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        null,
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        null,
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        null,
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        "838:59:59",
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        "838:59:59",
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "bounded_time",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select maketime(916,0,0),cast('838:59:59' as time)",
+    "result": [
+      [
+        "838:59:59",
+        "838:59:59"
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": null,
+    "error": "(20203, 'invalid argument operator +, bad value [BOOL BOOL]')"
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": null,
+    "error": "(20203, 'invalid argument operator +, bad value [BOOL BOOL]')"
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": null,
+    "error": "(20203, 'invalid argument operator +, bad value [BOOL BOOL]')"
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "boolean_arithmetic",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select true+false,cast(true as signed)+cast(false as signed)",
+    "result": [
+      [
+        1,
+        1
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mo",
+    "attempt": 1,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": null,
+    "error": "(1690, 'data out of range: data type int64, integer argument')"
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mo",
+    "attempt": 2,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": null,
+    "error": "(1690, 'data out of range: data type int64, integer argument')"
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mo",
+    "attempt": 3,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": null,
+    "error": "(1690, 'data out of range: data type int64, integer argument')"
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mysql",
+    "attempt": 1,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": [
+      [
+        4,
+        4
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mysql",
+    "attempt": 2,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": [
+      [
+        4,
+        4
+      ]
+    ],
+    "error": null
+  },
+  {
+    "label": "unsigned_precision",
+    "engine": "mysql",
+    "attempt": 3,
+    "sql": "select round(4,18446744073709551614),truncate(4,18446744073709551614)",
+    "result": [
+      [
+        4,
+        4
+      ]
+    ],
+    "error": null
+  }
+]

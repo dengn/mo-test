@@ -1,0 +1,26 @@
+module numeric cases 320 workers 8
+module done numeric {'pass': 320}
+module strings cases 360 workers 8
+{"completed": 500, "counts": {"pass": 500}, "elapsed": 0.57}
+module done strings {'pass': 680}
+module types cases 240 workers 8
+module done types {'pass': 920}
+module dates cases 200 workers 8
+{"completed": 1000, "counts": {"pass": 1000}, "elapsed": 1.01}
+module done dates {'pass': 1120}
+module relational cases 320 workers 8
+module done relational {'pass': 1440}
+module json cases 240 workers 8
+{"completed": 1500, "counts": {"pass": 1500}, "elapsed": 1.66}
+module done json {'pass': 1680}
+module vectors cases 300 workers 8
+module done vectors {'pass': 1960, 'pass_expected_error': 20}
+module fulltext cases 200 workers 8
+{"completed": 2000, "counts": {"pass": 1980, "pass_expected_error": 20}, "elapsed": 2.63}
+module done fulltext {'pass': 2160, 'pass_expected_error': 20}
+module ddl_transactions cases 200 workers 4
+module done ddl_transactions {'pass': 2359, 'pass_expected_error': 20, 'mo_execution_error': 1}
+module compatibility cases 220 workers 8
+{"completed": 2500, "counts": {"pass": 2479, "pass_expected_error": 20, "mo_execution_error": 1}, "elapsed": 15.71}
+module done compatibility {'pass': 2579, 'pass_expected_error': 20, 'mo_execution_error': 1}
+DONE 2600 {'pass': 2579, 'pass_expected_error': 20, 'mo_execution_error': 1} seconds 15.837281227111816

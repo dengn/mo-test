@@ -1,0 +1,6 @@
+START users_roles 25 workers 4
+START multitenant 50 workers 24
+START transactions 75 workers 24
+START pubsub 50 workers 24
+START git4data 50 workers 4
+DONE 250 {"pass_expected_rejection": 65, "execution_error": 15, "pass": 165, "candidate_wrong_result": 5} 10.434253692626953

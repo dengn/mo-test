@@ -1,0 +1,4 @@
+{"kind": "sql", "epoch": 1791526615.4367862, "sql": "create index ann using hnsw on vhm(v) op_type 'vector_l2_ops'", "seconds": 0.2779131260012946, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526615.596431, "sql": "create index ann using ivfflat on vim(v) lists=16 op_type 'vector_l2_ops'", "seconds": 0.15938734999872395, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526615.8138463, "sql": "create fulltext index txt on ftm(body)", "seconds": 0.08109418099957111, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526615.8539135, "sql": "create fulltext2 index txt on ft2m(body) max_index_capacity 10000", "seconds": 0.039753265999024734, "rows": 0, "sample": []}

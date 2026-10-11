@@ -1,0 +1,38 @@
+[
+  {
+    "case_id": "X001393",
+    "reason": "Independent numpy float32 input and float32 metric accumulation oracle",
+    "result": {
+      "id": "X001393",
+      "module": "doris",
+      "family": "doris.rrf_two_dense_ranks",
+      "status": "pass",
+      "seconds": 0.086768,
+      "mo_error": null,
+      "mysql_error": null,
+      "retries": 0,
+      "initial_error": null,
+      "mo_rows": 10,
+      "mysql_rows": null,
+      "mo_result_sha256": "a62871bc94657555cc9b4595f009fd4211442acc0e9263eeb2af3ac0eb09999c"
+    }
+  },
+  {
+    "case_id": "X025380",
+    "reason": "Independent numpy float32 input and float32 metric accumulation oracle",
+    "result": {
+      "id": "X025380",
+      "module": "starrocks",
+      "family": "starrocks.group_best_hit",
+      "status": "pass",
+      "seconds": 0.004295,
+      "mo_error": null,
+      "mysql_error": null,
+      "retries": 0,
+      "initial_error": null,
+      "mo_rows": 17,
+      "mysql_rows": null,
+      "mo_result_sha256": "f8097a4e89f54ea2e5d3bd899846cb0b208ccebdaa286e0c70d630811ae32847"
+    }
+  }
+]

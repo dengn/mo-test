@@ -1,0 +1,5 @@
+ingest 20000
+transform 30000
+incremental 25000
+snapshot 15000
+export 10000

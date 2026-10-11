@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "canonical_edges": true,
+    "sql_numpy_exact": true,
+    "static_fulltext_membership": true,
+    "quantized_clone": true,
+    "acknowledged_no_loss": true,
+    "source_payloads": true,
+    "final_fulltext_visibility": true,
+    "updated_deleted_after_rebuild": true,
+    "final_ann_exact_id_samples": true,
+    "freshness_restored": true,
+    "no_resource_guard": true,
+    "no_server_panic": true,
+    "repos_clean": true
+  },
+  "all_pass": true,
+  "known_boundaries": [
+    "default FULLTEXT2 cache stale after durable CDC; faster sweep converges",
+    "ANN recall and filtered candidate shortages",
+    "classic FULLTEXT saturation and 256 mixed load timeouts",
+    "large Top-K controlled spill budget rejection",
+    "quantized distances are approximate"
+  ],
+  "phase_success_operations": 587931,
+  "phase_errors": 3656
+}

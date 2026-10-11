@@ -1,0 +1,8 @@
+START tls 40 workers 24
+{"completed": 7, "counts": {"pass": 4, "pass_expected_rejection": 3}, "elapsed": 20.05}
+START permissions 40 workers 24
+START udf 50 workers 24
+START procedure 50 workers 24
+START task 30 workers 24
+START iceberg 40 workers 24
+DONE 250 {"pass": 115, "pass_expected_rejection": 70, "connection_or_runner_error": 10, "execution_error": 45, "candidate_wrong_result": 10} 22.472429752349854

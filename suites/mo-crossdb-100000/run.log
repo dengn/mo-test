@@ -1,0 +1,113 @@
+engine doris cases 16667
+{"completed": 1000, "counts": {"pass": 1000}, "elapsed": 7.6}
+{"completed": 2000, "counts": {"pass": 1999, "candidate_wrong_result": 1}, "elapsed": 11.2}
+{"completed": 3000, "counts": {"pass": 2999, "candidate_wrong_result": 1}, "elapsed": 16.08}
+{"completed": 4000, "counts": {"pass": 3999, "candidate_wrong_result": 1}, "elapsed": 21.69}
+{"completed": 5000, "counts": {"pass": 4999, "candidate_wrong_result": 1}, "elapsed": 27.11}
+{"completed": 6000, "counts": {"pass": 5999, "candidate_wrong_result": 1}, "elapsed": 32.09}
+{"completed": 7000, "counts": {"pass": 6999, "candidate_wrong_result": 1}, "elapsed": 36.02}
+{"completed": 8000, "counts": {"pass": 7999, "candidate_wrong_result": 1}, "elapsed": 41.42}
+{"completed": 9000, "counts": {"pass": 8999, "candidate_wrong_result": 1}, "elapsed": 47.68}
+{"completed": 10000, "counts": {"pass": 9999, "candidate_wrong_result": 1}, "elapsed": 53.0}
+{"completed": 11000, "counts": {"pass": 10999, "candidate_wrong_result": 1}, "elapsed": 58.0}
+{"completed": 12000, "counts": {"pass": 11999, "candidate_wrong_result": 1}, "elapsed": 63.19}
+{"completed": 13000, "counts": {"pass": 12999, "candidate_wrong_result": 1}, "elapsed": 66.69}
+{"completed": 14000, "counts": {"pass": 13999, "candidate_wrong_result": 1}, "elapsed": 72.79}
+{"completed": 15000, "counts": {"pass": 14999, "candidate_wrong_result": 1}, "elapsed": 76.3}
+{"completed": 16000, "counts": {"pass": 15999, "candidate_wrong_result": 1}, "elapsed": 83.28}
+engine done doris {'pass': 16666, 'candidate_wrong_result': 1}
+engine starrocks cases 16667
+{"completed": 17000, "counts": {"pass": 16999, "candidate_wrong_result": 1}, "elapsed": 88.39}
+{"completed": 18000, "counts": {"pass": 17999, "candidate_wrong_result": 1}, "elapsed": 92.7}
+{"completed": 19000, "counts": {"pass": 18999, "candidate_wrong_result": 1}, "elapsed": 99.1}
+{"completed": 20000, "counts": {"pass": 19999, "candidate_wrong_result": 1}, "elapsed": 103.29}
+{"completed": 21000, "counts": {"pass": 20999, "candidate_wrong_result": 1}, "elapsed": 108.79}
+{"completed": 22000, "counts": {"pass": 21999, "candidate_wrong_result": 1}, "elapsed": 113.8}
+{"completed": 23000, "counts": {"pass": 22999, "candidate_wrong_result": 1}, "elapsed": 119.61}
+{"completed": 24000, "counts": {"pass": 23999, "candidate_wrong_result": 1}, "elapsed": 124.1}
+{"completed": 25000, "counts": {"pass": 24999, "candidate_wrong_result": 1}, "elapsed": 129.3}
+{"completed": 26000, "counts": {"pass": 25998, "candidate_wrong_result": 2}, "elapsed": 133.91}
+{"completed": 27000, "counts": {"pass": 26998, "candidate_wrong_result": 2}, "elapsed": 142.63}
+{"completed": 28000, "counts": {"pass": 27998, "candidate_wrong_result": 2}, "elapsed": 148.51}
+{"completed": 29000, "counts": {"pass": 28998, "candidate_wrong_result": 2}, "elapsed": 157.59}
+{"completed": 30000, "counts": {"pass": 29998, "candidate_wrong_result": 2}, "elapsed": 164.38}
+{"completed": 31000, "counts": {"pass": 30998, "candidate_wrong_result": 2}, "elapsed": 170.92}
+{"completed": 32000, "counts": {"pass": 31998, "candidate_wrong_result": 2}, "elapsed": 179.69}
+{"completed": 33000, "counts": {"pass": 32998, "candidate_wrong_result": 2}, "elapsed": 186.27}
+engine done starrocks {'pass': 33332, 'candidate_wrong_result': 2}
+engine tidb cases 16667
+{"completed": 34000, "counts": {"pass": 33998, "candidate_wrong_result": 2}, "elapsed": 196.69}
+{"completed": 35000, "counts": {"pass": 34998, "candidate_wrong_result": 2}, "elapsed": 203.95}
+{"completed": 36000, "counts": {"pass": 35998, "candidate_wrong_result": 2}, "elapsed": 212.29}
+{"completed": 37000, "counts": {"pass": 36998, "candidate_wrong_result": 2}, "elapsed": 220.09}
+{"completed": 38000, "counts": {"pass": 37998, "candidate_wrong_result": 2}, "elapsed": 227.59}
+{"completed": 39000, "counts": {"pass": 38998, "candidate_wrong_result": 2}, "elapsed": 236.91}
+{"completed": 40000, "counts": {"pass": 39998, "candidate_wrong_result": 2}, "elapsed": 244.0}
+{"completed": 41000, "counts": {"pass": 40998, "candidate_wrong_result": 2}, "elapsed": 253.91}
+{"completed": 42000, "counts": {"pass": 41998, "candidate_wrong_result": 2}, "elapsed": 262.88}
+{"completed": 43000, "counts": {"pass": 42998, "candidate_wrong_result": 2}, "elapsed": 271.73}
+{"completed": 44000, "counts": {"pass": 43998, "candidate_wrong_result": 2}, "elapsed": 281.52}
+{"completed": 45000, "counts": {"pass": 44998, "candidate_wrong_result": 2}, "elapsed": 293.02}
+{"completed": 46000, "counts": {"pass": 45998, "candidate_wrong_result": 2}, "elapsed": 299.39}
+{"completed": 47000, "counts": {"pass": 46998, "candidate_wrong_result": 2}, "elapsed": 308.79}
+{"completed": 48000, "counts": {"pass": 47998, "candidate_wrong_result": 2}, "elapsed": 318.92}
+{"completed": 49000, "counts": {"pass": 48998, "candidate_wrong_result": 2}, "elapsed": 324.81}
+{"completed": 50000, "counts": {"pass": 49998, "candidate_wrong_result": 2}, "elapsed": 331.72}
+engine done tidb {'pass': 49999, 'candidate_wrong_result': 2}
+engine clickhouse cases 16667
+{"completed": 51000, "counts": {"pass": 50998, "candidate_wrong_result": 2}, "elapsed": 345.19}
+{"completed": 52000, "counts": {"pass": 51998, "candidate_wrong_result": 2}, "elapsed": 355.1}
+{"completed": 53000, "counts": {"pass": 52998, "candidate_wrong_result": 2}, "elapsed": 364.27}
+{"completed": 54000, "counts": {"pass": 53998, "candidate_wrong_result": 2}, "elapsed": 371.25}
+{"completed": 55000, "counts": {"pass": 54998, "candidate_wrong_result": 2}, "elapsed": 381.11}
+{"completed": 56000, "counts": {"pass": 55998, "candidate_wrong_result": 2}, "elapsed": 389.1}
+{"completed": 57000, "counts": {"pass": 56998, "candidate_wrong_result": 2}, "elapsed": 398.4}
+{"completed": 58000, "counts": {"pass": 57998, "candidate_wrong_result": 2}, "elapsed": 405.29}
+{"completed": 59000, "counts": {"pass": 58998, "candidate_wrong_result": 2}, "elapsed": 416.7}
+{"completed": 60000, "counts": {"pass": 59998, "candidate_wrong_result": 2}, "elapsed": 425.99}
+{"completed": 61000, "counts": {"pass": 60998, "candidate_wrong_result": 2}, "elapsed": 435.48}
+{"completed": 62000, "counts": {"pass": 61998, "candidate_wrong_result": 2}, "elapsed": 441.79}
+{"completed": 63000, "counts": {"pass": 62998, "candidate_wrong_result": 2}, "elapsed": 450.27}
+{"completed": 64000, "counts": {"pass": 63998, "candidate_wrong_result": 2}, "elapsed": 456.93}
+{"completed": 65000, "counts": {"pass": 64998, "candidate_wrong_result": 2}, "elapsed": 464.69}
+{"completed": 66000, "counts": {"pass": 65998, "candidate_wrong_result": 2}, "elapsed": 470.93}
+engine done clickhouse {'pass': 66666, 'candidate_wrong_result': 2}
+engine tdengine cases 16666
+{"completed": 67000, "counts": {"pass": 66998, "candidate_wrong_result": 2}, "elapsed": 482.62}
+{"completed": 68000, "counts": {"pass": 67998, "candidate_wrong_result": 2}, "elapsed": 489.24}
+{"completed": 69000, "counts": {"pass": 68998, "candidate_wrong_result": 2}, "elapsed": 497.67}
+{"completed": 70000, "counts": {"pass": 69998, "candidate_wrong_result": 2}, "elapsed": 507.52}
+{"completed": 71000, "counts": {"pass": 70998, "candidate_wrong_result": 2}, "elapsed": 516.09}
+{"completed": 72000, "counts": {"pass": 71998, "candidate_wrong_result": 2}, "elapsed": 525.19}
+{"completed": 73000, "counts": {"pass": 72998, "candidate_wrong_result": 2}, "elapsed": 533.52}
+{"completed": 74000, "counts": {"pass": 73998, "candidate_wrong_result": 2}, "elapsed": 538.51}
+{"completed": 75000, "counts": {"pass": 74998, "candidate_wrong_result": 2}, "elapsed": 545.5}
+{"completed": 76000, "counts": {"pass": 75998, "candidate_wrong_result": 2}, "elapsed": 553.61}
+{"completed": 77000, "counts": {"pass": 76998, "candidate_wrong_result": 2}, "elapsed": 559.3}
+{"completed": 78000, "counts": {"pass": 77998, "candidate_wrong_result": 2}, "elapsed": 565.89}
+{"completed": 79000, "counts": {"pass": 78998, "candidate_wrong_result": 2}, "elapsed": 575.02}
+{"completed": 80000, "counts": {"pass": 79998, "candidate_wrong_result": 2}, "elapsed": 580.39}
+{"completed": 81000, "counts": {"pass": 80998, "candidate_wrong_result": 2}, "elapsed": 587.11}
+{"completed": 82000, "counts": {"pass": 81998, "candidate_wrong_result": 2}, "elapsed": 593.48}
+{"completed": 83000, "counts": {"pass": 82998, "candidate_wrong_result": 2}, "elapsed": 601.87}
+engine done tdengine {'pass': 83332, 'candidate_wrong_result': 2}
+engine milvus cases 16666
+{"completed": 84000, "counts": {"pass": 83998, "candidate_wrong_result": 2}, "elapsed": 605.07}
+{"completed": 85000, "counts": {"pass": 84998, "candidate_wrong_result": 2}, "elapsed": 606.04}
+{"completed": 86000, "counts": {"pass": 85998, "candidate_wrong_result": 2}, "elapsed": 607.09}
+{"completed": 87000, "counts": {"pass": 86998, "candidate_wrong_result": 2}, "elapsed": 608.12}
+{"completed": 88000, "counts": {"pass": 87998, "candidate_wrong_result": 2}, "elapsed": 609.26}
+{"completed": 89000, "counts": {"pass": 88998, "candidate_wrong_result": 2}, "elapsed": 610.23}
+{"completed": 90000, "counts": {"pass": 89998, "candidate_wrong_result": 2}, "elapsed": 611.38}
+{"completed": 91000, "counts": {"pass": 90998, "candidate_wrong_result": 2}, "elapsed": 612.35}
+{"completed": 92000, "counts": {"pass": 91998, "candidate_wrong_result": 2}, "elapsed": 613.39}
+{"completed": 93000, "counts": {"pass": 92998, "candidate_wrong_result": 2}, "elapsed": 614.41}
+{"completed": 94000, "counts": {"pass": 93998, "candidate_wrong_result": 2}, "elapsed": 615.41}
+{"completed": 95000, "counts": {"pass": 94998, "candidate_wrong_result": 2}, "elapsed": 616.4}
+{"completed": 96000, "counts": {"pass": 95998, "candidate_wrong_result": 2}, "elapsed": 617.38}
+{"completed": 97000, "counts": {"pass": 96998, "candidate_wrong_result": 2}, "elapsed": 618.48}
+{"completed": 98000, "counts": {"pass": 97998, "candidate_wrong_result": 2}, "elapsed": 619.39}
+{"completed": 99000, "counts": {"pass": 98998, "candidate_wrong_result": 2}, "elapsed": 620.35}
+{"completed": 100000, "counts": {"pass": 99998, "candidate_wrong_result": 2}, "elapsed": 621.28}
+engine done milvus {'pass': 99998, 'candidate_wrong_result': 2}
+DONE 100000 {'pass': 99998, 'candidate_wrong_result': 2} 621.3592054843903

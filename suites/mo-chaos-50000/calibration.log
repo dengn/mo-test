@@ -1,0 +1,11 @@
+module chaos_complex 150 workers 8
+module done chaos_complex {'pass': 150}
+module chaos_search 100 workers 8
+module done chaos_search {'pass': 240, 'mo_execution_error': 10}
+module chaos_boundaries 120 workers 8
+module done chaos_boundaries {'pass': 240, 'mo_execution_error': 10, 'boundary_rejected': 68, 'boundary_accepted': 52}
+module chaos_mixed 50 workers 8
+module done chaos_mixed {'pass': 290, 'mo_execution_error': 10, 'boundary_rejected': 68, 'boundary_accepted': 52}
+module chaos_faults 20 workers 8
+module done chaos_faults {'pass': 290, 'mo_execution_error': 10, 'boundary_rejected': 68, 'boundary_accepted': 52, 'pass_cancel': 10, 'pass_disconnect_rollback': 10}
+DONE 440 {'pass': 290, 'mo_execution_error': 10, 'boundary_rejected': 68, 'boundary_accepted': 52, 'pass_cancel': 10, 'pass_disconnect_rollback': 10} 2.1272335052490234

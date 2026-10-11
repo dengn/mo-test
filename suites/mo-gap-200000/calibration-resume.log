@@ -1,0 +1,7 @@
+module mixed_types 86 workers 32
+module done mixed_types {'pass': 63, 'mo_execution_error': 7, 'candidate_wrong_result': 16}
+module search_edges 150 workers 32
+module done search_edges {'pass': 153, 'mo_execution_error': 7, 'candidate_wrong_result': 16, 'boundary_rejected': 10, 'boundary_accepted': 50}
+module concurrency 50 workers 16
+module done concurrency {'pass': 163, 'mo_execution_error': 7, 'candidate_wrong_result': 16, 'boundary_rejected': 20, 'boundary_accepted': 50, 'pass_atomic': 10, 'pass_disconnect_rollback': 10, 'pass_cancel': 10}
+DONE 928 {'pass': 163, 'mo_execution_error': 7, 'candidate_wrong_result': 16, 'boundary_rejected': 20, 'boundary_accepted': 50, 'pass_atomic': 10, 'pass_disconnect_rollback': 10, 'pass_cancel': 10} 5.020854473114014

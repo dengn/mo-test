@@ -1,0 +1,154 @@
+INFO exec -a "java" java -Dhttps.proxyHost=172.31.0.13 -Dhttps.proxyPort=8080 -Dhttp.proxyHost=172.31.0.13 -Dhttp.proxyPort=8080 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1 -XX:MaxRAMPercentage=80.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -XX:+ExitOnOutOfMemoryError -cp "." -jar /deployments/quarkus-run.jar 
+INFO running in /deployments
+ _   _               _         ____
+| \ | |             (_)       / __ \
+|  \| | ___  ___ ___ _  ___  / /__\/ ___ _ ____   _____ _ __
+| . ` |/ _ \/ __/ __| |/ _ \ \___. \/ _ \ '__\ \ / / _ \ '__|
+| |\  |  __/\__ \__ \ |  __/ /\__/ /  __/ |   \ V /  __/ |
+\_| \_/\___||___/___/_|\___| \____/ \___|_|    \_/ \___|_|
+
+                               https://projectnessie.org/
+
+                                    Powered by Quarkus 3.31.4
+2026-10-11 23:13:28,122 INFO  [org.projectnessie.quarkus.config.OpenTelemetryConfigSourceInterceptor] (main) No OpenTelemetry endpoint configured, disabling OpenTelemetry
+2026-10-11 23:13:28,122 INFO  [org.projectnessie.quarkus.config.OpenTelemetryConfigSourceInterceptor] (main) To enable OpenTelemetry, define a traces collector endpoint URL using the property: quarkus.otel.exporter.otlp.traces.endpoint
+2026-10-11 23:13:30,509 WARN  [io.micrometer.core.instrument.MeterRegistry] (main) This Gauge has been already registered (MeterId{name='netty.eventexecutor.workers', tags=[tag(application=Nessie)]}), the registration will be ignored. Note that subsequent logs will be logged at debug level.
+2026-10-11 23:13:32,007 INFO  [org.projectnessie.server.catalog.secrets.SecretsProducers] (main) No external secrets manager has been configured, secrets are retrieved only from the Quarkus configuration.
+2026-10-11 23:13:32,048 INFO  [org.projectnessie.nessie.networktools.AddressResolver] (main) Using nameserver 31182d2bb53d/172.31.0.13 with search list []
+2026-10-11 23:13:32,156 WARN  [org.projectnessie.server.configchecks.ConfigChecks] (main) Configured version store type IN_MEMORY is only for testing purposes and experimentation, not for production use. Data will be lost when the process is shut down. Recommended action: Use a supported database, see https://projectnessie.org/nessie-latest/configuration/
+2026-10-11 23:13:32,157 WARN  [org.projectnessie.server.configchecks.ConfigChecks] (main) Both authentication (AuthN) and authorization (AuthZ) are disabled, all requests to Nessie will be permitted. This means: everybody with access to Nessie can read, write and change everything. Recommended action: Enable AuthN & AuthZ, see https://projectnessie.org/nessie-latest/configuration/
+2026-10-11 23:13:32,216 INFO  [org.projectnessie.quarkus.providers.storage.PersistProvider] (main) Using objects cache with 656 MB, with soft-references disabled, enabling distributed cache invalidations.
+2026-10-11 23:13:32,218 INFO  [org.projectnessie.quarkus.providers.storage.PersistProvider] (main) Creating/opening version store IN_MEMORY ...
+2026-10-11 23:13:32,221 INFO  [org.projectnessie.quarkus.providers.storage.PersistProvider] (main) Using IN_MEMORY version store
+2026-10-11 23:13:32,920 INFO  [io.quarkus] (main) Nessie 0.107.3 on JVM (powered by Quarkus 3.31.4) started in 12.194s. Listening on: http://127.0.0.1:19120. Management interface listening on http://0.0.0.0:19121.
+2026-10-11 23:13:32,921 INFO  [io.quarkus] (main) Profile prod activated. 
+2026-10-11 23:13:32,921 INFO  [io.quarkus] (main) Installed features: [agroal, amazon-sdk-dynamodb, amazon-sdk-secretsmanager, azure-keyvault-secret, cassandra-client, cdi, google-cloud-bigtable, google-cloud-secret-manager, hibernate-validator, jdbc-h2, jdbc-mariadb, jdbc-postgresql, logging-sentry, micrometer, mongodb-client, narayana-jta, oidc, opentelemetry, reactive-routes, rest, rest-jackson, security, security-properties-file, smallrye-context-propagation, smallrye-health, smallrye-openapi, vault, vertx]
+2026-10-11 23:14:10,022 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:14:10 +0000] "GET /iceberg/v1/config?warehouse=s3%3A%2F%2Fmo-iceberg%2Fwarehouse HTTP/1.1" 200 1775
+2026-10-11 23:14:10,708 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:14:10 +0000] "POST /iceberg/v1/main%7Cs3%3A%2F%2Fmo-iceberg%2Fwarehouse/namespaces HTTP/1.1" 200 58
+2026-10-11 23:14:10,851 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:14:10 +0000] "GET /iceberg/v1/main%7Cs3%3A%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables/events HTTP/1.1" 404 134
+2026-10-11 23:14:15,445 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:14:15 +0000] "POST /iceberg/v1/main%7Cs3%3A%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables HTTP/1.1" 200 2552
+2026-10-11 23:14:16,646 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:14:16 +0000] "POST /iceberg/v1/main%7Cs3%3A%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables/events HTTP/1.1" 200 2692
+2026-10-11 23:15:35,876 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:35 +0000] "GET /iceberg/v1/config?warehouse=s3%3A%2F%2Fmo-iceberg%2Fwarehouse HTTP/1.1" 200 1775
+2026-10-11 23:15:35,958 WARN  [org.projectnessie.catalog.service.rest.IcebergErrorMapper] (executor-thread-1) Unhandled exception returned as HTTP/500: java.lang.NullPointerException: java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:902)
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:235)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.<init>(ImmutableIcebergLoadCredentialsResponse.java:43)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:182)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:173)
+	at org.projectnessie.catalog.service.rest.IcebergApiV1TableResource.lambda$loadCredentials$0(IcebergApiV1TableResource.java:188)
+	at io.smallrye.context.impl.wrappers.SlowContextualFunction.apply(SlowContextualFunction.java:21)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:36)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:43)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forwardResult(UniCreateFromCompletionStage.java:63)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage(CompletableFuture.java:887)
+	at java.base/java.util.concurrent.CompletableFuture.whenComplete(CompletableFuture.java:2357)
+	at java.base/java.util.concurrent.CompletableFuture$MinimalStage.whenComplete(CompletableFuture.java:2948)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forward(UniCreateFromCompletionStage.java:51)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage.subscribe(UniCreateFromCompletionStage.java:35)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.groups.UniSubscribe.withSubscriber(UniSubscribe.java:51)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:110)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:88)
+	at org.jboss.resteasy.reactive.server.handlers.UniResponseHandler.handle(UniResponseHandler.java:21)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:199)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:666)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-10-11 23:15:35,960 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:35 +0000] "GET /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables/events/credentials HTTP/1.1" 500 97
+2026-10-11 23:15:36,043 WARN  [org.projectnessie.catalog.service.rest.IcebergErrorMapper] (executor-thread-1) Unhandled exception returned as HTTP/500: java.lang.NullPointerException: java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:902)
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:235)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.<init>(ImmutableIcebergLoadCredentialsResponse.java:43)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:182)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:173)
+	at org.projectnessie.catalog.service.rest.IcebergApiV1TableResource.lambda$loadCredentials$0(IcebergApiV1TableResource.java:188)
+	at io.smallrye.context.impl.wrappers.SlowContextualFunction.apply(SlowContextualFunction.java:21)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:36)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:43)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forwardResult(UniCreateFromCompletionStage.java:63)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage(CompletableFuture.java:887)
+	at java.base/java.util.concurrent.CompletableFuture.whenComplete(CompletableFuture.java:2357)
+	at java.base/java.util.concurrent.CompletableFuture$MinimalStage.whenComplete(CompletableFuture.java:2948)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forward(UniCreateFromCompletionStage.java:51)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage.subscribe(UniCreateFromCompletionStage.java:35)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.groups.UniSubscribe.withSubscriber(UniSubscribe.java:51)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:110)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:88)
+	at org.jboss.resteasy.reactive.server.handlers.UniResponseHandler.handle(UniResponseHandler.java:21)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:199)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:666)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-10-11 23:15:36,044 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:36 +0000] "GET /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables/events/credentials HTTP/1.1" 500 97
+2026-10-11 23:15:36,085 WARN  [org.projectnessie.catalog.service.rest.IcebergErrorMapper] (executor-thread-1) Unhandled exception returned as HTTP/500: java.lang.NullPointerException: java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:902)
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:235)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.<init>(ImmutableIcebergLoadCredentialsResponse.java:43)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:182)
+	at org.projectnessie.catalog.formats.iceberg.rest.ImmutableIcebergLoadCredentialsResponse.of(ImmutableIcebergLoadCredentialsResponse.java:173)
+	at org.projectnessie.catalog.service.rest.IcebergApiV1TableResource.lambda$loadCredentials$0(IcebergApiV1TableResource.java:188)
+	at io.smallrye.context.impl.wrappers.SlowContextualFunction.apply(SlowContextualFunction.java:21)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:36)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform$UniOnItemTransformProcessor.onItem(UniOnItemTransform.java:43)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forwardResult(UniCreateFromCompletionStage.java:63)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:863)
+	at java.base/java.util.concurrent.CompletableFuture.uniWhenCompleteStage(CompletableFuture.java:887)
+	at java.base/java.util.concurrent.CompletableFuture.whenComplete(CompletableFuture.java:2357)
+	at java.base/java.util.concurrent.CompletableFuture$MinimalStage.whenComplete(CompletableFuture.java:2948)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage$CompletionStageUniSubscription.forward(UniCreateFromCompletionStage.java:51)
+	at io.smallrye.mutiny.operators.uni.builders.UniCreateFromCompletionStage.subscribe(UniCreateFromCompletionStage.java:35)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.operators.uni.UniOnItemTransform.subscribe(UniOnItemTransform.java:22)
+	at io.smallrye.mutiny.operators.AbstractUni.subscribe(AbstractUni.java:35)
+	at io.smallrye.mutiny.groups.UniSubscribe.withSubscriber(UniSubscribe.java:51)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:110)
+	at io.smallrye.mutiny.groups.UniSubscribe.with(UniSubscribe.java:88)
+	at org.jboss.resteasy.reactive.server.handlers.UniResponseHandler.handle(UniResponseHandler.java:21)
+	at io.quarkus.resteasy.reactive.server.runtime.QuarkusResteasyReactiveRequestContext.invokeHandler(QuarkusResteasyReactiveRequestContext.java:199)
+	at org.jboss.resteasy.reactive.common.core.AbstractResteasyReactiveContext.run(AbstractResteasyReactiveContext.java:147)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$15.runWith(VertxCoreRecorder.java:666)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+2026-10-11 23:15:36,101 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:36 +0000] "GET /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerbulk/tables/events/credentials HTTP/1.1" 500 97
+2026-10-11 23:15:37,771 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:37 +0000] "GET /iceberg/v1/config?warehouse=s3%3A%2F%2Fmo-iceberg%2Fwarehouse HTTP/1.1" 200 1775
+2026-10-11 23:15:37,851 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:37 +0000] "POST /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces HTTP/1.1" 200 88
+2026-10-11 23:15:38,014 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:38 +0000] "POST /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerns2/tables HTTP/1.1" 200 3230
+2026-10-11 23:15:38,101 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:38 +0000] "POST /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerns2/tables HTTP/1.1" 200 3363
+2026-10-11 23:15:38,224 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:38 +0000] "POST /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerns2/tables HTTP/1.1" 200 3254
+2026-10-11 23:15:38,329 INFO  [io.quarkus.http.access-log] (executor-thread-1) 127.0.0.1 - - [11/Oct/2026:23:15:38 +0000] "POST /iceberg/v1/main%7Cs3:%2F%2Fmo-iceberg%2Fwarehouse/namespaces/cornerns2/tables HTTP/1.1" 200 3120

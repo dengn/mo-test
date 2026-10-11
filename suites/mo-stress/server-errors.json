@@ -1,0 +1,108 @@
+{
+  "counts": {
+    "request_cancellation": 3964,
+    "transaction_commit_unknown": 30,
+    "cron_trigger_mismatch": 5,
+    "closed_connection": 8,
+    "other": 23,
+    "cron_retry_exhausted": 2,
+    "background_task_fetch_error": 10,
+    "success_logged_at_error_level": 5
+  },
+  "examples": {
+    "request_cancellation": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:21:51.747110 +0000",
+      "name": "cn-service",
+      "caller": "frontend/session.go:4574",
+      "msg": "context canceled",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "session_info": "connectionId 10|127.0.0.1:54218|account sys:root|goRoutineId 4227|migrate-goRoutineId 0|01a11ead-fc56-7cfb-9466-315723956f6a",
+      "role": "moadmin",
+      "session_id": "01a11ead-fc56-7cfb-9466-315723956f6a",
+      "statement_id": "01a11eae-7184-754a-8e94-6ac85bfd195d",
+      "txn_id": "70f70f4866a9b62a18dcbe5b3093841a",
+      "span": {
+        "trace_id": "4e32e9fa-ba28-63ac-2d55-8e98d623718c",
+        "span_id": "fc3971250a448897"
+      }
+    },
+    "transaction_commit_unknown": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:29:21.708775 +0000",
+      "caller": "rpc/sender.go:239",
+      "msg": "error: txn commit status is unknown: 70f70f4866a9b62a18dcbe5b309414c8",
+      "span": {
+        "trace_id": "1ab76543-19d5-c4bc-9af2-3dcfe504b1ef",
+        "span_id": "7d5496201429e695"
+      }
+    },
+    "cron_trigger_mismatch": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:30:17.889930 +0000",
+      "caller": "taskservice/mysql_task_storage.go:647",
+      "msg": "error: internal error: cron task trigger times not match"
+    },
+    "closed_connection": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:30:18.561689 +0000",
+      "caller": "frontend/status_stmt.go:366",
+      "msg": "error: internal error: routine send response failed. error:write tcp 127.0.0.1:6001->127.0.0.1:55082: write: broken pipe ",
+      "span": {
+        "trace_id": "5d2d55cf-7c88-6a91-ae13-6d2989032df5",
+        "span_id": "c987469642e11450"
+      }
+    },
+    "other": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:30:18.562101 +0000",
+      "caller": "logutil/fields.go:98",
+      "msg": "frontend session handling failed",
+      "error-sha256": "148221e80c85569f52a7b95f3d2fe7c900125f38c034ed6db157d86ff725e153",
+      "error-bytes": 61,
+      "error-type": "*net.OpError",
+      "event": "frontend.session.handle.failed",
+      "occurrence": 1
+    },
+    "cron_retry_exhausted": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:30:50.393772 +0000",
+      "name": "log-service",
+      "caller": "log/logger.go:134",
+      "msg": "trigger cron task failed after retries",
+      "service": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "cron-task": "ETLMergeTask/1/0 */5 * * * *",
+      "attempts": 3,
+      "error": "internal error: cron task trigger times not match"
+    },
+    "background_task_fetch_error": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:30:53.166627 +0000",
+      "name": "log-service",
+      "caller": "log/logger.go:134",
+      "msg": "query sql tasks failed",
+      "service": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "7c4dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "error": "context deadline exceeded\ninternal error: fetch cron tasks"
+    },
+    "success_logged_at_error_level": {
+      "level": "ERROR",
+      "time": "2026/10/09 03:35:15.304945 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 1,
+      "success": 1,
+      "span": {
+        "trace_id": "fdbe38e0-c613-503c-5e9f-403bd42c48c6",
+        "span_id": "839eb7e6937564ab"
+      }
+    }
+  },
+  "errors_during_low_concurrency_recovery_after_5s": 0
+}

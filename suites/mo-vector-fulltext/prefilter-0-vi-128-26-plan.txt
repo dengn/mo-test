@@ -1,0 +1,6 @@
+('Project',)
+('  ->  Sort',)
+('        Sort Key: #[0,1] INTERNAL',)
+('        Limit: 10',)
+('        ->  Vector Index Scan on ann [l2_distance]',)
+('              Vector Index: ann, Metric: l2_distance, Candidate Limit: 10, NProbe: 128, Index Filter: __mo_index_pri_col BETWEEN 1 AND 100',)

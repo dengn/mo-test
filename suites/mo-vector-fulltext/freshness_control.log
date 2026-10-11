@@ -1,0 +1,11 @@
+{"kind": "cadence_cdc_ready", "epoch": 1791528311.706553, "ready": true, "seconds": 9.098440458999903, "tail": 1, "hnsw_watermarks": [["1791528310874673730-1"]]}
+{"kind": "freshness_control", "epoch": 1791528311.7223036, "label": "default_after_durable_cdc", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_override", "epoch": 1791528311.7264645, "result": [["{\n  \"method\": \"SETVECTORINDEXFRESHNESSINTERVAL\",\n  \"result\": \"applied=[127.0.0.1:18002:1000000000]\"\n}\n"]]}
+{"kind": "freshness_control", "epoch": 1791528311.732164, "label": "shortened_cadence", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_control", "epoch": 1791528312.7379985, "label": "shortened_cadence", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_control", "epoch": 1791528313.743189, "label": "shortened_cadence", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_control", "epoch": 1791528314.7480483, "label": "shortened_cadence", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_control", "epoch": 1791528315.7522967, "label": "shortened_cadence", "fulltext_result": [], "fulltext_new_visible": false, "hnsw_new_id_visible": true}
+{"kind": "freshness_control", "epoch": 1791528316.768253, "label": "shortened_cadence", "fulltext_result": [[2]], "fulltext_new_visible": true, "hnsw_new_id_visible": true}
+{"kind": "freshness_convergence", "epoch": 1791528316.7684255, "seconds": 5.041808958998445}
+{"kind": "freshness_restored", "epoch": 1791528316.7697783, "result": [["{\n  \"method\": \"SETVECTORINDEXFRESHNESSINTERVAL\",\n  \"result\": \"applied=[127.0.0.1:18002:0]\"\n}\n"]]}

@@ -1,0 +1,19 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+2026/10/09 04:05:47.616129 +0000 INFO system/system.go:586 call runtime.GOMAXPROCS(4): 4, keep: 4
+2026/10/09 04:05:47.658621 +0000 INFO tasks/cancelablejob.go:161 cancelablejob.start.cron.job {"name": "CronJob[streamReaderGC-01a11ed6-ac0a-78d1-87b0-af50f0c85446-2m0s]", "interval": "2m0s"}
+2026/10/09 04:05:47.661786 +0000 ERROR mo-service/debug_connections.go:52 conntrack: error {"error": "netlink join-group: setsockopt: operation not permitted"}
+{"level":"WARN","time":"2026/10/09 04:05:47.671686 +0000","name":"config","caller":"config/config.go:537","msg":"mutual TLS disabled, communication is insecure"}
+{"level":"ERROR","time":"2026/10/09 04:05:47.672092 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to create log store","service":"7c4dccb4-4d3c-41f8-b482-5251dc7a41bf","uuid":"7c4dccb4-4d3c-41f8-b482-5251dc7a41bf","error":"failed to lock data directory","errorVerbose":"failed to lock data directory\n(1) attached stack trace\n  -- stack trace:\n  | github.com/lni/dragonboat/v4/internal/server.init\n  | \t/workspace/cache/gomod/github.com/matrixorigin/dragonboat/v4@v4.0.0-20261006150417-abc3d2fce5a6/internal/server/environment.go:62\n  | runtime.doInit1\n  | \t/workspace/toolchains/go/src/runtime/proc.go:8154\n  | runtime.doInit\n  | \t/workspace/toolchains/go/src/runtime/proc.go:8121\n  | runtime.main\n  | \t/workspace/toolchains/go/src/runtime/proc.go:269\n  | runtime.goexit\n  | \t/workspace/toolchains/go/src/runtime/asm_amd64.s:1264\nWraps: (2) failed to lock data directory\nError types: (1) *withstack.withStack (2) *errutil.leafError"}
+panic: failed to lock data directory
+
+goroutine 1 [running]:
+main.startLogService(0x316449e00008, 0x316448874630, {0xb56a310, 0x31644857a768}, 0x316448811420)
+	/workspace/matrixone-latest/cmd/mo-service/main.go:535 +0x59b
+main.startService({0xb54a5a0, 0xbcf5180}, 0x316449e00008, 0x316448874630, 0x316448811420)
+	/workspace/matrixone-latest/cmd/mo-service/main.go:301 +0x5bd
+main.startLogServiceCluster({0xb54a5a0, 0xbcf5180}, {0x31644869c630?, 0x2?, 0x70?}, 0x316448874630, 0x316448811420)
+	/workspace/matrixone-latest/cmd/mo-service/launch.go:124 +0x106
+main.startCluster({0xb54a5a0, 0xbcf5180}, 0x316448874630, 0x316448811420)
+	/workspace/matrixone-latest/cmd/mo-service/launch.go:79 +0x33f
+main.main()
+	/workspace/matrixone-latest/cmd/mo-service/main.go:138 +0x5b4

@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 0,
+    "phase": "serial",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "id": 1,
+    "phase": "serial",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "phase": "serial",
+    "rows": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "phase": "serial",
+    "rows": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "phase": "serial",
+    "rows": [
+      [
+        4
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "phase": "serial",
+    "rows": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 7,
+    "phase": "serial",
+    "rows": [
+      [
+        7
+      ]
+    ]
+  },
+  {
+    "id": 8,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 9,
+    "phase": "serial",
+    "rows": [
+      [
+        9
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 11,
+    "phase": "serial",
+    "rows": [
+      [
+        11
+      ]
+    ]
+  },
+  {
+    "id": 12,
+    "phase": "serial",
+    "rows": [
+      [
+        12
+      ]
+    ]
+  },
+  {
+    "id": 13,
+    "phase": "serial",
+    "rows": [
+      [
+        13
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "phase": "serial",
+    "rows": [
+      [
+        14
+      ]
+    ]
+  },
+  {
+    "id": 15,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 16,
+    "phase": "serial",
+    "rows": [
+      [
+        16
+      ]
+    ]
+  },
+  {
+    "id": 17,
+    "phase": "serial",
+    "rows": [
+      [
+        17
+      ]
+    ]
+  },
+  {
+    "id": 18,
+    "phase": "serial",
+    "rows": [
+      [
+        18
+      ]
+    ]
+  },
+  {
+    "id": 19,
+    "phase": "serial",
+    "rows": [
+      [
+        19
+      ]
+    ]
+  },
+  {
+    "id": 20,
+    "phase": "serial",
+    "rows": [
+      [
+        20
+      ]
+    ]
+  },
+  {
+    "id": 21,
+    "phase": "serial",
+    "rows": [
+      [
+        21
+      ]
+    ]
+  },
+  {
+    "id": 22,
+    "phase": "serial",
+    "rows": [
+      [
+        22
+      ]
+    ]
+  },
+  {
+    "id": 23,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 24,
+    "phase": "serial",
+    "rows": [
+      [
+        24
+      ]
+    ]
+  },
+  {
+    "id": 25,
+    "phase": "serial",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 26,
+    "phase": "serial",
+    "rows": [
+      [
+        26
+      ]
+    ]
+  },
+  {
+    "id": 27,
+    "phase": "serial",
+    "rows": [
+      [
+        27
+      ]
+    ]
+  },
+  {
+    "id": 28,
+    "phase": "serial",
+    "rows": [
+      [
+        28
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "phase": "serial",
+    "rows": [
+      [
+        29
+      ]
+    ]
+  },
+  {
+    "id": 0,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "id": 1,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 2,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        2
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        3
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 5,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        5
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 7,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 8,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 9,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 10,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 11,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 12,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 13,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        13
+      ]
+    ]
+  },
+  {
+    "id": 14,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 15,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 16,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 17,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 18,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 19,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 20,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 21,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 22,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 23,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 24,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 25,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 26,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 27,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 28,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        28
+      ]
+    ]
+  },
+  {
+    "id": 29,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 30,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        30
+      ]
+    ]
+  },
+  {
+    "id": 31,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        31
+      ]
+    ]
+  },
+  {
+    "id": 32,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 33,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 34,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        34
+      ]
+    ]
+  },
+  {
+    "id": 35,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        35
+      ]
+    ]
+  },
+  {
+    "id": 36,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 37,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        37
+      ]
+    ]
+  },
+  {
+    "id": 38,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        38
+      ]
+    ]
+  },
+  {
+    "id": 39,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 40,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 41,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 42,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        42
+      ]
+    ]
+  },
+  {
+    "id": 43,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        43
+      ]
+    ]
+  },
+  {
+    "id": 44,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 45,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 46,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 47,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 48,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        48
+      ]
+    ]
+  },
+  {
+    "id": 49,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        49
+      ]
+    ]
+  },
+  {
+    "id": 50,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 51,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        51
+      ]
+    ]
+  },
+  {
+    "id": 52,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        52
+      ]
+    ]
+  },
+  {
+    "id": 53,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 54,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        54
+      ]
+    ]
+  },
+  {
+    "id": 55,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 56,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 57,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        57
+      ]
+    ]
+  },
+  {
+    "id": 58,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        58
+      ]
+    ]
+  },
+  {
+    "id": 59,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 60,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 61,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        61
+      ]
+    ]
+  },
+  {
+    "id": 62,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 63,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        63
+      ]
+    ]
+  },
+  {
+    "id": 64,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 65,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        65
+      ]
+    ]
+  },
+  {
+    "id": 66,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 67,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 68,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        68
+      ]
+    ]
+  },
+  {
+    "id": 69,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        69
+      ]
+    ]
+  },
+  {
+    "id": 70,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        70
+      ]
+    ]
+  },
+  {
+    "id": 71,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 72,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        72
+      ]
+    ]
+  },
+  {
+    "id": 73,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        73
+      ]
+    ]
+  },
+  {
+    "id": 74,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        74
+      ]
+    ]
+  },
+  {
+    "id": 75,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 76,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 77,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        77
+      ]
+    ]
+  },
+  {
+    "id": 78,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        78
+      ]
+    ]
+  },
+  {
+    "id": 79,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        79
+      ]
+    ]
+  },
+  {
+    "id": 80,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 81,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        81
+      ]
+    ]
+  },
+  {
+    "id": 82,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        82
+      ]
+    ]
+  },
+  {
+    "id": 83,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        83
+      ]
+    ]
+  },
+  {
+    "id": 84,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 85,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 86,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 87,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 88,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        88
+      ]
+    ]
+  },
+  {
+    "id": 89,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        89
+      ]
+    ]
+  },
+  {
+    "id": 90,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        90
+      ]
+    ]
+  },
+  {
+    "id": 91,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 92,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 93,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        93
+      ]
+    ]
+  },
+  {
+    "id": 94,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 95,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 96,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        96
+      ]
+    ]
+  },
+  {
+    "id": 97,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        97
+      ]
+    ]
+  },
+  {
+    "id": 98,
+    "phase": "concurrent_positive",
+    "error": {
+      "code": 2003,
+      "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010))\")",
+      "type": "OperationalError"
+    }
+  },
+  {
+    "id": 99,
+    "phase": "concurrent_positive",
+    "rows": [
+      [
+        99
+      ]
+    ]
+  }
+]

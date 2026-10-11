@@ -1,0 +1,580 @@
+{
+  "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "machine": {
+    "cpu_quota_cores": 4,
+    "memory_gib": 32,
+    "client_and_server_share_quota": true
+  },
+  "scenarios": [
+    {
+      "elapsed_seconds": 60.003489483,
+      "error_kinds": {},
+      "errors": 0,
+      "latency_all_attempts_ms": {
+        "max": 1418.648,
+        "p50": 1048.142,
+        "p95": 1131.827,
+        "p99": 1156.31
+      },
+      "offered_seconds": 60,
+      "scenario": "hotspot_128",
+      "success": 7197,
+      "success_ops_per_second": 119.95,
+      "teardown_cancelled": 128,
+      "time": "2026-10-09T03:55:18.68677136Z",
+      "type": "scenario_end",
+      "workers": 128,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 45.000737582,
+      "error_kinds": {
+        "deadlock detected": 4651
+      },
+      "errors": 4651,
+      "latency_all_attempts_ms": {
+        "max": 2558.032,
+        "p50": 158.007,
+        "p95": 1209.608,
+        "p99": 2525.476
+      },
+      "offered_seconds": 45,
+      "scenario": "opposite_lock_32",
+      "success": 260,
+      "success_ops_per_second": 5.777777777777778,
+      "teardown_cancelled": 32,
+      "time": "2026-10-09T03:56:03.811551264Z",
+      "type": "scenario_end",
+      "workers": 32,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 60.009818289,
+      "error_kinds": {},
+      "errors": 0,
+      "latency_all_attempts_ms": {
+        "max": 1685.315,
+        "p50": 659.323,
+        "p95": 1063.28,
+        "p99": 1202.926
+      },
+      "offered_seconds": 60,
+      "scenario": "connection_storm_256",
+      "success": 22919,
+      "success_ops_per_second": 381.98333333333335,
+      "teardown_cancelled": 256,
+      "time": "2026-10-09T03:57:03.882734253Z",
+      "type": "scenario_end",
+      "workers": 256,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 45.001887578,
+      "error_kinds": {
+        "context deadline exceeded": 14227
+      },
+      "errors": 14227,
+      "latency_all_attempts_ms": {
+        "max": 173.234,
+        "p50": 100.655,
+        "p95": 102.034,
+        "p99": 107.101
+      },
+      "offered_seconds": 45,
+      "scenario": "cancel_heavy_queries_32",
+      "success": 0,
+      "success_ops_per_second": 0,
+      "teardown_cancelled": 32,
+      "time": "2026-10-09T03:57:49.225615716Z",
+      "type": "scenario_end",
+      "workers": 32,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 90.297450325,
+      "error_kinds": {},
+      "errors": 0,
+      "latency_all_attempts_ms": {
+        "max": 9246.809,
+        "p50": 836.52,
+        "p95": 1744.887,
+        "p99": 5401.08
+      },
+      "offered_seconds": 90,
+      "scenario": "delete_reinsert_16",
+      "success": 1419,
+      "success_ops_per_second": 15.766666666666667,
+      "teardown_cancelled": 15,
+      "time": "2026-10-09T03:59:39.61532931Z",
+      "type": "scenario_end",
+      "workers": 16,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 90.007737625,
+      "error_kinds": {
+        "context deadline exceeded": 80
+      },
+      "errors": 80,
+      "latency_all_attempts_ms": {
+        "max": 15095.549,
+        "p50": 15013.885,
+        "p95": 15061.467,
+        "p99": 15062.934
+      },
+      "offered_seconds": 90,
+      "scenario": "wide_sort_16",
+      "success": 0,
+      "success_ops_per_second": 0,
+      "teardown_cancelled": 16,
+      "time": "2026-10-09T04:01:13.741476467Z",
+      "type": "scenario_end",
+      "workers": 16,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 60.000846698,
+      "error_kinds": {
+        "context deadline exceeded": 1,
+        "mysql_1060: Duplicate column name 'transient_column'": 4323
+      },
+      "errors": 4324,
+      "latency_all_attempts_ms": {
+        "max": 15022.122,
+        "p50": 6.377,
+        "p95": 32.53,
+        "p99": 67.888
+      },
+      "offered_seconds": 60,
+      "scenario": "ddl_with_readers",
+      "success": 0,
+      "success_ops_per_second": 0,
+      "teardown_cancelled": 1,
+      "time": "2026-10-09T04:02:25.324335569Z",
+      "type": "scenario_end",
+      "workers": 1,
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 60.000254883,
+      "error_kinds": {},
+      "errors": 0,
+      "latency_all_attempts_ms": {
+        "max": 4082.078,
+        "p50": 2459.328,
+        "p95": 3788.741,
+        "p99": 3936.661
+      },
+      "offered_seconds": 60,
+      "scenario": "ddl_state_aware_retry",
+      "success": 22,
+      "success_ops_per_second": 0.36666666666666664,
+      "teardown_cancelled": 1,
+      "time": "2026-10-09T04:04:03.599655712Z",
+      "type": "scenario_end",
+      "workers": 1,
+      "source": "ddl-retry.jsonl"
+    },
+    {
+      "elapsed_seconds": 120.096414658,
+      "error_kinds": {
+        "connection refused": 14528,
+        "invalid connection": 32
+      },
+      "errors": 14560,
+      "latency_all_attempts_ms": {
+        "max": 612.613,
+        "p50": 52.975,
+        "p95": 101.286,
+        "p99": 142.549
+      },
+      "offered_seconds": 120,
+      "scenario": "live_restart_writers",
+      "success": 45395,
+      "success_ops_per_second": 378.2916666666667,
+      "teardown_cancelled": 32,
+      "time": "2026-10-09T04:06:33.769246338Z",
+      "type": "scenario_end",
+      "workers": 32,
+      "source": "live-results.jsonl"
+    },
+    {
+      "elapsed_seconds": 120.133724898,
+      "error_kinds": {
+        "connection refused": 1859,
+        "context deadline exceeded": 32,
+        "invalid connection": 32
+      },
+      "errors": 1923,
+      "latency_all_attempts_ms": {
+        "max": 15105.791,
+        "p50": 59.733,
+        "p95": 176.899,
+        "p99": 294.587
+      },
+      "offered_seconds": 120,
+      "scenario": "resumed_writers_32",
+      "success": 36038,
+      "success_ops_per_second": 300.31666666666666,
+      "teardown_cancelled": 24,
+      "time": "2026-10-09T04:14:31.476265384Z",
+      "type": "scenario_end",
+      "workers": 32,
+      "source": "resumed-results.jsonl"
+    },
+    {
+      "elapsed_seconds": 30.105495021,
+      "error_kinds": {},
+      "errors": 0,
+      "latency_all_attempts_ms": {
+        "max": 318.402,
+        "p50": 43.104,
+        "p95": 91.559,
+        "p99": 132.747
+      },
+      "offered_seconds": 30,
+      "scenario": "post_fault_writes_32",
+      "success": 19648,
+      "success_ops_per_second": 654.9333333333333,
+      "teardown_cancelled": 28,
+      "time": "2026-10-09T04:16:14.111261032Z",
+      "type": "scenario_end",
+      "workers": 32,
+      "source": "post-fault-writes.jsonl"
+    }
+  ],
+  "audits": [
+    {
+      "account_count": 2,
+      "acknowledged_transactions": 7197,
+      "balance_sum": 2000000,
+      "balances_match_ledger": true,
+      "ledger_rows": 7197,
+      "missing_acknowledged_ids": 0,
+      "pass": true,
+      "scenario": "hot",
+      "time": "2026-10-09T03:55:18.738961127Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "account_count": 2,
+      "acknowledged_transactions": 260,
+      "balance_sum": 2000000,
+      "balances_match_ledger": true,
+      "ledger_rows": 260,
+      "missing_acknowledged_ids": 0,
+      "pass": true,
+      "scenario": "dead",
+      "time": "2026-10-09T03:56:03.823177616Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_seed",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T03:58:09.317747703Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_delete_reinsert",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T03:59:43.656890898Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_wide_sort",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:01:25.268872869Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_ddl",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:02:26.681374579Z",
+      "type": "audit",
+      "source": "results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_ddl_retry",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:04:06.016841563Z",
+      "type": "audit",
+      "source": "ddl-retry.jsonl"
+    },
+    {
+      "error": "dial tcp 127.0.0.1:6001: connect: connection refused",
+      "pass": false,
+      "scenario": "live",
+      "type": "audit",
+      "source": "live-results.jsonl"
+    },
+    {
+      "account_count": 1000,
+      "acknowledged_transactions": 45395,
+      "balance_sum": 1000000000,
+      "balances_match_ledger": true,
+      "ledger_rows": 45395,
+      "missing_acknowledged_ids": 0,
+      "pass": true,
+      "scenario": "live",
+      "time": "2026-10-09T04:11:53.946692629Z",
+      "type": "audit",
+      "source": "post-crash-audits.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_active_crash",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:11:56.31781927Z",
+      "type": "audit",
+      "source": "post-crash-audits.jsonl"
+    },
+    {
+      "account_count": 1000,
+      "acknowledged_transactions": 81433,
+      "balance_sum": 1000000000,
+      "balances_match_ledger": true,
+      "ledger_rows": 81448,
+      "missing_acknowledged_ids": 0,
+      "pass": true,
+      "scenario": "live",
+      "time": "2026-10-09T04:14:31.71761898Z",
+      "type": "audit",
+      "source": "resumed-results.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_resumed_writes",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:14:34.211710066Z",
+      "type": "audit",
+      "source": "resumed-results.jsonl"
+    },
+    {
+      "account_count": 1000,
+      "acknowledged_transactions": 101081,
+      "balance_sum": 1000000000,
+      "balances_match_ledger": true,
+      "ledger_rows": 101096,
+      "missing_acknowledged_ids": 0,
+      "pass": true,
+      "scenario": "live",
+      "time": "2026-10-09T04:16:14.296344675Z",
+      "type": "audit",
+      "source": "post-fault-writes.jsonl"
+    },
+    {
+      "bad_digest_rows": 0,
+      "error": "<nil>",
+      "pass": true,
+      "payload_bytes": 409600000,
+      "rows": 200000,
+      "scenario": "after_resumed_writes",
+      "sum_id": 20000100000,
+      "time": "2026-10-09T04:16:15.671455813Z",
+      "type": "audit",
+      "source": "post-fault-writes.jsonl"
+    }
+  ],
+  "probes": [
+    {
+      "elapsed_seconds": 0.049177593,
+      "max_ms": 1.466,
+      "p99_ms": 1.271,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_hotspot",
+      "time": "2026-10-09T03:55:18.788225025Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.049614353,
+      "max_ms": 1.59,
+      "p99_ms": 1.447,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_opposite_lock",
+      "time": "2026-10-09T03:56:03.8728306Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.340709093,
+      "max_ms": 267.188,
+      "p99_ms": 8.179,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_connection_storm",
+      "time": "2026-10-09T03:57:04.223521666Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.174877211,
+      "max_ms": 118.012,
+      "p99_ms": 7.339,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_query_cancellation",
+      "time": "2026-10-09T03:57:49.400628744Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.076556627,
+      "max_ms": 4.652,
+      "p99_ms": 2.923,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_delete_reinsert",
+      "time": "2026-10-09T03:59:43.733679167Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.054332071,
+      "max_ms": 1.046,
+      "p99_ms": 1.029,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_wide_sort",
+      "time": "2026-10-09T04:01:25.323351843Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.045707481,
+      "max_ms": 0.903,
+      "p99_ms": 0.844,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_ddl",
+      "time": "2026-10-09T04:02:26.727141145Z",
+      "type": "probe",
+      "source": "results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.062409878,
+      "max_ms": 3.076,
+      "p99_ms": 2.272,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_ddl_retry",
+      "time": "2026-10-09T04:04:06.079318572Z",
+      "type": "probe",
+      "source": "ddl-retry.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.089878646,
+      "max_ms": 3.936,
+      "p99_ms": 3.83,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_active_crash",
+      "time": "2026-10-09T04:11:56.407998499Z",
+      "type": "probe",
+      "source": "post-crash-audits.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.066425717,
+      "max_ms": 7.235,
+      "p99_ms": 3.11,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_resumed_writes",
+      "time": "2026-10-09T04:14:34.278189452Z",
+      "type": "probe",
+      "source": "resumed-results.jsonl"
+    },
+    {
+      "elapsed_seconds": 0.043147151,
+      "max_ms": 0.754,
+      "p99_ms": 0.708,
+      "pass": true,
+      "queries": 100,
+      "scenario": "after_resumed_writes",
+      "time": "2026-10-09T04:16:15.714661321Z",
+      "type": "probe",
+      "source": "post-fault-writes.jsonl"
+    }
+  ],
+  "resource": {
+    "peak_server_rss_gib": 8.73360824584961,
+    "peak_cgroup_memory_gib": 15.968894958496094,
+    "min_disk_free_gib": 12.160423278808594,
+    "peak_server_goroutines": 2175.0,
+    "guard_triggered": false,
+    "latest_memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  },
+  "sort_baseline": {
+    "type": "sort_baseline",
+    "workers": 1,
+    "pass": true,
+    "rows_returned": 100000,
+    "elapsed_seconds": 5.255720615386963
+  },
+  "first_active_fault": {
+    "type": "active_fault",
+    "cut_epoch": 1791518747.4971972,
+    "ready": false,
+    "error": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")"
+  },
+  "manual_recovery": {
+    "manual_retry_ready": true,
+    "ready_epoch": 1791519048.6960342,
+    "new_pid": 17705,
+    "accounts": 1000,
+    "probe_seconds": 0.10924720764160156
+  },
+  "second_active_fault": {
+    "type": "active_fault",
+    "method": "SIGKILL while 32 journaled transaction workers are active",
+    "cut_epoch": 1791519226.9168823,
+    "old_pid": 17705,
+    "new_pid": 18199,
+    "ready_epoch": 1791519261.9972541,
+    "readiness_seconds": 35.08037209510803,
+    "lock_release_wait_seconds": 0.1376798152923584,
+    "lock_retry_errors": [],
+    "ready": true
+  },
+  "first_fault_observed_outage_seconds_including_diagnosis": 301.19883704185486
+}

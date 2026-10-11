@@ -1,0 +1,43 @@
+{"kind": "setup", "epoch": 1791526358.0279245, "database": "mo_vecft_1791526357965790259", "pid": 23325, "version": [["8.0.30-MatrixOne-v"]]}
+{"kind": "seed_vectors", "epoch": 1791526369.8936753, "count": 100000, "dimension": 128, "seconds": 11.597660131001248}
+{"kind": "sql", "epoch": 1791526371.2333953, "sql": "insert into vh select * from vref", "seconds": 1.339194865000536, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526372.1582863, "sql": "insert into vc select * from vref", "seconds": 0.9246113980007067, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526372.6458118, "sql": "insert into vi select * from vref", "seconds": 0.48708799199994246, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526393.4271085, "sql": "create index ann using hnsw on vh(v) op_type 'vector_l2_ops'", "seconds": 20.781048270999236, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526413.5257714, "sql": "create index ann using hnsw on vc(v) op_type 'vector_cosine_ops'", "seconds": 20.098164635001012, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526416.0240607, "sql": "create index ann using ivfflat on vi(v) lists=128 op_type 'vector_l2_ops'", "seconds": 2.497806348999802, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526459.0248356, "sql": "alter table vh alter reindex ann hnsw force_sync", "seconds": 43.00051547200019, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526525.9871578, "sql": "alter table vc alter reindex ann hnsw force_sync", "seconds": 66.96197098499943, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526546.773769, "sql": "create index ann using hnsw on vd(v) op_type 'vector_l2_ops'", "seconds": 6.3072613189997355, "rows": 0, "sample": []}
+{"kind": "seed_docs", "epoch": 1791526549.9552171, "count": 60000, "seconds": 3.157782774000225}
+{"kind": "sql", "epoch": 1791526550.2444046, "sql": "insert into ft2 select * from ft", "seconds": 0.28888865999942936, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526557.127091, "sql": "create fulltext index txt on ft(body)", "seconds": 6.882379881000816, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791526559.7758727, "sql": "create fulltext2 index txt on ft2(body) max_index_capacity 20000", "seconds": 2.647936530000152, "rows": 0, "sample": []}
+{"kind": "exact_crosscheck", "epoch": 1791526561.7420487, "label": "baseline", "table": "vh", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526561.8808312, "label": "baseline", "table": "vh", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526562.019184, "label": "baseline", "table": "vh", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791526566.35701, "label": "baseline", "table": "vh", "queries": 30, "recall10_mean": 0.21666666666666667, "recall10_min": 0.0, "max_score_error": 9.936457345816052e-08, "p99_ms": 451.3759479095466, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791526567.3126435, "label": "baseline", "table": "vc", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526567.5746918, "label": "baseline", "table": "vc", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526568.1572704, "label": "baseline", "table": "vc", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791526573.3481429, "label": "baseline", "table": "vc", "queries": 30, "recall10_mean": 0.23333333333333336, "recall10_min": 0.0, "max_score_error": 1.0355114188342895e-07, "p99_ms": 577.7328032096381, "errors": []}
+{"kind": "exact_crosscheck", "epoch": 1791526573.5760963, "label": "baseline", "table": "vi", "query": 0, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526573.7838678, "label": "baseline", "table": "vi", "query": 1, "numpy_sql_top10_equal": true}
+{"kind": "exact_crosscheck", "epoch": 1791526573.984233, "label": "baseline", "table": "vi", "query": 2, "numpy_sql_top10_equal": true}
+{"kind": "recall", "epoch": 1791526577.7587128, "label": "baseline", "table": "vi", "queries": 30, "recall10_mean": 0.2766666666666666, "recall10_min": 0.1, "max_score_error": 1.0711345965752628e-07, "p99_ms": 76.58314920070553, "errors": []}
+{"kind": "ivf_full_probe", "epoch": 1791526578.5619195, "label": "baseline", "queries": 10, "mean_recall": 1.0, "minimum": 1.0}
+{"kind": "ft_membership", "epoch": 1791526579.1279664, "label": "baseline", "table": "ft", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526579.5016503, "label": "baseline", "table": "ft", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526579.8787973, "label": "baseline", "table": "ft", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526580.2689402, "label": "baseline", "table": "ft", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526580.663904, "label": "baseline", "table": "ft", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526580.6740427, "label": "baseline", "table": "ft", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526580.908062, "label": "baseline", "table": "ft2", "query": "+alpha +beta", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526580.9409962, "label": "baseline", "table": "ft2", "query": "+alpha -gamma", "count": 7500, "expected": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526581.028491, "label": "baseline", "table": "ft2", "query": "quic*", "count": 37500, "expected": 37500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526581.1059694, "label": "baseline", "table": "ft2", "query": "+quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526581.1709325, "label": "baseline", "table": "ft2", "query": "+quick +quick +fox", "count": 30000, "expected": 30000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "ft_membership", "epoch": 1791526581.1839213, "label": "baseline", "table": "ft2", "query": "+alpha +missing", "count": 0, "expected": 0, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791526581.2767794, "label": "baseline", "query": "quick brown fox", "count": 15000, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791526581.4222064, "label": "baseline", "query": "brown quick", "count": 7500, "missing": 0, "extra": 0, "pass_check": true}
+{"kind": "phrase_membership", "epoch": 1791526581.428244, "label": "baseline", "query": "quick missing", "count": 0, "missing": 0, "extra": 0, "pass_check": true}

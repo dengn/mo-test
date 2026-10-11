@@ -1,0 +1,112 @@
+module ingest 20000
+{"completed": 786, "counts": {"pass": 786}, "elapsed": 15.72}
+{"completed": 1000, "counts": {"pass": 1000}, "elapsed": 16.37}
+{"completed": 2000, "counts": {"pass": 2000}, "elapsed": 19.28}
+{"completed": 3000, "counts": {"pass": 3000}, "elapsed": 24.31}
+{"completed": 4000, "counts": {"pass": 4000}, "elapsed": 27.72}
+{"completed": 5000, "counts": {"pass": 5000}, "elapsed": 31.38}
+{"completed": 6000, "counts": {"pass": 6000}, "elapsed": 35.24}
+{"completed": 7000, "counts": {"pass": 7000}, "elapsed": 38.63}
+{"completed": 8000, "counts": {"pass": 8000}, "elapsed": 42.19}
+{"completed": 9000, "counts": {"pass": 9000}, "elapsed": 46.36}
+{"completed": 10000, "counts": {"pass": 10000}, "elapsed": 49.79}
+{"completed": 11000, "counts": {"pass": 11000}, "elapsed": 53.29}
+{"completed": 12000, "counts": {"pass": 12000}, "elapsed": 56.66}
+{"completed": 13000, "counts": {"pass": 13000}, "elapsed": 60.57}
+{"completed": 14000, "counts": {"pass": 14000}, "elapsed": 63.17}
+{"completed": 15000, "counts": {"pass": 15000}, "elapsed": 65.56}
+{"completed": 16000, "counts": {"pass": 16000}, "elapsed": 67.33}
+{"completed": 17000, "counts": {"pass": 17000}, "elapsed": 69.25}
+{"completed": 18000, "counts": {"pass": 18000}, "elapsed": 71.0}
+{"completed": 19000, "counts": {"pass": 19000}, "elapsed": 72.8}
+{"completed": 20000, "counts": {"pass": 20000}, "elapsed": 74.82}
+module done ingest {'pass': 20000}
+module transform 30000
+{"completed": 21000, "counts": {"pass": 21000}, "elapsed": 78.46}
+{"completed": 22000, "counts": {"pass": 22000}, "elapsed": 79.76}
+{"completed": 23000, "counts": {"pass": 23000}, "elapsed": 81.01}
+{"completed": 24000, "counts": {"pass": 24000}, "elapsed": 82.35}
+{"completed": 25000, "counts": {"pass": 25000}, "elapsed": 84.49}
+{"completed": 26000, "counts": {"pass": 26000}, "elapsed": 86.84}
+{"completed": 27000, "counts": {"pass": 27000}, "elapsed": 89.3}
+{"completed": 28000, "counts": {"pass": 28000}, "elapsed": 91.5}
+{"completed": 29000, "counts": {"pass": 29000}, "elapsed": 94.07}
+{"completed": 30000, "counts": {"pass": 30000}, "elapsed": 96.22}
+{"completed": 31000, "counts": {"pass": 31000}, "elapsed": 97.54}
+{"completed": 32000, "counts": {"pass": 32000}, "elapsed": 99.38}
+{"completed": 33000, "counts": {"pass": 33000}, "elapsed": 101.95}
+{"completed": 34000, "counts": {"pass": 34000}, "elapsed": 104.09}
+{"completed": 35000, "counts": {"pass": 35000}, "elapsed": 106.17}
+{"completed": 36000, "counts": {"pass": 36000}, "elapsed": 108.1}
+{"completed": 37000, "counts": {"pass": 37000}, "elapsed": 109.53}
+{"completed": 38000, "counts": {"pass": 38000}, "elapsed": 111.29}
+{"completed": 39000, "counts": {"pass": 39000}, "elapsed": 113.42}
+{"completed": 40000, "counts": {"pass": 40000}, "elapsed": 115.73}
+{"completed": 41000, "counts": {"pass": 41000}, "elapsed": 118.19}
+{"completed": 42000, "counts": {"pass": 42000}, "elapsed": 120.19}
+{"completed": 43000, "counts": {"pass": 43000}, "elapsed": 121.82}
+{"completed": 44000, "counts": {"pass": 44000}, "elapsed": 124.3}
+{"completed": 45000, "counts": {"pass": 45000}, "elapsed": 126.22}
+{"completed": 46000, "counts": {"pass": 46000}, "elapsed": 128.02}
+{"completed": 47000, "counts": {"pass": 47000}, "elapsed": 129.94}
+{"completed": 48000, "counts": {"pass": 48000}, "elapsed": 131.75}
+{"completed": 49000, "counts": {"pass": 49000}, "elapsed": 133.02}
+{"completed": 50000, "counts": {"pass": 50000}, "elapsed": 134.41}
+module done transform {'pass': 50000}
+module incremental 25000
+{"completed": 51000, "counts": {"pass": 51000}, "elapsed": 143.83}
+{"completed": 52000, "counts": {"pass": 52000}, "elapsed": 148.39}
+{"completed": 53000, "counts": {"pass": 53000}, "elapsed": 153.92}
+{"completed": 54000, "counts": {"pass": 54000}, "elapsed": 157.9}
+{"completed": 55000, "counts": {"pass": 55000}, "elapsed": 162.97}
+{"completed": 56000, "counts": {"pass": 56000}, "elapsed": 168.4}
+{"completed": 57000, "counts": {"pass": 57000}, "elapsed": 173.81}
+{"completed": 58000, "counts": {"pass": 58000}, "elapsed": 179.47}
+{"completed": 59000, "counts": {"pass": 59000}, "elapsed": 184.17}
+{"completed": 60000, "counts": {"pass": 60000}, "elapsed": 189.82}
+{"completed": 61000, "counts": {"pass": 61000}, "elapsed": 194.07}
+{"completed": 62000, "counts": {"pass": 62000}, "elapsed": 200.51}
+{"completed": 63000, "counts": {"pass": 63000}, "elapsed": 205.41}
+{"completed": 64000, "counts": {"pass": 64000}, "elapsed": 212.16}
+{"completed": 65000, "counts": {"pass": 65000}, "elapsed": 217.34}
+{"completed": 66000, "counts": {"pass": 66000}, "elapsed": 223.47}
+{"completed": 67000, "counts": {"pass": 67000}, "elapsed": 228.42}
+{"completed": 68000, "counts": {"pass": 68000}, "elapsed": 233.68}
+{"completed": 69000, "counts": {"pass": 69000}, "elapsed": 238.91}
+{"completed": 70000, "counts": {"pass": 70000}, "elapsed": 242.93}
+{"completed": 71000, "counts": {"pass": 71000}, "elapsed": 249.02}
+{"completed": 72000, "counts": {"pass": 72000}, "elapsed": 253.5}
+{"completed": 73000, "counts": {"pass": 73000}, "elapsed": 259.45}
+{"completed": 74000, "counts": {"pass": 74000}, "elapsed": 264.19}
+{"completed": 75000, "counts": {"pass": 75000}, "elapsed": 269.92}
+module done incremental {'pass': 75000}
+module snapshot 15000
+{"completed": 76000, "counts": {"pass": 76000}, "elapsed": 277.31}
+{"completed": 77000, "counts": {"pass": 77000}, "elapsed": 282.76}
+{"completed": 78000, "counts": {"pass": 78000}, "elapsed": 289.02}
+{"completed": 79000, "counts": {"pass": 79000}, "elapsed": 297.2}
+{"completed": 80000, "counts": {"pass": 80000}, "elapsed": 304.59}
+{"completed": 81000, "counts": {"pass": 81000}, "elapsed": 310.99}
+{"completed": 82000, "counts": {"pass": 82000}, "elapsed": 316.42}
+{"completed": 83000, "counts": {"pass": 83000}, "elapsed": 322.43}
+{"completed": 84000, "counts": {"pass": 84000}, "elapsed": 326.92}
+{"completed": 85000, "counts": {"pass": 85000}, "elapsed": 335.35}
+{"completed": 86000, "counts": {"pass": 86000}, "elapsed": 343.86}
+{"completed": 87000, "counts": {"pass": 87000}, "elapsed": 350.93}
+{"completed": 88000, "counts": {"pass": 88000}, "elapsed": 358.43}
+{"completed": 89000, "counts": {"pass": 89000}, "elapsed": 366.88}
+{"completed": 90000, "counts": {"pass": 90000}, "elapsed": 373.92}
+module done snapshot {'pass': 90000}
+module export 10000
+{"completed": 91000, "counts": {"pass": 91000}, "elapsed": 388.18}
+{"completed": 92000, "counts": {"pass": 92000}, "elapsed": 390.09}
+{"completed": 93000, "counts": {"pass": 93000}, "elapsed": 391.98}
+{"completed": 94000, "counts": {"pass": 94000}, "elapsed": 393.4}
+{"completed": 95000, "counts": {"pass": 95000}, "elapsed": 395.3}
+{"completed": 96000, "counts": {"pass": 96000}, "elapsed": 397.62}
+{"completed": 97000, "counts": {"pass": 97000}, "elapsed": 399.52}
+{"completed": 98000, "counts": {"pass": 98000}, "elapsed": 401.47}
+{"completed": 99000, "counts": {"pass": 99000}, "elapsed": 403.59}
+{"completed": 100000, "counts": {"pass": 100000}, "elapsed": 404.98}
+module done export {'pass': 100000}
+DONE 100000 {'pass': 100000} 405.0266160964966

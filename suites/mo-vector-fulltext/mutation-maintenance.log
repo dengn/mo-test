@@ -1,0 +1,15 @@
+{"kind": "delete_update_committed", "epoch": 1791527906.6567981, "count_deleted_per_table": 100, "count_updated_per_table": 100}
+{"kind": "delete_update_visibility", "epoch": 1791527967.44707, "seconds": 60.78989083799934, "result": {"ftm": {"changed_count": 100, "original_count": 800, "pass_check": true}, "ft2m": {"changed_count": 0, "original_count": 900, "pass_check": false}}}
+{"kind": "updated_vector_search", "epoch": 1791527967.5243626, "table": "vhm", "count": 200, "deleted_ids_returned": [], "updated_found": 100, "max_updated_distance": 0.0}
+{"kind": "updated_vector_search", "epoch": 1791527967.538473, "table": "vim", "count": 200, "deleted_ids_returned": [], "updated_found": 100, "max_updated_distance": 0.0}
+{"kind": "sql", "epoch": 1791527967.7575545, "sql": "alter table ft2m alter reindex txt fulltext2 merge force_sync", "seconds": 0.21885991000090144, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527967.894327, "sql": "alter table ft2m alter reindex txt fulltext2 force_sync", "seconds": 0.13649242800056527, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527969.8878474, "sql": "alter table vhm alter reindex ann hnsw force_sync", "seconds": 1.9933445769984246, "rows": 0, "sample": []}
+{"kind": "sql", "epoch": 1791527970.5699618, "sql": "alter table vim alter reindex ann ivfflat lists=16", "seconds": 0.6818942609988881, "rows": 0, "sample": []}
+{"kind": "delete_update_after_rebuild", "epoch": 1791527970.7203271, "result": {"ftm": {"changed_count": 100, "original_count": 800, "pass_check": true}, "ft2m": {"changed_count": 100, "original_count": 800, "pass_check": true}}}
+{"kind": "vector_source_mutation", "epoch": 1791527970.7238264, "table": "vhm", "deleted_remaining": [[0]], "updated_correct": [[100]]}
+{"kind": "vector_source_mutation", "epoch": 1791527970.7268593, "table": "vim", "deleted_remaining": [[0]], "updated_correct": [[100]]}
+{"kind": "ack_audit", "epoch": 1791527970.8103168, "label": "after_maintenance", "acknowledged": 18981, "ledger": 18983, "missing": 0, "ambiguous_commits": 2}
+{"kind": "transaction_audit", "epoch": 1791527971.0636377, "label": "after_maintenance", "checks": {"vhm": [[18983, 0, 0]], "vim": [[18983, 0, 0]], "ftm": [[18983, 0, 0]], "ft2m": [[18983, 0, 0]]}}
+{"kind": "fulltext_dml_visibility", "epoch": 1791527971.235282, "label": "after_maintenance", "observed_wait_seconds": 0.17143206899891084, "result": {"ftm": {"found": 18983, "missing_ledger": 0, "extra": 0, "pass_check": true}, "ft2m": {"found": 18983, "missing_ledger": 0, "extra": 0, "pass_check": true}}}
+{"kind": "vector_dml_visibility", "epoch": 1791527971.5121367, "label": "after_maintenance", "result": {"vhm": {"sampled": 20, "distance_zero_misses": []}, "vim": {"sampled": 20, "distance_zero_misses": []}}}
