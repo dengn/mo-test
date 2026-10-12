@@ -88,3 +88,16 @@ python3 tools/materialize.py --output /tmp/mo-boundary-replay
 ClickHouse 官方 14 个窗口入口中 MO 有 11 个、缺 3 个；DolphinDB SQL OVER 的 39 个中有 22 个原生映射、缺 17 个专用入口。17 个常见数学配置均已在 MO 用 SQL 组合实现并经独立 NumPy/SciPy 核验。更广的专用移动/时间/累计/TopN/技术指标 API 清单、算法/状态变体、NULL/frame/并列/增量执行差异另列，不把接口数量当作业务不可计算数量。ClickHouse 固定 26.9.16.11 实测；DolphinDB 为官方文档研究，没有运行时/跨库性能结论。234 条能力探针与研究不新增主 case 总数。
 
 跨分区 LAG/LEAD 无类型 NULL 默认参数恢复型 panic 已提交 [#29925](https://github.com/matrixorigin/matrixone/issues/29925)；typed NULL 执行成功但错误返回 0，先前“正确通过”的结论已[更正](research/window-gap/CORRECTIONS.md)。所有研究文件的 SHA256 在 research/window-gap/artifact-manifest.json。此研究及七批的 archives/catalog 校验与另一个边界/混沌测试 manifest.json 分开，保留远端已有材料。
+
+## 本会话数据生态与 ETL 用例
+
+[完整目录、状态与重跑说明](suites/mo-ecosystem-session/README.md) · [执行索引计数](suites/mo-ecosystem-session/catalog/summary.json) · [32 工具重载状态](suites/mo-ecosystem-session/heavy-status.json)
+
+新增汇集 13 个材料目录，含 ETL/CDC/编排/客户端/压力/EOS 正反例及关联 issue。两轮各 10,000 条主用例已有完整执行记录；最新 32 × 5,000 重载计划中实际执行 27,559 条，剩余 132,441 条未执行。这里保留 **47,559 条主执行记录**，包含 MySQL 对照；预检、原生失败、补测和故障反例另存，不与原有批次混加。Airbyte 原生 MO sink 阻断及 Fivetran 官方 SDK 本地范围明确列出。
+
+```bash
+python3 tools/ecosystem_materialize.py --verify-only
+python3 tools/ecosystem_materialize.py --output work/ecosystem-session
+```
+
+13 个归档及逐成员/逐文件 SHA256 清单、冻结源码和可配置的核心/读取重跑入口在独立目录内。校验工具核对索引与原始记录及计划唯一性，恢复拒绝覆盖既有目录，不执行服务生命周期脚本。该组实际 MO 提交为 `652c643666428f1c434e03369834f2a9bead7c27`，与前述数据科学批次版本不同；不代表当前 main、完整长稳或跨系统 exactly-once 已认证。

@@ -1,0 +1,1 @@
+select case_id,id,count(*) AS n from `orchestrator10000`.`out_int32` group by case_id,id having count(*)<>1

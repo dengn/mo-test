@@ -1,0 +1,74 @@
+{
+  "executed_main_unique": 47559,
+  "groups": [
+    {
+      "batch": "etl-10000",
+      "source": "results.jsonl",
+      "unique_receipts": 10000,
+      "statuses": {
+        "passed": 10000
+      }
+    },
+    {
+      "batch": "etl-orchestrators-10000",
+      "source": "results-configured-10000.jsonl",
+      "unique_receipts": 10000,
+      "statuses": {
+        "passed": 10000
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "core-results/petl.jsonl",
+      "unique_receipts": 2559,
+      "statuses": {
+        "passed": 2559
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "reader-results/connectorx.jsonl",
+      "unique_receipts": 5000,
+      "statuses": {
+        "passed": 5000
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "reader-results/ibis.jsonl",
+      "unique_receipts": 5000,
+      "statuses": {
+        "passed": 5000
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "reader-results/odbc.jsonl",
+      "unique_receipts": 5000,
+      "statuses": {
+        "passed": 5000
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "reader-results/matrixone_sdk.jsonl",
+      "unique_receipts": 5000,
+      "statuses": {
+        "passed": 5000
+      }
+    },
+    {
+      "batch": "heavy-5000",
+      "source": "reader-results/jdbc.jsonl",
+      "unique_receipts": 5000,
+      "statuses": {
+        "passed": 5000
+      }
+    }
+  ],
+  "heavy_planned": 160000,
+  "heavy_executed": 27559,
+  "heavy_unexecuted": 132441,
+  "endpoint_accounting": "MySQL control and MO cases counted separately; not all rows are MO certification.",
+  "other_rounds": "Earlier interface probes, native runs, fault injections, preflights, retries and negative EOS counterexamples retained in per-round archives; excluded from this main denominator to avoid mixing grains."
+}
