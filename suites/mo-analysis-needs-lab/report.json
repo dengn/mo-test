@@ -1,0 +1,777 @@
+{
+  "suite": "mo-analysis-needs-lab",
+  "canonical_cases": 100000,
+  "canonical_passed": 100000,
+  "canonical_nonpass": 0,
+  "initial_main_passed": 99392,
+  "initial_main_nonpass": 608,
+  "repair_retest": {
+    "cases": 608,
+    "passed": 608,
+    "failed": 0,
+    "elapsed_seconds": 20.7425057888031,
+    "code_sha256": {
+      "analytics.py": "584abc2800fb70ac783deb39eff5f8e95fbfdbb8cb48c9336376f87242ca069d",
+      "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+      "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+      "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+      "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+      "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+    },
+    "initial_failures": 608,
+    "scope": "Final logical-case outcome overlay after client-only NULL handling repair. Initial frozen 100000 records are preserved unchanged, extra execution attempts are not additional logical cases.",
+    "source_audit": {
+      "units": {
+        "rows": 32,
+        "sha256": "86724b47d481e304c2d85884a6b31e6e438e9922e40b45a5b88fc088f9821f0d"
+      },
+      "calendar": {
+        "rows": 96,
+        "sha256": "6f0c3af573cdb83c4487579da714ce42739b9f7ea587327fc5facf1d2981444d"
+      },
+      "attrs": {
+        "rows": 192,
+        "sha256": "5897746f9570ef796f46a71e1b17b4e44f80de2d49649708ad5cff843a8402be"
+      },
+      "observations": {
+        "rows": 7680,
+        "sha256": "c5545f448049961b925cc9376898df1a76a3b983f9d4c55faf4ec6ea0a974235"
+      },
+      "labels": {
+        "rows": 3072,
+        "sha256": "def94ee1f8f965d2c6f9a580fb8fa18f4ccab2df7257662c5631f6db5445ebc9"
+      },
+      "daily": {
+        "rows": 3072,
+        "sha256": "28290dbfa864bf787c0b5e155fe251cdf0c123da1de2dc70cbf4c3e578cb14a1"
+      },
+      "subjects": {
+        "rows": 768,
+        "sha256": "721477c6037487202155a986b75582673d051ad4aa3d24caa1c2bf4de9013ea0"
+      },
+      "outcomes": {
+        "rows": 37632,
+        "sha256": "d0aa932a3367dbfe405e3cac6a5b8bce35bb9bb26ad1003d9dc6fa17a418cecd"
+      },
+      "conversions": {
+        "rows": 1920,
+        "sha256": "d425640b0ddba87c112027b4adcb708b08258ad8b723314d1f877da45aaa1b18"
+      },
+      "touches": {
+        "rows": 5760,
+        "sha256": "6630f1674cbd46394f4aa4e93e4c34d4b7874935d728ee2db69f4f52ed74e4ac"
+      },
+      "identities": {
+        "rows": 192,
+        "sha256": "668243f0ad5246429e75fde06a12e1b6999248e910fff0d614c3795b2677eb47"
+      },
+      "campaigns": {
+        "rows": 6,
+        "sha256": "5b0e575c4d02e6d0eef651c194f0d76388c3732fd03ec33b075bc5a2c9474f40"
+      },
+      "flows": {
+        "rows": 8856,
+        "sha256": "c351d6bc654c837f16408922dc850a8d037aff605c042fbd62332bc326724267"
+      },
+      "gps": {
+        "rows": 10502,
+        "sha256": "4fe517130f2fd6103f76d5bba8cf3e1525577f32df168a33a8ea673c43461fdd"
+      },
+      "fences": {
+        "rows": 8,
+        "sha256": "fa4bc72ee61ab5c74de5ecb25969aa0c2e0d88c494c24723dffd4d55d1b7b74e"
+      },
+      "roads": {
+        "rows": 96,
+        "sha256": "4f032e7b6b394ca99089bfe158592f1a2cf52e65ee9e4b1579b66b4699b91153"
+      },
+      "predictions": {
+        "rows": 5248,
+        "sha256": "540f91e87ef301a2bd2051c9c04204864f84521ff533f4adb56f052369eb2b95"
+      },
+      "changes": {
+        "rows": 1520,
+        "sha256": "d7bed207c51aacd32e9c78f235d2648781797224ca38859f95a559bc12c2f70b"
+      },
+      "deliveries": {
+        "rows": 1020,
+        "sha256": "222dd8572f1440b9c4e51d5c54145bdf96c83dc9d7263f92e3cee84a9b971a92"
+      }
+    }
+  },
+  "canonical_statuses": {
+    "pass": 100000
+  },
+  "by_domain": {
+    "point_in_time": {
+      "title": "严格时点特征",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 35.40663050080184,
+        "p95_ms": 93.19339920475599,
+        "max_ms": 630.8413690130692
+      },
+      "scientific_compute": {
+        "n": 9392,
+        "median_ms": 7.270112000696827,
+        "p95_ms": 24.624368791410227,
+        "max_ms": 520.2726910065394
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 158.99091801111354,
+        "p95_ms": 528.306307200546,
+        "max_ms": 1205.8415939973202
+      },
+      "failures": []
+    },
+    "incremental": {
+      "title": "增量修正",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 35.36022599291755,
+        "p95_ms": 118.22169253864553,
+        "max_ms": 603.6757739930181
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 11.757024003600236,
+        "p95_ms": 60.619529047107754,
+        "max_ms": 530.3881569998339
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 104.95397299382603,
+        "p95_ms": 297.64884785035963,
+        "max_ms": 1043.8025449984707
+      },
+      "failures": []
+    },
+    "streaming": {
+      "title": "流式事件",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 32.378039504692424,
+        "p95_ms": 115.58115909720064,
+        "max_ms": 923.5237539978698
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 28.14681749441661,
+        "p95_ms": 122.10770838719324,
+        "max_ms": 888.2749820040772
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 123.32888149103383,
+        "p95_ms": 372.89215229393426,
+        "max_ms": 1101.0376009944594
+      },
+      "failures": []
+    },
+    "causal": {
+      "title": "实验与因果",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 1752,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 13.890081499994267,
+        "p95_ms": 129.65887340324116,
+        "max_ms": 639.8720129946014
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 4.1572155023459345,
+        "p95_ms": 45.20340710514571,
+        "max_ms": 587.2321039933013
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 136.1031569977058,
+        "p95_ms": 552.5987462489866,
+        "max_ms": 1425.2067810011795
+      },
+      "failures": []
+    },
+    "attribution": {
+      "title": "归因与旅程",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 13.58277749386616,
+        "p95_ms": 96.65903554778187,
+        "max_ms": 584.4346880039666
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 38.70937800093088,
+        "p95_ms": 204.32814949963355,
+        "max_ms": 1206.7250539985253
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 124.66001000575488,
+        "p95_ms": 453.07062369174673,
+        "max_ms": 1441.725676995702
+      },
+      "failures": []
+    },
+    "hierarchical_forecast": {
+      "title": "层级预测回测",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 5.578778997005429,
+        "p95_ms": 10.101610842684748,
+        "max_ms": 85.03644600568805
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 16.64884650381282,
+        "p95_ms": 26.659882157400705,
+        "max_ms": 272.66360199428163
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 37.41416299453704,
+        "p95_ms": 57.21672648942328,
+        "max_ms": 302.3344789980911
+      },
+      "failures": []
+    },
+    "temporal_graph": {
+      "title": "时序图与反欺诈",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 9.196293998684268,
+        "p95_ms": 48.04451525051249,
+        "max_ms": 478.80414901010226
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 33.441604500694666,
+        "p95_ms": 243.04649875339226,
+        "max_ms": 1743.668039998738
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 74.8165884942864,
+        "p95_ms": 345.0111066435053,
+        "max_ms": 1808.025190999615
+      },
+      "failures": []
+    },
+    "risk_simulation": {
+      "title": "风险与模拟",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 5.650615006743465,
+        "p95_ms": 11.041787346766796,
+        "max_ms": 252.57033400703222
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 8.404625499679241,
+        "p95_ms": 14.28296061349101,
+        "max_ms": 258.2006610027747
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 27.836770997964777,
+        "p95_ms": 42.675255711947095,
+        "max_ms": 274.19084300345276
+      },
+      "failures": []
+    },
+    "spatial": {
+      "title": "空间轨迹",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 8880,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 13.084743499348406,
+        "p95_ms": 24.690786643623113,
+        "max_ms": 242.62491099943873
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 16.16067549912259,
+        "p95_ms": 73.18521289271301,
+        "max_ms": 305.152895001811
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 63.943952503905166,
+        "p95_ms": 138.86154514111695,
+        "max_ms": 378.9979650027817
+      },
+      "failures": []
+    },
+    "model_monitoring": {
+      "title": "模型监控漂移",
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "unique_sql": 10000,
+      "clients": {
+        "numpy_pymysql": 5000,
+        "pandas_sqlalchemy": 5000
+      },
+      "query_latency_under_main_load": {
+        "n": 10000,
+        "median_ms": 4.634577002434526,
+        "p95_ms": 9.035307860904139,
+        "max_ms": 193.24760101153515
+      },
+      "scientific_compute": {
+        "n": 10000,
+        "median_ms": 4.1628549952292815,
+        "p95_ms": 10.878900309035082,
+        "max_ms": 320.8826019981643
+      },
+      "workflow_latency": {
+        "n": 10000,
+        "median_ms": 22.027309001714457,
+        "p95_ms": 36.83733444850076,
+        "max_ms": 341.939681005897
+      },
+      "failures": []
+    }
+  },
+  "templates": 100,
+  "configurations_per_template": 1000,
+  "continuation_corrected": {
+    "start_utc": "2026-10-12T06:37:38Z",
+    "pid": 64524,
+    "completed_prefix_cases": 32435,
+    "process_workers": 3,
+    "code_sha256": {
+      "analytics.py": "87b2c99205dacb13e1df4025bedbe62891905aea2f77d9cb730787e0c09ae1ab",
+      "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+      "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+      "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+      "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+      "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+    },
+    "prefix": [
+      {
+        "member": "results/main-001/point_in_time.jsonl",
+        "bytes": 31782471,
+        "sha256": "240a3f80452181342bbd73af91c195e7df254288761187fb6db03c37e68a59ea",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/incremental.jsonl",
+        "bytes": 17625216,
+        "sha256": "b13ad8ca98e57e5105f193e2aa1436f6851b5d2db68d0b890e5cd9209b4c57af",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/streaming.jsonl",
+        "bytes": 18496551,
+        "sha256": "360e3be0fcb4bcb7ac0a2cf6f45034a07d19a8395792abd2a2552e6dc0518981",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/causal.jsonl",
+        "bytes": 4240777,
+        "sha256": "4484f640e4dc9368a43f5cede780f49be275e19bd40d8a4afe13505f267c5061",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/attribution.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      },
+      {
+        "member": "results/main-001/hierarchical_forecast.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      },
+      {
+        "member": "results/main-001/temporal_graph.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      },
+      {
+        "member": "results/main-001/risk_simulation.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      },
+      {
+        "member": "results/main-001/spatial.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      },
+      {
+        "member": "results/main-001/model_monitoring.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 0
+      }
+    ],
+    "scope": "Driver continuation using unchanged frozen run.execute. Initial evaluator was stopped to replace GIL-bound threads with three independent Python processes. Completed bytes are preserved, IDs resumed without duplicate counts; no MO restart or source mutation.",
+    "correction": {
+      "reason": "Empty-file prefix record metadata accidentally reused the preceding nonempty domain count; byte counts, prefix hashes, execution counts and final 100000 IDs were correct.",
+      "changes": [
+        {
+          "member": "results/main-001/attribution.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        },
+        {
+          "member": "results/main-001/hierarchical_forecast.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        },
+        {
+          "member": "results/main-001/temporal_graph.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        },
+        {
+          "member": "results/main-001/risk_simulation.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        },
+        {
+          "member": "results/main-001/spatial.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        },
+        {
+          "member": "results/main-001/model_monitoring.jsonl",
+          "recorded": 2435,
+          "correct": 0
+        }
+      ],
+      "original_file": "results/main-001/continuation.json"
+    }
+  },
+  "unique_sql_total": 90632,
+  "complexity_maxima": {
+    "bytes": 1424,
+    "ctes": 5,
+    "joins": 6,
+    "windows": 3
+  },
+  "elapsed_seconds": 3392.5600016117096,
+  "reference": "Original synthetic data independently selected in Python, cross-checked with DuckDB SQL, then fully compared to MO query results; scientific library outputs checked against separately coded scalar/matrix references.",
+  "input_equality": "All returned rows/columns compared; integers/IDs exact, SQL numeric rtol/atol 1e-7, scientific numeric rtol/atol 1e-6, NaN/NULL masks matched. Successful raw inputs stored as hashes with reconstructable sources/SQL, final expected/actual outputs stored fully; failures include full raw inputs.",
+  "binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7",
+  "source_rows": 87672,
+  "source_tables": 19,
+  "source_unchanged": true,
+  "supplements": {
+    "supplement-spark": {
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "rows": 40000,
+      "scope": "10000 group assertions in a shared native framework pipeline; supplemental, not 10000 independent JVM jobs or primary case replacements",
+      "restarted_from_checkpoint": true,
+      "very_late_input_rows": 10000,
+      "jdbc_source_rows": 90001,
+      "sink": "foreachBatch bounded MySQL-protocol transaction with composite-key idempotent upsert",
+      "native_operators": [
+        "event-time watermark",
+        "tumbling window",
+        "count",
+        "sum",
+        "mean",
+        "population variance",
+        "min",
+        "max",
+        "weighted sum",
+        "conditional sum",
+        "distinct uid"
+      ],
+      "elapsed_seconds": 130.9002137184143
+    },
+    "supplement-flink": {
+      "cases": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "rows": 40000,
+      "scope": "10000 group assertions in a shared native framework pipeline; supplemental, not 10000 independent JVM jobs or primary case replacements",
+      "jdbc_source_rows": 90001,
+      "native_operators": [
+        "JDBC source",
+        "dimension join",
+        "event-time bucket",
+        "count",
+        "sum",
+        "mean",
+        "population variance",
+        "min",
+        "max",
+        "weighted sum",
+        "conditional sum",
+        "count distinct",
+        "JDBC sink"
+      ],
+      "late_event_semantics": "bounded complete-data recomputation includes all late rows; no Flink arrival-time watermark or restart claim",
+      "elapsed_seconds": 63.74225449562073
+    },
+    "supplement-prepare": {
+      "rows": 90001,
+      "audit": "full JDBC-protocol source value comparison passed",
+      "elapsed_seconds": 18.717978477478027
+    },
+    "counterfactual": {
+      "cases": 50,
+      "passed": 50,
+      "failed": 0,
+      "elapsed_seconds": 3.3112385272979736,
+      "scope": "50 supplemental full-result invariance controls, two MO queries each; future-only observations, dimensions and labels perturbed in private copies; original source tables unchanged"
+    },
+    "coldstart": {
+      "cases": 1000,
+      "passed": 1000,
+      "failed": 0,
+      "elapsed_seconds": 25.607588291168213,
+      "scope": "1000 supplemental cold-start controls, historical source restricted to 1–4 observations per unit in MO; explicitly exercises fallback branch. Dense main template 8 has enough history and does not activate this branch; original main records preserved."
+    },
+    "speed-controls": {
+      "cases": 100,
+      "passed": 100,
+      "failed": 0,
+      "positive_detection_cases": 56,
+      "zero_detection_cases": 44,
+      "elapsed_seconds": 3.900264024734497,
+      "scope": "100 supplemental speed threshold controls on uid31/32 antimeridian trajectories. Ordinary main template4 cohorts have low speeds and mainly exercise normal classifications; these explicitly include positive and negative detections. Not added to canonical count."
+    }
+  },
+  "isolated_performance": {
+    "queries": 200,
+    "passed": 200,
+    "scope": "200 serial, warmed client read measurements after main and framework jobs stop; client fetch/DataFrame materialization included; full equality checks outside timer; 50 representative queries, not production-scale throughput",
+    "by_domain": {
+      "point_in_time": {
+        "queries": 20,
+        "median_ms": 10.03540049714502,
+        "p95_ms": 15.06368905393174,
+        "min_ms": 5.835026007844135,
+        "max_ms": 15.094299000338651
+      },
+      "incremental": {
+        "queries": 20,
+        "median_ms": 4.455653004697524,
+        "p95_ms": 6.228837293747347,
+        "min_ms": 3.1512999994447455,
+        "max_ms": 6.333837009151466
+      },
+      "streaming": {
+        "queries": 20,
+        "median_ms": 4.405755003972445,
+        "p95_ms": 5.671612689184259,
+        "min_ms": 3.0809529998805374,
+        "max_ms": 6.798857997637242
+      },
+      "causal": {
+        "queries": 20,
+        "median_ms": 6.6581049977685325,
+        "p95_ms": 7.612544050789439,
+        "min_ms": 5.047464001108892,
+        "max_ms": 9.302936989115551
+      },
+      "attribution": {
+        "queries": 20,
+        "median_ms": 6.365995497617405,
+        "p95_ms": 12.101043747679801,
+        "min_ms": 3.8649710040772334,
+        "max_ms": 19.20147199416533
+      },
+      "hierarchical_forecast": {
+        "queries": 20,
+        "median_ms": 3.6211369952070527,
+        "p95_ms": 5.074268253520131,
+        "min_ms": 2.591654993011616,
+        "max_ms": 5.142882000654936
+      },
+      "temporal_graph": {
+        "queries": 20,
+        "median_ms": 6.437176001782063,
+        "p95_ms": 9.162619596463628,
+        "min_ms": 3.3957800042117015,
+        "max_ms": 9.300665988121182
+      },
+      "risk_simulation": {
+        "queries": 20,
+        "median_ms": 3.9218789970618673,
+        "p95_ms": 6.020367347082356,
+        "min_ms": 2.88146200182382,
+        "max_ms": 6.101256993133575
+      },
+      "spatial": {
+        "queries": 20,
+        "median_ms": 8.537207002518699,
+        "p95_ms": 12.368594292638608,
+        "min_ms": 6.010644006892107,
+        "max_ms": 35.11583700310439
+      },
+      "model_monitoring": {
+        "queries": 20,
+        "median_ms": 3.0371439934242517,
+        "p95_ms": 5.892763094016119,
+        "min_ms": 1.991771991015412,
+        "max_ms": 7.115471991710365
+      }
+    }
+  },
+  "health": {
+    "samples": 635,
+    "max_server_rss": 2760224768,
+    "max_runner_rss": 1365032960,
+    "minimum_disk_available": 12791824384,
+    "records": [
+      {
+        "path": "results/main-001/health-before.json",
+        "data": {
+          "server_pid": 1384,
+          "server_start": 1791677582.41,
+          "start": 1791785581.6566029,
+          "memory_events": "low 0\nhigh 0\nmax 33969\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "17180450816",
+          "server_log_offset": 39015636
+        }
+      },
+      {
+        "path": "results/main-001/health-continuation/health-before.json",
+        "data": {
+          "server_pid": 1384,
+          "server_start": 1791677582.41,
+          "start": 1791785763.6274717,
+          "memory_events": "low 0\nhigh 0\nmax 34878\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "17180450816",
+          "server_log_offset": 39062264
+        }
+      },
+      {
+        "path": "results/main-001/health-continuation/health-after.json",
+        "data": {
+          "server_pid": 1384,
+          "server_start": 1791677582.41,
+          "start": 1791785763.6274717,
+          "memory_events": "low 0\nhigh 0\nmax 34878\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "17180450816",
+          "server_log_offset": 39062264,
+          "end": 1791787057.7973688,
+          "server_alive": true,
+          "server_same_start": true,
+          "memory_events_after": "low 0\nhigh 0\nmax 44440\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak_after": "17182732288"
+        }
+      },
+      {
+        "path": "results/main-001/health-processes/health-before.json",
+        "data": {
+          "server_pid": 1384,
+          "server_start": 1791677582.41,
+          "start": 1791787096.1890786,
+          "memory_events": "low 0\nhigh 0\nmax 44440\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "17182732288",
+          "server_log_offset": 39404652
+        }
+      },
+      {
+        "path": "results/main-001/health-processes/health-after.json",
+        "data": {
+          "server_pid": 1384,
+          "server_start": 1791677582.41,
+          "start": 1791787096.1890786,
+          "memory_events": "low 0\nhigh 0\nmax 44440\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak": "17182732288",
+          "server_log_offset": 39404652,
+          "end": 1791788960.7952724,
+          "server_alive": true,
+          "server_same_start": true,
+          "memory_events_after": "low 0\nhigh 0\nmax 45637\noom 0\noom_kill 0\noom_group_kill 0",
+          "memory_peak_after": "17182732288"
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Initial frozen records are preserved. Final logical-case outcomes include a narrowly documented Python NULL-handling repair retest; repeated attempts do not add case IDs.",
+    "Parameterized workflows, not 100000 different algorithms. All 100000 main queries execute in MO; NumPy/pandas/SciPy/sklearn/NetworkX/Shapely scientific operations execute in Python after retrieval.",
+    "Spark has 10000 case-group assertions in one shared Structured Streaming pipeline with actual checkpoint restart; Flink has 10000 group assertions in one bounded JDBC job and does not validate streaming lateness/restart. Supplements do not replace primary cases.",
+    "Main workflows run concurrently with connector supplements; main latencies include interference and reference computation. Isolated performance runs separately after those jobs stop and includes client fetch/materialization.",
+    "Dense main forecast template 8 does not activate cold-start fallback; 1000 separately recorded sparse-history controls explicitly verify that branch.",
+    "Synthetic fixtures: 32 units, 96 days, 87672 source rows. No production-scale distributed fault tolerance, model predictive quality or long-duration availability claim.",
+    "Hierarchical reconciliation uses diagonal error weights; CVaR optimization scales a fixed portfolio direction, not unrestricted asset weights; distances use a sphere; model versions are independently generated scoring events.",
+    "Observed cgroup memory.max pressure counters are reported separately from OOM; initial resource monitor has a sampling gap before foreground continuation."
+  ]
+}

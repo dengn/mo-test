@@ -1,0 +1,25 @@
+{
+  "cases": 10000,
+  "passed": 10000,
+  "failed": 0,
+  "rows": 40000,
+  "scope": "10000 group assertions in a shared native framework pipeline; supplemental, not 10000 independent JVM jobs or primary case replacements",
+  "restarted_from_checkpoint": true,
+  "very_late_input_rows": 10000,
+  "jdbc_source_rows": 90001,
+  "sink": "foreachBatch bounded MySQL-protocol transaction with composite-key idempotent upsert",
+  "native_operators": [
+    "event-time watermark",
+    "tumbling window",
+    "count",
+    "sum",
+    "mean",
+    "population variance",
+    "min",
+    "max",
+    "weighted sum",
+    "conditional sum",
+    "distinct uid"
+  ],
+  "elapsed_seconds": 130.9002137184143
+}

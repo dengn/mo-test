@@ -1,0 +1,10 @@
+# Scope and harness corrections
+
+1. Initial source preflight used the wrong placeholder count; corrected before any source row was inserted. Failed setup code/log retained in `attempts/data-preflight`.
+2. Pilot 100 workflows: 90 passed; ten model-monitoring SQL references stopped in DuckDB's bare reserved-word alias parser. Adding `AS label` fixed the reference SQL; subsequent 500 preflight cases passed before freezing the main run.
+3. Flink preflight lacked the connector's OpenLineage jars and failed before MO execution. Original log retained in `attempts/flink-001`; both dependency jars bundled. The complete repeated job verified all 10,000 case groups.
+4. A leakage-control harness asserted every cutoff had future dimension versions, but the latest cutoff has none. The expectation was corrected to require at least one future-only perturbation across sources; all 50 full-result controls passed. Prior attempt preserved.
+5. Dense forecast template 8 does not activate cold-start fallback because all units have a full history. Its main records are unchanged; 1,000 additional sparse-history controls explicitly restrict observations in MO and validate the fallback branch. These controls are not new main case IDs.
+6. Initial main point-in-time scalar visibility checks used `np.isnan` on nullable fields, which fails for all-None object columns after full SQL equality has already passed. Only those checks use `pandas.isna` in `repaired/analytics.py`. Final logical-case outcomes reference separate repair retests; initial frozen case records, code, failure inputs and timings remain unchanged. The catalog preserves exact ZIP member/line provenance for the selected final outcome. Extra attempts do not increase the 100,000 unique-case total.
+
+7. Continuation prefix metadata reused the previous record count for originally empty files. Byte lengths/SHA256, execution counts and final IDs were correct. `continuation-corrected.json` computes counts directly from the preserved prefix bytes and verifies their sum is 32,435; the original ledger remains unchanged. The continuation driver is corrected for future replay.

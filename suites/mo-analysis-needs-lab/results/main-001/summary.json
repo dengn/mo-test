@@ -1,0 +1,234 @@
+{
+  "counts": {
+    "point_in_time": {
+      "total": 10000,
+      "passed": 9392,
+      "failed": 608,
+      "failures": {
+        "math": 608
+      }
+    },
+    "incremental": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "streaming": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "causal": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "attribution": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "hierarchical_forecast": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "temporal_graph": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "risk_simulation": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "spatial": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    },
+    "model_monitoring": {
+      "total": 10000,
+      "passed": 10000,
+      "failed": 0,
+      "failures": {}
+    }
+  },
+  "total": 100000,
+  "passed": 99392,
+  "failed": 608,
+  "elapsed_seconds": 3392.5600016117096,
+  "source_audit": {
+    "units": {
+      "rows": 32,
+      "sha256": "86724b47d481e304c2d85884a6b31e6e438e9922e40b45a5b88fc088f9821f0d"
+    },
+    "calendar": {
+      "rows": 96,
+      "sha256": "6f0c3af573cdb83c4487579da714ce42739b9f7ea587327fc5facf1d2981444d"
+    },
+    "attrs": {
+      "rows": 192,
+      "sha256": "5897746f9570ef796f46a71e1b17b4e44f80de2d49649708ad5cff843a8402be"
+    },
+    "observations": {
+      "rows": 7680,
+      "sha256": "c5545f448049961b925cc9376898df1a76a3b983f9d4c55faf4ec6ea0a974235"
+    },
+    "labels": {
+      "rows": 3072,
+      "sha256": "def94ee1f8f965d2c6f9a580fb8fa18f4ccab2df7257662c5631f6db5445ebc9"
+    },
+    "daily": {
+      "rows": 3072,
+      "sha256": "28290dbfa864bf787c0b5e155fe251cdf0c123da1de2dc70cbf4c3e578cb14a1"
+    },
+    "subjects": {
+      "rows": 768,
+      "sha256": "721477c6037487202155a986b75582673d051ad4aa3d24caa1c2bf4de9013ea0"
+    },
+    "outcomes": {
+      "rows": 37632,
+      "sha256": "d0aa932a3367dbfe405e3cac6a5b8bce35bb9bb26ad1003d9dc6fa17a418cecd"
+    },
+    "conversions": {
+      "rows": 1920,
+      "sha256": "d425640b0ddba87c112027b4adcb708b08258ad8b723314d1f877da45aaa1b18"
+    },
+    "touches": {
+      "rows": 5760,
+      "sha256": "6630f1674cbd46394f4aa4e93e4c34d4b7874935d728ee2db69f4f52ed74e4ac"
+    },
+    "identities": {
+      "rows": 192,
+      "sha256": "668243f0ad5246429e75fde06a12e1b6999248e910fff0d614c3795b2677eb47"
+    },
+    "campaigns": {
+      "rows": 6,
+      "sha256": "5b0e575c4d02e6d0eef651c194f0d76388c3732fd03ec33b075bc5a2c9474f40"
+    },
+    "flows": {
+      "rows": 8856,
+      "sha256": "c351d6bc654c837f16408922dc850a8d037aff605c042fbd62332bc326724267"
+    },
+    "gps": {
+      "rows": 10502,
+      "sha256": "4fe517130f2fd6103f76d5bba8cf3e1525577f32df168a33a8ea673c43461fdd"
+    },
+    "fences": {
+      "rows": 8,
+      "sha256": "fa4bc72ee61ab5c74de5ecb25969aa0c2e0d88c494c24723dffd4d55d1b7b74e"
+    },
+    "roads": {
+      "rows": 96,
+      "sha256": "4f032e7b6b394ca99089bfe158592f1a2cf52e65ee9e4b1579b66b4699b91153"
+    },
+    "predictions": {
+      "rows": 5248,
+      "sha256": "540f91e87ef301a2bd2051c9c04204864f84521ff533f4adb56f052369eb2b95"
+    },
+    "changes": {
+      "rows": 1520,
+      "sha256": "d7bed207c51aacd32e9c78f235d2648781797224ca38859f95a559bc12c2f70b"
+    },
+    "deliveries": {
+      "rows": 1020,
+      "sha256": "222dd8572f1440b9c4e51d5c54145bdf96c83dc9d7263f92e3cee84a9b971a92"
+    }
+  },
+  "code_sha256": {
+    "analytics.py": "87b2c99205dacb13e1df4025bedbe62891905aea2f77d9cb730787e0c09ae1ab",
+    "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+    "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+    "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+    "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+    "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+  },
+  "continuation": {
+    "start_utc": "2026-10-12T06:37:38Z",
+    "pid": 64524,
+    "completed_prefix_cases": 32435,
+    "process_workers": 3,
+    "code_sha256": {
+      "analytics.py": "87b2c99205dacb13e1df4025bedbe62891905aea2f77d9cb730787e0c09ae1ab",
+      "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+      "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+      "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+      "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+      "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+    },
+    "prefix": [
+      {
+        "member": "results/main-001/point_in_time.jsonl",
+        "bytes": 31782471,
+        "sha256": "240a3f80452181342bbd73af91c195e7df254288761187fb6db03c37e68a59ea",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/incremental.jsonl",
+        "bytes": 17625216,
+        "sha256": "b13ad8ca98e57e5105f193e2aa1436f6851b5d2db68d0b890e5cd9209b4c57af",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/streaming.jsonl",
+        "bytes": 18496551,
+        "sha256": "360e3be0fcb4bcb7ac0a2cf6f45034a07d19a8395792abd2a2552e6dc0518981",
+        "records": 10000
+      },
+      {
+        "member": "results/main-001/causal.jsonl",
+        "bytes": 4240777,
+        "sha256": "4484f640e4dc9368a43f5cede780f49be275e19bd40d8a4afe13505f267c5061",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/attribution.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/hierarchical_forecast.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/temporal_graph.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/risk_simulation.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/spatial.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      },
+      {
+        "member": "results/main-001/model_monitoring.jsonl",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "records": 2435
+      }
+    ],
+    "scope": "Driver continuation using unchanged frozen run.execute. Initial evaluator was stopped to replace GIL-bound threads with three independent Python processes. Completed bytes are preserved, IDs resumed without duplicate counts; no MO restart or source mutation."
+  },
+  "continuation_seconds": 1901.5848472118378
+}

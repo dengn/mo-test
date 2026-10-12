@@ -310,6 +310,46 @@
           "sha256": "11d7851353587de79cdff092c7ae578acc026294b8750677e630d1c101aee4cb"
         }
       ]
+    },
+    {
+      "name": "mo-analysis-needs-lab",
+      "archive_name": "matrixone-analysis-needs-100000.zip",
+      "archive_bytes": 58445186,
+      "archive_sha256": "816e0cb056817e56d8413da96cfdb9b10f2294fbd5be4fd7e0969515126bedc8",
+      "zip_prefix": "mo-analysis-needs-lab/",
+      "zip_entries": 350,
+      "uncompressed_bytes": 321895892,
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 100000
+      },
+      "canonical_members": [
+        "mo-analysis-needs-lab/results/main-001/point_in_time.jsonl",
+        "mo-analysis-needs-lab/results/main-001/incremental.jsonl",
+        "mo-analysis-needs-lab/results/main-001/streaming.jsonl",
+        "mo-analysis-needs-lab/results/main-001/causal.jsonl",
+        "mo-analysis-needs-lab/results/main-001/attribution.jsonl",
+        "mo-analysis-needs-lab/results/main-001/hierarchical_forecast.jsonl",
+        "mo-analysis-needs-lab/results/main-001/temporal_graph.jsonl",
+        "mo-analysis-needs-lab/results/main-001/risk_simulation.jsonl",
+        "mo-analysis-needs-lab/results/main-001/spatial.jsonl",
+        "mo-analysis-needs-lab/results/main-001/model_monitoring.jsonl",
+        "mo-analysis-needs-lab/results/retest/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-analysis-needs-lab.jsonl.gz",
+      "catalog_sha256": "44014ce943faa5f29dd30d5018336b100e218ae45aaca99f7b20d2e38d491361",
+      "parts": [
+        {
+          "path": "archives/mo-analysis-needs-lab/matrixone-analysis-needs-100000.zip.part000",
+          "bytes": 41943040,
+          "sha256": "9a75f60fa1d54cfce3883f2443733f059fc14d5ccc26cff859d2d337c7c46bb5"
+        },
+        {
+          "path": "archives/mo-analysis-needs-lab/matrixone-analysis-needs-100000.zip.part001",
+          "bytes": 16502146,
+          "sha256": "071d0ddd6d826cdab0a7e6ddf56ca397076f0b2db399b7a1c576813065d9c4a1"
+        }
+      ]
     }
   ]
 }

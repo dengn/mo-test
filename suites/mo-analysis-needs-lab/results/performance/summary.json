@@ -1,0 +1,77 @@
+{
+  "queries": 200,
+  "passed": 200,
+  "scope": "200 serial, warmed client read measurements after main and framework jobs stop; client fetch/DataFrame materialization included; full equality checks outside timer; 50 representative queries, not production-scale throughput",
+  "by_domain": {
+    "point_in_time": {
+      "queries": 20,
+      "median_ms": 10.03540049714502,
+      "p95_ms": 15.06368905393174,
+      "min_ms": 5.835026007844135,
+      "max_ms": 15.094299000338651
+    },
+    "incremental": {
+      "queries": 20,
+      "median_ms": 4.455653004697524,
+      "p95_ms": 6.228837293747347,
+      "min_ms": 3.1512999994447455,
+      "max_ms": 6.333837009151466
+    },
+    "streaming": {
+      "queries": 20,
+      "median_ms": 4.405755003972445,
+      "p95_ms": 5.671612689184259,
+      "min_ms": 3.0809529998805374,
+      "max_ms": 6.798857997637242
+    },
+    "causal": {
+      "queries": 20,
+      "median_ms": 6.6581049977685325,
+      "p95_ms": 7.612544050789439,
+      "min_ms": 5.047464001108892,
+      "max_ms": 9.302936989115551
+    },
+    "attribution": {
+      "queries": 20,
+      "median_ms": 6.365995497617405,
+      "p95_ms": 12.101043747679801,
+      "min_ms": 3.8649710040772334,
+      "max_ms": 19.20147199416533
+    },
+    "hierarchical_forecast": {
+      "queries": 20,
+      "median_ms": 3.6211369952070527,
+      "p95_ms": 5.074268253520131,
+      "min_ms": 2.591654993011616,
+      "max_ms": 5.142882000654936
+    },
+    "temporal_graph": {
+      "queries": 20,
+      "median_ms": 6.437176001782063,
+      "p95_ms": 9.162619596463628,
+      "min_ms": 3.3957800042117015,
+      "max_ms": 9.300665988121182
+    },
+    "risk_simulation": {
+      "queries": 20,
+      "median_ms": 3.9218789970618673,
+      "p95_ms": 6.020367347082356,
+      "min_ms": 2.88146200182382,
+      "max_ms": 6.101256993133575
+    },
+    "spatial": {
+      "queries": 20,
+      "median_ms": 8.537207002518699,
+      "p95_ms": 12.368594292638608,
+      "min_ms": 6.010644006892107,
+      "max_ms": 35.11583700310439
+    },
+    "model_monitoring": {
+      "queries": 20,
+      "median_ms": 3.0371439934242517,
+      "p95_ms": 5.892763094016119,
+      "min_ms": 1.991771991015412,
+      "max_ms": 7.115471991710365
+    }
+  }
+}
