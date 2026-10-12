@@ -1,0 +1,18 @@
+{
+  "new_epoch_files_checked": 1,
+  "current_database_sample": {
+    "file": "/workspace/mo-ds-lab/mo-data/etl/sys/logs/2026/10/11/statement_info/1791762895_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_856701451.csv",
+    "file_sha256": "395c61e084a5201d2e634a5d5d817d972b175da1211e252d57ac9bebe00100da",
+    "database": "ds_timeseries_20261011",
+    "statement_id": "01a12d63-db67-76f5-98fd-19095bb5f99e",
+    "request_at": "2026-10-11 23:54:41.351448",
+    "user_status": "Success",
+    "exec_plan_bytes": 1168340,
+    "exec_plan_valid_json": true,
+    "stored_statement_bytes": 1027,
+    "etl_error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 1168340 is larger than Dest length 65535",
+    "plan_size_matches_upload_error": true
+  },
+  "failed_internal_load_trace_contexts": 204,
+  "scope": "Current synthetic database, Success user status and request timestamp inside the canonical window. Does not assign a unique canonical case from a truncated statement, attribute all retries to this batch, or prove permanent trace loss/recovery."
+}

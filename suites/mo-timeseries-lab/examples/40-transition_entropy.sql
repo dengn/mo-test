@@ -1,0 +1,6 @@
+WITH scope AS (SELECT * FROM entities WHERE eid>=49 AND eid<61),
+events_visible AS (SELECT e.*,s.region,s.sector,c.weekday,c.offset_min,minute+c.offset_min civil_min FROM events e JOIN scope s ON s.eid=e.eid JOIN calendar c ON c.day=e.day WHERE e.day>=10 AND e.day<78 AND received_min<=28517760),
+ev AS (SELECT *,CAST(magnitude AS DOUBLE) x,ROW_NUMBER() OVER(PARTITION BY eid ORDER BY minute,event_id) rn,LAG(minute) OVER(PARTITION BY eid ORDER BY minute,event_id) prev_min,LAG(kind) OVER(PARTITION BY eid ORDER BY minute,event_id) prev_kind FROM events_visible),
+a AS (SELECT *,SUM(CASE WHEN kind<>prev_kind THEN 1 ELSE 0 END) OVER(PARTITION BY eid ORDER BY minute,event_id ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) changes,SUM(CASE WHEN kind=0 THEN 1 ELSE 0 END) OVER(PARTITION BY eid ORDER BY minute,event_id ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) zeros,COUNT(*) OVER(PARTITION BY eid ORDER BY minute,event_id ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) n FROM ev),
+b AS (SELECT *,zeros/CAST(n AS DOUBLE) probability FROM a)
+SELECT eid,minute,event_id,x,rn,changes,zeros,n,probability,CASE WHEN probability>0 AND probability<1 THEN -probability*LN(probability)-(1-probability)*LN(1-probability) ELSE 0 END entropy FROM b WHERE day>=30 ORDER BY eid,minute,event_id;

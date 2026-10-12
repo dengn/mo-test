@@ -1,0 +1,240 @@
+[
+  {
+    "function": "LAG",
+    "default": "NULL",
+    "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764440.4528527,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 1
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    "status": "error",
+    "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: \\nruntime.panicBounds64\\n\\t/workspace/toolchains/go/src/runtime/panic.go:236\\nruntime.panicBounds\\n\\t/workspace/toolchains/go/src/runtime/asm_amd64.s:1622\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.fillSlice[...]\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8050\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagateUniformStringSource\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:2687\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagatePrepareParamKindsBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:2756\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).unionBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8682\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).UnionBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8567\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*container).evalAggVector\\n\\t/workspace/matrixone/pkg/sql/colexec/window/window.go:2265\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*Window).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/window/window.go:358\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/order.(*Order).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/order/order.go:550\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/mergeorder.(*MergeOrder).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/mergeorder/order.go:566\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/output.(*Output).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/output/output.go:58\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).Run\\n\\t/workspace/matrixone/pkg/vm/pipeline/pipeline.go:71\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).Run\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:385\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).ParallelRun\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:1094\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:713')"
+  },
+  {
+    "function": "LAG",
+    "default": "CAST(NULL AS DOUBLE)",
+    "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764440.694859,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS Nullable(Float64))) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 1
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    "status": "executed",
+    "rows": [
+      [
+        1.0,
+        1.0,
+        null
+      ],
+      [
+        2.0,
+        1.0,
+        1.0
+      ],
+      [
+        3.0,
+        2.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "function": "LAG",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,eid,LAG(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764440.786281,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 0
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 1
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": 0
+        }
+      ]
+    },
+    "status": "executed",
+    "rows": [
+      [
+        1.0,
+        1.0,
+        0.0
+      ],
+      [
+        2.0,
+        1.0,
+        1.0
+      ],
+      [
+        3.0,
+        2.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "function": "LEAD",
+    "default": "NULL",
+    "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764440.901921,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 2
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    "status": "error",
+    "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: \\nruntime.panicBounds64\\n\\t/workspace/toolchains/go/src/runtime/panic.go:236\\nruntime.panicBounds\\n\\t/workspace/toolchains/go/src/runtime/asm_amd64.s:1622\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.fillSlice[...]\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8050\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagateUniformStringSource\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:2687\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagatePrepareParamKindsBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:2756\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).unionBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8682\\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).UnionBatch\\n\\t/workspace/matrixone/pkg/container/vector/vector.go:8567\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*container).evalAggVector\\n\\t/workspace/matrixone/pkg/sql/colexec/window/window.go:2265\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*Window).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/window/window.go:358\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/order.(*Order).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/order/order.go:550\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/mergeorder.(*MergeOrder).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/mergeorder/order.go:566\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/output.(*Output).Call\\n\\t/workspace/matrixone/pkg/sql/colexec/output/output.go:58\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).Run\\n\\t/workspace/matrixone/pkg/vm/pipeline/pipeline.go:71\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).Run\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:385\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).ParallelRun\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:1094\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun\\n\\t/workspace/matrixone/pkg/sql/compile/scope.go:713')"
+  },
+  {
+    "function": "LEAD",
+    "default": "CAST(NULL AS DOUBLE)",
+    "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764441.0186992,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS Nullable(Float64))) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 2
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    "status": "executed",
+    "rows": [
+      [
+        1.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        1.0,
+        null
+      ],
+      [
+        3.0,
+        2.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "function": "LEAD",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,eid,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+    "start_epoch": 1791764441.151996,
+    "clickhouse": {
+      "status": "executed",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 2
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 0
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": 0
+        }
+      ]
+    },
+    "status": "executed",
+    "rows": [
+      [
+        1.0,
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        1.0,
+        0.0
+      ],
+      [
+        3.0,
+        2.0,
+        0.0
+      ]
+    ]
+  }
+]

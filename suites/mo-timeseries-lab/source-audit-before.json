@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "rows": 128,
+    "sha256": "78245d533a592bdc79cc6211f687dd23f63a03463cd8c1c0597da8a06dad7854"
+  },
+  "calendar": {
+    "rows": 160,
+    "sha256": "b5ae886c796fa7404d32af042afa18c95a147c2efa8feb0be67282ff5b7279d4"
+  },
+  "measurements": {
+    "rows": 63708,
+    "sha256": "94b1c2b6a1746a50bd6ee8132962877cc69ffbc74bb77b3267c4292afcb0e6c2"
+  },
+  "trades": {
+    "rows": 26982,
+    "sha256": "00f2d1be533bdb157c9ab8a4197febec2003973cc8f5b927940c9364397a2392"
+  },
+  "reversals": {
+    "rows": 1420,
+    "sha256": "71cf3cb5fe219cf914c9f73a20c4c15536e791a867567752a220f1691afbfd11"
+  },
+  "orders": {
+    "rows": 14455,
+    "sha256": "e98a845592ab2988d58c0a6caeed7f98217ba9b5dc1d6e759d691f9303d04437"
+  },
+  "shipments": {
+    "rows": 18068,
+    "sha256": "447e65f9f4a2b975fb498b78c90a814971c1d62cab844a9b1f1210d57b5b8fa3"
+  },
+  "inventory": {
+    "rows": 20480,
+    "sha256": "3abb8ad5d24bce48205cb7707a14803449b950f25940ea7507e8d7ace4e5ec9a"
+  },
+  "capacity": {
+    "rows": 640,
+    "sha256": "046e0cd35edc21ee830b48a232604cd6c88e27540fce8b2e0ca86ec20c8de8df"
+  },
+  "weather": {
+    "rows": 640,
+    "sha256": "b2a2ec01f4419b896b300b0b42e979eeebaa71e00d06782ec830b74e3c3bdae5"
+  },
+  "prices": {
+    "rows": 800,
+    "sha256": "e35ded0c35bee1b62259b91aebd76728e60132cee04a48a0037e6baa26e51d50"
+  },
+  "fx": {
+    "rows": 640,
+    "sha256": "f9dac730ded11bedf3e32e3e2f29d334ce75a2cb11b7d7168a86bf913c9718c9"
+  },
+  "targets": {
+    "rows": 35,
+    "sha256": "93f9adc6e4463965bc084319dfbfd5d258620430ec94401d5e5de5c3d71632aa"
+  },
+  "outages": {
+    "rows": 384,
+    "sha256": "18ccc2928579cab8e111db74c9c6627891cef759102182274b0d5f04ecfd992a"
+  },
+  "policies": {
+    "rows": 512,
+    "sha256": "e86ed1c8a2360778bcbef34aa31a978603a23d24394d12a24347e95302460b3d"
+  },
+  "interventions": {
+    "rows": 560,
+    "sha256": "21dcea97a2d0e7cdaafe3efee66d7fc4180b020684007392329649da26224937"
+  },
+  "events": {
+    "rows": 25296,
+    "sha256": "653b75b373d60beb32a4ad5c75328dd0ae1d9cff922c03e62ecaafd978d0a7b9"
+  },
+  "edges": {
+    "rows": 384,
+    "sha256": "06652375a8bcfd3892a726f6f63ef1191eb8f804e157f21f8257050e47f10d02"
+  }
+}

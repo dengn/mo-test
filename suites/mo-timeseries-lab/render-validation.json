@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "desktop_all_case_ids": true,
+    "desktop_default_count": true,
+    "desktop_failure_count": true,
+    "desktop_family_count": true,
+    "desktop_last_case": true,
+    "desktop_fraction_id_floor": true,
+    "desktop_client_count": true,
+    "desktop_plot_loaded": true,
+    "desktop_no_document_overflow": true,
+    "mobile_all_case_ids": true,
+    "mobile_default_count": true,
+    "mobile_failure_count": true,
+    "mobile_family_count": true,
+    "mobile_last_case": true,
+    "mobile_fraction_id_floor": true,
+    "mobile_client_count": true,
+    "mobile_plot_loaded": true,
+    "mobile_no_document_overflow": true,
+    "gap_rows": true,
+    "gap_filter": true,
+    "gap_mobile_no_overflow": true,
+    "no_js_errors": true
+  },
+  "errors": [],
+  "all_passed": true
+}

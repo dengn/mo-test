@@ -1,0 +1,114 @@
+{
+  "window": {
+    "started_at": 1791762602.7054224,
+    "ended_at": 1791764207.203104
+  },
+  "total_contexts": 4227,
+  "classification": {
+    "statement_info_text_overflow_context": 850,
+    "parser_rejection_context": 1428,
+    "zero_success_upload_summary": 28,
+    "unsupported_semantics_context": 1869,
+    "capability_null_default_recovered_panic_context": 48,
+    "other_error_context": 3,
+    "other_query_failure_context": 1
+  },
+  "structured_panic_levels": 0,
+  "etl_failure_path_contexts": 136,
+  "distinct_failed_files": 136,
+  "failed_file_epochs_predating_main": 135,
+  "failed_file_epochs_within_or_after_main": 1,
+  "samples": {
+    "statement_info_text_overflow_context": {
+      "level": "ERROR",
+      "time": "2026/10/11 23:50:06.253060 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "failed to upload file to MO",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "path": "sys/logs/2026/10/11/statement_info/1791712082_7c4dccb4-4d3c-41f8-b482-5251dc7a41bf_ALL_729380787.csv",
+      "error": "Error 1406 (22001): Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 547669 is larger than Dest length 65535",
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "4a7f37d4812a7f6e"
+      }
+    },
+    "parser_rejection_context": {
+      "level": "ERROR",
+      "time": "2026/10/11 23:50:09.523941 +0000",
+      "caller": "frontend/mysql_cmd_executor.go:405",
+      "msg": "error: SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 4 column 217 near \" EXCLUDE TIES) peer_excluded,SUM(x) OVER(PARTITION BY eid ORDER BY minute RANGE BETWEEN 5760 PRECEDING AND CURRENT ROW EXCLUDE CURRENT ROW) excluding_self FROM ev)\nSELECT eid,minute,event_id,x,rn,peer_inclusive,peer_excluded,excluding_self FROM a WHERE day>=41 ORDER BY eid,minute,event_id\";",
+      "span": {
+        "trace_id": "9265c136-d060-c7b9-9916-e048970c2d03",
+        "span_id": "a1eda624acf0cd6f"
+      }
+    },
+    "zero_success_upload_summary": {
+      "level": "ERROR",
+      "time": "2026/10/11 23:50:51.499692 +0000",
+      "name": "cn-service.ETLMerge",
+      "caller": "log/logger.go:134",
+      "msg": "upload files success",
+      "service": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "uuid": "dd1dccb4-4d3c-41f8-b482-5251dc7a41bf",
+      "table": "system.statement_info",
+      "total": 7,
+      "success": 0,
+      "span": {
+        "trace_id": "1d2d577b-9c32-bdcd-ac50-0852f8108dea",
+        "span_id": "4a7f37d4812a7f6e"
+      }
+    },
+    "unsupported_semantics_context": {
+      "level": "ERROR",
+      "time": "2026/10/11 23:54:28.061187 +0000",
+      "caller": "plan/window_binder.go:1039",
+      "msg": "error: DISTINCT in window function is not yet implemented",
+      "span": {
+        "trace_id": "7a83b0b4-19e4-7f50-a161-3ef55f0e8195",
+        "span_id": "630df16f06a8bb84"
+      }
+    },
+    "capability_null_default_recovered_panic_context": {
+      "level": "ERROR",
+      "time": "2026/10/11 23:58:49.104527 +0000",
+      "caller": "pipeline/pipeline.go:83",
+      "msg": "error: internal error: panic runtime error: index out of range [7] with length 1: \nruntime.panicBounds64\n\t/workspace/toolchains/go/src/runtime/panic.go:236\nruntime.panicBounds\n\t/workspace/toolchains/go/src/runtime/asm_amd64.s:1622\ngithub.com/matrixorigin/matrixone/pkg/container/vector.fillSlice[...]\n\t/workspace/matrixone/pkg/container/vector/vector.go:8050\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagateUniformStringSource\n\t/workspace/matrixone/pkg/container/vector/vector.go:2687\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).propagatePrepareParamKindsBatch\n\t/workspace/matrixone/pkg/container/vector/vector.go:2756\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).unionBatch\n\t/workspace/matrixone/pkg/container/vector/vector.go:8682\ngithub.com/matrixorigin/matrixone/pkg/container/vector.(*Vector).UnionBatch\n\t/workspace/matrixone/pkg/container/vector/vector.go:8567\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*container).evalAggVector\n\t/workspace/matrixone/pkg/sql/colexec/window/window.go:2265\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/window.(*Window).Call\n\t/workspace/matrixone/pkg/sql/colexec/window/window.go:358\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\n\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/order.(*Order).Call\n\t/workspace/matrixone/pkg/sql/colexec/order/order.go:550\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/mergeorder.(*MergeOrder).Call\n\t/workspace/matrixone/pkg/sql/colexec/mergeorder/order.go:566\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\n\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\n\t/workspace/matrixone/pkg/sql/colexec/projection/projection.go:84\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/workspace/matrixone/pkg/vm/types.go:424\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/output.(*Output).Call\n\t/workspace/matrixone/pkg/sql/colexec/output/output.go:58\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/workspace/matrixone/pkg/vm/types.go:412\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).Run\n\t/workspace/matrixone/pkg/vm/pipeline/pipeline.go:71\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).Run\n\t/workspace/matrixone/pkg/sql/compile/scope.go:385\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).ParallelRun\n\t/workspace/matrixone/pkg/sql/compile/scope.go:1094\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun\n\t/workspace/matrixone/pkg/sql/compile/scope.go:713",
+      "span": {
+        "trace_id": "fa26ffc7-6866-2edb-cddf-b1d75df908af",
+        "span_id": "3b3e43228c95fc0f"
+      }
+    },
+    "other_error_context": {
+      "level": "ERROR",
+      "time": "2026/10/12 00:09:05.901392 +0000",
+      "caller": "disttae/mo_table_stats.go:2171",
+      "msg": "mo.table.stats.task",
+      "source": "gama insert new table",
+      "cnt": 0
+    },
+    "other_query_failure_context": {
+      "level": "ERROR",
+      "time": "2026/10/12 00:10:04.838629 +0000",
+      "caller": "taskservice/task_service.go:272",
+      "msg": "error: invalid task, task runner dd1dccb4-4d3c-41f8-b482-5251dc7a41bf, id 296",
+      "span": {
+        "trace_id": "13acb8ad-05b0-64c1-240e-fedca01c45b8",
+        "span_id": "7c60e343fc535a7b"
+      }
+    }
+  },
+  "notes": [
+    "Counts are structured log contexts; repeated caller/session error logs are not separate failed case requests.",
+    "Reference-only or SQL parser setup attempts and explicit capability-study failures share this service; main failure count comes only from cases.jsonl.",
+    "Recovered vector panic contexts correspond to the explicitly recorded LAG/LEAD NULL-default capability probes; source-health checks and PID survival are separate evidence.",
+    "Old ETL file retries cannot establish that this batch created their payload, that data loss is permanent, or that upload eventually recovered.",
+    "Four other ERROR contexts were reviewed: two table-stats cnt=0 task records and two related invalid-task/IndexUpdateTask heartbeat records. No canonical user query is identified by these background task contexts; recovery of that task is not established."
+  ],
+  "known_issues": [
+    "https://github.com/matrixorigin/matrixone/issues/29809",
+    "https://github.com/matrixorigin/matrixone/issues/29797"
+  ]
+}

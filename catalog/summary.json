@@ -1,7 +1,7 @@
 {
-  "canonical_cases": 250000,
-  "canonical_passed": 245992,
-  "canonical_nonpass": 4008,
+  "canonical_cases": 260000,
+  "canonical_passed": 255792,
+  "canonical_nonpass": 4208,
   "suites": [
     {
       "name": "mo-ds-lab",
@@ -81,6 +81,18 @@
         "cases.jsonl"
       ],
       "catalog": "catalog/mo-ml-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-timeseries-lab",
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 9800,
+        "sql_or_stage_error": 200
+      },
+      "canonical_members": [
+        "mo-timeseries-lab/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-timeseries-lab.jsonl.gz"
     }
   ],
   "case_ids": "Each suite independently covers unique contiguous [0, expected-1]. Global identifier is (suite, case_id).",

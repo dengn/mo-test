@@ -1,0 +1,16 @@
+{"name":"name","type":"String","default_type":"","default_expression":"","comment":"The name of the function.","codec_expression":"","ttl_expression":""}
+{"name":"is_aggregate","type":"UInt8","default_type":"","default_expression":"","comment":"Whether the function is an aggregate function.","codec_expression":"","ttl_expression":""}
+{"name":"case_insensitive","type":"UInt8","default_type":"","default_expression":"","comment":"Whether the function name can be used case-insensitively.","codec_expression":"","ttl_expression":""}
+{"name":"alias_to","type":"String","default_type":"","default_expression":"","comment":"The original function name, if the function name is an alias.","codec_expression":"","ttl_expression":""}
+{"name":"create_query","type":"String","default_type":"","default_expression":"","comment":"Obsolete.","codec_expression":"","ttl_expression":""}
+{"name":"origin","type":"Enum8('System' = 0, 'SQLUserDefined' = 1, 'ExecutableUserDefined' = 2, 'WasmUserDefined' = 3)","default_type":"","default_expression":"","comment":"Obsolete.","codec_expression":"","ttl_expression":""}
+{"name":"description","type":"String","default_type":"","default_expression":"","comment":"A high-level description what the function does.","codec_expression":"","ttl_expression":""}
+{"name":"syntax","type":"String","default_type":"","default_expression":"","comment":"Signature of the function.","codec_expression":"","ttl_expression":""}
+{"name":"arguments","type":"String","default_type":"","default_expression":"","comment":"The function arguments.","codec_expression":"","ttl_expression":""}
+{"name":"parameters","type":"String","default_type":"","default_expression":"","comment":"The function parameters (only for aggregate function).","codec_expression":"","ttl_expression":""}
+{"name":"returned_value","type":"String","default_type":"","default_expression":"","comment":"What does the function return.","codec_expression":"","ttl_expression":""}
+{"name":"examples","type":"String","default_type":"","default_expression":"","comment":"Usage example.","codec_expression":"","ttl_expression":""}
+{"name":"introduced_in","type":"String","default_type":"","default_expression":"","comment":"ClickHouse version in which the function was first introduced.","codec_expression":"","ttl_expression":""}
+{"name":"categories","type":"String","default_type":"","default_expression":"","comment":"The category of the function.","codec_expression":"","ttl_expression":""}
+{"name":"deterministic","type":"Nullable(UInt8)","default_type":"","default_expression":"","comment":"Whether the function returns the same result for the same arguments. NULL when unknown (e.g. aggregate or user-defined functions).","codec_expression":"","ttl_expression":""}
+{"name":"higher_order","type":"Nullable(UInt8)","default_type":"","default_expression":"","comment":"Whether the function is higher-order — i.e. accepts at least one lambda expression as an argument (e.g. arrayMap, arrayFilter, mapApply). NULL when unknown.","codec_expression":"","ttl_expression":""}

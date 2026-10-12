@@ -1,0 +1,622 @@
+[
+  {
+    "operator": "LowRange",
+    "apis": [
+      "mLowRange",
+      "tmLowRange"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "PositiveStreak",
+    "apis": [
+      "cumPositiveStreak"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "TopRange",
+    "apis": [
+      "mTopRange",
+      "tmTopRange"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "avg",
+    "apis": [
+      "cumavg",
+      "mavg",
+      "tmavg"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "avgTopN",
+    "apis": [
+      "cumavgTopN",
+      "mavgTopN",
+      "tmavgTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "beta",
+    "apis": [
+      "cumbeta",
+      "mbeta",
+      "tmbeta"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "betaTopN",
+    "apis": [
+      "cumbetaTopN",
+      "mbetaTopN",
+      "tmbetaTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "corr",
+    "apis": [
+      "cumcorr",
+      "mcorr",
+      "tmcorr"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "corrTopN",
+    "apis": [
+      "cumcorrTopN",
+      "mcorrTopN",
+      "tmcorrTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "count",
+    "apis": [
+      "cumcount",
+      "mcount",
+      "tmcount"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "covar",
+    "apis": [
+      "cumcovar",
+      "mcovar",
+      "tmcovar"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "covarTopN",
+    "apis": [
+      "cumcovarTopN",
+      "mcovarTopN",
+      "tmcovarTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "covarp",
+    "apis": [
+      "cumcovarp",
+      "mcovarp",
+      "tmcovarp"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "covarpTopN",
+    "apis": [
+      "cumcovarpTopN",
+      "mcovarpTopN",
+      "tmcovarpTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "dema",
+    "apis": [
+      "dema"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "dynamicGroupCumcount",
+    "apis": [
+      "dynamicGroupCumcount"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "dynamicGroupCumsum",
+    "apis": [
+      "dynamicGroupCumsum"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ema",
+    "apis": [
+      "ema"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ewmCorr",
+    "apis": [
+      "ewmCorr"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ewmCov",
+    "apis": [
+      "ewmCov"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ewmMean",
+    "apis": [
+      "ewmMean"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ewmStd",
+    "apis": [
+      "ewmStd"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ewmVar",
+    "apis": [
+      "ewmVar"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "first",
+    "apis": [
+      "mfirst",
+      "tmfirst"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "firstNot",
+    "apis": [
+      "cumfirstNot",
+      "mfirstNot"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "gema",
+    "apis": [
+      "gema"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ifirstNot",
+    "apis": [
+      "mifirstNot"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ilastNot",
+    "apis": [
+      "milastNot"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "imax",
+    "apis": [
+      "mimax"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "imaxLast",
+    "apis": [
+      "mimaxLast"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "imin",
+    "apis": [
+      "mimin"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "iminLast",
+    "apis": [
+      "miminLast"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "kama",
+    "apis": [
+      "kama"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "kurtosis",
+    "apis": [
+      "mkurtosis",
+      "tmkurtosis"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "kurtosisTopN",
+    "apis": [
+      "cumkurtosisTopN",
+      "mkurtosisTopN",
+      "tmkurtosisTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "last",
+    "apis": [
+      "mlast",
+      "tmlast"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "lastNot",
+    "apis": [
+      "cumlastNot",
+      "mlastNot"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "linearTimeTrend",
+    "apis": [
+      "linearTimeTrend"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "ma",
+    "apis": [
+      "ma"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "mad",
+    "apis": [
+      "mmad"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "max",
+    "apis": [
+      "cummax",
+      "mmax",
+      "tmmax"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "maxDrawdown",
+    "apis": [
+      "mmaxDrawdown"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "maxPositiveStreak",
+    "apis": [
+      "mmaxPositiveStreak"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "med",
+    "apis": [
+      "cummed",
+      "mmed",
+      "tmmed"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "min",
+    "apis": [
+      "cummin",
+      "mmin",
+      "tmmin"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "movingTopNIndex",
+    "apis": [
+      "movingTopNIndex"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "movingWindowIndex",
+    "apis": [
+      "movingWindowIndex"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "mse",
+    "apis": [
+      "mmse"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "nunique",
+    "apis": [
+      "cumnunique"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "percentile",
+    "apis": [
+      "cumpercentile",
+      "mpercentile",
+      "tmpercentile"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "percentileTopN",
+    "apis": [
+      "mpercentileTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "prod",
+    "apis": [
+      "cumprod",
+      "mprod",
+      "tmprod"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "rank",
+    "apis": [
+      "cumrank",
+      "mrank",
+      "tmrank"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "skew",
+    "apis": [
+      "mskew",
+      "tmskew"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "skewTopN",
+    "apis": [
+      "cumskewTopN",
+      "mskewTopN",
+      "tmskewTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "slr",
+    "apis": [
+      "mslr"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "sma",
+    "apis": [
+      "sma"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "std",
+    "apis": [
+      "cumstd",
+      "mstd",
+      "tmstd"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "stdTopN",
+    "apis": [
+      "cumstdTopN",
+      "mstdTopN",
+      "tmstdTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "stdp",
+    "apis": [
+      "cumstdp",
+      "mstdp",
+      "tmstdp"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "stdpTopN",
+    "apis": [
+      "cumstdpTopN",
+      "mstdpTopN",
+      "tmstdpTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "sum",
+    "apis": [
+      "cumsum",
+      "msum",
+      "tmsum"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "sum2",
+    "apis": [
+      "cumsum2",
+      "msum2",
+      "tmsum2"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "sum3",
+    "apis": [
+      "cumsum3"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "sum4",
+    "apis": [
+      "cumsum4"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "sumTopN",
+    "apis": [
+      "cumsumTopN",
+      "msumTopN",
+      "tmsumTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "t3",
+    "apis": [
+      "t3"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "tema",
+    "apis": [
+      "tema"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "trima",
+    "apis": [
+      "trima"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "var",
+    "apis": [
+      "cumvar",
+      "mvar",
+      "tmvar"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "varTopN",
+    "apis": [
+      "cumvarTopN",
+      "mvarTopN",
+      "tmvarTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "varp",
+    "apis": [
+      "cumvarp",
+      "mvarp",
+      "tmvarp"
+    ],
+    "classification": "basic_native_kernel_with_semantic_adaptation"
+  },
+  {
+    "operator": "varpTopN",
+    "apis": [
+      "cumvarpTopN",
+      "mvarpTopN",
+      "tmvarpTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "wavg",
+    "apis": [
+      "cumwavg",
+      "mwavg",
+      "tmwavg"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "wilder",
+    "apis": [
+      "wilder"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "wma",
+    "apis": [
+      "wma"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "wsum",
+    "apis": [
+      "cumwsum",
+      "mwsum",
+      "tmwsum"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  },
+  {
+    "operator": "wsumTopN",
+    "apis": [
+      "cumwsumTopN",
+      "mwsumTopN",
+      "tmwsumTopN"
+    ],
+    "classification": "no_one_to_one_specialized_kernel"
+  }
+]

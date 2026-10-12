@@ -1,0 +1,38 @@
+[
+  {
+    "name": "tumble",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  },
+  {
+    "name": "sliding",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,3,minute) sliding(1,minute)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  },
+  {
+    "name": "fill_prev",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(prev)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  },
+  {
+    "name": "fill_next",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(next)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  },
+  {
+    "name": "fill_linear",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(linear)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  },
+  {
+    "name": "fill_constant",
+    "sql": "SELECT _wstart(ts) wstart,_wend(ts) wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(value,0)",
+    "status": "error",
+    "error": "(20105, \"not supported: function or operator '_wstart'\")"
+  }
+]

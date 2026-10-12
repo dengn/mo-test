@@ -1,0 +1,283 @@
+[
+  {
+    "name": "tumble",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:02:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:04:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:06:00",
+        null,
+        null,
+        0
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ],
+    "independent_tumble_values_verified": true
+  },
+  {
+    "name": "sliding",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,3,minute) sliding(1,minute)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:03:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:01:00",
+        "2024-01-01T00:04:00",
+        8.0,
+        4.0,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:05:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:03:00",
+        "2024-01-01T00:06:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:07:00",
+        null,
+        null,
+        0
+      ],
+      [
+        "2024-01-01T00:05:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:09:00",
+        8.0,
+        8.0,
+        1
+      ],
+      [
+        "2024-01-01T00:07:00",
+        "2024-01-01T00:10:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "fill_prev",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(prev)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:02:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:04:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:06:00",
+        6.0,
+        6.0,
+        0
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "fill_next",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(next)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:02:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:04:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:06:00",
+        8.0,
+        8.0,
+        0
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "fill_linear",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(linear)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:02:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:04:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:06:00",
+        7.0,
+        7.0,
+        0
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ]
+  },
+  {
+    "name": "fill_constant",
+    "sql": "SELECT _wstart wstart,_wend wend,SUM(value) total,AVG(value) mean_value,COUNT(value) n FROM ts_gap_time_window WHERE ts>='2024-01-01 00:00:00' AND ts<'2024-01-01 00:08:00' interval(ts,2,minute) fill(value,0)",
+    "status": "executed",
+    "columns": [
+      "wstart",
+      "wend",
+      "total",
+      "mean_value",
+      "n"
+    ],
+    "rows": [
+      [
+        "2024-01-01T00:00:00",
+        "2024-01-01T00:02:00",
+        3.0,
+        1.5,
+        2
+      ],
+      [
+        "2024-01-01T00:02:00",
+        "2024-01-01T00:04:00",
+        6.0,
+        6.0,
+        1
+      ],
+      [
+        "2024-01-01T00:04:00",
+        "2024-01-01T00:06:00",
+        0.0,
+        0.0,
+        0
+      ],
+      [
+        "2024-01-01T00:06:00",
+        "2024-01-01T00:08:00",
+        8.0,
+        8.0,
+        1
+      ]
+    ]
+  }
+]

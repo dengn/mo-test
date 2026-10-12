@@ -1,0 +1,234 @@
+[
+  {
+    "fixture": "two_rows",
+    "function": "LAG",
+    "default": "NULL",
+    "sql": "SELECT point,LAG(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4320729,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        null
+      ],
+      [
+        2.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "fixture": "two_rows",
+    "function": "LAG",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LAG(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4462461,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        2.0,
+        1.0
+      ]
+    ]
+  },
+  {
+    "fixture": "two_rows",
+    "function": "LEAD",
+    "default": "NULL",
+    "sql": "SELECT point,LEAD(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4503264,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        null
+      ]
+    ]
+  },
+  {
+    "fixture": "two_rows",
+    "function": "LEAD",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.452287,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "fixture": "two_nullable_rows",
+    "function": "LAG",
+    "default": "NULL",
+    "sql": "SELECT point,LAG(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(NULL AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4544847,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        null
+      ],
+      [
+        2.0,
+        null
+      ]
+    ]
+  },
+  {
+    "fixture": "two_nullable_rows",
+    "function": "LAG",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LAG(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(NULL AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4574895,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        2.0,
+        null
+      ]
+    ]
+  },
+  {
+    "fixture": "two_nullable_rows",
+    "function": "LEAD",
+    "default": "NULL",
+    "sql": "SELECT point,LEAD(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(NULL AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4613981,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        null
+      ]
+    ]
+  },
+  {
+    "fixture": "two_nullable_rows",
+    "function": "LEAD",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(NULL AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4636254,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        0.0
+      ]
+    ]
+  },
+  {
+    "fixture": "three_rows",
+    "function": "LAG",
+    "default": "NULL",
+    "sql": "SELECT point,LAG(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE) UNION ALL SELECT 3,CAST(3 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4664896,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        null
+      ],
+      [
+        2.0,
+        1.0
+      ],
+      [
+        3.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "fixture": "three_rows",
+    "function": "LAG",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LAG(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE) UNION ALL SELECT 3,CAST(3 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4717047,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        2.0,
+        1.0
+      ],
+      [
+        3.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "fixture": "three_rows",
+    "function": "LEAD",
+    "default": "NULL",
+    "sql": "SELECT point,LEAD(value,1,NULL) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE) UNION ALL SELECT 3,CAST(3 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.474191,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        3.0,
+        null
+      ]
+    ]
+  },
+  {
+    "fixture": "three_rows",
+    "function": "LEAD",
+    "default": "CAST(0 AS DOUBLE)",
+    "sql": "SELECT point,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(ORDER BY point) result FROM (SELECT 1 point,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,CAST(2 AS DOUBLE) UNION ALL SELECT 3,CAST(3 AS DOUBLE)) f ORDER BY point",
+    "start_epoch": 1791763967.4766755,
+    "status": "pass",
+    "rows": [
+      [
+        1.0,
+        2.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        3.0,
+        0.0
+      ]
+    ]
+  }
+]

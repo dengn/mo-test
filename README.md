@@ -1,6 +1,6 @@
 # mo-test
 
-本会话全部六批 MatrixOne 数据科学与复杂分析测试：**250,000 个主批次 case**，包括失败 case、原始 SQL/参数/预期结果、Spark/Flink 补测、复杂业务流程、深度学习模型、性能测量及稳定性证据。
+本会话七批 MatrixOne 数据科学与复杂分析测试：**260,000 个主批次 case**，包括失败 case、原始 SQL/参数/预期结果、Spark/Flink 补测、复杂业务流程、深度学习模型、性能测量及稳定性证据。
 
 |目录|主 case|通过|未通过|范围|
 |---|---:|---:|---:|---|
@@ -10,16 +10,17 @@
 |[mo-demand-lab](suites/mo-demand-lab/README.md)|10,000|10,000|0|40 类业务分析需求、统计与约束优化决策|
 |[mo-crosslab](suites/mo-crosslab/README.md)|10,000|10,000|0|跨 30 张表的 join、子查询、pandas / NumPy / Spark 组合|
 |[mo-ml-lab](suites/mo-ml-lab/README.md)|20,000|20,000|0|PyTorch 残差 MLP、CNN、GRU、注意力、GCN 与模型存储|
-|合计|250,000|245,992|4,008|不含补测、性能、试跑及中止尝试|
+|[mo-timeseries-lab](suites/mo-timeseries-lab/README.md)|10,000|9,800|200|18 源表时序需求、最多 147 窗口/88 CTE，Spark 与边界补测|
+|合计|260,000|255,792|4,208|不含补测、性能、试跑及中止尝试|
 
-case 是有独立 ID 的参数化断言或完整工作流，不代表 250,000 种算法。各批次执行粒度不同，Spark/Flink 的共享 pipeline 错误可能影响多条断言；不能把未通过条数当作独立缺陷数。各目录 README 和 report.json 保留具体定义与限制。
+case 是有独立 ID 的参数化断言或完整工作流，不代表 260,000 种算法。各批次执行粒度不同，Spark/Flink 的共享 pipeline 错误可能影响多条断言；不能把未通过条数当作独立缺陷数。各目录 README 和 report.json 保留具体定义与限制。
 
 ## 完整材料在哪里
 
 * `suites/`：可直接浏览的冻结代码、场景目录、输入 fixture、SQL 示例、依赖、报告与问题分析。
-* `catalog/*.jsonl.gz`：250,000 条主 case 索引，包含批次、ID、状态、客户端、场景和原始 ZIP 成员/行号；ID 在每批内部连续且唯一。
+* `catalog/*.jsonl.gz`：260,000 条主 case 索引，包含批次、ID、状态、客户端、场景和原始 ZIP 成员/行号；ID 在每批内部连续且唯一。
 * `catalog/summary.json`：直接遍历原始 case 记录得到的完整计数，未用补测覆盖早期失败。
-* `archives/`：六个原始完整 ZIP 的 **40 MiB 分卷**。完整逐 case 记录、全部 20,000 个深度模型权重、其他模型、补测、性能、失败尝试和日志都在分卷中，且分卷全部是普通 Git 文件。
+* `archives/`：七个原始完整 ZIP 的 **40 MiB 分卷**。完整逐 case 记录、全部 20,000 个深度模型权重、其他模型、补测、性能、失败尝试和日志都在分卷中，且分卷全部是普通 Git 文件。
 * `archives/manifest.json`：分卷 SHA256、原始 ZIP SHA256、字节数、ZIP 路径及主 case 数据文件列表。
 * `catalog/source-files.json`：可浏览文件与其原始 ZIP 成员的字节 SHA256 对照。
 
@@ -36,7 +37,7 @@ python3 tools/restore.py                 # 还原全部到 work/，已有目标�
 python3 tools/restore.py --suite mo-ml-lab --output /tmp/mo-test-replay
 ```
 
-还原脚本仅依赖 Python 标准库，检查每个分卷和完整 ZIP 的 SHA256，以及所有 ZIP 成员 CRC。建议预留至少 5 GiB 磁盘空间。`--verify-only` 只校验分卷/ZIP，不解压。
+还原脚本仅依赖 Python 标准库，检查每个分卷和完整 ZIP 的 SHA256，以及所有 ZIP 成员 CRC。建议预留至少 7 GiB 磁盘空间。`--verify-only` 只校验分卷/ZIP，不解压。
 
 ```bash
 python3 tools/restore.py --verify-only
@@ -68,7 +69,7 @@ python serving.py 14999 --offline
 
 ## 追加的边界与混沌测试
 
-另追加 **600,000 条主用例**（本轮 500,000 条已完成，后续两批各 50,000 条的完成状态见 manifest.json），覆盖极端 SQL、向量/全文、恢复、ETL、TLS/UDF/task/Iceberg、用户、多租户、发布订阅与 Git4Data。原有 250,000 条数据科学与 ML 测试保留；二者计数和报告分开。
+另追加 **600,000 条主用例**（本轮 500,000 条已完成，后续两批各 50,000 条的完成状态见 manifest.json），覆盖极端 SQL、向量/全文、恢复、ETL、TLS/UDF/task/Iceberg、用户、多租户、发布订阅与 Git4Data。原有数据科学与 ML 测试及本次新增时序测试共 260,000 条保留；二者计数和报告分开。
 
 [新批次目录与重放说明](BOUNDARY-CHAOS-600000.md) · [新批次完整性清单](manifest.json) · [500,000 条完成报告](suites/mo-stability-500000/REPORT.md)
 
@@ -78,3 +79,12 @@ python3 tools/materialize.py --output /tmp/mo-boundary-replay
 ~~~
 
 原有 tools/verify.py、tools/restore.py 和 archives/、catalog/ 不受影响。
+
+
+## 窗口函数完整对比研究
+
+[ClickHouse / DolphinDB / MO 窗口能力报告](research/window-gap/README.md) · [逐函数映射 CSV](research/window-gap/comparison.csv) · [固定版本及执行证据](research/window-gap/report.json)
+
+ClickHouse 官方 14 个窗口入口中 MO 有 11 个、缺 3 个；DolphinDB SQL OVER 的 39 个中有 22 个原生映射、缺 17 个专用入口。17 个常见数学配置均已在 MO 用 SQL 组合实现并经独立 NumPy/SciPy 核验。更广的专用移动/时间/累计/TopN/技术指标 API 清单、算法/状态变体、NULL/frame/并列/增量执行差异另列，不把接口数量当作业务不可计算数量。ClickHouse 固定 26.9.16.11 实测；DolphinDB 为官方文档研究，没有运行时/跨库性能结论。234 条能力探针与研究不新增主 case 总数。
+
+新发现的跨分区 LAG/LEAD 无类型 NULL 默认参数恢复型 panic 已保留最小复现与本地 issue draft，未新发 issue。所有研究文件的 SHA256 在 research/window-gap/artifact-manifest.json。此研究及七批的 archives/catalog 校验与另一个边界/混沌测试 manifest.json 分开，保留远端已有材料。

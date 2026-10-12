@@ -53,7 +53,7 @@ def restore(suite, destination, verify_only=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--suite', action='append', help='Lab name; repeatable; default all six')
+    parser.add_argument('--suite', action='append', help='Lab name; repeatable; default all suites')
     parser.add_argument('--output', type=Path, default=ROOT / 'work')
     parser.add_argument('--verify-only', action='store_true')
     args = parser.parse_args()

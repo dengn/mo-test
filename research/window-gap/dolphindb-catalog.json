@@ -1,0 +1,1526 @@
+{
+  "sql_analytic_names": [
+    "sum",
+    "sum2",
+    "avg",
+    "std",
+    "stdp",
+    "var",
+    "varp",
+    "count",
+    "min",
+    "imin",
+    "iminLast",
+    "max",
+    "imax",
+    "imaxLast",
+    "skew",
+    "kurtosis",
+    "med",
+    "row_number",
+    "rank",
+    "dense_rank",
+    "percent_rank",
+    "cume_dist",
+    "lead",
+    "lag",
+    "ntile",
+    "first_value",
+    "last_value",
+    "nth_value",
+    "firstNot",
+    "lastNot",
+    "prod",
+    "percentile",
+    "wavg",
+    "wsum",
+    "corr",
+    "covar",
+    "beta",
+    "atImax",
+    "atImin"
+  ],
+  "named_window_apis": [
+    {
+      "name": "cumPositiveStreak",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumPositiveStreak.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumavg",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumavg.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumavgTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumavgTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumbeta",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumbeta.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumbetaTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumbetaTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumcorr",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcorr.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumcorrTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcorrTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumcount",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcount.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumcovar",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcovar.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumcovarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcovarTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumcovarp",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcovarp.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumcovarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumcovarpTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumfirstNot",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumfirstNot.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumkurtosisTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumkurtosisTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumlastNot",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumlastNot.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cummax",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cummax.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cummed",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cummed.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cummin",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cummin.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumnunique",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumnunique.html",
+      "families": [
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumpercentile",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumpercentile.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumprod",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumprod.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumrank",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumrank.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumskewTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumskewTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumstd",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumstd.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumstdTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumstdTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumstdp",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumstdp.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumstdpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumstdpTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumsum",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumsum.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumsum2",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumsum2.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumsum3",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumsum3.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumsum4",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumsum4.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumsumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumsumTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumvar",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumvar.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumvarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumvarTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumvarp",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumvarp.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumvarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumvarpTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "cumwavg",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumwavg.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumwsum",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumwsum.html",
+      "families": [
+        "dolphindb_cum",
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "cumwsumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/c/cumwsumTopN.html",
+      "families": [
+        "dolphindb_cum_topn"
+      ]
+    },
+    {
+      "name": "dema",
+      "url": "https://docs.dolphindb.com/en/Functions/d/dema.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "dynamicGroupCumcount",
+      "url": "https://docs.dolphindb.com/en/Functions/d/dynamicGroupCumcount.html",
+      "families": [
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "dynamicGroupCumsum",
+      "url": "https://docs.dolphindb.com/en/Functions/d/dynamicGroupCumsum.html",
+      "families": [
+        "categories_Cumulative Window"
+      ]
+    },
+    {
+      "name": "ema",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ema.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "ewmCorr",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ewmCorr.html",
+      "families": [
+        "exponential"
+      ]
+    },
+    {
+      "name": "ewmCov",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ewmCov.html",
+      "families": [
+        "exponential"
+      ]
+    },
+    {
+      "name": "ewmMean",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ewmMean.html",
+      "families": [
+        "exponential"
+      ]
+    },
+    {
+      "name": "ewmStd",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ewmStd.html",
+      "families": [
+        "exponential"
+      ]
+    },
+    {
+      "name": "ewmVar",
+      "url": "https://docs.dolphindb.com/en/Functions/e/ewmVar.html",
+      "families": [
+        "exponential"
+      ]
+    },
+    {
+      "name": "gema",
+      "url": "https://docs.dolphindb.com/en/Functions/g/gema.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "kama",
+      "url": "https://docs.dolphindb.com/en/Functions/k/kama.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "linearTimeTrend",
+      "url": "https://docs.dolphindb.com/en/Functions/l/linearTimeTrend.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "mLowRange",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mLowRange.html",
+      "families": [
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mTopRange",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mTopRange.html",
+      "families": [
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "ma",
+      "url": "https://docs.dolphindb.com/en/Functions/m/ma.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "mavg",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mavg.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mavgTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mavgTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mbeta",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mbeta.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mbetaTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mbetaTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mcorr",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcorr.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mcorrTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcorrTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mcount",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcount.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mcovar",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcovar.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mcovarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcovarTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mcovarp",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcovarp.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mcovarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mcovarpTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mfirst",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mfirst.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mfirstNot",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mfirstNot.html",
+      "families": [
+        "dolphindb_m"
+      ]
+    },
+    {
+      "name": "mifirstNot",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mifirstNot.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "milastNot",
+      "url": "https://docs.dolphindb.com/en/Functions/m/milastNot.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mimax",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mimax.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mimaxLast",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mimaxlast.html",
+      "families": [
+        "dolphindb_m"
+      ]
+    },
+    {
+      "name": "mimin",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mimin.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "miminLast",
+      "url": "https://docs.dolphindb.com/en/Functions/m/miminlast.html",
+      "families": [
+        "dolphindb_m"
+      ]
+    },
+    {
+      "name": "mkurtosis",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mkurtosis.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mkurtosisTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mkurtosisTopN.html",
+      "families": [
+        "dolphindb_m_topn"
+      ]
+    },
+    {
+      "name": "mlast",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mlast.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mlastNot",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mlastNot.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmad",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmad.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmax",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmax.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmaxDrawdown",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmaxDrawdown.html",
+      "families": [
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmaxPositiveStreak",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmaxPositiveStreak.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmed",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmed.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmin",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmin.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mmse",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mmse.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "movingTopNIndex",
+      "url": "https://docs.dolphindb.com/en/Functions/m/movingTopNIndex.html",
+      "families": [
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "movingWindowIndex",
+      "url": "https://docs.dolphindb.com/en/Functions/m/movingWindowIndex.html",
+      "families": [
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mpercentile",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mpercentile.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mpercentileTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mpercentileTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mprod",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mprod.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mrank",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mrank.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mskew",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mskew.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mskewTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mskewTopN.html",
+      "families": [
+        "dolphindb_m_topn"
+      ]
+    },
+    {
+      "name": "mslr",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mslr.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mstd",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mstd.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mstdTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mstdTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mstdp",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mstdp.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mstdpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mstdpTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "msum",
+      "url": "https://docs.dolphindb.com/en/Functions/m/msum.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "msum2",
+      "url": "https://docs.dolphindb.com/en/Functions/m/msum2.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "msumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/msumTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mvar",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mvar.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mvarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mvarTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mvarp",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mvarp.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mvarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mvarpTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "mwavg",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mwavg.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mwsum",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mwsum.html",
+      "families": [
+        "dolphindb_m",
+        "categories_Moving"
+      ]
+    },
+    {
+      "name": "mwsumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/m/mwsumTopN.html",
+      "families": [
+        "dolphindb_m_topn",
+        "categories_mTopN"
+      ]
+    },
+    {
+      "name": "sma",
+      "url": "https://docs.dolphindb.com/en/Functions/s/sma.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "t3",
+      "url": "https://docs.dolphindb.com/en/Functions/t/t3.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "tema",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tema.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "tmLowRange",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmLowRange.html",
+      "families": [
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmTopRange",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmTopRange.html",
+      "families": [
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmavg",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmavg.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmavgTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmavgTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmbeta",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmbeta.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmbetaTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmbetaTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmcorr",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcorr.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmcorrTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcorrTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmcount",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcount.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmcovar",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcovar.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmcovarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcovarTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmcovarp",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcovarp.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmcovarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmcovarpTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmfirst",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmfirst.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmkurtosis",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmkurtosis.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmkurtosisTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmkurtosisTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmlast",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmlast.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmmax",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmmax.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmmed",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmmed.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmmin",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmmin.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmpercentile",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmpercentile.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmprod",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmprod.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmrank",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmrank.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmskew",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmskew.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmskewTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmskewTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmstd",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmstd.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmstdTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmstdTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmstdp",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmstdp.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmstdpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmstdpTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmsum",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmsum.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmsum2",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmsum2.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmsumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmsumTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmvar",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmvar.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmvarTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmvarTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmvarp",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmvarp.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmvarpTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmvarpTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "tmwavg",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmwavg.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmwsum",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmwsum.html",
+      "families": [
+        "dolphindb_tm",
+        "categories_Time-Based Moving"
+      ]
+    },
+    {
+      "name": "tmwsumTopN",
+      "url": "https://docs.dolphindb.com/en/Functions/t/tmwsumTopN.html",
+      "families": [
+        "dolphindb_tm_topn",
+        "categories_tmTopN"
+      ]
+    },
+    {
+      "name": "trima",
+      "url": "https://docs.dolphindb.com/en/Functions/t/trima.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "wilder",
+      "url": "https://docs.dolphindb.com/en/Functions/w/wilder.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    },
+    {
+      "name": "wma",
+      "url": "https://docs.dolphindb.com/en/Functions/w/wma.html",
+      "families": [
+        "dolphindb_talib",
+        "categories_TA-Lib"
+      ]
+    }
+  ],
+  "families": {
+    "dolphindb_m": [
+      "mavg",
+      "mbeta",
+      "mcorr",
+      "mcount",
+      "mcovar",
+      "mcovarp",
+      "mfirst",
+      "mfirstNot",
+      "mifirstNot",
+      "milastNot",
+      "mimax",
+      "mimaxLast",
+      "mimin",
+      "miminLast",
+      "mkurtosis",
+      "mlast",
+      "mlastNot",
+      "mmad",
+      "mmax",
+      "mmaxPositiveStreak",
+      "mmed",
+      "mmin",
+      "mmse",
+      "mpercentile",
+      "mprod",
+      "mrank",
+      "mskew",
+      "mslr",
+      "mstd",
+      "mstdp",
+      "msum",
+      "msum2",
+      "mvar",
+      "mvarp",
+      "mwavg",
+      "mwsum"
+    ],
+    "dolphindb_tm": [
+      "tmavg",
+      "tmbeta",
+      "tmcorr",
+      "tmcount",
+      "tmcovar",
+      "tmcovarp",
+      "tmfirst",
+      "tmkurtosis",
+      "tmlast",
+      "tmmax",
+      "tmmed",
+      "tmmin",
+      "tmpercentile",
+      "tmprod",
+      "tmrank",
+      "tmskew",
+      "tmstd",
+      "tmstdp",
+      "tmsum",
+      "tmsum2",
+      "tmvar",
+      "tmvarp",
+      "tmwavg",
+      "tmwsum"
+    ],
+    "dolphindb_cum": [
+      "cumPositiveStreak",
+      "cumavg",
+      "cumbeta",
+      "cumcorr",
+      "cumcount",
+      "cumcovar",
+      "cumcovarp",
+      "cumfirstNot",
+      "cumlastNot",
+      "cummax",
+      "cummed",
+      "cummin",
+      "cumpercentile",
+      "cumprod",
+      "cumrank",
+      "cumstd",
+      "cumstdp",
+      "cumsum",
+      "cumsum2",
+      "cumsum3",
+      "cumsum4",
+      "cumvar",
+      "cumvarp",
+      "cumwavg",
+      "cumwsum"
+    ],
+    "dolphindb_m_topn": [
+      "mavgTopN",
+      "mbetaTopN",
+      "mcorrTopN",
+      "mcovarTopN",
+      "mcovarpTopN",
+      "mkurtosisTopN",
+      "mpercentileTopN",
+      "mskewTopN",
+      "mstdTopN",
+      "mstdpTopN",
+      "msumTopN",
+      "mvarTopN",
+      "mvarpTopN",
+      "mwsumTopN"
+    ],
+    "dolphindb_tm_topn": [
+      "tmavgTopN",
+      "tmbetaTopN",
+      "tmcorrTopN",
+      "tmcovarTopN",
+      "tmcovarpTopN",
+      "tmkurtosisTopN",
+      "tmskewTopN",
+      "tmstdTopN",
+      "tmstdpTopN",
+      "tmsumTopN",
+      "tmvarTopN",
+      "tmvarpTopN",
+      "tmwsumTopN"
+    ],
+    "dolphindb_cum_topn": [
+      "cumavgTopN",
+      "cumbetaTopN",
+      "cumcorrTopN",
+      "cumcovarTopN",
+      "cumcovarpTopN",
+      "cumkurtosisTopN",
+      "cumskewTopN",
+      "cumstdTopN",
+      "cumstdpTopN",
+      "cumsumTopN",
+      "cumvarTopN",
+      "cumvarpTopN",
+      "cumwsumTopN"
+    ],
+    "dolphindb_talib": [
+      "dema",
+      "ema",
+      "gema",
+      "kama",
+      "linearTimeTrend",
+      "ma",
+      "sma",
+      "t3",
+      "tema",
+      "trima",
+      "wilder",
+      "wma"
+    ],
+    "categories_Cumulative Window": [
+      "cumPositiveStreak",
+      "cumavg",
+      "cumbeta",
+      "cumcorr",
+      "cumcount",
+      "cumcovar",
+      "cumcovarp",
+      "cumfirstNot",
+      "cumlastNot",
+      "cummax",
+      "cummed",
+      "cummin",
+      "cumnunique",
+      "cumpercentile",
+      "cumprod",
+      "cumrank",
+      "cumstd",
+      "cumstdp",
+      "cumsum",
+      "cumsum2",
+      "cumsum3",
+      "cumsum4",
+      "cumvar",
+      "cumvarp",
+      "cumwavg",
+      "cumwsum",
+      "dynamicGroupCumcount",
+      "dynamicGroupCumsum"
+    ],
+    "categories_Moving": [
+      "mLowRange",
+      "mTopRange",
+      "mavg",
+      "mbeta",
+      "mcorr",
+      "mcount",
+      "mcovar",
+      "mcovarp",
+      "mfirst",
+      "mifirstNot",
+      "milastNot",
+      "mimax",
+      "mimin",
+      "mkurtosis",
+      "mlast",
+      "mlastNot",
+      "mmad",
+      "mmax",
+      "mmaxDrawdown",
+      "mmaxPositiveStreak",
+      "mmed",
+      "mmin",
+      "mmse",
+      "movingTopNIndex",
+      "movingWindowIndex",
+      "mpercentile",
+      "mprod",
+      "mrank",
+      "mskew",
+      "mslr",
+      "mstd",
+      "mstdp",
+      "msum",
+      "msum2",
+      "mvar",
+      "mvarp",
+      "mwavg",
+      "mwsum"
+    ],
+    "categories_Time-Based Moving": [
+      "tmLowRange",
+      "tmTopRange",
+      "tmavg",
+      "tmbeta",
+      "tmcorr",
+      "tmcount",
+      "tmcovar",
+      "tmcovarp",
+      "tmfirst",
+      "tmkurtosis",
+      "tmlast",
+      "tmmax",
+      "tmmed",
+      "tmmin",
+      "tmpercentile",
+      "tmprod",
+      "tmrank",
+      "tmskew",
+      "tmstd",
+      "tmstdp",
+      "tmsum",
+      "tmsum2",
+      "tmvar",
+      "tmvarp",
+      "tmwavg",
+      "tmwsum"
+    ],
+    "categories_mTopN": [
+      "mavgTopN",
+      "mbetaTopN",
+      "mcorrTopN",
+      "mcovarTopN",
+      "mcovarpTopN",
+      "mpercentileTopN",
+      "mstdTopN",
+      "mstdpTopN",
+      "msumTopN",
+      "mvarTopN",
+      "mvarpTopN",
+      "mwsumTopN"
+    ],
+    "categories_tmTopN": [
+      "tmavgTopN",
+      "tmbetaTopN",
+      "tmcorrTopN",
+      "tmcovarTopN",
+      "tmcovarpTopN",
+      "tmkurtosisTopN",
+      "tmskewTopN",
+      "tmstdTopN",
+      "tmstdpTopN",
+      "tmsumTopN",
+      "tmvarTopN",
+      "tmvarpTopN",
+      "tmwsumTopN"
+    ],
+    "categories_TA-Lib": [
+      "dema",
+      "ema",
+      "gema",
+      "kama",
+      "linearTimeTrend",
+      "ma",
+      "sma",
+      "t3",
+      "tema",
+      "trima",
+      "wilder",
+      "wma"
+    ]
+  },
+  "notes": [
+    "cum-functions overview prints mprod at one link; canonical name is cumprod, verified by function-page link and categories."
+  ],
+  "scope": "Union of the six official m/tm/cum/TopN themes, categories window lists, TA-Lib moving averages, and five EWM APIs. Higher-order templates and streaming engine APIs are listed separately; all general mathematical, row-vector and plugin functions excluded."
+}

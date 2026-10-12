@@ -1,0 +1,81 @@
+clickhouse_window_api row_number executed rejected
+clickhouse_window_api rank executed rejected
+clickhouse_window_api dense_rank executed rejected
+clickhouse_window_api percent_rank executed rejected
+clickhouse_window_api cume_dist executed rejected
+clickhouse_window_api ntile executed rejected
+clickhouse_window_api first_value executed rejected
+clickhouse_window_api last_value executed rejected
+clickhouse_window_api nth_value executed rejected
+clickhouse_window_api lag rejected rejected
+clickhouse_window_api lead rejected rejected
+clickhouse_window_api lagInFrame rejected rejected
+clickhouse_window_api leadInFrame rejected rejected
+clickhouse_window_api nonNegativeDerivative rejected rejected
+dolphindb_sql_analytic sum executed not_run
+dolphindb_sql_analytic sum2 rejected not_run
+dolphindb_sql_analytic avg executed not_run
+dolphindb_sql_analytic std executed not_run
+dolphindb_sql_analytic stdp executed not_run
+dolphindb_sql_analytic var executed not_run
+dolphindb_sql_analytic varp executed not_run
+dolphindb_sql_analytic count executed not_run
+dolphindb_sql_analytic min executed not_run
+dolphindb_sql_analytic imin rejected not_run
+dolphindb_sql_analytic iminLast rejected not_run
+dolphindb_sql_analytic max executed not_run
+dolphindb_sql_analytic imax rejected not_run
+dolphindb_sql_analytic imaxLast rejected not_run
+dolphindb_sql_analytic skew rejected not_run
+dolphindb_sql_analytic kurtosis rejected not_run
+dolphindb_sql_analytic med executed not_run
+dolphindb_sql_analytic row_number executed not_run
+dolphindb_sql_analytic rank executed not_run
+dolphindb_sql_analytic dense_rank executed not_run
+dolphindb_sql_analytic percent_rank executed not_run
+dolphindb_sql_analytic cume_dist executed not_run
+dolphindb_sql_analytic lead rejected not_run
+dolphindb_sql_analytic lag rejected not_run
+dolphindb_sql_analytic ntile executed not_run
+dolphindb_sql_analytic first_value executed not_run
+dolphindb_sql_analytic last_value executed not_run
+dolphindb_sql_analytic nth_value executed not_run
+dolphindb_sql_analytic firstNot rejected not_run
+dolphindb_sql_analytic lastNot rejected not_run
+dolphindb_sql_analytic prod rejected not_run
+dolphindb_sql_analytic percentile executed not_run
+dolphindb_sql_analytic wavg rejected not_run
+dolphindb_sql_analytic wsum rejected not_run
+dolphindb_sql_analytic corr rejected not_run
+dolphindb_sql_analytic covar rejected not_run
+dolphindb_sql_analytic beta rejected not_run
+dolphindb_sql_analytic atImax rejected not_run
+dolphindb_sql_analytic atImin rejected not_run
+frame rows executed rejected
+frame range_numeric executed rejected
+frame groups rejected rejected
+frame exclude_current_row rejected rejected
+frame exclude_group rejected rejected
+frame exclude_ties rejected rejected
+frame exclude_no_others rejected rejected
+null_semantics FIRST_VALUE(value) IGNORE NULLS rejected rejected
+null_semantics FIRST_VALUE(value) RESPECT NULLS executed rejected
+null_semantics LAST_VALUE(value) IGNORE NULLS rejected rejected
+null_semantics LAST_VALUE(value) RESPECT NULLS executed rejected
+null_semantics NTH_VALUE(value,2) IGNORE NULLS rejected rejected
+null_semantics NTH_VALUE(value,2) RESPECT NULLS executed rejected
+null_semantics LAG(value,1) IGNORE NULLS rejected rejected
+null_semantics LAG(value,1) RESPECT NULLS executed rejected
+syntax named_window executed rejected
+syntax named_window_inheritance executed rejected
+frame datetime_interval executed rejected
+aggregate_semantics count_distinct rejected rejected
+aggregate_semantics filter rejected rejected
+aggregate_semantics arg_max rejected rejected
+aggregate_semantics any_value rejected rejected
+aggregate_semantics group_concat executed rejected
+aggregate_semantics bit_and executed rejected
+aggregate_semantics approx_count executed rejected
+aggregate_semantics median executed rejected
+aggregate_semantics percentile_linear executed rejected
+PROBES 232 {('clickhouse_window_api', 'executed'): 9, ('clickhouse_window_api', 'rejected'): 5, ('dolphindb_sql_analytic', 'executed'): 20, ('dolphindb_sql_analytic', 'rejected'): 19, ('frame', 'executed'): 3, ('frame', 'rejected'): 5, ('null_semantics', 'rejected'): 4, ('null_semantics', 'executed'): 4, ('syntax', 'executed'): 2, ('aggregate_semantics', 'rejected'): 4, ('aggregate_semantics', 'executed'): 5, ('dolphindb_dedicated_api', 'rejected'): 152}

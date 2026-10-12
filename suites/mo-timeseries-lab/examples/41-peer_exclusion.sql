@@ -1,0 +1,5 @@
+WITH scope AS (SELECT * FROM entities WHERE eid>=49 AND eid<61),
+events_visible AS (SELECT e.*,s.region,s.sector,c.weekday,c.offset_min,minute+c.offset_min civil_min FROM events e JOIN scope s ON s.eid=e.eid JOIN calendar c ON c.day=e.day WHERE e.day>=10 AND e.day<78 AND received_min<=28517760),
+ev AS (SELECT *,CAST(magnitude AS DOUBLE) x,ROW_NUMBER() OVER(PARTITION BY eid ORDER BY minute,event_id) rn,LAG(minute) OVER(PARTITION BY eid ORDER BY minute,event_id) prev_min,LAG(kind) OVER(PARTITION BY eid ORDER BY minute,event_id) prev_kind FROM events_visible),
+a AS (SELECT *,SUM(x) OVER(PARTITION BY eid ORDER BY minute RANGE BETWEEN 5760 PRECEDING AND CURRENT ROW) peer_inclusive,SUM(x) OVER(PARTITION BY eid ORDER BY minute GROUPS BETWEEN 4 PRECEDING AND CURRENT ROW EXCLUDE TIES) peer_excluded,SUM(x) OVER(PARTITION BY eid ORDER BY minute RANGE BETWEEN 5760 PRECEDING AND CURRENT ROW EXCLUDE CURRENT ROW) excluding_self FROM ev)
+SELECT eid,minute,event_id,x,rn,peer_inclusive,peer_excluded,excluding_self FROM a WHERE day>=30 ORDER BY eid,minute,event_id;

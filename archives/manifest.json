@@ -249,6 +249,67 @@
         }
       ],
       "catalog_sha256": "7d5a5d57c384f9c2e622e8a568150ff557bd4fe9cac60852902dc8275d766916"
+    },
+    {
+      "archive_name": "matrixone-timeseries-10000.zip",
+      "archive_bytes": 329537771,
+      "archive_sha256": "c75b1ae7b5bde24a192811d18dfadada364ce9514285619fe1fceff29342bc2f",
+      "zip_prefix": "mo-timeseries-lab/",
+      "zip_entries": 157,
+      "uncompressed_bytes": 1113082665,
+      "canonical_cases": 10000,
+      "canonical_statuses": {
+        "pass": 9800,
+        "sql_or_stage_error": 200
+      },
+      "canonical_members": [
+        "mo-timeseries-lab/cases.jsonl"
+      ],
+      "name": "mo-timeseries-lab",
+      "catalog": "catalog/mo-timeseries-lab.jsonl.gz",
+      "catalog_sha256": "e6d4762581659e673ce62239f71a0d97e7edaac66d22ade6d5d8174bb1f6300f",
+      "parts": [
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part000",
+          "bytes": 41943040,
+          "sha256": "f89c5262542f53b8d92ae220d7c5594e8201013b2eaabd1b4d9493b64a82cf5e"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part001",
+          "bytes": 41943040,
+          "sha256": "c73ff56b78e1be7ca0fa9f248775d21a1287906abe23f302856b85b5cc6c1279"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part002",
+          "bytes": 41943040,
+          "sha256": "5dfd15a01e6ca6de8e59318316e4bfe87221e58cd098b853ba5583c2af615b2a"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part003",
+          "bytes": 41943040,
+          "sha256": "85ab91dfa5c9758e6d0223ad75d067324ae0699398d5a5556a1ab2c36f151eac"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part004",
+          "bytes": 41943040,
+          "sha256": "63695bdbca415d1c23dc0fb8d51572addcdb68bf133ddedeb3c9fa1dfd50772a"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part005",
+          "bytes": 41943040,
+          "sha256": "638da4291d19c9da47e138b74d9af4e4e8f575090eac19346a27fa3378027929"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part006",
+          "bytes": 41943040,
+          "sha256": "4250d1a8cc86ea9f004c6fc278d85b814c09eb120685f11d50f41fc58d8b6c71"
+        },
+        {
+          "path": "archives/mo-timeseries-lab/matrixone-timeseries-10000.zip.part007",
+          "bytes": 35936491,
+          "sha256": "11d7851353587de79cdff092c7ae578acc026294b8750677e630d1c101aee4cb"
+        }
+      ]
     }
   ]
 }

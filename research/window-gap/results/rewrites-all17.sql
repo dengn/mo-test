@@ -1,0 +1,31 @@
+WITH raw AS (SELECT * FROM (SELECT 1 point,1 eid,0 tick,CAST(NULL AS DOUBLE) value,CAST(2.0 AS DOUBLE) y,CAST(1.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:00' AS DATETIME) stamp UNION ALL SELECT 2 point,1 eid,0 tick,CAST(2.0 AS DOUBLE) value,CAST(4.0 AS DOUBLE) y,CAST(2.0 AS DOUBLE) weight,0 flag,CAST('2024-01-01 00:00:00' AS DATETIME) stamp UNION ALL SELECT 3 point,1 eid,2 tick,CAST(4.0 AS DOUBLE) value,CAST(3.0 AS DOUBLE) y,CAST(1.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:02' AS DATETIME) stamp UNION ALL SELECT 4 point,1 eid,3 tick,CAST(4.0 AS DOUBLE) value,CAST(7.0 AS DOUBLE) y,CAST(3.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:03' AS DATETIME) stamp UNION ALL SELECT 5 point,1 eid,3 tick,CAST(NULL AS DOUBLE) value,CAST(5.0 AS DOUBLE) y,CAST(2.0 AS DOUBLE) weight,0 flag,CAST('2024-01-01 00:00:03' AS DATETIME) stamp UNION ALL SELECT 6 point,1 eid,7 tick,CAST(-1.0 AS DOUBLE) value,CAST(8.0 AS DOUBLE) y,CAST(1.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:07' AS DATETIME) stamp UNION ALL SELECT 7 point,1 eid,8 tick,CAST(3.0 AS DOUBLE) value,CAST(9.0 AS DOUBLE) y,CAST(2.0 AS DOUBLE) weight,0 flag,CAST('2024-01-01 00:00:08' AS DATETIME) stamp UNION ALL SELECT 8 point,2 eid,0 tick,CAST(1.0 AS DOUBLE) value,CAST(2.0 AS DOUBLE) y,CAST(1.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:00' AS DATETIME) stamp UNION ALL SELECT 9 point,2 eid,2 tick,CAST(NULL AS DOUBLE) value,CAST(3.0 AS DOUBLE) y,CAST(2.0 AS DOUBLE) weight,1 flag,CAST('2024-01-01 00:00:02' AS DATETIME) stamp UNION ALL SELECT 10 point,2 eid,4 tick,CAST(5.0 AS DOUBLE) value,CAST(4.0 AS DOUBLE) y,CAST(1.0 AS DOUBLE) weight,0 flag,CAST('2024-01-01 00:00:04' AS DATETIME) stamp) fixture),
+numbered AS (SELECT *,CAST(ROW_NUMBER() OVER(PARTITION BY eid ORDER BY tick,point) AS BIGINT) ordinal FROM raw),
+frame_rows AS (SELECT a.point,a.eid,a.ordinal,b.ordinal frame_row,b.value,b.y,b.weight FROM numbered a JOIN numbered b ON a.eid=b.eid AND b.ordinal BETWEEN a.ordinal-3 AND a.ordinal),
+summary AS (SELECT point,eid,ordinal,COUNT(value) n,AVG(value) mean_x,AVG(CASE WHEN value IS NOT NULL THEN y ELSE NULL END) mean_y,
+SUM(value*value) sum2,SUM(value*weight) wsum,SUM(CASE WHEN value IS NOT NULL THEN weight ELSE 0 END) weight_sum,
+MIN(value) minimum,MAX(value) maximum,MAX(y) max_y,MIN(y) min_y,
+MIN(CASE WHEN value IS NOT NULL THEN frame_row ELSE NULL END) first_member,MAX(CASE WHEN value IS NOT NULL THEN frame_row ELSE NULL END) last_member,
+SUM(CASE WHEN value=0 THEN 1 ELSE 0 END) zeros,SUM(CASE WHEN value<0 THEN 1 ELSE 0 END) negatives,
+SUM(CASE WHEN value IS NOT NULL AND value<>0 THEN LN(ABS(value)) ELSE 0 END) product_log FROM frame_rows GROUP BY point,eid,ordinal),
+moments AS (SELECT f.point,f.eid,SUM(POWER(f.value-s.mean_x,2)) c2,SUM(POWER(f.value-s.mean_x,3)) c3,SUM(POWER(f.value-s.mean_x,4)) c4,
+SUM((f.value-s.mean_x)*(f.y-s.mean_y)) cxy,SUM(CASE WHEN f.value IS NOT NULL THEN POWER(f.y-s.mean_y,2) ELSE NULL END) cy2,
+MIN(CASE WHEN f.value=s.minimum THEN f.frame_row ELSE NULL END) min_member,MAX(CASE WHEN f.value=s.minimum THEN f.frame_row ELSE NULL END) min_last_member,
+MIN(CASE WHEN f.value=s.maximum THEN f.frame_row ELSE NULL END) max_member,MAX(CASE WHEN f.value=s.maximum THEN f.frame_row ELSE NULL END) max_last_member,
+MIN(CASE WHEN f.y=s.max_y THEN f.frame_row ELSE NULL END) max_y_member,MIN(CASE WHEN f.y=s.min_y THEN f.frame_row ELSE NULL END) min_y_member
+FROM frame_rows f JOIN summary s ON f.point=s.point AND f.eid=s.eid GROUP BY f.point,f.eid),
+result AS (SELECT s.*,m.c2,m.c3,m.c4,m.cxy,m.cy2,m.min_member,m.min_last_member,m.max_member,m.max_last_member,m.max_y_member,m.min_y_member,
+f.value first_nonnull,l.value last_nonnull,ma.value at_max_location,mi.value at_min_location FROM summary s JOIN moments m ON s.eid=m.eid AND s.point=m.point
+LEFT JOIN numbered f ON f.eid=s.eid AND f.ordinal=s.first_member LEFT JOIN numbered l ON l.eid=s.eid AND l.ordinal=s.last_member
+LEFT JOIN numbered ma ON ma.eid=s.eid AND ma.ordinal=m.max_y_member LEFT JOIN numbered mi ON mi.eid=s.eid AND mi.ordinal=m.min_y_member)
+SELECT point,eid,sum2,
+min_member-GREATEST(1,ordinal-3) imin,min_last_member-GREATEST(1,ordinal-3) iminLast,
+max_member-GREATEST(1,ordinal-3) imax,max_last_member-GREATEST(1,ordinal-3) imaxLast,
+CASE WHEN n>0 AND c2>1e-12 THEN c3/n/POWER(c2/n,CAST(1.5 AS DOUBLE)) ELSE NULL END skew,
+CASE WHEN n>0 AND c2>1e-12 THEN c4/n/POWER(c2/n,2) ELSE NULL END kurtosis,
+first_nonnull firstNot,last_nonnull lastNot,
+CASE WHEN n=0 THEN NULL WHEN zeros>0 THEN 0 ELSE EXP(product_log)*CASE WHEN MOD(negatives,2)=0 THEN 1 ELSE -1 END END prod,
+wsum/NULLIF(weight_sum,0) wavg,wsum,
+CASE WHEN c2>1e-12 AND cy2>1e-12 THEN cxy/SQRT(c2*cy2) ELSE NULL END corr,
+CASE WHEN n>1 THEN cxy/(n-1) ELSE NULL END covar,
+CASE WHEN c2>1e-12 THEN cxy/c2 ELSE NULL END beta,
+at_max_location atImax,at_min_location atImin FROM result ORDER BY eid,point;

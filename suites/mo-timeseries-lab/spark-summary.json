@@ -1,0 +1,102 @@
+{
+  "expected": 100,
+  "completed": 100,
+  "counts": {
+    "pass": 100
+  },
+  "sources": [
+    {
+      "table": "entities",
+      "rows": 128,
+      "full_values_verified": true
+    },
+    {
+      "table": "calendar",
+      "rows": 160,
+      "full_values_verified": true
+    },
+    {
+      "table": "measurements",
+      "rows": 63708,
+      "full_values_verified": true
+    },
+    {
+      "table": "trades",
+      "rows": 26982,
+      "full_values_verified": true
+    },
+    {
+      "table": "reversals",
+      "rows": 1420,
+      "full_values_verified": true
+    },
+    {
+      "table": "orders",
+      "rows": 14455,
+      "full_values_verified": true
+    },
+    {
+      "table": "shipments",
+      "rows": 18068,
+      "full_values_verified": true
+    },
+    {
+      "table": "inventory",
+      "rows": 20480,
+      "full_values_verified": true
+    },
+    {
+      "table": "capacity",
+      "rows": 640,
+      "full_values_verified": true
+    },
+    {
+      "table": "weather",
+      "rows": 640,
+      "full_values_verified": true
+    },
+    {
+      "table": "prices",
+      "rows": 800,
+      "full_values_verified": true
+    },
+    {
+      "table": "fx",
+      "rows": 640,
+      "full_values_verified": true
+    },
+    {
+      "table": "targets",
+      "rows": 35,
+      "full_values_verified": true
+    },
+    {
+      "table": "outages",
+      "rows": 384,
+      "full_values_verified": true
+    },
+    {
+      "table": "policies",
+      "rows": 512,
+      "full_values_verified": true
+    },
+    {
+      "table": "interventions",
+      "rows": 560,
+      "full_values_verified": true
+    },
+    {
+      "table": "events",
+      "rows": 25296,
+      "full_values_verified": true
+    },
+    {
+      "table": "edges",
+      "rows": 384,
+      "full_values_verified": true
+    }
+  ],
+  "seconds": 320.84486079216003,
+  "isolation": "READ_COMMITTED",
+  "scope": "Native Spark SQL on all 18 full-content audited JDBC sources; every result cell vs original-data DuckDB; actual Spark JDBC sink readback and cleanup. Supplemental case IDs overlap canonical IDs and are excluded from the 10000 main count."
+}

@@ -2770,5 +2770,659 @@
     "zip_member": "artifact-manifest.json",
     "bytes": 2946374,
     "sha256": "5dff40ac4889c686fb0fb655c8f7e34a4f6168338fc68188693611e5d54283e4"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/README.md",
+    "zip_member": "mo-timeseries-lab/README.md",
+    "bytes": 7259,
+    "sha256": "dc8d948c285927742b5236c0c4ba82c8cc9dd6ff3bdaa032e2369f05478393d1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/boundary-probes.json",
+    "zip_member": "mo-timeseries-lab/boundary-probes.json",
+    "bytes": 225413,
+    "sha256": "7374c5b11de99f8d6d06b77a8919f35712b91a7b4ee0c618f0c33f5741bb8271"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/capability-panic-log-contexts.json",
+    "zip_member": "mo-timeseries-lab/capability-panic-log-contexts.json",
+    "bytes": 215048,
+    "sha256": "a6a325c2351d297407135dadb2209f487aef76c1e70677204c2fcf34ea1df65c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/capture_trace.py",
+    "zip_member": "mo-timeseries-lab/capture_trace.py",
+    "bytes": 2749,
+    "sha256": "249647792f9a8fb0eec935be2715fa4f384cca870c2f752cbf9a77760ec162e4"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/case-index.json",
+    "zip_member": "mo-timeseries-lab/case-index.json",
+    "bytes": 8066409,
+    "sha256": "cbc6d177523e752506597f7efe03d99d67c642205566c0bdc9a7e595b4387c27"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/data.py",
+    "zip_member": "mo-timeseries-lab/data.py",
+    "bytes": 9488,
+    "sha256": "a280fdba87cb51d6a46aa9aafb20ebf41f2ea74d3fa94c83d863a01d164f6709"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/dataset.json",
+    "zip_member": "mo-timeseries-lab/dataset.json",
+    "bytes": 1860,
+    "sha256": "2fa1889779ebff5db434d72c10bf843b18bdf66e65d54df26d5f3ddf68c7f7b4"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/environment.json",
+    "zip_member": "mo-timeseries-lab/environment.json",
+    "bytes": 946,
+    "sha256": "08045b5bb5d164071b22cd4a63873af8013df0ba4b11d7bb27b4c0aa385a7cfe"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/00-revenue_roll.sql",
+    "zip_member": "mo-timeseries-lab/examples/00-revenue_roll.sql",
+    "bytes": 4301,
+    "sha256": "e66e96e1cb632f503592d516c9869caa40a5d0d875cf143ea0c94706cc4aa157"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/01-weighted_service.sql",
+    "zip_member": "mo-timeseries-lab/examples/01-weighted_service.sql",
+    "bytes": 4672,
+    "sha256": "0ca38123cfa4332157b7c10f655012e127df5c49a4a0b8942a58aba3c8feda0d"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/02-causal_alarm.sql",
+    "zip_member": "mo-timeseries-lab/examples/02-causal_alarm.sql",
+    "bytes": 4490,
+    "sha256": "c57426c0a171a5a23b574de06ff6dc196bf439f249a7f40db93200b6cf434e1a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/03-rolling_volatility.sql",
+    "zip_member": "mo-timeseries-lab/examples/03-rolling_volatility.sql",
+    "bytes": 4351,
+    "sha256": "ea1b18910c4ff856d8c1027afa12803b493ff1027e18c27803bbf3f7d8313bd1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/04-local_trend.sql",
+    "zip_member": "mo-timeseries-lab/examples/04-local_trend.sql",
+    "bytes": 4570,
+    "sha256": "e493346a0f2cd4e176d585a89f7ed0951cc7279fad6b40cc0b4f9ddb100ef54f"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/05-lag_forecast.sql",
+    "zip_member": "mo-timeseries-lab/examples/05-lag_forecast.sql",
+    "bytes": 4365,
+    "sha256": "f898504914bf6f0c7ad6b24add1ab9a0633be0e1eeb49f2c3ca39fc31b55dfdc"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/06-weekday_seasonality.sql",
+    "zip_member": "mo-timeseries-lab/examples/06-weekday_seasonality.sql",
+    "bytes": 4480,
+    "sha256": "3cc3967327fc2e38db444ce739580ec99c5dda4d68b2796b4b0c86aae62409c7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/07-drawdown.sql",
+    "zip_member": "mo-timeseries-lab/examples/07-drawdown.sql",
+    "bytes": 4864,
+    "sha256": "6679433a7ec52a0c50fbdaa9042b8b6092e10fa0dd91dfd3be6d83ec4d7e4eac"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/08-change_regime.sql",
+    "zip_member": "mo-timeseries-lab/examples/08-change_regime.sql",
+    "bytes": 5215,
+    "sha256": "1215c2e8635b440a9d8c40f0936990f07cf61b07c51f4031b5e6e791ea751ce0"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/09-outage_islands.sql",
+    "zip_member": "mo-timeseries-lab/examples/09-outage_islands.sql",
+    "bytes": 5202,
+    "sha256": "0e536fab09aba9ce68434ac92a3c07997aea102c161bad789bb72d94c18a3aa7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/10-recovery_censoring.sql",
+    "zip_member": "mo-timeseries-lab/examples/10-recovery_censoring.sql",
+    "bytes": 5427,
+    "sha256": "bd457605d570125e72ffb151e87d5c234c1f5cb465f2c6964c50413b8793fda7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/11-revision_impact.sql",
+    "zip_member": "mo-timeseries-lab/examples/11-revision_impact.sql",
+    "bytes": 4409,
+    "sha256": "06afe1846da658a5665515c7904a00e1ef6a96f3f0f362fc9252c890ddefe832"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/12-watermark_monitor.sql",
+    "zip_member": "mo-timeseries-lab/examples/12-watermark_monitor.sql",
+    "bytes": 4395,
+    "sha256": "5e443d31a1b3c932e1c9cbda4e20dae5b117557684a64e48b2c4ca0f22af75d8"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/13-dense_demand.sql",
+    "zip_member": "mo-timeseries-lab/examples/13-dense_demand.sql",
+    "bytes": 4553,
+    "sha256": "fa09e9e06f7c46e048859127d70c2aa2bd58754b7932f25b6f8dd28b73786bb7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/14-temporal_ranking.sql",
+    "zip_member": "mo-timeseries-lab/examples/14-temporal_ranking.sql",
+    "bytes": 4711,
+    "sha256": "a5d766ab2613cf6b8b16173c7f45b6e12fedf50cc89cf256e559ee2c8144962a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/15-cross_section.sql",
+    "zip_member": "mo-timeseries-lab/examples/15-cross_section.sql",
+    "bytes": 4746,
+    "sha256": "0377bfb71cad02f57b031f1c28f84e254c1335ff8299683b785120247928a0a9"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/16-concentration.sql",
+    "zip_member": "mo-timeseries-lab/examples/16-concentration.sql",
+    "bytes": 4452,
+    "sha256": "c8f1d46f6fb207b6fdd6730455df9455b543d830d6acc14c4ce5c930ae56377c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/17-top_bucket.sql",
+    "zip_member": "mo-timeseries-lab/examples/17-top_bucket.sql",
+    "bytes": 4923,
+    "sha256": "c68132061467e2bc627e83a7ed76e6066cf722aaab69866dcb7459f8a466be69"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/18-multiscale.sql",
+    "zip_member": "mo-timeseries-lab/examples/18-multiscale.sql",
+    "bytes": 4489,
+    "sha256": "f3ae5339d640c0c3579e97c4ab882ee5431d47916a728cf533047e82e73e6703"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/19-shipping_delay.sql",
+    "zip_member": "mo-timeseries-lab/examples/19-shipping_delay.sql",
+    "bytes": 4507,
+    "sha256": "3a56d2aff6d667b558ac93f7d06f082f8e1b87e480e08a57a14d871f6d23965e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/20-stockout.sql",
+    "zip_member": "mo-timeseries-lab/examples/20-stockout.sql",
+    "bytes": 5199,
+    "sha256": "1e92439d8234c54a230304b8524786c603b0c6d0588b931e2fc6b63ddeb3bab3"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/21-future_inventory.sql",
+    "zip_member": "mo-timeseries-lab/examples/21-future_inventory.sql",
+    "bytes": 4297,
+    "sha256": "a72d77a582ed338360a6be52a109b2965e2a94dfcab4121517ea393c1ab48e0e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/22-price_response.sql",
+    "zip_member": "mo-timeseries-lab/examples/22-price_response.sql",
+    "bytes": 4587,
+    "sha256": "8fd09bcf0f4d4b579bdfd05ee550097e9d2f902794b261c0f7ed17d41f0678f1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/23-resource_balance.sql",
+    "zip_member": "mo-timeseries-lab/examples/23-resource_balance.sql",
+    "bytes": 4572,
+    "sha256": "a61842c981d036ce58e2f1d94a72270f84709fadf47d56f899df76e19cdb6a58"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/24-capacity_gaps.sql",
+    "zip_member": "mo-timeseries-lab/examples/24-capacity_gaps.sql",
+    "bytes": 5209,
+    "sha256": "dfe4d1056755c45da5621ef3b2ec5f25e38da0eab0dda9045c26ad41a12e4468"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/25-cash_deficit.sql",
+    "zip_member": "mo-timeseries-lab/examples/25-cash_deficit.sql",
+    "bytes": 4856,
+    "sha256": "f12eddfbcad0a6d3ad827deec728287505f2c8bc0e365065a78dead3336871fd"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/26-inactivity.sql",
+    "zip_member": "mo-timeseries-lab/examples/26-inactivity.sql",
+    "bytes": 5206,
+    "sha256": "a6654f8ab1f3f168d56bffd67f3277863beffa48436835632e38e4cbf98e0b8e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/27-event_funnel_days.sql",
+    "zip_member": "mo-timeseries-lab/examples/27-event_funnel_days.sql",
+    "bytes": 4636,
+    "sha256": "e5d7499acc8efaba10d8a62de2c9c4ad07f6e994014901c076abe097e2c8dd41"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/28-paired_signal.sql",
+    "zip_member": "mo-timeseries-lab/examples/28-paired_signal.sql",
+    "bytes": 4720,
+    "sha256": "22399b94c81f122884b7b8a68b13e5b9300a4f695475c97b15e1cdfa5415b4ec"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/29-network_pressure.sql",
+    "zip_member": "mo-timeseries-lab/examples/29-network_pressure.sql",
+    "bytes": 4898,
+    "sha256": "08faad5a84fae62e03016ff77f503a001c74d361934220c64b71f19a527d3835"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/30-joint_alarm.sql",
+    "zip_member": "mo-timeseries-lab/examples/30-joint_alarm.sql",
+    "bytes": 5230,
+    "sha256": "bef24846ef30055c38a096709712fc4231fbd082c2d4b2a2f9e4f3df3200623a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/31-hierarchical_reconcile.sql",
+    "zip_member": "mo-timeseries-lab/examples/31-hierarchical_reconcile.sql",
+    "bytes": 4505,
+    "sha256": "19966b8c9770e092fe331ee433046c9153394b11dc116e7b5a72c3232b7e36ea"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/32-budget_consumption.sql",
+    "zip_member": "mo-timeseries-lab/examples/32-budget_consumption.sql",
+    "bytes": 4768,
+    "sha256": "b834d4338a4c900b7a2b04e7bb773b80dbe12886534f65c96d9926565b906557"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/33-frame_endpoints.sql",
+    "zip_member": "mo-timeseries-lab/examples/33-frame_endpoints.sql",
+    "bytes": 4526,
+    "sha256": "147931b29ef6c7e63f09b4bc0d8f69fbe411080fbb1479e81bd7d7d509f681cb"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/34-tail_bucket.sql",
+    "zip_member": "mo-timeseries-lab/examples/34-tail_bucket.sql",
+    "bytes": 5039,
+    "sha256": "44f43c795571a2d007be6e8487d88c450c5589b0db7ad9f1c7d57d7509d1ac9e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/35-irregular_frames.sql",
+    "zip_member": "mo-timeseries-lab/examples/35-irregular_frames.sql",
+    "bytes": 1244,
+    "sha256": "66f29f4a76b3ad5dacedb149fb47c397d83a2f5933a01e526f46e797d70cc324"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/36-carry_missing.sql",
+    "zip_member": "mo-timeseries-lab/examples/36-carry_missing.sql",
+    "bytes": 4453,
+    "sha256": "db8e606dc82e945d3ccae04bda401107d995cf8daa6c7ed2585de8dea44fc100"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/37-offset_transition.sql",
+    "zip_member": "mo-timeseries-lab/examples/37-offset_transition.sql",
+    "bytes": 1063,
+    "sha256": "c1d6bc46b601f1f9d0c6f67067bb676906b11781c845ed7142c4eee67eec663d"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/38-event_sessions.sql",
+    "zip_member": "mo-timeseries-lab/examples/38-event_sessions.sql",
+    "bytes": 1830,
+    "sha256": "0ff6c397b1af6f2f2681508bdc76441166bec2595c34842a22c1b367e90b4222"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/39-session_funnel.sql",
+    "zip_member": "mo-timeseries-lab/examples/39-session_funnel.sql",
+    "bytes": 2082,
+    "sha256": "c53b4c822dac2e1adbb10aa8760d649a967b13ea2cd0a8969bfbc8856577d59e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/40-transition_entropy.sql",
+    "zip_member": "mo-timeseries-lab/examples/40-transition_entropy.sql",
+    "bytes": 1269,
+    "sha256": "020db7cc393099f531b0d6fb956744b080fb32d9bcdcc55d8086b703ca897c58"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/41-peer_exclusion.sql",
+    "zip_member": "mo-timeseries-lab/examples/41-peer_exclusion.sql",
+    "bytes": 1063,
+    "sha256": "3e6019b10e9939595d7242bfecb6a708e671adc26396588f56abafc7634d2008"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/42-finite_decay.sql",
+    "zip_member": "mo-timeseries-lab/examples/42-finite_decay.sql",
+    "bytes": 1256,
+    "sha256": "7a2dec1cafd9c929951bca38748f4587c31f404220d90bfe01776c0fb7ee667a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/43-quality_age.sql",
+    "zip_member": "mo-timeseries-lab/examples/43-quality_age.sql",
+    "bytes": 4627,
+    "sha256": "a24a2cee2696e1b3cc20d055e9b16ebf2720dc784b311f04053faa1613061a86"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/44-consecutive_trigger.sql",
+    "zip_member": "mo-timeseries-lab/examples/44-consecutive_trigger.sql",
+    "bytes": 5213,
+    "sha256": "678c226ed97a7b9320ccc16b2d117042a91fabf418f8b1ee0d02ed006c2dea2c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/45-adaptive_memory.sql",
+    "zip_member": "mo-timeseries-lab/examples/45-adaptive_memory.sql",
+    "bytes": 4801,
+    "sha256": "2389a2c48ccf90b3b8900eb447de9515d09aec3915bf3fb7a283e72135d5ae8c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/46-deep_rolling_filter.sql",
+    "zip_member": "mo-timeseries-lab/examples/46-deep_rolling_filter.sql",
+    "bytes": 21306,
+    "sha256": "e5efcd42245b4138bcf99358fcea98c83291758187b6609aace292690dc42d34"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/47-deep_peer_filter.sql",
+    "zip_member": "mo-timeseries-lab/examples/47-deep_peer_filter.sql",
+    "bytes": 23722,
+    "sha256": "c6651e868c78ee7fd6c747e91e344f1e449a25c6eed6e1ea1afae30131166f75"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/48-deep_regime_filter.sql",
+    "zip_member": "mo-timeseries-lab/examples/48-deep_regime_filter.sql",
+    "bytes": 21456,
+    "sha256": "d35fbed708c9ee927db23d308696368c73b8b609f43c58ef4febfe280cdbb743"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/49-materialized_risk.sql",
+    "zip_member": "mo-timeseries-lab/examples/49-materialized_risk.sql",
+    "bytes": 22530,
+    "sha256": "edfe84309c88fb755af6d3a75d98e1c08016246746e14e16c9101a2437d4eaf2"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/examples/most-windows.sql",
+    "zip_member": "mo-timeseries-lab/examples/most-windows.sql",
+    "bytes": 29343,
+    "sha256": "4edd9f1495bfd879ca5273586eb63950f07daaa2fb234a73a56420dd536bfbef"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/finalize.py",
+    "zip_member": "mo-timeseries-lab/finalize.py",
+    "bytes": 8362,
+    "sha256": "78603a2706a706b245f7e71464d57758652ca999a03a35f389224515e939e399"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/guard.py",
+    "zip_member": "mo-timeseries-lab/guard.py",
+    "bytes": 1531,
+    "sha256": "c6bc4304aec1c648dd3b9251b449661ec6a48fe243044198805a87531850a6e1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/calendar.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/calendar.csv.gz",
+    "bytes": 1274,
+    "sha256": "5facb46db852699e7bb563048239ec989a72c4755eb3869f016e418680d59bd2"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/capacity.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/capacity.csv.gz",
+    "bytes": 1788,
+    "sha256": "0e422fb31bc9032c42fc17316446141927b34168abf58b62695345598a2cbb43"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/edges.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/edges.csv.gz",
+    "bytes": 1498,
+    "sha256": "03515b58c8bf8b6704bbb16f812621aaff46ed5fbd86c270c5f9afe3131c84f0"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/entities.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/entities.csv.gz",
+    "bytes": 541,
+    "sha256": "8bb1ab74811c2283fd222beb79a63092073bfdc13ee36fd97c2a40e8282242b1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/events.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/events.csv.gz",
+    "bytes": 251102,
+    "sha256": "83b15cb8dc0dd671a224ec054c9f56ba9d871d798b563cf33f3f9418f326b73b"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/fx.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/fx.csv.gz",
+    "bytes": 5057,
+    "sha256": "6e496532c0ec9c0e179fbd9ebaceb51102d11645bc4ec99dcf9b667d3007bde7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/interventions.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/interventions.csv.gz",
+    "bytes": 1867,
+    "sha256": "a8eab9f8d33788b9965f3e1465daea910a765a55e28e9e33e0cded8069101b4a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/inventory.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/inventory.csv.gz",
+    "bytes": 66570,
+    "sha256": "40ff705804eb1d768304ac14b47519ceece048460114f5f090b04abb5bad222c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/measurements.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/measurements.csv.gz",
+    "bytes": 919763,
+    "sha256": "7e592ef6f18c07cc6b46eb6fc2fda26a4ac55db5f9cf0f9ff532bded336e8b42"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/orders.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/orders.csv.gz",
+    "bytes": 71709,
+    "sha256": "004b2134c6bcf7c45ab7ac58a1cbf0d93422df45f043ec62da66a1ff9ea52499"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/outages.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/outages.csv.gz",
+    "bytes": 3025,
+    "sha256": "f20091706dc279fcb1ad5b7016487bfd20e863665a37f1495b2b8638a7494127"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/policies.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/policies.csv.gz",
+    "bytes": 1670,
+    "sha256": "bcc545ad2602a4e83d8d2e425ac97dbf92f714cd0bce56ff88db970936ed9086"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/prices.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/prices.csv.gz",
+    "bytes": 5487,
+    "sha256": "b94350a6ed65f72c59936f9aaa1c7e8cdca37009d43eabf9012d9959d194dfee"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/reversals.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/reversals.csv.gz",
+    "bytes": 20306,
+    "sha256": "ea8fc2d7b457ae7c4ee1f20b407003be1191ce70e2b0fac81620fa6b75e5ab2c"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/shipments.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/shipments.csv.gz",
+    "bytes": 109526,
+    "sha256": "46d86143f52db2457ff029876de5b4ab8c624bec1486d521d608f543c92f05ef"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/targets.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/targets.csv.gz",
+    "bytes": 173,
+    "sha256": "f47003010f35cde4919ae18594efd368fff8a752b3192fc059991e4a739263a7"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/trades.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/trades.csv.gz",
+    "bytes": 308842,
+    "sha256": "f69090b31a7bb30e458e149ce56c2d8fa81f469a4faa694fbc47aa9fd1de5c0f"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/inputs/weather.csv.gz",
+    "zip_member": "mo-timeseries-lab/inputs/weather.csv.gz",
+    "bytes": 4614,
+    "sha256": "0f94b244281193954e4f709d81a380b7b0ddb84d4cd801845efec00a795ede1f"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/log_review.py",
+    "zip_member": "mo-timeseries-lab/log_review.py",
+    "bytes": 3127,
+    "sha256": "ab89a7cffcc6ec9d77fc8101b727064ecaac6d78c8ad78388d983263755356ff"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/native.py",
+    "zip_member": "mo-timeseries-lab/native.py",
+    "bytes": 11874,
+    "sha256": "fec1f91e4afe4e33931c27cc468e79ea19049c2c7fb8dff2f3490d8be93ed0f4"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/package.py",
+    "zip_member": "mo-timeseries-lab/package.py",
+    "bytes": 2211,
+    "sha256": "98243a307887f6c827ec224a5494d539f5fa385122d0999f5834fc32a064fc38"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/performance-guard.json",
+    "zip_member": "mo-timeseries-lab/performance-guard.json",
+    "bytes": 220,
+    "sha256": "5804d999da19c85fac6a8a13057c4e4e58d5007d71c19d184e7ed081c3a971e0"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/performance.json",
+    "zip_member": "mo-timeseries-lab/performance.json",
+    "bytes": 50849,
+    "sha256": "6daa077e93bfb659928ab53536d07e4261e93b063d30e82bb1a077e9b6730889"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/performance.png",
+    "zip_member": "mo-timeseries-lab/performance.png",
+    "bytes": 125598,
+    "sha256": "7f252f3b61fd6ede26ca6298dfd93c9f40a62c977f8cef14b0960ed98f4cf600"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/performance.py",
+    "zip_member": "mo-timeseries-lab/performance.py",
+    "bytes": 2641,
+    "sha256": "c5266313d95c580993d9c1887276265b7c113e625c194d3afd0e80a71e2bedfc"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/performance.svg",
+    "zip_member": "mo-timeseries-lab/performance.svg",
+    "bytes": 58849,
+    "sha256": "79d0a58e74b637175f47be3a371947e33dace79c407a26838926a5e951130428"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/probes.py",
+    "zip_member": "mo-timeseries-lab/probes.py",
+    "bytes": 2433,
+    "sha256": "e6cbff116b58cef5c945b65fe8d9f5909aea450a7af9634ba2584af72c87e9a1"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/render-validation.json",
+    "zip_member": "mo-timeseries-lab/render-validation.json",
+    "bytes": 791,
+    "sha256": "617a450e443a5645f394c4015ac7423fe39c1b9b490faebdf83bb461176ea4b6"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/render.py",
+    "zip_member": "mo-timeseries-lab/render.py",
+    "bytes": 2923,
+    "sha256": "42a78ae84c0a07f8ac540c946c74a34b55481b993b9090acf017f0b8e2bb0d91"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/report-preview.png",
+    "zip_member": "mo-timeseries-lab/report-preview.png",
+    "bytes": 175736,
+    "sha256": "9c3939439b2e1fc5c915bf2e1b651f00e68d6abb0fb5b29add617f67c4eb47fc"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/report.html",
+    "zip_member": "mo-timeseries-lab/report.html",
+    "bytes": 8249862,
+    "sha256": "884344292d69ad7266dd76f6617ec20bbf92fc6ea5a234111b636d5009b5ec5f"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/report.json",
+    "zip_member": "mo-timeseries-lab/report.json",
+    "bytes": 349735,
+    "sha256": "bbb46f1b64a2431e35b1c1f4897039b518048aedbab4b91879ba1c3eb02f3e6a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/report.py",
+    "zip_member": "mo-timeseries-lab/report.py",
+    "bytes": 8872,
+    "sha256": "5acf758450d465ba9e24d9fa8f9dc342b987b7094f2d2c89e364c1534a797fe4"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/requirements.txt",
+    "zip_member": "mo-timeseries-lab/requirements.txt",
+    "bytes": 139,
+    "sha256": "6531889bcfb90d4f38132e51405831d2499cb9d6f74a2c831fd12c2d8f01f698"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/run.py",
+    "zip_member": "mo-timeseries-lab/run.py",
+    "bytes": 9845,
+    "sha256": "dae33d3e6aed93c6b2e76dfd95fb10efccff31a0107e8a4c4acb1778971f095e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/scenario-catalog.json",
+    "zip_member": "mo-timeseries-lab/scenario-catalog.json",
+    "bytes": 36453,
+    "sha256": "3be5c97668afa0c0f0a8973ef5d6c97274ebc78515950a18f7770e8a1e715695"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/scenarios.py",
+    "zip_member": "mo-timeseries-lab/scenarios.py",
+    "bytes": 29932,
+    "sha256": "048406ecb96a50be1587d5259c840937935980b1218c3702e302abf22054682e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/server-log-review.json",
+    "zip_member": "mo-timeseries-lab/server-log-review.json",
+    "bytes": 8968,
+    "sha256": "fa0467c6798ec51e45619c32cfec43e80512da8b85395c18a27ff4c5342b1293"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/source-audit-before.json",
+    "zip_member": "mo-timeseries-lab/source-audit-before.json",
+    "bytes": 2148,
+    "sha256": "4b288185f2fbcd079e3abe3438e9ee340e6a75f8ab3318b8b5af33b538caa42e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/source-audit-final.json",
+    "zip_member": "mo-timeseries-lab/source-audit-final.json",
+    "bytes": 2148,
+    "sha256": "4b288185f2fbcd079e3abe3438e9ee340e6a75f8ab3318b8b5af33b538caa42e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/source-audit-main-after.json",
+    "zip_member": "mo-timeseries-lab/source-audit-main-after.json",
+    "bytes": 2148,
+    "sha256": "4b288185f2fbcd079e3abe3438e9ee340e6a75f8ab3318b8b5af33b538caa42e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/spark-guard.json",
+    "zip_member": "mo-timeseries-lab/spark-guard.json",
+    "bytes": 216,
+    "sha256": "26766fb2223d355a27fabfbece080502dd6ce61ad07301e763fbec4ecb0c098a"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/spark-session-physical-plan.txt",
+    "zip_member": "mo-timeseries-lab/spark-session-physical-plan.txt",
+    "bytes": 37938,
+    "sha256": "838989e3e23a33e25ab6195717b0a4dc32ebcb81ac80e1e35f6a98ecedab6f5e"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/spark-summary.json",
+    "zip_member": "mo-timeseries-lab/spark-summary.json",
+    "bytes": 2109,
+    "sha256": "07102424cb6ed78b1c978bda93cb44a4365412b344f4ba5dcd8cfb58f7879055"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/spark.py",
+    "zip_member": "mo-timeseries-lab/spark.py",
+    "bytes": 4992,
+    "sha256": "a52fe04e219e6801353d02aeba6eabe5b5f8a9ba2579abc3030d33ed661cebcd"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/statement-info-columns.json",
+    "zip_member": "mo-timeseries-lab/statement-info-columns.json",
+    "bytes": 418,
+    "sha256": "f461fda032dd642fc22e7f3860f413afaece66d00d4a3d00af75a62a23d8a0f5"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/telemetry-analysis.json",
+    "zip_member": "mo-timeseries-lab/telemetry-analysis.json",
+    "bytes": 1119,
+    "sha256": "8e90f669d6e67c3f5f251917b6f47313374acbccb64f33fee3511225c5973a40"
+  },
+  {
+    "path": "suites/mo-timeseries-lab/artifact-manifest.json",
+    "zip_member": "mo-timeseries-lab/artifact-manifest.json",
+    "bytes": 23670,
+    "sha256": "9fbec04beb17c0549f3584b8b58a42be7e3fbe34a60679996609f89188144711"
   }
 ]

@@ -1,0 +1,205 @@
+[
+  {
+    "function": "MEDIAN(value)",
+    "sql": "SELECT point,MEDIAN(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        1.5
+      ],
+      [
+        3.0,
+        2.0
+      ],
+      [
+        4.0,
+        3.0
+      ]
+    ]
+  },
+  {
+    "function": "PERCENTILE_CONT(value,0.3)",
+    "sql": "SELECT point,PERCENTILE_CONT(value,0.3) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 35 near \",0.3) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "PERCENTILE_CONT(0.3) WITHIN GROUP(ORDER BY value)",
+    "sql": "SELECT point,PERCENTILE_CONT(0.3) WITHIN GROUP(ORDER BY value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        1.3
+      ],
+      [
+        3.0,
+        1.6
+      ],
+      [
+        4.0,
+        2.6
+      ]
+    ]
+  },
+  {
+    "function": "PERCENTILE_DISC(value,0.3)",
+    "sql": "SELECT point,PERCENTILE_DISC(value,0.3) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 35 near \",0.3) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "COUNT(DISTINCT value)",
+    "sql": "SELECT point,COUNT(DISTINCT value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(20102, 'DISTINCT in window function is not yet implemented')"
+  },
+  {
+    "function": "MAX_BY(value,y,point)",
+    "sql": "SELECT point,MAX_BY(value,y,point) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 39 near \" OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "VAR_SAMP(value)",
+    "sql": "SELECT point,VAR_SAMP(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1.0,
+        NaN
+      ],
+      [
+        2.0,
+        0.5
+      ],
+      [
+        3.0,
+        2.333333333333333
+      ],
+      [
+        4.0,
+        2.0
+      ]
+    ]
+  },
+  {
+    "function": "STDDEV_SAMP(value)",
+    "sql": "SELECT point,STDDEV_SAMP(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1.0,
+        NaN
+      ],
+      [
+        2.0,
+        0.7071067811865476
+      ],
+      [
+        3.0,
+        1.5275252316519465
+      ],
+      [
+        4.0,
+        1.4142135623730951
+      ]
+    ]
+  },
+  {
+    "function": "CORR(value,y)",
+    "sql": "SELECT point,CORR(value,y) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 31 near \" OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "COVAR_POP(value,y)",
+    "sql": "SELECT point,COVAR_POP(value,y) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 36 near \" OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "SUM(value)",
+    "sql": "SELECT point,SUM(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        3.0
+      ],
+      [
+        3.0,
+        7.0
+      ],
+      [
+        4.0,
+        6.0
+      ]
+    ]
+  },
+  {
+    "function": "ANY_VALUE(value)",
+    "sql": "SELECT point,ANY_VALUE(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "rejected",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 34 near \" OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point\";')"
+  },
+  {
+    "function": "BIT_AND(CAST(value AS BIGINT))",
+    "sql": "SELECT point,BIT_AND(CAST(value AS BIGINT)) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ]
+    ]
+  },
+  {
+    "function": "GROUP_CONCAT(value)",
+    "sql": "SELECT point,GROUP_CONCAT(value) OVER(ORDER BY point ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) r FROM (SELECT 1 point,CAST(1 AS DOUBLE) value,CAST(2 AS DOUBLE) y UNION ALL SELECT 2,2,4 UNION ALL SELECT 3,4,3 UNION ALL SELECT 4,NULL,7) fixture ORDER BY point",
+    "status": "executed",
+    "values": [
+      [
+        1,
+        "1"
+      ],
+      [
+        2,
+        "1,2"
+      ],
+      [
+        3,
+        "1,2,4"
+      ],
+      [
+        4,
+        "2,4"
+      ]
+    ]
+  }
+]

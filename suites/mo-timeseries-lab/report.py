@@ -1,0 +1,35 @@
+"""Standalone report, complete searchable case index and a scientific perf figure."""
+import base64,html,json,os
+from pathlib import Path
+import numpy as np
+from data import ROOT
+def main():
+ j=json.loads((ROOT/'report.json').read_text());idx=json.loads((ROOT/'case-index.json').read_text());perf=j['performance']['summary'];os.environ['MPLCONFIGDIR']=str(ROOT/'mpl-cache')
+ import matplotlib;matplotlib.use('Agg')
+ import matplotlib.pyplot as plt
+ fig,axes=plt.subplots(1,2,figsize=(11,4),layout='constrained')
+ for client,color in [('pymysql_numpy','#2765a5'),('pandas_sqlalchemy','#de763a')]:
+  data=sorted([r for r in perf if r['client']==client],key=lambda r:r['concurrency']);x=[r['concurrency'] for r in data];axes[0].plot(x,[r['queries_per_second'] for r in data],'-o',label=client,color=color);axes[1].plot(x,[r['p95_ms'] for r in data],'-o',label=client,color=color)
+ for ax in axes:ax.set_xlabel('Concurrent clients');ax.set_xticks([1,2,4,8]);ax.grid(alpha=.25);ax.legend(fontsize=8)
+ axes[0].set_ylabel('Queries / batch wall second');axes[1].set_ylabel('P95 query + fetch (ms)');fig.suptitle('Isolated mixed time-series SQL observations — 4 CPU / 16 GiB; 30 reads per point')
+ fig.savefig(ROOT/'performance.png',dpi=170);fig.savefig(ROOT/'performance.svg');plt.close(fig)
+ family=''.join('<tr><td>'+str(r['family'])+'</td><td>'+html.escape(r['title'])+'</td><td>'+str(r['counts'].get('pass',0))+'</td><td>'+str(200-r['counts'].get('pass',0))+'</td><td>'+html.escape(r['question'])+'</td></tr>' for r in j['by_family'])
+ pic=base64.b64encode((ROOT/'performance.png').read_bytes()).decode();embedded=json.dumps(idx,ensure_ascii=False,separators=(',',':')).replace('<','\u003c')
+ page=f'''<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MO 10000 复杂时序窗口测试</title>
+<style>body{{font:16px/1.65 system-ui;color:#162b3d;background:#f4f7fb;margin:0;overflow-wrap:anywhere}}main{{max-width:1240px;margin:auto;padding:24px;min-width:0}}h1{{line-height:1.25}}.cards{{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}}.card{{padding:18px;background:white;border:1px solid #dbe4ed;border-radius:12px}}strong{{font-size:28px}}table{{border-collapse:collapse;width:100%;background:white}}td,th{{text-align:left;padding:12px;border-bottom:1px solid #e0e6ec}}.scroll{{overflow:auto;min-width:0}}input,select{{padding:10px;margin:4px;max-width:95%}}img{{max-width:100%;height:auto}}pre{{white-space:pre-wrap;background:white;padding:16px}}</style><main>
+<h1>10,000 个复杂时序窗口分析 case</h1><p>50 类需求 × 200 配置 · 实际 MO / pandas / NumPy · 二进制 23d8f612</p>
+<div class="cards"><div class="card">完整主批次<br><strong>10,000</strong></div><div class="card">通过<br><strong>9,800</strong></div><div class="card">GROUPS/EXCLUDE 需求被拒绝<br><strong>200</strong></div><div class="card">Spark 原生补测<br><strong>100 / 100</strong></div></div>
+<p>源表 18 张、175,292 行；每个主 case 都实际发起 MO 查询。49 类需求各 200 配置通过，一类同伴排除需求因高级框架不支持被拒绝。每条 SQL 唯一；查询、窗口个数、输出行和阶段步骤不增加 case 数。</p>
+<p>最长组合包含 <b>{j['complexity']['max_ctes']} CTE、{j['complexity']['max_windows']} 个窗口、{j['complexity']['max_joins']} 个 JOIN</b>；最大 SQL {j['complexity']['max_sql_bytes']:,} 字节。核对完整结果 {j['verified_output_rows']:,} 行；所有声明离散/时间字段额外精确复核 {j['exact_discrete_time_audit']['exact_integer_time_cells']:,} 个单元格。</p>
+<p><a href="README.md">重跑与方法说明</a> · <a href="report.json">完整统计</a> · <a href="scenario-catalog.json">需求目录</a> · <a href="examples/most-windows.sql">147 窗口实例</a> · <a href="boundary-probes.json">64 边界探针</a></p>
+<h2>每个 case 的验收</h2><p>独立原始数据 DuckDB 对照全量输出；200 组 18 表事实另由原始 pandas join 重建并核对 MO，200 组不规则事件也完整核对。22 类 × 12 配置另有原生 NumPy 窗口/深层反馈算法核验（部分列或最终 score），其他 336 条 native 记录仅为基础事实复核。连续结果使用 rtol=atol=1e-7，声明离散和时间字段最终精确比较。</p>
+<p>200 个物化流程写回真实分析结果、执行服务端二次窗口并读回，100 提交 / 100 回滚，跨连接可见性及清理通过；共 {j['publication']['rows']:,} 行。Spark 全内容核验 JDBC 导入的 18 源表，执行 100 个原生窗口程序及实际 JDBC sink 读回；其 ID 与主批次重叠，另计。</p>
+<h2>稳定性及观察边界</h2><p>主批次耗时 {j['canonical']['seconds']/60:.2f} 分钟，{j['stability']['health_samples']} 次健康探测，错误 {j['stability']['health_errors']}；同一服务 PID 1384 存活，源表最终完整哈希一致，七张私有表为空。OOM/OOM kill 增量为 0。cgroup max 增量为 {j['stability']['cgroup_memory_event_delta']['max']:,}，表明窗口内有内存限额压力/回收；不能写成没有内存压力。</p>
+<p>同步能力研究的小型 LAG/LEAD 显式无类型 NULL 默认参数探针返回恢复型查询 panic，单独收敛并记录；服务未因此退出。后台 statement_info 容量和旧 ETL 上传重试另见 server-log-review.json。主批次 200 失败来自逐 case 原始记录，不把日志条数当请求数。</p>
+<p>这是固定 received-time 快照下的回顾分析；修订到达时间可以晚于历史事件日。基线排除当前行不证明完整 point-in-time 训练特征无泄漏。显式未来窗口只用于描述分析。先前 20 天历史铺垫不足较长 frame 时，保留 SQL 的部分框架语义。合成偏移变化不代表全 IANA 时区实现。</p>
+<h2>隔离性能观察</h2><p>主批次、Spark 和研究客户端结束后，240 次额外读全部正确。两个客户端、4 并发档、每档 3 次平衡顺序批次，共 30 查询。图为 SQL 生成/query/fetch 和批次 wall 时间；参考验证在计时批次结束后进行，连接/线程开销计入批次吞吐。兼容性批次耗时包含参照端及研究重叠，不能当纯 MO SQL QPS。本次没有 ClickHouse/DolphinDB 性能对照。</p><img src="data:image/png;base64,{pic}" alt="时序 SQL 隔离吞吐与 P95 延迟">
+<h2>50 类时序需求</h2><div class="scroll"><table><thead><tr><th>编号</th><th>需求</th><th>通过</th><th>失败</th><th>问题</th></tr></thead><tbody>{family}</tbody></table></div>
+<h2>全部 10,000 条索引</h2><p><input id="id" type="number" placeholder="case_id 0–9999" aria-label="case ID"><select id="status" aria-label="状态"><option value="">全部状态</option><option value="pass">通过</option><option value="sql_or_stage_error">失败</option></select><select id="family" aria-label="需求类别"><option value="">全部需求</option>{''.join('<option value="'+str(r['family'])+'">'+str(r['family'])+' '+html.escape(r['title'])+'</option>' for r in j['by_family'])}</select><select id="client" aria-label="客户端"><option value="">全部客户端</option><option value="pymysql_numpy">NumPy/PyMySQL</option><option value="pandas_sqlalchemy">pandas/SQLAlchemy</option></select><span id="count"></span></p><div class="scroll"><table><thead><tr><th>ID</th><th>需求</th><th>客户端</th><th>状态</th><th>窗口/CTE</th><th>行</th><th>查询 ms</th></tr></thead><tbody id="cases"></tbody></table></div><p>最多显示 100 条匹配，筛选数量对全部索引计算。完整 SQL 和 expected/actual 输出在原始 cases.jsonl 中；错误组不压缩成只有一个代表。</p></main>
+<script>const data={embedded};function update(){{const raw=document.querySelector('#id').value;const id=raw===''?null:Math.floor(Number(raw));const status=document.querySelector('#status').value;const fam=document.querySelector('#family').value;const client=document.querySelector('#client').value;const rows=data.filter(r=>(id===null||r.case_id===id)&&(!status||r.status===status)&&(fam===''||r.family===Number(fam))&&(!client||r.client===client));document.querySelector('#count').textContent=rows.length+' / '+data.length;const body=document.querySelector('#cases');body.replaceChildren();for(const r of rows.slice(0,100)){{const tr=document.createElement('tr');for(const value of [r.case_id,r.name,r.client,r.status,r.complexity.windows+'/'+r.complexity.ctes,r.rows,r.query_ms.toFixed(2)]){{const td=document.createElement('td');td.textContent=value;tr.append(td)}}body.append(tr)}}}}for(const e of document.querySelectorAll('input,select'))e.addEventListener('input',update);update();</script></html>'''
+ (ROOT/'report.html').write_text(page);print('Standalone HTML',len(page.encode()),'all IDs',len(idx))
+if __name__=='__main__':main()
