@@ -1,0 +1,10 @@
+{
+  "cause": "Test LOG config omitted its root hakeeper-client override and used default 32001, causing a conflicting heartbeat to the earlier test cluster.",
+  "classification": "harness_setup_error_not_gis_bug",
+  "corrected_discovery_address": "127.0.0.1:33001",
+  "new_process_stopped": 423772,
+  "old_instance_restart": "failed: conflicting heartbeat is also encountered during Raft WAL replay",
+  "old_data_action": "original /workspace/mo-stress/data preserved without modification or deletion",
+  "active_gis_instance": "independent current-main cluster on 6011, correct discovery 33001",
+  "current_test_baseline_log_offset": 177713
+}

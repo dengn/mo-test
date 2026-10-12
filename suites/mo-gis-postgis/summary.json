@@ -1,0 +1,54 @@
+{
+  "total_differential_cases": 13925,
+  "raw_counts": {
+    "results.jsonl": {
+      "pass": 13207,
+      "candidate_difference": 53,
+      "mo_execution_error": 19,
+      "reference_rejected": 1,
+      "documented_semantic_difference": 6,
+      "pass_mo_extension": 500,
+      "pass_expected_rejection": 11,
+      "verified_feature_gap": 14,
+      "rejection_difference": 2,
+      "feature_probe_review": 2
+    },
+    "supplement-results.jsonl": {
+      "pass": 56,
+      "mo_execution_error": 23,
+      "pass_mo_extension": 20,
+      "candidate_difference": 3,
+      "verified_feature_gap": 8
+    }
+  },
+  "review_counts": {
+    "pass": 13263,
+    "empty_point_nan_encoding_difference": 4,
+    "empty_geometry_semantic_difference": 34,
+    "compound_validity_feature_gap": 16,
+    "confirmed_mo_defect": 10,
+    "mysql_compatible_numeric_validity_policy": 2,
+    "mysql_compatible_simplicity_difference": 2,
+    "numeric_robustness_candidate_not_counted_confirmed": 2,
+    "api_dialect_difference": 1,
+    "sphere_vs_ellipsoid_semantics": 6,
+    "pass_mo_extension": 520,
+    "pass_expected_rejection": 11,
+    "feature_gap": 22,
+    "finite_coordinate_admission_policy": 1,
+    "collection_depth_budget": 2,
+    "configurable_vertex_budget": 1,
+    "invalid_reference_probe_corrected_in_supplement": 2,
+    "geometry32_overload_gap": 21,
+    "reference_side_spherical_area_anomaly": 3,
+    "documented_geodetic_topology_domain_limit": 2
+  },
+  "confirmed_mo_defect_groups": 3,
+  "findings_cases": {
+    "MO-GIS-002": 2,
+    "MO-GIS-001": 7,
+    "MO-GIS-003": 1,
+    "PG-GIS-001": 3
+  },
+  "unclassified": 0
+}

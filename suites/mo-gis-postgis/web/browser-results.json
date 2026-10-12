@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "engine": "mo",
+      "status": "pass",
+      "count": 3,
+      "ids": [
+        1,
+        2,
+        3
+      ],
+      "types": [
+        "Point",
+        "Point",
+        "Point"
+      ],
+      "extent": [
+        12957254.769864665,
+        3662655.1833045874,
+        13522423.824622115,
+        4852727.205856524
+      ],
+      "canvasCount": 1,
+      "textStatus": "mo: 3 features"
+    },
+    {
+      "engine": "pg",
+      "status": "pass",
+      "count": 3,
+      "ids": [
+        1,
+        2,
+        3
+      ],
+      "types": [
+        "Point",
+        "Point",
+        "Point"
+      ],
+      "extent": [
+        12957254.769864665,
+        3662655.1833045874,
+        13522423.824622115,
+        4852727.205856524
+      ],
+      "canvasCount": 1,
+      "textStatus": "pg: 3 features"
+    }
+  ],
+  "pageErrors": []
+}

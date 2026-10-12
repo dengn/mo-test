@@ -1,0 +1,75 @@
+[
+  {
+    "engine": "mo",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "sql": "select st_issimple(st_geomfromtext('POLYGON((0 0,0.000000001 0,0.000000001 0.000000001,0 0.000000001,0 0))',0))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "POLYGON((0 0,1 0,1 1))"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_issimple(st_geomfromtext('POLYGON((0 0,0.000000001 0,0.000000001 0.000000001,0 0.000000001,0 0))',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "type": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  }
+]

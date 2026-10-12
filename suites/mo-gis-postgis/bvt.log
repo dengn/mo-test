@@ -1,0 +1,88 @@
+The meta data of the resultset will be ignored when comparing the resut
+The path of the cases that need to be executed by mo-tester  : /workspace/matrixone-gis-latest/test/distributed/cases/geo
+Script files in the path which name contain one of the : {/workspace/matrixone-gis-latest/test/distributed/resources} will be not executed
+tee: /workspace/mo-gis-postgis/mo-tester/log/run.log: No such file or directory
+This test will be only run for 1 times
+2026-10-12 11:08:13 INFO  Tester:113 - The path is: /workspace/matrixone-gis-latest/test/distributed/cases/geo
+2026-10-12 11:08:13 INFO  Tester:114 - The resource path is: /workspace/matrixone-gis-latest/test/distributed/resources
+2026-10-12 11:08:13 INFO  Tester:214 - Now start to clean up databases and outfiles.
+2026-10-12 11:08:14 INFO  Tester:180 - The method is [run],now start to run the scripts in the path[/workspace/matrixone-gis-latest/test/distributed/cases/geo].
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_antimeridian.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:14 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_antimeridian.sql] has been executed, and cost: 0.322s, total:27, success:27, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_buffer.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:14 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_buffer.sql] has been executed, and cost: 0.05s, total:7, success:7, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_construct.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:14 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_construct.sql] has been executed, and cost: 0.092s, total:15, success:15, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_constructors.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:14 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_constructors.sql] has been executed, and cost: 0.048s, total:17, success:17, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_discrete.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:14 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_discrete.sql] has been executed, and cost: 0.087s, total:12, success:12, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:14 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_binary.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:15 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_binary.sql] has been executed, and cost: 0.134s, total:28, success:28, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:15 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_unary.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:15 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_unary.sql] has been executed, and cost: 0.079s, total:39, success:39, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:15 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geodetic.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:15 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geodetic.sql] has been executed, and cost: 0.241s, total:93, success:93, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:15 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geohash.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:15 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geohash.sql] has been executed, and cost: 0.152s, total:43, success:43, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:15 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geojson.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:15 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geojson.sql] has been executed, and cost: 0.225s, total:37, success:37, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:15 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geometry32.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geometry32.sql] has been executed, and cost: 0.29s, total:47, success:47, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_io.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_io.sql] has been executed, and cost: 0.053s, total:26, success:26, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_lineref.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_lineref.sql] has been executed, and cost: 0.109s, total:32, success:32, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_load.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_load.sql] has been executed, and cost: 0.296s, total:26, success:26, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_mbr.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_mbr.sql] has been executed, and cost: 0.199s, total:15, success:15, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_misc.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:16 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_misc.sql] has been executed, and cost: 0.035s, total:10, success:10, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:16 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_overlay.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:17 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_overlay.sql] has been executed, and cost: 0.044s, total:11, success:11, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:17 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:17 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes.sql] has been executed, and cost: 0.224s, total:20, success:20, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:17 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes2.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:17 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes2.sql] has been executed, and cost: 0.077s, total:17, success:17, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:17 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes3.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:17 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes3.sql] has been executed, and cost: 0.107s, total:14, success:14, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:17 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_s2h3.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:17 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_s2h3.sql] has been executed, and cost: 0.276s, total:60, success:60, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:17 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_srid.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:18 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_srid.sql] has been executed, and cost: 0.419s, total:101, success:101, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:18 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_stpoint.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:18 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_stpoint.sql] has been executed, and cost: 0.17s, total:29, success:29, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:18 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_type_ddl.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:18 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_type_ddl.sql] has been executed, and cost: 0.337s, total:41, success:41, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:18 INFO  Executor:87 - Start to execute the script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_validity.sql] now, and it will take a few moment,pleas wait......
+2026-10-12 11:08:18 INFO  Executor:365 - The script file[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_validity.sql] has been executed, and cost: 0.127s, total:28, success:28, failed:0, ignored:0, abnoraml:0
+2026-10-12 11:08:18 INFO  Tester:182 - All the scripts in the path[/workspace/matrixone-gis-latest/test/distributed/cases/geo] have been excuted.Now start to create the test report.
+2026-10-12 11:08:18 INFO  TestReport:73 - [SUMMARY] COST : 0s, TOTAL :795, SUCCESS : 795, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_antimeridian.sql] COST : 0.322s, TOTAL :27, SUCCESS :27, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_buffer.sql] COST : 0.05s, TOTAL :7, SUCCESS :7, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_construct.sql] COST : 0.092s, TOTAL :15, SUCCESS :15, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_constructors.sql] COST : 0.048s, TOTAL :17, SUCCESS :17, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_discrete.sql] COST : 0.087s, TOTAL :12, SUCCESS :12, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_binary.sql] COST : 0.134s, TOTAL :28, SUCCESS :28, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_unary.sql] COST : 0.079s, TOTAL :39, SUCCESS :39, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geodetic.sql] COST : 0.241s, TOTAL :93, SUCCESS :93, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geohash.sql] COST : 0.152s, TOTAL :43, SUCCESS :43, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geojson.sql] COST : 0.225s, TOTAL :37, SUCCESS :37, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geometry32.sql] COST : 0.29s, TOTAL :47, SUCCESS :47, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_io.sql] COST : 0.053s, TOTAL :26, SUCCESS :26, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_lineref.sql] COST : 0.109s, TOTAL :32, SUCCESS :32, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_load.sql] COST : 0.296s, TOTAL :26, SUCCESS :26, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_mbr.sql] COST : 0.199s, TOTAL :15, SUCCESS :15, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_misc.sql] COST : 0.035s, TOTAL :10, SUCCESS :10, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_overlay.sql] COST : 0.044s, TOTAL :11, SUCCESS :11, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes.sql] COST : 0.224s, TOTAL :20, SUCCESS :20, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes2.sql] COST : 0.077s, TOTAL :17, SUCCESS :17, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes3.sql] COST : 0.107s, TOTAL :14, SUCCESS :14, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_s2h3.sql] COST : 0.276s, TOTAL :60, SUCCESS :60, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_srid.sql] COST : 0.419s, TOTAL :101, SUCCESS :101, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_stpoint.sql] COST : 0.17s, TOTAL :29, SUCCESS :29, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_type_ddl.sql] COST : 0.337s, TOTAL :41, SUCCESS :41, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  TestReport:78 - [/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_validity.sql] COST : 0.127s, TOTAL :28, SUCCESS :28, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+2026-10-12 11:08:18 INFO  Tester:184 - The test report has been generated in files[report.txt,report.xml].
+2026-10-12 11:08:18 INFO  Tester:194 - The execution success rate is 100%, and not less than config value 100%,this test succeed.

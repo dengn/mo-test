@@ -1,0 +1,16 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting Django<5.3,>=5.2
+  Downloading django-5.2.18-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref>=3.8.1 (from Django<5.3,>=5.2)
+  Downloading asgiref-3.12.1-py3-none-any.whl.metadata (9.4 kB)
+Collecting sqlparse>=0.3.1 (from Django<5.3,>=5.2)
+  Downloading sqlparse-0.6.0-py3-none-any.whl.metadata (6.0 kB)
+Downloading django-5.2.18-py3-none-any.whl (8.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 33.4 MB/s eta 0:00:00
+Downloading asgiref-3.12.1-py3-none-any.whl (25 kB)
+Downloading sqlparse-0.6.0-py3-none-any.whl (50 kB)
+Installing collected packages: sqlparse, asgiref, Django
+Successfully installed Django-5.2.18 asgiref-3.12.1 sqlparse-0.6.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

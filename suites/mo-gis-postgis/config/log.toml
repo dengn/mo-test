@@ -1,0 +1,38 @@
+service-type = "LOG"
+data-dir = "/workspace/mo-gis-postgis/data"
+
+[log]
+level = "warn"
+
+[observability]
+disable-metric = true
+disable-trace = true
+status-port = 7011
+
+[logservice]
+uuid = "cccc1111-1111-4111-8111-111111111111"
+deployment-id = 20261012
+raft-port = 33000
+logservice-port = 33001
+gossip-port = 33002
+gossip-seed-addresses = ["127.0.0.1:33002"]
+
+[logservice.BootstrapConfig]
+bootstrap-cluster = true
+num-of-log-shards = 1
+num-of-tn-shards = 1
+num-of-log-shard-replicas = 1
+init-hakeeper-members = ["131072:cccc1111-1111-4111-8111-111111111111"]
+
+[[fileservice]]
+name = "LOCAL"
+backend = "DISK-V2"
+data-dir = "/workspace/mo-gis-postgis/data/local2"
+
+[[fileservice]]
+name = "SHARED"
+backend = "DISK-V2"
+data-dir = "/workspace/mo-gis-postgis/data/shared2"
+
+[hakeeper-client]
+service-addresses = ["127.0.0.1:33001"]

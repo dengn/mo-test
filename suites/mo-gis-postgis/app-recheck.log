@@ -1,0 +1,2 @@
+nearby_recheck_with_stable_round12_ties error 2.97 {'type': 'UndefinedColumn', 'code': 'column "d" does not exist\nLINE 1: ...(g,st_point(0,0)) as d from places order by round(d,12),id l...\n                                                            
+geojson_exchange_recheck_with_geometry_comparison pass 2.0 

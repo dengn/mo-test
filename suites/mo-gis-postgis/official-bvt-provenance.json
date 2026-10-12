@@ -1,0 +1,9 @@
+{
+  "matrixone_commit": "f1fc3f944e0835af83115675ea18c950be2c2937",
+  "mo_tester_commit": "309a0ca650e0c55e90292767fd61e4976818d66d",
+  "fixtures": "official-bvt-fixtures.tar.gz",
+  "geo_command": "bash run.sh -n -p /workspace/matrixone-gis-latest/test/distributed/cases/geo -s /workspace/matrixone-gis-latest/test/distributed/resources",
+  "legacy_command": "bash run.sh -n -p /workspace/matrixone-gis-latest/test/distributed/cases/function/func_geometry.test -s /workspace/matrixone-gis-latest/test/distributed/resources",
+  "metadata_comparison": false,
+  "golden_regenerated": false
+}

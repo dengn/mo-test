@@ -1,0 +1,26 @@
+[SUMMARY] COST : 0s, TOTAL :795, SUCCESS : 795, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_antimeridian.sql] COST : 0.322s, TOTAL :27, SUCCESS :27, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_buffer.sql] COST : 0.05s, TOTAL :7, SUCCESS :7, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_construct.sql] COST : 0.092s, TOTAL :15, SUCCESS :15, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_constructors.sql] COST : 0.048s, TOTAL :17, SUCCESS :17, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_discrete.sql] COST : 0.087s, TOTAL :12, SUCCESS :12, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_binary.sql] COST : 0.134s, TOTAL :28, SUCCESS :28, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_functions_unary.sql] COST : 0.079s, TOTAL :39, SUCCESS :39, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geodetic.sql] COST : 0.241s, TOTAL :93, SUCCESS :93, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geohash.sql] COST : 0.152s, TOTAL :43, SUCCESS :43, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geojson.sql] COST : 0.225s, TOTAL :37, SUCCESS :37, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_geometry32.sql] COST : 0.29s, TOTAL :47, SUCCESS :47, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_io.sql] COST : 0.053s, TOTAL :26, SUCCESS :26, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_lineref.sql] COST : 0.109s, TOTAL :32, SUCCESS :32, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_load.sql] COST : 0.296s, TOTAL :26, SUCCESS :26, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_mbr.sql] COST : 0.199s, TOTAL :15, SUCCESS :15, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_misc.sql] COST : 0.035s, TOTAL :10, SUCCESS :10, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_overlay.sql] COST : 0.044s, TOTAL :11, SUCCESS :11, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes.sql] COST : 0.224s, TOTAL :20, SUCCESS :20, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes2.sql] COST : 0.077s, TOTAL :17, SUCCESS :17, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_review_fixes3.sql] COST : 0.107s, TOTAL :14, SUCCESS :14, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_s2h3.sql] COST : 0.276s, TOTAL :60, SUCCESS :60, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_srid.sql] COST : 0.419s, TOTAL :101, SUCCESS :101, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_stpoint.sql] COST : 0.17s, TOTAL :29, SUCCESS :29, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_type_ddl.sql] COST : 0.337s, TOTAL :41, SUCCESS :41, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%
+[/workspace/matrixone-gis-latest/test/distributed/cases/geo/geo_validity.sql] COST : 0.127s, TOTAL :28, SUCCESS :28, FAILED :0, IGNORED :0, ABNORAML :0, SUCCESS RATE : 100%

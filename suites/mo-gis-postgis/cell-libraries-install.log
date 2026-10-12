@@ -1,0 +1,16 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting h3
+  Downloading h3-4.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (17 kB)
+Collecting s2sphere
+  Downloading s2sphere-0.2.5-py2.py3-none-any.whl.metadata (2.2 kB)
+Collecting future>=0.15 (from s2sphere)
+  Downloading future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Downloading h3-4.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 28.4 MB/s eta 0:00:00
+Downloading s2sphere-0.2.5-py2.py3-none-any.whl (23 kB)
+Downloading future-1.0.0-py3-none-any.whl (491 kB)
+Installing collected packages: h3, future, s2sphere
+Successfully installed future-1.0.0 h3-4.5.0 s2sphere-0.2.5
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

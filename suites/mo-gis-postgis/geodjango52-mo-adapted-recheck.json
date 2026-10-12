@@ -1,0 +1,37 @@
+[
+  {
+    "backend": "mo",
+    "django_version": "5.2.18",
+    "adapted": true,
+    "status": "pass",
+    "within_names": [
+      "beijing",
+      "nearby"
+    ],
+    "distances": [
+      [
+        "beijing",
+        "0.0"
+      ],
+      [
+        "nearby",
+        "0.0014142135623647749"
+      ],
+      [
+        "shanghai",
+        "10.054034662761016"
+      ]
+    ],
+    "checks": [
+      "schema+native spatial index",
+      "bulk insert",
+      "geometry object read",
+      "within lookup",
+      "distance annotation",
+      "GeoJSON annotation",
+      "update",
+      "delete"
+    ],
+    "seconds": 0.2024257710436359
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "ref": "00337502100fb1f6e9fca412c691f64a6f218624",
+    "native_geometry": false,
+    "geometry_lines": []
+  },
+  {
+    "ref": "d23b1258e58e56b9fa948a297dfe8cbb5585fa80",
+    "native_geometry": true,
+    "geometry_lines": [
+      "T_geometry  T = 67",
+      "\"geometry\": T_geometry,",
+      "case T_blob, T_varbinary, T_binary, T_geometry:"
+    ]
+  },
+  {
+    "ref": "v3.0.11",
+    "native_geometry": false,
+    "geometry_lines": []
+  },
+  {
+    "ref": "v3.0.12",
+    "native_geometry": true,
+    "geometry_lines": [
+      "T_geometry  T = 67",
+      "\"geometry\": T_geometry,",
+      "case T_blob, T_varbinary, T_binary, T_geometry:"
+    ]
+  },
+  {
+    "ref": "v4.0.0-rc1",
+    "native_geometry": true,
+    "geometry_lines": [
+      "T_geometry  T = 67",
+      "\"geometry\": T_geometry,",
+      "case T_blob, T_varbinary, T_binary, T_geometry:"
+    ]
+  },
+  {
+    "ref": "v4.0.0-rc2",
+    "native_geometry": true,
+    "geometry_lines": [
+      "T_geometry  T = 67",
+      "\"geometry\": T_geometry,",
+      "case T_blob, T_varbinary, T_binary, T_geometry:"
+    ]
+  },
+  {
+    "ref": "v4.0.0-rc3",
+    "native_geometry": true,
+    "geometry_lines": [
+      "T_geometry  T = 67",
+      "// T_geometry32 stores geometry as float32-coordinate WKB (the GEOMETRY32",
+      "// type); T_geometry uses float64. Both are varlena, binary-charset types."
+    ]
+  }
+]

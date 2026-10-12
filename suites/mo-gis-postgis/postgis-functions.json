@@ -1,0 +1,6987 @@
+[
+  [
+    "__st_countagg_transfn",
+    "agg agg_count, rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "agg_count"
+  ],
+  [
+    "_add_overview_constraint",
+    "ovschema name, ovtable name, ovcolumn name, refschema name, reftable name, refcolumn name, factor integer",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint",
+    "cn name, sql text",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_alignment",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_blocksize",
+    "rastschema name, rasttable name, rastcolumn name, axis text",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_coverage_tile",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_extent",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_nodata_values",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_num_bands",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_out_db",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_pixel_types",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_scale",
+    "rastschema name, rasttable name, rastcolumn name, axis character",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_spatially_unique",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_add_raster_constraint_srid",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_asgmledge",
+    "edge_id bigint, start_node bigint, end_node bigint, line geometry, visitedtable regclass, nsprefix_in text, prec integer, options integer, idprefix text, gmlver integer",
+    "text"
+  ],
+  [
+    "_asgmlface",
+    "toponame text, face_id bigint, visitedtable regclass, nsprefix_in text, prec integer, options integer, idprefix text, gmlver integer",
+    "text"
+  ],
+  [
+    "_asgmlnode",
+    "id bigint, point geometry, nsprefix_in text, prec integer, options integer, idprefix text, gmlver integer",
+    "text"
+  ],
+  [
+    "_checkedgelinking",
+    "curedge_edge_id bigint, prevedge_edge_id bigint, prevedge_next_left_edge bigint, prevedge_next_right_edge bigint",
+    "validatetopology_returntype"
+  ],
+  [
+    "_drop_overview_constraint",
+    "ovschema name, ovtable name, ovcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint",
+    "rastschema name, rasttable name, cn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_alignment",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_blocksize",
+    "rastschema name, rasttable name, rastcolumn name, axis text",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_coverage_tile",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_extent",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_nodata_values",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_num_bands",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_out_db",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_pixel_types",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_regular_blocking",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_scale",
+    "rastschema name, rasttable name, rastcolumn name, axis character",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_spatially_unique",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_drop_raster_constraint_srid",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_overview_constraint",
+    "ov raster, factor integer, refschema name, reftable name, refcolumn name",
+    "boolean"
+  ],
+  [
+    "_overview_constraint_info",
+    "ovschema name, ovtable name, ovcolumn name, OUT refschema name, OUT reftable name, OUT refcolumn name, OUT factor integer",
+    "record"
+  ],
+  [
+    "_postgis_deprecate",
+    "oldname text, newname text, version text",
+    "void"
+  ],
+  [
+    "_postgis_index_extent",
+    "tbl regclass, col text",
+    "box2d"
+  ],
+  [
+    "_postgis_join_selectivity",
+    "regclass, text, regclass, text, text",
+    "double precision"
+  ],
+  [
+    "_postgis_pgsql_version",
+    "",
+    "text"
+  ],
+  [
+    "_postgis_scripts_pgsql_version",
+    "",
+    "text"
+  ],
+  [
+    "_postgis_selectivity",
+    "tbl regclass, att_name text, geom geometry, mode text",
+    "double precision"
+  ],
+  [
+    "_postgis_stats",
+    "tbl regclass, att_name text, text",
+    "text"
+  ],
+  [
+    "_raster_constraint_info_alignment",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_raster_constraint_info_blocksize",
+    "rastschema name, rasttable name, rastcolumn name, axis text",
+    "integer"
+  ],
+  [
+    "_raster_constraint_info_coverage_tile",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_raster_constraint_info_extent",
+    "rastschema name, rasttable name, rastcolumn name",
+    "geometry"
+  ],
+  [
+    "_raster_constraint_info_index",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_raster_constraint_info_nodata_values",
+    "rastschema name, rasttable name, rastcolumn name",
+    "double precision[]"
+  ],
+  [
+    "_raster_constraint_info_num_bands",
+    "rastschema name, rasttable name, rastcolumn name",
+    "integer"
+  ],
+  [
+    "_raster_constraint_info_out_db",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean[]"
+  ],
+  [
+    "_raster_constraint_info_pixel_types",
+    "rastschema name, rasttable name, rastcolumn name",
+    "text[]"
+  ],
+  [
+    "_raster_constraint_info_regular_blocking",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_raster_constraint_info_scale",
+    "rastschema name, rasttable name, rastcolumn name, axis character",
+    "double precision"
+  ],
+  [
+    "_raster_constraint_info_spatially_unique",
+    "rastschema name, rasttable name, rastcolumn name",
+    "boolean"
+  ],
+  [
+    "_raster_constraint_info_srid",
+    "rastschema name, rasttable name, rastcolumn name",
+    "integer"
+  ],
+  [
+    "_raster_constraint_nodata_values",
+    "rast raster",
+    "numeric[]"
+  ],
+  [
+    "_raster_constraint_out_db",
+    "rast raster",
+    "boolean[]"
+  ],
+  [
+    "_raster_constraint_pixel_types",
+    "rast raster",
+    "text[]"
+  ],
+  [
+    "_registermissingfaces",
+    "atopology character varying",
+    "void"
+  ],
+  [
+    "_st_3ddfullywithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "_st_3ddwithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "_st_3dintersects",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_adjacentedges",
+    "atopology character varying, anode bigint, anedge bigint",
+    "bigint[]"
+  ],
+  [
+    "_st_asgml",
+    "integer, geometry, integer, integer, text, text",
+    "text"
+  ],
+  [
+    "_st_aspect4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_asraster",
+    "geom geometry, scalex double precision, scaley double precision, width integer, height integer, pixeltype text[], value double precision[], nodataval double precision[], upperleftx double precision, upperlefty double precision, gridx double precision, gridy double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "_st_asrasteragg_finalfn",
+    "rast raster",
+    "raster"
+  ],
+  [
+    "_st_asrasteragg_transfn",
+    "staterast raster, geom geometry, val double precision, rast raster, pixeltype text, nodataval double precision, uniontype text, touched boolean",
+    "raster"
+  ],
+  [
+    "_st_asx3d",
+    "integer, geometry, integer, integer, text",
+    "text"
+  ],
+  [
+    "_st_bestsrid",
+    "geography",
+    "integer"
+  ],
+  [
+    "_st_bestsrid",
+    "geography, geography",
+    "integer"
+  ],
+  [
+    "_st_clip",
+    "rast raster, nband integer[], geom geometry, nodataval double precision[], crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "_st_colormap",
+    "rast raster, nband integer, colormap text, method text",
+    "raster"
+  ],
+  [
+    "_st_contains",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_contains",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_containsproperly",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_containsproperly",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_convertarray4ma",
+    "value double precision[]",
+    "double precision[]"
+  ],
+  [
+    "_st_count",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "bigint"
+  ],
+  [
+    "_st_countagg_finalfn",
+    "agg agg_count",
+    "bigint"
+  ],
+  [
+    "_st_countagg_transfn",
+    "agg agg_count, rast raster, exclude_nodata_value boolean",
+    "agg_count"
+  ],
+  [
+    "_st_countagg_transfn",
+    "agg agg_count, rast raster, nband integer, exclude_nodata_value boolean",
+    "agg_count"
+  ],
+  [
+    "_st_countagg_transfn",
+    "agg agg_count, rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "agg_count"
+  ],
+  [
+    "_st_coveredby",
+    "geog1 geography, geog2 geography",
+    "boolean"
+  ],
+  [
+    "_st_coveredby",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_coveredby",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_covers",
+    "geog1 geography, geog2 geography",
+    "boolean"
+  ],
+  [
+    "_st_covers",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_covers",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_crosses",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_dfullywithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "_st_dfullywithin",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer, distance double precision",
+    "boolean"
+  ],
+  [
+    "_st_distancetree",
+    "geography, geography",
+    "double precision"
+  ],
+  [
+    "_st_distancetree",
+    "geography, geography, double precision, boolean",
+    "double precision"
+  ],
+  [
+    "_st_distanceuncached",
+    "geography, geography",
+    "double precision"
+  ],
+  [
+    "_st_distanceuncached",
+    "geography, geography, boolean",
+    "double precision"
+  ],
+  [
+    "_st_distanceuncached",
+    "geography, geography, double precision, boolean",
+    "double precision"
+  ],
+  [
+    "_st_dwithin",
+    "geog1 geography, geog2 geography, tolerance double precision, use_spheroid boolean",
+    "boolean"
+  ],
+  [
+    "_st_dwithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "_st_dwithin",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer, distance double precision",
+    "boolean"
+  ],
+  [
+    "_st_dwithinuncached",
+    "geography, geography, double precision",
+    "boolean"
+  ],
+  [
+    "_st_dwithinuncached",
+    "geography, geography, double precision, boolean",
+    "boolean"
+  ],
+  [
+    "_st_equals",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_expand",
+    "geography, double precision",
+    "geography"
+  ],
+  [
+    "_st_gdalwarp",
+    "rast raster, algorithm text, maxerr double precision, srid integer, scalex double precision, scaley double precision, gridx double precision, gridy double precision, skewx double precision, skewy double precision, width integer, height integer",
+    "raster"
+  ],
+  [
+    "_st_geomfromgml",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "_st_grayscale4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_hillshade4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_histogram",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, bins integer, width double precision[], \"right\" boolean, min double precision, max double precision, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "_st_intersects",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_intersects",
+    "geom geometry, rast raster, nband integer",
+    "boolean"
+  ],
+  [
+    "_st_intersects",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_linecrossingdirection",
+    "line1 geometry, line2 geometry",
+    "integer"
+  ],
+  [
+    "_st_longestline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "_st_mapalgebra",
+    "rastbandargset rastbandarg[], callbackfunc regprocedure, pixeltype text, distancex integer, distancey integer, extenttype text, customextent raster, mask double precision[], weighted boolean, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "_st_mapalgebra",
+    "rastbandargset rastbandarg[], expression text, pixeltype text, extenttype text, nodata1expr text, nodata2expr text, nodatanodataval double precision",
+    "raster"
+  ],
+  [
+    "_st_maxdistance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "_st_mintolerance",
+    "ageom geometry",
+    "double precision"
+  ],
+  [
+    "_st_mintolerance",
+    "atopology character varying, ageom geometry",
+    "double precision"
+  ],
+  [
+    "_st_mintolerance",
+    "val double precision",
+    "double precision"
+  ],
+  [
+    "_st_neighborhood",
+    "rast raster, band integer, columnx integer, rowy integer, distancex integer, distancey integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "_st_orderingequals",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_overlaps",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_overlaps",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_pixelascentroids",
+    "rast raster, band integer, columnx integer, rowy integer, exclude_nodata_value boolean",
+    "TABLE(geom geometry, val double precision, x integer, y integer)"
+  ],
+  [
+    "_st_pixelaspolygons",
+    "rast raster, band integer, columnx integer, rowy integer, exclude_nodata_value boolean",
+    "TABLE(geom geometry, val double precision, x integer, y integer)"
+  ],
+  [
+    "_st_pointoutside",
+    "geography",
+    "geography"
+  ],
+  [
+    "_st_quantile",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "_st_rastertoworldcoord",
+    "rast raster, columnx integer, rowy integer, OUT longitude double precision, OUT latitude double precision",
+    "record"
+  ],
+  [
+    "_st_reclass",
+    "rast raster, VARIADIC reclassargset reclassarg[]",
+    "raster"
+  ],
+  [
+    "_st_roughness4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_samealignment_finalfn",
+    "agg agg_samealignment",
+    "boolean"
+  ],
+  [
+    "_st_samealignment_transfn",
+    "agg agg_samealignment, rast raster",
+    "agg_samealignment"
+  ],
+  [
+    "_st_setvalues",
+    "rast raster, nband integer, x integer, y integer, newvalueset double precision[], noset boolean[], hasnosetvalue boolean, nosetvalue double precision, keepnodata boolean",
+    "raster"
+  ],
+  [
+    "_st_slope4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_sortablehash",
+    "geom geometry",
+    "bigint"
+  ],
+  [
+    "_st_summarystats",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "summarystats"
+  ],
+  [
+    "_st_summarystats_finalfn",
+    "internal",
+    "summarystats"
+  ],
+  [
+    "_st_summarystats_transfn",
+    "internal, raster, boolean, double precision",
+    "internal"
+  ],
+  [
+    "_st_summarystats_transfn",
+    "internal, raster, integer, boolean",
+    "internal"
+  ],
+  [
+    "_st_summarystats_transfn",
+    "internal, raster, integer, boolean, double precision",
+    "internal"
+  ],
+  [
+    "_st_tile",
+    "rast raster, width integer, height integer, nband integer[], padwithnodata boolean, nodataval double precision",
+    "SETOF raster"
+  ],
+  [
+    "_st_touches",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_touches",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_tpi4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_tri4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "_st_union_finalfn",
+    "internal",
+    "raster"
+  ],
+  [
+    "_st_union_transfn",
+    "internal, raster",
+    "internal"
+  ],
+  [
+    "_st_union_transfn",
+    "internal, raster, integer",
+    "internal"
+  ],
+  [
+    "_st_union_transfn",
+    "internal, raster, integer, text",
+    "internal"
+  ],
+  [
+    "_st_union_transfn",
+    "internal, raster, text",
+    "internal"
+  ],
+  [
+    "_st_union_transfn",
+    "internal, raster, unionarg[]",
+    "internal"
+  ],
+  [
+    "_st_valuecount",
+    "rastertable text, rastercolumn text, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "_st_valuecount",
+    "rast raster, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "_st_voronoi",
+    "g1 geometry, clip geometry, tolerance double precision, return_polygons boolean",
+    "geometry"
+  ],
+  [
+    "_st_within",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "_st_within",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "_st_worldtorastercoord",
+    "rast raster, longitude double precision, latitude double precision, OUT columnx integer, OUT rowy integer",
+    "record"
+  ],
+  [
+    "_topogeo_addlinestringnoface",
+    "atopology character varying, aline geometry, tolerance double precision",
+    "void"
+  ],
+  [
+    "_updaterastersrid",
+    "schema_name name, table_name name, column_name name, new_srid integer",
+    "boolean"
+  ],
+  [
+    "_validatetopologyedgelinking",
+    "bbox geometry",
+    "SETOF validatetopology_returntype"
+  ],
+  [
+    "_validatetopologygetfaceshellmaximaledgering",
+    "atopology character varying, aface bigint",
+    "geometry"
+  ],
+  [
+    "_validatetopologygetringedges",
+    "starting_edge bigint",
+    "bigint[]"
+  ],
+  [
+    "_validatetopologyrings",
+    "bbox geometry",
+    "SETOF validatetopology_returntype"
+  ],
+  [
+    "addedge",
+    "atopology character varying, aline geometry",
+    "bigint"
+  ],
+  [
+    "addface",
+    "atopology character varying, apoly geometry, force_new boolean",
+    "bigint"
+  ],
+  [
+    "addgeometrycolumn",
+    "catalog_name character varying, schema_name character varying, table_name character varying, column_name character varying, new_srid_in integer, new_type character varying, new_dim integer, use_typmod boolean",
+    "text"
+  ],
+  [
+    "addgeometrycolumn",
+    "schema_name character varying, table_name character varying, column_name character varying, new_srid integer, new_type character varying, new_dim integer, use_typmod boolean",
+    "text"
+  ],
+  [
+    "addgeometrycolumn",
+    "table_name character varying, column_name character varying, new_srid integer, new_type character varying, new_dim integer, use_typmod boolean",
+    "text"
+  ],
+  [
+    "addnode",
+    "atopology character varying, apoint geometry, allowedgesplitting boolean, setcontainingface boolean",
+    "bigint"
+  ],
+  [
+    "addoverviewconstraints",
+    "ovschema name, ovtable name, ovcolumn name, refschema name, reftable name, refcolumn name, ovfactor integer",
+    "boolean"
+  ],
+  [
+    "addoverviewconstraints",
+    "ovtable name, ovcolumn name, reftable name, refcolumn name, ovfactor integer",
+    "boolean"
+  ],
+  [
+    "addrasterconstraints",
+    "rastschema name, rasttable name, rastcolumn name, srid boolean, scale_x boolean, scale_y boolean, blocksize_x boolean, blocksize_y boolean, same_alignment boolean, regular_blocking boolean, num_bands boolean, pixel_types boolean, nodata_values boolean, out_db boolean, extent boolean",
+    "boolean"
+  ],
+  [
+    "addrasterconstraints",
+    "rastschema name, rasttable name, rastcolumn name, VARIADIC constraints text[]",
+    "boolean"
+  ],
+  [
+    "addrasterconstraints",
+    "rasttable name, rastcolumn name, srid boolean, scale_x boolean, scale_y boolean, blocksize_x boolean, blocksize_y boolean, same_alignment boolean, regular_blocking boolean, num_bands boolean, pixel_types boolean, nodata_values boolean, out_db boolean, extent boolean",
+    "boolean"
+  ],
+  [
+    "addrasterconstraints",
+    "rasttable name, rastcolumn name, VARIADIC constraints text[]",
+    "boolean"
+  ],
+  [
+    "addtopogeometrycolumn",
+    "toponame name, schema name, tbl name, col name, ltype character varying, child integer",
+    "integer"
+  ],
+  [
+    "addtopogeometrycolumn",
+    "toponame name, tab regclass, col name, layerid integer, layertype character varying, child integer",
+    "integer"
+  ],
+  [
+    "addtosearchpath",
+    "a_schema_name character varying",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, nsprefix_in text, precision_in integer, options_in integer, visitedtable regclass, idprefix text, gmlver integer",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, nsprefix text",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, nsprefix text, prec integer, options integer, visitedtable regclass, idprefix text",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, nsprefix text, prec integer, options integer, vis regclass",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, nsprefix text, prec integer, opts integer",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, visitedtable regclass",
+    "text"
+  ],
+  [
+    "asgml",
+    "tg topogeometry, visitedtable regclass, nsprefix text",
+    "text"
+  ],
+  [
+    "astopojson",
+    "tg topogeometry, edgemaptable regclass",
+    "text"
+  ],
+  [
+    "box",
+    "box3d",
+    "box"
+  ],
+  [
+    "box",
+    "geometry",
+    "box"
+  ],
+  [
+    "box2d",
+    "box3d",
+    "box2d"
+  ],
+  [
+    "box2d",
+    "geometry",
+    "box2d"
+  ],
+  [
+    "box2d_in",
+    "cstring",
+    "box2d"
+  ],
+  [
+    "box2d_out",
+    "box2d",
+    "cstring"
+  ],
+  [
+    "box2df_in",
+    "cstring",
+    "box2df"
+  ],
+  [
+    "box2df_out",
+    "box2df",
+    "cstring"
+  ],
+  [
+    "box3d",
+    "box2d",
+    "box3d"
+  ],
+  [
+    "box3d",
+    "geometry",
+    "box3d"
+  ],
+  [
+    "box3d",
+    "raster",
+    "box3d"
+  ],
+  [
+    "box3d_in",
+    "cstring",
+    "box3d"
+  ],
+  [
+    "box3d_out",
+    "box3d",
+    "cstring"
+  ],
+  [
+    "box3dtobox",
+    "box3d",
+    "box"
+  ],
+  [
+    "bytea",
+    "geography",
+    "bytea"
+  ],
+  [
+    "bytea",
+    "geometry",
+    "bytea"
+  ],
+  [
+    "bytea",
+    "raster",
+    "bytea"
+  ],
+  [
+    "cleartopogeom",
+    "tg topogeometry",
+    "topogeometry"
+  ],
+  [
+    "contains_2d",
+    "box2df, box2df",
+    "boolean"
+  ],
+  [
+    "contains_2d",
+    "box2df, geometry",
+    "boolean"
+  ],
+  [
+    "contains_2d",
+    "geometry, box2df",
+    "boolean"
+  ],
+  [
+    "copytopology",
+    "atopology character varying, newtopo character varying",
+    "integer"
+  ],
+  [
+    "createtopogeom",
+    "toponame character varying, tg_type integer, layer_id integer",
+    "topogeometry"
+  ],
+  [
+    "createtopogeom",
+    "toponame character varying, tg_type integer, layer_id integer, tg_objs topoelementarray, tg_id bigint",
+    "topogeometry"
+  ],
+  [
+    "createtopology",
+    "atopology name, srid integer, prec double precision, hasz boolean, topoid integer, useslargeids boolean",
+    "integer"
+  ],
+  [
+    "daitch_mokotoff",
+    "text",
+    "text[]"
+  ],
+  [
+    "difference",
+    "text, text",
+    "integer"
+  ],
+  [
+    "dmetaphone",
+    "text",
+    "text"
+  ],
+  [
+    "dmetaphone_alt",
+    "text",
+    "text"
+  ],
+  [
+    "dropgeometrycolumn",
+    "catalog_name character varying, schema_name character varying, table_name character varying, column_name character varying",
+    "text"
+  ],
+  [
+    "dropgeometrycolumn",
+    "schema_name character varying, table_name character varying, column_name character varying",
+    "text"
+  ],
+  [
+    "dropgeometrycolumn",
+    "table_name character varying, column_name character varying",
+    "text"
+  ],
+  [
+    "dropgeometrytable",
+    "catalog_name character varying, schema_name character varying, table_name character varying",
+    "text"
+  ],
+  [
+    "dropgeometrytable",
+    "schema_name character varying, table_name character varying",
+    "text"
+  ],
+  [
+    "dropgeometrytable",
+    "table_name character varying",
+    "text"
+  ],
+  [
+    "dropoverviewconstraints",
+    "ovschema name, ovtable name, ovcolumn name",
+    "boolean"
+  ],
+  [
+    "dropoverviewconstraints",
+    "ovtable name, ovcolumn name",
+    "boolean"
+  ],
+  [
+    "droprasterconstraints",
+    "rastschema name, rasttable name, rastcolumn name, srid boolean, scale_x boolean, scale_y boolean, blocksize_x boolean, blocksize_y boolean, same_alignment boolean, regular_blocking boolean, num_bands boolean, pixel_types boolean, nodata_values boolean, out_db boolean, extent boolean",
+    "boolean"
+  ],
+  [
+    "droprasterconstraints",
+    "rastschema name, rasttable name, rastcolumn name, VARIADIC constraints text[]",
+    "boolean"
+  ],
+  [
+    "droprasterconstraints",
+    "rasttable name, rastcolumn name, srid boolean, scale_x boolean, scale_y boolean, blocksize_x boolean, blocksize_y boolean, same_alignment boolean, regular_blocking boolean, num_bands boolean, pixel_types boolean, nodata_values boolean, out_db boolean, extent boolean",
+    "boolean"
+  ],
+  [
+    "droprasterconstraints",
+    "rasttable name, rastcolumn name, VARIADIC constraints text[]",
+    "boolean"
+  ],
+  [
+    "droptopogeometrycolumn",
+    "schema character varying, tbl character varying, col character varying",
+    "text"
+  ],
+  [
+    "droptopology",
+    "atopology character varying",
+    "text"
+  ],
+  [
+    "equals",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "equals",
+    "tg1 topogeometry, tg2 topogeometry",
+    "boolean"
+  ],
+  [
+    "find_srid",
+    "character varying, character varying, character varying",
+    "integer"
+  ],
+  [
+    "findlayer",
+    "layer_table regclass, feature_column name",
+    "layer"
+  ],
+  [
+    "findlayer",
+    "schema_name name, table_name name, feature_column name",
+    "layer"
+  ],
+  [
+    "findlayer",
+    "tg topogeometry",
+    "layer"
+  ],
+  [
+    "findlayer",
+    "topology_id integer, layer_id integer",
+    "layer"
+  ],
+  [
+    "findtopology",
+    "integer",
+    "topology"
+  ],
+  [
+    "findtopology",
+    "name, name, name",
+    "topology"
+  ],
+  [
+    "findtopology",
+    "regclass, name",
+    "topology"
+  ],
+  [
+    "findtopology",
+    "text",
+    "topology"
+  ],
+  [
+    "findtopology",
+    "topogeometry",
+    "topology"
+  ],
+  [
+    "fixcorrupttopogeometrycolumn",
+    "layerschema name, layertable name, layercolumn name",
+    "text"
+  ],
+  [
+    "geog_brin_inclusion_add_value",
+    "internal, internal, internal, internal",
+    "boolean"
+  ],
+  [
+    "geog_brin_inclusion_merge",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geography",
+    "bytea",
+    "geography"
+  ],
+  [
+    "geography",
+    "geography, integer, boolean",
+    "geography"
+  ],
+  [
+    "geography",
+    "geometry",
+    "geography"
+  ],
+  [
+    "geography_analyze",
+    "internal",
+    "boolean"
+  ],
+  [
+    "geography_cmp",
+    "geography, geography",
+    "integer"
+  ],
+  [
+    "geography_distance_knn",
+    "geography, geography",
+    "double precision"
+  ],
+  [
+    "geography_eq",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_ge",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_gist_compress",
+    "internal",
+    "internal"
+  ],
+  [
+    "geography_gist_consistent",
+    "internal, geography, integer",
+    "boolean"
+  ],
+  [
+    "geography_gist_decompress",
+    "internal",
+    "internal"
+  ],
+  [
+    "geography_gist_distance",
+    "internal, geography, integer",
+    "double precision"
+  ],
+  [
+    "geography_gist_penalty",
+    "internal, internal, internal",
+    "internal"
+  ],
+  [
+    "geography_gist_picksplit",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geography_gist_same",
+    "box2d, box2d, internal",
+    "internal"
+  ],
+  [
+    "geography_gist_union",
+    "bytea, internal",
+    "internal"
+  ],
+  [
+    "geography_gt",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_in",
+    "cstring, oid, integer",
+    "geography"
+  ],
+  [
+    "geography_le",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_lt",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_out",
+    "geography",
+    "cstring"
+  ],
+  [
+    "geography_overlaps",
+    "geography, geography",
+    "boolean"
+  ],
+  [
+    "geography_recv",
+    "internal, oid, integer",
+    "geography"
+  ],
+  [
+    "geography_send",
+    "geography",
+    "bytea"
+  ],
+  [
+    "geography_spgist_choose_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geography_spgist_compress_nd",
+    "internal",
+    "internal"
+  ],
+  [
+    "geography_spgist_config_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geography_spgist_inner_consistent_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geography_spgist_leaf_consistent_nd",
+    "internal, internal",
+    "boolean"
+  ],
+  [
+    "geography_spgist_picksplit_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geography_typmod_in",
+    "cstring[]",
+    "integer"
+  ],
+  [
+    "geography_typmod_out",
+    "integer",
+    "cstring"
+  ],
+  [
+    "geom2d_brin_inclusion_add_value",
+    "internal, internal, internal, internal",
+    "boolean"
+  ],
+  [
+    "geom2d_brin_inclusion_merge",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geom3d_brin_inclusion_add_value",
+    "internal, internal, internal, internal",
+    "boolean"
+  ],
+  [
+    "geom3d_brin_inclusion_merge",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geom4d_brin_inclusion_add_value",
+    "internal, internal, internal, internal",
+    "boolean"
+  ],
+  [
+    "geom4d_brin_inclusion_merge",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geometry",
+    "box2d",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "box3d",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "geography",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "geometry, integer, boolean",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "path",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "point",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "polygon",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "text",
+    "geometry"
+  ],
+  [
+    "geometry",
+    "topogeom topogeometry",
+    "geometry"
+  ],
+  [
+    "geometry_above",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_analyze",
+    "internal",
+    "boolean"
+  ],
+  [
+    "geometry_below",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_cmp",
+    "geom1 geometry, geom2 geometry",
+    "integer"
+  ],
+  [
+    "geometry_contained_3d",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_contained_by_raster",
+    "geometry, raster",
+    "boolean"
+  ],
+  [
+    "geometry_contains",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_contains_3d",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_contains_nd",
+    "geometry, geometry",
+    "boolean"
+  ],
+  [
+    "geometry_distance_box",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "geometry_distance_centroid",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "geometry_distance_centroid_nd",
+    "geometry, geometry",
+    "double precision"
+  ],
+  [
+    "geometry_distance_cpa",
+    "geometry, geometry",
+    "double precision"
+  ],
+  [
+    "geometry_eq",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_ge",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_gist_compress_2d",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_compress_nd",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_consistent_2d",
+    "internal, geometry, integer",
+    "boolean"
+  ],
+  [
+    "geometry_gist_consistent_nd",
+    "internal, geometry, integer",
+    "boolean"
+  ],
+  [
+    "geometry_gist_decompress_2d",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_decompress_nd",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_distance_2d",
+    "internal, geometry, integer",
+    "double precision"
+  ],
+  [
+    "geometry_gist_distance_nd",
+    "internal, geometry, integer",
+    "double precision"
+  ],
+  [
+    "geometry_gist_penalty_2d",
+    "internal, internal, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_penalty_nd",
+    "internal, internal, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_picksplit_2d",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_picksplit_nd",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_same_2d",
+    "geom1 geometry, geom2 geometry, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_same_nd",
+    "geometry, geometry, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_sortsupport_2d",
+    "internal",
+    "void"
+  ],
+  [
+    "geometry_gist_union_2d",
+    "bytea, internal",
+    "internal"
+  ],
+  [
+    "geometry_gist_union_nd",
+    "bytea, internal",
+    "internal"
+  ],
+  [
+    "geometry_gt",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_hash",
+    "geometry",
+    "integer"
+  ],
+  [
+    "geometry_in",
+    "cstring",
+    "geometry"
+  ],
+  [
+    "geometry_le",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_left",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_lt",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_neq",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_out",
+    "geometry",
+    "cstring"
+  ],
+  [
+    "geometry_overabove",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overbelow",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overlaps",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overlaps_3d",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overlaps_nd",
+    "geometry, geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overleft",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_overright",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_raster_contain",
+    "geometry, raster",
+    "boolean"
+  ],
+  [
+    "geometry_raster_overlap",
+    "geometry, raster",
+    "boolean"
+  ],
+  [
+    "geometry_recv",
+    "internal",
+    "geometry"
+  ],
+  [
+    "geometry_right",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_same",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_same_3d",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_same_nd",
+    "geometry, geometry",
+    "boolean"
+  ],
+  [
+    "geometry_send",
+    "geometry",
+    "bytea"
+  ],
+  [
+    "geometry_sortsupport",
+    "internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_choose_2d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_choose_3d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_choose_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_compress_2d",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_spgist_compress_3d",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_spgist_compress_nd",
+    "internal",
+    "internal"
+  ],
+  [
+    "geometry_spgist_config_2d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_config_3d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_config_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_inner_consistent_2d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_inner_consistent_3d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_inner_consistent_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_leaf_consistent_2d",
+    "internal, internal",
+    "boolean"
+  ],
+  [
+    "geometry_spgist_leaf_consistent_3d",
+    "internal, internal",
+    "boolean"
+  ],
+  [
+    "geometry_spgist_leaf_consistent_nd",
+    "internal, internal",
+    "boolean"
+  ],
+  [
+    "geometry_spgist_picksplit_2d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_picksplit_3d",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_spgist_picksplit_nd",
+    "internal, internal",
+    "void"
+  ],
+  [
+    "geometry_typmod_in",
+    "cstring[]",
+    "integer"
+  ],
+  [
+    "geometry_typmod_out",
+    "integer",
+    "cstring"
+  ],
+  [
+    "geometry_within",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "geometry_within_nd",
+    "geometry, geometry",
+    "boolean"
+  ],
+  [
+    "geometrytype",
+    "geography",
+    "text"
+  ],
+  [
+    "geometrytype",
+    "geometry",
+    "text"
+  ],
+  [
+    "geometrytype",
+    "tg topogeometry",
+    "text"
+  ],
+  [
+    "geomfromewkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "geomfromewkt",
+    "text",
+    "geometry"
+  ],
+  [
+    "get_proj4_from_srid",
+    "integer",
+    "text"
+  ],
+  [
+    "getedgebypoint",
+    "atopology character varying, apoint geometry, tol1 double precision",
+    "bigint"
+  ],
+  [
+    "getfacebypoint",
+    "atopology character varying, apoint geometry, tol1 double precision",
+    "bigint"
+  ],
+  [
+    "getfacecontainingpoint",
+    "atopology text, apoint geometry",
+    "bigint"
+  ],
+  [
+    "getnodebypoint",
+    "atopology character varying, apoint geometry, tol1 double precision",
+    "bigint"
+  ],
+  [
+    "getnodeedges",
+    "atopology character varying, anode bigint",
+    "SETOF getfaceedges_returntype"
+  ],
+  [
+    "getringedges",
+    "atopology character varying, anedge bigint, maxedges integer",
+    "SETOF getfaceedges_returntype"
+  ],
+  [
+    "gettopogeomelementarray",
+    "tg topogeometry",
+    "topoelementarray"
+  ],
+  [
+    "gettopogeomelementarray",
+    "toponame character varying, layer_id integer, tgid bigint",
+    "topoelementarray"
+  ],
+  [
+    "gettopogeomelements",
+    "tg topogeometry",
+    "SETOF topoelement"
+  ],
+  [
+    "gettopogeomelements",
+    "toponame character varying, layerid integer, tgid bigint",
+    "SETOF topoelement"
+  ],
+  [
+    "gettopologyid",
+    "toponame character varying",
+    "integer"
+  ],
+  [
+    "gettopologyname",
+    "topoid integer",
+    "character varying"
+  ],
+  [
+    "gettopologysrid",
+    "toponame character varying",
+    "integer"
+  ],
+  [
+    "gidx_in",
+    "cstring",
+    "gidx"
+  ],
+  [
+    "gidx_out",
+    "gidx",
+    "cstring"
+  ],
+  [
+    "gserialized_gist_joinsel_2d",
+    "internal, oid, internal, smallint",
+    "double precision"
+  ],
+  [
+    "gserialized_gist_joinsel_nd",
+    "internal, oid, internal, smallint",
+    "double precision"
+  ],
+  [
+    "gserialized_gist_sel_2d",
+    "internal, oid, internal, integer",
+    "double precision"
+  ],
+  [
+    "gserialized_gist_sel_nd",
+    "internal, oid, internal, integer",
+    "double precision"
+  ],
+  [
+    "intersects",
+    "tg1 topogeometry, tg2 topogeometry",
+    "boolean"
+  ],
+  [
+    "is_contained_2d",
+    "box2df, box2df",
+    "boolean"
+  ],
+  [
+    "is_contained_2d",
+    "box2df, geometry",
+    "boolean"
+  ],
+  [
+    "is_contained_2d",
+    "geometry, box2df",
+    "boolean"
+  ],
+  [
+    "json",
+    "geometry",
+    "json"
+  ],
+  [
+    "jsonb",
+    "geometry",
+    "jsonb"
+  ],
+  [
+    "layertrigger",
+    "",
+    "trigger"
+  ],
+  [
+    "levenshtein",
+    "text, text",
+    "integer"
+  ],
+  [
+    "levenshtein",
+    "text, text, integer, integer, integer",
+    "integer"
+  ],
+  [
+    "levenshtein_less_equal",
+    "text, text, integer",
+    "integer"
+  ],
+  [
+    "levenshtein_less_equal",
+    "text, text, integer, integer, integer, integer",
+    "integer"
+  ],
+  [
+    "maketopologyprecise",
+    "toponame name, bbox geometry, gridsize double precision",
+    "void"
+  ],
+  [
+    "metaphone",
+    "text, integer",
+    "text"
+  ],
+  [
+    "overlaps_2d",
+    "box2df, box2df",
+    "boolean"
+  ],
+  [
+    "overlaps_2d",
+    "box2df, geometry",
+    "boolean"
+  ],
+  [
+    "overlaps_2d",
+    "geometry, box2df",
+    "boolean"
+  ],
+  [
+    "overlaps_geog",
+    "geography, gidx",
+    "boolean"
+  ],
+  [
+    "overlaps_geog",
+    "gidx, geography",
+    "boolean"
+  ],
+  [
+    "overlaps_geog",
+    "gidx, gidx",
+    "boolean"
+  ],
+  [
+    "overlaps_nd",
+    "geometry, gidx",
+    "boolean"
+  ],
+  [
+    "overlaps_nd",
+    "gidx, geometry",
+    "boolean"
+  ],
+  [
+    "overlaps_nd",
+    "gidx, gidx",
+    "boolean"
+  ],
+  [
+    "path",
+    "geometry",
+    "path"
+  ],
+  [
+    "pgis_asflatgeobuf_finalfn",
+    "internal",
+    "bytea"
+  ],
+  [
+    "pgis_asflatgeobuf_transfn",
+    "internal, anyelement",
+    "internal"
+  ],
+  [
+    "pgis_asflatgeobuf_transfn",
+    "internal, anyelement, boolean",
+    "internal"
+  ],
+  [
+    "pgis_asflatgeobuf_transfn",
+    "internal, anyelement, boolean, text",
+    "internal"
+  ],
+  [
+    "pgis_asgeobuf_finalfn",
+    "internal",
+    "bytea"
+  ],
+  [
+    "pgis_asgeobuf_transfn",
+    "internal, anyelement",
+    "internal"
+  ],
+  [
+    "pgis_asgeobuf_transfn",
+    "internal, anyelement, text",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_combinefn",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_deserialfn",
+    "bytea, internal",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_finalfn",
+    "internal",
+    "bytea"
+  ],
+  [
+    "pgis_asmvt_serialfn",
+    "internal",
+    "bytea"
+  ],
+  [
+    "pgis_asmvt_transfn",
+    "internal, anyelement",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_transfn",
+    "internal, anyelement, text",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_transfn",
+    "internal, anyelement, text, integer",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_transfn",
+    "internal, anyelement, text, integer, text",
+    "internal"
+  ],
+  [
+    "pgis_asmvt_transfn",
+    "internal, anyelement, text, integer, text, text",
+    "internal"
+  ],
+  [
+    "pgis_geometry_accum_transfn",
+    "internal, geometry",
+    "internal"
+  ],
+  [
+    "pgis_geometry_accum_transfn",
+    "internal, geometry, double precision",
+    "internal"
+  ],
+  [
+    "pgis_geometry_accum_transfn",
+    "internal, geometry, double precision, integer",
+    "internal"
+  ],
+  [
+    "pgis_geometry_clusterintersecting_finalfn",
+    "internal",
+    "geometry[]"
+  ],
+  [
+    "pgis_geometry_clusterwithin_finalfn",
+    "internal",
+    "geometry[]"
+  ],
+  [
+    "pgis_geometry_collect_finalfn",
+    "internal",
+    "geometry"
+  ],
+  [
+    "pgis_geometry_coverageunion_finalfn",
+    "internal",
+    "geometry"
+  ],
+  [
+    "pgis_geometry_makeline_finalfn",
+    "internal",
+    "geometry"
+  ],
+  [
+    "pgis_geometry_polygonize_finalfn",
+    "internal",
+    "geometry"
+  ],
+  [
+    "pgis_geometry_union_parallel_combinefn",
+    "internal, internal",
+    "internal"
+  ],
+  [
+    "pgis_geometry_union_parallel_deserialfn",
+    "bytea, internal",
+    "internal"
+  ],
+  [
+    "pgis_geometry_union_parallel_finalfn",
+    "internal",
+    "geometry"
+  ],
+  [
+    "pgis_geometry_union_parallel_serialfn",
+    "internal",
+    "bytea"
+  ],
+  [
+    "pgis_geometry_union_parallel_transfn",
+    "internal, geometry",
+    "internal"
+  ],
+  [
+    "pgis_geometry_union_parallel_transfn",
+    "internal, geometry, double precision",
+    "internal"
+  ],
+  [
+    "point",
+    "geometry",
+    "point"
+  ],
+  [
+    "polygon",
+    "geometry",
+    "polygon"
+  ],
+  [
+    "polygonize",
+    "toponame character varying",
+    "text"
+  ],
+  [
+    "populate_geometry_columns",
+    "tbl_oid oid, use_typmod boolean",
+    "integer"
+  ],
+  [
+    "populate_geometry_columns",
+    "use_typmod boolean",
+    "text"
+  ],
+  [
+    "populate_topology_layer",
+    "",
+    "TABLE(schema_name text, table_name text, feature_column text)"
+  ],
+  [
+    "postgis_addbbox",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "postgis_cache_bbox",
+    "",
+    "trigger"
+  ],
+  [
+    "postgis_constraint_dims",
+    "geomschema text, geomtable text, geomcolumn text",
+    "integer"
+  ],
+  [
+    "postgis_constraint_srid",
+    "geomschema text, geomtable text, geomcolumn text",
+    "integer"
+  ],
+  [
+    "postgis_constraint_type",
+    "geomschema text, geomtable text, geomcolumn text",
+    "character varying"
+  ],
+  [
+    "postgis_dropbbox",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "postgis_extensions_upgrade",
+    "target_version text",
+    "text"
+  ],
+  [
+    "postgis_full_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_gdal_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_geos_compiled_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_geos_noop",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "postgis_geos_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_getbbox",
+    "geometry",
+    "box2d"
+  ],
+  [
+    "postgis_hasbbox",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "postgis_index_supportfn",
+    "internal",
+    "internal"
+  ],
+  [
+    "postgis_lib_build_date",
+    "",
+    "text"
+  ],
+  [
+    "postgis_lib_revision",
+    "",
+    "text"
+  ],
+  [
+    "postgis_lib_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_libjson_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_liblwgeom_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_libprotobuf_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_libxml_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_noop",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "postgis_noop",
+    "raster",
+    "geometry"
+  ],
+  [
+    "postgis_proj_compiled_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_proj_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_raster_lib_build_date",
+    "",
+    "text"
+  ],
+  [
+    "postgis_raster_lib_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_raster_scripts_installed",
+    "",
+    "text"
+  ],
+  [
+    "postgis_scripts_build_date",
+    "",
+    "text"
+  ],
+  [
+    "postgis_scripts_installed",
+    "",
+    "text"
+  ],
+  [
+    "postgis_scripts_released",
+    "",
+    "text"
+  ],
+  [
+    "postgis_srs",
+    "auth_name text, auth_srid text",
+    "TABLE(auth_name text, auth_srid text, srname text, srtext text, proj4text text, point_sw geometry, point_ne geometry)"
+  ],
+  [
+    "postgis_srs_all",
+    "",
+    "TABLE(auth_name text, auth_srid text, srname text, srtext text, proj4text text, point_sw geometry, point_ne geometry)"
+  ],
+  [
+    "postgis_srs_codes",
+    "auth_name text",
+    "SETOF text"
+  ],
+  [
+    "postgis_srs_search",
+    "bounds geometry, authname text",
+    "TABLE(auth_name text, auth_srid text, srname text, srtext text, proj4text text, point_sw geometry, point_ne geometry)"
+  ],
+  [
+    "postgis_svn_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_topology_scripts_installed",
+    "",
+    "text"
+  ],
+  [
+    "postgis_transform_geometry",
+    "geom geometry, text, text, integer",
+    "geometry"
+  ],
+  [
+    "postgis_transform_pipeline_geometry",
+    "geom geometry, pipeline text, forward boolean, to_srid integer",
+    "geometry"
+  ],
+  [
+    "postgis_type_name",
+    "geomname character varying, coord_dimension integer, use_new_name boolean",
+    "character varying"
+  ],
+  [
+    "postgis_typmod_dims",
+    "integer",
+    "integer"
+  ],
+  [
+    "postgis_typmod_srid",
+    "integer",
+    "integer"
+  ],
+  [
+    "postgis_typmod_type",
+    "integer",
+    "text"
+  ],
+  [
+    "postgis_version",
+    "",
+    "text"
+  ],
+  [
+    "postgis_wagyu_version",
+    "",
+    "text"
+  ],
+  [
+    "raster_above",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_below",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_contain",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_contained",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_contained_by_geometry",
+    "raster, geometry",
+    "boolean"
+  ],
+  [
+    "raster_eq",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_geometry_contain",
+    "raster, geometry",
+    "boolean"
+  ],
+  [
+    "raster_geometry_overlap",
+    "raster, geometry",
+    "boolean"
+  ],
+  [
+    "raster_hash",
+    "raster",
+    "integer"
+  ],
+  [
+    "raster_in",
+    "cstring",
+    "raster"
+  ],
+  [
+    "raster_left",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_out",
+    "raster",
+    "cstring"
+  ],
+  [
+    "raster_overabove",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_overbelow",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_overlap",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_overleft",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_overright",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_right",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "raster_same",
+    "raster, raster",
+    "boolean"
+  ],
+  [
+    "relationtrigger",
+    "",
+    "trigger"
+  ],
+  [
+    "removeunusedprimitives",
+    "atopology text, bbox geometry",
+    "bigint"
+  ],
+  [
+    "renametopogeometrycolumn",
+    "layer_table regclass, feature_column name, new_name name",
+    "layer"
+  ],
+  [
+    "renametopology",
+    "old_name character varying, new_name character varying",
+    "character varying"
+  ],
+  [
+    "soundex",
+    "text",
+    "text"
+  ],
+  [
+    "spheroid_in",
+    "cstring",
+    "spheroid"
+  ],
+  [
+    "spheroid_out",
+    "spheroid",
+    "cstring"
+  ],
+  [
+    "st_3dclosestpoint",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_3ddfullywithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "st_3ddistance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_3ddwithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "st_3dextent",
+    "geometry",
+    "box3d"
+  ],
+  [
+    "st_3dintersects",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_3dlength",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_3dlineinterpolatepoint",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_3dlongestline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_3dmakebox",
+    "geom1 geometry, geom2 geometry",
+    "box3d"
+  ],
+  [
+    "st_3dmaxdistance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_3dperimeter",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_3dshortestline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_addband",
+    "rast raster, addbandargset addbandarg[]",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "rast raster, index integer, outdbfile text, outdbindex integer[], nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "rast raster, index integer, pixeltype text, initialvalue double precision, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "rast raster, outdbfile text, outdbindex integer[], index integer, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "rast raster, pixeltype text, initialvalue double precision, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "torast raster, fromrast raster, fromband integer, torastindex integer",
+    "raster"
+  ],
+  [
+    "st_addband",
+    "torast raster, fromrasts raster[], fromband integer, torastindex integer",
+    "raster"
+  ],
+  [
+    "st_addedgemodface",
+    "atopology character varying, anode bigint, anothernode bigint, acurve geometry",
+    "bigint"
+  ],
+  [
+    "st_addedgenewfaces",
+    "atopology character varying, anode bigint, anothernode bigint, acurve geometry",
+    "bigint"
+  ],
+  [
+    "st_addisoedge",
+    "atopology character varying, anode bigint, anothernode bigint, acurve geometry",
+    "bigint"
+  ],
+  [
+    "st_addisonode",
+    "atopology character varying, aface bigint, apoint geometry",
+    "bigint"
+  ],
+  [
+    "st_addmeasure",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_addpoint",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_addpoint",
+    "geom1 geometry, geom2 geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_affine",
+    "geometry, double precision, double precision, double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_affine",
+    "geometry, double precision, double precision, double precision, double precision, double precision, double precision, double precision, double precision, double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_angle",
+    "line1 geometry, line2 geometry",
+    "double precision"
+  ],
+  [
+    "st_angle",
+    "pt1 geometry, pt2 geometry, pt3 geometry, pt4 geometry",
+    "double precision"
+  ],
+  [
+    "st_approxcount",
+    "rast raster, exclude_nodata_value boolean, sample_percent double precision",
+    "bigint"
+  ],
+  [
+    "st_approxcount",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "bigint"
+  ],
+  [
+    "st_approxcount",
+    "rast raster, nband integer, sample_percent double precision",
+    "bigint"
+  ],
+  [
+    "st_approxcount",
+    "rast raster, sample_percent double precision",
+    "bigint"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, bins integer, \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, bins integer, width double precision[], \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, nband integer, sample_percent double precision, bins integer, \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, nband integer, sample_percent double precision, bins integer, width double precision[], \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, nband integer, sample_percent double precision, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxhistogram",
+    "rast raster, sample_percent double precision, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, exclude_nodata_value boolean, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, nband integer, sample_percent double precision, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, nband integer, sample_percent double precision, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, sample_percent double precision, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_approxquantile",
+    "rast raster, sample_percent double precision, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_approxsummarystats",
+    "rast raster, exclude_nodata_value boolean, sample_percent double precision",
+    "summarystats"
+  ],
+  [
+    "st_approxsummarystats",
+    "rast raster, nband integer, exclude_nodata_value boolean, sample_percent double precision",
+    "summarystats"
+  ],
+  [
+    "st_approxsummarystats",
+    "rast raster, nband integer, sample_percent double precision",
+    "summarystats"
+  ],
+  [
+    "st_approxsummarystats",
+    "rast raster, sample_percent double precision",
+    "summarystats"
+  ],
+  [
+    "st_area",
+    "geog geography, use_spheroid boolean",
+    "double precision"
+  ],
+  [
+    "st_area",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_area",
+    "text",
+    "double precision"
+  ],
+  [
+    "st_area2d",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_asbinary",
+    "geography",
+    "bytea"
+  ],
+  [
+    "st_asbinary",
+    "geography, text",
+    "bytea"
+  ],
+  [
+    "st_asbinary",
+    "geometry",
+    "bytea"
+  ],
+  [
+    "st_asbinary",
+    "geometry, text",
+    "bytea"
+  ],
+  [
+    "st_asbinary",
+    "raster, outasin boolean",
+    "bytea"
+  ],
+  [
+    "st_asencodedpolyline",
+    "geom geometry, nprecision integer",
+    "text"
+  ],
+  [
+    "st_asewkb",
+    "geometry",
+    "bytea"
+  ],
+  [
+    "st_asewkb",
+    "geometry, text",
+    "bytea"
+  ],
+  [
+    "st_asewkt",
+    "geography",
+    "text"
+  ],
+  [
+    "st_asewkt",
+    "geography, integer",
+    "text"
+  ],
+  [
+    "st_asewkt",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_asewkt",
+    "geometry, integer",
+    "text"
+  ],
+  [
+    "st_asewkt",
+    "text",
+    "text"
+  ],
+  [
+    "st_asflatgeobuf",
+    "anyelement",
+    "bytea"
+  ],
+  [
+    "st_asflatgeobuf",
+    "anyelement, boolean",
+    "bytea"
+  ],
+  [
+    "st_asflatgeobuf",
+    "anyelement, boolean, text",
+    "bytea"
+  ],
+  [
+    "st_asgdalraster",
+    "rast raster, format text, options text[], srid integer",
+    "bytea"
+  ],
+  [
+    "st_asgeobuf",
+    "anyelement",
+    "bytea"
+  ],
+  [
+    "st_asgeobuf",
+    "anyelement, text",
+    "bytea"
+  ],
+  [
+    "st_asgeojson",
+    "geog geography, maxdecimaldigits integer, options integer",
+    "text"
+  ],
+  [
+    "st_asgeojson",
+    "geom geometry, maxdecimaldigits integer, options integer",
+    "text"
+  ],
+  [
+    "st_asgeojson",
+    "r record, geom_column text, maxdecimaldigits integer, pretty_bool boolean, id_column text",
+    "text"
+  ],
+  [
+    "st_asgeojson",
+    "text",
+    "text"
+  ],
+  [
+    "st_asgml",
+    "geog geography, maxdecimaldigits integer, options integer, nprefix text, id text",
+    "text"
+  ],
+  [
+    "st_asgml",
+    "geom geometry, maxdecimaldigits integer, options integer",
+    "text"
+  ],
+  [
+    "st_asgml",
+    "text",
+    "text"
+  ],
+  [
+    "st_asgml",
+    "version integer, geog geography, maxdecimaldigits integer, options integer, nprefix text, id text",
+    "text"
+  ],
+  [
+    "st_asgml",
+    "version integer, geom geometry, maxdecimaldigits integer, options integer, nprefix text, id text",
+    "text"
+  ],
+  [
+    "st_ashexewkb",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_ashexewkb",
+    "geometry, text",
+    "text"
+  ],
+  [
+    "st_ashexwkb",
+    "raster, outasin boolean",
+    "text"
+  ],
+  [
+    "st_asjpeg",
+    "rast raster, nband integer, options text[]",
+    "bytea"
+  ],
+  [
+    "st_asjpeg",
+    "rast raster, nband integer, quality integer",
+    "bytea"
+  ],
+  [
+    "st_asjpeg",
+    "rast raster, nbands integer[], options text[]",
+    "bytea"
+  ],
+  [
+    "st_asjpeg",
+    "rast raster, nbands integer[], quality integer",
+    "bytea"
+  ],
+  [
+    "st_asjpeg",
+    "rast raster, options text[]",
+    "bytea"
+  ],
+  [
+    "st_askml",
+    "geog geography, maxdecimaldigits integer, nprefix text",
+    "text"
+  ],
+  [
+    "st_askml",
+    "geom geometry, maxdecimaldigits integer, nprefix text",
+    "text"
+  ],
+  [
+    "st_askml",
+    "text",
+    "text"
+  ],
+  [
+    "st_aslatlontext",
+    "geom geometry, tmpl text",
+    "text"
+  ],
+  [
+    "st_asmarc21",
+    "geom geometry, format text",
+    "text"
+  ],
+  [
+    "st_asmvt",
+    "anyelement",
+    "bytea"
+  ],
+  [
+    "st_asmvt",
+    "anyelement, text",
+    "bytea"
+  ],
+  [
+    "st_asmvt",
+    "anyelement, text, integer",
+    "bytea"
+  ],
+  [
+    "st_asmvt",
+    "anyelement, text, integer, text",
+    "bytea"
+  ],
+  [
+    "st_asmvt",
+    "anyelement, text, integer, text, text",
+    "bytea"
+  ],
+  [
+    "st_asmvtgeom",
+    "geom geometry, bounds box2d, extent integer, buffer integer, clip_geom boolean",
+    "geometry"
+  ],
+  [
+    "st_aspect",
+    "rast raster, nband integer, customextent raster, pixeltype text, units text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_aspect",
+    "rast raster, nband integer, pixeltype text, units text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_aspng",
+    "rast raster, nband integer, compression integer",
+    "bytea"
+  ],
+  [
+    "st_aspng",
+    "rast raster, nband integer, options text[]",
+    "bytea"
+  ],
+  [
+    "st_aspng",
+    "rast raster, nbands integer[], compression integer",
+    "bytea"
+  ],
+  [
+    "st_aspng",
+    "rast raster, nbands integer[], options text[]",
+    "bytea"
+  ],
+  [
+    "st_aspng",
+    "rast raster, options text[]",
+    "bytea"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, ref raster, pixeltype text, value double precision, nodataval double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, ref raster, pixeltype text[], value double precision[], nodataval double precision[], touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, scalex double precision, scaley double precision, gridx double precision, gridy double precision, pixeltype text, value double precision, nodataval double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, scalex double precision, scaley double precision, gridx double precision, gridy double precision, pixeltype text[], value double precision[], nodataval double precision[], skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, scalex double precision, scaley double precision, pixeltype text, value double precision, nodataval double precision, upperleftx double precision, upperlefty double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, scalex double precision, scaley double precision, pixeltype text[], value double precision[], nodataval double precision[], upperleftx double precision, upperlefty double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, width integer, height integer, gridx double precision, gridy double precision, pixeltype text, value double precision, nodataval double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, width integer, height integer, gridx double precision, gridy double precision, pixeltype text[], value double precision[], nodataval double precision[], skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, width integer, height integer, pixeltype text, value double precision, nodataval double precision, upperleftx double precision, upperlefty double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asraster",
+    "geom geometry, width integer, height integer, pixeltype text[], value double precision[], nodataval double precision[], upperleftx double precision, upperlefty double precision, skewx double precision, skewy double precision, touched boolean",
+    "raster"
+  ],
+  [
+    "st_asrasteragg",
+    "geom geometry, val double precision, ref raster, pixeltype text, nodataval double precision, uniontype text, touched boolean",
+    "raster"
+  ],
+  [
+    "st_assvg",
+    "geog geography, rel integer, maxdecimaldigits integer",
+    "text"
+  ],
+  [
+    "st_assvg",
+    "geom geometry, rel integer, maxdecimaldigits integer",
+    "text"
+  ],
+  [
+    "st_assvg",
+    "text",
+    "text"
+  ],
+  [
+    "st_astext",
+    "geography",
+    "text"
+  ],
+  [
+    "st_astext",
+    "geography, integer",
+    "text"
+  ],
+  [
+    "st_astext",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_astext",
+    "geometry, integer",
+    "text"
+  ],
+  [
+    "st_astext",
+    "text",
+    "text"
+  ],
+  [
+    "st_astiff",
+    "rast raster, compression text, srid integer",
+    "bytea"
+  ],
+  [
+    "st_astiff",
+    "rast raster, nbands integer[], compression text, srid integer",
+    "bytea"
+  ],
+  [
+    "st_astiff",
+    "rast raster, nbands integer[], options text[], srid integer",
+    "bytea"
+  ],
+  [
+    "st_astiff",
+    "rast raster, options text[], srid integer",
+    "bytea"
+  ],
+  [
+    "st_astwkb",
+    "geom geometry[], ids bigint[], prec integer, prec_z integer, prec_m integer, with_sizes boolean, with_boxes boolean",
+    "bytea"
+  ],
+  [
+    "st_astwkb",
+    "geom geometry, prec integer, prec_z integer, prec_m integer, with_sizes boolean, with_boxes boolean",
+    "bytea"
+  ],
+  [
+    "st_aswkb",
+    "raster, outasin boolean",
+    "bytea"
+  ],
+  [
+    "st_asx3d",
+    "geom geometry, maxdecimaldigits integer, options integer",
+    "text"
+  ],
+  [
+    "st_azimuth",
+    "geog1 geography, geog2 geography",
+    "double precision"
+  ],
+  [
+    "st_azimuth",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_band",
+    "rast raster, nband integer",
+    "raster"
+  ],
+  [
+    "st_band",
+    "rast raster, nbands integer[]",
+    "raster"
+  ],
+  [
+    "st_band",
+    "rast raster, nbands text, delimiter character",
+    "raster"
+  ],
+  [
+    "st_bandfilesize",
+    "rast raster, band integer",
+    "bigint"
+  ],
+  [
+    "st_bandfiletimestamp",
+    "rast raster, band integer",
+    "bigint"
+  ],
+  [
+    "st_bandisnodata",
+    "rast raster, band integer, forcechecking boolean",
+    "boolean"
+  ],
+  [
+    "st_bandisnodata",
+    "rast raster, forcechecking boolean",
+    "boolean"
+  ],
+  [
+    "st_bandmetadata",
+    "rast raster, band integer",
+    "TABLE(pixeltype text, nodatavalue double precision, isoutdb boolean, path text, outdbbandnum integer, filesize bigint, filetimestamp bigint)"
+  ],
+  [
+    "st_bandmetadata",
+    "rast raster, band integer[]",
+    "TABLE(bandnum integer, pixeltype text, nodatavalue double precision, isoutdb boolean, path text, outdbbandnum integer, filesize bigint, filetimestamp bigint)"
+  ],
+  [
+    "st_bandnodatavalue",
+    "rast raster, band integer",
+    "double precision"
+  ],
+  [
+    "st_bandpath",
+    "rast raster, band integer",
+    "text"
+  ],
+  [
+    "st_bandpixeltype",
+    "rast raster, band integer",
+    "text"
+  ],
+  [
+    "st_bdmpolyfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_bdpolyfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_boundary",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_boundingdiagonal",
+    "geom geometry, fits boolean",
+    "geometry"
+  ],
+  [
+    "st_box2dfromgeohash",
+    "text, integer",
+    "box2d"
+  ],
+  [
+    "st_buffer",
+    "geography, double precision",
+    "geography"
+  ],
+  [
+    "st_buffer",
+    "geography, double precision, integer",
+    "geography"
+  ],
+  [
+    "st_buffer",
+    "geography, double precision, text",
+    "geography"
+  ],
+  [
+    "st_buffer",
+    "geom geometry, radius double precision, options text",
+    "geometry"
+  ],
+  [
+    "st_buffer",
+    "geom geometry, radius double precision, quadsegs integer",
+    "geometry"
+  ],
+  [
+    "st_buffer",
+    "text, double precision",
+    "geometry"
+  ],
+  [
+    "st_buffer",
+    "text, double precision, integer",
+    "geometry"
+  ],
+  [
+    "st_buffer",
+    "text, double precision, text",
+    "geometry"
+  ],
+  [
+    "st_buildarea",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_centroid",
+    "geography, use_spheroid boolean",
+    "geography"
+  ],
+  [
+    "st_centroid",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_centroid",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_chaikinsmoothing",
+    "geometry, integer, boolean",
+    "geometry"
+  ],
+  [
+    "st_changeedgegeom",
+    "atopology character varying, anedge bigint, acurve geometry",
+    "text"
+  ],
+  [
+    "st_cleangeometry",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_clip",
+    "rast raster, geom geometry, crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clip",
+    "rast raster, geom geometry, nodataval double precision, crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clip",
+    "rast raster, geom geometry, nodataval double precision[], crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clip",
+    "rast raster, nband integer, geom geometry, crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clip",
+    "rast raster, nband integer, geom geometry, nodataval double precision, crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clip",
+    "rast raster, nband integer[], geom geometry, nodataval double precision[], crop boolean, touched boolean",
+    "raster"
+  ],
+  [
+    "st_clipbybox2d",
+    "geom geometry, box box2d",
+    "geometry"
+  ],
+  [
+    "st_closestpoint",
+    "geography, geography, use_spheroid boolean",
+    "geography"
+  ],
+  [
+    "st_closestpoint",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_closestpoint",
+    "text, text",
+    "geometry"
+  ],
+  [
+    "st_closestpointofapproach",
+    "geometry, geometry",
+    "double precision"
+  ],
+  [
+    "st_clusterdbscan",
+    "geometry, eps double precision, minpoints integer",
+    "integer"
+  ],
+  [
+    "st_clusterintersecting",
+    "geometry",
+    "geometry[]"
+  ],
+  [
+    "st_clusterintersecting",
+    "geometry[]",
+    "geometry[]"
+  ],
+  [
+    "st_clusterintersectingwin",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_clusterkmeans",
+    "geom geometry, k integer, max_radius double precision",
+    "integer"
+  ],
+  [
+    "st_clusterwithin",
+    "geometry, double precision",
+    "geometry[]"
+  ],
+  [
+    "st_clusterwithin",
+    "geometry[], double precision",
+    "geometry[]"
+  ],
+  [
+    "st_clusterwithinwin",
+    "geometry, distance double precision",
+    "integer"
+  ],
+  [
+    "st_collect",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_collect",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_collect",
+    "geometry[]",
+    "geometry"
+  ],
+  [
+    "st_collectionextract",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_collectionextract",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_collectionhomogenize",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_colormap",
+    "rast raster, colormap text, method text",
+    "raster"
+  ],
+  [
+    "st_colormap",
+    "rast raster, nband integer, colormap text, method text",
+    "raster"
+  ],
+  [
+    "st_combinebbox",
+    "box2d, geometry",
+    "box2d"
+  ],
+  [
+    "st_combinebbox",
+    "box3d, box3d",
+    "box3d"
+  ],
+  [
+    "st_combinebbox",
+    "box3d, geometry",
+    "box3d"
+  ],
+  [
+    "st_concavehull",
+    "param_geom geometry, param_pctconvex double precision, param_allow_holes boolean",
+    "geometry"
+  ],
+  [
+    "st_contains",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_contains",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_contains",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_containsproperly",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_containsproperly",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_containsproperly",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_contour",
+    "rast raster, bandnumber integer, level_interval double precision, level_base double precision, fixed_levels double precision[], polygonize boolean",
+    "TABLE(geom geometry, id integer, value double precision)"
+  ],
+  [
+    "st_convexhull",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_convexhull",
+    "raster",
+    "geometry"
+  ],
+  [
+    "st_coorddim",
+    "geometry geometry",
+    "smallint"
+  ],
+  [
+    "st_count",
+    "rast raster, exclude_nodata_value boolean",
+    "bigint"
+  ],
+  [
+    "st_count",
+    "rast raster, nband integer, exclude_nodata_value boolean",
+    "bigint"
+  ],
+  [
+    "st_countagg",
+    "raster, boolean",
+    "bigint"
+  ],
+  [
+    "st_countagg",
+    "raster, integer, boolean",
+    "bigint"
+  ],
+  [
+    "st_countagg",
+    "raster, integer, boolean, double precision",
+    "bigint"
+  ],
+  [
+    "st_coverageclean",
+    "geom geometry, gapmaximumwidth double precision, snappingdistance double precision, overlapmergestrategy text",
+    "geometry"
+  ],
+  [
+    "st_coverageinvalidedges",
+    "geom geometry, tolerance double precision",
+    "geometry"
+  ],
+  [
+    "st_coveragesimplify",
+    "geom geometry, tolerance double precision, simplifyboundary boolean",
+    "geometry"
+  ],
+  [
+    "st_coverageunion",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_coverageunion",
+    "geometry[]",
+    "geometry"
+  ],
+  [
+    "st_coveredby",
+    "geog1 geography, geog2 geography",
+    "boolean"
+  ],
+  [
+    "st_coveredby",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_coveredby",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_coveredby",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_coveredby",
+    "text, text",
+    "boolean"
+  ],
+  [
+    "st_covers",
+    "geog1 geography, geog2 geography",
+    "boolean"
+  ],
+  [
+    "st_covers",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_covers",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_covers",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_covers",
+    "text, text",
+    "boolean"
+  ],
+  [
+    "st_cpawithin",
+    "geometry, geometry, double precision",
+    "boolean"
+  ],
+  [
+    "st_createoverview",
+    "tab regclass, col name, factor integer, algo text",
+    "regclass"
+  ],
+  [
+    "st_createtopogeo",
+    "atopology character varying, acollection geometry",
+    "text"
+  ],
+  [
+    "st_crosses",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_curven",
+    "geometry geometry, i integer",
+    "geometry"
+  ],
+  [
+    "st_curvetoline",
+    "geom geometry, tol double precision, toltype integer, flags integer",
+    "geometry"
+  ],
+  [
+    "st_delaunaytriangles",
+    "g1 geometry, tolerance double precision, flags integer",
+    "geometry"
+  ],
+  [
+    "st_dfullywithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "st_dfullywithin",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer, distance double precision",
+    "boolean"
+  ],
+  [
+    "st_dfullywithin",
+    "rast1 raster, rast2 raster, distance double precision",
+    "boolean"
+  ],
+  [
+    "st_difference",
+    "geom1 geometry, geom2 geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_dimension",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_disjoint",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_disjoint",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_disjoint",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_distance",
+    "geog1 geography, geog2 geography, use_spheroid boolean",
+    "double precision"
+  ],
+  [
+    "st_distance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_distance",
+    "text, text",
+    "double precision"
+  ],
+  [
+    "st_distancecpa",
+    "geometry, geometry",
+    "double precision"
+  ],
+  [
+    "st_distancesphere",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_distancesphere",
+    "geom1 geometry, geom2 geometry, radius double precision",
+    "double precision"
+  ],
+  [
+    "st_distancespheroid",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_distancespheroid",
+    "geom1 geometry, geom2 geometry, spheroid",
+    "double precision"
+  ],
+  [
+    "st_distinct4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_distinct4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_dump",
+    "geometry",
+    "SETOF geometry_dump"
+  ],
+  [
+    "st_dumpaspolygons",
+    "rast raster, band integer, exclude_nodata_value boolean",
+    "SETOF geomval"
+  ],
+  [
+    "st_dumppoints",
+    "geometry",
+    "SETOF geometry_dump"
+  ],
+  [
+    "st_dumprings",
+    "geometry",
+    "SETOF geometry_dump"
+  ],
+  [
+    "st_dumpsegments",
+    "geometry",
+    "SETOF geometry_dump"
+  ],
+  [
+    "st_dumpvalues",
+    "rast raster, nband integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "st_dumpvalues",
+    "rast raster, nband integer[], exclude_nodata_value boolean",
+    "TABLE(nband integer, valarray double precision[])"
+  ],
+  [
+    "st_dwithin",
+    "geog1 geography, geog2 geography, tolerance double precision, use_spheroid boolean",
+    "boolean"
+  ],
+  [
+    "st_dwithin",
+    "geom1 geometry, geom2 geometry, double precision",
+    "boolean"
+  ],
+  [
+    "st_dwithin",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer, distance double precision",
+    "boolean"
+  ],
+  [
+    "st_dwithin",
+    "rast1 raster, rast2 raster, distance double precision",
+    "boolean"
+  ],
+  [
+    "st_dwithin",
+    "text, text, double precision",
+    "boolean"
+  ],
+  [
+    "st_endpoint",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_envelope",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_envelope",
+    "raster",
+    "geometry"
+  ],
+  [
+    "st_equals",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_estimatedextent",
+    "text, text",
+    "box2d"
+  ],
+  [
+    "st_estimatedextent",
+    "text, text, text",
+    "box2d"
+  ],
+  [
+    "st_estimatedextent",
+    "text, text, text, boolean",
+    "box2d"
+  ],
+  [
+    "st_expand",
+    "box2d, double precision",
+    "box2d"
+  ],
+  [
+    "st_expand",
+    "box3d, double precision",
+    "box3d"
+  ],
+  [
+    "st_expand",
+    "box box2d, dx double precision, dy double precision",
+    "box2d"
+  ],
+  [
+    "st_expand",
+    "box box3d, dx double precision, dy double precision, dz double precision",
+    "box3d"
+  ],
+  [
+    "st_expand",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_expand",
+    "geom geometry, dx double precision, dy double precision, dz double precision, dm double precision",
+    "geometry"
+  ],
+  [
+    "st_extent",
+    "geometry",
+    "box2d"
+  ],
+  [
+    "st_exteriorring",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_filterbym",
+    "geometry, double precision, double precision, boolean",
+    "geometry"
+  ],
+  [
+    "st_findextent",
+    "text, text",
+    "box2d"
+  ],
+  [
+    "st_findextent",
+    "text, text, text",
+    "box2d"
+  ],
+  [
+    "st_flipcoordinates",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_force2d",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_force3d",
+    "geom geometry, zvalue double precision",
+    "geometry"
+  ],
+  [
+    "st_force3dm",
+    "geom geometry, mvalue double precision",
+    "geometry"
+  ],
+  [
+    "st_force3dz",
+    "geom geometry, zvalue double precision",
+    "geometry"
+  ],
+  [
+    "st_force4d",
+    "geom geometry, zvalue double precision, mvalue double precision",
+    "geometry"
+  ],
+  [
+    "st_forcecollection",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcecurve",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcepolygonccw",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcepolygoncw",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcerhr",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcesfs",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_forcesfs",
+    "geometry, version text",
+    "geometry"
+  ],
+  [
+    "st_frechetdistance",
+    "geom1 geometry, geom2 geometry, double precision",
+    "double precision"
+  ],
+  [
+    "st_fromflatgeobuf",
+    "anyelement, bytea",
+    "SETOF anyelement"
+  ],
+  [
+    "st_fromflatgeobuftotable",
+    "text, text, bytea",
+    "void"
+  ],
+  [
+    "st_fromgdalraster",
+    "gdaldata bytea, srid integer",
+    "raster"
+  ],
+  [
+    "st_gdaldrivers",
+    "OUT idx integer, OUT short_name text, OUT long_name text, OUT can_read boolean, OUT can_write boolean, OUT create_options text",
+    "SETOF record"
+  ],
+  [
+    "st_generatepoints",
+    "area geometry, npoints integer",
+    "geometry"
+  ],
+  [
+    "st_generatepoints",
+    "area geometry, npoints integer, seed integer",
+    "geometry"
+  ],
+  [
+    "st_geogfromtext",
+    "text",
+    "geography"
+  ],
+  [
+    "st_geogfromwkb",
+    "bytea",
+    "geography"
+  ],
+  [
+    "st_geographyfromtext",
+    "text",
+    "geography"
+  ],
+  [
+    "st_geohash",
+    "geog geography, maxchars integer",
+    "text"
+  ],
+  [
+    "st_geohash",
+    "geom geometry, maxchars integer",
+    "text"
+  ],
+  [
+    "st_geomcollfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomcollfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_geomcollfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_geomcollfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_geometricmedian",
+    "g geometry, tolerance double precision, max_iter integer, fail_if_not_converged boolean",
+    "geometry"
+  ],
+  [
+    "st_geometryfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geometryfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_geometryn",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_geometrytype",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_geometrytype",
+    "tg topogeometry",
+    "text"
+  ],
+  [
+    "st_geomfromewkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_geomfromewkt",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomfromgeohash",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_geomfromgeojson",
+    "json",
+    "geometry"
+  ],
+  [
+    "st_geomfromgeojson",
+    "jsonb",
+    "geometry"
+  ],
+  [
+    "st_geomfromgeojson",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomfromgml",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomfromgml",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_geomfromkml",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomfrommarc21",
+    "marc21xml text",
+    "geometry"
+  ],
+  [
+    "st_geomfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_geomfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_geomfromtwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_geomfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_geomfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_georeference",
+    "rast raster, format text",
+    "text"
+  ],
+  [
+    "st_geotransform",
+    "raster, OUT imag double precision, OUT jmag double precision, OUT theta_i double precision, OUT theta_ij double precision, OUT xoffset double precision, OUT yoffset double precision",
+    "record"
+  ],
+  [
+    "st_getfaceedges",
+    "toponame character varying, face_id bigint",
+    "SETOF getfaceedges_returntype"
+  ],
+  [
+    "st_getfacegeometry",
+    "toponame character varying, aface bigint",
+    "geometry"
+  ],
+  [
+    "st_gmltosql",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_gmltosql",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_grayscale",
+    "rastbandargset rastbandarg[], extenttype text",
+    "raster"
+  ],
+  [
+    "st_grayscale",
+    "rast raster, redband integer, greenband integer, blueband integer, extenttype text",
+    "raster"
+  ],
+  [
+    "st_hasarc",
+    "geometry geometry",
+    "boolean"
+  ],
+  [
+    "st_hasm",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_hasnoband",
+    "rast raster, nband integer",
+    "boolean"
+  ],
+  [
+    "st_hasz",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_hausdorffdistance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_hausdorffdistance",
+    "geom1 geometry, geom2 geometry, double precision",
+    "double precision"
+  ],
+  [
+    "st_height",
+    "raster",
+    "integer"
+  ],
+  [
+    "st_hexagon",
+    "size double precision, cell_i integer, cell_j integer, origin geometry",
+    "geometry"
+  ],
+  [
+    "st_hexagongrid",
+    "size double precision, bounds geometry, OUT geom geometry, OUT i integer, OUT j integer",
+    "SETOF record"
+  ],
+  [
+    "st_hillshade",
+    "rast raster, nband integer, customextent raster, pixeltype text, azimuth double precision, altitude double precision, max_bright double precision, scale double precision, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_hillshade",
+    "rast raster, nband integer, pixeltype text, azimuth double precision, altitude double precision, max_bright double precision, scale double precision, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_histogram",
+    "rast raster, nband integer, bins integer, \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_histogram",
+    "rast raster, nband integer, bins integer, width double precision[], \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_histogram",
+    "rast raster, nband integer, exclude_nodata_value boolean, bins integer, \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_histogram",
+    "rast raster, nband integer, exclude_nodata_value boolean, bins integer, width double precision[], \"right\" boolean, OUT min double precision, OUT max double precision, OUT count bigint, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_inittopogeo",
+    "atopology character varying",
+    "text"
+  ],
+  [
+    "st_interiorringn",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_interpolatepoint",
+    "line geometry, point geometry",
+    "double precision"
+  ],
+  [
+    "st_interpolateraster",
+    "geom geometry, options text, rast raster, bandnumber integer",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "geography, geography",
+    "geography"
+  ],
+  [
+    "st_intersection",
+    "geom1 geometry, geom2 geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_intersection",
+    "geomin geometry, rast raster, band integer",
+    "SETOF geomval"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, nodataval double precision[]",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, returnband text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, returnband text, nodataval double precision[]",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, rast2 raster, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, rast2 raster, nodataval double precision[]",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, rast2 raster, returnband text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast1 raster, rast2 raster, returnband text, nodataval double precision[]",
+    "raster"
+  ],
+  [
+    "st_intersection",
+    "rast raster, band integer, geomin geometry",
+    "SETOF geomval"
+  ],
+  [
+    "st_intersection",
+    "rast raster, geomin geometry",
+    "SETOF geomval"
+  ],
+  [
+    "st_intersection",
+    "text, text",
+    "geometry"
+  ],
+  [
+    "st_intersectionfractions",
+    "rast raster, geom geometry",
+    "raster"
+  ],
+  [
+    "st_intersects",
+    "geog1 geography, geog2 geography",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "geom geometry, rast raster, nband integer",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "rast raster, geom geometry, nband integer",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "rast raster, nband integer, geom geometry",
+    "boolean"
+  ],
+  [
+    "st_intersects",
+    "text, text",
+    "boolean"
+  ],
+  [
+    "st_invdistweight4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_inversetransformpipeline",
+    "geom geometry, pipeline text, to_srid integer",
+    "geometry"
+  ],
+  [
+    "st_isclosed",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_iscollection",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_iscoveragetile",
+    "rast raster, coverage raster, tilewidth integer, tileheight integer",
+    "boolean"
+  ],
+  [
+    "st_isempty",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_isempty",
+    "rast raster",
+    "boolean"
+  ],
+  [
+    "st_ispolygonccw",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_ispolygoncw",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_isring",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_issimple",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_isvalid",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_isvalid",
+    "geometry, integer",
+    "boolean"
+  ],
+  [
+    "st_isvaliddetail",
+    "geom geometry, flags integer",
+    "valid_detail"
+  ],
+  [
+    "st_isvalidreason",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_isvalidreason",
+    "geometry, integer",
+    "text"
+  ],
+  [
+    "st_isvalidtrajectory",
+    "geometry",
+    "boolean"
+  ],
+  [
+    "st_largestemptycircle",
+    "geom geometry, tolerance double precision, boundary geometry, OUT center geometry, OUT nearest geometry, OUT radius double precision",
+    "record"
+  ],
+  [
+    "st_length",
+    "geog geography, use_spheroid boolean",
+    "double precision"
+  ],
+  [
+    "st_length",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_length",
+    "text",
+    "double precision"
+  ],
+  [
+    "st_length2d",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_length2dspheroid",
+    "geometry, spheroid",
+    "double precision"
+  ],
+  [
+    "st_lengthspheroid",
+    "geometry, spheroid",
+    "double precision"
+  ],
+  [
+    "st_letters",
+    "letters text, font json",
+    "geometry"
+  ],
+  [
+    "st_linecrossingdirection",
+    "line1 geometry, line2 geometry",
+    "integer"
+  ],
+  [
+    "st_lineextend",
+    "geom geometry, distance_forward double precision, distance_backward double precision",
+    "geometry"
+  ],
+  [
+    "st_linefromencodedpolyline",
+    "txtin text, nprecision integer",
+    "geometry"
+  ],
+  [
+    "st_linefrommultipoint",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_linefromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_linefromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_linefromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_linefromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_lineinterpolatepoint",
+    "geography, double precision, use_spheroid boolean",
+    "geography"
+  ],
+  [
+    "st_lineinterpolatepoint",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_lineinterpolatepoint",
+    "text, double precision",
+    "geometry"
+  ],
+  [
+    "st_lineinterpolatepoints",
+    "geography, double precision, use_spheroid boolean, repeat boolean",
+    "geography"
+  ],
+  [
+    "st_lineinterpolatepoints",
+    "geometry, double precision, repeat boolean",
+    "geometry"
+  ],
+  [
+    "st_lineinterpolatepoints",
+    "text, double precision",
+    "geometry"
+  ],
+  [
+    "st_linelocatepoint",
+    "geography, geography, use_spheroid boolean",
+    "double precision"
+  ],
+  [
+    "st_linelocatepoint",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_linelocatepoint",
+    "text, text",
+    "double precision"
+  ],
+  [
+    "st_linemerge",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_linemerge",
+    "geometry, boolean",
+    "geometry"
+  ],
+  [
+    "st_linestringfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_linestringfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_linesubstring",
+    "geography, double precision, double precision",
+    "geography"
+  ],
+  [
+    "st_linesubstring",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_linesubstring",
+    "text, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_linetocurve",
+    "geometry geometry",
+    "geometry"
+  ],
+  [
+    "st_locatealong",
+    "geometry geometry, measure double precision, leftrightoffset double precision",
+    "geometry"
+  ],
+  [
+    "st_locatebetween",
+    "geometry geometry, frommeasure double precision, tomeasure double precision, leftrightoffset double precision",
+    "geometry"
+  ],
+  [
+    "st_locatebetweenelevations",
+    "geometry geometry, fromelevation double precision, toelevation double precision",
+    "geometry"
+  ],
+  [
+    "st_longestline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_m",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_makebox2d",
+    "geom1 geometry, geom2 geometry",
+    "box2d"
+  ],
+  [
+    "st_makeemptycoverage",
+    "tilewidth integer, tileheight integer, width integer, height integer, upperleftx double precision, upperlefty double precision, scalex double precision, scaley double precision, skewx double precision, skewy double precision, srid integer",
+    "SETOF raster"
+  ],
+  [
+    "st_makeemptyraster",
+    "rast raster",
+    "raster"
+  ],
+  [
+    "st_makeemptyraster",
+    "width integer, height integer, upperleftx double precision, upperlefty double precision, pixelsize double precision",
+    "raster"
+  ],
+  [
+    "st_makeemptyraster",
+    "width integer, height integer, upperleftx double precision, upperlefty double precision, scalex double precision, scaley double precision, skewx double precision, skewy double precision, srid integer",
+    "raster"
+  ],
+  [
+    "st_makeenvelope",
+    "double precision, double precision, double precision, double precision, integer",
+    "geometry"
+  ],
+  [
+    "st_makeline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_makeline",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_makeline",
+    "geometry[]",
+    "geometry"
+  ],
+  [
+    "st_makepoint",
+    "double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_makepoint",
+    "double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_makepoint",
+    "double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_makepointm",
+    "double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_makepolygon",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_makepolygon",
+    "geometry, geometry[]",
+    "geometry"
+  ],
+  [
+    "st_makevalid",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_makevalid",
+    "geom geometry, params text",
+    "geometry"
+  ],
+  [
+    "st_mapalgebra",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, expression text, pixeltype text, extenttype text, nodata1expr text, nodata2expr text, nodatanodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer, callbackfunc regprocedure, pixeltype text, extenttype text, customextent raster, distancex integer, distancey integer, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast1 raster, rast2 raster, expression text, pixeltype text, extenttype text, nodata1expr text, nodata2expr text, nodatanodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rastbandargset rastbandarg[], callbackfunc regprocedure, pixeltype text, extenttype text, customextent raster, distancex integer, distancey integer, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast raster, nband integer, callbackfunc regprocedure, mask double precision[], weighted boolean, pixeltype text, extenttype text, customextent raster, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast raster, nband integer, callbackfunc regprocedure, pixeltype text, extenttype text, customextent raster, distancex integer, distancey integer, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast raster, nband integer[], callbackfunc regprocedure, pixeltype text, extenttype text, customextent raster, distancex integer, distancey integer, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast raster, nband integer, pixeltype text, expression text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebra",
+    "rast raster, pixeltype text, expression text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebraexpr",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, expression text, pixeltype text, extenttype text, nodata1expr text, nodata2expr text, nodatanodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebraexpr",
+    "rast1 raster, rast2 raster, expression text, pixeltype text, extenttype text, nodata1expr text, nodata2expr text, nodatanodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebraexpr",
+    "rast raster, band integer, pixeltype text, expression text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebraexpr",
+    "rast raster, pixeltype text, expression text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast1 raster, band1 integer, rast2 raster, band2 integer, tworastuserfunc regprocedure, pixeltype text, extenttype text, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast1 raster, rast2 raster, tworastuserfunc regprocedure, pixeltype text, extenttype text, VARIADIC userargs text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, band integer, onerastuserfunc regprocedure",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, band integer, onerastuserfunc regprocedure, VARIADIC args text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, band integer, pixeltype text, onerastuserfunc regprocedure",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, band integer, pixeltype text, onerastuserfunc regprocedure, VARIADIC args text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, onerastuserfunc regprocedure",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, onerastuserfunc regprocedure, VARIADIC args text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, pixeltype text, onerastuserfunc regprocedure",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafct",
+    "rast raster, pixeltype text, onerastuserfunc regprocedure, VARIADIC args text[]",
+    "raster"
+  ],
+  [
+    "st_mapalgebrafctngb",
+    "rast raster, band integer, pixeltype text, ngbwidth integer, ngbheight integer, onerastngbuserfunc regprocedure, nodatamode text, VARIADIC args text[]",
+    "raster"
+  ],
+  [
+    "st_max4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_max4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_maxdistance",
+    "geom1 geometry, geom2 geometry",
+    "double precision"
+  ],
+  [
+    "st_maximuminscribedcircle",
+    "geometry, OUT center geometry, OUT nearest geometry, OUT radius double precision",
+    "record"
+  ],
+  [
+    "st_mean4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_mean4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_memcollect",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_memsize",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_memsize",
+    "raster",
+    "integer"
+  ],
+  [
+    "st_memunion",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_metadata",
+    "rast raster, OUT upperleftx double precision, OUT upperlefty double precision, OUT width integer, OUT height integer, OUT scalex double precision, OUT scaley double precision, OUT skewx double precision, OUT skewy double precision, OUT srid integer, OUT numbands integer",
+    "record"
+  ],
+  [
+    "st_min4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_min4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_minconvexhull",
+    "rast raster, nband integer",
+    "geometry"
+  ],
+  [
+    "st_mindist4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_minimumboundingcircle",
+    "inputgeom geometry, segs_per_quarter integer",
+    "geometry"
+  ],
+  [
+    "st_minimumboundingradius",
+    "geometry, OUT center geometry, OUT radius double precision",
+    "record"
+  ],
+  [
+    "st_minimumclearance",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_minimumclearanceline",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_minpossiblevalue",
+    "pixeltype text",
+    "double precision"
+  ],
+  [
+    "st_mlinefromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_mlinefromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_mlinefromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_mlinefromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_modedgeheal",
+    "toponame character varying, e1id bigint, e2id bigint",
+    "bigint"
+  ],
+  [
+    "st_modedgesplit",
+    "atopology character varying, anedge bigint, apoint geometry",
+    "bigint"
+  ],
+  [
+    "st_moveisonode",
+    "atopology character varying, anode bigint, apoint geometry",
+    "text"
+  ],
+  [
+    "st_mpointfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_mpointfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_mpointfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_mpointfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_mpolyfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_mpolyfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_mpolyfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_mpolyfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_multi",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_multilinefromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_multilinestringfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_multilinestringfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_multipointfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_multipointfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_multipointfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_multipolyfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_multipolyfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_multipolygonfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_multipolygonfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_ndims",
+    "geometry",
+    "smallint"
+  ],
+  [
+    "st_nearestvalue",
+    "rast raster, band integer, columnx integer, rowy integer, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_nearestvalue",
+    "rast raster, band integer, pt geometry, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_nearestvalue",
+    "rast raster, columnx integer, rowy integer, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_nearestvalue",
+    "rast raster, pt geometry, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_neighborhood",
+    "rast raster, band integer, columnx integer, rowy integer, distancex integer, distancey integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "st_neighborhood",
+    "rast raster, band integer, pt geometry, distancex integer, distancey integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "st_neighborhood",
+    "rast raster, columnx integer, rowy integer, distancex integer, distancey integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "st_neighborhood",
+    "rast raster, pt geometry, distancex integer, distancey integer, exclude_nodata_value boolean",
+    "double precision[]"
+  ],
+  [
+    "st_newedgeheal",
+    "toponame character varying, e1id bigint, e2id bigint",
+    "bigint"
+  ],
+  [
+    "st_newedgessplit",
+    "atopology character varying, anedge bigint, apoint geometry",
+    "bigint"
+  ],
+  [
+    "st_node",
+    "g geometry",
+    "geometry"
+  ],
+  [
+    "st_normalize",
+    "geom geometry",
+    "geometry"
+  ],
+  [
+    "st_notsamealignmentreason",
+    "rast1 raster, rast2 raster",
+    "text"
+  ],
+  [
+    "st_npoints",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_nrings",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_numbands",
+    "raster",
+    "integer"
+  ],
+  [
+    "st_numcurves",
+    "geometry geometry",
+    "integer"
+  ],
+  [
+    "st_numgeometries",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_numinteriorring",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_numinteriorrings",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_numpatches",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_numpoints",
+    "geometry",
+    "integer"
+  ],
+  [
+    "st_offsetcurve",
+    "line geometry, distance double precision, params text",
+    "geometry"
+  ],
+  [
+    "st_orderingequals",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_orientedenvelope",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_overlaps",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_overlaps",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_overlaps",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_patchn",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_perimeter",
+    "geog geography, use_spheroid boolean",
+    "double precision"
+  ],
+  [
+    "st_perimeter",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_perimeter2d",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_pixelascentroid",
+    "rast raster, x integer, y integer",
+    "geometry"
+  ],
+  [
+    "st_pixelascentroids",
+    "rast raster, band integer, exclude_nodata_value boolean",
+    "TABLE(geom geometry, val double precision, x integer, y integer)"
+  ],
+  [
+    "st_pixelaspoint",
+    "rast raster, x integer, y integer",
+    "geometry"
+  ],
+  [
+    "st_pixelaspoints",
+    "rast raster, band integer, exclude_nodata_value boolean",
+    "TABLE(geom geometry, val double precision, x integer, y integer)"
+  ],
+  [
+    "st_pixelaspolygon",
+    "rast raster, x integer, y integer",
+    "geometry"
+  ],
+  [
+    "st_pixelaspolygons",
+    "rast raster, band integer, exclude_nodata_value boolean",
+    "TABLE(geom geometry, val double precision, x integer, y integer)"
+  ],
+  [
+    "st_pixelheight",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_pixelofvalue",
+    "rast raster, nband integer, search double precision, exclude_nodata_value boolean",
+    "TABLE(x integer, y integer)"
+  ],
+  [
+    "st_pixelofvalue",
+    "rast raster, nband integer, search double precision[], exclude_nodata_value boolean",
+    "TABLE(val double precision, x integer, y integer)"
+  ],
+  [
+    "st_pixelofvalue",
+    "rast raster, search double precision, exclude_nodata_value boolean",
+    "TABLE(x integer, y integer)"
+  ],
+  [
+    "st_pixelofvalue",
+    "rast raster, search double precision[], exclude_nodata_value boolean",
+    "TABLE(val double precision, x integer, y integer)"
+  ],
+  [
+    "st_pixelwidth",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_point",
+    "double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_point",
+    "double precision, double precision, srid integer",
+    "geometry"
+  ],
+  [
+    "st_pointfromgeohash",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_pointfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_pointfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_pointfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_pointfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_pointinsidecircle",
+    "geometry, double precision, double precision, double precision",
+    "boolean"
+  ],
+  [
+    "st_pointm",
+    "xcoordinate double precision, ycoordinate double precision, mcoordinate double precision, srid integer",
+    "geometry"
+  ],
+  [
+    "st_pointn",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_pointonsurface",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_points",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_pointz",
+    "xcoordinate double precision, ycoordinate double precision, zcoordinate double precision, srid integer",
+    "geometry"
+  ],
+  [
+    "st_pointzm",
+    "xcoordinate double precision, ycoordinate double precision, zcoordinate double precision, mcoordinate double precision, srid integer",
+    "geometry"
+  ],
+  [
+    "st_polyfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_polyfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_polyfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_polyfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_polygon",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_polygon",
+    "rast raster, band integer",
+    "geometry"
+  ],
+  [
+    "st_polygonfromtext",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_polygonfromtext",
+    "text, integer",
+    "geometry"
+  ],
+  [
+    "st_polygonfromwkb",
+    "bytea",
+    "geometry"
+  ],
+  [
+    "st_polygonfromwkb",
+    "bytea, integer",
+    "geometry"
+  ],
+  [
+    "st_polygonize",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_polygonize",
+    "geometry[]",
+    "geometry"
+  ],
+  [
+    "st_project",
+    "geog_from geography, geog_to geography, distance double precision",
+    "geography"
+  ],
+  [
+    "st_project",
+    "geog geography, distance double precision, azimuth double precision",
+    "geography"
+  ],
+  [
+    "st_project",
+    "geom1 geometry, distance double precision, azimuth double precision",
+    "geometry"
+  ],
+  [
+    "st_project",
+    "geom1 geometry, geom2 geometry, distance double precision",
+    "geometry"
+  ],
+  [
+    "st_quantile",
+    "rast raster, exclude_nodata_value boolean, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_quantile",
+    "rast raster, nband integer, exclude_nodata_value boolean, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_quantile",
+    "rast raster, nband integer, exclude_nodata_value boolean, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_quantile",
+    "rast raster, nband integer, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_quantile",
+    "rast raster, nband integer, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_quantile",
+    "rast raster, quantile double precision",
+    "double precision"
+  ],
+  [
+    "st_quantile",
+    "rast raster, quantiles double precision[], OUT quantile double precision, OUT value double precision",
+    "SETOF record"
+  ],
+  [
+    "st_quantizecoordinates",
+    "g geometry, prec_x integer, prec_y integer, prec_z integer, prec_m integer",
+    "geometry"
+  ],
+  [
+    "st_range4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_range4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_rastertoworldcoord",
+    "rast raster, columnx integer, rowy integer, OUT longitude double precision, OUT latitude double precision",
+    "record"
+  ],
+  [
+    "st_rastertoworldcoordx",
+    "rast raster, xr integer",
+    "double precision"
+  ],
+  [
+    "st_rastertoworldcoordx",
+    "rast raster, xr integer, yr integer",
+    "double precision"
+  ],
+  [
+    "st_rastertoworldcoordy",
+    "rast raster, xr integer, yr integer",
+    "double precision"
+  ],
+  [
+    "st_rastertoworldcoordy",
+    "rast raster, yr integer",
+    "double precision"
+  ],
+  [
+    "st_rastfromhexwkb",
+    "text",
+    "raster"
+  ],
+  [
+    "st_rastfromwkb",
+    "bytea",
+    "raster"
+  ],
+  [
+    "st_reclass",
+    "rast raster, nband integer, reclassexpr text, pixeltype text, nodataval double precision",
+    "raster"
+  ],
+  [
+    "st_reclass",
+    "rast raster, reclassexpr text, pixeltype text",
+    "raster"
+  ],
+  [
+    "st_reclass",
+    "rast raster, VARIADIC reclassargset reclassarg[]",
+    "raster"
+  ],
+  [
+    "st_reclassexact",
+    "rast raster, inputvalues double precision[], outputvalues double precision[], bandnumber integer, outputpixeltype text, nodatavalue double precision",
+    "raster"
+  ],
+  [
+    "st_reduceprecision",
+    "geom geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_relate",
+    "geom1 geometry, geom2 geometry",
+    "text"
+  ],
+  [
+    "st_relate",
+    "geom1 geometry, geom2 geometry, integer",
+    "text"
+  ],
+  [
+    "st_relate",
+    "geom1 geometry, geom2 geometry, text",
+    "boolean"
+  ],
+  [
+    "st_relatematch",
+    "text, text",
+    "boolean"
+  ],
+  [
+    "st_remedgemodface",
+    "toponame character varying, e1id bigint",
+    "bigint"
+  ],
+  [
+    "st_remedgenewface",
+    "toponame character varying, e1id bigint",
+    "bigint"
+  ],
+  [
+    "st_remisonode",
+    "character varying, bigint",
+    "text"
+  ],
+  [
+    "st_removeirrelevantpointsforview",
+    "geometry, box2d, boolean",
+    "geometry"
+  ],
+  [
+    "st_removeisoedge",
+    "atopology character varying, anedge bigint",
+    "text"
+  ],
+  [
+    "st_removeisonode",
+    "atopology character varying, anode bigint",
+    "text"
+  ],
+  [
+    "st_removepoint",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_removerepeatedpoints",
+    "geom geometry, tolerance double precision",
+    "geometry"
+  ],
+  [
+    "st_removesmallparts",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_resample",
+    "rast raster, ref raster, algorithm text, maxerr double precision, usescale boolean",
+    "raster"
+  ],
+  [
+    "st_resample",
+    "rast raster, ref raster, usescale boolean, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_resample",
+    "rast raster, scalex double precision, scaley double precision, gridx double precision, gridy double precision, skewx double precision, skewy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_resample",
+    "rast raster, width integer, height integer, gridx double precision, gridy double precision, skewx double precision, skewy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_rescale",
+    "rast raster, scalex double precision, scaley double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_rescale",
+    "rast raster, scalexy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_resize",
+    "rast raster, percentwidth double precision, percentheight double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_resize",
+    "rast raster, width integer, height integer, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_resize",
+    "rast raster, width text, height text, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_reskew",
+    "rast raster, skewx double precision, skewy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_reskew",
+    "rast raster, skewxy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_retile",
+    "tab regclass, col name, ext geometry, sfx double precision, sfy double precision, tw integer, th integer, algo text",
+    "SETOF raster"
+  ],
+  [
+    "st_reverse",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_rotate",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_rotate",
+    "geometry, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_rotate",
+    "geometry, double precision, geometry",
+    "geometry"
+  ],
+  [
+    "st_rotatex",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_rotatey",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_rotatez",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_rotation",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_roughness",
+    "rast raster, nband integer, customextent raster, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_roughness",
+    "rast raster, nband integer, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_samealignment",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_samealignment",
+    "raster",
+    "boolean"
+  ],
+  [
+    "st_samealignment",
+    "ulx1 double precision, uly1 double precision, scalex1 double precision, scaley1 double precision, skewx1 double precision, skewy1 double precision, ulx2 double precision, uly2 double precision, scalex2 double precision, scaley2 double precision, skewx2 double precision, skewy2 double precision",
+    "boolean"
+  ],
+  [
+    "st_scale",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_scale",
+    "geometry, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_scale",
+    "geometry, geometry",
+    "geometry"
+  ],
+  [
+    "st_scale",
+    "geometry, geometry, origin geometry",
+    "geometry"
+  ],
+  [
+    "st_scalex",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_scaley",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_scroll",
+    "geometry, geometry",
+    "geometry"
+  ],
+  [
+    "st_segmentize",
+    "geog geography, max_segment_length double precision",
+    "geography"
+  ],
+  [
+    "st_segmentize",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_setbandindex",
+    "rast raster, band integer, outdbindex integer, force boolean",
+    "raster"
+  ],
+  [
+    "st_setbandisnodata",
+    "rast raster, band integer",
+    "raster"
+  ],
+  [
+    "st_setbandnodatavalue",
+    "rast raster, band integer, nodatavalue double precision, forcechecking boolean",
+    "raster"
+  ],
+  [
+    "st_setbandnodatavalue",
+    "rast raster, nodatavalue double precision",
+    "raster"
+  ],
+  [
+    "st_setbandpath",
+    "rast raster, band integer, outdbpath text, outdbindex integer, force boolean",
+    "raster"
+  ],
+  [
+    "st_seteffectivearea",
+    "geometry, double precision, integer",
+    "geometry"
+  ],
+  [
+    "st_setgeoreference",
+    "rast raster, georef text, format text",
+    "raster"
+  ],
+  [
+    "st_setgeoreference",
+    "rast raster, upperleftx double precision, upperlefty double precision, scalex double precision, scaley double precision, skewx double precision, skewy double precision",
+    "raster"
+  ],
+  [
+    "st_setgeotransform",
+    "rast raster, imag double precision, jmag double precision, theta_i double precision, theta_ij double precision, xoffset double precision, yoffset double precision",
+    "raster"
+  ],
+  [
+    "st_setm",
+    "rast raster, geom geometry, resample text, band integer",
+    "geometry"
+  ],
+  [
+    "st_setpoint",
+    "geometry, integer, geometry",
+    "geometry"
+  ],
+  [
+    "st_setrotation",
+    "rast raster, rotation double precision",
+    "raster"
+  ],
+  [
+    "st_setscale",
+    "rast raster, scale double precision",
+    "raster"
+  ],
+  [
+    "st_setscale",
+    "rast raster, scalex double precision, scaley double precision",
+    "raster"
+  ],
+  [
+    "st_setskew",
+    "rast raster, skew double precision",
+    "raster"
+  ],
+  [
+    "st_setskew",
+    "rast raster, skewx double precision, skewy double precision",
+    "raster"
+  ],
+  [
+    "st_setsrid",
+    "geog geography, srid integer",
+    "geography"
+  ],
+  [
+    "st_setsrid",
+    "geom geometry, srid integer",
+    "geometry"
+  ],
+  [
+    "st_setsrid",
+    "rast raster, srid integer",
+    "raster"
+  ],
+  [
+    "st_setupperleft",
+    "rast raster, upperleftx double precision, upperlefty double precision",
+    "raster"
+  ],
+  [
+    "st_setvalue",
+    "rast raster, band integer, x integer, y integer, newvalue double precision",
+    "raster"
+  ],
+  [
+    "st_setvalue",
+    "rast raster, geom geometry, newvalue double precision",
+    "raster"
+  ],
+  [
+    "st_setvalue",
+    "rast raster, nband integer, geom geometry, newvalue double precision",
+    "raster"
+  ],
+  [
+    "st_setvalue",
+    "rast raster, x integer, y integer, newvalue double precision",
+    "raster"
+  ],
+  [
+    "st_setvalues",
+    "rast raster, nband integer, geomvalset geomval[], keepnodata boolean",
+    "raster"
+  ],
+  [
+    "st_setvalues",
+    "rast raster, nband integer, x integer, y integer, newvalueset double precision[], noset boolean[], keepnodata boolean",
+    "raster"
+  ],
+  [
+    "st_setvalues",
+    "rast raster, nband integer, x integer, y integer, newvalueset double precision[], nosetvalue double precision, keepnodata boolean",
+    "raster"
+  ],
+  [
+    "st_setvalues",
+    "rast raster, nband integer, x integer, y integer, width integer, height integer, newvalue double precision, keepnodata boolean",
+    "raster"
+  ],
+  [
+    "st_setvalues",
+    "rast raster, x integer, y integer, width integer, height integer, newvalue double precision, keepnodata boolean",
+    "raster"
+  ],
+  [
+    "st_setz",
+    "rast raster, geom geometry, resample text, band integer",
+    "geometry"
+  ],
+  [
+    "st_sharedpaths",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_shiftlongitude",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_shortestline",
+    "geography, geography, use_spheroid boolean",
+    "geography"
+  ],
+  [
+    "st_shortestline",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_shortestline",
+    "text, text",
+    "geometry"
+  ],
+  [
+    "st_simplify",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_simplify",
+    "geometry, double precision, boolean",
+    "geometry"
+  ],
+  [
+    "st_simplify",
+    "tg topogeometry, tolerance double precision",
+    "geometry"
+  ],
+  [
+    "st_simplifypolygonhull",
+    "geom geometry, vertex_fraction double precision, is_outer boolean",
+    "geometry"
+  ],
+  [
+    "st_simplifypreservetopology",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_simplifyvw",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_skewx",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_skewy",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_slope",
+    "rast raster, nband integer, customextent raster, pixeltype text, units text, scale double precision, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_slope",
+    "rast raster, nband integer, pixeltype text, units text, scale double precision, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_snap",
+    "geom1 geometry, geom2 geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_snaptogrid",
+    "geom1 geometry, geom2 geometry, double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_snaptogrid",
+    "geometry, double precision",
+    "geometry"
+  ],
+  [
+    "st_snaptogrid",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_snaptogrid",
+    "geometry, double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_snaptogrid",
+    "rast raster, gridx double precision, gridy double precision, algorithm text, maxerr double precision, scalex double precision, scaley double precision",
+    "raster"
+  ],
+  [
+    "st_snaptogrid",
+    "rast raster, gridx double precision, gridy double precision, scalex double precision, scaley double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_snaptogrid",
+    "rast raster, gridx double precision, gridy double precision, scalexy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_split",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_square",
+    "size double precision, cell_i integer, cell_j integer, origin geometry",
+    "geometry"
+  ],
+  [
+    "st_squaregrid",
+    "size double precision, bounds geometry, OUT geom geometry, OUT i integer, OUT j integer",
+    "SETOF record"
+  ],
+  [
+    "st_srid",
+    "geog geography",
+    "integer"
+  ],
+  [
+    "st_srid",
+    "geom geometry",
+    "integer"
+  ],
+  [
+    "st_srid",
+    "raster",
+    "integer"
+  ],
+  [
+    "st_srid",
+    "tg topogeometry",
+    "integer"
+  ],
+  [
+    "st_startpoint",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_stddev4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_stddev4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_subdivide",
+    "geom geometry, maxvertices integer, gridsize double precision",
+    "SETOF geometry"
+  ],
+  [
+    "st_sum4ma",
+    "matrix double precision[], nodatamode text, VARIADIC args text[]",
+    "double precision"
+  ],
+  [
+    "st_sum4ma",
+    "value double precision[], pos integer[], VARIADIC userargs text[]",
+    "double precision"
+  ],
+  [
+    "st_summary",
+    "geography",
+    "text"
+  ],
+  [
+    "st_summary",
+    "geometry",
+    "text"
+  ],
+  [
+    "st_summary",
+    "rast raster",
+    "text"
+  ],
+  [
+    "st_summarystats",
+    "rast raster, exclude_nodata_value boolean",
+    "summarystats"
+  ],
+  [
+    "st_summarystats",
+    "rast raster, nband integer, exclude_nodata_value boolean",
+    "summarystats"
+  ],
+  [
+    "st_summarystatsagg",
+    "raster, boolean, double precision",
+    "summarystats"
+  ],
+  [
+    "st_summarystatsagg",
+    "raster, integer, boolean",
+    "summarystats"
+  ],
+  [
+    "st_summarystatsagg",
+    "raster, integer, boolean, double precision",
+    "summarystats"
+  ],
+  [
+    "st_swapordinates",
+    "geom geometry, ords cstring",
+    "geometry"
+  ],
+  [
+    "st_symdifference",
+    "geom1 geometry, geom2 geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_symmetricdifference",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_tile",
+    "rast raster, nband integer, width integer, height integer, padwithnodata boolean, nodataval double precision",
+    "SETOF raster"
+  ],
+  [
+    "st_tile",
+    "rast raster, nband integer[], width integer, height integer, padwithnodata boolean, nodataval double precision",
+    "SETOF raster"
+  ],
+  [
+    "st_tile",
+    "rast raster, width integer, height integer, padwithnodata boolean, nodataval double precision",
+    "SETOF raster"
+  ],
+  [
+    "st_tileenvelope",
+    "zoom integer, x integer, y integer, bounds geometry, margin double precision",
+    "geometry"
+  ],
+  [
+    "st_touches",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_touches",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_touches",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_tpi",
+    "rast raster, nband integer, customextent raster, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_tpi",
+    "rast raster, nband integer, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_transform",
+    "geometry, integer",
+    "geometry"
+  ],
+  [
+    "st_transform",
+    "geom geometry, from_proj text, to_proj text",
+    "geometry"
+  ],
+  [
+    "st_transform",
+    "geom geometry, from_proj text, to_srid integer",
+    "geometry"
+  ],
+  [
+    "st_transform",
+    "geom geometry, to_proj text",
+    "geometry"
+  ],
+  [
+    "st_transform",
+    "rast raster, alignto raster, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_transform",
+    "rast raster, srid integer, algorithm text, maxerr double precision, scalex double precision, scaley double precision",
+    "raster"
+  ],
+  [
+    "st_transform",
+    "rast raster, srid integer, scalex double precision, scaley double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_transform",
+    "rast raster, srid integer, scalexy double precision, algorithm text, maxerr double precision",
+    "raster"
+  ],
+  [
+    "st_transformpipeline",
+    "geom geometry, pipeline text, to_srid integer",
+    "geometry"
+  ],
+  [
+    "st_translate",
+    "geometry, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_translate",
+    "geometry, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_transscale",
+    "geometry, double precision, double precision, double precision, double precision",
+    "geometry"
+  ],
+  [
+    "st_tri",
+    "rast raster, nband integer, customextent raster, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_tri",
+    "rast raster, nband integer, pixeltype text, interpolate_nodata boolean",
+    "raster"
+  ],
+  [
+    "st_triangulatepolygon",
+    "g1 geometry",
+    "geometry"
+  ],
+  [
+    "st_unaryunion",
+    "geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "geom1 geometry, geom2 geometry",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "geom1 geometry, geom2 geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "geometry",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "geometry[]",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "st_union",
+    "raster",
+    "raster"
+  ],
+  [
+    "st_union",
+    "raster, integer",
+    "raster"
+  ],
+  [
+    "st_union",
+    "raster, integer, text",
+    "raster"
+  ],
+  [
+    "st_union",
+    "raster, text",
+    "raster"
+  ],
+  [
+    "st_union",
+    "raster, unionarg[]",
+    "raster"
+  ],
+  [
+    "st_upperleftx",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_upperlefty",
+    "raster",
+    "double precision"
+  ],
+  [
+    "st_value",
+    "rast raster, band integer, pt geometry, exclude_nodata_value boolean, resample text",
+    "double precision"
+  ],
+  [
+    "st_value",
+    "rast raster, band integer, x integer, y integer, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_value",
+    "rast raster, pt geometry, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_value",
+    "rast raster, x integer, y integer, exclude_nodata_value boolean",
+    "double precision"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, nband integer, exclude_nodata_value boolean, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, nband integer, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, nband integer, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rastertable text, rastercolumn text, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, nband integer, exclude_nodata_value boolean, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, nband integer, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, nband integer, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, searchvalue double precision, roundto double precision",
+    "integer"
+  ],
+  [
+    "st_valuecount",
+    "rast raster, searchvalues double precision[], roundto double precision, OUT value double precision, OUT count integer",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, nband integer, exclude_nodata_value boolean, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, nband integer, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, nband integer, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rastertable text, rastercolumn text, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, nband integer, exclude_nodata_value boolean, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, nband integer, exclude_nodata_value boolean, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, nband integer, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, nband integer, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, searchvalue double precision, roundto double precision",
+    "double precision"
+  ],
+  [
+    "st_valuepercent",
+    "rast raster, searchvalues double precision[], roundto double precision, OUT value double precision, OUT percent double precision",
+    "SETOF record"
+  ],
+  [
+    "st_voronoilines",
+    "g1 geometry, tolerance double precision, extend_to geometry",
+    "geometry"
+  ],
+  [
+    "st_voronoipolygons",
+    "g1 geometry, tolerance double precision, extend_to geometry",
+    "geometry"
+  ],
+  [
+    "st_width",
+    "raster",
+    "integer"
+  ],
+  [
+    "st_within",
+    "geom1 geometry, geom2 geometry",
+    "boolean"
+  ],
+  [
+    "st_within",
+    "rast1 raster, nband1 integer, rast2 raster, nband2 integer",
+    "boolean"
+  ],
+  [
+    "st_within",
+    "rast1 raster, rast2 raster",
+    "boolean"
+  ],
+  [
+    "st_wkbtosql",
+    "wkb bytea",
+    "geometry"
+  ],
+  [
+    "st_wkttosql",
+    "text",
+    "geometry"
+  ],
+  [
+    "st_worldtorastercoord",
+    "rast raster, longitude double precision, latitude double precision, OUT columnx integer, OUT rowy integer",
+    "record"
+  ],
+  [
+    "st_worldtorastercoord",
+    "rast raster, pt geometry, OUT columnx integer, OUT rowy integer",
+    "record"
+  ],
+  [
+    "st_worldtorastercoordx",
+    "rast raster, pt geometry",
+    "integer"
+  ],
+  [
+    "st_worldtorastercoordx",
+    "rast raster, xw double precision",
+    "integer"
+  ],
+  [
+    "st_worldtorastercoordx",
+    "rast raster, xw double precision, yw double precision",
+    "integer"
+  ],
+  [
+    "st_worldtorastercoordy",
+    "rast raster, pt geometry",
+    "integer"
+  ],
+  [
+    "st_worldtorastercoordy",
+    "rast raster, xw double precision, yw double precision",
+    "integer"
+  ],
+  [
+    "st_worldtorastercoordy",
+    "rast raster, yw double precision",
+    "integer"
+  ],
+  [
+    "st_wrapx",
+    "geom geometry, wrap double precision, move double precision",
+    "geometry"
+  ],
+  [
+    "st_x",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_xmax",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "st_xmin",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "st_y",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_ymax",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "st_ymin",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "st_z",
+    "geometry",
+    "double precision"
+  ],
+  [
+    "st_zmax",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "st_zmflag",
+    "geometry",
+    "smallint"
+  ],
+  [
+    "st_zmin",
+    "box3d",
+    "double precision"
+  ],
+  [
+    "text",
+    "geometry",
+    "text"
+  ],
+  [
+    "text_soundex",
+    "text",
+    "text"
+  ],
+  [
+    "topoelement",
+    "topo topogeometry",
+    "topoelement"
+  ],
+  [
+    "topoelementarray_agg",
+    "topoelement",
+    "topoelementarray"
+  ],
+  [
+    "topoelementarray_append",
+    "topoelementarray, topoelement",
+    "topoelementarray"
+  ],
+  [
+    "topogeo_addgeometry",
+    "atopology character varying, ageom geometry, tolerance double precision",
+    "void"
+  ],
+  [
+    "topogeo_addlinestring",
+    "atopology character varying, aline geometry, tolerance double precision",
+    "SETOF bigint"
+  ],
+  [
+    "topogeo_addpoint",
+    "atopology character varying, apoint geometry, tolerance double precision",
+    "bigint"
+  ],
+  [
+    "topogeo_addpolygon",
+    "atopology character varying, apoly geometry, tolerance double precision",
+    "SETOF bigint"
+  ],
+  [
+    "topogeo_loadgeometry",
+    "atopology character varying, ageom geometry, tolerance double precision",
+    "void"
+  ],
+  [
+    "topogeom_addelement",
+    "tg topogeometry, el topoelement",
+    "topogeometry"
+  ],
+  [
+    "topogeom_addtopogeom",
+    "tgt topogeometry, src topogeometry",
+    "topogeometry"
+  ],
+  [
+    "topogeom_remelement",
+    "tg topogeometry, el topoelement",
+    "topogeometry"
+  ],
+  [
+    "topologysummary",
+    "atopology character varying",
+    "text"
+  ],
+  [
+    "totaltopologysize",
+    "toponame name",
+    "bigint"
+  ],
+  [
+    "totopogeom",
+    "ageom geometry, atopology character varying, alayer integer, atolerance double precision",
+    "topogeometry"
+  ],
+  [
+    "totopogeom",
+    "ageom geometry, tg topogeometry, atolerance double precision",
+    "topogeometry"
+  ],
+  [
+    "updategeometrysrid",
+    "catalogn_name character varying, schema_name character varying, table_name character varying, column_name character varying, new_srid_in integer",
+    "text"
+  ],
+  [
+    "updategeometrysrid",
+    "character varying, character varying, character varying, integer",
+    "text"
+  ],
+  [
+    "updategeometrysrid",
+    "character varying, character varying, integer",
+    "text"
+  ],
+  [
+    "updaterastersrid",
+    "schema_name name, table_name name, column_name name, new_srid integer",
+    "boolean"
+  ],
+  [
+    "updaterastersrid",
+    "table_name name, column_name name, new_srid integer",
+    "boolean"
+  ],
+  [
+    "upgradetopology",
+    "toponame name",
+    "void"
+  ],
+  [
+    "validatetopology",
+    "toponame character varying, bbox geometry",
+    "SETOF validatetopology_returntype"
+  ],
+  [
+    "validatetopologyprecision",
+    "toponame name, bbox geometry, gridsize double precision",
+    "geometry"
+  ],
+  [
+    "validatetopologyrelation",
+    "toponame character varying",
+    "TABLE(error text, layer_id integer, topogeo_id bigint, element_id bigint)"
+  ]
+]
