@@ -1,0 +1,16 @@
+[
+  {
+    "container": "mo-types-mysql",
+    "read_only_source": "/usr/sbin/mysqld",
+    "copy": "/tmp/mo-heavy-alternative-20261012/bin/mysqld",
+    "bytes": 63659744,
+    "sha256": "b7fbad1d47baa9ed9ecaf4574d87a1f3c38ec279867502a3e5c9f9edf4ec3399"
+  },
+  {
+    "container": "mo-minio-local",
+    "read_only_source": "/usr/bin/minio",
+    "copy": "/tmp/mo-heavy-alternative-20261012/bin/minio",
+    "bytes": 125703066,
+    "sha256": "1b12c7e8a9644ee49c496474f41caed1d518bba79712ba49be981647ab41666f"
+  }
+]

@@ -1,0 +1,280 @@
+{
+  "read_only_source": "mo-types-mysql:/usr/share/mysql-8.4",
+  "copies": [
+    {
+      "path": "bulgarian/errmsg.sys",
+      "bytes": 413608,
+      "sha256": "a62dd4d595f14ac54004b18a4d41c6bf76f2d623f354e4cec208aadd372cae58"
+    },
+    {
+      "path": "charsets/Index.xml",
+      "bytes": 19525,
+      "sha256": "610942fc8428f982b4212b516d4127e7904261d43c9fd5f7c8ea0f2693f0f2e8"
+    },
+    {
+      "path": "charsets/README",
+      "bytes": 1749,
+      "sha256": "0af62ce1ae651e980006f2e9d29bd2f24e1cd18c6a0b1914e9c437cc80e990ab"
+    },
+    {
+      "path": "charsets/armscii8.xml",
+      "bytes": 6011,
+      "sha256": "d9350c8967f6d5cac862e7d263e36166235a8899eb874f37cbfb56c48feab687"
+    },
+    {
+      "path": "charsets/ascii.xml",
+      "bytes": 5997,
+      "sha256": "4f4183f7c6482d28541627854849e80697233fa8f14a6d17a65432dd2472b5f2"
+    },
+    {
+      "path": "charsets/cp1250.xml",
+      "bytes": 8726,
+      "sha256": "36d50fa4b2f002b14a0cba2c0af4ba8fe327ac2ccac249647e93ee2c6f033964"
+    },
+    {
+      "path": "charsets/cp1251.xml",
+      "bytes": 8812,
+      "sha256": "fce7f7197770f0b1e64dd3ddf91edca9ba30d4411e14ddd4781b00c5d2d62fc3"
+    },
+    {
+      "path": "charsets/cp1256.xml",
+      "bytes": 6060,
+      "sha256": "be476c400c55faad610505c9811e5aef4a6bf8d173cd92f5febc84320081c69d"
+    },
+    {
+      "path": "charsets/cp1257.xml",
+      "bytes": 9393,
+      "sha256": "182c37fd78e7a56b7578c738e7aa6336bb3222d831b98b5c41c547ff371d2357"
+    },
+    {
+      "path": "charsets/cp850.xml",
+      "bytes": 5997,
+      "sha256": "b477edfa7c38579fd445dd6aa6ac320bdccbfdacfd8df3be1b01144396cb8744"
+    },
+    {
+      "path": "charsets/cp852.xml",
+      "bytes": 6013,
+      "sha256": "4bfcc35a63ee96b979e433fbf9ac65ab8eecc063cca74bd9e8d2ff9367e22dc3"
+    },
+    {
+      "path": "charsets/cp866.xml",
+      "bytes": 6104,
+      "sha256": "86a0348753ce1acea14a52a205d499a0f8920b293b11bc107d532dcc6c677f2c"
+    },
+    {
+      "path": "charsets/dec8.xml",
+      "bytes": 7020,
+      "sha256": "a40d3f923313b881512830228e3d162766497ea19dca53432faf3b82f6f07695"
+    },
+    {
+      "path": "charsets/geostd8.xml",
+      "bytes": 6007,
+      "sha256": "25d51ded5d8cd437250ebe4441c6baad0b84877a61523718f1914d73f8cbf21c"
+    },
+    {
+      "path": "charsets/greek.xml",
+      "bytes": 6219,
+      "sha256": "e50f290ebbb194d3b5b9eeaddd54e4df16996ee4ce095bef574675e86f8b82bf"
+    },
+    {
+      "path": "charsets/hebrew.xml",
+      "bytes": 6002,
+      "sha256": "c5ec1e30390bb4abb80f7b2e45e40b03a8121d91a99fbf27fb9ca5498c797fa0"
+    },
+    {
+      "path": "charsets/hp8.xml",
+      "bytes": 5993,
+      "sha256": "b744eeb5dbe430c280b6adbb741eb1e770720eb403adba6fd48069dbe3126180"
+    },
+    {
+      "path": "charsets/keybcs2.xml",
+      "bytes": 6020,
+      "sha256": "fa0bd1b6b8d7c6bdbf4b27ac5416eb2e8d367c556de53c9334fe5212a17ce15a"
+    },
+    {
+      "path": "charsets/koi8r.xml",
+      "bytes": 6001,
+      "sha256": "3ed078c3a348050e9478ac6c3354e85dc1464dd8bb4031efbc8afc179326f936"
+    },
+    {
+      "path": "charsets/koi8u.xml",
+      "bytes": 7023,
+      "sha256": "bff681bddc3035c3597fb25bd0886cff5a584b50893e87d140675663a13a5da9"
+    },
+    {
+      "path": "charsets/latin1.xml",
+      "bytes": 10301,
+      "sha256": "8b624470fd4de341b5cd4d45073f763116ff610ca0480f5630ad9ae06a11fea5"
+    },
+    {
+      "path": "charsets/latin2.xml",
+      "bytes": 7723,
+      "sha256": "90dc04a5b03985ca70857d835ed154f619139b56e7aa7ca2bc27ae920baa15c0"
+    },
+    {
+      "path": "charsets/latin5.xml",
+      "bytes": 6000,
+      "sha256": "10abc670fd6eefef5c0024d18e0df2faa88a43ee4497be6bfc916d060ee98dbe"
+    },
+    {
+      "path": "charsets/latin7.xml",
+      "bytes": 7929,
+      "sha256": "17344a68c87f0fb4db5cf6966bbaf12fb9e398bbcbd63d169c7795c24b341919"
+    },
+    {
+      "path": "charsets/macce.xml",
+      "bytes": 8538,
+      "sha256": "7aea20421e5926b329af00e52d0b309a00bc70e982ce107a2107528f08ae3ed7"
+    },
+    {
+      "path": "charsets/macroman.xml",
+      "bytes": 8549,
+      "sha256": "1bb8872b21a052cc0d3abc55c09642ec5bc1bd5542fb5b46d95c7c4728ba72a7"
+    },
+    {
+      "path": "charsets/swe7.xml",
+      "bytes": 7021,
+      "sha256": "b603c8791b7962d165d359bf4decd3a702375115011bee00cab46363fa267640"
+    },
+    {
+      "path": "czech/errmsg.sys",
+      "bytes": 413530,
+      "sha256": "b7b76c710c7cb9c596144a7f388a4fb4dbdb11ba78aa30b71534e7698edcb0c3"
+    },
+    {
+      "path": "danish/errmsg.sys",
+      "bytes": 413504,
+      "sha256": "a46e1d5a3ff0859a68fc2b72e028aec8decdc69af2ce2dbe9b642f457cf40571"
+    },
+    {
+      "path": "dictionary.txt",
+      "bytes": 25575,
+      "sha256": "d031a0f90d77595abe02112adf69a86560e3168ba379fd450176a8e070763077"
+    },
+    {
+      "path": "dutch/errmsg.sys",
+      "bytes": 414518,
+      "sha256": "2d83d08e6c92348caa3ec98bb29dd0b79c233ad39231fe53e82c5f716a337473"
+    },
+    {
+      "path": "english/errmsg.sys",
+      "bytes": 412771,
+      "sha256": "f115353d47fa8301b2dc46de5a6a570f32658e40a1f43c50176058d1d074bfea"
+    },
+    {
+      "path": "estonian/errmsg.sys",
+      "bytes": 413035,
+      "sha256": "1ac8d5999d9b043f5de4ad7ad736f404310fe53f41492d705ad86a0650de91eb"
+    },
+    {
+      "path": "french/errmsg.sys",
+      "bytes": 414144,
+      "sha256": "03c10c9eb380b6ab248bf724cd572641fd9a58e2c0f8eeeb102d2263672e90ae"
+    },
+    {
+      "path": "german/errmsg.sys",
+      "bytes": 420330,
+      "sha256": "c79d16116f22e33c8cad2e5cdb8d1bcc43ed01ccc5e5668c1c034dd2dba5894c"
+    },
+    {
+      "path": "greek/errmsg.sys",
+      "bytes": 419562,
+      "sha256": "766fdea9f1b98a5508d60995d85e014a1ec59fafa9387df504792a8e38857090"
+    },
+    {
+      "path": "hungarian/errmsg.sys",
+      "bytes": 413412,
+      "sha256": "e01e04a5a125e19b9a315417838b5cf4972730d195dcaa4d919c59d312bb8062"
+    },
+    {
+      "path": "install_rewriter.sql",
+      "bytes": 2267,
+      "sha256": "66665248d327ee30345bb72b6a6001c6c3c15e1c958f2a9a931a112881d18f89"
+    },
+    {
+      "path": "italian/errmsg.sys",
+      "bytes": 414515,
+      "sha256": "aaff28d2cb22112d280ba6cd3d14d1e102327f38c6c6f776a8caaea5006c944c"
+    },
+    {
+      "path": "japanese/errmsg.sys",
+      "bytes": 420140,
+      "sha256": "95eac260831fcec0f51a9434bb2ad6d77b62e927178f2e191a9db158f668d296"
+    },
+    {
+      "path": "korean/errmsg.sys",
+      "bytes": 415811,
+      "sha256": "a4f9b35d44d605a3a64447011ec8beab3962f1a0ca9336fa66d7e6b6dade92d6"
+    },
+    {
+      "path": "messages_to_clients.txt",
+      "bytes": 645546,
+      "sha256": "e331fe816f3dfe9f8382baadc60a1f45dd8f3409f24752030c6d858593f5379c"
+    },
+    {
+      "path": "messages_to_error_log.txt",
+      "bytes": 423178,
+      "sha256": "d55f651263ddac73e607af69186cd78f804a43f329ec87a1172ccff63d0266fd"
+    },
+    {
+      "path": "norwegian/errmsg.sys",
+      "bytes": 412841,
+      "sha256": "02fb05414d5c80c59ef2badffec232abd97095b468169ad8d7a8a07cb6717886"
+    },
+    {
+      "path": "norwegian-ny/errmsg.sys",
+      "bytes": 412894,
+      "sha256": "a3af012ddf76759caba6a3fa45f4fd91e5fe0e15c2604b6cd0c287c6060c9877"
+    },
+    {
+      "path": "polish/errmsg.sys",
+      "bytes": 413754,
+      "sha256": "8949dbe3971ae486086d9407e018feef03981d221e6b6613942598d5d3e4a731"
+    },
+    {
+      "path": "portuguese/errmsg.sys",
+      "bytes": 415662,
+      "sha256": "f4c882f876ee4318718f031e4f51342547800af7510e2b5233f1b6a1cd19eb1a"
+    },
+    {
+      "path": "romanian/errmsg.sys",
+      "bytes": 414483,
+      "sha256": "cd76831685b311344546cfef364861cb3016601991ea77566b38ad7f5e37da4a"
+    },
+    {
+      "path": "russian/errmsg.sys",
+      "bytes": 427956,
+      "sha256": "25e1137a4e36a991ed269b368aaf4c56044e30246d7793fba13b8ab8282c6c45"
+    },
+    {
+      "path": "serbian/errmsg.sys",
+      "bytes": 415103,
+      "sha256": "7e873ee65b8eae2012576d602374aba04f5cfbbc29f684308616715f62f801a0"
+    },
+    {
+      "path": "slovak/errmsg.sys",
+      "bytes": 413297,
+      "sha256": "607139a81d35f7b4e8eed355ebd152b86970a39d7f0e200cd3fddf8c96317239"
+    },
+    {
+      "path": "spanish/errmsg.sys",
+      "bytes": 414371,
+      "sha256": "3989d03dac5b271ca4f51d4647effba1b4052092211b5c5262efff76713d6b95"
+    },
+    {
+      "path": "swedish/errmsg.sys",
+      "bytes": 413584,
+      "sha256": "eabbe970728738f7f8926f8a1335a00f8177a7f6f920134050068e16165fac06"
+    },
+    {
+      "path": "ukrainian/errmsg.sys",
+      "bytes": 422579,
+      "sha256": "e1555e2035b10d88d35071613cdf97730344b219344c7ef8addeda4e20f0135d"
+    },
+    {
+      "path": "uninstall_rewriter.sql",
+      "bytes": 1299,
+      "sha256": "01f5b950efcdf134641ffe5e63bf9ab5895ff435af306c91e2be93b145d88439"
+    }
+  ]
+}

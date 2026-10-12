@@ -1,0 +1,41 @@
+{
+  "status": "prepared_not_started_requires_scope_change_approval",
+  "runtime_id": "heavy-alt-a159dfc751",
+  "directory": "/tmp/mo-heavy-alternative-20261012",
+  "database": "mo_ecosystem_heavy_20261012",
+  "actual_endpoints": {
+    "MO": 16001,
+    "MySQL": 23306,
+    "MinIO": 9002
+  },
+  "source_binaries": "Read-only copies from existing containers, same MO binary; no new Docker container/pull",
+  "MO_source_commit": "652c643666428f1c434e03369834f2a9bead7c27",
+  "MySQL_version": "8.4.11",
+  "first_route": "pandas",
+  "first_route_completed_before": 2431,
+  "first_route_pending": 2569,
+  "next_core_routes": [
+    "sqlalchemy",
+    "pymysql",
+    "mysql_connector",
+    "polars",
+    "dask",
+    "duckdb_parquet_bridge",
+    "arrow_ipc_bridge"
+  ],
+  "core_pending_cases": 37569,
+  "all_main_pending_cases": 127569,
+  "workers": 2,
+  "max_cases_per_window": 20,
+  "min_tmp_free_bytes": 2147483648,
+  "max_tmp_filesystem_used_bytes": 4294967296,
+  "min_estimated_memory_headroom_bytes": 3221225472,
+  "MO_soft_Go_memory_limit": "1536MiB",
+  "MinIO_soft_Go_memory_limit": "256MiB",
+  "MySQL_buffer_pool": "128MiB",
+  "MySQL_redo_capacity": "64MiB",
+  "case_oracles": "Unchanged logical IDs, physical32-256rows and datatype/scenario/seed definitions; future results have runtime_id/physical ports; full typed archive + independent readback + hash before SQL scratch-table reuse",
+  "cleanup": "Only registered newly created scratch SQL tables in this new runtime after verified full archive; no old tables/directories/buckets/log deletion; no filesystem/S3 cleanup",
+  "scope_change": "Uses memory-backed temporary filesystem instead of waiting for64GiB durable disk expansion. No disk-throughput or long-soak certification claim; pause at capacity/memory guards",
+  "timestamp_Asia_Shanghai": "2026-10-12T18:22:24.974522+08:00"
+}
