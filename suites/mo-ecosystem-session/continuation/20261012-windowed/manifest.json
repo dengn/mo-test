@@ -1,0 +1,3097 @@
+{
+  "archive": {
+    "path": "evidence.zip",
+    "bytes": 4818118,
+    "sha256": "012bb22e5bbdd6ed20b61788261373744e982a96264a7553325c67240b3f3667"
+  },
+  "members": [
+    {
+      "member": "checkpoint-after-window-reuse-DN.json",
+      "bytes": 410,
+      "sha256": "85e8e0a32f13a2908eb5f8f260570f6fa0779b5b150d3784c49d4a3540bf9c9b"
+    },
+    {
+      "member": "checkpoint-after-window-reuse.json",
+      "bytes": 344,
+      "sha256": "5e64cad7124d4d54d06d467992f70f742455d305eb0fe568ad1c94ce0590df81"
+    },
+    {
+      "member": "continuation-verification.json",
+      "bytes": 2148507,
+      "sha256": "6171df1f7e816023b57e4d174cf8d8294812c0651af73deddaf7b1049167c86f"
+    },
+    {
+      "member": "core-results/petl-full-readback.json",
+      "bytes": 2037222,
+      "sha256": "f34494537d0ea5d71d31a58c3ca92a3b06bcca111e1e1a986f2535293042b3f7"
+    },
+    {
+      "member": "core.py",
+      "bytes": 13589,
+      "sha256": "0cf42ae24bd2c97c8047ff02344524432b0d4c98b6b3c481010e13901f8aaa0f"
+    },
+    {
+      "member": "current-status.json",
+      "bytes": 12711,
+      "sha256": "d85b9dd7dc018528cf52b2153b6527d9ea6ea0b160c1bcfe753988df6084942b"
+    },
+    {
+      "member": "driver_routes.py",
+      "bytes": 1806,
+      "sha256": "fdb78a443eafcb7e89f1d0f306c22b736ea4bf4636273c78bee4f8034f0a9b90"
+    },
+    {
+      "member": "heavy.py",
+      "bytes": 9713,
+      "sha256": "6fa17c372a004378af2f9e20371180534409354e15e7ee43c6fc138cd70a5ff7"
+    },
+    {
+      "member": "iceberg-filter-repro/catalog.db",
+      "bytes": 20480,
+      "sha256": "c52a64882503b57268cd67d89dbbdc2331ecca559748d08d271549b9c9ed36a8"
+    },
+    {
+      "member": "iceberg-filter-repro/results.json",
+      "bytes": 17862,
+      "sha256": "cbe7fe332d2529ed7956df085c158bb664eb1d85cf64593c5b25d4b1fee617eb"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/list/data/00000-0-c6f363cc-5224-406a-bd12-a275c14a7aee.parquet",
+      "bytes": 1112,
+      "sha256": "cb3d589c57161c3683017c4b1bbb88646eec3dc19dba49c2d611309991e91e44"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/list/metadata/00000-178a94cd-5651-44db-acdf-a6d7be529ee6.metadata.json",
+      "bytes": 798,
+      "sha256": "a667f635e09b9d73bd6f319ea2cfe496442b015745d03c151870ef07541d2217"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/list/metadata/00001-70f23f1a-d1aa-44fa-b2ac-3a318f14d1f2.metadata.json",
+      "bytes": 1694,
+      "sha256": "27fcc82f51cb85bdd67486110fb373ce68511317b14d70d0de6fcf7b0cba2122"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/list/metadata/c6f363cc-5224-406a-bd12-a275c14a7aee-m0.avro",
+      "bytes": 4373,
+      "sha256": "2b75c402531febbf8846f740514eb974187c84003a583699826dcd41d547fb90"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/list/metadata/snap-2717012455284775132-0-c6f363cc-5224-406a-bd12-a275c14a7aee.avro",
+      "bytes": 1812,
+      "sha256": "8723e2746d654325c1366b78d986b7e6e7fba5f8883b40635cdaa58e020c479e"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/uuid/data/00000-0-7affd6da-4b57-4871-9b07-9809e94d03a1.parquet",
+      "bytes": 1130,
+      "sha256": "dd2aeb1cc2a3ff5a81aa7e437b46175606822925daa83d113e5cf48ec9778ad6"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/uuid/metadata/00000-1b126918-bec8-4afb-9a53-2b3e3f75dc07.metadata.json",
+      "bytes": 730,
+      "sha256": "c0a7cb3061aed31229a9a7c0186d6e6e0d2f9e6b5da10d096241ca92dcc6cdfc"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/uuid/metadata/00001-455adc24-37b3-4d91-a88d-977b7e430351.metadata.json",
+      "bytes": 1626,
+      "sha256": "13b8dd2421ea311543c15f869fd618f156e401c91144e6ec07e038abc4397065"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/uuid/metadata/7affd6da-4b57-4871-9b07-9809e94d03a1-m0.avro",
+      "bytes": 4313,
+      "sha256": "61246a7908dcde1f57deb261674207c482de85abe88232828004ae591e65499e"
+    },
+    {
+      "member": "iceberg-filter-repro/warehouse/repro_9aaa626b/uuid/metadata/snap-5750858306723677924-0-7affd6da-4b57-4871-9b07-9809e94d03a1.avro",
+      "bytes": 1814,
+      "sha256": "ac9adf66741e186bed20a40a73b5907e170fe85332ca4f8021b402db2889524f"
+    },
+    {
+      "member": "iceberg-native-preflight/catalog.db",
+      "bytes": 69632,
+      "sha256": "1f5ec88d06dfa36a90d8447a23601182903f77ffd0a731cb6749529f989ac701"
+    },
+    {
+      "member": "iceberg-native-preflight/results-initial.json",
+      "bytes": 40432,
+      "sha256": "4a7a6a7d25e93cd69623c5792a24bc9a3483d36ad6fd0a1b41c3468982f13c93"
+    },
+    {
+      "member": "iceberg-native-preflight/results.json",
+      "bytes": 34764,
+      "sha256": "b1aa5a17cbf709b7d25f49c203db68791656a0fc95935d2948f7e7d633e87e49"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_13306/data/00000-0-e4b17d76-deee-4696-823a-e1734cecc2fc.parquet",
+      "bytes": 3325,
+      "sha256": "2f51427734bc22e4ca8120142696a9f3a3d4913eeac7d7811fc06d0c492e959c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_13306/metadata/00000-3d11f568-e75b-4383-989b-4233496bb829.metadata.json",
+      "bytes": 918,
+      "sha256": "a1c44932cdd05c0f3cf0f745d48d523c7948bfb816a5b831b8458793b264bc3a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_13306/metadata/00001-8b657521-4bfc-4515-87f5-76686b29b64a.metadata.json",
+      "bytes": 1838,
+      "sha256": "fb0242a12ecd93a5d13b0efca969d34c9962eed50cc33ea3188f4f2569d30810"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_13306/metadata/e4b17d76-deee-4696-823a-e1734cecc2fc-m0.avro",
+      "bytes": 4564,
+      "sha256": "7a8d8e49c7a10626c4f00469f41752a1ed5bf263535eace0ddc127959f295962"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_13306/metadata/snap-2232071984492956244-0-e4b17d76-deee-4696-823a-e1734cecc2fc.avro",
+      "bytes": 1821,
+      "sha256": "3c1829aec616968768920b2057702bf50c1fda04d7468f2f03967b2f233aee14"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_6001/data/00000-0-3bdbf77c-e43f-44cc-8b7e-2522789bed9c.parquet",
+      "bytes": 3325,
+      "sha256": "2f51427734bc22e4ca8120142696a9f3a3d4913eeac7d7811fc06d0c492e959c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_6001/metadata/00000-c2d600a4-1eeb-43ab-b29c-db5ce06a0e29.metadata.json",
+      "bytes": 917,
+      "sha256": "d5ef4baa6614aaaaf53fb8697cc2cdfb83520e8b48517ce33dbf86edfe478d3b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_6001/metadata/00001-62256d75-20f7-4bec-8b5c-dd051b862bec.metadata.json",
+      "bytes": 1830,
+      "sha256": "b343eab4e04cf95cfc6e4ae5fd0421b3d10fe523ae21556cb0e88f4baef6cc7d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_6001/metadata/3bdbf77c-e43f-44cc-8b7e-2522789bed9c-m0.avro",
+      "bytes": 4562,
+      "sha256": "effd3fa9bd608b00117068c72490e7c0b62bc72afc7f1c366747311e2b9566c2"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/bit64_6001/metadata/snap-864233042504079363-0-3bdbf77c-e43f-44cc-8b7e-2522789bed9c.avro",
+      "bytes": 1822,
+      "sha256": "86445b57319f1ff2d193c62973ac2341bd0ca834e703300be165b48fbeb459c5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_13306/data/00000-0-141ec6df-f430-4649-a391-b1256a7d3a6c.parquet",
+      "bytes": 5531,
+      "sha256": "76f63be468fb40172f9f7fdb33d68cc429c8f4c2b5ee79bd313e1df787b4ef6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_13306/metadata/00000-07fd66d0-48f5-4548-bd3e-d5e1e450f6c2.metadata.json",
+      "bytes": 909,
+      "sha256": "bbf25a998a3809cb6ed1aa867c7acaa8bf49a7f8e1553993b9981e414f1e093f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_13306/metadata/00001-14dd5831-cf4b-4ffe-8e8c-5ef61bd3b6db.metadata.json",
+      "bytes": 1827,
+      "sha256": "08adfed3d3d143522af789a27df2544d08ce2a9e22e45acde794d2050cdad7f7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_13306/metadata/141ec6df-f430-4649-a391-b1256a7d3a6c-m0.avro",
+      "bytes": 4558,
+      "sha256": "f740505e9f770e397a76492430832b979f2b8cb5899d70fd7b2f1c36cce05d39"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_13306/metadata/snap-3666910740436576622-0-141ec6df-f430-4649-a391-b1256a7d3a6c.avro",
+      "bytes": 1823,
+      "sha256": "4ffac323f027118e51862bfd1689e18e58ea81f5a28cb4747e9fbd2a6ac38f63"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_6001/data/00000-0-660833b9-9283-45ce-a369-fdf53512af42.parquet",
+      "bytes": 5531,
+      "sha256": "76f63be468fb40172f9f7fdb33d68cc429c8f4c2b5ee79bd313e1df787b4ef6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_6001/metadata/00000-61a54f8c-42e1-4b34-9954-aa202f0401fb.metadata.json",
+      "bytes": 908,
+      "sha256": "1aad3026d644020e6da49d6b773d79cb3804552fa2b5da2d239ea6da257a730e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_6001/metadata/00001-9fc8363e-eb89-4598-96d5-1c7fa69948c1.metadata.json",
+      "bytes": 1824,
+      "sha256": "a3501337a61e5e9b1d40ed2309f07b78e9c9243e2fa2899027087e072ad14da1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_6001/metadata/660833b9-9283-45ce-a369-fdf53512af42-m0.avro",
+      "bytes": 4555,
+      "sha256": "6c015a4342344df32a55b56278d789afe35503c3ed265b6ce5400698f96c9403"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/blob_6001/metadata/snap-2818743504401425944-0-660833b9-9283-45ce-a369-fdf53512af42.avro",
+      "bytes": 1820,
+      "sha256": "225d88d2e854df853ccec48ebd1f6921f624ecc2539968e96d6c3605f726f4b9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_13306/data/00000-0-cce34686-0ebd-4f0d-9cea-f55cfc021f7f.parquet",
+      "bytes": 3162,
+      "sha256": "9a166a5353e78716de4795fafc8bbcf4058803c51bb3038b46d815672d7fca4c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_13306/metadata/00000-58a07090-1760-42fa-9afb-3ae56988a856.metadata.json",
+      "bytes": 913,
+      "sha256": "2578bf5f4cb94d7f9d9595f8761a75ec56a8d64d0fa2c929f79098d95653e680"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_13306/metadata/00001-552ee239-f0d4-4a69-915d-6c806f4c0a1e.metadata.json",
+      "bytes": 1837,
+      "sha256": "ba1a7a8ac92ddd603b5825c675db959c10ec0d3dddc5a49f93bbc398497f6174"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_13306/metadata/cce34686-0ebd-4f0d-9cea-f55cfc021f7f-m0.avro",
+      "bytes": 4559,
+      "sha256": "a2d5236927a07ccd79687cf809e5b7ce383ead8020ee4540a6c35e8706cd69ff"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_13306/metadata/snap-6698200652208403619-0-cce34686-0ebd-4f0d-9cea-f55cfc021f7f.avro",
+      "bytes": 1826,
+      "sha256": "6fc1001df5bf75d17917ab0bb4b9bb951ccaef4d8cee8369929c118f32a02937"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_6001/data/00000-0-def62f34-cbb8-41ff-aadd-b331a886bd67.parquet",
+      "bytes": 3162,
+      "sha256": "9a166a5353e78716de4795fafc8bbcf4058803c51bb3038b46d815672d7fca4c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_6001/metadata/00000-a798a04b-b897-4c57-9720-98b881f5455f.metadata.json",
+      "bytes": 912,
+      "sha256": "6c330c4b4522a2fc0a4ec30cd9c8acc7a2b50218cb90f5cdb07ec58fd784ffbd"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_6001/metadata/00001-bd259b4d-fd44-4220-a31a-87c1f4e0023a.metadata.json",
+      "bytes": 1834,
+      "sha256": "d38190eab807f8929e2eb0b69c1dc64b9debf4de82c2a0357881f577241b6438"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_6001/metadata/def62f34-cbb8-41ff-aadd-b331a886bd67-m0.avro",
+      "bytes": 4554,
+      "sha256": "54b388ab8bc5e5c37faa44337ed87df8737c53e09f55837ecc6a84e0985102eb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/boolean_6001/metadata/snap-4368087821988767158-0-def62f34-cbb8-41ff-aadd-b331a886bd67.avro",
+      "bytes": 1821,
+      "sha256": "63e77044c7f1e066eb67c069ce2e7e2f5e114f02273087a1361a3774c90c9c7d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_13306/data/00000-0-c8318a1f-4577-451c-b0ad-db998a2bb212.parquet",
+      "bytes": 3269,
+      "sha256": "aea4f2449d1aa109a37539578fc9caea8c9a41515131e6e02d4fb89ebb928e6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_13306/metadata/00000-e8a1504c-a9cc-441f-8d81-c3d67172a4ce.metadata.json",
+      "bytes": 917,
+      "sha256": "6ec9026eaeb0c63cb765dac3e7d140ecf56075a28ed5bff1c93c1904fe956aba"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_13306/metadata/00001-d14ce378-001f-485f-8eaf-22f76846e73d.metadata.json",
+      "bytes": 1851,
+      "sha256": "3790266c038a0eb55590f4a69c629b7fdd68d6871822d1471a6c0ed0270273a5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_13306/metadata/c8318a1f-4577-451c-b0ad-db998a2bb212-m0.avro",
+      "bytes": 4568,
+      "sha256": "f275cef3fedb89997c7cc35d1e920b0e14b6f6f6684c634d212c4e0c69587863"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_13306/metadata/snap-6740203865462227987-0-c8318a1f-4577-451c-b0ad-db998a2bb212.avro",
+      "bytes": 1828,
+      "sha256": "bb4c12103d8ffc814cd4d46d374edc33e8400be85e8e106a74e40347fff55c9c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_6001/data/00000-0-2af1a0ab-78b8-43ae-8ac2-9db522ae9ae2.parquet",
+      "bytes": 3283,
+      "sha256": "b6062d9845657d096dc27ffaa879388726e370bd89d971994437c65a78158d0b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_6001/metadata/00000-33994ce9-8375-4145-b1e9-743d47a7c7a9.metadata.json",
+      "bytes": 916,
+      "sha256": "4a79a893b3e7e3b92f8f811c4f2d9823d2a9099742516188cd0e65b99bb6615a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_6001/metadata/00001-3ef12539-3f7e-4de3-a54b-81cc7cf728d4.metadata.json",
+      "bytes": 1848,
+      "sha256": "f1a42b3632496d83e4c3d7664773218a5901fcf683f5c836705ccc5cb2e60b3c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_6001/metadata/2af1a0ab-78b8-43ae-8ac2-9db522ae9ae2-m0.avro",
+      "bytes": 4566,
+      "sha256": "9dc09376997750fc0f174ac8f8703337db9caf58074123aa4b540b5c697b24b8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/char_padding_6001/metadata/snap-3798695604980132815-0-2af1a0ab-78b8-43ae-8ac2-9db522ae9ae2.avro",
+      "bytes": 1825,
+      "sha256": "006667fcd55e2c3fcb61262c59d97b6b1716dd263ecb9648a8c6fb401750d61d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_13306/data/00000-0-8705e339-f15b-4087-a7b0-ec07118c59f7.parquet",
+      "bytes": 3259,
+      "sha256": "568a1cd9e61ce6ab2cb033dd381f974f67ec8e27c1ea69a214a1cafeb2fb0b84"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_13306/metadata/00000-b77f1814-5922-467f-a96a-f5a6cd6a206c.metadata.json",
+      "bytes": 907,
+      "sha256": "38d4b34e2f62eb6a7cb2e278d24a73080f682fd0ecfa2a3629dba2bb2d4891c6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_13306/metadata/00001-739c2a14-0d28-4c6c-8cc2-494379581855.metadata.json",
+      "bytes": 1825,
+      "sha256": "3d20b01b99d21239cddab23175e23fbbee2c8cd479c47a1e8bf2b3a341c023d4"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_13306/metadata/8705e339-f15b-4087-a7b0-ec07118c59f7-m0.avro",
+      "bytes": 4556,
+      "sha256": "ad74bc009a2f664c3cf1951edf77c502d4fd2442dbef934d8564e26209f4b5de"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_13306/metadata/snap-2460828053556215479-0-8705e339-f15b-4087-a7b0-ec07118c59f7.avro",
+      "bytes": 1821,
+      "sha256": "1e20bb5c3bb8ae2ca76e39497a9b8a2919da3984be2f5f58aa0eaafa80ec786d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_6001/data/00000-0-ed89429f-40eb-4d0e-8698-ba6f98aad033.parquet",
+      "bytes": 3259,
+      "sha256": "568a1cd9e61ce6ab2cb033dd381f974f67ec8e27c1ea69a214a1cafeb2fb0b84"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_6001/metadata/00000-bdf163a1-5407-4ea6-a5b0-36ad45560204.metadata.json",
+      "bytes": 906,
+      "sha256": "c7fb1dee0a0f9b79b7446d88df5b5d42056d21a256b4d90d4007b91cf48ebe32"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_6001/metadata/00001-b84f812d-3bd5-4761-8651-d5ea26c72fd8.metadata.json",
+      "bytes": 1822,
+      "sha256": "c1153f7993cd1a7a9bae1974497fe15992c8ef17ca0a2385e37c8e94b2130289"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_6001/metadata/ed89429f-40eb-4d0e-8698-ba6f98aad033-m0.avro",
+      "bytes": 4558,
+      "sha256": "ceeacf5ec92539fbb3ec09a8952c11e944da71ac46a10d8a39a2a89cb8a47f4a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/date_6001/metadata/snap-5529055612303981056-0-ed89429f-40eb-4d0e-8698-ba6f98aad033.avro",
+      "bytes": 1822,
+      "sha256": "6accceaf6b0e0a3e1bb5045b4e0fcc38ee369846e28653d0e20bc2049f6e965b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_13306/data/00000-0-ca1759e8-0dd4-40e7-bc83-b54f49977f36.parquet",
+      "bytes": 3305,
+      "sha256": "d3e5102925d1628e29060f3c9fa9ccf07032c70329da2109bb2445f4122a6dde"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_13306/metadata/00000-9292b898-d6b4-499a-a43f-726b874419d7.metadata.json",
+      "bytes": 917,
+      "sha256": "b8c387be4c3caf1b2e99669cabb9060b0f6eca7d124e65dfb94b8f5d57089cc1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_13306/metadata/00001-ec44c2f2-c4f8-4afa-a69a-c6cf3845a2ec.metadata.json",
+      "bytes": 1840,
+      "sha256": "e085c388c597eb6fadcf847e4c433bbb0b479e9063e69db15e17179187f4a4a6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_13306/metadata/ca1759e8-0dd4-40e7-bc83-b54f49977f36-m0.avro",
+      "bytes": 4580,
+      "sha256": "f303001eae2b89e26782b440a285d3928012047311c271e810d5cfeba47020a1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_13306/metadata/snap-573692072711811169-0-ca1759e8-0dd4-40e7-bc83-b54f49977f36.avro",
+      "bytes": 1824,
+      "sha256": "c2da05685c13cb926d3d78119bb20b34d691d77dc21dc72ba920dad9570bddec"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_6001/data/00000-0-2395ae74-2f0e-454e-aaef-890279ceff15.parquet",
+      "bytes": 3305,
+      "sha256": "d3e5102925d1628e29060f3c9fa9ccf07032c70329da2109bb2445f4122a6dde"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_6001/metadata/00000-a4e2dba9-d1ea-48b2-9a93-953dc135e758.metadata.json",
+      "bytes": 916,
+      "sha256": "cdb1fdfa50d79ce614b5ee08bc41b5be36472779a3ef647402fa21b90632e0b5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_6001/metadata/00001-cfb57835-630a-4cc5-bef7-952bedf031ff.metadata.json",
+      "bytes": 1842,
+      "sha256": "7bbf579e5fae8fbf634892e2b0eab914b72f088bb66c27606004a32a787188ea"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_6001/metadata/2395ae74-2f0e-454e-aaef-890279ceff15-m0.avro",
+      "bytes": 4580,
+      "sha256": "b23b21896e98962b58f5434c9d551fe451ad9e7feefd1b2483c6740977cd4925"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/datetime6_6001/metadata/snap-7132022201680174735-0-2395ae74-2f0e-454e-aaef-890279ceff15.avro",
+      "bytes": 1823,
+      "sha256": "23dba75cd9d2c362fec740834151e970d38b0a18dedf26c06160d7eb211b4fa5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_13306/data/00000-0-381785a6-31ba-496c-bac1-2c5ba444264c.parquet",
+      "bytes": 3342,
+      "sha256": "4a125b5a120d50703368c150bca004fe278c99cfe2ce18cc24a22c5926be45db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_13306/metadata/00000-f1a79d6c-98f4-4180-a82a-7038ec778885.metadata.json",
+      "bytes": 924,
+      "sha256": "f39623ba9169de9d1cbe5d9eea2a738ec5736ec090021f5c7a8cd8247da8a0ea"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_13306/metadata/00001-a8e5cfb8-1dd8-4c74-86ba-b6901674ee06.metadata.json",
+      "bytes": 1856,
+      "sha256": "abb615b5892426bc6bc8386d39deadd16c121b6464c20d470984eb43f3309c60"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_13306/metadata/381785a6-31ba-496c-bac1-2c5ba444264c-m0.avro",
+      "bytes": 4590,
+      "sha256": "50240b34300938f74d798a54f89cdff12e5921d03cc052eab7083070eea83c95"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_13306/metadata/snap-2558553447984229715-0-381785a6-31ba-496c-bac1-2c5ba444264c.avro",
+      "bytes": 1826,
+      "sha256": "1d701ac028fa3b350db07501a6eb40f0ec0c45ce1acc128d695996dca92f2cd2"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_6001/data/00000-0-f1743349-bda3-4415-a7af-9a36d22e5af1.parquet",
+      "bytes": 3342,
+      "sha256": "4a125b5a120d50703368c150bca004fe278c99cfe2ce18cc24a22c5926be45db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_6001/metadata/00000-de532ca1-8dff-493f-82cb-7f16898b952f.metadata.json",
+      "bytes": 923,
+      "sha256": "bdb476ab4ddccab1327d275b1a7bb6c1e09cc354d143dbfc400b49b3818415d6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_6001/metadata/00001-f664e0af-09d2-4ee7-8609-007f360f5fed.metadata.json",
+      "bytes": 1853,
+      "sha256": "26a19546602c323789d42507625c81fb38b80ad05aa05cf5a6bb68e1b9dc8d78"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_6001/metadata/f1743349-bda3-4415-a7af-9a36d22e5af1-m0.avro",
+      "bytes": 4588,
+      "sha256": "537c7436a2cbc53a3008a12dcfe34ac833da56de3abe8379b9da8f1b6955961e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal20_0_6001/metadata/snap-1606949136668474181-0-f1743349-bda3-4415-a7af-9a36d22e5af1.avro",
+      "bytes": 1824,
+      "sha256": "dca62e5f6bef2161a6826b377fe1fae6f70f22162ffb60b6d785517890f8f33d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_13306/data/00000-0-45a569d3-b209-4acf-929d-b15b3deea400.parquet",
+      "bytes": 3409,
+      "sha256": "3844bc2c9a277c86378b993ef7bb31f1d2b617c5d13a1d2be2a104125e87fe05"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_13306/metadata/00000-8e6c65a1-c866-4749-9fcc-cdf19761d2e1.metadata.json",
+      "bytes": 926,
+      "sha256": "00da0e43e701f4ec9a281791ab0d14a1b9b00184ca487344f21e5604b60d6474"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_13306/metadata/00001-264c40f9-5a07-4360-93b9-9053f1d665de.metadata.json",
+      "bytes": 1860,
+      "sha256": "55fe6e69bf97d2c773a0a0c6be2cc33bf8ccfce3b77f60496abb7b6258e1d31c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_13306/metadata/45a569d3-b209-4acf-929d-b15b3deea400-m0.avro",
+      "bytes": 4604,
+      "sha256": "81753dc7b1b8db92166bc103002a6a6ca97f847a2252ea7d74ab5d59bc734c73"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_13306/metadata/snap-2092706161829352881-0-45a569d3-b209-4acf-929d-b15b3deea400.avro",
+      "bytes": 1827,
+      "sha256": "c50f1f0d0910e34168628f7b9ba21789504120e3d593e4f6cc2381a3f63bdc8b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_6001/data/00000-0-0045ebce-de76-4636-8e04-a0260c8031ba.parquet",
+      "bytes": 3409,
+      "sha256": "3844bc2c9a277c86378b993ef7bb31f1d2b617c5d13a1d2be2a104125e87fe05"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_6001/metadata/00000-fccba6e2-15b2-4b32-b2ec-bb8abd1f2b94.metadata.json",
+      "bytes": 925,
+      "sha256": "acf12f356691009fc2e60f777a8f3e7004c5391a2215777943b71a3ed73628df"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_6001/metadata/00001-e314cbb1-1d45-4f75-9d65-92865c52c103.metadata.json",
+      "bytes": 1857,
+      "sha256": "f56ccaeb0a630c5333001717af1262692da31c5a1e5ecd8d912d9c8d71237bee"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_6001/metadata/0045ebce-de76-4636-8e04-a0260c8031ba-m0.avro",
+      "bytes": 4603,
+      "sha256": "0b222e8e5593e6926802691fd0217cf14cfff4d1400b34d5c64692bc8a118f15"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal38_18_6001/metadata/snap-1381992912296788901-0-0045ebce-de76-4636-8e04-a0260c8031ba.avro",
+      "bytes": 1825,
+      "sha256": "b684dbaa0650597069eef8f874d12647bc932cc175f80b7ade33a7d3e70045c9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_13306/data/00000-0-97bb82e7-4c08-483b-9729-818365cecd82.parquet",
+      "bytes": 3540,
+      "sha256": "842721a591ed2d418dc67b6e912720bf2e085c0968c5d03022ec47c36bc98fbc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_13306/metadata/00000-505f363b-05a5-4757-9cbf-c7be5ee49d81.metadata.json",
+      "bytes": 917,
+      "sha256": "ac73bcbb938f079efb2bc4fb7be90fba924ea0e1301035a5fcae505e0b8acad3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_13306/metadata/00001-1296626f-3e12-4777-9c5a-5de4fa5436ee.metadata.json",
+      "bytes": 1851,
+      "sha256": "071a26426af6c4df57f2994e3ab70a506a9b188d6952c2152fc12d3504ec6d9f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_13306/metadata/97bb82e7-4c08-483b-9729-818365cecd82-m0.avro",
+      "bytes": 4569,
+      "sha256": "a3fc2d203b51e789a7f3f88f9b02f329283fdb73b03d35b9182c63d7c597d8c2"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_13306/metadata/snap-2599532263928221440-0-97bb82e7-4c08-483b-9729-818365cecd82.avro",
+      "bytes": 1826,
+      "sha256": "ae57e0f111cfe691a9c9ec7958a6f06534cfff081adf853c5f7ab99c7a33e5db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_6001/data/00000-0-72b60c5a-466e-4ad4-ba1d-64bd491f3517.parquet",
+      "bytes": 3540,
+      "sha256": "842721a591ed2d418dc67b6e912720bf2e085c0968c5d03022ec47c36bc98fbc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_6001/metadata/00000-4de5afdf-132e-4458-95a8-c1dee417be7c.metadata.json",
+      "bytes": 916,
+      "sha256": "40d967c79d3ea6565097787d6868d8d367c40d7cc00f0083a8be0de77e315ed3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_6001/metadata/00001-ce02289c-07a7-4704-bfd9-2342d320c950.metadata.json",
+      "bytes": 1848,
+      "sha256": "7b09c43b35c71d27f9968642083427cde81ef741017ca3a07d90f9fbb0f2ff47"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_6001/metadata/72b60c5a-466e-4ad4-ba1d-64bd491f3517-m0.avro",
+      "bytes": 4565,
+      "sha256": "add5f75a0b95c8cbe2bb9811432850b991b62f27bb6ec123024ca4dd64792b42"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/decimal65_30_6001/metadata/snap-1697072043495578109-0-72b60c5a-466e-4ad4-ba1d-64bd491f3517.avro",
+      "bytes": 1826,
+      "sha256": "9b78b3790f167c07ccc9af1ab8b3488a0737e3934b7c4b89fb6b50de366ceee5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_13306/data/00000-0-8676dba0-438d-4735-99e7-658a2f8a0135.parquet",
+      "bytes": 3313,
+      "sha256": "d216c2e23113251f0ff15619449ffd340edcf658bd3951c3cb0a18cd2bd7dbd7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_13306/metadata/00000-65d0c516-c444-4b9b-b56b-77712c9cc046.metadata.json",
+      "bytes": 911,
+      "sha256": "55ed36621e8f1ec2c9dd79c63a73a2863f3d204589ea0dd4ce9f1b47fbb843c9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_13306/metadata/00001-96a7e2f5-c340-4d54-8389-116115ffe303.metadata.json",
+      "bytes": 1833,
+      "sha256": "aaeca448b7aeed2a331a2250ab7fa837a418e8d7ffe5cb9f309d563a116b3e97"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_13306/metadata/8676dba0-438d-4735-99e7-658a2f8a0135-m0.avro",
+      "bytes": 4562,
+      "sha256": "872e50b07596b31566951b769f9a903ec1b615e10f7aef30793df957b762c322"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_13306/metadata/snap-1131874078853521142-0-8676dba0-438d-4735-99e7-658a2f8a0135.avro",
+      "bytes": 1825,
+      "sha256": "29d3d89b971e38805d0cc606078799cc269156f280cdd24ad0fb95623eb74387"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_6001/data/00000-0-86e4b8fd-aa69-4b87-9c42-23b966f72623.parquet",
+      "bytes": 3313,
+      "sha256": "d216c2e23113251f0ff15619449ffd340edcf658bd3951c3cb0a18cd2bd7dbd7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_6001/metadata/00000-cd3b5a4d-7593-49c5-920e-69b35623f12b.metadata.json",
+      "bytes": 910,
+      "sha256": "1dd5b86913f2395444d3bfff4e55e7a06e93dc37a6c1865715c314f78df7326c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_6001/metadata/00001-8faa0471-8f53-4196-ad51-3375cd20c545.metadata.json",
+      "bytes": 1830,
+      "sha256": "057169e8087553264aa37e1d723e455f36ab8a7eb46876024d6dee3a9cfa8b96"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_6001/metadata/86e4b8fd-aa69-4b87-9c42-23b966f72623-m0.avro",
+      "bytes": 4559,
+      "sha256": "a0c2ef322a1212e7833461643b3dedfd1edffe21c006788685b6d2389c9c5075"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/double_6001/metadata/snap-3293281190748961696-0-86e4b8fd-aa69-4b87-9c42-23b966f72623.avro",
+      "bytes": 1823,
+      "sha256": "e73701cb57d6451934cd6913c8dd7fd43b5390d359af13c91d2d126883bcd82e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_13306/data/00000-0-a794743c-722f-4203-922f-01508ba2b4b5.parquet",
+      "bytes": 3241,
+      "sha256": "83a8221d01255cf014719edb2140d39b46f9b439792694b0d21f27f13d22382b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_13306/metadata/00000-e83b059d-7ed8-4a35-a6fd-4d039b0de9a9.metadata.json",
+      "bytes": 909,
+      "sha256": "3546ba9e407755650947aa04e778760dcac381ac3060e3d24eb3e3c2e4843abe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_13306/metadata/00001-d281e771-078b-454e-a62a-eae1b37d3827.metadata.json",
+      "bytes": 1827,
+      "sha256": "1a78cd2a41e834a616d6165826cce5a2e848bd74ffddd59dd87d5aa0ab9d0e98"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_13306/metadata/a794743c-722f-4203-922f-01508ba2b4b5-m0.avro",
+      "bytes": 4569,
+      "sha256": "7fe59294e985a6dcd91b3afb1b16f8d888639a517cc9a7cccbef4a2faf57818d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_13306/metadata/snap-6350424863457103084-0-a794743c-722f-4203-922f-01508ba2b4b5.avro",
+      "bytes": 1822,
+      "sha256": "dbc986c8a6b85790b75479a1e021d1e1f5d9d42b7ea0d9263611663900abdbe9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_6001/data/00000-0-337a5a28-6a7b-4c4e-986b-c07d51e34188.parquet",
+      "bytes": 3241,
+      "sha256": "83a8221d01255cf014719edb2140d39b46f9b439792694b0d21f27f13d22382b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_6001/metadata/00000-8d13cb77-33fe-4166-9aab-b6878db026ed.metadata.json",
+      "bytes": 908,
+      "sha256": "4e8bc25d77569d42ff3e8f9e2e689aae7cde5a25189762277c71b07d4109cccb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_6001/metadata/00001-d523ab36-24c8-42b5-9597-69843a3dd0ba.metadata.json",
+      "bytes": 1824,
+      "sha256": "087114460ee16d9d084577a3116115ddfe29e052f11dcddc2c79401018e726c0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_6001/metadata/337a5a28-6a7b-4c4e-986b-c07d51e34188-m0.avro",
+      "bytes": 4571,
+      "sha256": "0bcbd2dec182870257a81ae0f5e9ca0b11b260d8341bee267e1e9d03daa6f096"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/enum_6001/metadata/snap-8800056606558437986-0-337a5a28-6a7b-4c4e-986b-c07d51e34188.avro",
+      "bytes": 1822,
+      "sha256": "43fdd239dbb8a483336ff069a8e50487071dc5b400a5c67409ff4f8c34ccf571"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_13306/data/00000-0-5ede00ac-cb2b-48d7-a507-3a8db3987068.parquet",
+      "bytes": 3256,
+      "sha256": "9dbd0ed996dd98bba3edf25a659863a480b1e4c52e9dbd9c07a047efc56a1334"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_13306/metadata/00000-aafb1aad-de2e-46af-b04e-0d0778699dbd.metadata.json",
+      "bytes": 911,
+      "sha256": "0ebb0c58f92e0390f9428ff9caa7cc4fbcbe51158034899b23ea65c19f093338"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_13306/metadata/00001-36ba9af8-2a19-4659-85ce-41edb5d4421b.metadata.json",
+      "bytes": 1835,
+      "sha256": "8c4f3cd037b6b9c1eb417c4b2ba43c278b0c7ce36082f1b27511e3eb6037ed80"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_13306/metadata/5ede00ac-cb2b-48d7-a507-3a8db3987068-m0.avro",
+      "bytes": 4561,
+      "sha256": "d8a8a5304608f53631d8f00355117c2e1b58443eaecfd8e45f8f7e2a1f89bce6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_13306/metadata/snap-3692125885783393496-0-5ede00ac-cb2b-48d7-a507-3a8db3987068.avro",
+      "bytes": 1822,
+      "sha256": "a7f984ab0f6793cc733d92c335b7f6707f30c7c16ec4dd1dd5e0564b214ffe3b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_6001/data/00000-0-3842ca1b-84df-4432-808e-62d9c16e8c2f.parquet",
+      "bytes": 3256,
+      "sha256": "7fc70e9a93b92ce2b77a6b33a79dead33985b448d27ccf3c3a3adf1608a72bfc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_6001/metadata/00000-7bfb0583-24cd-4e08-bbb0-cb74e1c61857.metadata.json",
+      "bytes": 910,
+      "sha256": "b32207e453cf0c33a9e8c21920aca6db301eee68760d1fc6d2f1f8bf2a9895d5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_6001/metadata/00001-17d9163e-e027-406a-8da5-aa079a2ae0e8.metadata.json",
+      "bytes": 1832,
+      "sha256": "b14016697744765f7d7831f75bc11aeba98742f8306b1f467a0a99e8fa135dbb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_6001/metadata/3842ca1b-84df-4432-808e-62d9c16e8c2f-m0.avro",
+      "bytes": 4564,
+      "sha256": "03b95f483827f8a4ea866ffc555f5c2b25f298f9234320a5b16f368b60a82324"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/float32_6001/metadata/snap-9153975683274275178-0-3842ca1b-84df-4432-808e-62d9c16e8c2f.avro",
+      "bytes": 1826,
+      "sha256": "bbdcf0810f077b5c28c1bc22e864157d27cdaee183dc529ce9f70d777db5a8b0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_13306/data/00000-0-8e781e16-d1e8-4756-b43d-03563ed415d3.parquet",
+      "bytes": 3261,
+      "sha256": "1a211818ab1f27fb773d0e9bd4d5428f6784e547ebd21cff1a6f1abe87544feb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_13306/metadata/00000-adf1eba6-e5b6-4586-aee9-d3b4dc33bccd.metadata.json",
+      "bytes": 907,
+      "sha256": "ac6f780f534b18df72d2c419fd84657373c630cc16dc24fc88b43f39a5aa7a8c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_13306/metadata/00001-acee7ed7-ec0d-43e2-b2a7-765129ae0f92.metadata.json",
+      "bytes": 1827,
+      "sha256": "1d1cfdea7b9d678d8ca6c3150097f5a41b2f32ef01eea3775eee33dbe9c8594b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_13306/metadata/8e781e16-d1e8-4756-b43d-03563ed415d3-m0.avro",
+      "bytes": 4562,
+      "sha256": "48f963eee4674ae168511ab3acd1999770d20431f1dc6665aab4a92e16ea8ce6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_13306/metadata/snap-6302927398977457934-0-8e781e16-d1e8-4756-b43d-03563ed415d3.avro",
+      "bytes": 1826,
+      "sha256": "3d8d211927aae81031fa28110e1b2f13de2f8c93aa4d781d34de0872b102bb1b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_6001/data/00000-0-9a2e396c-e947-4cf8-ae19-dc877eeec26b.parquet",
+      "bytes": 3261,
+      "sha256": "1a211818ab1f27fb773d0e9bd4d5428f6784e547ebd21cff1a6f1abe87544feb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_6001/metadata/00000-852a3ab6-e2a4-44d6-b922-fe944350d3dc.metadata.json",
+      "bytes": 906,
+      "sha256": "52759ba0362ca9fb15959e3c3d11aec253ff24e341a12861ac0ed73935b26b99"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_6001/metadata/00001-7014c905-08d6-42ed-98d3-8200ecc8011e.metadata.json",
+      "bytes": 1824,
+      "sha256": "ceb0dabea3cfae372a2dc3d9279fb2fce8a072232a344bfe36489b14af2fbfba"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_6001/metadata/9a2e396c-e947-4cf8-ae19-dc877eeec26b-m0.avro",
+      "bytes": 4559,
+      "sha256": "126ffd86a97d179887d136339558878ed9c5bc4263776683c7bc8169b4f7afd7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int32_6001/metadata/snap-6865176330763311533-0-9a2e396c-e947-4cf8-ae19-dc877eeec26b.avro",
+      "bytes": 1824,
+      "sha256": "dca3f9dcd6f5f4959ecccc5e94292b53d95399b99b2bb38af434cf95568bbbc6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_13306/data/00000-0-06b40030-4516-4257-b3dd-e63864f83d31.parquet",
+      "bytes": 3296,
+      "sha256": "ac1e87e55822bc18f5854a11e65f6e73e03af2f710861afe83b06062f03f020b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_13306/metadata/00000-d8badf71-c121-4350-9404-723ea46f176f.metadata.json",
+      "bytes": 908,
+      "sha256": "1c1feda1bb45ae89b6b2f857ffff9c661c02cf8d30f17f7149f54bfefcfe0c69"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_13306/metadata/00001-14f3b377-57d3-4dcd-88b1-eeabb98e26e2.metadata.json",
+      "bytes": 1828,
+      "sha256": "0d19b773d1d3ab75b7665f4cb305c1e4719b5d80e90de39d4ddaf2310282bc8d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_13306/metadata/06b40030-4516-4257-b3dd-e63864f83d31-m0.avro",
+      "bytes": 4553,
+      "sha256": "6168b68b891ba012b94126ffab7801a6b31f3e793134ced1a458ad839df58131"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_13306/metadata/snap-1657503649816495053-0-06b40030-4516-4257-b3dd-e63864f83d31.avro",
+      "bytes": 1822,
+      "sha256": "fec41c2080cb94ebfed7ddc632da4a72b032086a606b46f46acc5f8bb681ddb1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_6001/data/00000-0-bbefb737-4962-4922-92fe-ebaa1e45a7f8.parquet",
+      "bytes": 3296,
+      "sha256": "ac1e87e55822bc18f5854a11e65f6e73e03af2f710861afe83b06062f03f020b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_6001/metadata/00000-eb94f63d-bd16-42b4-a5fd-9ab812d6acef.metadata.json",
+      "bytes": 907,
+      "sha256": "87bf6d44c0a47ce370ce0618185889cf9754c4caac057e58e93623a3ebe3ac15"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_6001/metadata/00001-92439484-984e-4881-91f5-b584d42b1cae.metadata.json",
+      "bytes": 1825,
+      "sha256": "69211ac4396a5251c66e01280dce58d43b513a682ea089ec3ae8c52c987fd2d1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_6001/metadata/bbefb737-4962-4922-92fe-ebaa1e45a7f8-m0.avro",
+      "bytes": 4553,
+      "sha256": "727e307f0dede3a1f73f1ba7121ca6e1c8e89742b39f0176f2d9cf67b394051f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/int64_6001/metadata/snap-4488156998826119125-0-bbefb737-4962-4922-92fe-ebaa1e45a7f8.avro",
+      "bytes": 1822,
+      "sha256": "d49c7482ecc7b434a62baa50b73c8d0be514d56a26c46481cb75a2d20a5d27ca"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_13306/data/00000-0-a5dc1021-7749-4b28-9169-319ac789aabe.parquet",
+      "bytes": 3338,
+      "sha256": "16fa009a291e1dfd2412f5751a5a7e45a0e7c08b1f30b718da94ee6c61e14007"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_13306/metadata/00000-3c4c89b6-9edc-42f5-82a3-9fe97b9a0a64.metadata.json",
+      "bytes": 916,
+      "sha256": "3c8518c549c153ab959517e2d24e76032587f7177644131b0db0053b156f4340"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_13306/metadata/00001-0369cf9a-18f4-4d6b-970f-e005433b1c75.metadata.json",
+      "bytes": 1848,
+      "sha256": "544f6121018f65b395236896e67bd0901506defe7b80cd2e4b4036e30238eab1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_13306/metadata/a5dc1021-7749-4b28-9169-319ac789aabe-m0.avro",
+      "bytes": 4570,
+      "sha256": "baaf502d5393b18c2de34214a15f0d63340a854a102cea938b13d01bbe7b5a27"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_13306/metadata/snap-9075770424508841734-0-a5dc1021-7749-4b28-9169-319ac789aabe.avro",
+      "bytes": 1827,
+      "sha256": "1c70e9ed959acf919dbdad2bd92689b9374f6faf710440aab4f7f31448956482"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_6001/data/00000-0-1470f375-642e-4f32-bfe9-1397bcac8dd9.parquet",
+      "bytes": 3338,
+      "sha256": "16fa009a291e1dfd2412f5751a5a7e45a0e7c08b1f30b718da94ee6c61e14007"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_6001/metadata/00000-2823cde3-c513-4b14-9b74-fa02dee6a2f7.metadata.json",
+      "bytes": 915,
+      "sha256": "87194052dbebc4a4e0a086584016748a20bece95029f2589276fbd2e860be903"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_6001/metadata/00001-1050b342-9484-41a8-bbde-90fc095c078e.metadata.json",
+      "bytes": 1845,
+      "sha256": "722a65a6786e9755ebfbce4882cedf4d170042968b86f6aa60063c2a22b591d8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_6001/metadata/1470f375-642e-4f32-bfe9-1397bcac8dd9-m0.avro",
+      "bytes": 4569,
+      "sha256": "069671c82406b0669d1f784d83423b98371ee330c6acf0aea9ec1ef48262182a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_object_6001/metadata/snap-8609510345799270319-0-1470f375-642e-4f32-bfe9-1397bcac8dd9.avro",
+      "bytes": 1828,
+      "sha256": "fdded80f8e66e9d8958f6acceb3973685ec5cc617ab5288fb84f8ab9676c42ee"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_13306/data/00000-0-bf064cfb-462f-4d2d-8076-af0668c54fd2.parquet",
+      "bytes": 3307,
+      "sha256": "8a30ebdb99c484152b0d79be4ec957580e37767b790578da484af3adf0d85985"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_13306/metadata/00000-1e76439d-828c-48b7-b9e3-388558d22e52.metadata.json",
+      "bytes": 916,
+      "sha256": "065fb4b3be2cdbd7875a1b8410bc779ad5592cb7fad61a4d2658339db94a9a5e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_13306/metadata/00001-4685b3d4-b6fb-460c-a498-fbd42030ff37.metadata.json",
+      "bytes": 1848,
+      "sha256": "643fefeea251dca47b7dbf26c02d674e3e02dee668fa099f18f9b2aef2be94ba"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_13306/metadata/bf064cfb-462f-4d2d-8076-af0668c54fd2-m0.avro",
+      "bytes": 4577,
+      "sha256": "266c2cb9de3d861147936b1679cedba357138556966b9033499271c4eb099945"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_13306/metadata/snap-7560925795673260000-0-bf064cfb-462f-4d2d-8076-af0668c54fd2.avro",
+      "bytes": 1827,
+      "sha256": "169cf75577fdbedaaa12fd8a0f9f54b9d4942ee2a23cd890c9b2434c1396f792"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_6001/data/00000-0-bc4df23b-3a2c-4e26-9503-4b91369be022.parquet",
+      "bytes": 3307,
+      "sha256": "8a30ebdb99c484152b0d79be4ec957580e37767b790578da484af3adf0d85985"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_6001/metadata/00000-b938054d-1f24-4bc7-bc12-23e6d544a2ff.metadata.json",
+      "bytes": 915,
+      "sha256": "9564c496c5c61561ad89c3bb5460eb3ccb3aa2441faf2ca6b9eaa8716735462c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_6001/metadata/00001-767c5ffb-de42-4778-971c-0bf9852e9a97.metadata.json",
+      "bytes": 1845,
+      "sha256": "a7c3f4192ec2af35d874594b7149d60900f7ab2e8343b9989bc7a25df11dc893"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_6001/metadata/bc4df23b-3a2c-4e26-9503-4b91369be022-m0.avro",
+      "bytes": 4576,
+      "sha256": "3e34801414311ae12f63003a8533b6c5144dad9095287353f025831ad4b793b5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/json_scalar_6001/metadata/snap-5288903065408457689-0-bc4df23b-3a2c-4e26-9503-4b91369be022.avro",
+      "bytes": 1829,
+      "sha256": "da36787a928a8f0367921ff67c9f27cade1602f092926276af64c77f0370fe46"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_13306/data/00000-0-0c5139ff-8f62-4814-af4c-4273784b111b.parquet",
+      "bytes": 3414,
+      "sha256": "2100a2669d7b5c79b0c102aee87a9a735ea02177e77083d0644766e2697006fe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_13306/metadata/00000-1a55be8b-90db-42f3-9d4a-dd857c3dbf8c.metadata.json",
+      "bytes": 974,
+      "sha256": "b1d084d56a10f2f45230414386c5bb605e9f81e74f9ffabe95bccc68a73bb5d5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_13306/metadata/00001-292a2a12-b67c-4219-a7c4-02519c9b5891.metadata.json",
+      "bytes": 1890,
+      "sha256": "37ba3f5174ee062fa781eb91d0cac6a80b8ce092ae64be5faa38747622a97fe0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_13306/metadata/0c5139ff-8f62-4814-af4c-4273784b111b-m0.avro",
+      "bytes": 4616,
+      "sha256": "24ec21e14b3bf31031ea42d504f7af64220a60c6a2947def465d00e39137bcd6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_13306/metadata/snap-1522058338242530288-0-0c5139ff-8f62-4814-af4c-4273784b111b.avro",
+      "bytes": 1822,
+      "sha256": "31587fdb98b85dcaa8600b2bf751e5898b928baaa50b4f896db519487be9d1f0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_6001/data/00000-0-6e193a7b-7771-4247-8d63-3eb6501f325a.parquet",
+      "bytes": 3414,
+      "sha256": "2100a2669d7b5c79b0c102aee87a9a735ea02177e77083d0644766e2697006fe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_6001/metadata/00000-603fc418-610d-4eb2-bae4-430a8a744975.metadata.json",
+      "bytes": 973,
+      "sha256": "a06df0cfc81fcf425703456d09bd1ae577ea6305a565a63bc528de68c23aa913"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_6001/metadata/00001-08d5729d-df1a-4c10-baad-b1760ab67fd3.metadata.json",
+      "bytes": 1887,
+      "sha256": "b5429f1ea9193a9b7f0d7e187367900cf9bcff5927856183142db06b266dd50c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_6001/metadata/6e193a7b-7771-4247-8d63-3eb6501f325a-m0.avro",
+      "bytes": 4620,
+      "sha256": "75f767bb06a27c3763e451aaf04da54adfed19ee9998f6155d9a8472e36389fd"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/set_6001/metadata/snap-8997272307578534616-0-6e193a7b-7771-4247-8d63-3eb6501f325a.avro",
+      "bytes": 1822,
+      "sha256": "740bbc0bc3d706e56c4842eaba4c096bee7feea16bcf7ad36c157115d670c25b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_13306/data/00000-0-9b8f4f99-f35e-4c95-ae0f-35f151cd043e.parquet",
+      "bytes": 3258,
+      "sha256": "879462d4516755904e0c26fd0968ce167b0381ef0510252b29ce8d7b87ab2f4d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_13306/metadata/00000-05ac56f3-7ac7-4717-a153-30ab43f176c5.metadata.json",
+      "bytes": 910,
+      "sha256": "53205a28bcb104c8dad13163443afceacfd9df598c9010de465358078697ff9b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_13306/metadata/00001-c0edb6df-9b1f-4405-826d-76fc28b7550d.metadata.json",
+      "bytes": 1836,
+      "sha256": "ceff601b40595a9232abd9de146a4f8c829525333944744f7a14d7ffdcd41d86"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_13306/metadata/9b8f4f99-f35e-4c95-ae0f-35f151cd043e-m0.avro",
+      "bytes": 4562,
+      "sha256": "25000130445acf6a8edb8a5b7bee94e166aabf8241bfb6a23eea78fb5ee5bff7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_13306/metadata/snap-5289099353881238166-0-9b8f4f99-f35e-4c95-ae0f-35f151cd043e.avro",
+      "bytes": 1825,
+      "sha256": "d7b09d2d21f3f767a689f4fcaa5588fe6fa78956a003fa6bec9b9c06a5b2e57a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_6001/data/00000-0-83160191-5811-4cd7-9b95-d88dcd652e33.parquet",
+      "bytes": 3258,
+      "sha256": "879462d4516755904e0c26fd0968ce167b0381ef0510252b29ce8d7b87ab2f4d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_6001/metadata/00000-8e64e769-3366-498f-acc8-a5548c648cbe.metadata.json",
+      "bytes": 909,
+      "sha256": "8ebc8ad597ce3f450d5cc935c391542c2a388ebaec24cb3be307b430b08e546b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_6001/metadata/00001-47227947-c299-4295-91e8-2db4dbf53b8e.metadata.json",
+      "bytes": 1833,
+      "sha256": "fd2902480de2e8342ead0e9e176269e756f09eaa64f9e64879cd8460304e04ca"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_6001/metadata/83160191-5811-4cd7-9b95-d88dcd652e33-m0.avro",
+      "bytes": 4564,
+      "sha256": "41a65c403d6b5aca8d2879b35cc67459624c3866d1c70fec3074c04213bc669d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/smallint_6001/metadata/snap-5012556604086842892-0-83160191-5811-4cd7-9b95-d88dcd652e33.avro",
+      "bytes": 1826,
+      "sha256": "5f245297d027440a8afd46eb6fe16e2224d30d13791c91eea28b3673b98c81af"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_13306/data/00000-0-f695ad73-9510-444b-b734-eef35baa5117.parquet",
+      "bytes": 9237,
+      "sha256": "c78b6d0cbbf3d8188c2deefef95837cd2ed6a70e4e3d8fd94a0dade0b597192a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_13306/metadata/00000-62fc2e27-1648-4a47-ba8b-ebe3bb8bb98d.metadata.json",
+      "bytes": 914,
+      "sha256": "3bf65186aeeb87a28287d32b0eb28a454d5b7197c36ea60591c6ccf82c794b6f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_13306/metadata/00001-6dc8394d-a52c-49ac-bc39-a3bb858677aa.metadata.json",
+      "bytes": 1842,
+      "sha256": "ad0b997ffd9f1e2ac233653f81436841d98fdbc872346410a9c8088421d4234d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_13306/metadata/f695ad73-9510-444b-b734-eef35baa5117-m0.avro",
+      "bytes": 4582,
+      "sha256": "6bd00ad5cde9ec23604401624a250f7b7309bf825479d822455014f7dff6b8fc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_13306/metadata/snap-8942579752368612002-0-f695ad73-9510-444b-b734-eef35baa5117.avro",
+      "bytes": 1827,
+      "sha256": "6847eddaad79677b34dab65ff682c3e4556eec0d3d4fd3b4b187bfd9b2d65365"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_6001/data/00000-0-8115e212-09a6-48ba-b733-a02585bde624.parquet",
+      "bytes": 9237,
+      "sha256": "c78b6d0cbbf3d8188c2deefef95837cd2ed6a70e4e3d8fd94a0dade0b597192a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_6001/metadata/00000-eb0aea3e-ae4b-4b83-9892-31c9a84ca9bb.metadata.json",
+      "bytes": 913,
+      "sha256": "75d45f526d63229a00d9c30736f7ade282d007aa3e5e06b9ae25b801f69bd47a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_6001/metadata/00001-9b5c688f-d43f-429e-9b9a-1525a05b3b05.metadata.json",
+      "bytes": 1839,
+      "sha256": "9c288be5aae25c1879ced67d611b2a0f33e9e3721572669c3cc49a3bb29d90f8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_6001/metadata/8115e212-09a6-48ba-b733-a02585bde624-m0.avro",
+      "bytes": 4577,
+      "sha256": "ba1ba44430af91070f68fb2be81fc76ae96ac771215f69f8f87c078e8878eceb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/text_long_6001/metadata/snap-1539958591084550234-0-8115e212-09a6-48ba-b733-a02585bde624.avro",
+      "bytes": 1824,
+      "sha256": "28435c5c6b90d0b0b32bb3bf097f35b1c45940d8d6281421fb0b96b710cc869b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_13306/data/00000-0-a43b5c8d-dcb2-4d4f-babe-48181d816694.parquet",
+      "bytes": 3307,
+      "sha256": "bfba0c40ed83c22d6a901a4a17b2cbd05350021bf64c0ea94dce2aad49dea217"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_13306/metadata/00000-ac5013ce-1a8c-49a6-9077-83053991de97.metadata.json",
+      "bytes": 908,
+      "sha256": "f81faeb5b6b1e6fc9e9e848d5fbcb0466373fcce7efd74fc2ce8aa77b7223ab1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_13306/metadata/00001-ac2014f4-ae28-4b6f-815d-83d9bd94e419.metadata.json",
+      "bytes": 1828,
+      "sha256": "4564709cb3bc1b853ac74a623f422f4ad7c591ab23fd5446c325f3dee450917e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_13306/metadata/a43b5c8d-dcb2-4d4f-babe-48181d816694-m0.avro",
+      "bytes": 4569,
+      "sha256": "b4efcbe36646d7a711d1e54ff1a86cc887bdd740dcd9d4fbdaca64a88291fd77"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_13306/metadata/snap-2349783560944684144-0-a43b5c8d-dcb2-4d4f-babe-48181d816694.avro",
+      "bytes": 1823,
+      "sha256": "da28f46d1e69101c37bc4818660d57b6c59988a4f134346494878df738f6ce8b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_6001/data/00000-0-7e45bd8d-a4f0-46f9-aef7-6db25198d93c.parquet",
+      "bytes": 3307,
+      "sha256": "bfba0c40ed83c22d6a901a4a17b2cbd05350021bf64c0ea94dce2aad49dea217"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_6001/metadata/00000-92852651-3a87-49b9-8555-17cf83008922.metadata.json",
+      "bytes": 907,
+      "sha256": "736c7a25736e7014c0de276a4d4eba8d088c923acbc7c4a7d85acfd288a51006"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_6001/metadata/00001-481734ed-ec7b-4dac-b051-6c6a447a8a56.metadata.json",
+      "bytes": 1825,
+      "sha256": "26a71f45acdf8378a256fb5f0219c85e77a309f2c941636dc4dabd277ba1de2c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_6001/metadata/7e45bd8d-a4f0-46f9-aef7-6db25198d93c-m0.avro",
+      "bytes": 4568,
+      "sha256": "82dac6cd8af2ae73aa56c0bc8395329d119e1794058544a04d767d140f34e128"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/time6_6001/metadata/snap-2329389605719866824-0-7e45bd8d-a4f0-46f9-aef7-6db25198d93c.avro",
+      "bytes": 1820,
+      "sha256": "cd1071d04d85d65eef980d9c60b237c2cf37c43c401fa682ec438d7d68d29197"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_13306/data/00000-0-4b9888f9-cb22-440e-9c11-79ca7454e363.parquet",
+      "bytes": 3256,
+      "sha256": "910905b042efabceeb271c1defe21220d5e92525f98ea5600e463495e9f056b1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_13306/metadata/00000-463b9a1f-4f0a-40ad-8758-3463e144db9e.metadata.json",
+      "bytes": 909,
+      "sha256": "ddb8e7f826602aa1a0ef0b3bfaf09b0e0981829c965bcc98d012dd68346671c4"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_13306/metadata/00001-2db67197-789b-4557-8d5d-adc82eb01156.metadata.json",
+      "bytes": 1833,
+      "sha256": "89bcae9e8023eed783a3c5253d9df4d7b8bb8bd00fae1d90fcc9bfc86164341d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_13306/metadata/4b9888f9-cb22-440e-9c11-79ca7454e363-m0.avro",
+      "bytes": 4560,
+      "sha256": "155a74ebd28b2b4ecb03c767548cc852842b85e55e675323b53fc082fa4c3fa7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_13306/metadata/snap-1620051778058402297-0-4b9888f9-cb22-440e-9c11-79ca7454e363.avro",
+      "bytes": 1823,
+      "sha256": "97816774ffe08a464218033ac915572a148f001dc57d7778007284d567742841"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_6001/data/00000-0-a4840631-15a2-4009-b7a6-f9a58a0f3346.parquet",
+      "bytes": 3256,
+      "sha256": "910905b042efabceeb271c1defe21220d5e92525f98ea5600e463495e9f056b1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_6001/metadata/00000-884b85b8-0ca0-42ef-b4ec-a81dfc27a40c.metadata.json",
+      "bytes": 908,
+      "sha256": "7682ff78b3df0dd46afbd05149677beff5de839da832a476ffab1dfa87948f1c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_6001/metadata/00001-05879939-f49c-4cbd-8abc-f855f0a754eb.metadata.json",
+      "bytes": 1830,
+      "sha256": "2e024d3d1742e3ffea9a242b2cf02f890062a601bf703967d2cffcc54fc06977"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_6001/metadata/a4840631-15a2-4009-b7a6-f9a58a0f3346-m0.avro",
+      "bytes": 4562,
+      "sha256": "6045e4017132275b7eba96e301d64675f079b2f5dfcf3e315fc3178d7f9aa1be"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/tinyint_6001/metadata/snap-2630654394501665496-0-a4840631-15a2-4009-b7a6-f9a58a0f3346.avro",
+      "bytes": 1825,
+      "sha256": "3a63b4301677e44553fadf7370201ae8286ffb7f196ca96acddf45973a23fe5f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_13306/data/00000-0-d212e604-3bb5-4c16-ade5-b26b26ef816b.parquet",
+      "bytes": 3320,
+      "sha256": "499397b4bca8f6cabab7b7f4886c14e52d4334b5b196bd24e61b9610fc82aebe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_13306/metadata/00000-4b85b145-576b-4fd9-8da4-403217cb403f.metadata.json",
+      "bytes": 919,
+      "sha256": "57c13456a616e86737e96592e0f6153e109b90bd0c8dc4a39e9212b0061377ef"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_13306/metadata/00001-4eeee20b-8041-4d49-8745-bcc6ce3789ac.metadata.json",
+      "bytes": 1841,
+      "sha256": "6524853bbaa3ae8ccf4b8be379586fa60a3d9a5fe63072e89c8ec9b3f7080b78"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_13306/metadata/d212e604-3bb5-4c16-ade5-b26b26ef816b-m0.avro",
+      "bytes": 4570,
+      "sha256": "b27eb23876916384ff0338178c2943d29c6472de2c635fa53a212e7f83bb85da"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_13306/metadata/snap-6480775747088088671-0-d212e604-3bb5-4c16-ade5-b26b26ef816b.avro",
+      "bytes": 1825,
+      "sha256": "0a195f1ce7ee7734acb1ebcee139b903e1b3e9f08579e02095365001b9b69833"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_6001/data/00000-0-d0455484-6d2a-4d18-94b9-599a0c928386.parquet",
+      "bytes": 3320,
+      "sha256": "499397b4bca8f6cabab7b7f4886c14e52d4334b5b196bd24e61b9610fc82aebe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_6001/metadata/00000-49f1f9ca-65f9-4f95-9b46-b3cf0db68df7.metadata.json",
+      "bytes": 918,
+      "sha256": "4b2c1cd38a3aabeed7e405bcd6339ebe25c5c18772526e9e32c48a409fe1aff4"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_6001/metadata/00001-9507d96f-4f20-48fa-a1e1-a3a839a5ae1b.metadata.json",
+      "bytes": 1838,
+      "sha256": "b79bf4ddb873569297a17d11f83476e48aac0e6729ad28a91f3d0509b13c414d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_6001/metadata/d0455484-6d2a-4d18-94b9-599a0c928386-m0.avro",
+      "bytes": 4571,
+      "sha256": "6c85746c6d82af22ceeb5416b1875ba958c5386be6d7f9637972697c7a335902"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uint64_6001/metadata/snap-7482878583783216683-0-d0455484-6d2a-4d18-94b9-599a0c928386.avro",
+      "bytes": 1823,
+      "sha256": "62a8b9f8f693959ba06ab081e9854869e76dfaa1076783fb7b1178d211f8c7a6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_13306/data/00000-0-4f4ea6ea-42f5-4509-a259-2f8b5bdede22.parquet",
+      "bytes": 3449,
+      "sha256": "f2393ad0e7390f999c69244e1e0a3b7193a90a8500690fed4b418b1c1022414d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_13306/metadata/00000-6c4a6b08-76c0-4ae8-9ec5-5b4975678d06.metadata.json",
+      "bytes": 912,
+      "sha256": "60ff57220f683b358e50adb395896c06d5971e6cb2ffaf7b653316b1496fee50"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_13306/metadata/00001-b5af7343-660b-46cd-b799-e349df47e73e.metadata.json",
+      "bytes": 1840,
+      "sha256": "0f5485a08a655b3db01f771a3f845b1dc43a542e5c1f0c9db3d156fc717f8ded"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_13306/metadata/4f4ea6ea-42f5-4509-a259-2f8b5bdede22-m0.avro",
+      "bytes": 4565,
+      "sha256": "0aa33561563f1089a5284d89ac18242bb75120e856316fc8e812ac9160b08800"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_13306/metadata/snap-7427333243937271053-0-4f4ea6ea-42f5-4509-a259-2f8b5bdede22.avro",
+      "bytes": 1825,
+      "sha256": "6ddb4818f4586f7641c8f35049c447cd5e09a88f9e1c7ca05265b800fa1003f8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_6001/data/00000-0-896dda7d-1dfd-4aa0-acd6-3e1ca663c731.parquet",
+      "bytes": 3449,
+      "sha256": "f2393ad0e7390f999c69244e1e0a3b7193a90a8500690fed4b418b1c1022414d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_6001/metadata/00000-0b8868ae-83fd-40b1-8eac-83cab572d08d.metadata.json",
+      "bytes": 911,
+      "sha256": "d91a7d802e0c5e50a9130f52ff3b2905af112a28390087996c88a5fc05d685f1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_6001/metadata/00001-870367f8-087f-4844-bf43-498efe398e8b.metadata.json",
+      "bytes": 1837,
+      "sha256": "023086b7e3fdcf44ed9b266e8cd44bdbc57050800b0c3173574819f429631ae6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_6001/metadata/896dda7d-1dfd-4aa0-acd6-3e1ca663c731-m0.avro",
+      "bytes": 4558,
+      "sha256": "e0d666affaf7763c1d78b9d52a23bdc66d5c38c2ab69f61b4eb05f18b1764523"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/uuid_text_6001/metadata/snap-3011492946296851890-0-896dda7d-1dfd-4aa0-acd6-3e1ca663c731.avro",
+      "bytes": 1825,
+      "sha256": "67f178117d51066c01ba485ed7a50df81508d94658647fb34859095ec1a5d141"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_13306/data/00000-0-7cbd87c6-ff42-4e8f-ae1c-f8447209992a.parquet",
+      "bytes": 3474,
+      "sha256": "f41be59f8390dcb5d7e8e5eaef2fd8ec68011b6680608ebd55d5e138b8a9fb57"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_13306/metadata/00000-e288b11b-3599-4806-8473-3e8c7e83ced6.metadata.json",
+      "bytes": 914,
+      "sha256": "934865e1d653fb5b5bb0eb3586bb1b606d0e905e56f3c01e0f854ddd11ba1483"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_13306/metadata/00001-a17bcc4d-3d10-4b6d-9869-82789f794e63.metadata.json",
+      "bytes": 1842,
+      "sha256": "ece48aafab2da78f1296abcd78468163f1c422804cbe4e9f7f1c9ea65031887a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_13306/metadata/7cbd87c6-ff42-4e8f-ae1c-f8447209992a-m0.avro",
+      "bytes": 4567,
+      "sha256": "35821579a8b23ad3a337ff96d265b65017a5044f44b60bcb987e91954ded4c08"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_13306/metadata/snap-8419262983437225341-0-7cbd87c6-ff42-4e8f-ae1c-f8447209992a.avro",
+      "bytes": 1828,
+      "sha256": "7cdf6218d4385ba24832ba0e2cc6c41aa3cc112b9166c5280f6e1e08faa583c7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_6001/data/00000-0-78f71705-7f81-4e90-b0b7-421dcf6262b6.parquet",
+      "bytes": 3474,
+      "sha256": "f41be59f8390dcb5d7e8e5eaef2fd8ec68011b6680608ebd55d5e138b8a9fb57"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_6001/metadata/00000-cd74c600-6c4b-40e4-8953-eefe2dda211b.metadata.json",
+      "bytes": 913,
+      "sha256": "dc63b807693229a9c8345d8dae4c56ca43fa8f8389c44eb51a1d008d4a644788"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_6001/metadata/00001-16113e87-1c8c-4bc0-8db4-39a0f780fbe6.metadata.json",
+      "bytes": 1834,
+      "sha256": "fb64db30e673568494da3ca9df3838b216543e6c417bda78bc46b1d7c7934f4a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_6001/metadata/78f71705-7f81-4e90-b0b7-421dcf6262b6-m0.avro",
+      "bytes": 4562,
+      "sha256": "192b530f8d3adcc445bd2fd2f072c0354cae78fc7b306c2513b09c7efad6bb57"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varbinary_6001/metadata/snap-640025782839858563-0-78f71705-7f81-4e90-b0b7-421dcf6262b6.avro",
+      "bytes": 1825,
+      "sha256": "923c251dda0f29871f488f456f1f7f8e77b5407b0fe3689600284c2c8edd2526"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_13306/data/00000-0-5857c0ec-d9ad-4df1-b9f2-970e475e72b5.parquet",
+      "bytes": 3284,
+      "sha256": "bf9ee2fe1bebe449578847d13cf3ed076407a8e9129b5116070ddd0d2869d825"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_13306/metadata/00000-c392448a-9eb0-473d-9233-092714cda892.metadata.json",
+      "bytes": 917,
+      "sha256": "a0b976b3d1f94bc6359c34452de1b162df92f7494ffc49b43da3960893ef5a1b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_13306/metadata/00001-5cb06ac5-fdd7-4950-a338-c69570198c7a.metadata.json",
+      "bytes": 1851,
+      "sha256": "f922e91e6fa02b1a1d88dc96953121387e03c856cf30528aadd7ad451be2a69a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_13306/metadata/5857c0ec-d9ad-4df1-b9f2-970e475e72b5-m0.avro",
+      "bytes": 4579,
+      "sha256": "54f544985153f687975f91b7bb980a8ae8a5242c52ff2671a0c7d2220a7de03d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_13306/metadata/snap-6528840980848281785-0-5857c0ec-d9ad-4df1-b9f2-970e475e72b5.avro",
+      "bytes": 1830,
+      "sha256": "58400066e1b28846c883008787f59ac99b8d70cef3729d00ae6952980429a401"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_6001/data/00000-0-512a083a-0d24-49a6-9551-29203cc5ab98.parquet",
+      "bytes": 3284,
+      "sha256": "bf9ee2fe1bebe449578847d13cf3ed076407a8e9129b5116070ddd0d2869d825"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_6001/metadata/00000-602351f9-d8f8-46b6-8d46-6a589b99c2d7.metadata.json",
+      "bytes": 916,
+      "sha256": "8679518952136cc183da66e6d5b678623cc7ac687a7ecdbd7ea2fa72573f1074"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_6001/metadata/00001-50ba0a1d-966a-4130-bb0a-83501e159ed0.metadata.json",
+      "bytes": 1848,
+      "sha256": "be498af5f264a8e40f0ee8e167038ddf2af20837c69c063c4705be1eb5a5f9d8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_6001/metadata/512a083a-0d24-49a6-9551-29203cc5ab98-m0.avro",
+      "bytes": 4574,
+      "sha256": "d51630027e5b403e4d3fdb44e2a9bc1898968e2fb2c3ed899d3bc658d84de8b3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_7528813b/varchar_utf8_6001/metadata/snap-1039424183276045615-0-512a083a-0d24-49a6-9551-29203cc5ab98.avro",
+      "bytes": 1827,
+      "sha256": "14807219399a84d524a4dcedb434af3f5ecf50020cb195ee64f907b31f059e58"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_13306/data/00000-0-0d7e3c16-1633-482d-bf64-1133f40fb543.parquet",
+      "bytes": 3325,
+      "sha256": "2f51427734bc22e4ca8120142696a9f3a3d4913eeac7d7811fc06d0c492e959c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_13306/metadata/00000-629cab07-cb84-4758-8e46-55ffd661c7f7.metadata.json",
+      "bytes": 918,
+      "sha256": "a2f58995e29d91c1724d1182a3580cb4f03eb10bc8028c5a323cb006036ff17e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_13306/metadata/00001-44cd88fd-a0a6-4863-a290-87aff3908bf6.metadata.json",
+      "bytes": 1838,
+      "sha256": "d8aeb279d9bb59bb665de67f9c136d018b29cc1a096497b0904f2c8ee056a738"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_13306/metadata/0d7e3c16-1633-482d-bf64-1133f40fb543-m0.avro",
+      "bytes": 4565,
+      "sha256": "da9c3412e0d684d3fc684dfe24c142a455ad0a4bdb2c8535e29db359eb04dc26"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_13306/metadata/snap-4882248001114100978-0-0d7e3c16-1633-482d-bf64-1133f40fb543.avro",
+      "bytes": 1825,
+      "sha256": "5a5401ab1de7586dba87fc25cb03c72d34ed94b2e1b6d6f99d9b4720ba552f56"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_6001/data/00000-0-f9bd3b5c-b078-46f2-812d-a0f6911f8e5e.parquet",
+      "bytes": 3325,
+      "sha256": "2f51427734bc22e4ca8120142696a9f3a3d4913eeac7d7811fc06d0c492e959c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_6001/metadata/00000-5984f564-0b98-446e-94fd-4c52cb3c1388.metadata.json",
+      "bytes": 917,
+      "sha256": "b2b8ad859782e66c8370a27be066e14f66ca8ac450430b48cb866ff748830a25"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_6001/metadata/00001-edbe1464-d81f-45ff-8957-d2024e1cc150.metadata.json",
+      "bytes": 1830,
+      "sha256": "8bea6c4e8fb0a09763a58f6f39167a6385170cfd0f4edef19d066d64ce1dd149"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_6001/metadata/f9bd3b5c-b078-46f2-812d-a0f6911f8e5e-m0.avro",
+      "bytes": 4563,
+      "sha256": "6a9ddada6fdc99198973d8c0519df1e8d48ef361d921132c3088dc38d253f550"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/bit64_6001/metadata/snap-656429821010694808-0-f9bd3b5c-b078-46f2-812d-a0f6911f8e5e.avro",
+      "bytes": 1822,
+      "sha256": "61c0fc5e9d88b63a9ab9d3089aa907b6e54c48d8e4283814174bc4dde0dfc07e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_13306/data/00000-0-a4053c6b-a0e2-4b07-8671-11e49904c05c.parquet",
+      "bytes": 5531,
+      "sha256": "76f63be468fb40172f9f7fdb33d68cc429c8f4c2b5ee79bd313e1df787b4ef6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_13306/metadata/00000-83b25ef3-3d01-4c1d-805b-12878be09573.metadata.json",
+      "bytes": 909,
+      "sha256": "10a63dfadcdca3a51b120ad63203d4cf892cb8ac0e37f4c4a4cf0b5eae0aa520"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_13306/metadata/00001-123154ff-d245-4fea-b06d-c592260586cb.metadata.json",
+      "bytes": 1827,
+      "sha256": "466285f83dc0830bc2b613459d24af490d1a59f3351b66bef74c94328c2130ec"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_13306/metadata/a4053c6b-a0e2-4b07-8671-11e49904c05c-m0.avro",
+      "bytes": 4558,
+      "sha256": "83611ddeb59405c7bc264f691dbec7e5944f5e97ee9ed99e0f435236b97bdd94"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_13306/metadata/snap-6083183459654450988-0-a4053c6b-a0e2-4b07-8671-11e49904c05c.avro",
+      "bytes": 1823,
+      "sha256": "ec84179fbe223493e211adbb3960f70116b37b7c949025b7bca253a0cb1173d6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_6001/data/00000-0-7efc1805-14bd-48e7-ba95-1ba44a761250.parquet",
+      "bytes": 5531,
+      "sha256": "76f63be468fb40172f9f7fdb33d68cc429c8f4c2b5ee79bd313e1df787b4ef6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_6001/metadata/00000-e3eec998-6016-4c4d-ad2f-4ef53bd17dc9.metadata.json",
+      "bytes": 908,
+      "sha256": "70857f8d38630c6c55a104ea6253e12414dac4e75befd818c73799772789ff85"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_6001/metadata/00001-ed2a3e3d-4cf4-4bd2-a936-c7e07d70d472.metadata.json",
+      "bytes": 1819,
+      "sha256": "b4abc9279717a27ef59370581fe4449ddce7123ec2ebec41f247e172896e2b73"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_6001/metadata/7efc1805-14bd-48e7-ba95-1ba44a761250-m0.avro",
+      "bytes": 4554,
+      "sha256": "f16efe6b5a997d57d877bc0fb3a4646b99b050c2d74509c55a2acccd8b9bae9e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/blob_6001/metadata/snap-623224867128985809-0-7efc1805-14bd-48e7-ba95-1ba44a761250.avro",
+      "bytes": 1820,
+      "sha256": "62ea2b7a40246f2352fd7941da4b3f2772253dca4521523bcfca373df3a76bda"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_13306/data/00000-0-801f2e7e-f907-4efb-a897-1755da04fec7.parquet",
+      "bytes": 3162,
+      "sha256": "9a166a5353e78716de4795fafc8bbcf4058803c51bb3038b46d815672d7fca4c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_13306/metadata/00000-5b3af4b6-95a5-4e9f-8852-5df10bb435b5.metadata.json",
+      "bytes": 913,
+      "sha256": "7deadb302618580a06f3693039f0df9dc1b93f6223b6d4fa8aed7757d36831df"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_13306/metadata/00001-978da5c8-6405-4df4-976a-18121332b40f.metadata.json",
+      "bytes": 1837,
+      "sha256": "1120f78d2baeb0e0a56183215978d41b11c300abb3fb2eaf9a94c96a1c85f855"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_13306/metadata/801f2e7e-f907-4efb-a897-1755da04fec7-m0.avro",
+      "bytes": 4557,
+      "sha256": "8ae0f0fe43123468f6f5c6981e0cfdd1254cb36228913aa4cf0061dc12d38810"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_13306/metadata/snap-5725011549012242716-0-801f2e7e-f907-4efb-a897-1755da04fec7.avro",
+      "bytes": 1824,
+      "sha256": "2b263a0b363d6d4e4f0c50a7704a22a5df429830f617776c9529e11981dabdad"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_6001/data/00000-0-b476cfbe-3b17-4591-bfa7-b73f18dd715c.parquet",
+      "bytes": 3162,
+      "sha256": "9a166a5353e78716de4795fafc8bbcf4058803c51bb3038b46d815672d7fca4c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_6001/metadata/00000-d9f42e92-9bdb-4176-9cc9-6fc0afaa7a79.metadata.json",
+      "bytes": 912,
+      "sha256": "387fa2005ebe4ba8c44d5f6bc08da224866d2df57c26e94ca960a9861cdcf89c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_6001/metadata/00001-07b1cace-42b7-4e61-a293-d7574bca8910.metadata.json",
+      "bytes": 1834,
+      "sha256": "a4b7eb37f1e6f1db89ef56ec92b5e700f5c1d7674d8bd5a5ebd85b6170c32d3f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_6001/metadata/b476cfbe-3b17-4591-bfa7-b73f18dd715c-m0.avro",
+      "bytes": 4557,
+      "sha256": "f3c7871145bd364334a0f6f69cfbeb8f8051e1bfb0599b7ee0d9635ace8d34a8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/boolean_6001/metadata/snap-7931984303496654438-0-b476cfbe-3b17-4591-bfa7-b73f18dd715c.avro",
+      "bytes": 1826,
+      "sha256": "7153876cce4e9ad402aee1519e95498ba8b6aec14a633f7548710c52747d5b02"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_13306/data/00000-0-88fb1c9e-7051-479b-876b-d7d5ed2f198c.parquet",
+      "bytes": 3269,
+      "sha256": "aea4f2449d1aa109a37539578fc9caea8c9a41515131e6e02d4fb89ebb928e6b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_13306/metadata/00000-74db1f55-cfe0-4741-8be7-236da9f0d160.metadata.json",
+      "bytes": 917,
+      "sha256": "e142bdf1d0e142a92b3b48c0716c4ccf3f02d410536c28094140d4b2a2a7e542"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_13306/metadata/00001-a18d2fc3-008e-4d36-bd15-f884d8d782b1.metadata.json",
+      "bytes": 1851,
+      "sha256": "47b5005c4b7bd8d3b28320cc224b7814fb1fe6a343117c7171dd53c71cb34d7e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_13306/metadata/88fb1c9e-7051-479b-876b-d7d5ed2f198c-m0.avro",
+      "bytes": 4571,
+      "sha256": "559b14e4efa8aaa5f66bf5070df4fe0837a10fa7cd9ae9ac5f75abeead7c342b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_13306/metadata/snap-4979753357282277171-0-88fb1c9e-7051-479b-876b-d7d5ed2f198c.avro",
+      "bytes": 1830,
+      "sha256": "9d640f5fe913ecb25f01dc7ceb6f58b5003696e12183bd0d898014b25feef6e6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_6001/data/00000-0-ad25d7b2-68cf-43d8-a6fc-70a8175149ca.parquet",
+      "bytes": 3283,
+      "sha256": "b6062d9845657d096dc27ffaa879388726e370bd89d971994437c65a78158d0b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_6001/metadata/00000-5f889fb0-63c6-41bc-91b7-5d90579fd7af.metadata.json",
+      "bytes": 916,
+      "sha256": "dc1494b648063509a2849f96da9e5c9527f1822b537fda8816ff116fecb039ed"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_6001/metadata/00001-083d435d-bc71-4eff-b4e7-2b0f3c99511e.metadata.json",
+      "bytes": 1848,
+      "sha256": "74d6515f203ac175fdbafc0c8943e3cab163a62a23c0567aff751e1f4900e205"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_6001/metadata/ad25d7b2-68cf-43d8-a6fc-70a8175149ca-m0.avro",
+      "bytes": 4574,
+      "sha256": "6f7662c1c0df4a07b1978b6ec6d4d76f0c90d3374c5495f1af3204459142c119"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/char_padding_6001/metadata/snap-8911527605353325133-0-ad25d7b2-68cf-43d8-a6fc-70a8175149ca.avro",
+      "bytes": 1829,
+      "sha256": "7603daa7c368ee757b23f5c35c410ebc349ce6cfb84cb9e85053595d529e861e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_13306/data/00000-0-3d60a9a3-f699-4841-83ed-90dc2f28bad2.parquet",
+      "bytes": 3259,
+      "sha256": "568a1cd9e61ce6ab2cb033dd381f974f67ec8e27c1ea69a214a1cafeb2fb0b84"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_13306/metadata/00000-311731ff-fe16-4826-8605-7aeddb0c85b9.metadata.json",
+      "bytes": 907,
+      "sha256": "3952150290f0673242e32bdeada3519e540e5c62417552b11154a415a7f66d74"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_13306/metadata/00001-6452091d-ad86-4d16-a27d-504f1075f78c.metadata.json",
+      "bytes": 1825,
+      "sha256": "36dc5cff07eee5f99dafe56f9000a47a2a90a76e5788ac04523f3b4d4aa9e50b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_13306/metadata/3d60a9a3-f699-4841-83ed-90dc2f28bad2-m0.avro",
+      "bytes": 4559,
+      "sha256": "23ce474cf8290fe68e107de7e7853d7c6e03f9d49d648a6ede40a5ea7600fe35"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_13306/metadata/snap-7063467584633400984-0-3d60a9a3-f699-4841-83ed-90dc2f28bad2.avro",
+      "bytes": 1823,
+      "sha256": "805efb85631471765db19b3970b3980bba96596b8cfc42668a1ac025d914c8bd"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_6001/data/00000-0-68641800-ab81-492a-8183-701f729abb67.parquet",
+      "bytes": 3259,
+      "sha256": "568a1cd9e61ce6ab2cb033dd381f974f67ec8e27c1ea69a214a1cafeb2fb0b84"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_6001/metadata/00000-c6a49950-ccf6-48e6-9e32-a70b422cfb01.metadata.json",
+      "bytes": 906,
+      "sha256": "dc71f254d7986bbdcf68d84043f092304304621700e45f0f678c162323bed68b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_6001/metadata/00001-eae72876-9052-473f-8b4b-f493ca570a18.metadata.json",
+      "bytes": 1822,
+      "sha256": "a011986ebf24c802e417ca2714d984e8a0eec6d8042672f5bf66a61f380a50e7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_6001/metadata/68641800-ab81-492a-8183-701f729abb67-m0.avro",
+      "bytes": 4555,
+      "sha256": "5f4bd15915c2f0a998ab7497565cdbbc40114a3a8c28f3a8a6c18b65acf530e8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/date_6001/metadata/snap-2422979890221523295-0-68641800-ab81-492a-8183-701f729abb67.avro",
+      "bytes": 1823,
+      "sha256": "f121d82b368191554d0b7cdb8e23624af07486218d6ec0f76442fe04187f444d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_13306/data/00000-0-3926d117-f2d4-4c65-a5f6-139632c4a603.parquet",
+      "bytes": 3305,
+      "sha256": "d3e5102925d1628e29060f3c9fa9ccf07032c70329da2109bb2445f4122a6dde"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_13306/metadata/00000-e7d80891-e878-4647-9800-bf5246c50270.metadata.json",
+      "bytes": 917,
+      "sha256": "08e1642603d9b720735c8e8bd4679a74a409959f491fedfaec8b53c6aaa64c79"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_13306/metadata/00001-768a1eac-b9c7-4abc-ba61-015d81dd922d.metadata.json",
+      "bytes": 1845,
+      "sha256": "7ed1ed12010a7708ba28000a66a94ed44e0d4739102f4d3df5706916de9fcb6d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_13306/metadata/3926d117-f2d4-4c65-a5f6-139632c4a603-m0.avro",
+      "bytes": 4582,
+      "sha256": "1ec5d570c63b7b7d492467895e8236223287fda3229e2c27eaf6c1878e9364ad"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_13306/metadata/snap-5402340726661330059-0-3926d117-f2d4-4c65-a5f6-139632c4a603.avro",
+      "bytes": 1824,
+      "sha256": "0f267bb7bf4983e8e07a7df697c18484a489f91695b087673fc8bf36357b59fa"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_6001/data/00000-0-e6c2b6b4-35c4-4625-9472-9f187087d7fe.parquet",
+      "bytes": 3305,
+      "sha256": "d3e5102925d1628e29060f3c9fa9ccf07032c70329da2109bb2445f4122a6dde"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_6001/metadata/00000-f0887c99-ce22-44dc-b7a3-6c1d1e87001b.metadata.json",
+      "bytes": 916,
+      "sha256": "77a9b82deafbbc7d275b525620b9c632aabba727cf225f498520e13896f5b6e3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_6001/metadata/00001-c37e685c-31e7-4e7a-8a4b-6c6685d734e4.metadata.json",
+      "bytes": 1842,
+      "sha256": "80faf4a1f42597ac1c24696bba516a1b62c555b3345de314b76d08fcef73bc78"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_6001/metadata/e6c2b6b4-35c4-4625-9472-9f187087d7fe-m0.avro",
+      "bytes": 4581,
+      "sha256": "fe86bfe6250bf61d5cc8777224ff2c1abe4aa72cee273cac6181ac892710b341"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/datetime6_6001/metadata/snap-8845468077034943253-0-e6c2b6b4-35c4-4625-9472-9f187087d7fe.avro",
+      "bytes": 1824,
+      "sha256": "6132f2fbf400c3fc5d47da8ebe641b33de1b19ae0e99baed47d7166d187e605f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_13306/data/00000-0-7f3ddaaa-10fe-4d4c-8f2c-9ad2047d24bb.parquet",
+      "bytes": 3342,
+      "sha256": "4a125b5a120d50703368c150bca004fe278c99cfe2ce18cc24a22c5926be45db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_13306/metadata/00000-d3b4725b-f62d-4f38-bdcb-46541fac4cd6.metadata.json",
+      "bytes": 924,
+      "sha256": "d67f464da523c2fec159ca7c9ea1cb44e850a28ca24c57a08422466bcf83ba34"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_13306/metadata/00001-e9fb5f33-b731-41f3-8f36-51a53f6ec1de.metadata.json",
+      "bytes": 1856,
+      "sha256": "b2917e783d5e8db5c37a0f59962696ac717ddd599ecc0d975224c6e2c7ecd372"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_13306/metadata/7f3ddaaa-10fe-4d4c-8f2c-9ad2047d24bb-m0.avro",
+      "bytes": 4592,
+      "sha256": "18bc15cef5eb6b414b89a6aca16ed6adc80a99dd4207f312e6bf32319d1f4335"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_13306/metadata/snap-8743865413152970312-0-7f3ddaaa-10fe-4d4c-8f2c-9ad2047d24bb.avro",
+      "bytes": 1827,
+      "sha256": "f9f4239a4c604842c23634590207e6f56fe89e9885b029a78ced5f4ae2bc8ed6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_6001/data/00000-0-bc8c9c35-a0f1-45c4-9db2-6951a3b9c966.parquet",
+      "bytes": 3342,
+      "sha256": "4a125b5a120d50703368c150bca004fe278c99cfe2ce18cc24a22c5926be45db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_6001/metadata/00000-6127bfa2-e203-4d44-9dcc-b064c06ad16b.metadata.json",
+      "bytes": 923,
+      "sha256": "a5f2db80a7e830f62cf898da514d04ed3a9b8305d1789806fab66dc4f27e39d7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_6001/metadata/00001-ca3a1518-c2c0-480e-9ede-8afc2a98461d.metadata.json",
+      "bytes": 1853,
+      "sha256": "3c8b4ee35852c3da5526951680c4c902b78c42a9ced33ba2c54c51b65bf14034"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_6001/metadata/bc8c9c35-a0f1-45c4-9db2-6951a3b9c966-m0.avro",
+      "bytes": 4589,
+      "sha256": "acfcdd3c970f2a19cb1dba88e4111d290d5b9fd0dfa40282c99ad6110cf75ab6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal20_0_6001/metadata/snap-1242866227529253611-0-bc8c9c35-a0f1-45c4-9db2-6951a3b9c966.avro",
+      "bytes": 1826,
+      "sha256": "12c28fa7ef05cf16672dee7ae7afdbd82c26f611094176eb104a324e72c86e29"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_13306/data/00000-0-a425aab7-d937-4bc1-8761-26949b9b806d.parquet",
+      "bytes": 3409,
+      "sha256": "3844bc2c9a277c86378b993ef7bb31f1d2b617c5d13a1d2be2a104125e87fe05"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_13306/metadata/00000-d33d34ac-620a-4894-9ce8-9b99321b3d32.metadata.json",
+      "bytes": 926,
+      "sha256": "8319f151d72269e2def5e7d95663cd4916148df94c7d2e2ed6d78dd3dab88814"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_13306/metadata/00001-e53312e1-70e4-42b2-a5ff-3d43133980db.metadata.json",
+      "bytes": 1860,
+      "sha256": "9a6b53f56634001f90da014b84d9e6c0681e6df6e1f4ff4f78943396b2b6e7cf"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_13306/metadata/a425aab7-d937-4bc1-8761-26949b9b806d-m0.avro",
+      "bytes": 4605,
+      "sha256": "429c9d3645e2d3f90c7f2c6049d00ae48b7646828ae7f66a88ef2902625dbce8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_13306/metadata/snap-7352636333236266225-0-a425aab7-d937-4bc1-8761-26949b9b806d.avro",
+      "bytes": 1831,
+      "sha256": "897c516132caf384315ac3e2bd7d4a66f4ea1eb734f94e95ae3cebad65976954"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_6001/data/00000-0-a16be06b-c1fa-4314-9418-ebaf29046f66.parquet",
+      "bytes": 3409,
+      "sha256": "3844bc2c9a277c86378b993ef7bb31f1d2b617c5d13a1d2be2a104125e87fe05"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_6001/metadata/00000-0caab819-7edc-41b0-b56e-e90ee8b8f89a.metadata.json",
+      "bytes": 925,
+      "sha256": "19c2cafdd2157e7131f788af6f921c723c69af5269a24fe0e94c65bae568bf9b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_6001/metadata/00001-ad11f770-8c19-4e63-a868-ca6cf642747e.metadata.json",
+      "bytes": 1857,
+      "sha256": "468e942714d112c7a7a5fd6f95a33d7a71f0ff3c5aaa38c5fa18e2a981f2d7c5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_6001/metadata/a16be06b-c1fa-4314-9418-ebaf29046f66-m0.avro",
+      "bytes": 4605,
+      "sha256": "0dcbd288219de3accbee82dc6dbfaa69fe7f14297b6974d420aec073fb69dd00"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal38_18_6001/metadata/snap-3971780419138153284-0-a16be06b-c1fa-4314-9418-ebaf29046f66.avro",
+      "bytes": 1825,
+      "sha256": "fd41c22c91657624c15e33f751756d901035483abd80b36a604b1f0ff516b635"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_13306/data/00000-0-d1992701-a5b8-46f2-95b6-faa6e742b3d3.parquet",
+      "bytes": 3540,
+      "sha256": "842721a591ed2d418dc67b6e912720bf2e085c0968c5d03022ec47c36bc98fbc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_13306/metadata/00000-92e1e580-e580-4937-824d-ebdd12946b4d.metadata.json",
+      "bytes": 917,
+      "sha256": "9b0058ededd7837399fa647c0639f3ffaa049ac6370d175e1f30e9dcb54ed2bb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_13306/metadata/00001-22e6c7d3-d8ba-4c24-959a-b66f7afc6715.metadata.json",
+      "bytes": 1851,
+      "sha256": "5e7e32d97c130b49f57142e5e416711a9a7e8382733a9d162692d825b39bb97c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_13306/metadata/d1992701-a5b8-46f2-95b6-faa6e742b3d3-m0.avro",
+      "bytes": 4570,
+      "sha256": "c648da19ab385e5bfa4c4337840f83eda16d009246b52d7792ded8538dde88d3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_13306/metadata/snap-7545208813576321782-0-d1992701-a5b8-46f2-95b6-faa6e742b3d3.avro",
+      "bytes": 1828,
+      "sha256": "5ea56e49ec4387da7dbfdf67cbd10c57758e8598b07ac0df9faeb952f8dbdf82"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_6001/data/00000-0-afdad64d-2873-4044-b7e3-b611bf35483e.parquet",
+      "bytes": 3540,
+      "sha256": "842721a591ed2d418dc67b6e912720bf2e085c0968c5d03022ec47c36bc98fbc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_6001/metadata/00000-69b7162f-d92c-4a09-991e-403ac9428f55.metadata.json",
+      "bytes": 916,
+      "sha256": "c9dfdc0fc9845e0b6ec1c3c2ca6874dd81c759494416938524378b9ba2972911"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_6001/metadata/00001-c1c65cb4-0317-447f-9aa6-c7a20cbe8691.metadata.json",
+      "bytes": 1848,
+      "sha256": "547c17996d7240c621b6687ea8a7a215f483bbe8fac3d8725b924bc3c98cc925"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_6001/metadata/afdad64d-2873-4044-b7e3-b611bf35483e-m0.avro",
+      "bytes": 4567,
+      "sha256": "f277042015cbd55b8bbf11a3c3776fc946cbc82d9e9b87ddfc6749424a2b4897"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/decimal65_30_6001/metadata/snap-4949096462773019908-0-afdad64d-2873-4044-b7e3-b611bf35483e.avro",
+      "bytes": 1826,
+      "sha256": "ac161e667f6b22e41e75b11f260b463fff385cf041e962e00376d68b047c5ed3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_13306/data/00000-0-40246a18-c326-4fe0-93dc-5729f2fee076.parquet",
+      "bytes": 3313,
+      "sha256": "d216c2e23113251f0ff15619449ffd340edcf658bd3951c3cb0a18cd2bd7dbd7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_13306/metadata/00000-4a8c728c-e780-4d6f-bc3e-b619bb7f4d0c.metadata.json",
+      "bytes": 911,
+      "sha256": "9a74557d355e0a5f2120fbcbeae71eec34e2343c652e0de031d55f9dcc5af022"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_13306/metadata/00001-a9ca58c1-4857-4c3c-bfe6-12d17008f71a.metadata.json",
+      "bytes": 1833,
+      "sha256": "87f9f00a75bc6b2ed75f1c3fcfb4fb947898e70a8ba12c95936e1b54156b94c8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_13306/metadata/40246a18-c326-4fe0-93dc-5729f2fee076-m0.avro",
+      "bytes": 4564,
+      "sha256": "dd8faaa40b54d0d20665ba3ae7012a2a65d4cc5a5330debc1feec69357ce09d3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_13306/metadata/snap-7731186973165691651-0-40246a18-c326-4fe0-93dc-5729f2fee076.avro",
+      "bytes": 1825,
+      "sha256": "5197b0981b456efebfbad833bb19fce060d1023360c3aeb5ccb16d0f8d621481"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_6001/data/00000-0-18a307ac-ab1f-4909-a2ea-0f4147aa7741.parquet",
+      "bytes": 3313,
+      "sha256": "d216c2e23113251f0ff15619449ffd340edcf658bd3951c3cb0a18cd2bd7dbd7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_6001/metadata/00000-917125f3-2f0a-41ee-aeba-dc14894686e3.metadata.json",
+      "bytes": 910,
+      "sha256": "898380a74d5f8308056827bfcd30b6cc34838948df0aeb082eef792ef102e899"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_6001/metadata/00001-e330d835-a27b-4854-8467-feada9f025bb.metadata.json",
+      "bytes": 1830,
+      "sha256": "8f6e29e1c5ce8d7becf92d911a966c7a9ddf89d0c179eea2e4800aa23a40a322"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_6001/metadata/18a307ac-ab1f-4909-a2ea-0f4147aa7741-m0.avro",
+      "bytes": 4563,
+      "sha256": "24bfc06a5e01c4c303344d54620438d4682902736220a592dee2f0860a3f7f1c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/double_6001/metadata/snap-8377034618871344110-0-18a307ac-ab1f-4909-a2ea-0f4147aa7741.avro",
+      "bytes": 1823,
+      "sha256": "544961a3f9362d469fcd0236230fc4bd595b30bb93ddf34a9290146d508e812a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_13306/data/00000-0-9dc60cbc-7ee3-4e21-b447-cf46e5de0389.parquet",
+      "bytes": 3241,
+      "sha256": "83a8221d01255cf014719edb2140d39b46f9b439792694b0d21f27f13d22382b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_13306/metadata/00000-d3a65cf9-eb53-47ca-83b3-253f488ea79d.metadata.json",
+      "bytes": 909,
+      "sha256": "33328deb4beb95bcd52575e8dce535eda53a332beffc5da5690e9c4a03b475bb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_13306/metadata/00001-9e6c5e03-f07e-4c92-af0d-835027c34bd0.metadata.json",
+      "bytes": 1827,
+      "sha256": "2c4d827043167e4f3fa63b6857817754a1dd519045041a9cd27b26f3a586bfd6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_13306/metadata/9dc60cbc-7ee3-4e21-b447-cf46e5de0389-m0.avro",
+      "bytes": 4572,
+      "sha256": "7a4b92bf2b3c10d09930122a307b70eeb10aa210a6fec7616645c62688c82113"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_13306/metadata/snap-8793081516054228325-0-9dc60cbc-7ee3-4e21-b447-cf46e5de0389.avro",
+      "bytes": 1824,
+      "sha256": "7ac3594cc53f2692e3e286d1252254255c0c5b65382b3da0f78e572be86a66f3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_6001/data/00000-0-45d92ed6-8a36-427a-adb9-c89c9df5ca98.parquet",
+      "bytes": 3241,
+      "sha256": "83a8221d01255cf014719edb2140d39b46f9b439792694b0d21f27f13d22382b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_6001/metadata/00000-5f95e216-2bc6-4c60-9b4e-524cde67480d.metadata.json",
+      "bytes": 908,
+      "sha256": "2efc6446b03428ca21bd634013c3ccecd343af018d5d2d40421a3cd03ea90e62"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_6001/metadata/00001-6a7e42c8-eff6-4d61-ad49-06f88b878d76.metadata.json",
+      "bytes": 1824,
+      "sha256": "79ad3887e03c7b836d916b9d0990e863e4dccfe7a146ca0ba764ce240d97c5a3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_6001/metadata/45d92ed6-8a36-427a-adb9-c89c9df5ca98-m0.avro",
+      "bytes": 4571,
+      "sha256": "c78b3b28cb06ee46d116d5a78e751f8b7748995fbff2e6ede5871aca3690d9f8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/enum_6001/metadata/snap-7473506880676561708-0-45d92ed6-8a36-427a-adb9-c89c9df5ca98.avro",
+      "bytes": 1822,
+      "sha256": "01824f1c7fff9fabc5f0d39b1b75fe5877293fb92d16a2b4a97d449a13a8437c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_13306/data/00000-0-ed9ca9dd-2820-4fd2-94ad-7e357705cec5.parquet",
+      "bytes": 3256,
+      "sha256": "9dbd0ed996dd98bba3edf25a659863a480b1e4c52e9dbd9c07a047efc56a1334"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_13306/metadata/00000-6ffff6f7-a04e-4004-8b9b-bc2914e5c753.metadata.json",
+      "bytes": 911,
+      "sha256": "5fa6bcde2c61fee3c6f71312745ad64c17e4038a59bf09b27d239eb104dac451"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_13306/metadata/00001-d84a1da4-09cf-49d2-aa35-edc25bac5cd9.metadata.json",
+      "bytes": 1835,
+      "sha256": "bbeb3141e26f4b2737a8ab9254c9a956d92c847d1376900ff4707c44b1354144"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_13306/metadata/ed9ca9dd-2820-4fd2-94ad-7e357705cec5-m0.avro",
+      "bytes": 4566,
+      "sha256": "e90f98c1aabf7cc7ce063a26cb19bfb932af668325309149924fd556440bb5bb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_13306/metadata/snap-9075194037913482351-0-ed9ca9dd-2820-4fd2-94ad-7e357705cec5.avro",
+      "bytes": 1825,
+      "sha256": "7871681a450d83542ec9aed5de9cd18644493a275052ef4b40464f92acda9c99"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_6001/data/00000-0-93839860-577f-4f26-8ec5-241d64d228a1.parquet",
+      "bytes": 3256,
+      "sha256": "7fc70e9a93b92ce2b77a6b33a79dead33985b448d27ccf3c3a3adf1608a72bfc"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_6001/metadata/00000-acb863eb-87e0-4591-a656-99fe606a539b.metadata.json",
+      "bytes": 910,
+      "sha256": "41ac090a31c2d444895d09c80f4c3bb76b9283f171beb4bd7d34e420f27d9636"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_6001/metadata/00001-ca513535-f556-453b-b3b8-76ac8c109695.metadata.json",
+      "bytes": 1832,
+      "sha256": "4b878a14bd40c9a043ed43a9a88f354a40e338b7a30229b9fd433b558ade1f90"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_6001/metadata/93839860-577f-4f26-8ec5-241d64d228a1-m0.avro",
+      "bytes": 4565,
+      "sha256": "d5f757a51580d61935ad3497f99054d90d432164ba3da66f91818039e0ceb644"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/float32_6001/metadata/snap-5461092823777059923-0-93839860-577f-4f26-8ec5-241d64d228a1.avro",
+      "bytes": 1826,
+      "sha256": "1e6c8303775438e5904afc8d704589dfeece4e7d2f639e5ea278a187923d050d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_13306/data/00000-0-2f3e632f-7cdf-48cc-b63c-3685b5b7bf73.parquet",
+      "bytes": 3261,
+      "sha256": "1a211818ab1f27fb773d0e9bd4d5428f6784e547ebd21cff1a6f1abe87544feb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_13306/metadata/00000-faf35f41-c372-41b3-857f-f0f19fe5a81f.metadata.json",
+      "bytes": 907,
+      "sha256": "e46eab7a3695931deb7d1f479f304e68efa34294e5ec3ada1495a986b93e9908"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_13306/metadata/00001-576e8f89-8215-4122-b17f-9d0ac18c7a94.metadata.json",
+      "bytes": 1827,
+      "sha256": "dedbf5e172b6aefd78bce004f4c936b1624b482d9043839661481bf2fbd4e7c6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_13306/metadata/2f3e632f-7cdf-48cc-b63c-3685b5b7bf73-m0.avro",
+      "bytes": 4563,
+      "sha256": "d8703bc8bd1fdcea214b5fdbb4a686ecfe6cdfa054aaebc1b8676b5127663e21"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_13306/metadata/snap-9069788113073827339-0-2f3e632f-7cdf-48cc-b63c-3685b5b7bf73.avro",
+      "bytes": 1825,
+      "sha256": "c51f2b51d6eae2700ccfdad624ca4b22cc70bb96a5265d03ed14955e248c3133"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_6001/data/00000-0-66169fc7-1cbe-4e50-b584-6047d06bc1f0.parquet",
+      "bytes": 3261,
+      "sha256": "1a211818ab1f27fb773d0e9bd4d5428f6784e547ebd21cff1a6f1abe87544feb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_6001/metadata/00000-087c71cd-6112-4079-b56a-60e4734886f0.metadata.json",
+      "bytes": 906,
+      "sha256": "dbb4fbda1d11a33f70f091cb8446be773088fe6cf5876f46387cb16396ca9273"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_6001/metadata/00001-d228feb2-edd3-4be4-83b2-7c28b5abb50e.metadata.json",
+      "bytes": 1824,
+      "sha256": "de3326b2c3c5eee2c0a2b5721cc4ad0467f588a58e5f698376883d855a5482a8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_6001/metadata/66169fc7-1cbe-4e50-b584-6047d06bc1f0-m0.avro",
+      "bytes": 4559,
+      "sha256": "621ae998a3d6230535f1ec53b3e677a306a8c14d532a0dcb4f1f4778370ef24f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int32_6001/metadata/snap-7929095174892850136-0-66169fc7-1cbe-4e50-b584-6047d06bc1f0.avro",
+      "bytes": 1822,
+      "sha256": "2d21ff9fa1ec521f921da7f3c9a32d1fd00d62ecdcab26cf125c89b4c021524f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_13306/data/00000-0-45998e1a-e41c-415c-8fbb-62d8722aa72c.parquet",
+      "bytes": 3296,
+      "sha256": "ac1e87e55822bc18f5854a11e65f6e73e03af2f710861afe83b06062f03f020b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_13306/metadata/00000-3965b5a8-cf3e-4c98-a77b-749914d37575.metadata.json",
+      "bytes": 908,
+      "sha256": "f3f0497aceee0d026daaa0779b7f36b5e9a2d8ab801e0bc6f5c7fa848ea77ab3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_13306/metadata/00001-f2587e9a-617f-4843-aff2-1cf0279304a2.metadata.json",
+      "bytes": 1828,
+      "sha256": "1ac5b9dd8982542ab0f21983fc73cd9a7ac1da94249abe8a64c65e5812f61608"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_13306/metadata/45998e1a-e41c-415c-8fbb-62d8722aa72c-m0.avro",
+      "bytes": 4559,
+      "sha256": "4b0110df708d17d73a743a8165cbe903f1478f0aded2873f7a9343770dddfaa3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_13306/metadata/snap-5211667602297130466-0-45998e1a-e41c-415c-8fbb-62d8722aa72c.avro",
+      "bytes": 1825,
+      "sha256": "b1e53bf4c782145e21b354db04726e090bbd2e96c10ad0d43ada4de78d6574b5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_6001/data/00000-0-3e25e590-a7d4-471e-a08f-6483c61de85a.parquet",
+      "bytes": 3296,
+      "sha256": "ac1e87e55822bc18f5854a11e65f6e73e03af2f710861afe83b06062f03f020b"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_6001/metadata/00000-ae5ff3b6-6fb8-4ab4-8034-7e788f06ae4a.metadata.json",
+      "bytes": 907,
+      "sha256": "477d4a19cc8684028f98013a61e73e036f644efbdb457980d9157b258e56e8ea"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_6001/metadata/00001-4caec8a5-37e4-481e-ad0d-5cee99e87add.metadata.json",
+      "bytes": 1825,
+      "sha256": "8fb1d63c82d02d81660ffca0317439cdcb2ec51fe81fd96e1f9beb5426d4ccaa"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_6001/metadata/3e25e590-a7d4-471e-a08f-6483c61de85a-m0.avro",
+      "bytes": 4553,
+      "sha256": "90552fd20358c382892f6fe0c82c6376239a934277bbbccf9881a00208d636d0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/int64_6001/metadata/snap-1709510360927075238-0-3e25e590-a7d4-471e-a08f-6483c61de85a.avro",
+      "bytes": 1820,
+      "sha256": "f1accc6b23cb1c8429d3ad6aec307f6577aae86cee3c629b3fc1f9289a8f8f5f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_13306/data/00000-0-c8209bb2-42f6-47f5-9515-5ee9c54fc309.parquet",
+      "bytes": 3338,
+      "sha256": "16fa009a291e1dfd2412f5751a5a7e45a0e7c08b1f30b718da94ee6c61e14007"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_13306/metadata/00000-5cb46d69-bbf9-4876-b89d-af88cff9d23f.metadata.json",
+      "bytes": 916,
+      "sha256": "bcdd41b53a27d8c56ba6f9efce8efca6f434c31fab2525d09b35e65b46b717ba"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_13306/metadata/00001-f964d637-80ec-44ed-b78f-c755b601efd8.metadata.json",
+      "bytes": 1848,
+      "sha256": "07192ed5548dc7d4b285d24b12f65578b044735ab4d7afc08deeb2a06636d326"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_13306/metadata/c8209bb2-42f6-47f5-9515-5ee9c54fc309-m0.avro",
+      "bytes": 4569,
+      "sha256": "44b981f98a7e413dabba54bb475cd3de18b2a0614647cff99ffb8d2377d43369"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_13306/metadata/snap-5730190436716729402-0-c8209bb2-42f6-47f5-9515-5ee9c54fc309.avro",
+      "bytes": 1828,
+      "sha256": "f585a940a206b1929312abaf86189e5efaf788e5cd7c3b18fa5b82175bda8eac"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_6001/data/00000-0-aef1930c-26d1-4990-a46d-26691365d637.parquet",
+      "bytes": 3338,
+      "sha256": "16fa009a291e1dfd2412f5751a5a7e45a0e7c08b1f30b718da94ee6c61e14007"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_6001/metadata/00000-af846dc3-642f-4f6f-9355-5e1e5ec070f7.metadata.json",
+      "bytes": 915,
+      "sha256": "554c58cf5094fd5fc0b9079eb0385df10ba80f2d64fcbf4503cbcbf92e464c0c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_6001/metadata/00001-8ea665de-8534-4717-9c06-8343b7cfe109.metadata.json",
+      "bytes": 1845,
+      "sha256": "44f89faf220b2f8f69ef1a8c2f1c3331d213a46fdba87b13adc0b4498dcf919f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_6001/metadata/aef1930c-26d1-4990-a46d-26691365d637-m0.avro",
+      "bytes": 4566,
+      "sha256": "ed4f8680a447549e121ebacb5a8928b3216a5594f931592db6c07ae694584e1a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_object_6001/metadata/snap-8262452243561524018-0-aef1930c-26d1-4990-a46d-26691365d637.avro",
+      "bytes": 1827,
+      "sha256": "112021ba7cd0e68b4f46286e5b80c017c98bfae8a16295c6f18d5a4207aef388"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_13306/data/00000-0-2fdce0bd-d03a-4e35-bc21-ae834d50e3b6.parquet",
+      "bytes": 3307,
+      "sha256": "8a30ebdb99c484152b0d79be4ec957580e37767b790578da484af3adf0d85985"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_13306/metadata/00000-1fc68ea4-96d0-48bd-bfd5-018d1242dc5c.metadata.json",
+      "bytes": 916,
+      "sha256": "504c69545ee5755d4c30d6e66fed93d43d1e8573b7f376612ebd8a8792f65f6f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_13306/metadata/00001-04ab2dc5-3c4f-430b-9f0b-7525776079b1.metadata.json",
+      "bytes": 1848,
+      "sha256": "edd8119b9270f0884a7a31072a469aff349560850a545c5d8287c124119a3e45"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_13306/metadata/2fdce0bd-d03a-4e35-bc21-ae834d50e3b6-m0.avro",
+      "bytes": 4575,
+      "sha256": "eae4a0db56ffcc23244abf6112cc8456cc61599e19a6be016b7897c3632d5ca5"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_13306/metadata/snap-4422136409757683414-0-2fdce0bd-d03a-4e35-bc21-ae834d50e3b6.avro",
+      "bytes": 1825,
+      "sha256": "816f681b1ecba37401de8a72983ecb24d0121235b0803a00f7a2dbcbcbe01ce2"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_6001/data/00000-0-3aff05fd-2a60-4445-bf99-8f9f45abe007.parquet",
+      "bytes": 3307,
+      "sha256": "8a30ebdb99c484152b0d79be4ec957580e37767b790578da484af3adf0d85985"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_6001/metadata/00000-4e331672-07d0-4547-812a-b843dd31bfd0.metadata.json",
+      "bytes": 915,
+      "sha256": "10f52635c6fdf3cb193191f793927d4a4b86526334e80e03882a35d2559ae046"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_6001/metadata/00001-69395856-0833-4b48-9d15-b6f674df8ba0.metadata.json",
+      "bytes": 1845,
+      "sha256": "f890f913d109e9a028949ac59cfb6f8ea9aab10139f1dc3f275b58f14e25d8c1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_6001/metadata/3aff05fd-2a60-4445-bf99-8f9f45abe007-m0.avro",
+      "bytes": 4576,
+      "sha256": "7639003322fe2ff7573dab421d6ede90f20e809b4b905b8510c93ecbf0fc0582"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/json_scalar_6001/metadata/snap-5988926738154242103-0-3aff05fd-2a60-4445-bf99-8f9f45abe007.avro",
+      "bytes": 1827,
+      "sha256": "f79c4a2fa4158c37ca1ceb4a98941481245b033d08348f45a682646f66bec2a7"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/set_13306/metadata/00000-121b8776-5dd0-4c4d-bfa8-34c615c1ae2b.metadata.json",
+      "bytes": 974,
+      "sha256": "35ef88e3b267318b3eab33364e2febbb1a8a4b0494750eeb86d4ff848dfefb5c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/set_6001/metadata/00000-d56089f9-0fbe-4621-b154-da07690956a0.metadata.json",
+      "bytes": 973,
+      "sha256": "66418ab1e559f576b7f183252e05979f11352eadbe726900e68ec4a45961a9a1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_13306/data/00000-0-30fbf4f6-1ebb-4aea-9b0b-74a404a083a7.parquet",
+      "bytes": 3258,
+      "sha256": "879462d4516755904e0c26fd0968ce167b0381ef0510252b29ce8d7b87ab2f4d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_13306/metadata/00000-17892c08-6a44-41df-bad2-1b3cc576d848.metadata.json",
+      "bytes": 910,
+      "sha256": "1f54940b0ab8b1ab97964128d0e7b3b72446be63d0007613f2c7c1d176972f77"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_13306/metadata/00001-6880ad32-dc12-4fc8-8298-55207a5301e4.metadata.json",
+      "bytes": 1836,
+      "sha256": "3311168c2a30bcf0438269a9c6da564f4736496f0f673084766c58c2c272c1ad"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_13306/metadata/30fbf4f6-1ebb-4aea-9b0b-74a404a083a7-m0.avro",
+      "bytes": 4563,
+      "sha256": "df80bc2306db8a2a4d8dc4826cdcce144a58d827572abd11d3c496062d19c109"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_13306/metadata/snap-4732559965455195871-0-30fbf4f6-1ebb-4aea-9b0b-74a404a083a7.avro",
+      "bytes": 1825,
+      "sha256": "fc13426facd5f08e287baf713382e28b185a85d88e48ab077d2155ea822eb95f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_6001/data/00000-0-451decfa-f2ae-4bed-9d12-65cd358f9f5f.parquet",
+      "bytes": 3258,
+      "sha256": "879462d4516755904e0c26fd0968ce167b0381ef0510252b29ce8d7b87ab2f4d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_6001/metadata/00000-c6325039-cbfb-40b5-988e-977d2f23ec6f.metadata.json",
+      "bytes": 909,
+      "sha256": "b306f3b8c864fbb3ae74b03a737a5eecd082624b8077f42342e267db9186d73c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_6001/metadata/00001-74a1c1c1-438c-437c-b56e-de3ff505db11.metadata.json",
+      "bytes": 1833,
+      "sha256": "637287e658d5bbabccafd7ad66aba1ab683f29383a3e2545cd7d29e050556e62"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_6001/metadata/451decfa-f2ae-4bed-9d12-65cd358f9f5f-m0.avro",
+      "bytes": 4563,
+      "sha256": "be14c5e8a92033ca58df0b4192be86ab0e509002ed6cf6f01b501420fca51e28"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/smallint_6001/metadata/snap-4716397086127986293-0-451decfa-f2ae-4bed-9d12-65cd358f9f5f.avro",
+      "bytes": 1825,
+      "sha256": "94c87adc32c7f1c916b23e21d66011b6ca877764c9638f006f0a29afe993d27c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_13306/data/00000-0-ce4c1562-0977-41db-8ff0-23d33d4c780c.parquet",
+      "bytes": 9237,
+      "sha256": "c78b6d0cbbf3d8188c2deefef95837cd2ed6a70e4e3d8fd94a0dade0b597192a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_13306/metadata/00000-411c2ab2-b437-48d9-90e3-1084c2cee40f.metadata.json",
+      "bytes": 914,
+      "sha256": "0ba01cae5f0a10ed3c8f1a488dcc18fe43d234b4be7698e78eebff1cfb35abf6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_13306/metadata/00001-11e2d452-7e90-4408-87ea-b46a643bf9c6.metadata.json",
+      "bytes": 1842,
+      "sha256": "4e7bc2c2e5c71f3b1937144909a9dc61c006632c46274bab1cca6a0dbd7ea8cd"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_13306/metadata/ce4c1562-0977-41db-8ff0-23d33d4c780c-m0.avro",
+      "bytes": 4582,
+      "sha256": "5198cecbb652f799dc4cd21c00560e2b9936ff1aedf30d5d45ada72674f45e93"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_13306/metadata/snap-4651308883689113063-0-ce4c1562-0977-41db-8ff0-23d33d4c780c.avro",
+      "bytes": 1827,
+      "sha256": "f03b08e8fbe274cd3535d4de254231ab4319cc8055866d82178bf99642fdca63"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_6001/data/00000-0-0c59d66f-f297-41f0-b760-f7bb18dfa88a.parquet",
+      "bytes": 9237,
+      "sha256": "c78b6d0cbbf3d8188c2deefef95837cd2ed6a70e4e3d8fd94a0dade0b597192a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_6001/metadata/00000-7125d92e-a311-4b83-bbb0-3b14517eaa99.metadata.json",
+      "bytes": 913,
+      "sha256": "b6c44bc77c720c61204b7fadf5a962257d7bc28eb1b000750c3c0f1e551fef73"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_6001/metadata/00001-6393a4b4-51d8-46b1-8d42-734820f297c6.metadata.json",
+      "bytes": 1839,
+      "sha256": "faaee1143c44b1f0d1a5439017f582ef047358d1c4f8515da565344a0dd1611e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_6001/metadata/0c59d66f-f297-41f0-b760-f7bb18dfa88a-m0.avro",
+      "bytes": 4577,
+      "sha256": "5c362e407395fa26066cdd5556f3aed4e5fd6d36b76338b6dab6386d54dd8e78"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/text_long_6001/metadata/snap-1992747539358748805-0-0c59d66f-f297-41f0-b760-f7bb18dfa88a.avro",
+      "bytes": 1823,
+      "sha256": "8ed1d264448e26ebcb5d2db75519d1d62c68dad409c5bf8c824f1aebc8e812fa"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_13306/data/00000-0-edeb29e0-345d-40c7-b28a-235019769486.parquet",
+      "bytes": 3307,
+      "sha256": "bfba0c40ed83c22d6a901a4a17b2cbd05350021bf64c0ea94dce2aad49dea217"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_13306/metadata/00000-5724ae0a-7181-4921-81b7-719604215a86.metadata.json",
+      "bytes": 908,
+      "sha256": "22da9af7e2e961c60f2b9265b1dd49dcad60f862f607caef74c07f06d5b66879"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_13306/metadata/00001-0944960e-2d87-4c5c-ada4-2f2aeb803fcd.metadata.json",
+      "bytes": 1823,
+      "sha256": "68281219c03b18ecfe9337f885e6cb443194d479ac6ea452fdd03c50b2355c64"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_13306/metadata/edeb29e0-345d-40c7-b28a-235019769486-m0.avro",
+      "bytes": 4569,
+      "sha256": "a129f4f94873a2f8dcfead3f33822bc1692602bcf70e5fc1daeaaade6809a6a1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_13306/metadata/snap-522363246215031206-0-edeb29e0-345d-40c7-b28a-235019769486.avro",
+      "bytes": 1822,
+      "sha256": "4985f6c70e62ad9f7bd1d8c8a90e28849c9c50eff7d5510950835583b81e494d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_6001/data/00000-0-a5ac5db4-fd92-45ec-95cc-c8cc93978bb1.parquet",
+      "bytes": 3307,
+      "sha256": "bfba0c40ed83c22d6a901a4a17b2cbd05350021bf64c0ea94dce2aad49dea217"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_6001/metadata/00000-2e02e0be-5140-43ff-8c63-f81e9376d963.metadata.json",
+      "bytes": 907,
+      "sha256": "c9818ec072cadf7b5739c13bb18c75a13cb6af86775a25931acbfc8469632d66"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_6001/metadata/00001-484ab878-fbf2-4668-b584-f645b9a7c9bc.metadata.json",
+      "bytes": 1820,
+      "sha256": "2771e344ccbd3537b4e00994dd5a5a67e81f1eee92c6b5909de4a0e2be32d9f0"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_6001/metadata/a5ac5db4-fd92-45ec-95cc-c8cc93978bb1-m0.avro",
+      "bytes": 4569,
+      "sha256": "9200f80a43af3225379d4b76c009094c7ef2cddff0b0ef300f38ba0c04894940"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/time6_6001/metadata/snap-153872932584970025-0-a5ac5db4-fd92-45ec-95cc-c8cc93978bb1.avro",
+      "bytes": 1819,
+      "sha256": "13db4d83234cfa4d52dc16279ececf60ba48b786a84d82fe16af613c1975617a"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_13306/data/00000-0-55bfc66f-6b56-4743-92f8-dbedf0e0be54.parquet",
+      "bytes": 3256,
+      "sha256": "910905b042efabceeb271c1defe21220d5e92525f98ea5600e463495e9f056b1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_13306/metadata/00000-0e6cdc39-5f6c-4222-b518-1efa4c60891c.metadata.json",
+      "bytes": 909,
+      "sha256": "0864fad594eebcc233f9d62be6adeda4b7855794d2fbd4e9a3fad8ddee60ea02"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_13306/metadata/00001-06319941-71a7-49a6-81d3-e9a89ba08d23.metadata.json",
+      "bytes": 1833,
+      "sha256": "8617964f7e83d07d139c0cee93a4f9dbc67cf9be6e72493b40dba86ce5149f87"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_13306/metadata/55bfc66f-6b56-4743-92f8-dbedf0e0be54-m0.avro",
+      "bytes": 4560,
+      "sha256": "bb1e75733448942df0b59a3661dad94d203cc552c70128f1527d966ce4ee955f"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_13306/metadata/snap-1513365316043017423-0-55bfc66f-6b56-4743-92f8-dbedf0e0be54.avro",
+      "bytes": 1825,
+      "sha256": "d23540947b6e4a157051c6294b2ead89959feabd5537676a1598b28fc4528910"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_6001/data/00000-0-a7a7aca8-fc44-4435-bcc1-01515d4325df.parquet",
+      "bytes": 3256,
+      "sha256": "910905b042efabceeb271c1defe21220d5e92525f98ea5600e463495e9f056b1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_6001/metadata/00000-9332b561-af1a-4c40-a05e-e33aa4b9e4fa.metadata.json",
+      "bytes": 908,
+      "sha256": "7a13a604e2c100e745f0d41f03d6d7099fceafff3da1fda901340ade073bbbff"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_6001/metadata/00001-ec16bd49-c086-4e2c-8f67-673236494911.metadata.json",
+      "bytes": 1830,
+      "sha256": "44514a09667b00799465e5a8f2d2a1769a7f2009276ef8304d166c50e4763ad2"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_6001/metadata/a7a7aca8-fc44-4435-bcc1-01515d4325df-m0.avro",
+      "bytes": 4561,
+      "sha256": "fdcb845c1f27fac182d7e203ba8f4aafcb73c0b77ec18e324e96ea7631f3bb30"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/tinyint_6001/metadata/snap-7758397485099247726-0-a7a7aca8-fc44-4435-bcc1-01515d4325df.avro",
+      "bytes": 1822,
+      "sha256": "c08f9c22fd20c8fcc938bdee10168d2486978cb62467f6aeeb0d02a2ab316c83"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_13306/data/00000-0-a3c176bc-0bb4-49e0-b883-bd3733f0be2d.parquet",
+      "bytes": 3320,
+      "sha256": "499397b4bca8f6cabab7b7f4886c14e52d4334b5b196bd24e61b9610fc82aebe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_13306/metadata/00000-adf51724-f48d-4e6f-9a1d-df0292fe80b7.metadata.json",
+      "bytes": 919,
+      "sha256": "d0aa5067c8c5efe3667fecef6e84c3b0c7643fc504af3c6f6e0a126c01505add"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_13306/metadata/00001-a9cd805a-0702-4c29-8bdd-9d239bd6bf88.metadata.json",
+      "bytes": 1836,
+      "sha256": "6f4d8d07b1657e792bb8170e24f1fc7ce571a977dcbffcdb3b096d7ca5d5caa6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_13306/metadata/a3c176bc-0bb4-49e0-b883-bd3733f0be2d-m0.avro",
+      "bytes": 4569,
+      "sha256": "88a35490af2a23ed4a98628547f274a1b44204a504df745e4906672156d22369"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_13306/metadata/snap-624588478636073745-0-a3c176bc-0bb4-49e0-b883-bd3733f0be2d.avro",
+      "bytes": 1822,
+      "sha256": "c09d2dba0724151b78c7b298bfff162a74c33a9e827ddc420760b7c3fb53b042"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_6001/data/00000-0-2710eafa-4e68-43b4-ac01-fbfd16371f9d.parquet",
+      "bytes": 3320,
+      "sha256": "499397b4bca8f6cabab7b7f4886c14e52d4334b5b196bd24e61b9610fc82aebe"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_6001/metadata/00000-8fefef19-a934-47b9-8a8a-ef6e6c0252ff.metadata.json",
+      "bytes": 918,
+      "sha256": "0ea8e6cf02d0a070698bc4d5988299ff118a6633e5024cd884fd22fec03c63e9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_6001/metadata/00001-236ca027-e7d8-4324-8533-d68433c0de5b.metadata.json",
+      "bytes": 1838,
+      "sha256": "89bf9b63081e71761d1318899cbd651bf1128b1291196001851008551faf66db"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_6001/metadata/2710eafa-4e68-43b4-ac01-fbfd16371f9d-m0.avro",
+      "bytes": 4569,
+      "sha256": "966b1bf719c4ac8d6cca7407d14cd8bcf5d639ebf33ed99e109febd6a950002c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uint64_6001/metadata/snap-8544545999762306611-0-2710eafa-4e68-43b4-ac01-fbfd16371f9d.avro",
+      "bytes": 1824,
+      "sha256": "a1d63db095af08848051b2cbeb64c5023b55277c5751d5f45b9ac554275ef232"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_13306/data/00000-0-a2b31160-197d-4104-a879-97dd4f474af5.parquet",
+      "bytes": 3449,
+      "sha256": "f2393ad0e7390f999c69244e1e0a3b7193a90a8500690fed4b418b1c1022414d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_13306/metadata/00000-6ab7fc38-7c34-4788-9099-2bd0a8a35e0c.metadata.json",
+      "bytes": 912,
+      "sha256": "b5e7ea6a509ddda1f12dc1e97fa7585c8182d00d6d0ce547681ece6446dafb49"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_13306/metadata/00001-6d757489-bc90-4a29-b7f4-649690aafc2a.metadata.json",
+      "bytes": 1840,
+      "sha256": "f253b470d69ba03a75a413522cce587e7bc676b58a97d983e82c60f4170bb45e"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_13306/metadata/a2b31160-197d-4104-a879-97dd4f474af5-m0.avro",
+      "bytes": 4563,
+      "sha256": "9a230cb22a42cc53268fbb95696b0e514266570151972c444fafe7b997b02c3c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_13306/metadata/snap-6347021138015129003-0-a2b31160-197d-4104-a879-97dd4f474af5.avro",
+      "bytes": 1826,
+      "sha256": "29aec6c3e6c49a1cd39ad773341cea19b6779ebd2a138b011350467d4587c8e6"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_6001/data/00000-0-b8e6f67a-1c17-4eae-a3af-ed4fdf284023.parquet",
+      "bytes": 3449,
+      "sha256": "f2393ad0e7390f999c69244e1e0a3b7193a90a8500690fed4b418b1c1022414d"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_6001/metadata/00000-99c74090-5eb6-4f1c-8a02-564e6ef691b2.metadata.json",
+      "bytes": 911,
+      "sha256": "9ff092d6c42cadf635cda3a8f4f9f4c3182b46ff0a4655cdecc52274122760ee"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_6001/metadata/00001-2b0347e0-055f-4bb6-bee2-843a47452d2a.metadata.json",
+      "bytes": 1837,
+      "sha256": "7c8c5886671b0d36f9d4fca1c9d3659ddbd041bd3a7350ae42928eec3afaf5fb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_6001/metadata/b8e6f67a-1c17-4eae-a3af-ed4fdf284023-m0.avro",
+      "bytes": 4559,
+      "sha256": "216ea02894cdebeabc047b111df35ef1d21c6ec419480f15f2dbf22a89634959"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/uuid_text_6001/metadata/snap-3090162977083254860-0-b8e6f67a-1c17-4eae-a3af-ed4fdf284023.avro",
+      "bytes": 1824,
+      "sha256": "5a70e0a46935fdcf00b3a4afff2f65c2be40dca5d0b794ebb476f5800de953eb"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_13306/data/00000-0-8991a7fb-2841-4698-9b85-265d08b00c39.parquet",
+      "bytes": 3474,
+      "sha256": "f41be59f8390dcb5d7e8e5eaef2fd8ec68011b6680608ebd55d5e138b8a9fb57"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_13306/metadata/00000-7c8fcf97-653f-47ae-ac3c-7f38d8a78e4a.metadata.json",
+      "bytes": 914,
+      "sha256": "2a13fd6462d8c741061290ea2c5f6aa7b5b0cb568fad25e6ebbd02d1a7bbc1ee"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_13306/metadata/00001-74b4b797-cb83-4dfb-9009-48526ee0516d.metadata.json",
+      "bytes": 1842,
+      "sha256": "7fbced94c51373a66afd0301ac988f948e6eb8702ffa39317c6d1473bb9f4e75"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_13306/metadata/8991a7fb-2841-4698-9b85-265d08b00c39-m0.avro",
+      "bytes": 4563,
+      "sha256": "e9ffb820d4d08277de14f4acca93dee20daa53364c60f7acc17ab292bc1309ca"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_13306/metadata/snap-1674178133477470358-0-8991a7fb-2841-4698-9b85-265d08b00c39.avro",
+      "bytes": 1825,
+      "sha256": "13f44077723a325caf7aa0dd97b54aa8e3c14d44db5ea7dcd057f8b22e2c8091"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_6001/data/00000-0-36c80421-3edd-4166-9c55-f822366480b6.parquet",
+      "bytes": 3474,
+      "sha256": "f41be59f8390dcb5d7e8e5eaef2fd8ec68011b6680608ebd55d5e138b8a9fb57"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_6001/metadata/00000-38244b8b-ffd1-4a8b-abcd-294214c9c8cd.metadata.json",
+      "bytes": 913,
+      "sha256": "a07f7b56281d607b49c147fa56915c6e94960cbda9e63046b91efd4be1a88c33"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_6001/metadata/00001-f1361503-a8b9-4e72-9f09-3dc51090df23.metadata.json",
+      "bytes": 1839,
+      "sha256": "a59c992c289b931889bb9dd1b05cf999812187a41319977e251e1c712a8284df"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_6001/metadata/36c80421-3edd-4166-9c55-f822366480b6-m0.avro",
+      "bytes": 4565,
+      "sha256": "1cffc4a10ebbada6d16c502de4a53fd2334d34fb360d3384d488f86b11a32ac8"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varbinary_6001/metadata/snap-5594599531275110666-0-36c80421-3edd-4166-9c55-f822366480b6.avro",
+      "bytes": 1824,
+      "sha256": "02aac949249eb6867db6eee5579c894dbc1ab8f6f6c59d0de3bcdc93dbb0c3aa"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_13306/data/00000-0-977a8e54-d223-40df-bd9c-9652a7e5ef8a.parquet",
+      "bytes": 3284,
+      "sha256": "bf9ee2fe1bebe449578847d13cf3ed076407a8e9129b5116070ddd0d2869d825"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_13306/metadata/00000-f939caaa-d06e-49e5-a811-08b3661ed429.metadata.json",
+      "bytes": 917,
+      "sha256": "76c2aa15761fa385d0bfdc65dc3c06d74256709ea5ed7098c3605e4e5fcf1894"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_13306/metadata/00001-9b607b76-bd32-45ea-92a6-8305e5453175.metadata.json",
+      "bytes": 1846,
+      "sha256": "eb9ffe01e5db17c959d445964ad6059d6d7d6fc48787425d07d3b1b46c49a2f3"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_13306/metadata/977a8e54-d223-40df-bd9c-9652a7e5ef8a-m0.avro",
+      "bytes": 4576,
+      "sha256": "7febe4e5b1e92163186a14300c3ec4f8506035552bfca0f9fa285740d98dfed9"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_13306/metadata/snap-865766241194951400-0-977a8e54-d223-40df-bd9c-9652a7e5ef8a.avro",
+      "bytes": 1828,
+      "sha256": "691f93cd77b3f308543568f1090e8ef4505dfbb7607d7c91904c9413cc0188f1"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_6001/data/00000-0-e2a6d454-4d6c-4591-bcbe-ec5f686bd141.parquet",
+      "bytes": 3284,
+      "sha256": "bf9ee2fe1bebe449578847d13cf3ed076407a8e9129b5116070ddd0d2869d825"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_6001/metadata/00000-b5d4c047-081a-445f-af44-3433228f75fd.metadata.json",
+      "bytes": 916,
+      "sha256": "ca186b62a8438af822c7ad0fd72ce339a92055a9bcf5550a0ebd3baf86417c62"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_6001/metadata/00001-28ef191d-38ce-40f3-bec1-6bc851a5a0d2.metadata.json",
+      "bytes": 1848,
+      "sha256": "dfcb0910ad7bed477e314b48e8c1e2b88c8053e5563f53f81a6e061ff998b14c"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_6001/metadata/e2a6d454-4d6c-4591-bcbe-ec5f686bd141-m0.avro",
+      "bytes": 4574,
+      "sha256": "da6703e841647372ddeabe35efdb220bd7dd2087fc8eee2738538a7d7cc5c378"
+    },
+    {
+      "member": "iceberg-native-preflight/warehouse/phase_94bc7644/varchar_utf8_6001/metadata/snap-4337198775151402127-0-e2a6d454-4d6c-4591-bcbe-ec5f686bd141.avro",
+      "bytes": 1826,
+      "sha256": "1657e99377b0f4b7b9a8bddbb176989baeb936ac5b185de6785ff8b71552740a"
+    },
+    {
+      "member": "iceberg-preflight-configured.log",
+      "bytes": 2032,
+      "sha256": "de6f53f67376b38f326f2c51a5e7b3637e7add7b6a64bf369d2193410f245ae9"
+    },
+    {
+      "member": "iceberg-preflight.log",
+      "bytes": 2285,
+      "sha256": "36718d0075bae3753896855e97ff868d76965f45ce92bbec45ea40caea89d5e5"
+    },
+    {
+      "member": "iceberg-read-supplement/completion.json",
+      "bytes": 278,
+      "sha256": "f395fbb56fae3b5e20b55e573438cdc9f6c8ea34a276f79d0a9c87279b793354"
+    },
+    {
+      "member": "iceberg-read-supplement/plan.json",
+      "bytes": 1412279,
+      "sha256": "7f197ada67b05aaadbc511087b6c7be8f781f52812d30e2004b2edb2bc07f776"
+    },
+    {
+      "member": "iceberg-read-supplement/results.jsonl",
+      "bytes": 2501973,
+      "sha256": "d713e3f093c90bf7d92e61b0dcdf2cec01575fdb8799941beddeeaf3b8f9753c"
+    },
+    {
+      "member": "iceberg-read-supplement-configured.log",
+      "bytes": 14619,
+      "sha256": "ac9cfea8bf48c933f0201d251725e6b0a2c4ada836d76f62029028e8137b5eaf"
+    },
+    {
+      "member": "iceberg-read-supplement.log",
+      "bytes": 650,
+      "sha256": "caf2ba4e51325e7e4fa958a994f465e24d174bc5c0015eb09548a84cd785c15c"
+    },
+    {
+      "member": "iceberg_filter_repro.py",
+      "bytes": 2470,
+      "sha256": "365bd9680223cea9f35d3307c1f6d730e35c46d2026e90b87e5ac873aad0a223"
+    },
+    {
+      "member": "iceberg_preflight.py",
+      "bytes": 4759,
+      "sha256": "f9637218d21830e9b61940a531143a0ab17e3ede2d8f7652ee9b84cfdb32a649"
+    },
+    {
+      "member": "iceberg_read_supplement.py",
+      "bytes": 5801,
+      "sha256": "8b9d83346c48f6746a493603279114241e77919d49ecc6782bb9a4b9e9060e9b"
+    },
+    {
+      "member": "installer-cache-verification.json",
+      "bytes": 1367,
+      "sha256": "4900642fdf9c5ba62abaf3cccf69ce7f17eb995658c6c47b80c2d4390b4596ef"
+    },
+    {
+      "member": "petl-resume-audit.log",
+      "bytes": 346,
+      "sha256": "512cc780b6a041ea0c45f1111a9b19a2d2f5f265c45ec58222b7cd494db3b498"
+    },
+    {
+      "member": "runtime.py",
+      "bytes": 3857,
+      "sha256": "2f4960fc80ce9838fb53999c4da7575bed75ffa4185caf30afe7df7530e94d2f"
+    },
+    {
+      "member": "table-reuse-approval.json",
+      "bytes": 370,
+      "sha256": "66f798d1c8372469d1484546564761b7ad9b8e0fa19ffc9e4230014d2bade08b"
+    },
+    {
+      "member": "table-reuse-review-plan.json",
+      "bytes": 71900,
+      "sha256": "4c925242fcef797470b40eb7a34e0c8d1ac7023ffb1d6172081d07b79316dca1"
+    },
+    {
+      "member": "windowed/core.py",
+      "bytes": 13485,
+      "sha256": "bf00811547efaf32d2f4e1001475e16d2ba37f6f50b637b8a40b4e5cc3f406a1"
+    },
+    {
+      "member": "windowed/driver_routes.py",
+      "bytes": 1848,
+      "sha256": "75de442de8c88c777e6edb7e142f2551cc16e6adb874c753110ba57e9ee47e5c"
+    },
+    {
+      "member": "windowed/enum_repro.py",
+      "bytes": 1172,
+      "sha256": "f7f9d13f0656e2bb56991a564a8f3035fd2802fc42b66d75d8e0965c71aa14f6"
+    },
+    {
+      "member": "windowed/enum_workarounds.py",
+      "bytes": 890,
+      "sha256": "19b61b0694fe6970ff179868e2f99116df8cfdb6c896203c4bf03aed27b560a2"
+    },
+    {
+      "member": "windowed/heavy.py",
+      "bytes": 9713,
+      "sha256": "6fa17c372a004378af2f9e20371180534409354e15e7ee43c6fc138cd70a5ff7"
+    },
+    {
+      "member": "windowed/init.py",
+      "bytes": 152,
+      "sha256": "941d63e6c753571098c4053c8dee43a620eb27dd4f59be31b9baae1d8a89efda"
+    },
+    {
+      "member": "windowed/load_repro.py",
+      "bytes": 1189,
+      "sha256": "761540f4f508855e50c686ea006ffadfc1999755a22ff1828f84fd85e1119fb4"
+    },
+    {
+      "member": "windowed/read_tools.py",
+      "bytes": 10158,
+      "sha256": "db5eaf61cc4cd61d03787bbf4708c8409c13434c68e7f3f882147328cc191d44"
+    },
+    {
+      "member": "windowed/recycle_profile.py",
+      "bytes": 4851,
+      "sha256": "b92159dcb16965b3b49551555807175c4d713812684db9b2c96902354c23bccd"
+    },
+    {
+      "member": "windowed/resume_core.py",
+      "bytes": 5183,
+      "sha256": "ae85742bc7cb5cb9c8f56a3f5be3bdc02586280c47755e75ebab1d2bff4d9603"
+    },
+    {
+      "member": "windowed/run_core.py",
+      "bytes": 4521,
+      "sha256": "7444314ff8b663c1377255b058194efe5fb341ae08855ac0c67d35ee57098e43"
+    },
+    {
+      "member": "windowed/run_windows.py",
+      "bytes": 6445,
+      "sha256": "b990ebc38d285951cd0e5ef88886498f40db8085c85d7ec075952712b9f430bd"
+    },
+    {
+      "member": "windowed/run_windows_micro.py",
+      "bytes": 6645,
+      "sha256": "283a69828359bd3dfe72a5cc4bae087d193b0293c9aef702fcb61e1ab9a8192b"
+    },
+    {
+      "member": "windowed/runtime.py",
+      "bytes": 4136,
+      "sha256": "d53bcf3991dc28ae6321be1f0d333b3eccc8023f45c27715b355d36a2a8afe2f"
+    },
+    {
+      "member": "windowed/seed_readers.py",
+      "bytes": 600,
+      "sha256": "10410a8450ba4643cc6f3ff6d6f4ddfa97b239e0f56faf814d184713fe727a61"
+    },
+    {
+      "member": "windowed-results/core-results/file-manifest.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-boolean-readback.json",
+      "bytes": 45729,
+      "sha256": "9e9a3ecc2b2caed80ab0efc3fe3483b8a17d5cbd913fd4c3e1b4757eb054b24f"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-char_padding-readback.json",
+      "bytes": 10277,
+      "sha256": "f35ef14c238406a37797dc7f650ad02deddd957ddc0f1839563e1f8a28186e74"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-completion.json",
+      "bytes": 162,
+      "sha256": "52b985bb19b625394ba390836907828d1a16fa91a07af4af0e43b4d2b77598c9"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-decimal20_0-readback.json",
+      "bytes": 46533,
+      "sha256": "7309cbd80ccda73dd350833d1ad0ff1f4c8d476933ca9bc8f5b91dcc64ea5468"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-decimal38_18-readback.json",
+      "bytes": 46734,
+      "sha256": "af4cca2241522c4c5186a2cd124bb62139adb777ef324c06a15070386277f41a"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-double-readback.json",
+      "bytes": 45528,
+      "sha256": "2cb4d2edd8b0b51f622b4207ccd8601d2a87be5e513ee7969906f77b883845c6"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-float32-readback.json",
+      "bytes": 14776,
+      "sha256": "cf20943a9e617389ab901449d5eea492c704301367c96a7246b17a94a153d4e7"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-int32-readback.json",
+      "bytes": 45327,
+      "sha256": "38c24550565c8ee600917fbc0e154d5854a6f75c03dbf6221b932b2f0ea312f7"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-int64-readback.json",
+      "bytes": 45327,
+      "sha256": "c26af3e4eedbf7e869483854ce9f2bc914c2ef3b4136909fd92010812eead1e7"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-progress.json",
+      "bytes": 198,
+      "sha256": "0308b3cc0b5e69fd014e2cc3fc9a775834540d32d2707fd5e32d873da6cf77c7"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-smallint-readback.json",
+      "bytes": 45930,
+      "sha256": "7cb79726c52329a16d132d78bc1a2bdf06c82b2d62213ce5510ad3614628ddba"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-text_long-readback.json",
+      "bytes": 7070,
+      "sha256": "e583a4448a6830751a14ef843e1a8ac7cdc1cb81f12104091e4d312405b0bdce"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-tinyint-readback.json",
+      "bytes": 45729,
+      "sha256": "d6d6cdcdd916135ffb759dd63d554995ce76a8d5fee12588ac79642d0bd6ae26"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-uint64-readback.json",
+      "bytes": 45528,
+      "sha256": "6026d9ee4cf33cdf2aecc3f1f3ca0422904d4b4910d6ea9d1c63846b02c2a15c"
+    },
+    {
+      "member": "windowed-results/core-results/pandas-varchar_utf8-readback.json",
+      "bytes": 46734,
+      "sha256": "755b4cc0d219fa6c68f229aa138f262410f212175b7aa2e45168c2561b295a63"
+    },
+    {
+      "member": "windowed-results/core-results/pandas.jsonl",
+      "bytes": 1827840,
+      "sha256": "6f79db835137f61f347a9d601f5b153aa8a8c9f3e3bb32f8ac26bec5917b273d"
+    },
+    {
+      "member": "windowed-results/core-results/petl-completion.json",
+      "bytes": 433,
+      "sha256": "e4c8d4d08378e86d3ffd5738117c15d575362e76b00c363aba462b15f12e4997"
+    },
+    {
+      "member": "windowed-results/core-results/petl-progress.json",
+      "bytes": 196,
+      "sha256": "35b155ea8053e433188dc671cbafd8ca70b4ea7f6799725c503ead5d73e7acc7"
+    },
+    {
+      "member": "windowed-results/core-results/petl-uuid_text-readback.json",
+      "bytes": 6861,
+      "sha256": "1834ce25d929854b6558fafc60d2aaf8b2ffb826c0bf632d7c93e7172fdabb6e"
+    },
+    {
+      "member": "windowed-results/core-results/petl-window-audit.json",
+      "bytes": 8501,
+      "sha256": "1a5f8120918b21b2fa33f26f39e4ba662b09ab398ba6fa5228e1c92e7787a600"
+    },
+    {
+      "member": "windowed-results/core-results/petl.jsonl",
+      "bytes": 3377800,
+      "sha256": "042ae49974d65a571ba8f162e5b059e5cee1f4a9d83670cad681563f71648b2a"
+    },
+    {
+      "member": "windowed-results/created-table-registry.json",
+      "bytes": 39368,
+      "sha256": "0cd490ce2e213971710baf5d106fe3f665fd62bef4983b731487b240b16b0991"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_boolean_9fdeb01927.json.gz",
+      "bytes": 334080,
+      "sha256": "886433b649c809765a282f94a32c21cbadbf982b4a5cbedad1465cebd933c367"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_boolean_9fdeb01927.json.receipt.json",
+      "bytes": 10472,
+      "sha256": "695710d96c246a5e4d761c93254fcf2ea087c43689d7a3dcc1cefb1ae381a7e9"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_char_padding_7c543c9740.json.gz",
+      "bytes": 89663,
+      "sha256": "5725d9083dd31a718daa12663139f67e3aeb3f344c74af2bd877c0447e2c18bc"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_char_padding_7c543c9740.json.receipt.json",
+      "bytes": 3665,
+      "sha256": "4d2babaf41820c2a76d46085c4267b6796cb7a964dc836af48b3514dcdf5000b"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_char_padding_9c1fd0e390.json.gz",
+      "bytes": 300524,
+      "sha256": "520b93bac05710e2e65f30270442d7739431c6d1d13995f49463cb753448e455"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_char_padding_9c1fd0e390.json.receipt.json",
+      "bytes": 9408,
+      "sha256": "68aa6637a680bbad142b4176777517d72db707a8b2a8f5f78abb1db249e2308e"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_decimal20_0_1480003370.json.gz",
+      "bytes": 371149,
+      "sha256": "61a0ce8505b88ae1e9e60e554680178166487e43816e344afb8676f77a3b4f18"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_decimal20_0_1480003370.json.receipt.json",
+      "bytes": 11304,
+      "sha256": "8abdc20521958492a3bef91e6e169330293bdcda8c0afa8b09e62abc5169fb38"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_decimal38_18_9bc0fe2580.json.gz",
+      "bytes": 368584,
+      "sha256": "28a1bb26ddc22563a381c32a0ccf99cf041ffdb78e489fcb6a58d36db96cf91f"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_decimal38_18_9bc0fe2580.json.receipt.json",
+      "bytes": 11512,
+      "sha256": "3f942d66d86a647b3ec907f50fcd1f73f003993245a0dfa6111d00fb97dbdc86"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_double_a475c20681.json.gz",
+      "bytes": 388421,
+      "sha256": "55aeca8a60a232c5b81fba15ccf158cf42485a7c59d656bd51fc8a0338007b70"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_double_a475c20681.json.receipt.json",
+      "bytes": 10264,
+      "sha256": "35f659d3a3f5fca45f828422582697f6346b5ae260fa456170cef299a1d4c774"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_float32_b96cd34d62.json.gz",
+      "bytes": 229877,
+      "sha256": "ccc3607553c8b55514d887f167de24bc6233db9ce2e0759b7875ef4a6ad4e5a6"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_float32_b96cd34d62.json.receipt.json",
+      "bytes": 7534,
+      "sha256": "7ec66efadf73dbc06b187d693798b72e6dde713b8f12e4144ef5da8377bf36a2"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_float32_e6a48d99dd.json.gz",
+      "bytes": 156754,
+      "sha256": "cf223fd24ae03de7fca3e276f7c7ffe071f5a8c02fe39b0f52be24be13d409bf"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_float32_e6a48d99dd.json.receipt.json",
+      "bytes": 4462,
+      "sha256": "fff50e13ccdacfc4564116b744d79dab79f0480d60fa9afdd0d470d84b45ec08"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_int32_9cb92299cc.json.gz",
+      "bytes": 359288,
+      "sha256": "94cb45a2dfff82d7b5b669f97d0418a3e731abb4d6fb4b7aeef0e1b28895d9a6"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_int32_9cb92299cc.json.receipt.json",
+      "bytes": 10056,
+      "sha256": "0203903e913956a0ba17992c52dfe892ed608e9c864b8af4aa2e0de07ff35785"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_int64_fa807cd7e3.json.gz",
+      "bytes": 371512,
+      "sha256": "b52f8913a65893d1178b8d622843f813302dae95677898c3d7a6c0b5b6797c31"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_int64_fa807cd7e3.json.receipt.json",
+      "bytes": 10056,
+      "sha256": "a21c4d1d11b43928d366ede4212e9363c4b1203ae34fced6378a90a111459080"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_smallint_102f1f9e6f.json.gz",
+      "bytes": 357773,
+      "sha256": "fc18c5438003f3b954dfd79b24463bc25e8b8462e2515a2ea2ec2003d0147b47"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_smallint_102f1f9e6f.json.receipt.json",
+      "bytes": 10680,
+      "sha256": "5822a47cb0579b0310bbbb8722d6bbb9e7eff44c2050edf3a8264ee1e5b4ec94"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_text_long_819f394b3e.json.gz",
+      "bytes": 64774,
+      "sha256": "887e445a2c4c9d7025d7988bc60c546afc538678a6f99e9eb96073ec25168874"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_text_long_819f394b3e.json.receipt.json",
+      "bytes": 2816,
+      "sha256": "289185edc442d81198356b30a955c3b6f95b73be36aa09f2f079b5ccf55e7f18"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_tinyint_b4736b4153.json.gz",
+      "bytes": 351957,
+      "sha256": "4bfdcfc471cb48a11001dd5edd2de78fb997038f35a92ff56fb497a180566982"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_tinyint_b4736b4153.json.receipt.json",
+      "bytes": 10472,
+      "sha256": "3bce1e97dd5a7995c074392616bbfe9dc829a35a9762d9f0452f1bc7b3fd7f73"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_uint64_82fe5640fc.json.gz",
+      "bytes": 381956,
+      "sha256": "245e434f75c39145a969802ed9acd81199031d254a527146129a55787e3984cb"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_uint64_82fe5640fc.json.receipt.json",
+      "bytes": 10264,
+      "sha256": "12ed6cc604ceb3116cbfc469c666aa6f82794eb0a816edbde9a39954198f46e9"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_varchar_utf8_ba200e4397.json.gz",
+      "bytes": 398777,
+      "sha256": "580af2cfc349b05b91a61e3d66f0b0086908bdec71369360692e85ee8880c517"
+    },
+    {
+      "member": "windowed-results/window-archives/pandas_varchar_utf8_ba200e4397.json.receipt.json",
+      "bytes": 11512,
+      "sha256": "990394329aca5569359cc17d9f14ab403735a8a7d3be640a2f6f0374d7d1d91f"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_tinyint_dd01d53be2.json.gz",
+      "bytes": 477,
+      "sha256": "72d727d9f2498336427539eab4658f772870af7ef01339c84b1438762fe1d1b6"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_tinyint_dd01d53be2.json.receipt.json",
+      "bytes": 778,
+      "sha256": "fe43ff03586baf8aba29fa04c08a3e947a31368052c3ae8659f54fcf906a3d77"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_213b89e97a.json.gz",
+      "bytes": 65494,
+      "sha256": "51f6713d76de06ff107e26817601e598b501e46b8acc8920bb2b075d183dfe18"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_213b89e97a.json.receipt.json",
+      "bytes": 2782,
+      "sha256": "cbcb430d19efab0e5e0618d79b9d83c9ab59c170e5c87a8343a5fac8080aa187"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_6e9eeaaff5.json.gz",
+      "bytes": 253899,
+      "sha256": "ec5396e3afbc16f6cfb392ebc8894b21dc3afec079f5ad14f7f6bd90efc668a0"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_6e9eeaaff5.json.receipt.json",
+      "bytes": 7896,
+      "sha256": "e35820ee2df145dd631d9e232c959c13bf25228023573b6d57bcf47404d65945"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_f899453c33.json.gz",
+      "bytes": 74752,
+      "sha256": "64d0002b0a6113380c50f53842498a08f2628ff36fa65f917bea56812ccd23f9"
+    },
+    {
+      "member": "windowed-results/window-archives/petl_uuid_text_f899453c33.json.receipt.json",
+      "bytes": 2477,
+      "sha256": "77722b89d26f6ff9d8a59fdaf2ba187f7b853a4a2a3cfa204be9ef181df89a25"
+    },
+    {
+      "member": "verify_heavy_continuation.py",
+      "bytes": 4771,
+      "sha256": "771e39e80c49ed760f86484d669143a972a8c7877ea03456a3e49868667f9a09"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3261,
+      "sha256": "378ff7a185af3ef2c214f6b4761e47f61a3bccf7c36cbd63c2c8c0dda6cb3597"
+    },
+    {
+      "path": "continuation-verification.json",
+      "bytes": 2148507,
+      "sha256": "6171df1f7e816023b57e4d174cf8d8294812c0651af73deddaf7b1049167c86f"
+    },
+    {
+      "path": "current-status.json",
+      "bytes": 12711,
+      "sha256": "d85b9dd7dc018528cf52b2153b6527d9ea6ea0b160c1bcfe753988df6084942b"
+    },
+    {
+      "path": "evidence.zip",
+      "bytes": 4818118,
+      "sha256": "012bb22e5bbdd6ed20b61788261373744e982a96264a7553325c67240b3f3667"
+    },
+    {
+      "path": "iceberg-filter-reproduction.json",
+      "bytes": 17862,
+      "sha256": "cbe7fe332d2529ed7956df085c158bb664eb1d85cf64593c5b25d4b1fee617eb"
+    },
+    {
+      "path": "iceberg-read-completion.json",
+      "bytes": 278,
+      "sha256": "f395fbb56fae3b5e20b55e573438cdc9f6c8ea34a276f79d0a9c87279b793354"
+    },
+    {
+      "path": "iceberg_filter_repro.py",
+      "bytes": 2470,
+      "sha256": "365bd9680223cea9f35d3307c1f6d730e35c46d2026e90b87e5ac873aad0a223"
+    },
+    {
+      "path": "iceberg_preflight.py",
+      "bytes": 4759,
+      "sha256": "f9637218d21830e9b61940a531143a0ab17e3ede2d8f7652ee9b84cfdb32a649"
+    },
+    {
+      "path": "iceberg_read_supplement.py",
+      "bytes": 5801,
+      "sha256": "8b9d83346c48f6746a493603279114241e77919d49ecc6782bb9a4b9e9060e9b"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1229,
+      "sha256": "eb4cf97e347ea52a24442f28185042f89be989d0ae4819f39b63b948d93312e8"
+    }
+  ],
+  "verification": "ZIP CRC, all member SHA256; full typed case hashes verified separately"
+}

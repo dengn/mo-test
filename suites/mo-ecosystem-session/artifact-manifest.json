@@ -8,8 +8,8 @@
     },
     {
       "path": "suites/mo-ecosystem-session/README.md",
-      "bytes": 14465,
-      "sha256": "0bf7bb874e36829840d9ac88f246f8cf26b2bcd9c9347e99e06ce80f2fcbba01"
+      "bytes": 14819,
+      "sha256": "8951f6d29cd4215923dccf60c445bf838ec97dde0326adb1131887dd7c211e56"
     },
     {
       "path": "suites/mo-ecosystem-session/archive-manifest.json",
@@ -95,6 +95,61 @@
       "path": "suites/mo-ecosystem-session/catalog/summary.json",
       "bytes": 1845,
       "sha256": "950669e18efbb6c62a847b50f411db014cb524210940b1ce0df0e3e23f9c2a37"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/README.md",
+      "bytes": 3261,
+      "sha256": "378ff7a185af3ef2c214f6b4761e47f61a3bccf7c36cbd63c2c8c0dda6cb3597"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/continuation-verification.json",
+      "bytes": 2148507,
+      "sha256": "6171df1f7e816023b57e4d174cf8d8294812c0651af73deddaf7b1049167c86f"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/current-status.json",
+      "bytes": 12711,
+      "sha256": "d85b9dd7dc018528cf52b2153b6527d9ea6ea0b160c1bcfe753988df6084942b"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/evidence.zip",
+      "bytes": 4818118,
+      "sha256": "012bb22e5bbdd6ed20b61788261373744e982a96264a7553325c67240b3f3667"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/iceberg-filter-reproduction.json",
+      "bytes": 17862,
+      "sha256": "cbe7fe332d2529ed7956df085c158bb664eb1d85cf64593c5b25d4b1fee617eb"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/iceberg-read-completion.json",
+      "bytes": 278,
+      "sha256": "f395fbb56fae3b5e20b55e573438cdc9f6c8ea34a276f79d0a9c87279b793354"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/iceberg_filter_repro.py",
+      "bytes": 2470,
+      "sha256": "365bd9680223cea9f35d3307c1f6d730e35c46d2026e90b87e5ac873aad0a223"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/iceberg_preflight.py",
+      "bytes": 4759,
+      "sha256": "f9637218d21830e9b61940a531143a0ab17e3ede2d8f7652ee9b84cfdb32a649"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/iceberg_read_supplement.py",
+      "bytes": 5801,
+      "sha256": "8b9d83346c48f6746a493603279114241e77919d49ecc6782bb9a4b9e9060e9b"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/manifest.json",
+      "bytes": 154071,
+      "sha256": "db73f8dcb3fc596144fb4753d20a1b52dcff62536ed83e131a56f42c17f4e87e"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/continuation/20261012-windowed/summary.json",
+      "bytes": 1229,
+      "sha256": "eb4cf97e347ea52a24442f28185042f89be989d0ae4819f39b63b948d93312e8"
     },
     {
       "path": "suites/mo-ecosystem-session/frozen/certification-3/benchmark.py",
@@ -447,101 +502,6 @@
       "sha256": "45a30a1ed91641d19e1b5706ea0bc5588251de8d3fd65e6e092d24811a363dcd"
     },
     {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/incremental_rows.sql",
-      "bytes": 110,
-      "sha256": "f85cabcff675ebdb7f4ffdd232d623cf1981070591ae772f15494d3efca0a5e9"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/transformed.sql",
-      "bytes": 108,
-      "sha256": "f0fb67c0e7f5d1963c189ec80226c86a8f96f34b36c7e1a525df72d412a9f4b8"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/view_rows.sql",
-      "bytes": 102,
-      "sha256": "c4c1c2d5634851f5eab8d8fa11ea1b82327a76bb9aee737d7140a0ea10d1275b"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/incremental_rows.sql",
-      "bytes": 52,
-      "sha256": "0fdd00597fdb48b6e9be57d5d92de04c00e51ee660dac614a29f89ad675c56d2"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/schema.yml/not_null_transformed_id.sql",
-      "bytes": 72,
-      "sha256": "9ec3a15833a3c96acc915d8d56cecd5ef99d1fb7c9da9f57a9db708c88b40b65"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/schema.yml/unique_transformed_id.sql",
-      "bytes": 154,
-      "sha256": "4506881d3bf33abc278fcb9daefc37a4aa112295ca48212167d9ae07ba005289"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/transformed.sql",
-      "bytes": 106,
-      "sha256": "4e719b3c2530cda781479dcdbee1cc4c155cb0519d8c56a9c8772a20d6cfb2e4"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/view_rows.sql",
-      "bytes": 67,
-      "sha256": "96756a2c062f499e8a993aacd2dc18a0da464bf14433042de3c847ccc6e73b2d"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/tests/expected_values.sql",
-      "bytes": 294,
-      "sha256": "d871e7007c00252e037d19e77b63872d151c8bdeb009d25f36c148ac509505ef"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/tests/incremental_values.sql",
-      "bytes": 162,
-      "sha256": "e8c019972f3279369420a588ba0d2bf49a940dfba0645e7baf2964023cfe2254"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/incremental_rows.sql",
-      "bytes": 176,
-      "sha256": "f0dcbcb06cbc7bfe3ce939e07584985c497f747db13d8252f045c4e1df8ee134"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/schema.yml/not_null_transformed_id.sql",
-      "bytes": 349,
-      "sha256": "9eef67b3997fb235b363e1584bbd86a0c4e99a2fda1af0069f8b95891edf8ddc"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/schema.yml/unique_transformed_id.sql",
-      "bytes": 431,
-      "sha256": "109ad21c67001198ab5d36cb41de4319fe0ad981adfdeb6cb05305c9b4f69209"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/transformed.sql",
-      "bytes": 215,
-      "sha256": "d8ddabbfe85b974e0889ead5ef4445aa97ad7059bd692fc78070686e6822e82c"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/view_rows.sql",
-      "bytes": 139,
-      "sha256": "842e907062c661bf5ee5b634c1d1a0068589c412e147e817b919882fe33392b8"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/tests/expected_values.sql",
-      "bytes": 571,
-      "sha256": "4d595e1547c02c8b26fb3a063949825e1f29cd15713b63d123d9358428259124"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/tests/incremental_values.sql",
-      "bytes": 439,
-      "sha256": "619277233691070be43ccdb40f6e7aa00bb3e779881b801a6a4f6c81bd1d2b12"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/tests/expected_values.sql",
-      "bytes": 299,
-      "sha256": "f4cb9a8e8942f618de9939a7f3aa90fd63f9287638873b44e4aaef8b2ff66cd5"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/tests/incremental_values.sql",
-      "bytes": 165,
-      "sha256": "c079274a3377504c5422f699d473bbc4316581737bb43c25c4f2d21724e53824"
-    },
-    {
       "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt-adapted/macros/mo_view.sql",
       "bytes": 320,
       "sha256": "c0ca02464b0e4d657180a791a49fa7fde44ddb0fd1d4cc37c225dfa9f8ce2608"
@@ -655,6 +615,101 @@
       "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt-adapted/tests/view_values.sql",
       "bytes": 149,
       "sha256": "2d388137494c1c31125ae41bbcd6b6eddfa8c5147ba55d39827fd7423c1e7534"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/incremental_rows.sql",
+      "bytes": 110,
+      "sha256": "f85cabcff675ebdb7f4ffdd232d623cf1981070591ae772f15494d3efca0a5e9"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/transformed.sql",
+      "bytes": 108,
+      "sha256": "f0fb67c0e7f5d1963c189ec80226c86a8f96f34b36c7e1a525df72d412a9f4b8"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/models/view_rows.sql",
+      "bytes": 102,
+      "sha256": "c4c1c2d5634851f5eab8d8fa11ea1b82327a76bb9aee737d7140a0ea10d1275b"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/incremental_rows.sql",
+      "bytes": 52,
+      "sha256": "0fdd00597fdb48b6e9be57d5d92de04c00e51ee660dac614a29f89ad675c56d2"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/schema.yml/not_null_transformed_id.sql",
+      "bytes": 72,
+      "sha256": "9ec3a15833a3c96acc915d8d56cecd5ef99d1fb7c9da9f57a9db708c88b40b65"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/schema.yml/unique_transformed_id.sql",
+      "bytes": 154,
+      "sha256": "4506881d3bf33abc278fcb9daefc37a4aa112295ca48212167d9ae07ba005289"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/transformed.sql",
+      "bytes": 106,
+      "sha256": "4e719b3c2530cda781479dcdbee1cc4c155cb0519d8c56a9c8772a20d6cfb2e4"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/models/view_rows.sql",
+      "bytes": 67,
+      "sha256": "96756a2c062f499e8a993aacd2dc18a0da464bf14433042de3c847ccc6e73b2d"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/tests/expected_values.sql",
+      "bytes": 294,
+      "sha256": "d871e7007c00252e037d19e77b63872d151c8bdeb009d25f36c148ac509505ef"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/compiled/mo_etl_audit/tests/incremental_values.sql",
+      "bytes": 162,
+      "sha256": "e8c019972f3279369420a588ba0d2bf49a940dfba0645e7baf2964023cfe2254"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/incremental_rows.sql",
+      "bytes": 176,
+      "sha256": "f0dcbcb06cbc7bfe3ce939e07584985c497f747db13d8252f045c4e1df8ee134"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/schema.yml/not_null_transformed_id.sql",
+      "bytes": 349,
+      "sha256": "9eef67b3997fb235b363e1584bbd86a0c4e99a2fda1af0069f8b95891edf8ddc"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/schema.yml/unique_transformed_id.sql",
+      "bytes": 431,
+      "sha256": "109ad21c67001198ab5d36cb41de4319fe0ad981adfdeb6cb05305c9b4f69209"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/transformed.sql",
+      "bytes": 215,
+      "sha256": "d8ddabbfe85b974e0889ead5ef4445aa97ad7059bd692fc78070686e6822e82c"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/models/view_rows.sql",
+      "bytes": 139,
+      "sha256": "842e907062c661bf5ee5b634c1d1a0068589c412e147e817b919882fe33392b8"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/tests/expected_values.sql",
+      "bytes": 571,
+      "sha256": "4d595e1547c02c8b26fb3a063949825e1f29cd15713b63d123d9358428259124"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/target/run/mo_etl_audit/tests/incremental_values.sql",
+      "bytes": 439,
+      "sha256": "619277233691070be43ccdb40f6e7aa00bb3e779881b801a6a4f6c81bd1d2b12"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/tests/expected_values.sql",
+      "bytes": 299,
+      "sha256": "f4cb9a8e8942f618de9939a7f3aa90fd63f9287638873b44e4aaef8b2ff66cd5"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/etl-expanded/dbt/tests/incremental_values.sql",
+      "bytes": 165,
+      "sha256": "c079274a3377504c5422f699d473bbc4316581737bb43c25c4f2d21724e53824"
     },
     {
       "path": "suites/mo-ecosystem-session/frozen/etl-expanded/duckdb-controls.py",
@@ -2092,51 +2147,6 @@
       "sha256": "6a4a3dbbe7a12a98ebdf4572dfffa78252c7d70ab58a64bfc183e8d1912ff697"
     },
     {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/connect_setup.py",
-      "bytes": 2232,
-      "sha256": "4f6a76556ec23956b43ddce937668a402eac8ab75de3a6757c1bcd6c5a57629f"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/finalize_receipts.py",
-      "bytes": 6281,
-      "sha256": "47c72f8e6f92f89f407b7a38750621e7dccad5e253fcefb610286b65e81e7386"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/kafka_verify.py",
-      "bytes": 3359,
-      "sha256": "ea632cd6a4c68efc2a77011b99bd3baf6fd7e33082f7370bf43f9cdb7236b119"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_flow.py",
-      "bytes": 3209,
-      "sha256": "3589141172487300f79b7b8ced55d2d3aee9ae222313456bcffec42a5bf4001b"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_outbox.py",
-      "bytes": 3473,
-      "sha256": "81a03a772ec92078f9fe30f6ed7646b9f9e5fba33747afd69f890a929d0045a3"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_schema_verify.py",
-      "bytes": 2671,
-      "sha256": "5333a9560cb2e12f653117379df4f28579797ed0dff758b6cbc828e365f04c67"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_setup.py",
-      "bytes": 2013,
-      "sha256": "089fafb4692ce4c3e662f25d09177a59fff9e9e3a6874f688f386da37c4ccf9b"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_sql_adapter.py",
-      "bytes": 2575,
-      "sha256": "12cc840809277b0c96207fff95d14a08287b15de0caffb5811c15bf80663a5db"
-    },
-    {
-      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_verify.py",
-      "bytes": 3823,
-      "sha256": "8a12cf96718706f56cdc3ae2591c24d1cc66aca6bf4fff6ece5e1fb0c26b6f8a"
-    },
-    {
       "path": "suites/mo-ecosystem-session/frozen/runtime-expanded-2/airbyte_expand.py",
       "bytes": 6911,
       "sha256": "dc604fb356215580849c8016befe89e8eaa74326d4cb72b31bb7956b0b58869b"
@@ -2195,6 +2205,51 @@
       "path": "suites/mo-ecosystem-session/frozen/runtime-expanded-2/start.py",
       "bytes": 1392,
       "sha256": "6d2b7ec2d2211b150fa22cf2839eaa5b2ae2b93f148ec62851d16d91ceb3867c"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/connect_setup.py",
+      "bytes": 2232,
+      "sha256": "4f6a76556ec23956b43ddce937668a402eac8ab75de3a6757c1bcd6c5a57629f"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/finalize_receipts.py",
+      "bytes": 6281,
+      "sha256": "47c72f8e6f92f89f407b7a38750621e7dccad5e253fcefb610286b65e81e7386"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/kafka_verify.py",
+      "bytes": 3359,
+      "sha256": "ea632cd6a4c68efc2a77011b99bd3baf6fd7e33082f7370bf43f9cdb7236b119"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_flow.py",
+      "bytes": 3209,
+      "sha256": "3589141172487300f79b7b8ced55d2d3aee9ae222313456bcffec42a5bf4001b"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_outbox.py",
+      "bytes": 3473,
+      "sha256": "81a03a772ec92078f9fe30f6ed7646b9f9e5fba33747afd69f890a929d0045a3"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_schema_verify.py",
+      "bytes": 2671,
+      "sha256": "5333a9560cb2e12f653117379df4f28579797ed0dff758b6cbc828e365f04c67"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_setup.py",
+      "bytes": 2013,
+      "sha256": "089fafb4692ce4c3e662f25d09177a59fff9e9e3a6874f688f386da37c4ccf9b"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_sql_adapter.py",
+      "bytes": 2575,
+      "sha256": "12cc840809277b0c96207fff95d14a08287b15de0caffb5811c15bf80663a5db"
+    },
+    {
+      "path": "suites/mo-ecosystem-session/frozen/runtime-expanded/nifi_verify.py",
+      "bytes": 3823,
+      "sha256": "8a12cf96718706f56cdc3ae2591c24d1cc66aca6bf4fff6ece5e1fb0c26b6f8a"
     },
     {
       "path": "suites/mo-ecosystem-session/frozen/type-expanded/advanced-types.py",

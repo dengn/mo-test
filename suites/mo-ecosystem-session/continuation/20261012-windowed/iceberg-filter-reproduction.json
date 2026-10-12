@@ -1,0 +1,93 @@
+{
+  "versions": {
+    "pyiceberg": "0.12.0",
+    "pyarrow": "26.0.0"
+  },
+  "counts": {
+    "passed": 2,
+    "execution_failed": 4
+  },
+  "cases": [
+    {
+      "type": "list",
+      "scene": "full_scan",
+      "identifier": [
+        "repro_9aaa626b",
+        "list"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "passed",
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "type": "list",
+      "scene": "is_null",
+      "identifier": [
+        "repro_9aaa626b",
+        "list"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "execution_failed",
+      "error": "ValueError('Cannot explicitly project List or Map types, 2:v of type list<string> was selected')",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/work/heavy-5000/iceberg_filter_repro.py\", line 20, in <module>\n    rows=table.scan(**({'row_filter':expr} if expr is not None else {})).to_arrow().to_pylist()\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2486, in to_arrow\n    return _to_arrow_via_file_scan_tasks(self, self.projection(), self.plan_files(), dictionary_columns=dictionary_columns)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2357, in _to_arrow_via_file_scan_tasks\n    ).to_table(tasks)\n      ^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1813, in to_table\n    first_batch = next(batches)\n                  ^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1856, in to_record_batches\n    for batches in executor.map(batches_for_task, tasks):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 619, in result_iterator\n    yield _result_or_cancel(fs.pop())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 317, in _result_or_cancel\n    return fut.result(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 456, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1853, in batches_for_task\n    return list(self._record_batches_from_scan_tasks_and_deletes([task], deletes_per_file))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1894, in _record_batches_from_scan_tasks_and_deletes\n    for batch in batches:\n                 ^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1675, in _task_to_record_batches\n    file_project_schema = prune_columns(file_schema, projected_field_ids, select_full_types=False)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 1503, in prune_columns\n    result = visit(schema.as_struct(), _PruneColumnsVisitor(selected, select_full_types))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/functools.py\", line 912, in wrapper\n    return dispatch(args[0].__class__)(*args, **kw)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 915, in _\n    results.append(visitor.field(field, result))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 1560, in field\n    raise ValueError(\nValueError: Cannot explicitly project List or Map types, 2:v of type list<string> was selected\n"
+    },
+    {
+      "type": "list",
+      "scene": "not_null",
+      "identifier": [
+        "repro_9aaa626b",
+        "list"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "execution_failed",
+      "error": "ValueError('Cannot explicitly project List or Map types, 2:v of type list<string> was selected')",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/work/heavy-5000/iceberg_filter_repro.py\", line 20, in <module>\n    rows=table.scan(**({'row_filter':expr} if expr is not None else {})).to_arrow().to_pylist()\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2486, in to_arrow\n    return _to_arrow_via_file_scan_tasks(self, self.projection(), self.plan_files(), dictionary_columns=dictionary_columns)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2357, in _to_arrow_via_file_scan_tasks\n    ).to_table(tasks)\n      ^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1813, in to_table\n    first_batch = next(batches)\n                  ^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1856, in to_record_batches\n    for batches in executor.map(batches_for_task, tasks):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 619, in result_iterator\n    yield _result_or_cancel(fs.pop())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 317, in _result_or_cancel\n    return fut.result(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 456, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1853, in batches_for_task\n    return list(self._record_batches_from_scan_tasks_and_deletes([task], deletes_per_file))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1894, in _record_batches_from_scan_tasks_and_deletes\n    for batch in batches:\n                 ^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1675, in _task_to_record_batches\n    file_project_schema = prune_columns(file_schema, projected_field_ids, select_full_types=False)\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 1503, in prune_columns\n    result = visit(schema.as_struct(), _PruneColumnsVisitor(selected, select_full_types))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/functools.py\", line 912, in wrapper\n    return dispatch(args[0].__class__)(*args, **kw)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 915, in _\n    results.append(visitor.field(field, result))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/schema.py\", line 1560, in field\n    raise ValueError(\nValueError: Cannot explicitly project List or Map types, 2:v of type list<string> was selected\n"
+    },
+    {
+      "type": "uuid",
+      "scene": "full_scan",
+      "identifier": [
+        "repro_9aaa626b",
+        "uuid"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "passed",
+      "ids": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "type": "uuid",
+      "scene": "is_null",
+      "identifier": [
+        "repro_9aaa626b",
+        "uuid"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "execution_failed",
+      "error": "ArrowNotImplementedError(\"Function 'greater_equal' has no kernel matching input types (extension<arrow.uuid>, extension<arrow.uuid>)\")",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/work/heavy-5000/iceberg_filter_repro.py\", line 20, in <module>\n    rows=table.scan(**({'row_filter':expr} if expr is not None else {})).to_arrow().to_pylist()\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2486, in to_arrow\n    return _to_arrow_via_file_scan_tasks(self, self.projection(), self.plan_files(), dictionary_columns=dictionary_columns)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2357, in _to_arrow_via_file_scan_tasks\n    ).to_table(tasks)\n      ^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1813, in to_table\n    first_batch = next(batches)\n                  ^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1856, in to_record_batches\n    for batches in executor.map(batches_for_task, tasks):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 619, in result_iterator\n    yield _result_or_cancel(fs.pop())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 317, in _result_or_cancel\n    return fut.result(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 456, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1853, in batches_for_task\n    return list(self._record_batches_from_scan_tasks_and_deletes([task], deletes_per_file))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1894, in _record_batches_from_scan_tasks_and_deletes\n    for batch in batches:\n                 ^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1688, in _task_to_record_batches\n    for batch in batches:\n                 ^^^^^^^\n  File \"pyarrow/_dataset.pyx\", line 3946, in _iterator\n  File \"pyarrow/_dataset.pyx\", line 3536, in pyarrow._dataset.TaggedRecordBatchIterator.__next__\n  File \"pyarrow/error.pxi\", line 155, in pyarrow.lib.pyarrow_internal_check_status\n  File \"pyarrow/error.pxi\", line 92, in pyarrow.lib.check_status\npyarrow.lib.ArrowNotImplementedError: Function 'greater_equal' has no kernel matching input types (extension<arrow.uuid>, extension<arrow.uuid>)\n"
+    },
+    {
+      "type": "uuid",
+      "scene": "not_null",
+      "identifier": [
+        "repro_9aaa626b",
+        "uuid"
+      ],
+      "source": "4 directly constructed native Arrow values; no MatrixOne/MySQL/SQL source",
+      "status": "execution_failed",
+      "error": "ArrowNotImplementedError(\"Function 'greater_equal' has no kernel matching input types (extension<arrow.uuid>, extension<arrow.uuid>)\")",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/work/heavy-5000/iceberg_filter_repro.py\", line 20, in <module>\n    rows=table.scan(**({'row_filter':expr} if expr is not None else {})).to_arrow().to_pylist()\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2486, in to_arrow\n    return _to_arrow_via_file_scan_tasks(self, self.projection(), self.plan_files(), dictionary_columns=dictionary_columns)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/table/__init__.py\", line 2357, in _to_arrow_via_file_scan_tasks\n    ).to_table(tasks)\n      ^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1813, in to_table\n    first_batch = next(batches)\n                  ^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1856, in to_record_batches\n    for batches in executor.map(batches_for_task, tasks):\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 619, in result_iterator\n    yield _result_or_cancel(fs.pop())\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 317, in _result_or_cancel\n    return fut.result(timeout)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 456, in result\n    return self.__get_result()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/_base.py\", line 401, in __get_result\n    raise self._exception\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/concurrent/futures/thread.py\", line 59, in run\n    result = self.fn(*self.args, **self.kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1853, in batches_for_task\n    return list(self._record_batches_from_scan_tasks_and_deletes([task], deletes_per_file))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1894, in _record_batches_from_scan_tasks_and_deletes\n    for batch in batches:\n                 ^^^^^^^\n  File \"/workspace/toolchains/python/lib/python3.12/site-packages/pyiceberg/io/pyarrow.py\", line 1688, in _task_to_record_batches\n    for batch in batches:\n                 ^^^^^^^\n  File \"pyarrow/_dataset.pyx\", line 3946, in _iterator\n  File \"pyarrow/_dataset.pyx\", line 3536, in pyarrow._dataset.TaggedRecordBatchIterator.__next__\n  File \"pyarrow/error.pxi\", line 155, in pyarrow.lib.pyarrow_internal_check_status\n  File \"pyarrow/error.pxi\", line 92, in pyarrow.lib.check_status\npyarrow.lib.ArrowNotImplementedError: Function 'greater_equal' has no kernel matching input types (extension<arrow.uuid>, extension<arrow.uuid>)\n"
+    }
+  ],
+  "scope": "Small native local reproduction; independent of MatrixOne; files retained"
+}
