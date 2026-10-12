@@ -22,7 +22,7 @@ NULL 默认值也需迁移适配：ClickHouse 的 FIRST_VALUE/LAST_VALUE 默认�
 
 实测共同窗口之外的缺口包括 **GROUPS 框架、IGNORE NULLS（FIRST/LAST/NTH/LAG/LEAD）、窗口内 DISTINCT、FILTER 聚合子句**。当前 ClickHouse 版本同样拒绝 EXCLUDE；因此新时序场景中的 EXCLUDE 失败不能算作 MO 相对 ClickHouse 独有的差距。MO 的命名窗口及继承通过；DateTime RANGE 的 INTERVAL 偏移在 MO 通过而此 ClickHouse 版本拒绝，不能漏记 MO 已有能力。
 
-**执行缺陷：**三行、两分区的 `LAG(value,1,NULL)` / `LEAD(value,1,NULL)` 会在 MO 返回 20101，包含 `index out of range [2] with length 1` 的恢复型 panic。`CAST(NULL AS DOUBLE)`、省略默认参数及单分区对照正常；typed NULL 保留原本的 NULL 默认语义。ClickHouse 对应三行查询正常。`results/null-default-repro.json` 与本地 issue draft 保存证据；未新发 issue。此缺陷不从“11 个已实现入口”扣掉，但必须进入兼容性结论。
+**执行缺陷：**三行、两分区的 `LAG(value,1,NULL)` / `LEAD(value,1,NULL)` 会在 MO 返回 20101，包含 `index out of range [2] with length 1` 的恢复型 panic。`CAST(NULL AS DOUBLE)` 仅执行成功，最后一行错误返回 0，不能作为正确 workaround；省略默认参数在此 fixture 返回正确 NULL。ClickHouse 对应三行查询正常。`results/null-default-repro.json` 保存原始证据，复测与更正见 [CORRECTIONS.md](CORRECTIONS.md)；已提交 [#29925](https://github.com/matrixorigin/matrixone/issues/29925)。此缺陷不从“11 个已实现入口”扣掉，但必须进入兼容性结论。
 
 **时序专用能力：**MO 已实测支持原生 INTERVAL、SLIDING 和 PREV/NEXT/LINEAR/VALUE 填充，不能写成“MO 没有时间窗口”。本二进制使用 `_wstart` / `_wend` 伪列；文档中部分 `_wstart(ts)` 形式被拒绝。依据：[MO 时间窗口](https://docs.matrixorigin.cn/mo/zh/latest/MatrixOne/Develop/read-data/window-function/time-window.html)，执行记录 `results/native-mo-time-windows.json`。
 
@@ -48,3 +48,6 @@ python report.py
 ```
 
 这些脚本会改写自己的结果文件，建议先复制一个新的运行目录。`fetch_sources.py` 可重新抓取官方页面，但网站可随时间改变或拒绝抓取；当前结果应以保留的 URL/时间、清单、固定二进制版本和原始执行证据为准。234 条主能力探针不是新增的 234 个时序主 case，研究内容不混入仓库主 case 总数。DolphinDB 官方接口名全部被逐项研究；未连接 DolphinDB 的运行时行为及性能仍是明确的验证边界。
+
+
+复测 NULL 的实际值与 NULL 位：设置当前 MO_SERVER_PID，并运行 `python null_default_value_recheck.py`；24 个查询分别断言 panic、typed NULL 错值及正确控制，结果另写 `results/null-default-value-recheck.json`。

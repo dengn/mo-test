@@ -1,0 +1,991 @@
+{
+  "checked_at": "2026-10-12T01:06:29.994851+00:00",
+  "binary_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "repeats": 3,
+  "mo_records": [
+    {
+      "repeat": 1,
+      "function": "LAG",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 1,
+      "function": "LAG",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 1,
+      "function": "LAG",
+      "default": null,
+      "sql": "SELECT point,eid,LAG(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 1,
+      "function": "LAG",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          0
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 1,
+      "function": "LEAD",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 1,
+      "function": "LEAD",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 1,
+      "function": "LEAD",
+      "default": null,
+      "sql": "SELECT point,eid,LEAD(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 1,
+      "function": "LEAD",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          0
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LAG",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 2,
+      "function": "LAG",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LAG",
+      "default": null,
+      "sql": "SELECT point,eid,LAG(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LAG",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          0
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LEAD",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 2,
+      "function": "LEAD",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LEAD",
+      "default": null,
+      "sql": "SELECT point,eid,LEAD(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 2,
+      "function": "LEAD",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          0
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LAG",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 3,
+      "function": "LAG",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LAG",
+      "default": null,
+      "sql": "SELECT point,eid,LAG(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          null
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LAG",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          0
+        ],
+        [
+          2.0,
+          1.0,
+          1
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          2.0,
+          1.0,
+          1.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LEAD",
+      "default": "NULL",
+      "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "error",
+      "error": "(20101, 'internal error: panic runtime error: index out of range [2] with length 1: "
+    },
+    {
+      "repeat": 3,
+      "function": "LEAD",
+      "default": "CAST(NULL AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "mismatch",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LEAD",
+      "default": null,
+      "sql": "SELECT point,eid,LEAD(value,1) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          null
+        ],
+        [
+          3.0,
+          2.0,
+          null
+        ]
+      ]
+    },
+    {
+      "repeat": 3,
+      "function": "LEAD",
+      "default": "CAST(0 AS DOUBLE)",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(0 AS DOUBLE)) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS DOUBLE) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "expected": [
+        [
+          1.0,
+          1.0,
+          2
+        ],
+        [
+          2.0,
+          1.0,
+          0
+        ],
+        [
+          3.0,
+          2.0,
+          0
+        ]
+      ],
+      "status": "pass",
+      "actual": [
+        [
+          1.0,
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          1.0,
+          0.0
+        ],
+        [
+          3.0,
+          2.0,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "clickhouse_records": [
+    {
+      "function": "LAG",
+      "default": "NULL",
+      "status": "executed",
+      "sql": "SELECT point,eid,LAG(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 1
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    {
+      "function": "LAG",
+      "default": "CAST(NULL AS DOUBLE)",
+      "status": "executed",
+      "sql": "SELECT point,eid,LAG(value,1,CAST(NULL AS Nullable(Float64))) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": 1
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    {
+      "function": "LEAD",
+      "default": "NULL",
+      "status": "executed",
+      "sql": "SELECT point,eid,LEAD(value,1,NULL) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 2
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    },
+    {
+      "function": "LEAD",
+      "default": "CAST(NULL AS DOUBLE)",
+      "status": "executed",
+      "sql": "SELECT point,eid,LEAD(value,1,CAST(NULL AS Nullable(Float64))) OVER(PARTITION BY eid ORDER BY point) result FROM (SELECT 1 point,1 eid,CAST(1 AS Nullable(Float64)) value UNION ALL SELECT 2,1,2 UNION ALL SELECT 3,2,3) f ORDER BY point",
+      "rows": [
+        {
+          "point": 1,
+          "eid": 1,
+          "result": 2
+        },
+        {
+          "point": 2,
+          "eid": 1,
+          "result": null
+        },
+        {
+          "point": 3,
+          "eid": 2,
+          "result": null
+        }
+      ]
+    }
+  ],
+  "same_process_create_time": true,
+  "health_after": 1
+}

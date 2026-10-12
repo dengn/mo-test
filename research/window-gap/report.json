@@ -12,7 +12,7 @@
       "leadInFrame",
       "nonNegativeDerivative"
     ],
-    "null_default_bug": "LAG/LEAD exist; explicit untyped NULL default can trigger recovered vector panic across partitions; typed NULL preserves semantics and passes."
+    "null_default_bug": "LAG/LEAD exist; explicit untyped NULL default triggers recovered panic across partitions; typed NULL executes but incorrectly returns zero in the final one-row partition. Omitting the default is correct on this fixture. Issue #29925."
   },
   "dolphindb_sql_over": {
     "total": 39,
@@ -72,5 +72,7 @@
     "boundary_form": "_wstart/_wend pseudocolumns in this binary; function-call spelling from some documentation examples rejected"
   },
   "probe_count": 234,
-  "sources_manifest": "sources/manifest.json"
+  "sources_manifest": "sources/manifest.json",
+  "null_default_issue": "https://github.com/matrixorigin/matrixone/issues/29925",
+  "null_default_correction": "CORRECTIONS.md"
 }

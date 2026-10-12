@@ -87,4 +87,4 @@ python3 tools/materialize.py --output /tmp/mo-boundary-replay
 
 ClickHouse 官方 14 个窗口入口中 MO 有 11 个、缺 3 个；DolphinDB SQL OVER 的 39 个中有 22 个原生映射、缺 17 个专用入口。17 个常见数学配置均已在 MO 用 SQL 组合实现并经独立 NumPy/SciPy 核验。更广的专用移动/时间/累计/TopN/技术指标 API 清单、算法/状态变体、NULL/frame/并列/增量执行差异另列，不把接口数量当作业务不可计算数量。ClickHouse 固定 26.9.16.11 实测；DolphinDB 为官方文档研究，没有运行时/跨库性能结论。234 条能力探针与研究不新增主 case 总数。
 
-新发现的跨分区 LAG/LEAD 无类型 NULL 默认参数恢复型 panic 已保留最小复现与本地 issue draft，未新发 issue。所有研究文件的 SHA256 在 research/window-gap/artifact-manifest.json。此研究及七批的 archives/catalog 校验与另一个边界/混沌测试 manifest.json 分开，保留远端已有材料。
+跨分区 LAG/LEAD 无类型 NULL 默认参数恢复型 panic 已提交 [#29925](https://github.com/matrixorigin/matrixone/issues/29925)；typed NULL 执行成功但错误返回 0，先前“正确通过”的结论已[更正](research/window-gap/CORRECTIONS.md)。所有研究文件的 SHA256 在 research/window-gap/artifact-manifest.json。此研究及七批的 archives/catalog 校验与另一个边界/混沌测试 manifest.json 分开，保留远端已有材料。

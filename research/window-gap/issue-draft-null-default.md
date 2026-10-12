@@ -1,6 +1,6 @@
 # LAG/LEAD with an untyped NULL default return a recovered vector panic across partitions
 
-This is a local draft; no new GitHub issue has been submitted.
+The corrected issue is published at https://github.com/matrixorigin/matrixone/issues/29925. This historical draft is amended below; see CORRECTIONS.md and the submitted issue for verified controls.
 
 Tested binary: MatrixOne commit `23d8f61252f3017dff218b530817a240206fd762`, MySQL text protocol, local single-node service. ClickHouse `26.9.16.11` runs the corresponding query successfully when its input is explicitly declared `Nullable(Float64)`; the recorded CH SQL preserves this type adapter.
 
@@ -17,9 +17,9 @@ ORDER BY point;
 
 The expected values are `NULL,1,NULL`. The query returns MO error 20101 with `index out of range [2] with length 1`, including `Vector.propagateUniformStringSource`, `propagatePrepareParamKindsBatch` and `UnionBatch` stack frames. Replacing LAG by LEAD also fails; its expected values are `2,NULL,NULL`.
 
-Controls on the same fixture pass:
+Controls on the same fixture:
 
-* `LAG(value,1,CAST(NULL AS DOUBLE))` / corresponding LEAD: preserves NULL-default semantics.
+* `LAG(value,1,CAST(NULL AS DOUBLE))` / corresponding LEAD executes but returns an incorrect zero in the final one-row partition; not a correct workaround.
 * Omitting the explicit default: passes.
 * An explicitly typed non-NULL default: passes.
 * Two- and three-row single-partition fixtures: pass.
