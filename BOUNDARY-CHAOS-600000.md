@@ -55,3 +55,8 @@ python3 tools/materialize.py --output /tmp/mo-test-restored
 跨库和 ETL 批次验证的是公开场景在 MO 上的实现；未部署六种对照数据库、Snowflake/Fivetran SaaS 或实际 dbt adapter。大多数精确结果用例基于小数据固定预期，大数据压力脚本单列；本次 4 CPU / 32 GiB、单进程 LOG/TN/CN 的结果不能直接证明分布式或 TB 级生产行为。用例实例数也不等于独立功能数。
 
 来源及固定版本记录在每个包的 source-manifest.json。保留了导入代码、公开测试和文档中的原始版权声明；来源项目的许可证仍适用于其对应文件。
+
+
+## Final execution update
+
+All 600,000 main cases have completed. See [the additional 100,000-case final record](suites/mo-stability-500000/EXTRA-100000-FINAL.md), the retained raw statuses, and [submitted issues](ISSUES.md). Rechecks do not increase the main count.
