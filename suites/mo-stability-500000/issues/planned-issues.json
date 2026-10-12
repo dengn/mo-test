@@ -1,0 +1,26 @@
+[
+  {
+    "key": "index",
+    "title": "[Bug]: Concurrent HNSW reindex and secondary-index DDL leave persistent inconsistent index metadata",
+    "body_file": "/workspace/mo-stability-500000/issues/index.md",
+    "body_bytes": 8132
+  },
+  {
+    "key": "tls",
+    "title": "[Bug]: TLS handshake hangs when MySQL SSLRequest and ClientHello arrive together",
+    "body_file": "/workspace/mo-stability-500000/issues/tls.md",
+    "body_bytes": 4276
+  },
+  {
+    "key": "publication",
+    "title": "[Bug]: CREATE PUBLICATION IF NOT EXISTS returns a duplicate-key error for an existing publication",
+    "body_file": "/workspace/mo-stability-500000/issues/publication.md",
+    "body_bytes": 1667
+  },
+  {
+    "key": "task",
+    "title": "[Bug]: Positive SQL task timeouts below one second silently disable the execution deadline",
+    "body_file": "/workspace/mo-stability-500000/issues/task.md",
+    "body_bytes": 2793
+  }
+]
