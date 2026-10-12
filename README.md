@@ -112,3 +112,9 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 [GeoServer、pygeoapi、QGIS、uMap、Maputnik 的真实端到端测试](suites/mo-gis-app-projects/README.md)：51 个项目/后端/接入阶段工作流，保留原生失败与适配后结果；新增确认的几何协议缺陷 [#30046](https://github.com/matrixorigin/matrixone/issues/30046)。
 
 [TTL 源码、文档与 SQL 实测](suites/mo-ttl-check/README.md)：当前 main 无原生行/表 TTL，定时 SQL task 删除过期行已验证。两套后续核验均不计入原有 600,000 条主 case。
+
+## 开源应用原生回归
+
+新增可独立执行的 [应用回归套件](suites/mo-app-regression/README.md)：Gotify、Blocky、Plik、Ergo、Documize、Huginn、ntfy、Memos、Baikal、FreshRSS、Adminer 的原生业务/权限/精确值/重启测试，以及 20 个完整 SQL fixture（含 4 个显式开启的 panic）。统一入口输出 JSON/JUnit，提供可复用 [GitHub Actions](.github/workflows/app-regression.yml)。
+
+[1000 项候选名单](suites/mo-app-regression/catalog/projects-1000.csv) 与 [历史运行/迁移状态](suites/mo-app-regression/inventory.json) 分开保留：61 个真实尝试、58 个基本业务通过、11 个独立驱动。其余项目继续迁移；不计入已有历史批次的 case 总数。

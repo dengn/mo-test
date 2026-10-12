@@ -1,0 +1,49 @@
+{
+  "id": "PANIC-04",
+  "title": "Wagtail multiple FULLTEXT indexed INSERT",
+  "panic": true,
+  "known_issue": true,
+  "fixture_origin": "Actual retained native SHOW CREATE TABLE including four FULLTEXT indexes and content-type FK; one synthetic content-type row",
+  "trigger_origin": "Exact full original INSERT from database error log",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE `django_content_type` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `app_label` varchar(100) NOT NULL,\n  `model` varchar(100) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)\n)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO django_content_type VALUES (10002,'home','homepage')"
+    },
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE `wagtailsearch_indexentry` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `object_id` varchar(50) NOT NULL,\n  `title_norm` double NOT NULL,\n  `content_type_id` int NOT NULL,\n  `autocomplete` text DEFAULT NULL,\n  `body` text DEFAULT NULL,\n  `title` text NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `wagtailsearch_indexentry_content_type_id_object_id_bcd7ba73_uniq` (`content_type_id`,`object_id`),\n  KEY `wagtailsearch_indexentry_content_type_id_62ed694f` (`content_type_id`),\n FULLTEXT `fulltext_body`(`body`),\n FULLTEXT `fulltext_title`(`title`),\n FULLTEXT `fulltext_title_body`(`title`,`body`),\n FULLTEXT `fulltext_autocomplete`(`autocomplete`),\n  CONSTRAINT `wagtailsearch_indexe_content_type_id_62ed694f_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT\n)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "INSERT INTO `wagtailsearch_indexentry` (`content_type_id`, `object_id`, `title_norm`, `autocomplete`, `title`, `body`) VALUES (10002, '40001', 1.0, 'Home', 'Home', '')",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "panic",
+          "nil pointer dereference",
+          "ReCalcNodeStats",
+          "finishIrregularIndexMaintenance"
+        ]
+      }
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT content_type_id,object_id,title_norm,autocomplete,title,body FROM wagtailsearch_indexentry",
+      "expected_rows": [
+        [
+          10002,
+          "40001",
+          1.0,
+          "Home",
+          "Home",
+          ""
+        ]
+      ]
+    }
+  ]
+}

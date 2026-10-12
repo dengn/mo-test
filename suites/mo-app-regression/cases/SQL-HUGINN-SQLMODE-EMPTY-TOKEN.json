@@ -1,0 +1,41 @@
+{
+  "id": "SQL-HUGINN-SQLMODE-EMPTY-TOKEN",
+  "title": "Huginn Rails session sql_mode assignment rejects empty comma tokens",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Native Rails8.1.4 strict:false mode normalization creates adjacent comma when stripping STRICT_TRANS_TABLES; reduced session assignment isolates parsing",
+  "steps": [
+    {
+      "phase": "trigger",
+      "sql": "SET @@SESSION.sql_mode='ONLY_FULL_GROUP_BY,,NO_AUTO_VALUE_ON_ZERO'",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "the value is invalid"
+        ]
+      }
+    }
+  ],
+  "postchecks": [
+    {
+      "sql": "SET @@SESSION.sql_mode='NO_AUTO_VALUE_ON_ZERO'",
+      "expected_rows": []
+    },
+    {
+      "sql": "SELECT @@SESSION.sql_mode",
+      "expected_rows": [
+        [
+          "NO_AUTO_VALUE_ON_ZERO"
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT 1",
+      "expected_rows": [
+        [
+          1
+        ]
+      ]
+    }
+  ]
+}

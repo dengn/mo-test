@@ -1,0 +1,28 @@
+{
+  "id": "PASS-JSON-UNICODE",
+  "title": "JSON and four byte Unicode values",
+  "panic": false,
+  "known_issue": false,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE values_probe(id INT PRIMARY KEY,payload JSON,label TEXT)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO values_probe VALUES(1,'{\"value\":\"中文 😀𠮷\"}','中文 😀𠮷')"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,label,JSON_UNQUOTE(JSON_EXTRACT(payload,'$.value')) FROM values_probe",
+      "expected_rows": [
+        [
+          1,
+          "中文 😀𠮷",
+          "中文 😀𠮷"
+        ]
+      ]
+    }
+  ]
+}

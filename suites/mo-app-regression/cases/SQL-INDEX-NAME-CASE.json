@@ -1,0 +1,31 @@
+{
+  "id": "SQL-INDEX-NAME-CASE",
+  "title": "Index identifier case is folded",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE index_probe(id INT PRIMARY KEY)"
+    },
+    {
+      "phase": "setup",
+      "sql": "CREATE INDEX IDX_mo_probe_test ON index_probe(id)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT INDEX_NAME FROM information_schema.STATISTICS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='index_probe' AND INDEX_NAME<>'PRIMARY'",
+      "expected_rows": [
+        [
+          "IDX_mo_probe_test"
+        ]
+      ],
+      "known_bad_rows": [
+        [
+          "idx_mo_probe_test"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "PANIC-01",
+  "title": "Shiori Boolean fulltext single quote",
+  "panic": true,
+  "known_issue": true,
+  "fixture_origin": "Actual SHOW CREATE TABLE of retained native Shiori fixture; new synthetic non-private bookmark",
+  "trigger_origin": "Original prepared SELECT with its two original bound parameter values rendered as literals",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE `bookmark` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `url` text NOT NULL,\n  `title` text NOT NULL,\n  `excerpt` text NOT NULL DEFAULT (''),\n  `author` text NOT NULL DEFAULT (''),\n  `public` bool NOT NULL DEFAULT 0,\n  `content` text NOT NULL DEFAULT (''),\n  `html` text NOT NULL DEFAULT (''),\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),\n  `has_content` bool NOT NULL DEFAULT 0,\n  `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `bookmark_url_unique` (`url`(255)),\n FULLTEXT (`title`,`excerpt`,`content`),\n  KEY `idx_created_at` (`created_at`),\n  KEY `idx_modified_at` (`modified_at`)\n)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO bookmark (id,url,title,excerpt,content) VALUES (1,'https://owned.invalid/example','test title','test excerpt','test content')"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,url,title,excerpt,author,public,created_at,modified_at,content <> \"\" AS has_content\nFROM bookmark\nWHERE 1 AND (\n    url LIKE '%\"%' OR\n    id IN (SELECT id FROM bookmark\n           WHERE MATCH(title, excerpt, content) AGAINST ('\"' IN BOOLEAN MODE))\n)\nORDER BY id",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "panic",
+          "slice bounds out of range [1:0]",
+          "ParsePatternInBooleanMode"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "observe-all",
+    "expected_exit": 0,
+    "actual_exit": 0,
+    "exit_matched": true
+  },
+  {
+    "name": "strict-defects",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "exit_matched": true
+  },
+  {
+    "name": "wrong-commit",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "exit_matched": true
+  },
+  {
+    "name": "disk-default",
+    "expected_exit": 2,
+    "actual_exit": 2,
+    "exit_matched": true
+  }
+]

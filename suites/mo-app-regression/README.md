@@ -1,0 +1,88 @@
+# 开源应用自动化回归
+
+直接连接真实 MatrixOne，启动固定版本的原生应用，执行业务、权限、逐值 SQL 核对和真实进程重启；每次新建随机测试库，输出 JSON 和 JUnit XML。此套件可独立执行，无需还原 mo-test 的历史分卷。
+
+| 范围 | 当前覆盖 |
+| --- | --- |
+| 可独立运行的原生应用 | Gotify v3.1.1、Blocky v0.35.0、Plik v1.4.2、Ergo v2.19.1，共 4 个；官方 release / 二进制 SHA-256 固定 |
+| SQL 回归 | 20 个 fixture：4 个 panic、13 个其他已知问题、3 个正向对照；每个保留完整 SQL、错误签名、值及约束断言 |
+| 历史应用运行 | 61 个真实尝试、58 个基本业务通过；其余原生驱动仍待迁移，不计为自动化覆盖 |
+| 候选目录 | 1000 项、939 项未运行；星数与许可证为记录时的快照 |
+| CI | 手动 GitHub Actions + workflow_call，可接入现有流水线；本次本地运行结果见 [验证记录](VALIDATION.md) |
+
+独立项目导入自 [matrixorigin/matrixone-app-regression](https://github.com/matrixorigin/matrixone-app-regression/tree/e3f59736522ec3128cc47b541d292fafc6dcfbd1)，身份与文件原始 hash 见 [upstream-import.json](upstream-import.json)。[inventory.json](inventory.json) 记录历史状态，[MIGRATION.csv](MIGRATION.csv) 按星数排列待迁移项目，[1000 项 CSV](catalog/projects-1000.csv) / [JSON](catalog/projects-1000.json) 保留候选和运行状态。此套件与原有 360,000 / 600,000 条历史 case 分开计数，不修改原有统计。
+
+## 安装与运行
+
+需要 Linux x86_64、Python 3.12、能够创建数据库的专用 MatrixOne 测试账号、至少 2 GiB 空闲磁盘。首次原生运行下载固定官方 release；依赖下载保留正常代理与 TLS 校验。
+
+```bash
+cd suites/mo-app-regression
+python3 -m venv .venv
+.venv/bin/python -m pip install --require-hashes -r requirements.lock
+.venv/bin/python verify.py
+.venv/bin/python -m unittest discover -s tests -v
+export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
+# MO_PASSWORD 从测试环境密钥提供，不写进仓库。
+.venv/bin/python run.py --profile smoke --out artifacts/smoke-001
+```
+
+`smoke` 顺序执行 3 个正向 SQL 对照和全部 4 个原生应用。一个应用失败仍继续执行后面的驱动，最终返回失败；无报告、空报告或报告与退出码矛盾也会失败。输出目录必须是新目录，避免覆盖历史证据。
+
+```bash
+# 只运行一个应用；--app 可重复。SQL-only profile 不接受 --app。
+.venv/bin/python run.py --profile native --app plik --out artifacts/plik-001
+# 仅正向 SQL
+.venv/bin/python run.py --profile controls --out artifacts/controls-001
+# 严格门禁：已知问题存在时返回 1。
+.venv/bin/python run.py --profile defects --out artifacts/defects-001
+# 专用隔离实例上显式加入 panic 用例。
+.venv/bin/python run.py --profile defects --include-panic --out artifacts/panic-001
+# 观察模式允许精确匹配的 known_failure，但 JSON 中 passed 仍是 false。
+.venv/bin/python run.py --profile observe --include-panic --out artifacts/observe-001
+# 有限负载配置；不代表已达到极限容量。
+.venv/bin/python run.py --profile load --out artifacts/load-001
+# 仅列出命令，不连接数据库。
+.venv/bin/python run.py --profile smoke --list
+```
+
+所有 profile 可传 `--expected-commit <完整40位SHA>`，连接版本不匹配时在创建测试库前阻止执行。运行时短 SHA 匹配仍需与源码、官方构建和二进制 hash 证据合用；[提交新 issue 前的 main 验证要求](MAIN-VERIFICATION.md)继续适用。
+
+可用 `--app-binary-dir /path/to/pinned-binaries` 提供名为 `gotify-linux-amd64`、`blocky`、`plikd`、`ergo` 的官方二进制，驱动逐一校验 SHA。离线环境需事先安装锁定的 Python wheel 并提供二进制；不会自动跳过 hash。Gotify 保留独立 `--archive` 入口。
+
+## 回归和负载边界
+
+| 应用 | 基本驱动 | load profile |
+| --- | --- | --- |
+| Gotify | 原生账号、应用/客户端、错误认证、16 条并发消息、分页、精确值和归属、重启 | 128 消息 / 4 workers |
+| Blocky | 原生 DNS 和 GORM 迁移、64 查询、NXDOMAIN/拦截、逐条 SQL 日志、Unicode、重启后写入 | 1024 查询 / 32 workers |
+| Plik | 11 个原生迁移、密码/cookie/CSRF、权限、16 文件的原字节/MD5/Unicode、SQL 关系、重启和删除 | 256 文件 / 16 workers |
+| Ergo | 原生账号/频道、16 消息、成员权限、CHATHISTORY 分页、二进制 msgid、SQL 逐值、重启 | 1024 消息 / 8 writers，显式关闭原生 fakelag |
+
+Ergo 仅把原生 MySQL 聊天历史后端接到 MO，账号/频道仍使用原生 BuntDB。Blocky DNS ACK 还必须与持久化日志核对；缺失不会算通过。已有高负载失败和恢复仍保留在独立项目证据里，后续成功不会覆盖早期失败。完整 UI、插件、已有数据升级和生产长期稳定性不属于本轮覆盖。
+
+入口在执行前检查剩余磁盘，默认要求 2048 MiB，`--min-free-mib` 最低 128；自定义值写入报告。原生低阈值验证必须提供已有的同 SHA 二进制；Blocky/Plik 限制为基本工作量，load profile 至少要求 2048 MiB。该检查是入场检查，运行中资源上限由专用 runner / 容器控制；不要把固定的有限负载当作自动饱和测试。本次磁盘不足，只用已有二进制及显式较低入场阈值验证基本驱动，没有执行 load profile。
+
+## CI 接入
+
+配置仓库密钥 `MO_TEST_HOST`、`MO_TEST_PORT`、`MO_TEST_USER`、`MO_TEST_PASSWORD`，使用能访问专用测试实例的 `[self-hosted, Linux, X64]` runner。工作流 [.github/workflows/app-regression.yml](../../.github/workflows/app-regression.yml) 支持手动选择 profile / app / panic / commit，也可被现有 CI 调用：
+
+```yaml
+jobs:
+  native-apps:
+    uses: dengn/mo-test/.github/workflows/app-regression.yml@<reviewed-commit>
+    with:
+      profile: smoke
+      expected_commit: <actual-matrixone-build-full-sha>
+    secrets: inherit
+```
+
+`defects` 始终是严格门禁，已知失败不会被忽略；`observe` 用于诊断，不能替代发布门禁。panic 默认关闭，仅允许在 defects / observe 下显式开启。工作流只上传 `artifacts/` 结构化结果，私有 `runtime/` 配置、应用日志和凭据不上传。
+
+每个驱动仅创建随机 `mo_reg_*` 新库，不写已有应用库、不自动 DROP。测试库保留便于诊断；生命周期管理只处理本套件确实创建的测试库。原生进程由本轮驱动停止，私有目录 0700、日志及配置 0600。不得上传 runtime、环境变量转储或任意未经筛选的应用日志。
+
+## 继续迁移项目
+
+已完成适配的项目可以按同一接口继续接入。每个新驱动需要固定源码/release 身份、可复现依赖与适配、原生建库/迁移、真实业务和拒绝路径、逐值数据/关联/权限断言、真实重启及失败退出码，且与旧工作目录和账号解耦。通过独立运行后再把 inventory 的 pending 改为 implemented，并更新入口、工作流和清单 hash。
+
+Huginn 与 Documize 的实验适配源代码已保存在 [adapters/](adapters/README.md)，尚未成为第五/第六个独立驱动。其原始 SQL 回归已纳入 `cases/`。其他应用仍按 MIGRATION.csv 的原状态跟踪；重启、压力或迁移失败不能被“基本业务通过”掩盖。

@@ -1,0 +1,35 @@
+{
+  "id": "PASS-GENERATED-UPPER",
+  "title": "Stored UPPER index, Unicode and NULL semantics",
+  "panic": false,
+  "known_issue": false,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE expr_probe(id INT PRIMARY KEY,email VARCHAR(254),email_upper VARCHAR(254) GENERATED ALWAYS AS (UPPER(email)) STORED)"
+    },
+    {
+      "phase": "setup",
+      "sql": "CREATE INDEX idx_upper ON expr_probe(email_upper)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO expr_probe(id,email) VALUES(1,'MiXeD中文😀𠮷@owned.invalid'),(2,NULL)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,email_upper FROM expr_probe ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          "MIXED中文😀𠮷@OWNED.INVALID"
+        ],
+        [
+          2,
+          null
+        ]
+      ]
+    }
+  ]
+}

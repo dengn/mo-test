@@ -1,0 +1,27 @@
+{
+  "id": "SQL-COMBINED-FK",
+  "title": "ADD COLUMN plus ADD FK restriction",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE parent(id INT PRIMARY KEY)"
+    },
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE child(id INT PRIMARY KEY)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "ALTER TABLE child ADD COLUMN parent_id INT NULL, ADD CONSTRAINT combined_fk FOREIGN KEY(parent_id) REFERENCES parent(id)",
+      "expected_error": {
+        "code": 20301,
+        "contains": [
+          "unsupported alter option in copy mode"
+        ]
+      }
+    }
+  ]
+}

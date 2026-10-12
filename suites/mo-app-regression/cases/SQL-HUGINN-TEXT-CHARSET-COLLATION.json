@@ -1,0 +1,67 @@
+{
+  "id": "SQL-HUGINN-TEXT-CHARSET-COLLATION",
+  "title": "Huginn native CHANGE TEXT charset/collation migration",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Native 20140813110107 SetCharsetForMysql migration; nullable TEXT with Unicode/case/NULL fixtures and preserved PK",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE h_text(id INT PRIMARY KEY,options TEXT NULL)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO h_text VALUES(1,'AbC 中文 😀𠮷'),(2,'abc 中文 😀𠮷'),(3,NULL)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "ALTER TABLE h_text CHANGE options options text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL",
+      "expected_error": {
+        "code": 20105,
+        "contains": [
+          "unsupport column definition"
+        ]
+      }
+    }
+  ],
+  "on_failure_postchecks": [
+    {
+      "sql": "ALTER TABLE h_text CHANGE options options text DEFAULT NULL",
+      "expected_rows": []
+    }
+  ],
+  "postchecks": [
+    {
+      "sql": "SELECT id,options FROM h_text ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          "AbC 中文 😀𠮷"
+        ],
+        [
+          2,
+          "abc 中文 😀𠮷"
+        ],
+        [
+          3,
+          null
+        ]
+      ]
+    },
+    {
+      "sql": "SELECT id FROM h_text WHERE options='AbC 中文 😀𠮷' ORDER BY id",
+      "expected_rows": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "sql": "INSERT INTO h_text VALUES(1,'duplicate')",
+      "expected_rejection": {
+        "code": 1062,
+        "contains": []
+      }
+    }
+  ]
+}

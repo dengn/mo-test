@@ -1,0 +1,89 @@
+{
+  "app": "root-gg/plik",
+  "version": "1.4.2",
+  "commit": "ed7f43fbe1bd0a8a3d3365fd83c17c75e9ee4bcc",
+  "binary_sha256": "e54035ccc6a864cc27f84dc1ba4ce986c0aa86cd3e9194687a8e86e819def060",
+  "schema": "mo_reg_plik_c1f7d5795f604363",
+  "native_runtime_attempted": true,
+  "native_GORM_gormigrate_initialization": true,
+  "source_edits": false,
+  "native_password_auth_and_CSRF_retained": true,
+  "min_free_mib": 128,
+  "checks": [
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_migration_admin_and_health",
+      "passed": true
+    },
+    {
+      "name": "native_password_login",
+      "passed": true
+    },
+    {
+      "name": "anonymous_and_invalid_CSRF_denied_no_writes",
+      "passed": true
+    },
+    {
+      "name": "native_nonadmin_user_and_admin_denial",
+      "passed": true
+    },
+    {
+      "name": "native_upload",
+      "passed": true
+    },
+    {
+      "name": "concurrent_native_file_uploads",
+      "passed": true,
+      "files": 16,
+      "workers": 4,
+      "seconds": 0.2516
+    },
+    {
+      "name": "exact_native_binary_and_Unicode_downloads",
+      "passed": true
+    },
+    {
+      "name": "cross_user_and_anonymous_delete_denied",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_file_values_and_upload_owner",
+      "passed": true
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_native_session",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_file_values_and_upload_owner",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_durability",
+      "passed": true
+    },
+    {
+      "name": "restart_exact_downloads",
+      "passed": true
+    },
+    {
+      "name": "native_delete_no_longer_downloadable",
+      "passed": true
+    },
+    {
+      "name": "native_delete_database_status",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "native_migration_records": 11,
+  "time_utc": "2026-10-12T22:44:57Z"
+}

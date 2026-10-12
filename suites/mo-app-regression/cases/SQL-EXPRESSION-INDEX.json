@@ -1,0 +1,23 @@
+{
+  "id": "SQL-EXPRESSION-INDEX",
+  "title": "Nonunique UPPER expression index",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE account_emailaddress(id INT PRIMARY KEY,email VARCHAR(254))"
+    },
+    {
+      "phase": "trigger",
+      "sql": "CREATE INDEX account_email_upper ON account_emailaddress((UPPER(email)))",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "unsupported index which using expression as keypart"
+        ]
+      }
+    }
+  ]
+}

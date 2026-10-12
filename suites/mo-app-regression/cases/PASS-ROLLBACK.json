@@ -1,0 +1,39 @@
+{
+  "id": "PASS-ROLLBACK",
+  "title": "Explicit transaction rollback exact values",
+  "panic": false,
+  "known_issue": false,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE txn_probe(id INT PRIMARY KEY,value INT)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO txn_probe VALUES(1,17)"
+    },
+    {
+      "phase": "setup",
+      "sql": "START TRANSACTION"
+    },
+    {
+      "phase": "setup",
+      "sql": "UPDATE txn_probe SET value=99 WHERE id=1"
+    },
+    {
+      "phase": "setup",
+      "sql": "ROLLBACK"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,value FROM txn_probe",
+      "expected_rows": [
+        [
+          1,
+          17
+        ]
+      ]
+    }
+  ]
+}

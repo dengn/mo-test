@@ -1,0 +1,722 @@
+{
+  "started_at_utc": "2026-10-12T22:45:44Z",
+  "cases": [
+    {
+      "id": "PASS-GENERATED-UPPER",
+      "schema": "mo_reg_a24e4375d0fc4449",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE expr_probe(id INT PRIMARY KEY,email VARCHAR(254),email_upper VARCHAR(254) GENERATED ALWAYS AS (UPPER(email)) STORED)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE INDEX idx_upper ON expr_probe(email_upper)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO expr_probe(id,email) VALUES(1,'MiXeD中文😀𠮷@owned.invalid'),(2,NULL)",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,email_upper FROM expr_probe ORDER BY id",
+          "rows": [
+            [
+              1,
+              "MIXED中文😀𠮷@OWNED.INVALID"
+            ],
+            [
+              2,
+              null
+            ]
+          ],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ed38b73ed0906778ec3f2b22fa9d3719424271746e8017115018a33ae21bd801",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.072
+    },
+    {
+      "id": "PASS-JSON-UNICODE",
+      "schema": "mo_reg_1885af03bff94aa7",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE values_probe(id INT PRIMARY KEY,payload JSON,label TEXT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO values_probe VALUES(1,'{\"value\":\"中文 😀𠮷\"}','中文 😀𠮷')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,label,JSON_UNQUOTE(JSON_EXTRACT(payload,'$.value')) FROM values_probe",
+          "rows": [
+            [
+              1,
+              "中文 😀𠮷",
+              "中文 😀𠮷"
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ef0136846bf253ecb7186280d9e8b604e030316ba6bb4bfe43cffd561eb7881f",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.046
+    },
+    {
+      "id": "PASS-ROLLBACK",
+      "schema": "mo_reg_e04787e07ec74d3c",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE txn_probe(id INT PRIMARY KEY,value INT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO txn_probe VALUES(1,17)",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "START TRANSACTION",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "UPDATE txn_probe SET value=99 WHERE id=1",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "ROLLBACK",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,value FROM txn_probe",
+          "rows": [
+            [
+              1,
+              17
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "bea17ef1e29472973faed86d94ba4d28f412e092808c3442b0359b438dc8f116",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.049
+    },
+    {
+      "id": "SQL-CHECK-DROP-CONSTRAINT",
+      "schema": "mo_reg_6fe893b9958049af",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE checks DROP CONSTRAINT chk_minimum",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: Can't DROP 'chk_minimum'; check that column/key exists"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "fc09cd6c441a47a62f84b1167dbe9750f6a95a231a59ade8022bcb8b188341b4",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.035
+    },
+    {
+      "id": "SQL-CHECK-DROP",
+      "schema": "mo_reg_aa0d261d8fe14400",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE checks DROP CHECK chk_minimum",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 29 near \" CHECK chk_minimum\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "76595db4d033e1d748c223d0c10ac74ef18c8ab362dbf31a73769df7027f81b0",
+      "postchecks": [
+        {
+          "sql": "INSERT INTO checks VALUES (1,-1)",
+          "passed": true,
+          "error_code": 3819
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.04
+    },
+    {
+      "id": "SQL-COMBINED-FK",
+      "schema": "mo_reg_3fe2b322d44349dd",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE parent(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE child(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE child ADD COLUMN parent_id INT NULL, ADD CONSTRAINT combined_fk FOREIGN KEY(parent_id) REFERENCES parent(id)",
+          "rows": null,
+          "error": [
+            20301,
+            "invalid input: unsupported alter option in copy mode: add constraint combined_fk foreign key fk_0 (parent_id) references parent(id)"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "96500cbc146408a6548ea0fbb7775dd5c0f68186b130e032c76fac9fdafe1672",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.045
+    },
+    {
+      "id": "SQL-EXPRESSION-INDEX",
+      "schema": "mo_reg_91a376a3fd394af9",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE account_emailaddress(id INT PRIMARY KEY,email VARCHAR(254))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "CREATE INDEX account_email_upper ON account_emailaddress((UPPER(email)))",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: unsupported index which using expression as keypart"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "3bd6573ac5959d2c55d7341ed77895621236743f66d75af80de006282855d367",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.038
+    },
+    {
+      "id": "SQL-FULLTEXT-INSERT-ID",
+      "schema": "mo_reg_673ab55a520340bb",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE id_probe(id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,label VARCHAR(40))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "ALTER TABLE id_probe ADD FULLTEXT label_ft(label)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO id_probe(label) VALUES('small')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,LAST_INSERT_ID() FROM id_probe",
+          "rows": [
+            [
+              1,
+              2
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "65e116fc95a7e98bd5444940a3cec82a671bcf1e3219ad87179b5cac0ee7c5af",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.082
+    },
+    {
+      "id": "SQL-HUGINN-SQLMODE-EMPTY-TOKEN",
+      "schema": "mo_reg_ef6c1cbbd5024199",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "SET @@SESSION.sql_mode='ONLY_FULL_GROUP_BY,,NO_AUTO_VALUE_ON_ZERO'",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: the value is invalid"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "3835c1cc66c8aa406ea1e9fd541ec99cc95a4703b79c5aa4b0f06ae2956ff55d",
+      "postchecks": [
+        {
+          "sql": "SET @@SESSION.sql_mode='NO_AUTO_VALUE_ON_ZERO'",
+          "passed": true,
+          "rows": []
+        },
+        {
+          "sql": "SELECT @@SESSION.sql_mode",
+          "passed": true,
+          "rows": [
+            [
+              "NO_AUTO_VALUE_ON_ZERO"
+            ]
+          ]
+        },
+        {
+          "sql": "SELECT 1",
+          "passed": true,
+          "rows": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.029
+    },
+    {
+      "id": "SQL-HUGINN-TEXT-CHARSET-COLLATION",
+      "schema": "mo_reg_313c8dfbd7de4c6c",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE h_text(id INT PRIMARY KEY,options TEXT NULL)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO h_text VALUES(1,'AbC 中文 😀𠮷'),(2,'abc 中文 😀𠮷'),(3,NULL)",
+          "rows": [],
+          "affected_rows": 3,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE h_text CHANGE options options text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL",
+          "rows": null,
+          "error": [
+            20105,
+            "not supported: unsupport column definition <nil>"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "2f819486957e3d97425dbf8519b85dbe68d0f718446f7a327c8b2d5a8c220349",
+      "postchecks": [
+        {
+          "sql": "SELECT id,options FROM h_text ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              "AbC 中文 😀𠮷"
+            ],
+            [
+              2,
+              "abc 中文 😀𠮷"
+            ],
+            [
+              3,
+              null
+            ]
+          ]
+        },
+        {
+          "sql": "SELECT id FROM h_text WHERE options='AbC 中文 😀𠮷' ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO h_text VALUES(1,'duplicate')",
+          "passed": true,
+          "error_code": 1062
+        },
+        {
+          "sql": "ALTER TABLE h_text CHANGE options options text DEFAULT NULL",
+          "passed": true,
+          "rows": []
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.087
+    },
+    {
+      "id": "SQL-INDEX-NAME-CASE",
+      "schema": "mo_reg_f755f7bd99324cfa",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE index_probe(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE INDEX IDX_mo_probe_test ON index_probe(id)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT INDEX_NAME FROM information_schema.STATISTICS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='index_probe' AND INDEX_NAME<>'PRIMARY'",
+          "rows": [
+            [
+              "idx_mo_probe_test"
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "2b2e4464e6ef49adacbe8cc88d2127090c1397500b8bd3a9e42c010d204ab0fb",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.07
+    },
+    {
+      "id": "SQL-JSON-DEFAULT",
+      "schema": "mo_reg_7ff1a5c51a824fcf",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "CREATE TABLE json_default (id INT, payload JSON DEFAULT ('{}'))",
+          "rows": null,
+          "error": [
+            20105,
+            "not supported: JSON column 'payload' cannot have default value"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "30f89d3f6f34045e4a6a4c517035c2901563773c3f1343866730a28ce94cd248",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.032
+    },
+    {
+      "id": "SQL-LAST-INSERT-ID-ARG",
+      "schema": "mo_reg_89116a370c614aae",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "SELECT LAST_INSERT_ID(1)",
+          "rows": null,
+          "error": [
+            20203,
+            "invalid argument function last_insert_id, bad value [BIGINT]"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "ce2bb1b927c579ff75f6d99643840783c248753d079f483b6cd56f8327ea6e81",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.026
+    },
+    {
+      "id": "SQL-QUALIFIED-RANK",
+      "schema": "mo_reg_9372bec9db7b4ed0",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE rank_source (id INT PRIMARY KEY, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE rank_stage (id INT UNIQUE, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO rank_source VALUES (1,1,'old'),(2,42,'unchanged 中文')",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO rank_stage VALUES (1,9,'updated 中文')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.rank = t2.rank, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 54 near \"rank = t2.rank, t1.global_rank = t2.global_rank WHERE t1.id = t2.id\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "a5e8979fb42a28399d676502f989d2c71d11486c6dd5b8ec9ec09d89b8e62df4",
+      "postchecks": [
+        {
+          "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              1,
+              "old"
+            ],
+            [
+              2,
+              42,
+              "unchanged 中文"
+            ]
+          ]
+        },
+        {
+          "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.`rank` = t2.`rank`, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+          "passed": true,
+          "rows": []
+        },
+        {
+          "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              9,
+              "updated 中文"
+            ],
+            [
+              2,
+              42,
+              "unchanged 中文"
+            ]
+          ]
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.095
+    },
+    {
+      "id": "SQL-SELF-FK-ALTER",
+      "schema": "mo_reg_21e2c38bf00a42e5",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE self_probe(id INT PRIMARY KEY,parent_id INT NULL,URL VARCHAR(100),CONSTRAINT fk_self FOREIGN KEY(parent_id) REFERENCES self_probe(id))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO self_probe VALUES(1,NULL,'parent'),(2,1,'child')",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE self_probe MODIFY COLUMN URL VARCHAR(125)",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: can not find table by id 0: accountId: 0"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "1b6ca1ef6334a235e93db4ad8a05ed2fef7a75e159d9fafc0b38a49bc9d7df84",
+      "postchecks": [
+        {
+          "sql": "SELECT id,parent_id,URL FROM self_probe ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              null,
+              "parent"
+            ],
+            [
+              2,
+              1,
+              "child"
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO self_probe VALUES(3,999,'must reject')",
+          "passed": true,
+          "error_code": 1452
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.072
+    },
+    {
+      "id": "SQL-SUBSCRIPTION-ALIAS",
+      "schema": "mo_reg_dc971b171bdb40e6",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE doc_alias(id INT PRIMARY KEY,c_sub VARCHAR(200) NULL)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO doc_alias VALUES(1,'中文 😀𠮷'),(2,NULL)",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,c_sub AS subscription FROM doc_alias ORDER BY id",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 31 near \" subscription FROM doc_alias ORDER BY id\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "efffb88fdf5441545259b5f00bb372949c77195bcb362a03b11a2f77668a05cd",
+      "postchecks": [
+        {
+          "sql": "SELECT id,c_sub AS `subscription` FROM doc_alias ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              "中文 😀𠮷"
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO doc_alias(id) VALUES(1)",
+          "passed": true,
+          "error_code": 1062
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.05
+    }
+  ],
+  "policy": "strict",
+  "existing_databases_modified": false,
+  "fixtures_preserved": true,
+  "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "runtime_commit_matches": true,
+  "exit_code": 1,
+  "finished_at_utc": "2026-10-12T22:45:45Z"
+}

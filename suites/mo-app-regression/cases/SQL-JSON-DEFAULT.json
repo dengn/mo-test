@@ -1,0 +1,19 @@
+{
+  "id": "SQL-JSON-DEFAULT",
+  "title": "JSON default restriction",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "trigger",
+      "sql": "CREATE TABLE json_default (id INT, payload JSON DEFAULT ('{}'))",
+      "expected_error": {
+        "code": 20105,
+        "contains": [
+          "JSON column 'payload' cannot have default value"
+        ]
+      }
+    }
+  ]
+}
