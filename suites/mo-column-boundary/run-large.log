@@ -1,0 +1,3 @@
+START 100000_create 1300037
+END 100000_create error 32.599 {'type': 'OperationalError', 'code': 2013, 'message': "(2013, 'Lost connection to MySQL server during query')"}
+STOP: service health failed; no larger probe submitted

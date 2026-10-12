@@ -1,0 +1,35 @@
+{"level":"WARN","time":"2026/10/12 07:43:10.849354 +0000","caller":"disttae/engine.go:541","msg":"engine.database.not-found.in-cache","name":"column_boundary_20261012","account-id":0,"snapshot-ts":"1791790990847624704-1","cache-start":"1791786281183958418-0","txn":"70f70f4866a9b62a18dd9c1def803511/Active/S:1791790990847624704-1"}
+{"level":"WARN","time":"2026/10/12 07:43:10.849764 +0000","caller":"disttae/engine.go:541","msg":"engine.database.not-found.in-cache","name":"column_boundary_20261012","account-id":0,"snapshot-ts":"1791790990847624704-1","cache-start":"1791786281183958418-0","txn":"70f70f4866a9b62a18dd9c1def803511/Active/S:1791790990847624704-1"}
+{"level":"ERROR","time":"2026/10/12 07:43:21.748789 +0000","caller":"function/func_cast.go:10503","msg":"error: Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 658358 is larger than Dest length 65535","span":{"trace_id":"2c5911b6-3099-8780-0de7-d1fe8365687a","span_id":"dfb0e0c4daf40db5"}}
+{"level":"ERROR","time":"2026/10/12 07:43:21.749231 +0000","name":"cn-service","caller":"frontend/session.go:4574","msg":"Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 658358 is larger than Dest length 65535","service":"dd1dccb4-4d3c-41f8-b482-5251dc7a41bf","uuid":"dd1dccb4-4d3c-41f8-b482-5251dc7a41bf","session_info":"connectionId 273384|127.0.0.1:50032|account sys:mo_logger|goRoutineId 3596098|migrate-goRoutineId 0|01a12f10-5985-7f13-b33d-37e06cddce5b","role":"moadmin","session_id":"01a12f10-5985-7f13-b33d-37e06cddce5b","statement_id":"01a12f10-f072-7a40-9a05-c3f0933af7b6","txn_id":"70f70f4866a9b62a18dd9c1def803585","span":{"trace_id":"2c5911b6-3099-8780-0de7-d1fe8365687a","span_id":"dfb0e0c4daf40db5"}}
+{"level":"ERROR","time":"2026/10/12 07:43:21.749419 +0000","name":"cn-service","caller":"frontend/session.go:4574","msg":"query trace status","service":"dd1dccb4-4d3c-41f8-b482-5251dc7a41bf","uuid":"dd1dccb4-4d3c-41f8-b482-5251dc7a41bf","statement":"LOAD DATA INLINE FORMAT='csv', DATA='01a...378,0.0851\n' INTO TABLE system.statement_info FIELDS TERMINATED BY ','","status":"fail","error":"Can't cast column from TEXT type to TEXT type because of one or more values in that column. Src length 658358 is larger than Dest length 65535","txn_info":"70f70f4866a9b62a18dd9c1def803585:1791791001733706732-1","session_info":"connectionId 273384|127.0.0.1:50032|account sys:mo_logger|goRoutineId 3596098|migrate-goRoutineId 0|01a12f10-5985-7f13-b33d-37e06cddce5b","role":"moadmin","session_id":"01a12f10-5985-7f13-b33d-37e06cddce5b","statement_id":"01a12f10-f072-7a40-9a05-c3f0933af7b6","span":{"trace_id":"2c5911b6-3099-8780-0de7-d1fe8365687a","span_id":"dfb0e0c4daf40db5"}}
+{"level":"WARN","time":"2026/10/12 07:43:39.149668 +0000","caller":"disttae/stats.go:2586","msg":"there are some timeout items in the queue: [{419417 {14027349568821728887 4848467122207 0xbc3d080}} {427476 {14027350675762334241 5879379907010 0xbc3d080}}]"}
+panic: bad column idx 65533, table wide_100000
+
+goroutine 844 [running]:
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/catalog.(*Schema).Finalize(0x338058ed0000, 0x0?)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/catalog/schema.go:962 +0x748
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/catalog.DefsToSchema({0x338024368410, 0xb}, {0x33806a3b2000, 0x186a2, 0x338019f1c870?})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/catalog/model.go:150 +0x767
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.CreateRelation({0x0?, 0x0?}, {0xb5805f0, 0x33801c95a360}, {0x338024368410?, 0x337ff8b06588?}, 0x71cc1, {0x33806a3b2000, 0x186a2, 0x1cc00})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/adaptors.go:42 +0x45
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).HandleCreateRelation(0x337ff8b06b18?, {0xb54a6f0?, 0x338036985d60?}, {0xb58abb8, 0x338027bef040}, 0x3380995dc600)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:824 +0x292
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).handleRequests(_, {_, _}, {_, _}, _, _, {{0x3380917f92a0, 0x10, 0x10}, ...})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:318 +0x745
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).HandleCommit(_, {_, _}, {{0x3380917f92a0, 0x10, 0x10}, 0x0, {0x18ddb87c3d4cc178, 0x1, 0x0, ...}, ...}, ...)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:634 +0x32f
+github.com/matrixorigin/matrixone/pkg/txn/storage/tae.(*taeStorage).Commit(_, {_, _}, {{0x3380917f92a0, 0x10, 0x10}, 0x0, {0x18ddb87c3d4cc178, 0x1, 0x0, ...}, ...}, ...)
+	/workspace/matrixone-latest/pkg/txn/storage/tae/storage.go:186 +0xb1
+github.com/matrixorigin/matrixone/pkg/txn/service.(*service).Commit(0x3380039a4240, {0xb54a6f0, 0x338036985d60}, 0x33804dc79380, 0x33805c57a180)
+	/workspace/matrixone-latest/pkg/txn/service/service_cn_handler.go:278 +0xb42
+github.com/matrixorigin/matrixone/pkg/tnservice.(*store).handleCommit(0x337ffae46008, {0xb54a6b8, 0x338059e57680}, 0x33804dc79380, 0x33805c57a180)
+	/workspace/matrixone-latest/pkg/tnservice/store_rpc_handler.go:130 +0x19b
+github.com/matrixorigin/matrixone/pkg/txn/rpc.executor.exec({{0xc2ab41d7e2f0d45d, 0x1c5f836f0e0c, 0xbc3d080}, {0xb54a6b8, 0x338059e57680}, 0x33807de45e80, 0x33804dc79380, {0xb568e10, 0x33800f196fc0}, 0x337ffb246dd0, ...})
+	/workspace/matrixone-latest/pkg/txn/rpc/server.go:535 +0xec
+github.com/matrixorigin/matrixone/pkg/txn/rpc.(*server).handleTxnRequest(0x337ffb25a000, {0xb54a6b8, 0x337ffaef5440})
+	/workspace/matrixone-latest/pkg/txn/rpc/server.go:509 +0x334
+github.com/matrixorigin/matrixone/pkg/common/stopper.(*Stopper).doRunCancelableTask.func1()
+	/workspace/matrixone-latest/pkg/common/stopper/stopper.go:281 +0x5b
+created by github.com/matrixorigin/matrixone/pkg/common/stopper.(*Stopper).doRunCancelableTask in goroutine 584
+	/workspace/matrixone-latest/pkg/common/stopper/stopper.go:278 +0xba

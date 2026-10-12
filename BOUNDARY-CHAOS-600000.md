@@ -60,3 +60,10 @@ python3 tools/materialize.py --output /tmp/mo-test-restored
 ## Final execution update
 
 All 600,000 main cases have completed. See [the additional 100,000-case final record](suites/mo-stability-500000/EXTRA-100000-FINAL.md), the retained raw statuses, and [submitted issues](ISSUES.md). Rechecks do not increase the main count.
+
+## Additional column and GIS probes
+
+These follow-up probes are separate from the completed 600,000 main cases.
+
+- [Physical column boundary](suites/mo-column-boundary/README.md): 1,000 and 10,000 columns passed; 65,530 passed full-row read/write and forced-flush verification; 65,531/65,532 produced wrong tail reads; 65,533 and 100,000 caused a fatal server panic, reported as [#30011](https://github.com/matrixorigin/matrixone/issues/30011). The million-column probe was discontinued at the user's request. Service recovery and original errors are retained.
+- [Native GIS verification](suites/mo-gis-check/README.md): main and v4.2.5 source contain native GIS types; 106 runtime checks cover 18 type/alias forms, WKB/GeoJSON, SRID, math and spatial index maintenance. All checks matched expectations, including nine explicit unsupported/invalid-input rejections. Tested binary and inspected main revisions are recorded separately.

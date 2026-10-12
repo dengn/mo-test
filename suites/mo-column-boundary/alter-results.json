@@ -1,0 +1,1605 @@
+[
+  {
+    "initial_columns": 4095,
+    "primary_key": true,
+    "table": "alter_4095_pk",
+    "steps": [
+      {
+        "stage": "alter_4095_pk_create",
+        "sql_bytes": 53274,
+        "sql_sha256": "8325ecb884f17c2bbd4a6227c0edf4b82d51f4d9cfa3ba24c2b082a2cc01e585",
+        "before": {
+          "unix_time": 1791798696.2243922,
+          "memory.current": "25530474496",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459208236\nuser_usec 91362947186\nsystem_usec 26096261050\nnice_usec 0\nnr_periods 2832943\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3767783424,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "856284 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_pk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.332285824988503,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798696.5597503,
+          "memory.current": "25565192192",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459782759\nuser_usec 91363408763\nsystem_usec 26096373996\nnice_usec 0\nnr_periods 2832946\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3800461312,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "888048 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_pk_extra_a",
+        "sql_bytes": 48,
+        "sql_sha256": "2204f08e5bed98001c8d760d254681f0fc933d9129e9b82de3a444a1a1df432c",
+        "before": {
+          "unix_time": 1791798696.5611799,
+          "memory.current": "25565032448",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459783571\nuser_usec 91363409575\nsystem_usec 26096373996\nnice_usec 0\nnr_periods 2832946\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3800461312,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "888048 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_pk_extra_a.sql.gz",
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 1117,
+          "message": "(1117, 'Too many columns')"
+        },
+        "seconds": 0.00969904795056209,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798696.5715516,
+          "memory.current": "25564983296",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459794639\nuser_usec 91363420642\nsystem_usec 26096373996\nnice_usec 0\nnr_periods 2832946\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3800461312,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "888240 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_pk_extra_a_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "dd06ffc6c0f81f5ea8d12c84b3053ca095878bb8c2fa07220695048c83e5241a",
+        "before": {
+          "unix_time": 1791798696.5723176,
+          "memory.current": "25565245440",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459797098\nuser_usec 91363423102\nsystem_usec 26096373996\nnice_usec 0\nnr_periods 2832946\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3800309760,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "888240 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_pk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4095
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.08328149799490348,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798696.6566103,
+          "memory.current": "25566060544",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459912857\nuser_usec 91363508998\nsystem_usec 26096403858\nnice_usec 0\nnr_periods 2832947\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801522176,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "889672 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_pk_extra_b",
+        "sql_bytes": 48,
+        "sql_sha256": "411220ae02d1021386df3ee0cfb1c588ec140fefdfca5fa30bc95a0a624756a6",
+        "before": {
+          "unix_time": 1791798696.6570957,
+          "memory.current": "25566060544",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459912857\nuser_usec 91363508998\nsystem_usec 26096403858\nnice_usec 0\nnr_periods 2832947\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801522176,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "889672 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_pk_extra_b.sql.gz",
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 1117,
+          "message": "(1117, 'Too many columns')"
+        },
+        "seconds": 0.004295593011192977,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798696.6619997,
+          "memory.current": "25566060544",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459918587\nuser_usec 91363514610\nsystem_usec 26096403977\nnice_usec 0\nnr_periods 2832947\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801522176,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "889672 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_pk_extra_b_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "dd06ffc6c0f81f5ea8d12c84b3053ca095878bb8c2fa07220695048c83e5241a",
+        "before": {
+          "unix_time": 1791798696.6623273,
+          "memory.current": "25566060544",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117459918625\nuser_usec 91363514639\nsystem_usec 26096403985\nnice_usec 0\nnr_periods 2832947\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801522176,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "889672 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_pk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4095
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.09391057398170233,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798696.7570932,
+          "memory.current": "25566654464",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117460079078\nuser_usec 91363644853\nsystem_usec 26096434224\nnice_usec 0\nnr_periods 2832948\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801989120,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "890108 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4096,
+    "primary_key": true,
+    "table": "alter_4096_pk",
+    "steps": [
+      {
+        "stage": "alter_4096_pk_create",
+        "sql_bytes": 53287,
+        "sql_sha256": "bbd7d616c218273437a4e79f5c32b047cb34de8b5f9bc7e04145f13d8db93d52",
+        "before": {
+          "unix_time": 1791798696.7636104,
+          "memory.current": "25567178752",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117460085793\nuser_usec 91363645847\nsystem_usec 26096439945\nnice_usec 0\nnr_periods 2832948\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3801989120,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "890108 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_pk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.4105047209886834,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798697.1788158,
+          "memory.current": "25604141056",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117460638726\nuser_usec 91363964320\nsystem_usec 26096674405\nnice_usec 0\nnr_periods 2832952\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3837218816,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "924012 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_pk_extra_a",
+        "sql_bytes": 48,
+        "sql_sha256": "ecf3136e3add9e2545063c0cee706a6ed2d7437dc1dd951a7365f4ef0884925f",
+        "before": {
+          "unix_time": 1791798697.179398,
+          "memory.current": "25604018176",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117460638726\nuser_usec 91363964320\nsystem_usec 26096674405\nnice_usec 0\nnr_periods 2832952\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3837218816,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "924012 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_pk_extra_a.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.5320060640224256,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798698.712089,
+          "memory.current": "25708081152",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117462987264\nuser_usec 91365303094\nsystem_usec 26097684170\nnice_usec 0\nnr_periods 2832968\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937644544,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1022248 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_pk_extra_a_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "fbc8df15d47b9358aec71eedad34b96c32c219fe0c5ca6ac58a143d9b08bc5e2",
+        "before": {
+          "unix_time": 1791798698.7128174,
+          "memory.current": "25708007424",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117462987603\nuser_usec 91365303433\nsystem_usec 26097684170\nnice_usec 0\nnr_periods 2832968\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937644544,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1022248 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_pk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4097
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.10775982099585235,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798698.8211236,
+          "memory.current": "25708515328",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117463175784\nuser_usec 91365465697\nsystem_usec 26097710086\nnice_usec 0\nnr_periods 2832969\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3938471936,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1023084 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_pk_extra_b",
+        "sql_bytes": 48,
+        "sql_sha256": "41bae5be1693495fa1231e2df4c3abdb9755f97cd51eb7cffb452de36e183909",
+        "before": {
+          "unix_time": 1791798698.8231053,
+          "memory.current": "25708486656",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117463176111\nuser_usec 91365465952\nsystem_usec 26097710159\nnice_usec 0\nnr_periods 2832969\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3938471936,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1023084 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_pk_extra_b.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.3305538889835589,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798700.15452,
+          "memory.current": "25710940160",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465362519\nuser_usec 91367320332\nsystem_usec 26098042187\nnice_usec 0\nnr_periods 2832982\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937083392,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1021608 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_pk_extra_b_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "fbc8df15d47b9358aec71eedad34b96c32c219fe0c5ca6ac58a143d9b08bc5e2",
+        "before": {
+          "unix_time": 1791798700.1560144,
+          "memory.current": "25710911488",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465364467\nuser_usec 91367321847\nsystem_usec 26098042620\nnice_usec 0\nnr_periods 2832982\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937083392,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1021608 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_pk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4098
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.09987163305049762,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798700.2567143,
+          "memory.current": "25711882240",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465538442\nuser_usec 91367468467\nsystem_usec 26098069974\nnice_usec 0\nnr_periods 2832983\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937787904,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1022296 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4097,
+    "primary_key": true,
+    "table": "alter_4097_pk",
+    "steps": [
+      {
+        "stage": "alter_4097_pk_create",
+        "sql_bytes": 53300,
+        "sql_sha256": "84ab2e9ff47a146f3c0f224620045a01606f5a2143513b7a0291a8ed7e039658",
+        "before": {
+          "unix_time": 1791798700.2645404,
+          "memory.current": "25711742976",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465549018\nuser_usec 91367472567\nsystem_usec 26098076450\nnice_usec 0\nnr_periods 2832983\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3937787904,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1022296 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_pk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.22030955500667915,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798700.486458,
+          "memory.current": "25727995904",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465962908\nuser_usec 91367762945\nsystem_usec 26098199962\nnice_usec 0\nnr_periods 2832985\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3951665152,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1035592 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_pk_extra_a",
+        "sql_bytes": 48,
+        "sql_sha256": "4a72b13973379c73b59115b2cb99692df922c03400bbddaf2ee0db8ae5a3b1ba",
+        "before": {
+          "unix_time": 1791798700.487237,
+          "memory.current": "25727827968",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117465963446\nuser_usec 91367763364\nsystem_usec 26098200082\nnice_usec 0\nnr_periods 2832985\nnr_throttled 42839\nthrottled_usec 1739651172\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3951665152,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1035592 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_pk_extra_a.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.9115171530283988,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798702.3994884,
+          "memory.current": "25744994304",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117469582356\nuser_usec 91370472139\nsystem_usec 26099110216\nnice_usec 0\nnr_periods 2833005\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3965665280,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1049312 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_pk_extra_a_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "bf3952eb80547a28b55f65b7444a9654874598be2e5d4ccce564d4c216b8c601",
+        "before": {
+          "unix_time": 1791798702.4004002,
+          "memory.current": "25744912384",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117469586867\nuser_usec 91370473906\nsystem_usec 26099112960\nnice_usec 0\nnr_periods 2833005\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3965665280,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1049312 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_pk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4098
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.06614882900612429,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798702.4676387,
+          "memory.current": "25746370560",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117469691844\nuser_usec 91370578884\nsystem_usec 26099112960\nnice_usec 0\nnr_periods 2833005\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3966971904,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1050584 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_pk_extra_b",
+        "sql_bytes": 48,
+        "sql_sha256": "4311b44c2b26d5218e9df518ff6029b04cee1aa4a797195a7c852f15d0fd3b4a",
+        "before": {
+          "unix_time": 1791798702.4682198,
+          "memory.current": "25746354176",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117469691844\nuser_usec 91370578884\nsystem_usec 26099112960\nnice_usec 0\nnr_periods 2833005\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3966971904,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1050584 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_pk_extra_b.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.2927719610161148,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798703.7617462,
+          "memory.current": "25751519232",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117471725975\nuser_usec 91372200676\nsystem_usec 26099525299\nnice_usec 0\nnr_periods 2833018\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3968544768,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1051748 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_pk_extra_b_metadata",
+        "sql_bytes": 124,
+        "sql_sha256": "bf3952eb80547a28b55f65b7444a9654874598be2e5d4ccce564d4c216b8c601",
+        "before": {
+          "unix_time": 1791798703.7624176,
+          "memory.current": "25751519232",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117471727270\nuser_usec 91372201683\nsystem_usec 26099525586\nnice_usec 0\nnr_periods 2833018\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3968544768,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1051748 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_pk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4099
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.1047283920343034,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798703.8677187,
+          "memory.current": "25753108480",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117471876390\nuser_usec 91372326885\nsystem_usec 26099549504\nnice_usec 0\nnr_periods 2833019\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3969982464,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1053140 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4094,
+    "primary_key": false,
+    "table": "alter_4094_nopk",
+    "steps": [
+      {
+        "stage": "alter_4094_nopk_create",
+        "sql_bytes": 53251,
+        "sql_sha256": "135bceb25d448bb9ed6ad8c7fd6f526d8be1a5cc93ebc9d5bc8205d1ff5428af",
+        "before": {
+          "unix_time": 1791798703.873094,
+          "memory.current": "25753088000",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117471883961\nuser_usec 91372330800\nsystem_usec 26099553160\nnice_usec 0\nnr_periods 2833019\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3969982464,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1053140 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4094_nopk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.43615816603414714,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.3127103,
+          "memory.current": "25772101632",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472460315\nuser_usec 91372783729\nsystem_usec 26099676586\nnice_usec 0\nnr_periods 2833024\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986890752,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069504 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4094_nopk_extra_a",
+        "sql_bytes": 50,
+        "sql_sha256": "b6c0e4b1460b136b5b8114473e01ce9c2cee0ac0c4bbc421422b505a433cabd0",
+        "before": {
+          "unix_time": 1791798704.3134792,
+          "memory.current": "25771921408",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472461293\nuser_usec 91372784490\nsystem_usec 26099676803\nnice_usec 0\nnr_periods 2833024\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986890752,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069504 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4094_nopk_extra_a.sql.gz",
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 1117,
+          "message": "(1117, 'Too many columns')"
+        },
+        "seconds": 0.012669737974647433,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.3269327,
+          "memory.current": "25771593728",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472510625\nuser_usec 91372833780\nsystem_usec 26099676845\nnice_usec 0\nnr_periods 2833024\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986268160,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1068852 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4094_nopk_extra_a_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "75e5d902b9ad2b28467b651461f33e0f3caa93e6d1d2a539542c1d6c04abc99b",
+        "before": {
+          "unix_time": 1791798704.3274512,
+          "memory.current": "25771020288",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472510625\nuser_usec 91372833780\nsystem_usec 26099676845\nnice_usec 0\nnr_periods 2833024\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986268160,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1068548 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4094_nopk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4094
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.08244829101022333,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.4111013,
+          "memory.current": "25771995136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472738541\nuser_usec 91373039801\nsystem_usec 26099698740\nnice_usec 0\nnr_periods 2833025\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986755584,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069468 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4094_nopk_extra_b",
+        "sql_bytes": 50,
+        "sql_sha256": "d6d10a3dfa905712aa2f20a76c9181667d7fe3b7c36406f17de58866e207318d",
+        "before": {
+          "unix_time": 1791798704.4150016,
+          "memory.current": "25771995136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472743342\nuser_usec 91373042436\nsystem_usec 26099700906\nnice_usec 0\nnr_periods 2833025\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986755584,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069468 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4094_nopk_extra_b.sql.gz",
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 1117,
+          "message": "(1117, 'Too many columns')"
+        },
+        "seconds": 0.014524137019179761,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.4316523,
+          "memory.current": "25771995136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472757946\nuser_usec 91373052126\nsystem_usec 26099705819\nnice_usec 0\nnr_periods 2833025\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986755584,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069468 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4094_nopk_extra_b_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "75e5d902b9ad2b28467b651461f33e0f3caa93e6d1d2a539542c1d6c04abc99b",
+        "before": {
+          "unix_time": 1791798704.4322073,
+          "memory.current": "25771995136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472761276\nuser_usec 91373054717\nsystem_usec 26099706559\nnice_usec 0\nnr_periods 2833025\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3986755584,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069468 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4094_nopk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4094
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.06775942002423108,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.5024467,
+          "memory.current": "25772564480",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472862156\nuser_usec 91373144361\nsystem_usec 26099717795\nnice_usec 0\nnr_periods 2833026\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3987132416,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069824 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4095,
+    "primary_key": false,
+    "table": "alter_4095_nopk",
+    "steps": [
+      {
+        "stage": "alter_4095_nopk_create",
+        "sql_bytes": 53264,
+        "sql_sha256": "a210b0f3fc90d1435114237ebccead8ea50c9d8fa180444bc4cbfda0245420af",
+        "before": {
+          "unix_time": 1791798704.5119104,
+          "memory.current": "25772740608",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117472870434\nuser_usec 91373152638\nsystem_usec 26099717795\nnice_usec 0\nnr_periods 2833026\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3987132416,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1069824 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_nopk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.2376511209877208,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798704.7550325,
+          "memory.current": "25779437568",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117473193685\nuser_usec 91373432100\nsystem_usec 26099761585\nnice_usec 0\nnr_periods 2833028\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3991613440,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1073944 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_nopk_extra_a",
+        "sql_bytes": 50,
+        "sql_sha256": "938e6753eceb0e94d2b0da948138a1bf4281f297b52fd6cfe1cb5c7e63f76026",
+        "before": {
+          "unix_time": 1791798704.755653,
+          "memory.current": "25779146752",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117473196667\nuser_usec 91373434419\nsystem_usec 26099762247\nnice_usec 0\nnr_periods 2833028\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 3991613440,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1073944 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_nopk_extra_a.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.8214364839950576,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798706.577731,
+          "memory.current": "25846439936",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117475984790\nuser_usec 91375737266\nsystem_usec 26100247524\nnice_usec 0\nnr_periods 2833046\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4055474176,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1136380 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_nopk_extra_a_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "5a7ce2053fe7d5dbb6017ecdbe27e346b5f5e1b20eaf95392b17a58a3ec7ab2b",
+        "before": {
+          "unix_time": 1791798706.578595,
+          "memory.current": "25846439936",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117475984813\nuser_usec 91375737283\nsystem_usec 26100247529\nnice_usec 0\nnr_periods 2833046\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4055474176,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1136380 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_nopk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4096
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.10657179797999561,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798706.68572,
+          "memory.current": "25839513600",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117476175918\nuser_usec 91375881742\nsystem_usec 26100294175\nnice_usec 0\nnr_periods 2833047\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4048531456,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1129596 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_nopk_extra_b",
+        "sql_bytes": 50,
+        "sql_sha256": "cdc5cf2038ba22532ba908562e58c910056c8ac68ae4311a73aef066e7a1f91d",
+        "before": {
+          "unix_time": 1791798706.686367,
+          "memory.current": "25839513600",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117476175918\nuser_usec 91375881742\nsystem_usec 26100294175\nnice_usec 0\nnr_periods 2833047\nnr_throttled 42840\nthrottled_usec 1739651480\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4048531456,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1129596 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_nopk_extra_b.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.5328691080212593,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798708.2198553,
+          "memory.current": "25868423168",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117478886144\nuser_usec 91378278627\nsystem_usec 26100607517\nnice_usec 0\nnr_periods 2833063\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4073181184,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1153596 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4095_nopk_extra_b_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "5a7ce2053fe7d5dbb6017ecdbe27e346b5f5e1b20eaf95392b17a58a3ec7ab2b",
+        "before": {
+          "unix_time": 1791798708.2220623,
+          "memory.current": "25868423168",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117478886960\nuser_usec 91378279443\nsystem_usec 26100607517\nnice_usec 0\nnr_periods 2833063\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4073181184,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1153596 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4095_nopk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4097
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.10837804299080744,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798708.3311834,
+          "memory.current": "25873534976",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117479029872\nuser_usec 91378404435\nsystem_usec 26100625437\nnice_usec 0\nnr_periods 2833064\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4078174208,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1158468 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4096,
+    "primary_key": false,
+    "table": "alter_4096_nopk",
+    "steps": [
+      {
+        "stage": "alter_4096_nopk_create",
+        "sql_bytes": 53277,
+        "sql_sha256": "0a7a1d172be07bdeb971af8a8da88aac7c7cb7434b40b15f44e52c1e5e8bafc5",
+        "before": {
+          "unix_time": 1791798708.3387094,
+          "memory.current": "25873498112",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117479036081\nuser_usec 91378408622\nsystem_usec 26100627458\nnice_usec 0\nnr_periods 2833064\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4078174208,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1158468 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_nopk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.34808748797513545,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798708.6981165,
+          "memory.current": "25881280512",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117479806721\nuser_usec 91379026071\nsystem_usec 26100780650\nnice_usec 0\nnr_periods 2833068\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4083793920,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1163800 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_nopk_extra_a",
+        "sql_bytes": 50,
+        "sql_sha256": "885e506d80d6ffc2b29f877840f80575a5fdfd45d15139c859cf5a6496aa299c",
+        "before": {
+          "unix_time": 1791798708.6987767,
+          "memory.current": "25881100288",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117479807398\nuser_usec 91379026597\nsystem_usec 26100780800\nnice_usec 0\nnr_periods 2833068\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4083793920,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1163800 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_nopk_extra_a.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.5983936279662885,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798710.2977788,
+          "memory.current": "25932251136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117482095914\nuser_usec 91380783171\nsystem_usec 26101312743\nnice_usec 0\nnr_periods 2833084\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4131082240,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1209968 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_nopk_extra_a_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "edae37adadf819e99367107404e4781d2f1f2c38d26e9ad4790ff323335a885c",
+        "before": {
+          "unix_time": 1791798710.298354,
+          "memory.current": "25932251136",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117482095932\nuser_usec 91380783185\nsystem_usec 26101312747\nnice_usec 0\nnr_periods 2833084\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4131082240,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1209968 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_nopk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4097
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.08369615097763017,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798710.383088,
+          "memory.current": "25933881344",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117482208954\nuser_usec 91380874188\nsystem_usec 26101334765\nnice_usec 0\nnr_periods 2833084\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4132855808,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1211692 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_nopk_extra_b",
+        "sql_bytes": 50,
+        "sql_sha256": "e95537bb03916e4ac2d1390e0558bfb59ffcfa7dc6e57fe567b5b1195b105aaa",
+        "before": {
+          "unix_time": 1791798710.3836606,
+          "memory.current": "25933881344",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117482208954\nuser_usec 91380874188\nsystem_usec 26101334765\nnice_usec 0\nnr_periods 2833084\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4132855808,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1211692 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_nopk_extra_b.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.6853489830391482,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798712.0695484,
+          "memory.current": "25964384256",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117484944951\nuser_usec 91382913212\nsystem_usec 26102031738\nnice_usec 0\nnr_periods 2833101\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4159770624,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1237868 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4096_nopk_extra_b_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "edae37adadf819e99367107404e4781d2f1f2c38d26e9ad4790ff323335a885c",
+        "before": {
+          "unix_time": 1791798712.0701704,
+          "memory.current": "25964384256",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117484945699\nuser_usec 91382913794\nsystem_usec 26102031905\nnice_usec 0\nnr_periods 2833101\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4159770624,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1237868 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4096_nopk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4098
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.24152860400499776,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798712.3125193,
+          "memory.current": "26013364224",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117485711770\nuser_usec 91383488402\nsystem_usec 26102223367\nnice_usec 0\nnr_periods 2833104\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4206256128,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1283132 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4097,
+    "primary_key": false,
+    "table": "alter_4097_nopk",
+    "steps": [
+      {
+        "stage": "alter_4097_nopk_create",
+        "sql_bytes": 53290,
+        "sql_sha256": "d9cb6643f5c7280c4350c541ed5a60c814ab919b37d137bcc099ab3a10a32c5d",
+        "before": {
+          "unix_time": 1791798712.3230836,
+          "memory.current": "26014105600",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117485736281\nuser_usec 91383502849\nsystem_usec 26102233431\nnice_usec 0\nnr_periods 2833104\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4206755840,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1283540 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_nopk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.6274443150032312,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798712.9545212,
+          "memory.current": "26036404224",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117487011326\nuser_usec 91384514174\nsystem_usec 26102497152\nnice_usec 0\nnr_periods 2833110\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4225835008,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1301884 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_nopk_extra_a",
+        "sql_bytes": 50,
+        "sql_sha256": "fc30af9c79eb9f3f8f0bc9f35b43ac755ba306f18fc9b7e410c33a3e48e1eaf3",
+        "before": {
+          "unix_time": 1791798712.9556692,
+          "memory.current": "26036121600",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117487012853\nuser_usec 91384515361\nsystem_usec 26102497491\nnice_usec 0\nnr_periods 2833110\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4225835008,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1301884 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_nopk_extra_a.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 1.0596883159596473,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798714.0159283,
+          "memory.current": "25988390912",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117488735418\nuser_usec 91386055664\nsystem_usec 26102679754\nnice_usec 0\nnr_periods 2833121\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4174348288,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1251700 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_nopk_extra_a_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "d6251fa60d038c747dfbe6c7c3752bc07c2ca0d8893f137bbb0ba16c43b30793",
+        "before": {
+          "unix_time": 1791798714.016696,
+          "memory.current": "25988390912",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117488736130\nuser_usec 91386055664\nsystem_usec 26102680466\nnice_usec 0\nnr_periods 2833121\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4174348288,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1251700 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_nopk_extra_a_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4098
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.06550286203855649,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798714.0827763,
+          "memory.current": "25989349376",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117488831804\nuser_usec 91386146512\nsystem_usec 26102685292\nnice_usec 0\nnr_periods 2833121\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4175413248,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1252712 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_nopk_extra_b",
+        "sql_bytes": 50,
+        "sql_sha256": "ab82da87b31ba95f8deb1322b9b9cd1279b2c0d4ebad17b6b2d94bb2fb6aa8a9",
+        "before": {
+          "unix_time": 1791798714.0833414,
+          "memory.current": "25989349376",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117488831835\nuser_usec 91386146536\nsystem_usec 26102685299\nnice_usec 0\nnr_periods 2833121\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4175413248,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1252712 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_nopk_extra_b.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.957374609017279,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798715.0413105,
+          "memory.current": "25976057856",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490216464\nuser_usec 91387407745\nsystem_usec 26102808719\nnice_usec 0\nnr_periods 2833131\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4158414848,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1236008 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_4097_nopk_extra_b_metadata",
+        "sql_bytes": 126,
+        "sql_sha256": "d6251fa60d038c747dfbe6c7c3752bc07c2ca0d8893f137bbb0ba16c43b30793",
+        "before": {
+          "unix_time": 1791798715.0419664,
+          "memory.current": "25976057856",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490217244\nuser_usec 91387408351\nsystem_usec 26102808892\nnice_usec 0\nnr_periods 2833131\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4158414848,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1236008 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_4097_nopk_extra_b_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4099
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.07204663602169603,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798715.1148825,
+          "memory.current": "25967095808",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490326330\nuser_usec 91387501321\nsystem_usec 26102825008\nnice_usec 0\nnr_periods 2833132\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4149723136,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1227520 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  },
+  {
+    "initial_columns": 4095,
+    "primary_key": true,
+    "table": "alter_multi_pk",
+    "steps": [
+      {
+        "stage": "alter_multi_pk_create",
+        "sql_bytes": 53275,
+        "sql_sha256": "3db94a12b3c5eef96b137f9b71f27f4db07b38b15fb864eaa97c546ae5492045",
+        "before": {
+          "unix_time": 1791798715.1181467,
+          "memory.current": "25967300608",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490329880\nuser_usec 91387504871\nsystem_usec 26102825008\nnice_usec 0\nnr_periods 2833132\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4149723136,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1227520 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_multi_pk_create.sql.gz",
+        "affected_rows": 0,
+        "result_rows": 0,
+        "result_columns": 0,
+        "rows": [],
+        "status": "success",
+        "seconds": 0.19713625800795853,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798715.3166387,
+          "memory.current": "25974411264",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490630303\nuser_usec 91387784848\nsystem_usec 26102845454\nnice_usec 0\nnr_periods 2833134\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4154507264,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1231992 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_multi_pk_add_two",
+        "sql_bytes": 73,
+        "sql_sha256": "d5a855646b11bfd22c8050b158db0f8a181492eee92ceba5a4c54c5eb212e48b",
+        "before": {
+          "unix_time": 1791798715.3175237,
+          "memory.current": "25974231040",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490630303\nuser_usec 91387784848\nsystem_usec 26102845454\nnice_usec 0\nnr_periods 2833134\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4154507264,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1231992 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_multi_pk_add_two.sql.gz",
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 1117,
+          "message": "(1117, 'Too many columns')"
+        },
+        "seconds": 0.007994070998393,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798715.32661,
+          "memory.current": "25974493184",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490666568\nuser_usec 91387821113\nsystem_usec 26102845454\nnice_usec 0\nnr_periods 2833134\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4154507264,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1231672 kB",
+          "Threads": "16"
+        }
+      },
+      {
+        "stage": "alter_multi_pk_metadata",
+        "sql_bytes": 125,
+        "sql_sha256": "175809469903926cc5a4985ad61c6233b20b4cda3c7e8bc7ea0b96a82114cf6b",
+        "before": {
+          "unix_time": 1791798715.327171,
+          "memory.current": "25973846016",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490666568\nuser_usec 91387821113\nsystem_usec 26102845454\nnice_usec 0\nnr_periods 2833134\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4153622528,
+          "pid": 402821,
+          "State": "R (running)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1231096 kB",
+          "Threads": "16"
+        },
+        "sql_file": "sql/alter_multi_pk_metadata.sql.gz",
+        "affected_rows": 1,
+        "result_rows": 1,
+        "result_columns": 1,
+        "rows": [
+          [
+            4095
+          ]
+        ],
+        "status": "success",
+        "seconds": 0.06931454001460224,
+        "guard_events": [],
+        "after": {
+          "unix_time": 1791798715.3971334,
+          "memory.current": "25975783424",
+          "memory.peak": "29919322112",
+          "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+          "cpu.stat": "usage_usec 117490819951\nuser_usec 91387966557\nsystem_usec 26102853393\nnice_usec 0\nnr_periods 2833135\nnr_throttled 42841\nthrottled_usec 1739717715\nnr_bursts 0\nburst_usec 0",
+          "memory_anon_kernel_bytes": 4155994112,
+          "pid": 402821,
+          "State": "S (sleeping)",
+          "VmHWM": "2559292 kB",
+          "VmRSS": "1233532 kB",
+          "Threads": "16"
+        }
+      }
+    ]
+  }
+]

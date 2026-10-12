@@ -4012,6 +4012,783 @@
       "sha256": "33c078b47f345ad969c13ff97d4bad838ba13c8eb8321d1bbfd5873933cf8f8e",
       "kind": "gzip_file",
       "original_path": "suites/mo-stability-500000/truncate-serial-recheck.jsonl"
+    },
+    {
+      "path": "suites/mo-column-boundary/65531-tail-results.json",
+      "bytes": 5101,
+      "sha256": "fad67c3ba2d51ae7f20f4810c250b6e6125c46ed4d0a9b2f9952fc69ef572a36",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/ISSUE-panic.md",
+      "bytes": 8039,
+      "sha256": "303be9f752a621e81fa4bceb5a22c6ef5da5ec34fdbe47d2ca106327632ea22c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/README.md",
+      "bytes": 4780,
+      "sha256": "7fc27a5de6e098d7cf76867623c878059e2955c336ded24e959d2fff274cb305",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/alter-results.json",
+      "bytes": 67888,
+      "sha256": "20023146378af9912da106b4f5e5698b0c7016aa2968a9f417f6bd31602ed23a",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/environment.json",
+      "bytes": 1324,
+      "sha256": "6ec6fb0718f4c4aaacfecf2e8b7f9855b4975332a04f48eb948b4e11923d855b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/final-health.json",
+      "bytes": 205,
+      "sha256": "57f8ef165cbcbd17c835b7d8b30e23b50bb97daf13c60774d67fb177f59aed67",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/flush-results.json",
+      "bytes": 10559,
+      "sha256": "8113cc0f34e3e7cb4d986e499bd9b961e2564e15a8140661c3e7b7599bad33b9",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/guard-events.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/last-state.json",
+      "bytes": 535,
+      "sha256": "1105401c6383a8de5fbdfa05c5d22c2c9620289eadd873b69e219776c5b5c926",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/million-stop.json",
+      "bytes": 149,
+      "sha256": "ee6cccd9b10e3855069e405e24b7103f55201a424c1594141d909cba3c0c2540",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/panic-100000.log",
+      "bytes": 2935,
+      "sha256": "37b2218b8fbfe0e668c2c3fea2497001afc3f45222cbfdf55d2bc4ea8713c971",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/panic-65533.log",
+      "bytes": 2901,
+      "sha256": "0b1fa4378cae0939bc30733493ac1098502fd082adf1ce439eff884f4266e84d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/published-issue.json",
+      "bytes": 256,
+      "sha256": "0f7fa10ee286067d52635c023c2817aca7350a7580cd487537e440933049354e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/recover.py",
+      "bytes": 2684,
+      "sha256": "e9c71019ddaa7b51960ae611ab8f6e40edbb3d6aadbdeb2680235f0bc2677c48",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/recovery-65533.json",
+      "bytes": 95,
+      "sha256": "1fbc1121e3757fd8fa4b278aecba83187a7a1e4ea280ea22db320b169db26d7c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/recovery-65533.log",
+      "bytes": 83,
+      "sha256": "9dc773302311b02f4fa7ea901480772b6e038503ef6156ed4826acd902ece98a",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/recovery-after-100000.json",
+      "bytes": 250,
+      "sha256": "9581904020bc5ad3cf7a202585985d97b2daf1bded05ce310aa45b74851bb797",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/resources.jsonl.gz",
+      "bytes": 109481,
+      "sha256": "1e42583f63783307ea4c868244b99acf162bbb4bbdb2c8d1b6731b46e5e3b28c",
+      "kind": "gzip_file",
+      "original_path": "suites/mo-column-boundary/resources.jsonl"
+    },
+    {
+      "path": "suites/mo-column-boundary/results.jsonl.gz",
+      "bytes": 6271,
+      "sha256": "d7dd446e35b05bb71d02b8c0572d499726dc34942035c6fd70229ef984cb03e8",
+      "kind": "gzip_file",
+      "original_path": "suites/mo-column-boundary/results.jsonl"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-65531-tail.log",
+      "bytes": 339,
+      "sha256": "c26606f181df0ce6b80154b91fdbce35e12855f5bb28d8cc0574f1d424d71082",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-alter.log",
+      "bytes": 3499,
+      "sha256": "e1e45846773206df78577e979697a82a0eea4a73e2298880dc3cb79020a035a9",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-boundary.log",
+      "bytes": 1069,
+      "sha256": "18fe3c849bbbec71105734d30f6b08310224847336bdf561930b5b490e80e8a8",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-flush.log",
+      "bytes": 4410,
+      "sha256": "efdab013fa0be2473aafe7cfcbde8ea49b734a3b3723aabb3c842a1e9f2e00e1",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-large.log",
+      "bytes": 226,
+      "sha256": "40c8a53c6bbcca6ddb38d3b18a11ce2e95a7b364df7257e76b6a7c698380e621",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-million.log",
+      "bytes": 350,
+      "sha256": "01e660aa616217a5eeb66f91026663aa0e97192e328dc83736b3b9891a1c6873",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-safe-boundary.log",
+      "bytes": 525,
+      "sha256": "3b32d5b6115b4d8c4f6c21c8e73f1da3d65cb9d8341a0ebbe7ed2c8b3f3ef0ce",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/run-small.log",
+      "bytes": 1022,
+      "sha256": "3208b505e9135ddb6b722f147c5f92e9651295fd01c6609ec75a73695c4d3fb7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/server-100000-delta.log",
+      "bytes": 5941,
+      "sha256": "135f9e87a12f6352f41c224a7623efa39b754817ba009f6c16b5d61e83edf54f",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/server-before-65533.log.gz",
+      "bytes": 17241,
+      "sha256": "b92a9a270e5951c09f4f3ec4fabdeb979dc233206a1f32d9a92cdce8861f54a8",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/server-before-column-crash.log.gz",
+      "bytes": 4672524,
+      "sha256": "8b35daaf770a4c719c1513db9e36a95978ff73cfde9111219aa5959d7f81ba3f",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000000_create.sql.gz",
+      "bytes": 2362083,
+      "sha256": "b2c5c366e7791eafe8a61d6bd6c53f21d21c8fe45d001e27a145ad8e672aa870",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/100000_create.sql.gz",
+      "bytes": 235943,
+      "sha256": "b1e92906ef59c86c63310b8e2fab7e72afad0d385ff60014f30bfa326ddc4d1b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_create.sql.gz",
+      "bytes": 23288,
+      "sha256": "81dae4fd3a0281c32702286c05db578d2e2fa3d6af7943fa4a16905daaeb5089",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_insert_all.sql.gz",
+      "bytes": 22278,
+      "sha256": "05cf42553503a9ad94a33cf59b1240af7d00b3a2fd8bbabe656d13e8dd31dd70",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_metadata_count.sql.gz",
+      "bytes": 140,
+      "sha256": "9356727243f9188ad36acd5398cac3bed5a1fd20d34b05685db3450817b1c020",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_restore_tail.sql.gz",
+      "bytes": 82,
+      "sha256": "d4c5ff43cd3ac8df9544fbb23aadedc634d2bfa7226715deee26be93de34dc90",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_select_edges.sql.gz",
+      "bytes": 77,
+      "sha256": "ab1200cf7bbb7705a360f1eba0f925930dab547899a46e2962a8e464fd176136",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_select_star.sql.gz",
+      "bytes": 64,
+      "sha256": "b26e697750c35a39ca7ac623ac14f5ec3cfa154f7f6d4e210e89f85cf907cd26",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_update_tail.sql.gz",
+      "bytes": 82,
+      "sha256": "31769dfe65a5ead1ca54c368dc7aef36b0aed93d73c54d530f94ae8f3aa5885c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/10000_verify_update.sql.gz",
+      "bytes": 81,
+      "sha256": "f72abbd8ef2cbc04babd82f37079190bb06efb3fc62739158f1451fc9903ecd7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_create.sql.gz",
+      "bytes": 2142,
+      "sha256": "fcda5f8bcea669094d1efcf4042a2e8b5db2a8bf35b3ad27589d0f62238c8846",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_insert_all.sql.gz",
+      "bytes": 1920,
+      "sha256": "f218bd8dd4b18e079312034e41f87966bf77285bd3cdb0dbd1fed33e4438ea5a",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_metadata_count.sql.gz",
+      "bytes": 141,
+      "sha256": "9a2cf454b5d42a89e0cdcbde909a775f7ef597b56170156b4291966e56ca0f48",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_restore_tail.sql.gz",
+      "bytes": 81,
+      "sha256": "cd347715a5aa37765e27095ca98fc7613cad5645eac6e996a8ebf8bdafb0d20f",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_select_edges.sql.gz",
+      "bytes": 76,
+      "sha256": "cde138de383718584302e62c1a9d300412066f4b96059b1975cc8fddda2381e7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_select_star.sql.gz",
+      "bytes": 64,
+      "sha256": "aaaa51099c6dcab87fd3497caaf478d1ede8d954826b14776277b575c7dae48c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_update_tail.sql.gz",
+      "bytes": 81,
+      "sha256": "78d8c49ad8ae1de8d5df310615e5c9457afe4589ebf41647ff3e942e84af7721",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/1000_verify_update.sql.gz",
+      "bytes": 80,
+      "sha256": "931632c33f866345b69be5523bbdd1a60998e048855a71e98694f7db429861d5",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_create.sql.gz",
+      "bytes": 154791,
+      "sha256": "f30dc05b4983b0981f6549eefb63bb7a3479327a2fef03c1601981c3dc002c82",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_force_flush.sql.gz",
+      "bytes": 105,
+      "sha256": "f3c263f7b60a5c02c520b9cdb6b71951bd5de7dfbc36ddc2dfa8297778f77cac",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_insert_all.sql.gz",
+      "bytes": 140225,
+      "sha256": "c971f97db4fee7b31d5187b6050352e4c25a5e947b1603b0fad000f918e0fb4c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_metadata_count.sql.gz",
+      "bytes": 143,
+      "sha256": "299ce8d8193b33badd1fa33d168156ad2ff2b2ef66e2a210f1b28206e939832c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_post_flush_star.sql.gz",
+      "bytes": 70,
+      "sha256": "a14d0b27d7e8532c65bd79e9540f3aa8c62bb1abca609fe5272b0e87c4ea2e3c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_restore_tail.sql.gz",
+      "bytes": 84,
+      "sha256": "859e3184ece725f37b58fbe0629617f12cfc5075bb1a92d1edbd19428b4085dd",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_select_edges.sql.gz",
+      "bytes": 81,
+      "sha256": "2e1982a15638db57134bcceb54ad528758965d92411dccf81e0647032efca2c2",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_select_star.sql.gz",
+      "bytes": 66,
+      "sha256": "aee0995ee0ab69a2a0de85587db65c1d40099cb91e3a3eaf99ee01c6f6416be2",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_update_tail.sql.gz",
+      "bytes": 84,
+      "sha256": "18dcc5efdc79d0091bc5608c69afdd709002b76cd59c17887e7d8300a89b16cd",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65530_verify_update.sql.gz",
+      "bytes": 83,
+      "sha256": "b080fe6950ecbf0457ba527d8dc67d7ccc4bcfe047fcaf3d5d241784105ab460",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65531_create.sql.gz",
+      "bytes": 154793,
+      "sha256": "93b3a905f7f11d92079dd4c6b2beedc63262e529dc01319cda10954626868f0b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65531_insert_all.sql.gz",
+      "bytes": 140224,
+      "sha256": "36906be306a8cc0cfafb89fb7b263f61541099ef4761a844bf1e849169e1ec83",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65531_select_tail.sql.gz",
+      "bytes": 77,
+      "sha256": "51e4313e47f4b3f034ebc5e7495f1671f4a71a1c720f03bd2781b7b5a48c4fbc",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_create.sql.gz",
+      "bytes": 154795,
+      "sha256": "e9569b5127aa39608f517d8930ee0922a34d97dab64a78e69389f7fe8e6af094",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_insert_all.sql.gz",
+      "bytes": 140227,
+      "sha256": "29c0c7fc9b11ed5355628cd760893559705451f7abdf14bea06bdc6f51272976",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_metadata_count.sql.gz",
+      "bytes": 142,
+      "sha256": "e5d80021d25748361eb1062e7b2b0d57d29e81ad488a9e1906214f05a4a81445",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_post_restart_tail.sql.gz",
+      "bytes": 86,
+      "sha256": "db8d5fb6dbf97e542b8d7cba62b484898a1cb2367066b81422870ec561ea3ac1",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_restore_tail.sql.gz",
+      "bytes": 84,
+      "sha256": "aeb3f602dc7459184faacbae489ac1d671b9828cce65e53bd3a208233eaaf734",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_select_edges.sql.gz",
+      "bytes": 81,
+      "sha256": "9017c3c7527032c9a64dcc34dad537370964b274b1d9039a1a0fb048a5352b3a",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_select_star.sql.gz",
+      "bytes": 66,
+      "sha256": "a573e865457cb8cf35c9e037fbb4f15ce1c15bf0365119fed1d78f2eef60a628",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_update_tail.sql.gz",
+      "bytes": 84,
+      "sha256": "6d2ef36883916f3c28f1936a39c338a9e6e076fdab1ef72810eddefdf311ae07",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65532_verify_update.sql.gz",
+      "bytes": 83,
+      "sha256": "b415aa1d58edf6cc1d82ef7c648101cc34e2dc21b4eb36d67c87d0d62e0f9f28",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/65533_create.sql.gz",
+      "bytes": 154797,
+      "sha256": "97ae365ec744d46ff1ee2ac95d8da0e102270517a7baa2298af065f667cd695e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4094_nopk_create.sql.gz",
+      "bytes": 9325,
+      "sha256": "8881989556389f829bda0c30ea441480dd073f2f41a39eb7a803a8353d01764d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4094_nopk_extra_a.sql.gz",
+      "bytes": 95,
+      "sha256": "3788a3128dad39bd33b84c60180526682c1ab272d0878da822813c2f05000695",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4094_nopk_extra_a_metadata.sql.gz",
+      "bytes": 160,
+      "sha256": "ca3750c1a15696c1f7d2ac123824156246a3b4eeb7885de0071d83c79c5f75de",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4094_nopk_extra_b.sql.gz",
+      "bytes": 95,
+      "sha256": "56f71350ca942cfae9ad7c49d99fb81c32d07d12188971adb57386197ff7d8f1",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4094_nopk_extra_b_metadata.sql.gz",
+      "bytes": 160,
+      "sha256": "fdbd48fcf812aec9fcc7d42d36cfc249bdee17a32b70931c3c5240877d7900de",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_nopk_create.sql.gz",
+      "bytes": 9328,
+      "sha256": "2ae27b61af6967730d43cb5d9b00d006cfc6764b5ea5b229ba513bab33dbf73b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_nopk_extra_a.sql.gz",
+      "bytes": 95,
+      "sha256": "dddeb1227c6e7f75ba521100877119ed4e1d2bccc76b447f0a3a93d3c84068bd",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_nopk_extra_a_metadata.sql.gz",
+      "bytes": 161,
+      "sha256": "d9bccc17f2eb7acfb527fc81914155015d65fbadf3ad508b9fb8c94fca131a7e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_nopk_extra_b.sql.gz",
+      "bytes": 95,
+      "sha256": "d3a68e3d8acc614c1b12b1a8a6557cc311589210854d6af2d6f649135373239c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_nopk_extra_b_metadata.sql.gz",
+      "bytes": 161,
+      "sha256": "a9a11ce67cf602c79a49d79dee69047e09bf27f40fe024c4e92be19c37e10d2e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_pk_create.sql.gz",
+      "bytes": 9347,
+      "sha256": "b857b4075da2aa3ce0cdadc77243aaeeb0a6f1aad6f6afda6104609e8bb748c3",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_pk_extra_a.sql.gz",
+      "bytes": 91,
+      "sha256": "a1706a08aaa5ea095740526130ee3caba940571d54cc38c3666bc6d59f12ae38",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_pk_extra_a_metadata.sql.gz",
+      "bytes": 158,
+      "sha256": "f4566081086fc156a22eaa502e14f98947cfb7c120f2545a9bb4aeb167255d0d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_pk_extra_b.sql.gz",
+      "bytes": 91,
+      "sha256": "7bf1827f930647beb9805be0caca4ffb9dda6eacde7c3d56c86b2ff4605dd03a",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4095_pk_extra_b_metadata.sql.gz",
+      "bytes": 158,
+      "sha256": "005dc8f5d44c21ef5da79971183f07be3df8fcb6dc5ba742cce93195d3d40759",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_nopk_create.sql.gz",
+      "bytes": 9330,
+      "sha256": "af77b3b71066ae541bbe261ce7a1048756565fb37a06abd4ed486ad37153ac50",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_nopk_extra_a.sql.gz",
+      "bytes": 95,
+      "sha256": "c555edfbda4b53f86c8b607319b9bf7d3ef8b15c1650ef7de0044cda0ae95af8",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_nopk_extra_a_metadata.sql.gz",
+      "bytes": 160,
+      "sha256": "d805bd1c351e38ccc6db3e75e92543803d012d4484b99ff96c7c8bc459c372d8",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_nopk_extra_b.sql.gz",
+      "bytes": 95,
+      "sha256": "29561aa02322ee176fb8ea392a663ccfc62f12f2d10ed607ea465b5a0b3e8d46",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_nopk_extra_b_metadata.sql.gz",
+      "bytes": 160,
+      "sha256": "c13e466eba69b78f2022c9fa800bea31649c5d846356d1c8e03ac3bcaa668887",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_pk_create.sql.gz",
+      "bytes": 9350,
+      "sha256": "f3bd12acdb315b73eb9e8f38bac535ec874b2e78e007e9ea9e369bd919ca3d74",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_pk_extra_a.sql.gz",
+      "bytes": 91,
+      "sha256": "a6352f845b863026f7ac4f87b74c823885621134b87d48477bd2d1afc51a1a13",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_pk_extra_a_metadata.sql.gz",
+      "bytes": 157,
+      "sha256": "500a1c89ee2d0e05b00b4c0de4ae56842d1a512fcf007b98c89803a0ffa8651d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_pk_extra_b.sql.gz",
+      "bytes": 91,
+      "sha256": "fc754a9e0367d6e88de3ab8b59a36e6fab3174373da64d9f6d711e8bad7b77e6",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4096_pk_extra_b_metadata.sql.gz",
+      "bytes": 157,
+      "sha256": "78dc62b70044f251291e164f9db68b78d5f6e54cd9fe41303fd0d32a5d758e2d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_nopk_create.sql.gz",
+      "bytes": 9333,
+      "sha256": "b48715c9c77c014731db581a25dc3bc909ed21db491f78b646e06481ea391963",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_nopk_extra_a.sql.gz",
+      "bytes": 95,
+      "sha256": "27113308b0c27659f1ac586517f1d8ee95b97cf39dd7d417314a4eeee391604e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_nopk_extra_a_metadata.sql.gz",
+      "bytes": 161,
+      "sha256": "cadfa47445d8a36eb533ff150c9d1ba9422d16bbc90a47e36c3a81878ca16a95",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_nopk_extra_b.sql.gz",
+      "bytes": 95,
+      "sha256": "fe5eadca66d2e83c4a1575d47874924f90a3ab4830264b7086184ae772f60192",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_nopk_extra_b_metadata.sql.gz",
+      "bytes": 161,
+      "sha256": "bf60027abcaff2a2de1b841631d87afa68f626da798bf413fa843f812bc07046",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_pk_create.sql.gz",
+      "bytes": 9352,
+      "sha256": "da75d5e4e0d65e906f57f5e3cf8a62d6c9ea23c69a06050d3346d773e0f0de8e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_pk_extra_a.sql.gz",
+      "bytes": 91,
+      "sha256": "e3dc26d3b39aba4dfd89eae634375f77db94646c75a94493cb06052c208d5045",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_pk_extra_a_metadata.sql.gz",
+      "bytes": 158,
+      "sha256": "2ca9147cbefabd31e60a384ba8324298d70a13738ad60514dbb949d0ecbc24c7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_pk_extra_b.sql.gz",
+      "bytes": 91,
+      "sha256": "a653fa250f43010b77de2a606df87e7979cb638f71ad550d6353a2216a9ab74f",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_4097_pk_extra_b_metadata.sql.gz",
+      "bytes": 158,
+      "sha256": "bca2940580ba48608299e84e7f9822fd9434f465b14bedd6e17a2d7a58372c2d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_multi_pk_add_two.sql.gz",
+      "bytes": 99,
+      "sha256": "7992eff982b1c6476d1d6eb723ff3676c6410cc083a43e6cd4409ef2f6f1175e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_multi_pk_create.sql.gz",
+      "bytes": 9352,
+      "sha256": "a2279dd8ea8fee2f275a512dbf8c8966ea84849f58add843aab10e84fb314267",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/alter_multi_pk_metadata.sql.gz",
+      "bytes": 149,
+      "sha256": "361f86d0dc6b8425201a16740360eead1737de392fe0c10dd8ce65503f6fc828",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/sql/final_health.sql.gz",
+      "bytes": 45,
+      "sha256": "2982f035a54e2fe313a84104b5bd2acb393ae1d999c12ba73192d99c7be5ea9b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/steps.jsonl.gz",
+      "bytes": 13143,
+      "sha256": "8114c727b2019609d299ab0ccbf09898ceb8334bcfc99742f2e4cc0275c75949",
+      "kind": "gzip_file",
+      "original_path": "suites/mo-column-boundary/steps.jsonl"
+    },
+    {
+      "path": "suites/mo-column-boundary/summary.json",
+      "bytes": 9652,
+      "sha256": "ccdf93a5ca674b8ab1bfa42bfa752b4decd6ec608f9007fe5a43cec3f719f642",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/test_alter.py",
+      "bytes": 2806,
+      "sha256": "e66b9d4e8138e3314a83551f4abf55001c00ddfd9cc4ec1ba5bf0903297daa2b",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/test_columns.py",
+      "bytes": 10305,
+      "sha256": "28912d6e4837fb59b1931acf25b7b5fa5372a85d2fec354db891976bca90c289",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-column-boundary/requirements.txt",
+      "bytes": 15,
+      "sha256": "717df355044876c89125a135b47595ca5732eeaa670a13fb2e0b9feb6b4badd8",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/README.md",
+      "bytes": 4390,
+      "sha256": "fb2877fd8a8d5ef7b91203ed1ebd31d9fdf401394e6ce7e6bb219fd7680dcebe",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/calibration-results.json",
+      "bytes": 30110,
+      "sha256": "5d3e0b6e130a975fad83d60c816cab732960ed4c030f4140a8ea078fe626a915",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/calibration-run.log",
+      "bytes": 12468,
+      "sha256": "897dae6414746a6c36412f6ca650edc36040dc708a73ff0ef3d9100657cd2a84",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/calibration-summary.json",
+      "bytes": 4136,
+      "sha256": "e0fd86c5e9585f68af707404c02dd090ac52c5a77c5d836849ee12edc9922175",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/check.py",
+      "bytes": 6982,
+      "sha256": "fdc0e697268c43f19e31d574b0fc7cd1d8c033bc4e0272247036d872ce1ea52e",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/latest-parser.y",
+      "bytes": 395756,
+      "sha256": "94913a922809baa5988bfa67cd53ef39fc46bf9f9567283b4f2be8c0de797a3d",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/latest-types.go",
+      "bytes": 30404,
+      "sha256": "18f8a80406ba5bcde76947c4acae14dd18fb481dd825fe63455b48ba46430383",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/release-types.go",
+      "bytes": 24189,
+      "sha256": "4c28d4e565f89d5ce1f4115700c791f1852e97a955bdcd107e6fce02e50d0331",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/results.json",
+      "bytes": 28385,
+      "sha256": "16c0d166990554d2be79cd9cc43f90d40e4340719d3c09368ad747ca4d944ed5",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/run.log",
+      "bytes": 8173,
+      "sha256": "0711973f82d1f214cf19814eac3a05b61ddee696d62a996ac6ca540f01a635de",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/summary.json",
+      "bytes": 221,
+      "sha256": "5b2d0fd8f13cd97fc94f198b71e87b66ac78c014c3d22231de14499d9c7530e9",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-gis-check/requirements.txt",
+      "bytes": 15,
+      "sha256": "717df355044876c89125a135b47595ca5732eeaa670a13fb2e0b9feb6b4badd8",
+      "kind": "support_file"
+    },
+    {
+      "path": "ISSUES.md",
+      "bytes": 1095,
+      "sha256": "7ef647bdb04cd27320502d71e0c209a20d9ffaf254721c8bcc8c3ec39b50447a",
+      "kind": "support_file"
+    },
+    {
+      "path": "BOUNDARY-CHAOS-600000.md",
+      "bytes": 6513,
+      "sha256": "4711091858b628bd46294dcfd05e8fe99ccc866baa6a0da422c5ade3f33eab68",
+      "kind": "support_file"
     }
   ],
   "excluded": [
@@ -4023,5 +4800,20 @@
   ],
   "path_layout": "Materialize suites under /workspace to preserve recorded absolute paths.",
   "main_case_count": 600000,
-  "main_result_count": 600000
+  "main_result_count": 600000,
+  "followup_probes": {
+    "column_boundary": {
+      "path": "suites/mo-column-boundary/README.md",
+      "largest_verified_full_row_columns": 65530,
+      "panic_issue": 30011,
+      "million_probe": "cancelled_by_user"
+    },
+    "gis_smoke": {
+      "path": "suites/mo-gis-check/README.md",
+      "statements": 106,
+      "pass": 97,
+      "expected_rejection": 9,
+      "unexplained_failures": 0
+    }
+  }
 }

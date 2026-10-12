@@ -1,0 +1,16 @@
+START 65530_create 851926
+END 65530_create success 19.309 
+START 65530_metadata_count 121
+END 65530_metadata_count success 0.373 
+START 65530_insert_all 382104
+END 65530_insert_all success 5.999 
+START 65530_select_edges 49
+END 65530_select_edges success 0.112 
+START 65530_select_star 24
+END 65530_select_star success 50.071 
+START 65530_update_tail 54
+END 65530_update_tail success 2.865 
+START 65530_verify_update 48
+END 65530_verify_update success 0.137 
+START 65530_restore_tail 53
+END 65530_restore_tail success 3.625 
