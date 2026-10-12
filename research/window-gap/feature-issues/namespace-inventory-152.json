@@ -1,0 +1,2097 @@
+[
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumPositiveStreak",
+    "mo_sql": "SELECT cumPositiveStreak(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumpositivestreak'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumPositiveStreak.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumavg",
+    "mo_sql": "SELECT cumavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumavg.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumavgTopN",
+    "mo_sql": "SELECT cumavgTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumavgtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumavgTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumbeta",
+    "mo_sql": "SELECT cumbeta(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumbeta'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumbeta.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumbetaTopN",
+    "mo_sql": "SELECT cumbetaTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumbetatopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumbetaTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcorr",
+    "mo_sql": "SELECT cumcorr(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcorr'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcorr.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcorrTopN",
+    "mo_sql": "SELECT cumcorrTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcorrtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcorrTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcount",
+    "mo_sql": "SELECT cumcount(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcount'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcount.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcovar",
+    "mo_sql": "SELECT cumcovar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcovar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcovar.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcovarTopN",
+    "mo_sql": "SELECT cumcovarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcovartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcovarTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcovarp",
+    "mo_sql": "SELECT cumcovarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcovarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcovarp.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumcovarpTopN",
+    "mo_sql": "SELECT cumcovarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumcovarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumcovarpTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumfirstNot",
+    "mo_sql": "SELECT cumfirstNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumfirstnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumfirstNot.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumkurtosisTopN",
+    "mo_sql": "SELECT cumkurtosisTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumkurtosistopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumkurtosisTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumlastNot",
+    "mo_sql": "SELECT cumlastNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumlastnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumlastNot.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cummax",
+    "mo_sql": "SELECT cummax(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cummax'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cummax.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cummed",
+    "mo_sql": "SELECT cummed(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cummed'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cummed.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cummin",
+    "mo_sql": "SELECT cummin(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cummin'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cummin.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumnunique",
+    "mo_sql": "SELECT cumnunique(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumnunique'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumnunique.html",
+    "families": [
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumpercentile",
+    "mo_sql": "SELECT cumpercentile(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumpercentile'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumpercentile.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumprod",
+    "mo_sql": "SELECT cumprod(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumprod'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumprod.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumrank",
+    "mo_sql": "SELECT cumrank(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumrank'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumrank.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumskewTopN",
+    "mo_sql": "SELECT cumskewTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumskewtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumskewTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumstd",
+    "mo_sql": "SELECT cumstd(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumstd'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumstd.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumstdTopN",
+    "mo_sql": "SELECT cumstdTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumstdtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumstdTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumstdp",
+    "mo_sql": "SELECT cumstdp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumstdp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumstdp.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumstdpTopN",
+    "mo_sql": "SELECT cumstdpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumstdptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumstdpTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumsum",
+    "mo_sql": "SELECT cumsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumsum.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumsum2",
+    "mo_sql": "SELECT cumsum2(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumsum2'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumsum2.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumsum3",
+    "mo_sql": "SELECT cumsum3(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumsum3'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumsum3.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumsum4",
+    "mo_sql": "SELECT cumsum4(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumsum4'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumsum4.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumsumTopN",
+    "mo_sql": "SELECT cumsumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumsumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumsumTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumvar",
+    "mo_sql": "SELECT cumvar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumvar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumvar.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumvarTopN",
+    "mo_sql": "SELECT cumvarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumvartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumvarTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumvarp",
+    "mo_sql": "SELECT cumvarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumvarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumvarp.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumvarpTopN",
+    "mo_sql": "SELECT cumvarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumvarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumvarpTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumwavg",
+    "mo_sql": "SELECT cumwavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumwavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumwavg.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumwsum",
+    "mo_sql": "SELECT cumwsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumwsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumwsum.html",
+    "families": [
+      "dolphindb_cum",
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "cumwsumTopN",
+    "mo_sql": "SELECT cumwsumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'cumwsumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/c/cumwsumTopN.html",
+    "families": [
+      "dolphindb_cum_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "dema",
+    "mo_sql": "SELECT dema(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'dema'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/d/dema.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "dynamicGroupCumcount",
+    "mo_sql": "SELECT dynamicGroupCumcount(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'dynamicgroupcumcount'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/d/dynamicGroupCumcount.html",
+    "families": [
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "dynamicGroupCumsum",
+    "mo_sql": "SELECT dynamicGroupCumsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'dynamicgroupcumsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/d/dynamicGroupCumsum.html",
+    "families": [
+      "categories_Cumulative Window"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ema",
+    "mo_sql": "SELECT ema(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ema'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ema.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ewmCorr",
+    "mo_sql": "SELECT ewmCorr(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ewmcorr'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ewmCorr.html",
+    "families": [
+      "exponential"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ewmCov",
+    "mo_sql": "SELECT ewmCov(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ewmcov'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ewmCov.html",
+    "families": [
+      "exponential"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ewmMean",
+    "mo_sql": "SELECT ewmMean(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ewmmean'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ewmMean.html",
+    "families": [
+      "exponential"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ewmStd",
+    "mo_sql": "SELECT ewmStd(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ewmstd'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ewmStd.html",
+    "families": [
+      "exponential"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ewmVar",
+    "mo_sql": "SELECT ewmVar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ewmvar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/e/ewmVar.html",
+    "families": [
+      "exponential"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "gema",
+    "mo_sql": "SELECT gema(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'gema'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/g/gema.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "kama",
+    "mo_sql": "SELECT kama(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'kama'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/k/kama.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "linearTimeTrend",
+    "mo_sql": "SELECT linearTimeTrend(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'lineartimetrend'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/l/linearTimeTrend.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mLowRange",
+    "mo_sql": "SELECT mLowRange(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mlowrange'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mLowRange.html",
+    "families": [
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mTopRange",
+    "mo_sql": "SELECT mTopRange(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mtoprange'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mTopRange.html",
+    "families": [
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "ma",
+    "mo_sql": "SELECT ma(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'ma'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/ma.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mavg",
+    "mo_sql": "SELECT mavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mavg.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mavgTopN",
+    "mo_sql": "SELECT mavgTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mavgtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mavgTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mbeta",
+    "mo_sql": "SELECT mbeta(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mbeta'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mbeta.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mbetaTopN",
+    "mo_sql": "SELECT mbetaTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mbetatopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mbetaTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcorr",
+    "mo_sql": "SELECT mcorr(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcorr'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcorr.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcorrTopN",
+    "mo_sql": "SELECT mcorrTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcorrtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcorrTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcount",
+    "mo_sql": "SELECT mcount(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcount'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcount.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcovar",
+    "mo_sql": "SELECT mcovar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcovar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcovar.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcovarTopN",
+    "mo_sql": "SELECT mcovarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcovartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcovarTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcovarp",
+    "mo_sql": "SELECT mcovarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcovarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcovarp.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mcovarpTopN",
+    "mo_sql": "SELECT mcovarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mcovarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mcovarpTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mfirst",
+    "mo_sql": "SELECT mfirst(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mfirst'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mfirst.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mfirstNot",
+    "mo_sql": "SELECT mfirstNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mfirstnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mfirstNot.html",
+    "families": [
+      "dolphindb_m"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mifirstNot",
+    "mo_sql": "SELECT mifirstNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mifirstnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mifirstNot.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "milastNot",
+    "mo_sql": "SELECT milastNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'milastnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/milastNot.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mimax",
+    "mo_sql": "SELECT mimax(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mimax'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mimax.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mimaxLast",
+    "mo_sql": "SELECT mimaxLast(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mimaxlast'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mimaxlast.html",
+    "families": [
+      "dolphindb_m"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mimin",
+    "mo_sql": "SELECT mimin(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mimin'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mimin.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "miminLast",
+    "mo_sql": "SELECT miminLast(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'miminlast'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/miminlast.html",
+    "families": [
+      "dolphindb_m"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mkurtosis",
+    "mo_sql": "SELECT mkurtosis(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mkurtosis'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mkurtosis.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mkurtosisTopN",
+    "mo_sql": "SELECT mkurtosisTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mkurtosistopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mkurtosisTopN.html",
+    "families": [
+      "dolphindb_m_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mlast",
+    "mo_sql": "SELECT mlast(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mlast'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mlast.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mlastNot",
+    "mo_sql": "SELECT mlastNot(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mlastnot'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mlastNot.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmad",
+    "mo_sql": "SELECT mmad(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmad'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmad.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmax",
+    "mo_sql": "SELECT mmax(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmax'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmax.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmaxDrawdown",
+    "mo_sql": "SELECT mmaxDrawdown(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmaxdrawdown'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmaxDrawdown.html",
+    "families": [
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmaxPositiveStreak",
+    "mo_sql": "SELECT mmaxPositiveStreak(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmaxpositivestreak'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmaxPositiveStreak.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmed",
+    "mo_sql": "SELECT mmed(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmed'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmed.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmin",
+    "mo_sql": "SELECT mmin(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmin'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmin.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mmse",
+    "mo_sql": "SELECT mmse(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mmse'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mmse.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "movingTopNIndex",
+    "mo_sql": "SELECT movingTopNIndex(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'movingtopnindex'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/movingTopNIndex.html",
+    "families": [
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "movingWindowIndex",
+    "mo_sql": "SELECT movingWindowIndex(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'movingwindowindex'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/movingWindowIndex.html",
+    "families": [
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mpercentile",
+    "mo_sql": "SELECT mpercentile(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mpercentile'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mpercentile.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mpercentileTopN",
+    "mo_sql": "SELECT mpercentileTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mpercentiletopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mpercentileTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mprod",
+    "mo_sql": "SELECT mprod(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mprod'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mprod.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mrank",
+    "mo_sql": "SELECT mrank(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mrank'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mrank.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mskew",
+    "mo_sql": "SELECT mskew(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mskew'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mskew.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mskewTopN",
+    "mo_sql": "SELECT mskewTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mskewtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mskewTopN.html",
+    "families": [
+      "dolphindb_m_topn"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mslr",
+    "mo_sql": "SELECT mslr(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mslr'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mslr.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mstd",
+    "mo_sql": "SELECT mstd(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mstd'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mstd.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mstdTopN",
+    "mo_sql": "SELECT mstdTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mstdtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mstdTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mstdp",
+    "mo_sql": "SELECT mstdp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mstdp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mstdp.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mstdpTopN",
+    "mo_sql": "SELECT mstdpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mstdptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mstdpTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "msum",
+    "mo_sql": "SELECT msum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'msum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/msum.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "msum2",
+    "mo_sql": "SELECT msum2(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'msum2'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/msum2.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "msumTopN",
+    "mo_sql": "SELECT msumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'msumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/msumTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mvar",
+    "mo_sql": "SELECT mvar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mvar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mvar.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mvarTopN",
+    "mo_sql": "SELECT mvarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mvartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mvarTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mvarp",
+    "mo_sql": "SELECT mvarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mvarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mvarp.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mvarpTopN",
+    "mo_sql": "SELECT mvarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mvarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mvarpTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mwavg",
+    "mo_sql": "SELECT mwavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mwavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mwavg.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mwsum",
+    "mo_sql": "SELECT mwsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mwsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mwsum.html",
+    "families": [
+      "dolphindb_m",
+      "categories_Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "mwsumTopN",
+    "mo_sql": "SELECT mwsumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'mwsumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/m/mwsumTopN.html",
+    "families": [
+      "dolphindb_m_topn",
+      "categories_mTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "sma",
+    "mo_sql": "SELECT sma(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'sma'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/s/sma.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "t3",
+    "mo_sql": "SELECT t3(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 't3'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/t3.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tema",
+    "mo_sql": "SELECT tema(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tema'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tema.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmLowRange",
+    "mo_sql": "SELECT tmLowRange(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmlowrange'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmLowRange.html",
+    "families": [
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmTopRange",
+    "mo_sql": "SELECT tmTopRange(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmtoprange'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmTopRange.html",
+    "families": [
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmavg",
+    "mo_sql": "SELECT tmavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmavg.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmavgTopN",
+    "mo_sql": "SELECT tmavgTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmavgtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmavgTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmbeta",
+    "mo_sql": "SELECT tmbeta(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmbeta'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmbeta.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmbetaTopN",
+    "mo_sql": "SELECT tmbetaTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmbetatopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmbetaTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcorr",
+    "mo_sql": "SELECT tmcorr(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcorr'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcorr.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcorrTopN",
+    "mo_sql": "SELECT tmcorrTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcorrtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcorrTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcount",
+    "mo_sql": "SELECT tmcount(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcount'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcount.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcovar",
+    "mo_sql": "SELECT tmcovar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcovar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcovar.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcovarTopN",
+    "mo_sql": "SELECT tmcovarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcovartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcovarTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcovarp",
+    "mo_sql": "SELECT tmcovarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcovarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcovarp.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmcovarpTopN",
+    "mo_sql": "SELECT tmcovarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmcovarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmcovarpTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmfirst",
+    "mo_sql": "SELECT tmfirst(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmfirst'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmfirst.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmkurtosis",
+    "mo_sql": "SELECT tmkurtosis(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmkurtosis'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmkurtosis.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmkurtosisTopN",
+    "mo_sql": "SELECT tmkurtosisTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmkurtosistopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmkurtosisTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmlast",
+    "mo_sql": "SELECT tmlast(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmlast'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmlast.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmmax",
+    "mo_sql": "SELECT tmmax(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmmax'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmmax.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmmed",
+    "mo_sql": "SELECT tmmed(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmmed'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmmed.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmmin",
+    "mo_sql": "SELECT tmmin(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmmin'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmmin.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmpercentile",
+    "mo_sql": "SELECT tmpercentile(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmpercentile'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmpercentile.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmprod",
+    "mo_sql": "SELECT tmprod(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmprod'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmprod.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmrank",
+    "mo_sql": "SELECT tmrank(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmrank'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmrank.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmskew",
+    "mo_sql": "SELECT tmskew(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmskew'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmskew.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmskewTopN",
+    "mo_sql": "SELECT tmskewTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmskewtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmskewTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmstd",
+    "mo_sql": "SELECT tmstd(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmstd'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmstd.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmstdTopN",
+    "mo_sql": "SELECT tmstdTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmstdtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmstdTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmstdp",
+    "mo_sql": "SELECT tmstdp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmstdp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmstdp.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmstdpTopN",
+    "mo_sql": "SELECT tmstdpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmstdptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmstdpTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmsum",
+    "mo_sql": "SELECT tmsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmsum.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmsum2",
+    "mo_sql": "SELECT tmsum2(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmsum2'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmsum2.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmsumTopN",
+    "mo_sql": "SELECT tmsumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmsumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmsumTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmvar",
+    "mo_sql": "SELECT tmvar(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmvar'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmvar.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmvarTopN",
+    "mo_sql": "SELECT tmvarTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmvartopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmvarTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmvarp",
+    "mo_sql": "SELECT tmvarp(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmvarp'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmvarp.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmvarpTopN",
+    "mo_sql": "SELECT tmvarpTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmvarptopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmvarpTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmwavg",
+    "mo_sql": "SELECT tmwavg(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmwavg'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmwavg.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmwsum",
+    "mo_sql": "SELECT tmwsum(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmwsum'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmwsum.html",
+    "families": [
+      "dolphindb_tm",
+      "categories_Time-Based Moving"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "tmwsumTopN",
+    "mo_sql": "SELECT tmwsumTopN(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'tmwsumtopn'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/tmwsumTopN.html",
+    "families": [
+      "dolphindb_tm_topn",
+      "categories_tmTopN"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "trima",
+    "mo_sql": "SELECT trima(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'trima'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/t/trima.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "wilder",
+    "mo_sql": "SELECT wilder(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'wilder'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/w/wilder.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  },
+  {
+    "category": "dolphindb_dedicated_api",
+    "name": "wma",
+    "mo_sql": "SELECT wma(CAST(1 AS DOUBLE),3) result",
+    "mo": {
+      "status": "rejected",
+      "error": "(20105, \"not supported: function or operator 'wma'\")"
+    },
+    "source_url": "https://docs.dolphindb.com/en/Functions/w/wma.html",
+    "families": [
+      "dolphindb_talib",
+      "categories_TA-Lib"
+    ]
+  }
+]
