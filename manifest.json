@@ -129,17 +129,17 @@
         }
       },
       "results": {
-        "count": 40334,
-        "uncompressed_sha256": "8fc9e744e55dc37bf4f0e1ab55c6e72f88d9ad2066e3a35a3b93cbb85da6729a",
-        "shards": 9,
+        "count": 50000,
+        "uncompressed_sha256": "cec309cb2da6bf820173ceea49540eb662d41d9ca9148ce6094d3c31ff4e1a82",
+        "shards": 10,
         "statuses": {
           "connection_or_runner_error": 620,
-          "pass": 25270,
+          "pass": 34380,
           "environment_or_unexpected_error": 515,
-          "pass_expected_rejection": 13929
+          "pass_expected_rejection": 14485
         }
       },
-      "state": "running"
+      "state": "complete"
     },
     "mo-enterprise-50000": {
       "cases": {
@@ -151,12 +151,13 @@
         }
       },
       "results": {
-        "count": 1748,
-        "uncompressed_sha256": "c7478b27ba1100b19542bcdcebcdeda5117aea700bb9f6e489338ebdb1cc7c5b",
-        "shards": 1,
+        "count": 46829,
+        "uncompressed_sha256": "71c6cd389522075e79b543a5867454d6d7daaf0b05aa9dafd087d55b45ac01aa",
+        "shards": 10,
         "statuses": {
-          "pass_expected_rejection": 1399,
-          "pass": 349
+          "pass_expected_rejection": 15047,
+          "pass": 31780,
+          "execution_error": 2
         }
       },
       "state": "running"
@@ -403,8 +404,8 @@
     },
     {
       "path": "suites/mo-cases-50000/resolved-results.jsonl.gz",
-      "bytes": 1936614,
-      "sha256": "629f934e7f03578fd11894549c2397a2d82f3232d7d0392d9a5778f7c6a3a565",
+      "bytes": 1936612,
+      "sha256": "c877baf268e2db201e9c96114f4689591671515c18285c5da341e4a7ff6d7a5d",
       "kind": "gzip_file",
       "original_path": "suites/mo-cases-50000/resolved-results.jsonl"
     },
@@ -2292,10 +2293,23 @@
     },
     {
       "path": "suites/mo-corners-50000/results/results-0008.jsonl.gz",
-      "bytes": 7891,
-      "sha256": "d2536a73a81b6464439a11478e42afcd3f5baf34e39ede08ee8cc313adf390ae",
+      "bytes": 445695,
+      "sha256": "85cb88422d066da384a5120f1f2b15d50b735c969897a2877c4a767f55e6fcff",
       "kind": "results",
-      "count": 334
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-corners-50000/results/results-0009.jsonl.gz",
+      "bytes": 670566,
+      "sha256": "cff4fa8867adc1d3335a3ace9909767294277ceb52206380c9d0ea7cca7e0235",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-corners-50000/TASK-SUBSECOND-TIMEOUT-BUG.md",
+      "bytes": 1036,
+      "sha256": "2af8ad2bf5459433d02ca62fdcdc47f4b89c2ff564bd2e91fb36aaeac968d578",
+      "kind": "support_file"
     },
     {
       "path": "suites/mo-corners-50000/TLS-BUG.md",
@@ -2344,8 +2358,8 @@
     },
     {
       "path": "suites/mo-corners-50000/catalog-bridge.log",
-      "bytes": 11518,
-      "sha256": "2e323608f73ffffe428976bce9d8171cb6b12e7c3bbb8c16438a4f3c8bede7ef",
+      "bytes": 4387786,
+      "sha256": "b0fcfd0729e819644780073e59458df84737f5b3db525ba4f47c2413a461a953",
       "kind": "support_file"
     },
     {
@@ -2362,8 +2376,8 @@
     },
     {
       "path": "suites/mo-corners-50000/common.py",
-      "bytes": 7365,
-      "sha256": "0cc6fe6dc797504f6d35bd4069d944270d49dcbdfc71e5716b9148d63ada23b5",
+      "bytes": 7429,
+      "sha256": "d84b410e3925347c89d553690dabe44c11a861a28ba096a3de2cd502b1d6931a",
       "kind": "support_file"
     },
     {
@@ -2409,6 +2423,12 @@
       "kind": "support_file"
     },
     {
+      "path": "suites/mo-corners-50000/iceberg-objects.log",
+      "bytes": 57,
+      "sha256": "da275c73f9fc2798bda83be76cae2c27d3e8b237f543ceb9b6ea807a0d7a7cfb",
+      "kind": "support_file"
+    },
+    {
       "path": "suites/mo-corners-50000/iceberg-seed.log",
       "bytes": 1696,
       "sha256": "3175f6c2ebb2035c523cfd6be64c3a950a31aea094e0bba3b0ce4272f65051cd",
@@ -2446,14 +2466,14 @@
     },
     {
       "path": "suites/mo-corners-50000/python-udf.log",
-      "bytes": 2603109,
-      "sha256": "c649edbddb2742fdfa384f6c61d30f9570ea04fef93fbbd17b0138556f24feb1",
+      "bytes": 2609708,
+      "sha256": "e5ee2fbda6ec6a79c6625ddbaccec25b4f3cae8b582f1f0d9b62c65c1a4ad22d",
       "kind": "support_file"
     },
     {
       "path": "suites/mo-corners-50000/run.log",
-      "bytes": 13227,
-      "sha256": "31dd0825e1bcf29f627a1e9d1eb46514ab2d21e45ea354d90930dccfc0b198fd",
+      "bytes": 29157,
+      "sha256": "03e768893245af1c92d8b01eb7c814521823bc4b1b63123be1bce25c24e7768f",
       "kind": "support_file"
     },
     {
@@ -2463,9 +2483,22 @@
       "kind": "support_file"
     },
     {
-      "path": "suites/mo-corners-50000/s3-fixture.log",
-      "bytes": 93808,
-      "sha256": "e5610c3878d3fb43cf659ecf53fe3cfc5df055b0bff4e10508fc7a6541dc1e91",
+      "path": "suites/mo-corners-50000/s3-fixture.log.gz",
+      "bytes": 306009,
+      "sha256": "4570dadbcbee5274e3f5ac03cd6425409bc60ad86592c8b318bb62ba4580f974",
+      "kind": "gzip_file",
+      "original_path": "suites/mo-corners-50000/s3-fixture.log"
+    },
+    {
+      "path": "suites/mo-corners-50000/save-iceberg-objects.py",
+      "bytes": 968,
+      "sha256": "54d5cf44fb34e9cc6fb845e13a6b38048c28817fcac61bae1108d8f01da2a636",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/seed-iceberg.py",
+      "bytes": 2407,
+      "sha256": "d6216a54d1812de8ce99dee170e5ddf33465b1f367739e530552099c65562838",
       "kind": "support_file"
     },
     {
@@ -2490,6 +2523,48 @@
       "path": "suites/mo-corners-50000/source-manifest.json",
       "bytes": 10481,
       "sha256": "b2390868c9ee67d47625a0fbbb64a227b38fdf4e258c2ebadd8dce50ba04d9d4",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-resume-recheck.json",
+      "bytes": 247,
+      "sha256": "9dc1e077c1923bb5d43c1d9bf47ccdc5234017ebd945533fac1dbdae4f616daf",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-resume-recheck.log",
+      "bytes": 191,
+      "sha256": "4200bbb703c94caa58b98c60ef8eb6e5e44c6c07ece07ea53a441821ef50d5c2",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-scheduler-e2e.json",
+      "bytes": 10770,
+      "sha256": "acb02bcb76dfbd19d7695278176c1cea571821f532e9dd5a6315dd42895c744f",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-scheduler-e2e.log",
+      "bytes": 7857,
+      "sha256": "ee3c7f71ec772cd49dcbba0f4df6f1dea98540753a57e9f207bdd155a76bc7b7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-scheduler-e2e.py",
+      "bytes": 2949,
+      "sha256": "fcac768dfd22ad60af5fbca22f060aa3b9070fe99f093447f96e817d92987cdb",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-timeout-recheck.json",
+      "bytes": 998,
+      "sha256": "e74b716736a479e5e2d2f692eb0e608ce709bad2820a59d5e4444af7ce826d0c",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/task-timeout-recheck.log",
+      "bytes": 635,
+      "sha256": "40a98efa79c02adc83cd4d6176e9e34673aa0d367f5e2612c551726be351c2ea",
       "kind": "support_file"
     },
     {
@@ -2523,11 +2598,54 @@
       "kind": "support_file"
     },
     {
+      "path": "suites/mo-corners-50000/udf-decimal-contract.json",
+      "bytes": 1396,
+      "sha256": "24da8bae6e89c255940e13ff460fcb68a4ce8c822a1fce051e9881653b03c3c7",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/udf-malformed-e2e.json",
+      "bytes": 1367,
+      "sha256": "00ae77e8cd2dc378873de135db1dec9c04895220933a7a1c378fb89dd0fecea6",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/udf-service-recovery-recheck.json",
+      "bytes": 458,
+      "sha256": "310ee16c7eda2664233a4a1c67865c280977db33279e7827fbcb63a4b33f6e25",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/udf-service-recovery.json",
+      "bytes": 1412,
+      "sha256": "570b0438104d44bdbc290fc7f157e85e19fa77f585a713064930211c7bec7515",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/udf-service-recovery.log",
+      "bytes": 938,
+      "sha256": "955325ec7330a20b48f980d35a5ae985291254a1e21d089a7ad55f59848d20e0",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-corners-50000/udf-service-recovery.py",
+      "bytes": 1735,
+      "sha256": "04e021012fa96ba96b8635842a6e534ccdaef0c7ef69754e46cb7b95173468ee",
+      "kind": "support_file"
+    },
+    {
       "path": "suites/mo-corners-50000/artifacts/pyserver.tar.gz",
       "bytes": 7823,
       "sha256": "45c18a69749e9f5fef6676d4dcf0fc988a95eac7fad16cbba8f99776424c98b8",
       "kind": "artifact_archive",
       "destination_directory": "pyserver"
+    },
+    {
+      "path": "suites/mo-corners-50000/artifacts/iceberg-objects.tar.gz",
+      "bytes": 30088,
+      "sha256": "e30867080cdb7b98985796a5229ec4c4d09c12f8a0b690e9f0b4b9897cddfac3",
+      "kind": "artifact_archive",
+      "destination_directory": "iceberg-objects"
     },
     {
       "path": "suites/mo-corners-50000/artifacts/iceberg-e2e-bridged.tar.gz",
@@ -2608,10 +2726,79 @@
     },
     {
       "path": "suites/mo-enterprise-50000/results/results-0000.jsonl.gz",
-      "bytes": 85333,
-      "sha256": "2aca01b17cfefb3ef8ee8c1ab1ea23ba026056de2f9cae7270ea8f0f565f640a",
+      "bytes": 242365,
+      "sha256": "2a71901202b45c53530ead3303a252c7d5246393395b79192ccf625acf44a170",
       "kind": "results",
-      "count": 1748
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0001.jsonl.gz",
+      "bytes": 90640,
+      "sha256": "276ea88adaac0f8b340516aac38e1f496c8fde2c2e21ff8d5e58538e86f0620f",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0002.jsonl.gz",
+      "bytes": 90794,
+      "sha256": "0ec5b5e356a48ce5efa5d9f4a86aead448bb137052cbbfef6d0467a76e3f948a",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0003.jsonl.gz",
+      "bytes": 115032,
+      "sha256": "29a81142f071e62ff4dcbe97a8146531b22924025011a019cc499e7b544931c2",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0004.jsonl.gz",
+      "bytes": 114591,
+      "sha256": "20e22f80e7ad4ac30ac650dfa9b3fee1be151e5bb03feb6454eeafdd4eb7fda8",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0005.jsonl.gz",
+      "bytes": 114495,
+      "sha256": "69dcb43e42076ff2dd95f6d67cf169d609b19a5b4e662680bd7cc9d4d1e61f46",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0006.jsonl.gz",
+      "bytes": 88030,
+      "sha256": "d8cad27512c895e319c45970e87b54c0ec45e3ba1773e716f94afdcf84f9cfc2",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0007.jsonl.gz",
+      "bytes": 87878,
+      "sha256": "1581dd0a36e59e6fdf07b761e4e5a3f79c399153e5b528ea6c7ed304ec875f1b",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0008.jsonl.gz",
+      "bytes": 272495,
+      "sha256": "73e2815a6146c81799bea0248aa1c927c4eef877815cbac0993b8d785a111c19",
+      "kind": "results",
+      "count": 5000
+    },
+    {
+      "path": "suites/mo-enterprise-50000/results/results-0009.jsonl.gz",
+      "bytes": 100593,
+      "sha256": "ac9ecb60bcef481f13eb18e2d63d2406b2a298dd1ac32b21e1b58a619bbfe1e4",
+      "kind": "results",
+      "count": 1829
+    },
+    {
+      "path": "suites/mo-enterprise-50000/PUBLICATION-IF-NOT-EXISTS-BUG.md",
+      "bytes": 1045,
+      "sha256": "45c6d1c4006578b79fd9d294a7499d1c52e4890feb2de555fc6205a0970d769c",
+      "kind": "support_file"
     },
     {
       "path": "suites/mo-enterprise-50000/calibration.jsonl.gz",
@@ -2640,9 +2827,33 @@
       "kind": "support_file"
     },
     {
+      "path": "suites/mo-enterprise-50000/catalog-load-observation.json",
+      "bytes": 463,
+      "sha256": "8a22d4a1df294cde3a2c418b4142e94914f26a3ea060bb9ba5e12f9f963ebd19",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-enterprise-50000/concurrency-transition.json",
+      "bytes": 398,
+      "sha256": "e775b67a16e97d2f6fe5eb80ec0839daf833aece75a5bc725895beb1f70fede4",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-enterprise-50000/concurrency-transition.log",
+      "bytes": 347,
+      "sha256": "e25c49112678a37cdd9cf2bc1761ff7b62768a40bb9bf2e9f14ab1c1f36c9293",
+      "kind": "support_file"
+    },
+    {
       "path": "suites/mo-enterprise-50000/coverage.json",
       "bytes": 2490,
       "sha256": "58dd80f28c47938beb453b60b13108cbe8b4617f3b836a32bafab6a18ad358c2",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-enterprise-50000/cpu-load-observation.json",
+      "bytes": 532,
+      "sha256": "8673ab89ba5f1ba6322b1e7173833d9a4ea587a0f75391d69e54355cb9bcba8e",
       "kind": "support_file"
     },
     {
@@ -2658,15 +2869,39 @@
       "kind": "support_file"
     },
     {
+      "path": "suites/mo-enterprise-50000/git4data-stage-profile.json",
+      "bytes": 7245,
+      "sha256": "155a120331ab24545582b6bac9160a054aacc6f76c6a32b662a1f8ae7f8350da",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-enterprise-50000/git4data-stage-profile.log",
+      "bytes": 2458,
+      "sha256": "fa399f82e06ff121bad57092cfaf2705bfcdf3d0fbe7ddc03c1139cdac991623",
+      "kind": "support_file"
+    },
+    {
       "path": "suites/mo-enterprise-50000/profiles.json",
       "bytes": 597086,
       "sha256": "965490864b930b4e72befc712c1808fee95e4c84a9e333953405e17c04dea6f8",
       "kind": "support_file"
     },
     {
+      "path": "suites/mo-enterprise-50000/publication-idempotence-recheck.json",
+      "bytes": 413,
+      "sha256": "3096174b5f1f20178f91de4290dc86da1b729e4548ed8e0726b33ee924978091",
+      "kind": "support_file"
+    },
+    {
+      "path": "suites/mo-enterprise-50000/resume-more-concurrency.py",
+      "bytes": 1949,
+      "sha256": "70ed08fc6b859f4fec9fbadbaa8503fd837d36998d6c880c3c86448faddf0eb9",
+      "kind": "support_file"
+    },
+    {
       "path": "suites/mo-enterprise-50000/run.log",
-      "bytes": 2502,
-      "sha256": "84089f2fc0940f0b65c3f8d50c46e7d1afea63a32bff4a9f47f33d986cee928e",
+      "bytes": 43875,
+      "sha256": "40d71787e114558700a6e5ffe259660ba0cec947dd30906c50714d6494f33844",
       "kind": "support_file"
     },
     {
@@ -3640,8 +3875,8 @@
     },
     {
       "path": "suites/mo-stability-500000/problem-groups.json",
-      "bytes": 50320,
-      "sha256": "08c62873d5b1fd29c01a376db63501338212b235789212ce8ea139342fc83652",
+      "bytes": 48564,
+      "sha256": "24b20bcfbc6a530421d538370da0fe09965a41f82095470a3101dae610b78caa",
       "kind": "support_file"
     },
     {
@@ -3676,20 +3911,20 @@
     },
     {
       "path": "suites/mo-stability-500000/summarize.log",
-      "bytes": 681,
-      "sha256": "330668e2aa8752cce8cc761dbe99cb6cf0c1a97bd6ae3a282fc9fc31b8c3ea1d",
+      "bytes": 698,
+      "sha256": "3bd222f1ff3684a7076587ba2c09d23b203d3797c246a0d56590205d448c5888",
       "kind": "support_file"
     },
     {
       "path": "suites/mo-stability-500000/summarize.py",
-      "bytes": 6944,
-      "sha256": "fd5f176ab42af0e5eb7f10a6dbaadd487cb5da264e0df8d22901390160bb3028",
+      "bytes": 7044,
+      "sha256": "f482dea41bc8b2acaf055f7df64ff38af17da531ecb5818604455390290f7743",
       "kind": "support_file"
     },
     {
       "path": "suites/mo-stability-500000/summary.json",
-      "bytes": 375654,
-      "sha256": "db4a5f503dbf014c7da1d5a53447486c5caf35e6e630e1f9d980b543be050af3",
+      "bytes": 375688,
+      "sha256": "63fddb8c31085c703d74db2af7629695d2f39b84630553302994f70d28cb7d85",
       "kind": "support_file"
     },
     {
@@ -3709,5 +3944,5 @@
   ],
   "path_layout": "Materialize suites under /workspace to preserve recorded absolute paths.",
   "main_case_count": 600000,
-  "main_result_count": 542082
+  "main_result_count": 596829
 }

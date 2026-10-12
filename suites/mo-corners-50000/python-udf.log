@@ -33593,3 +33593,90 @@ ValueError: MO_CASE_INTENTIONAL_ERROR_-982734206
 [2026-10-11 23:25:20,747] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : receive data
 [2026-10-11 23:25:20,747] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : calculating
 [2026-10-11 23:25:20,748] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : finish calculating
+[2026-10-11 23:42:39,532] - [Server] - [INFO] - [ThreadPoolExecutor-0_4] : receive data
+[2026-10-11 23:42:39,537] - [Server] - [INFO] - [ThreadPoolExecutor-0_4] : calculating
+[2026-10-11 23:42:39,540] - [grpc._server] - [ERROR] - [ThreadPoolExecutor-0_4] : Exception iterating responses: request length 3 is not same with result length 1
+Traceback (most recent call last):
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/grpc/_server.py", line 652, in _take_response_from_response_iterator
+    return next(response_iterator), True
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 94, in run
+    yield self.calculate(request, "", "")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 194, in calculate
+    assert len(values) == request.length, f'request length {request.length} is not same with result length {len(values)}'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: request length 3 is not same with result length 1
+[2026-10-11 23:42:39,631] - [Server] - [INFO] - [ThreadPoolExecutor-0_3] : receive data
+[2026-10-11 23:42:39,632] - [Server] - [INFO] - [ThreadPoolExecutor-0_3] : calculating
+[2026-10-11 23:42:39,632] - [grpc._server] - [ERROR] - [ThreadPoolExecutor-0_3] : Exception iterating responses: request length 3 is not same with result length 5
+Traceback (most recent call last):
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/grpc/_server.py", line 652, in _take_response_from_response_iterator
+    return next(response_iterator), True
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 94, in run
+    yield self.calculate(request, "", "")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 194, in calculate
+    assert len(values) == request.length, f'request length {request.length} is not same with result length {len(values)}'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: request length 3 is not same with result length 5
+[2026-10-11 23:42:39,694] - [Server] - [INFO] - [ThreadPoolExecutor-0_7] : receive data
+[2026-10-11 23:42:39,694] - [Server] - [INFO] - [ThreadPoolExecutor-0_7] : calculating
+[2026-10-11 23:42:39,696] - [grpc._server] - [ERROR] - [ThreadPoolExecutor-0_7] : Exception iterating responses: return type error, required <class 'int'>, received <class 'dict'>
+Traceback (most recent call last):
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/grpc/_server.py", line 652, in _take_response_from_response_iterator
+    return next(response_iterator), True
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 94, in run
+    yield self.calculate(request, "", "")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 202, in calculate
+    data = value2Data(value, result.type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 345, in value2Data
+    assert type(value) is int, f'return type error, required {int}, received {type(value)}'
+           ^^^^^^^^^^^^^^^^^^
+AssertionError: return type error, required <class 'int'>, received <class 'dict'>
+[2026-10-11 23:42:39,740] - [Server] - [INFO] - [ThreadPoolExecutor-0_2] : receive data
+[2026-10-11 23:42:39,740] - [Server] - [INFO] - [ThreadPoolExecutor-0_2] : calculating
+[2026-10-11 23:42:39,741] - [grpc._server] - [ERROR] - [ThreadPoolExecutor-0_2] : Exception iterating responses: 'bad'
+Traceback (most recent call last):
+  File "/workspace/toolchains/python/lib/python3.12/site-packages/grpc/_server.py", line 652, in _take_response_from_response_iterator
+    return next(response_iterator), True
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 94, in run
+    yield self.calculate(request, "", "")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 162, in calculate
+    func = loadFunction(request.udf, filepath, filename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-corners-50000/pyserver/server.py", line 257, in loadFunction
+    return locals()[udf.handler]
+           ~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'bad'
+[2026-10-11 23:43:12,480] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : receive data
+[2026-10-11 23:43:12,484] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : calculating
+[2026-10-11 23:43:12,507] - [Server] - [INFO] - [ThreadPoolExecutor-0_8] : finish calculating
+[2026-10-11 23:43:13,961] - [Server] - [INFO] - [MainThread] : python server start
+[2026-10-11 23:44:35,952] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : receive data
+[2026-10-11 23:44:35,952] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : calculating
+[2026-10-11 23:44:35,953] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : finish calculating
+[2026-10-11 23:44:36,203] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : receive data
+[2026-10-11 23:44:36,203] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : calculating
+[2026-10-11 23:44:36,229] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : finish calculating
+[2026-10-11 23:47:52,401] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : receive data
+[2026-10-11 23:47:52,403] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : calculating
+[2026-10-11 23:47:52,405] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : finish calculating
+[2026-10-11 23:47:52,484] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : receive data
+[2026-10-11 23:47:52,484] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : calculating
+[2026-10-11 23:47:52,484] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : finish calculating
+[2026-10-11 23:47:52,566] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : receive data
+[2026-10-11 23:47:52,566] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : calculating
+[2026-10-11 23:47:52,566] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : finish calculating
+[2026-10-11 23:47:52,618] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : receive data
+[2026-10-11 23:47:52,618] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : calculating
+[2026-10-11 23:47:52,618] - [Server] - [INFO] - [ThreadPoolExecutor-0_0] : finish calculating
+[2026-10-11 23:47:52,703] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : receive data
+[2026-10-11 23:47:52,703] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : calculating
+[2026-10-11 23:47:52,704] - [Server] - [INFO] - [ThreadPoolExecutor-0_1] : finish calculating

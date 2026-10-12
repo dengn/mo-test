@@ -25,10 +25,10 @@
         "literal_concatenation_compatibility_issue": 1,
         "unsupported_syntax_charset_or_alias": 49,
         "type_conversion_or_range_boundary": 69,
-        "needs_review": 2,
         "temporal_numeric_compatibility_issue": 15,
         "invalid_zero_date_compatibility_issue": 1,
-        "documented_behavior_difference": 9,
+        "documented_behavior_difference": 8,
+        "source_literal_encoding_issue": 3,
         "pass_unordered_result": 4
       },
       "family_count": 130
@@ -116,10 +116,10 @@
     "literal_concatenation_compatibility_issue": 2551,
     "unsupported_syntax_charset_or_alias": 49,
     "type_conversion_or_range_boundary": 69,
-    "needs_review": 2,
     "temporal_numeric_compatibility_issue": 639,
     "invalid_zero_date_compatibility_issue": 1,
-    "documented_behavior_difference": 6864,
+    "documented_behavior_difference": 6863,
+    "source_literal_encoding_issue": 3,
     "pass_unordered_result": 4
   },
   "sources": [
@@ -6021,7 +6021,7 @@
   "server_commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
   "mysql_reference": "8.0.46",
   "database": "suite50_1791642084",
-  "created_epoch": 1791761681.4125261,
+  "created_epoch": 1791767407.4734516,
   "panic_or_fatal_log_events": [],
   "resource_observations": {
     "samples": 22300,

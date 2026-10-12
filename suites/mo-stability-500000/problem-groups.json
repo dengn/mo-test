@@ -544,64 +544,6 @@
     }
   },
   {
-    "category": "needs_review",
-    "family": "mysql.public_scalar",
-    "error_code": "1064",
-    "count": 2,
-    "ids": [
-      "C47944",
-      "C48212"
-    ],
-    "sample": {
-      "case": {
-        "id": "C47944",
-        "module": "compatibility",
-        "family": "mysql.public_scalar",
-        "statements": [
-          {
-            "sql": "SELECT REPLACE('æøåæøå',_utf16 x'00e5', _gb18030 x'9439B937')",
-            "params": []
-          }
-        ],
-        "expected": null,
-        "mysql_differential": true,
-        "expect_error": false,
-        "compare_mode": "ordered",
-        "tolerance": 1e-06,
-        "sources": [
-          "mysql/mysql-server:mysql-test/t/func_str.test"
-        ],
-        "sql_sha256": "9793e9c4d1105b464b130404b0e367b0d20fa017a35085af0daab7898d68a036"
-      },
-      "result": {
-        "id": "C47944",
-        "module": "compatibility",
-        "family": "mysql.public_scalar",
-        "status": "mo_execution_error",
-        "seconds": 0.002061,
-        "mo_error": {
-          "code": 1064,
-          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 44 near \" x\\'00e5\\', _gb18030 x\\'9439B937\\')\";')",
-          "type": "ProgrammingError"
-        },
-        "mysql_error": null,
-        "retries": 0,
-        "initial_error": null,
-        "mo_rows": null,
-        "mysql_rows": 1,
-        "mo_result_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
-        "actual": null,
-        "reference": [
-          [
-            "æø🍣æø🍣"
-          ]
-        ],
-        "expected": null,
-        "classification": "needs_review"
-      }
-    }
-  },
-  {
     "category": "type_conversion_or_range_boundary",
     "family": "mysql.public_scalar",
     "error_code": "20203",
@@ -1161,21 +1103,23 @@
     }
   },
   {
-    "category": "documented_behavior_difference",
+    "category": "source_literal_encoding_issue",
     "family": "mysql.public_scalar",
     "error_code": "1064",
-    "count": 1,
+    "count": 3,
     "ids": [
-      "C48208"
+      "C48207",
+      "C48208",
+      "C48212"
     ],
     "sample": {
       "case": {
-        "id": "C48208",
+        "id": "C48207",
         "module": "compatibility",
         "family": "mysql.public_scalar",
         "statements": [
           {
-            "sql": "select CONVERT(_koi8r'����' USING utf8mb4) LIKE CONVERT(_koi8r'����' USING utf8mb4)",
+            "sql": "select convert(_latin1'G�nter Andr�' using utf8mb4) like CONVERT(_latin1'G�NTER%' USING utf8mb4)",
             "params": []
           }
         ],
@@ -1187,17 +1131,17 @@
         "sources": [
           "mysql/mysql-server:mysql-test/t/ctype_utf8mb4.test"
         ],
-        "sql_sha256": "7433dd74617329d904debbe21d0eb09353b5be641a805cda30e4b16aa54bf61e"
+        "sql_sha256": "c0661a3345b5a20845cd75549f028515a13a2bcadfae3bf3041c9b72a5208c70"
       },
       "result": {
-        "id": "C48208",
+        "id": "C48207",
         "module": "compatibility",
         "family": "mysql.public_scalar",
         "status": "mo_execution_error",
-        "seconds": 0.0049,
+        "seconds": 0.009009,
         "mo_error": {
           "code": 1064,
-          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 35 near \"\\'����\\' USING utf8mb4) LIKE CONVERT(_koi8r\\'����\\' USING utf8mb4)\";')",
+          "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 40 near \"\\'G�nter Andr�\\' using utf8mb4) like CONVERT(_latin1\\'G�NTER%\\' USING utf8mb4)\";')",
           "type": "ProgrammingError"
         },
         "mysql_error": null,
@@ -1213,7 +1157,7 @@
           ]
         ],
         "expected": null,
-        "classification": "documented_behavior_difference"
+        "classification": "source_literal_encoding_issue"
       }
     }
   },

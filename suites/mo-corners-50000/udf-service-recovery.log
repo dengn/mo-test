@@ -1,0 +1,5 @@
+{"sql": "select cu_pyadd(2,3)", "rows": [[5]], "status": "returned", "seconds": 0.1870905940013472}
+{"sql": "select cu_pyadd(2,3)", "error": {"code": 1105, "message": "(1105, 'rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:50051: connect: connection refused\"')", "type": "OperationalError"}, "status": "sql_or_connection_error", "seconds": 0.06309386898647062}
+{"sql": "select 1", "rows": [[1]], "status": "returned", "seconds": 0.034487723984057084}
+{"sql": "select cu_pyadd(2,3)", "error": {"code": 1105, "message": "(1105, 'rpc error: code = Unavailable desc = connection error: desc = \"transport: Error while dialing: dial tcp 127.0.0.1:50051: connect: connection refused\"')", "type": "OperationalError"}, "status": "sql_or_connection_error", "seconds": 0.0840216169890482}
+{"sql": "select 1", "rows": [[1]], "status": "returned", "seconds": 0.08910503398510627}

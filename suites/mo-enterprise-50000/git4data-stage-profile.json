@@ -1,0 +1,260 @@
+[
+  {
+    "source_case_id": "M040001",
+    "result": {
+      "id": "M040001",
+      "module": "git4data",
+      "family": "git4data.copy_isolation",
+      "status": "pass",
+      "seconds": 2.236177635990316,
+      "issues": [],
+      "checks": [
+        {
+          "sql": "create table profile_gb0(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+          "rows": []
+        },
+        {
+          "sql": "insert into profile_gb0 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+          "rows": []
+        },
+        {
+          "sql": "data branch create table profile_gs0 from profile_gb0",
+          "rows": []
+        },
+        {
+          "sql": "update profile_gs0 set n=n+10 where id=1",
+          "rows": []
+        },
+        {
+          "sql": "select id,n from profile_gb0 order by id",
+          "rows": [
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              9
+            ]
+          ]
+        },
+        {
+          "sql": "select n from profile_gs0 where id=1",
+          "rows": [
+            [
+              17
+            ]
+          ]
+        }
+      ],
+      "tls": null
+    },
+    "steps": [
+      {
+        "sql": "create table profile_gb0(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+        "seconds": 0.022483006992843002
+      },
+      {
+        "sql": "insert into profile_gb0 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+        "seconds": 0.052554252004483715
+      },
+      {
+        "sql": "data branch create table profile_gs0 from profile_gb0",
+        "seconds": 0.9153166679898277
+      },
+      {
+        "sql": "update profile_gs0 set n=n+10 where id=1",
+        "seconds": 0.10584458499215543
+      },
+      {
+        "sql": "select id,n from profile_gb0 order by id",
+        "seconds": 0.003008065017638728
+      },
+      {
+        "sql": "select n from profile_gs0 where id=1",
+        "seconds": 0.004779623996000737
+      },
+      {
+        "sql": "drop table if exists profile_gs0",
+        "seconds": 1.0009016459807754
+      },
+      {
+        "sql": "drop table if exists profile_gb0",
+        "seconds": 0.050707495014648885
+      }
+    ]
+  },
+  {
+    "source_case_id": "M040007",
+    "result": {
+      "id": "M040007",
+      "module": "git4data",
+      "family": "git4data.conflict_accept",
+      "status": "pass",
+      "seconds": 5.456160282017663,
+      "issues": [],
+      "checks": [
+        {
+          "sql": "create table profile_gb6(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+          "rows": []
+        },
+        {
+          "sql": "insert into profile_gb6 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+          "rows": []
+        },
+        {
+          "sql": "data branch create table profile_gs6 from profile_gb6",
+          "rows": []
+        },
+        {
+          "sql": "update profile_gb6 set n=n+10 where id=1",
+          "rows": []
+        },
+        {
+          "sql": "update profile_gs6 set n=n+20 where id=1",
+          "rows": []
+        },
+        {
+          "sql": "data branch merge profile_gs6 into profile_gb6 when conflict accept",
+          "rows": []
+        },
+        {
+          "sql": "select id,n from profile_gb6 order by id",
+          "rows": [
+            [
+              1,
+              633
+            ],
+            [
+              2,
+              614
+            ],
+            [
+              3,
+              615
+            ]
+          ]
+        }
+      ],
+      "tls": null
+    },
+    "steps": [
+      {
+        "sql": "create table profile_gb6(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+        "seconds": 0.010247841011732817
+      },
+      {
+        "sql": "insert into profile_gb6 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+        "seconds": 0.04447007999988273
+      },
+      {
+        "sql": "data branch create table profile_gs6 from profile_gb6",
+        "seconds": 1.1181139769905712
+      },
+      {
+        "sql": "update profile_gb6 set n=n+10 where id=1",
+        "seconds": 0.00997250500950031
+      },
+      {
+        "sql": "update profile_gs6 set n=n+20 where id=1",
+        "seconds": 0.030696344998432323
+      },
+      {
+        "sql": "data branch merge profile_gs6 into profile_gb6 when conflict accept",
+        "seconds": 2.126802479993785
+      },
+      {
+        "sql": "select id,n from profile_gb6 order by id",
+        "seconds": 0.0026127299934159964
+      },
+      {
+        "sql": "drop table if exists profile_gs6",
+        "seconds": 0.1094389729842078
+      },
+      {
+        "sql": "drop table if exists profile_gb6",
+        "seconds": 1.9573008159932215
+      }
+    ]
+  },
+  {
+    "source_case_id": "M040010",
+    "result": {
+      "id": "M040010",
+      "module": "git4data",
+      "family": "git4data.schema_type_mismatch",
+      "status": "pass_expected_rejection",
+      "seconds": 5.874876068992307,
+      "issues": [],
+      "checks": [
+        {
+          "sql": "create table profile_gb9(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+          "rows": []
+        },
+        {
+          "sql": "insert into profile_gb9 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+          "rows": []
+        },
+        {
+          "sql": "data branch create table profile_gs9 from profile_gb9",
+          "rows": []
+        },
+        {
+          "sql": "alter table profile_gs9 add column c varchar(20) default 'x'",
+          "rows": []
+        },
+        {
+          "sql": "alter table profile_gb9 add column c int default 0",
+          "rows": []
+        },
+        {
+          "sql": "data branch diff profile_gs9 against profile_gb9",
+          "expected_rejection": {
+            "code": 20101,
+            "message": "(20101, \"internal error: schema compatibility check: column 'c' exists in both schemas but has different types (target: 61, base: 22)\")",
+            "type": "OperationalError"
+          }
+        }
+      ],
+      "tls": null
+    },
+    "steps": [
+      {
+        "sql": "create table profile_gb9(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+        "seconds": 0.0184840910078492
+      },
+      {
+        "sql": "insert into profile_gb9 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+        "seconds": 0.03354270200361498
+      },
+      {
+        "sql": "data branch create table profile_gs9 from profile_gb9",
+        "seconds": 0.9605861349846236
+      },
+      {
+        "sql": "alter table profile_gs9 add column c varchar(20) default 'x'",
+        "seconds": 0.1918610550055746
+      },
+      {
+        "sql": "alter table profile_gb9 add column c int default 0",
+        "seconds": 1.4472836359927896
+      },
+      {
+        "sql": "data branch diff profile_gs9 against profile_gb9",
+        "seconds": 1.7332816839916632
+      },
+      {
+        "sql": "drop table if exists profile_gs9",
+        "seconds": 1.4108520160079934
+      },
+      {
+        "sql": "drop table if exists profile_gb9",
+        "seconds": 0.028550739982165396
+      }
+    ]
+  }
+]

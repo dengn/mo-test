@@ -91,7 +91,7 @@ def one(case):
  return {'id':case['id'],'module':case['module'],'family':case['family'],'status':status,'seconds':time.monotonic()-start,'issues':issues,'checks':checks,'tls':tlsinfo}
 def main(pack):
  global profiles
- p=Path(pack);profiles=json.loads((p/'profiles.json').read_text());ap=argparse.ArgumentParser();ap.add_argument('--calibrate',type=int,default=0);ap.add_argument('--workers',type=int,default=24);ap.add_argument('--output',default='results.jsonl');ap.add_argument('--ids');a=ap.parse_args()
+ p=Path(pack);profiles=json.loads((p/'profiles.json').read_text());ap=argparse.ArgumentParser();ap.add_argument('--calibrate',type=int,default=0);ap.add_argument('--workers',type=int,default=24);ap.add_argument('--ddl-workers',type=int,default=4);ap.add_argument('--output',default='results.jsonl');ap.add_argument('--ids');a=ap.parse_args()
  cases=list(map(json.loads,(p/'cases.jsonl').open()))
  if a.ids:
   ids=set(Path(a.ids).read_text().split());cases=[c for c in cases if c['id'] in ids]
@@ -103,7 +103,7 @@ def main(pack):
  out=p/a.output;done={r['id'] for r in map(json.loads,out.open())} if out.exists() else set();cases=[c for c in cases if c['id'] not in done];cnt=collections.Counter();start=time.time();last=start;n=0
  with out.open('a') as f:
   for module in dict.fromkeys(c['module'] for c in cases):
-   work=[c for c in cases if c['module']==module];workers=min(a.workers,4) if module in ['users_roles','git4data','iceberg_ddl'] else a.workers
+   work=[c for c in cases if c['module']==module];workers=min(a.workers,a.ddl_workers) if module in ['users_roles','git4data','iceberg_ddl'] else a.workers
    print('START',module,len(work),'workers',workers,flush=True)
    with concurrent.futures.ThreadPoolExecutor(workers) as ex:
     for r in ex.map(one,work):

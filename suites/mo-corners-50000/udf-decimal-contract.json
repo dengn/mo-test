@@ -1,0 +1,84 @@
+[
+  {
+    "sql": "create or replace function cu_dec_edge(a bigint) returns decimal(8,2) language python as $$\nfrom decimal import Decimal\ndef f(a):\n return Decimal('1.23456789')\n$$ handler 'f'",
+    "description": null,
+    "rows": null
+  },
+  {
+    "sql": "select cu_dec_edge(1)",
+    "description": [
+      [
+        "cu_dec_edge(1)",
+        0,
+        null,
+        39,
+        39,
+        0,
+        true
+      ]
+    ],
+    "rows": [
+      [
+        "1.2345678900000000"
+      ]
+    ]
+  },
+  {
+    "sql": "select cast('1.23456789' as decimal(8,2))",
+    "description": [
+      [
+        "cast(1.23456789 as decimal(8, 2))",
+        0,
+        null,
+        10,
+        10,
+        2,
+        false
+      ]
+    ],
+    "rows": [
+      [
+        "1.23"
+      ]
+    ]
+  },
+  {
+    "sql": "create table e2e_dec(v decimal(8,2))",
+    "description": null,
+    "rows": null
+  },
+  {
+    "sql": "insert into e2e_dec select cu_dec_edge(1)",
+    "description": null,
+    "rows": null
+  },
+  {
+    "sql": "select v from e2e_dec",
+    "description": [
+      [
+        "v",
+        0,
+        null,
+        10,
+        10,
+        2,
+        true
+      ]
+    ],
+    "rows": [
+      [
+        "1.23"
+      ]
+    ]
+  },
+  {
+    "sql": "drop table e2e_dec",
+    "description": null,
+    "rows": null
+  },
+  {
+    "sql": "drop function cu_dec_edge(bigint)",
+    "description": null,
+    "rows": null
+  }
+]

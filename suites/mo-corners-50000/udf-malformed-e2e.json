@@ -1,0 +1,58 @@
+[
+  {
+    "sql": "select cu_badshort(id) from fixtures where id<3",
+    "error": "(1105, 'rpc error: code = Unknown desc = Exception iterating responses: request length 3 is not same with result length 1')",
+    "status": "clean_sql_error"
+  },
+  {
+    "sql": "select 1",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "returned"
+  },
+  {
+    "sql": "select cu_badlong(id) from fixtures where id<3",
+    "error": "(1105, 'rpc error: code = Unknown desc = Exception iterating responses: request length 3 is not same with result length 5')",
+    "status": "clean_sql_error"
+  },
+  {
+    "sql": "select 1",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "returned"
+  },
+  {
+    "sql": "select cu_badtype(id) from fixtures where id<3",
+    "error": "(1105, \"rpc error: code = Unknown desc = Exception iterating responses: return type error, required <class 'int'>, received <class 'dict'>\")",
+    "status": "clean_sql_error"
+  },
+  {
+    "sql": "select 1",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "returned"
+  },
+  {
+    "sql": "select cu_badhandler(id) from fixtures where id<3",
+    "error": "(1105, \"rpc error: code = Unknown desc = Exception iterating responses: 'bad'\")",
+    "status": "clean_sql_error"
+  },
+  {
+    "sql": "select 1",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "returned"
+  }
+]

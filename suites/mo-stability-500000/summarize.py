@@ -25,11 +25,12 @@ def classification(c,r):
  if f=='ddl.truncate' and error==20706:return 'concurrent_ddl_lock_conflict'
  if f=='mysql.public_scalar':
   sql=c['statements'][0]['sql'].lower()
+  if '\ufffd' in sql:return 'source_literal_encoding_issue'
   if status=='candidate_wrong_result' and 'union' in sql and 'order by' not in sql:
    a=r.get('actual');b=r.get('reference')
    if sorted(a,key=lambda row:json.dumps(row,ensure_ascii=False))==sorted(b,key=lambda row:json.dumps(row,ensure_ascii=False)):return 'pass_unordered_result'
   if any(s in sql for s in ['dayofmonth(19970323)','second(230322)','yearweek(20001231','week(199','week(200']):return 'temporal_numeric_compatibility_issue'
-  if 'sounds like' in sql or '_latin' in sql or '_utf8' in sql or re.search(r'_[a-z0-9]+\s+0x',sql) or 'sql_tsi_' in sql:return 'unsupported_syntax_charset_or_alias'
+  if 'sounds like' in sql or '_latin' in sql or '_utf8' in sql or '_utf16' in sql or '_gb18030' in sql or re.search(r'_[a-z0-9]+\s+0x',sql) or 'sql_tsi_' in sql:return 'unsupported_syntax_charset_or_alias'
   if "last_day('2005-01-00')" in sql:return 'invalid_zero_date_compatibility_issue'
   if any(s in sql for s in ['collate',' like ','maketime(']):return 'documented_behavior_difference'
   if "'hello' 'monty'" in sql:return 'literal_concatenation_compatibility_issue'

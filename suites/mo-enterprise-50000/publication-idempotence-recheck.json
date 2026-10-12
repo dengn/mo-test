@@ -1,0 +1,14 @@
+[
+  {
+    "sql": "create publication if not exists e2e_pub_idem database pub50 table visible account all",
+    "rows": null
+  },
+  {
+    "sql": "create publication if not exists e2e_pub_idem database pub50 table visible account all",
+    "error": "(1062, \"Duplicate entry '(0,e2e_pub_idem)' for key '(account_id,pub_name)'\")"
+  },
+  {
+    "sql": "drop publication if exists e2e_pub_idem",
+    "rows": null
+  }
+]

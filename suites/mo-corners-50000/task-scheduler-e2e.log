@@ -1,0 +1,56 @@
+{"sql": "create table e2e_ticks(n bigint,ts timestamp default current_timestamp)", "rows": [], "status": "pass", "expected": null, "seconds": 0.025121690006926656}
+{"sql": "create table e2e_task_sink(id int primary key)", "rows": [], "status": "pass", "expected": null, "seconds": 0.032386920996941626}
+{"sql": "create task e2e_cron schedule '*/2 * * * * *' timezone 'UTC' as begin insert into e2e_ticks(n) values(1); end", "rows": [], "status": "pass", "expected": null, "seconds": 0.03222318200278096}
+{"sql": "alter task e2e_cron resume", "rows": [], "status": "pass", "expected": null, "seconds": 0.046400497027207166}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.08214132799184881}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.004436580988112837}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.005957485001999885}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.012337997992290184}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.003992840007413179}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.006013245991198346}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.004963368002790958}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.03566063501057215}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.042064407985890284}
+{"sql": "select count(*) from e2e_ticks", "rows": [[0]], "status": "pass", "expected": null, "seconds": 0.10162832000060007}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.016573575005168095}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.008625274000223726}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.003740002983249724}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.015362340986030176}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.0160707890172489}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.013117991999024525}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.012157624994870275}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.0023886790149845183}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.011522849992616102}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.05261665998841636}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.019050689006689936}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.006454490008763969}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.05562664900207892}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.005983123992336914}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.019470879982691258}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.01022087800083682}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.016585181991104037}
+{"sql": "select count(*) from e2e_ticks", "rows": [[1]], "status": "pass", "expected": null, "seconds": 0.03326853798353113}
+{"sql": "select count(*) from e2e_ticks", "rows": [[2]], "status": "pass", "expected": null, "seconds": 0.040699036995647475}
+{"sql": "alter task e2e_cron suspend", "rows": [], "status": "pass", "expected": null, "seconds": 0.28473629101063125}
+{"sql": "select count(*) from e2e_ticks", "rows": [[2]], "status": "pass", "expected": null, "seconds": 0.01823937098379247}
+{"sql": "select count(*) from e2e_ticks", "rows": [[2]], "status": "pass", "expected": [[2]], "seconds": 0.011537754005985335}
+{"sql": "alter task e2e_cron resume", "rows": [], "status": "pass", "expected": null, "seconds": 0.25907759499386884}
+{"sql": "select count(*) from e2e_ticks", "rows": [[2]], "status": "pass", "expected": null, "seconds": 0.0585459069989156}
+{"sql": "alter task e2e_cron suspend", "rows": [], "status": "pass", "expected": null, "seconds": 0.43653028801782057}
+{"sql": "create task e2e_timeout timeout '100ms' as begin insert into e2e_task_sink select sleep(2); end", "rows": [], "status": "pass", "expected": null, "seconds": 0.7958593579824083}
+{"sql": "execute task e2e_timeout", "rows": [], "status": "candidate", "expected": null, "seconds": 3.1799816970014945}
+{"sql": "select count(*) from e2e_task_sink", "rows": [[1]], "status": "candidate", "expected": [[0]], "seconds": 0.11057605702080764}
+{"sql": "select status from mo_task.sql_task_run where task_name='e2e_timeout' order by run_id desc limit 1", "rows": [["SUCCESS"]], "status": "candidate", "expected": [["FAILED"]], "seconds": 0.05616637799539603}
+{"sql": "create task e2e_retry retry 1 as begin insert into e2e_task_sink values(7); insert into e2e_missing_table values(1); end", "rows": [], "status": "pass", "expected": null, "seconds": 0.36573198600672185}
+{"sql": "execute task e2e_retry", "error": {"code": 1062, "message": "(1062, \"Duplicate entry '7' for key 'id'\")", "type": "IntegrityError"}, "status": "pass_expected_rejection", "seconds": 2.965388577984413}
+{"sql": "select * from e2e_task_sink", "rows": [[0], [7]], "status": "candidate", "expected": [[7]], "seconds": 0.018571098014945164}
+{"sql": "select count(*) from mo_task.sql_task_run where task_name='e2e_retry' and status='FAILED'", "rows": [[2]], "status": "pass", "expected": [[2]], "seconds": 0.021179066010518}
+{"sql": "create task e2e_badzone schedule '*/2 * * * * *' timezone 'No/Such_Zone' as begin select 1; end", "error": {"code": 1105, "message": "(1105, 'provided bad location No/Such_Zone: unknown time zone No/Such_Zone')", "type": "OperationalError"}, "status": "pass_expected_rejection", "seconds": 0.07662308600265533}
+{"sql": "create task e2e_badcron schedule 'invalid cron expression' as begin select 1; end", "error": {"code": 1105, "message": "(1105, 'expected exactly 6 fields, found 3: [invalid cron expression]')", "type": "OperationalError"}, "status": "pass_expected_rejection", "seconds": 0.02911973898881115}
+{"sql": "drop task if exists e2e_cron", "rows": [], "status": "pass", "expected": null, "seconds": 0.27475169399986044}
+{"sql": "drop task if exists e2e_timeout", "rows": [], "status": "pass", "expected": null, "seconds": 0.06183895899448544}
+{"sql": "drop task if exists e2e_retry", "rows": [], "status": "pass", "expected": null, "seconds": 0.03823177100275643}
+{"sql": "drop task if exists e2e_badzone", "rows": [], "status": "pass", "expected": null, "seconds": 0.009066164988325909}
+{"sql": "drop task if exists e2e_badcron", "rows": [], "status": "pass", "expected": null, "seconds": 0.005860770004801452}
+{"sql": "drop table e2e_ticks", "rows": [], "status": "pass", "expected": null, "seconds": 0.07772678497713059}
+{"sql": "drop table e2e_task_sink", "rows": [], "status": "pass", "expected": null, "seconds": 0.21879844900104217}

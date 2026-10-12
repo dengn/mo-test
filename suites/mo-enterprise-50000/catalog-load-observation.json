@@ -1,0 +1,29 @@
+[
+  {
+    "sql": "select count(*) from mo_tables where reldatabase='enterprise50'",
+    "rows": [
+      [
+        17
+      ]
+    ],
+    "seconds": 0.004124172002775595
+  },
+  {
+    "sql": "select count(*) from mo_branch_metadata",
+    "rows": [
+      [
+        6387
+      ]
+    ],
+    "seconds": 0.002037397993262857
+  },
+  {
+    "sql": "select count(*) from mo_snapshots",
+    "rows": [
+      [
+        2
+      ]
+    ],
+    "seconds": 0.0014263430202845484
+  }
+]
