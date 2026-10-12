@@ -4780,14 +4780,14 @@
     },
     {
       "path": "ISSUES.md",
-      "bytes": 1095,
-      "sha256": "7ef647bdb04cd27320502d71e0c209a20d9ffaf254721c8bcc8c3ec39b50447a",
+      "bytes": 1851,
+      "sha256": "684133f0f8bb176adab2700bb64ea1201f4224f23673fc51a3f51fdcdb18419e",
       "kind": "support_file"
     },
     {
       "path": "BOUNDARY-CHAOS-600000.md",
-      "bytes": 7197,
-      "sha256": "2e31b51b6e54a273013e0cd8c8d8218eab21ec0264d89029207cb8c875f02837",
+      "bytes": 7663,
+      "sha256": "8e6f313a449eff2d73598259a7a452756fac2b53b079c9624a3cbb7383c116b8",
       "kind": "support_file"
     },
     {
@@ -4804,8 +4804,8 @@
     },
     {
       "path": "suites/mo-gis-postgis/REPORT.md",
-      "bytes": 18735,
-      "sha256": "089b867b37231cfc401ef2f08400d22751eaf8558e3db354f4b58004091d2ad7",
+      "bytes": 19185,
+      "sha256": "f6a141f2783b170cabb695d0f80c03af59cb84cb491d71bdf6f2d3aedd133cd1",
       "kind": "gis_followup_support_file"
     },
     {
@@ -5044,20 +5044,20 @@
     },
     {
       "path": "suites/mo-gis-postgis/findings/MO-GIS-001.md",
-      "bytes": 1020,
-      "sha256": "6c38735e2e14f3160b1496d73d40480a251af3534d0aba0c29fe039cc8bb53d4",
+      "bytes": 1222,
+      "sha256": "3c176cd4684f22b82ac7575f66b28d1f945297bb77f246bd00d9b405f1ed87f0",
       "kind": "gis_followup_support_file"
     },
     {
       "path": "suites/mo-gis-postgis/findings/MO-GIS-002.md",
-      "bytes": 949,
-      "sha256": "8b141da3d923428fb2a0f9914f4326cf0240241eb749c0a178a7ebcded4cad40",
+      "bytes": 1151,
+      "sha256": "625ef5f2a72cb1b517043baa3046aa673e1e9b12f6c41caba8ca4f91257a3583",
       "kind": "gis_followup_support_file"
     },
     {
       "path": "suites/mo-gis-postgis/findings/MO-GIS-003.md",
-      "bytes": 1093,
-      "sha256": "9549a2ec9bab889442e6915deadd44695846a37677d4d0bf768182339a0aa690",
+      "bytes": 1295,
+      "sha256": "e4771f6617e53531370040e83f70cfbc763d770deac78488bd8bd3f5043cf28b",
       "kind": "gis_followup_support_file"
     },
     {
@@ -5797,6 +5797,192 @@
       "bytes": 35,
       "sha256": "8edba01549d0537cdc3be982cc882f4c7bd16d5b1b439c6456355d182fd8261f",
       "kind": "gis_followup_support_file"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/README.md",
+      "bytes": 5312,
+      "sha256": "0bb65ec25d1c63189f5f55f318572409eeef51d9cc04f6fed3421f374f00ad01",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/application-acceptance.json",
+      "bytes": 1078,
+      "sha256": "83bce8588b286b97e46ccbae531cdcb6667a541f3bc6ca4ed8e0bddd1df52636",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/build.log",
+      "bytes": 4103,
+      "sha256": "5168694991b86b8e8b5a4b5b9b7c2dc15005013bb660417631f9480b1c894625",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/config/cn.toml",
+      "bytes": 544,
+      "sha256": "3400c471da106a6522173f986fd150f1f45634457d0771d04114811f120693c5",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/config/launch.toml",
+      "bytes": 191,
+      "sha256": "48168626b75ff928eb597d9c50cfcf21eeaee254e59d39a40764c10fb14ec118",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/config/log.toml",
+      "bytes": 839,
+      "sha256": "5f88cae1306619d30c140623cde11021f81986ff15295c33cc972e5d36e685c0",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/config/tn.toml",
+      "bytes": 517,
+      "sha256": "715b41e69a8cbfa3a3abc06db6fef10aed8eb7f447e30f68ee90a634ae400e54",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/create-MO-GIS-001.log",
+      "bytes": 55,
+      "sha256": "04968f827cb5d30abf58428ac0a4d91b46c0e491b59f902383a6246f5fc2bd91",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/create-MO-GIS-002.log",
+      "bytes": 55,
+      "sha256": "7ca492599e2d66b6809e84b7e1bd8c7a69f840286eca636281abb507a9f0ace7",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/create-MO-GIS-003.log",
+      "bytes": 55,
+      "sha256": "f0f991d247d48b6231fbbb52814fa477db56af9b8c5651199f74a14bd49bc936",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/duplicate-search-more.json",
+      "bytes": 25836,
+      "sha256": "7f2bfa85996d840a9451ff2ee7ef9e3c8fb5b6414354b1ffb46d35be9ef1cd76",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/duplicate-search.json",
+      "bytes": 2201,
+      "sha256": "3849b309e37d97f212d9aae0e05bc151f4a526935a3c5b8115192836487e5d83",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/fetch.log",
+      "bytes": 123,
+      "sha256": "202a91eb9c0f089c0c5e8bc41623b793a22f92dca8a3bf7a47afc8267ff77101",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/initial-bug-recheck-results.json",
+      "bytes": 30657,
+      "sha256": "9fabb4571ab2f9cf9e27939e673ee675a8204e13a65cc10b8bf1ead52208272c",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/issue-MO-GIS-001.md",
+      "bytes": 2877,
+      "sha256": "fc2665dc91a62e617c60ac078d3c2743dcd46788d573a50f471f0cddeaf57c72",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/issue-MO-GIS-002.md",
+      "bytes": 2404,
+      "sha256": "ddfa2f246dcbdaaede23d9732d5568cbcdaf01f467809d0a1685c8964dff764c",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/issue-MO-GIS-003.md",
+      "bytes": 3169,
+      "sha256": "d25f7c5b881dcbf1b96121d537d300e2a8e8bcb02e41a4d0e275ac784076ed35",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/issue-verification.json",
+      "bytes": 928,
+      "sha256": "e7236b346c235e1384638b95ee618936f622105b705c95f49b3b9eb51b365686",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/main-changed-files.txt",
+      "bytes": 16759,
+      "sha256": "aa6009a964b838918b673268a60ee971b20f8dec552f61ed4ef0795ba4f041f4",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/main-observed.json",
+      "bytes": 1862,
+      "sha256": "f5018a053b591ee6c234683edd361ad8b03f8b4cbd099ed5002832d8e21ca36b",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/recheck-initial-index-expectation-error.log",
+      "bytes": 581,
+      "sha256": "fd7c808e1d075ada72c094f02a39964cadb28a951fd7dc69346f6f8eb4e33987",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/recheck-initial-serialization-error.log",
+      "bytes": 1771,
+      "sha256": "0050c25bd5910d6edaf15339965b7fdfcf3c0e5c2463f2ab8342a5219e25113d",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/recheck-results.json",
+      "bytes": 30657,
+      "sha256": "9fabb4571ab2f9cf9e27939e673ee675a8204e13a65cc10b8bf1ead52208272c",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/recheck.log",
+      "bytes": 241,
+      "sha256": "fe910ac0fb56f754911b2d1b240e48f0737f3c221d425575eb5136bc9cfcfd44",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/recheck.py",
+      "bytes": 9363,
+      "sha256": "b3be0ac0797d92b21933fc6f1e96f39ce8cb8cbda4188276df16e8ec67cfa87d",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/related-issue28183.json",
+      "bytes": 3572,
+      "sha256": "971697d42aeb1a353cf52c104a247aea03dc4d51ac0e978666c3c1f5a4e4c8dc",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/server-log-snapshot.log.gz",
+      "bytes": 3927,
+      "sha256": "16638cff2c6e634d848799da59ae8ef0904f0d7c98cdd53ee238044e90e7d8ec",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/start-main.sh",
+      "bytes": 585,
+      "sha256": "3b1c711ceb165611cb69842da07a9ca162a09bc41968efcf264c9a33115049eb",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/submitted-issues.json",
+      "bytes": 859,
+      "sha256": "0f25d33db6bc0d73d8c5b3a3c1b1754bcf68105f2c3a66fcc6aa7372bfc7b70f",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/summary.json",
+      "bytes": 271,
+      "sha256": "024b997f8c6b467073a4835272ea2c45f2395f9964120ec8db55d70d5dcfbb0a",
+      "kind": "gis_latest_main_verification"
+    },
+    {
+      "path": "suites/mo-gis-main-recheck/versions.json",
+      "bytes": 1016,
+      "sha256": "481b6f8fa0bb9a411a6a5fa292d5bf481be7a149f41401b9b7f054736c37562f",
+      "kind": "gis_latest_main_verification"
     }
   ],
   "excluded": [
@@ -5835,6 +6021,22 @@
       "confirmed_mo_defect_groups": 3,
       "reference_side_area_anomaly_groups": 1,
       "gis_workload_unhandled_panic_observed": false,
+      "main_count_contribution": 0,
+      "state": "complete"
+    },
+    "gis_main_recheck": {
+      "path": "suites/mo-gis-main-recheck/README.md",
+      "mo_commit": "0a4db0e6a6517e489a333ad9073dfcdc5d26aff4",
+      "constant_queries": 81,
+      "stored_and_admission_records": 8,
+      "confirmed_defect_groups": 3,
+      "issues": [
+        30032,
+        30033,
+        30034
+      ],
+      "application_acceptance": "pass",
+      "geodetic_spatial_index_pushdown": "disabled_by_planner_correctness_guard",
       "main_count_contribution": 0,
       "state": "complete"
     }

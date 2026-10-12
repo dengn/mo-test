@@ -43,7 +43,7 @@ PostGIS 已安装扩展的函数签名清单和逐签名覆盖说明保存在 [p
 
 ## 确认的 MO 正确性问题
 
-以下按可复现行为归并为 3 类，不能把原始几十条 difference/error 当作几十个 bug。每类均在恢复后的新连接重复验证；24 条复查记录在 [findings-repeatability.json](findings-repeatability.json)。英文 issue 草稿在 `findings/`，本轮尚未对外提交。
+以下按可复现行为归并为 3 类，不能把原始几十条 difference/error 当作几十个 bug。每类均在恢复后的新连接重复验证；24 条复查记录在 [findings-repeatability.json](findings-repeatability.json)。初轮英文草稿在 `findings/`；2026-10-13 已在更新的 main `0a4db0e6` 复核并提交 [#30032](https://github.com/matrixorigin/matrixone/issues/30032)、[#30033](https://github.com/matrixorigin/matrixone/issues/30033)、[#30034](https://github.com/matrixorigin/matrixone/issues/30034)，见 [最新复核](../mo-gis-main-recheck/README.md)。
 
 | 编号 | 最小输入及 MO 行为 | 对照与应用影响 |
 | --- | --- | --- |
@@ -62,7 +62,7 @@ PostGIS 已安装扩展的函数签名清单和逐签名覆盖说明保存在 [p
 | SRID | 元数据、明确 SRID 输入可用；SRID 4326 走球面计算；现有无 SRID POINT 改成 SRID 4326 的 ALTER 被拒绝 | 列约束/值携带 SRID；默认 geography 量测为椭球，需 `false` 显式球面参照 |
 | 坐标变换 | `ST_Transform` 未支持；设置 SRID 不变换坐标 | `ST_Transform` 实际变换坐标；MO 应在 ETL/应用中用 PROJ/Pyproj 变换后入库 |
 | 附近检索 | `ST_Distance <= r` + 排序通过；可用空间索引谓词路径 | `ST_DWithin`、GiST、KNN 等接口更丰富；本轮仅验证所列 SQL，未作 KNN 性能比较 |
-| 空间索引 | SPATIAL INDEX 建立/维护/回滚、EXPLAIN 索引路径与同数据全扫描结果通过 | GiST 对照通过；没有据此宣称两种索引性能相同 |
+| 空间索引 | 平面场景 SPATIAL INDEX 建立/维护/回滚、EXPLAIN 索引路径与同数据全扫描结果通过；**SRID4326 查询的索引下推被优化器主动禁用，见最新复核** | GiST 对照通过；没有据此宣称两种索引性能相同 |
 | 叠加分析 | polygon/multipolygon 面积叠加通过；边/点交集有上述 bug，line-polygon intersection 干净报不支持 | 支持多种维度组合；不能把该混合维度能力视为 MO 已具备 |
 | GEOMETRY32 函数 | 多数基础读写/量测可用；10 个拓扑谓词、9 个 MBR 谓词、MakeEnvelope、GeoHash 的输入重载缺失 | 使用相同可精确表示的 fixture 作 geometry 控制；可显式升为 GEOMETRY 后调用，但不是原生 32 位重载 |
 | 有效性 | ST_IsValid 对复合类型报不支持，重复顶点线有 bug；空/极小几何与 PG 定义有差异 | 复合几何判定、ST_MakeValid 等能力更完整；MO 未支持 ST_MakeValid |
@@ -138,4 +138,4 @@ mo-tester 默认初始化清理非内置测试数据库，首轮 BVT 因而删�
 7. `fault_recovery.py` 会 SIGKILL 本套件自有 MO process/PostGIS container 并原目录重启，需核实脚本中的固定进程、容器和路径，只在独立测试服务上执行。
 8. 运行 `triage.py` 校验覆盖、生成最终分类和功能矩阵。原始 case/result、校准/复查、应用源码、截图、官方 BVT 快照和元数据均发布；运行数据库、镜像 filesystem、依赖目录、venv、二进制与缓存不入库。
 
-所有对外新问题目前只准备草稿；既有 issue 与 600,000 主批次的状态不因这批跟进用例改变。源码未作 GIS 产品修复。
+上述 3 类 MO 问题已于 2026-10-13 经过最新 main 复核后提交英文 issue；PostGIS 参考端异常仍只保留草稿。既有 600,000 主批次的数量不因跟进复核改变。源码未作 GIS 产品修复。

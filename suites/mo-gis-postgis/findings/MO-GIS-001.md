@@ -12,4 +12,4 @@ MatrixOne returns `POLYGON EMPTY`. PostgreSQL 18.6/PostGIS 3.6.4 and MySQL 8.0.4
 
 All inputs are valid, supported polygon types at SRID 0. Their intersection is nonempty even though its area is zero. This loses shared boundaries and corner intersections in adjacency or boundary analysis. Seven generated cases exhibited this behavior; both minimal queries reproduced three times after server recovery. See `boundary-intersection-controls.json`, `minimal-findings.json`, and `findings-repeatability.json`.
 
-Draft only; no issue was created by this suite.
+Reverified on main `0a4db0e6a6517e489a333ad9073dfcdc5d26aff4` and submitted as [30032](https://github.com/matrixorigin/matrixone/issues/30032) on 2026-10-13 (Asia/Shanghai). See the latest-main recheck suite for current evidence and full issue body.

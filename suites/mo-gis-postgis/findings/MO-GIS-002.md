@@ -10,4 +10,4 @@ MatrixOne returns 0. PostGIS 3.6.4 returns true, MySQL 8.0.46 returns 1, and Sha
 
 Both stored-column and constant paths reproduce; the minimal query reproduced three times after recovery. Incorrect validity rejects otherwise usable imported line data. This finding concerns `ST_IsValid`; the separately observed `ST_IsSimple` difference for the same input follows MySQL behavior and is not included in this finding. Evidence: `validity-and-ring-controls.json`, `mysql-semantic-controls.json`, `findings-repeatability.json`.
 
-Draft only; no issue was created by this suite.
+Reverified on main `0a4db0e6a6517e489a333ad9073dfcdc5d26aff4` and submitted as [30033](https://github.com/matrixorigin/matrixone/issues/30033) on 2026-10-13 (Asia/Shanghai). See the latest-main recheck suite for current evidence and full issue body.
