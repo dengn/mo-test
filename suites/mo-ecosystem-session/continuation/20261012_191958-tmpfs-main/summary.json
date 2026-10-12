@@ -1,0 +1,39 @@
+{
+  "date_Asia_Shanghai": "2026-10-12T19:21:30.165034+08:00",
+  "runtime_id": "heavy-alt-a159dfc751",
+  "main_completed": 44496,
+  "main_remaining": 115504,
+  "routes": {
+    "pymysql": {
+      "completed": 4496,
+      "counts": {
+        "passed": 4496
+      },
+      "new_runtime_cases": 4496
+    },
+    "sqlalchemy": {
+      "completed": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "new_runtime_cases": 5000
+    },
+    "pandas": {
+      "completed": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "new_runtime_cases": 2569
+    }
+  },
+  "fully_archived_new_cases": 12049,
+  "full_typed_archive_windows": 603,
+  "full_table_rows": 1631826,
+  "archived_readback_counts": {
+    "passed": 12049
+  },
+  "new_receipts_waiting_for_current_window_archive": 16,
+  "case_definition": "Parameterized datatype/scenario/seed/backend row-set assertions,controls included;notdistinctDAGs/crashes",
+  "scope": "Functional native/configured writer and explicit SQL effects;tmpfs;notdiskthroughput/longsoak/nativecrosssystemEOS",
+  "old_data_retained": true
+}
