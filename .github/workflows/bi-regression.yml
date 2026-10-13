@@ -1,0 +1,143 @@
+name: BI and analytical regression
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: SQL replay or actual native BI execution
+        type: choice
+        options: [smoke, sql, metabase, bi, extreme, spill, spill-recovery]
+        default: smoke
+      tool:
+        description: Native BI tool selection
+        type: choice
+        options: [all, metabase, superset, grafana, redash, dataease, evidence, rill, zeppelin, sqlpad, lightdash]
+        default: all
+      mode:
+        description: strict is the gate; observe preserves recognized failures as skipped
+        type: choice
+        options: [strict, observe]
+        default: strict
+      expected_commit:
+        description: Optional full MatrixOne source SHA
+        type: string
+        default: ''
+      dedicated_instance:
+        description: Required for extreme and spill on the dedicated runner
+        type: boolean
+        default: false
+  workflow_call:
+    inputs:
+      profile:
+        type: string
+        default: smoke
+      tool:
+        type: string
+        default: all
+      mode:
+        type: string
+        default: strict
+      expected_commit:
+        type: string
+        default: ''
+      dedicated_instance:
+        type: boolean
+        default: false
+    secrets:
+      MO_TEST_HOST:
+        required: true
+      MO_TEST_PORT:
+        required: true
+      MO_TEST_USER:
+        required: true
+      MO_TEST_PASSWORD:
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  # One job per dedicated database/metrics endpoint; concurrent unrelated work
+  # would invalidate the spill counters and process/file attribution.
+  group: mo-bi-dedicated-regression
+  cancel-in-progress: false
+
+jobs:
+  regression:
+    runs-on: [self-hosted, Linux, X64]
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: suites/mo-bi-regression
+    env:
+      MO_HOST: ${{ secrets.MO_TEST_HOST }}
+      MO_PORT: ${{ secrets.MO_TEST_PORT }}
+      MO_USER: ${{ secrets.MO_TEST_USER }}
+      MO_PASSWORD: ${{ secrets.MO_TEST_PASSWORD }}
+      MO_SSL_CA: ${{ vars.MO_SSL_CA }}
+      NATIVE_CONFIG: ${{ vars.MO_BI_NATIVE_CONFIG }}
+      MO_PID: ${{ vars.MO_BI_SERVICE_PID }}
+      SPILL_ROOT: ${{ vars.MO_BI_SPILL_ROOT }}
+      METRICS_URL: ${{ vars.MO_BI_METRICS_URL }}
+      RECOVERY_BINARY: ${{ vars.MO_BI_RECOVERY_BINARY }}
+      RECOVERY_BINARY_SHA256: ${{ vars.MO_BI_RECOVERY_BINARY_SHA256 }}
+      RECOVERY_CONFIG_DIR: ${{ vars.MO_BI_RECOVERY_CONFIG_DIR }}
+      RECOVERY_SQL_PORT: ${{ vars.MO_BI_RECOVERY_SQL_PORT }}
+      PROFILE: ${{ inputs.profile }}
+      TOOL: ${{ inputs.tool }}
+      MODE: ${{ inputs.mode }}
+      EXPECTED_COMMIT: ${{ inputs.expected_commit }}
+      DEDICATED: ${{ inputs.dedicated_instance }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            suites/mo-bi-regression
+            .github/workflows
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --require-hashes -r requirements.lock
+      - name: Verify independent corpora and regression contracts
+        run: |
+          python verify.py
+          python -m unittest discover -s tests -v
+      - name: Run the selected real regression profile
+        shell: bash
+        run: |
+          if [ "$PROFILE" = spill-recovery ]; then
+            test "$DEDICATED" = true
+            test -n "$RECOVERY_BINARY"
+            test -n "$RECOVERY_BINARY_SHA256"
+            test -n "$RECOVERY_CONFIG_DIR"
+            args=(--dedicated-instance --binary "$RECOVERY_BINARY" --binary-sha256 "$RECOVERY_BINARY_SHA256" --config-dir "$RECOVERY_CONFIG_DIR" --out "artifacts/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}")
+            if [ -n "$EXPECTED_COMMIT" ]; then args+=(--expected-commit "$EXPECTED_COMMIT"); fi
+            MO_HOST=127.0.0.1 MO_PORT="${RECOVERY_SQL_PORT:-6001}" python spill_recovery.py "${args[@]}"
+            exit 0
+          fi
+          args=(--profile "$PROFILE" --mode "$MODE" --out "artifacts/ci-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}")
+          if [ -n "$EXPECTED_COMMIT" ]; then args+=(--expected-commit "$EXPECTED_COMMIT"); fi
+          if [ "$PROFILE" = bi ] || [ "$PROFILE" = metabase ]; then
+            test -n "$NATIVE_CONFIG"
+            args+=(--native-config "$NATIVE_CONFIG")
+            if [ "$TOOL" != all ]; then args+=(--tool "$TOOL"); fi
+          fi
+          if [ "$PROFILE" = extreme ] || [ "$PROFILE" = spill ]; then
+            test "$DEDICATED" = true
+            test -n "$MO_PID"
+            args+=(--dedicated-instance --mo-pid "$MO_PID")
+          fi
+          if [ "$PROFILE" = spill ]; then
+            test -n "$SPILL_ROOT"
+            test -n "$METRICS_URL"
+            args+=(--spill-root "$SPILL_ROOT" --metrics-url "$METRICS_URL")
+          fi
+          python run.py "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bi-regression-${{ inputs.profile }}-${{ github.run_id }}-${{ github.run_attempt }}
+          # Never upload private SDK configs, native project credentials or logs.
+          path: suites/mo-bi-regression/artifacts/
+          if-no-files-found: error

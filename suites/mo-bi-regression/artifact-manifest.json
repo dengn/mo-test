@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "description": "Publishable portable suite files only; excludes private runtime, generated run artifacts and the local virtual environment.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 19,
+      "sha256": "45efed0b0abe53fd9c6f3d539afdc8187007df4f94850d1921ff94461a8d07e6"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 36,
+      "sha256": "46d90bca3f9574acc625e27f18cf0a95caef9f00a4533ae049d353d4148fe71c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13113,
+      "sha256": "7fff971264b46a48c7d95cc868fd23d2b9b9fc938dc679d7c5036720c746aae4"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 7672,
+      "sha256": "4f0a45bed061475a6794d109fa76cc4e9dd464012bd7f5ea2db2906b46c8d142"
+    },
+    {
+      "path": "common.py",
+      "bytes": 6405,
+      "sha256": "b8733d235289dca6a1b9da529c72f9718d7b1c1c40142b5128b51ae83483247a"
+    },
+    {
+      "path": "corpus/analytics.jsonl.gz",
+      "bytes": 3560415,
+      "sha256": "992403aad5d34bd914617257c344b083b131cc193f1c5ba09eb713c08b0164d6"
+    },
+    {
+      "path": "corpus/extreme.jsonl.gz",
+      "bytes": 8208308,
+      "sha256": "2c5f3f9806773d6369cb3218ec9160a63fe9729a765a634405f65f7d1bfb554f"
+    },
+    {
+      "path": "corpus/known-client-values.json.gz",
+      "bytes": 10955,
+      "sha256": "e990c36701e406ab65bd6ccb2acb2ccfdbfb4698eb6afdb090ccf04897cb05b8"
+    },
+    {
+      "path": "corpus/manifest.json",
+      "bytes": 3141,
+      "sha256": "df72acdc7b0e6c6665e165cd08b1f4fa4fc1a1fd0b0a16e01cef8002d023f2ac"
+    },
+    {
+      "path": "corpus/metabase.jsonl.gz",
+      "bytes": 553887,
+      "sha256": "5fee4a92641537d46f60d57003f5d4a5b9fd2f226902a3ef0f65e8df837e9d89"
+    },
+    {
+      "path": "corpus/models.json",
+      "bytes": 30784,
+      "sha256": "e8dcdd8fd0d7f6bbfc8fe004075392bef1e74b72df925da2167cab30e478571b"
+    },
+    {
+      "path": "corpus/rill-metrics.jsonl.gz",
+      "bytes": 15948,
+      "sha256": "826980a6f16c1b3a351f16d3e5d01cfc843d81643cc6e16f445dc79bbc2e60c2"
+    },
+    {
+      "path": "corpus/spill.json",
+      "bytes": 7727,
+      "sha256": "8755680e8536d989eb8f1fe5b1d1922967a509639a52038728474ac56440dc5e"
+    },
+    {
+      "path": "corpus/sql-projection.jsonl.gz",
+      "bytes": 412546,
+      "sha256": "b0f1c4adb9edc5984a6e746e6a2d277d091033413314aca195d1aa223e05cd23"
+    },
+    {
+      "path": "drivers/evidence_sdk.cjs",
+      "bytes": 976,
+      "sha256": "54b5e8043ec41a8be454ad0ce13e419d7def6d1a45b91a37908e5e0e2b7967b9"
+    },
+    {
+      "path": "drivers/lightdash_sdk.cjs",
+      "bytes": 1122,
+      "sha256": "cb3793b3ba807b23b2f9c9599caa39960adc6c1b30ad0779d2febfd00ebeaf93"
+    },
+    {
+      "path": "drivers/redash_sdk.py",
+      "bytes": 1289,
+      "sha256": "24b2fe070fc5d22617ae8cf6a91c24d105212e8d516b652bd830a745a4e7a796"
+    },
+    {
+      "path": "fixture_baseline.py",
+      "bytes": 2850,
+      "sha256": "1f90021f5362ac81adf2205686df559652a09166fbf06dce3a1d15b138ae5911"
+    },
+    {
+      "path": "fixture_core.py",
+      "bytes": 6009,
+      "sha256": "4a98fec7ce8eb26af85a55ead1a2ae9209740c88dd2c69612099a6350fdb6957"
+    },
+    {
+      "path": "fixture_extra.py",
+      "bytes": 818,
+      "sha256": "8a55a271413889d8391f172abdd301254e5436178c43103de4e15479eb55097f"
+    },
+    {
+      "path": "fixtures.py",
+      "bytes": 4753,
+      "sha256": "b8d9d8b2392a1f18211e8d6a51871f97252a471042eb1b1e6265c9fda2124bce"
+    },
+    {
+      "path": "native-config.example.json",
+      "bytes": 1448,
+      "sha256": "8edbc8e70f6bd99d8d95f78ed775042e17897438a982a5b7107e0c291d00241e"
+    },
+    {
+      "path": "native.py",
+      "bytes": 27939,
+      "sha256": "971e8bb491faa383b33538a1894247f59036eea7944682af4f76688fb725fc31"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 646,
+      "sha256": "f67dc7546ec4f440522c4d121fa12affb78ca4bf00fc47e00d7f5ca49a83dc88"
+    },
+    {
+      "path": "rill.py",
+      "bytes": 4482,
+      "sha256": "f65bdbbf0ca0dd0ad1484a357dc56d59ff93d310e8f8cf7aff7005e8e7c8ad84"
+    },
+    {
+      "path": "run.py",
+      "bytes": 7048,
+      "sha256": "190f083cecfa9ce982c53b8cfbba4d0f8b20d81dc5f226fae635bde6ca1e3e1b"
+    },
+    {
+      "path": "run_sql.py",
+      "bytes": 3006,
+      "sha256": "87da0e20934abac8dc332771e31394e60fb59dfa81f07ef3f3896172b9fd9bc3"
+    },
+    {
+      "path": "runtime-pins.json",
+      "bytes": 1200,
+      "sha256": "0428cc2e0778bd550a300dbc05fad4eec37a17ce2052293bc9c8f64b6a11f25f"
+    },
+    {
+      "path": "spill.py",
+      "bytes": 7666,
+      "sha256": "ee694aa71b3bf8a7c0a6bc9492515ff6f1649a0871fee069afc8fe7670df1026"
+    },
+    {
+      "path": "spill_recovery.py",
+      "bytes": 12730,
+      "sha256": "6195c393556f2e84453ac9f6d65ed87b8f61aac904015b5bf025638f46057495"
+    },
+    {
+      "path": "stress.py",
+      "bytes": 2440,
+      "sha256": "e5ef3f3d130ab0b7b5443c82eac2b6fa7262f3d05b2b5c83047ce2b6fb4561f1"
+    },
+    {
+      "path": "templates.py",
+      "bytes": 30080,
+      "sha256": "178ce23b19cf6144b1d61ef8aaf0f650a85940eab809c9549e67d794c2caa9be"
+    },
+    {
+      "path": "tests/test_contracts.py",
+      "bytes": 7584,
+      "sha256": "16f4a98e5661aff608d2f3a2e7b51aba200b342360c50f83f2b743e47e6e0a0b"
+    },
+    {
+      "path": "validation/cases.jsonl.gz",
+      "bytes": 1054152,
+      "sha256": "fcb5cbbe3b66dbb71914cfb6e5ab13e2e2abea4457010a46c3d15afff3db2edf"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 9100,
+      "sha256": "346a0af718c81f6b11c8f70789526fb9deb4c7636e16b1b0974b1deddf20250a"
+    },
+    {
+      "path": "verify.py",
+      "bytes": 2034,
+      "sha256": "3269935bbff0d74437b0cb0bb10ff9d996ba770381229317a3ecf758283fe92d"
+    }
+  ],
+  "workflow": {
+    "path": ".github/workflows/bi-regression.yml",
+    "sha256": "763954655c360108a9af154cf3806cb839ddf75eb05da833724d15123bc8a1e7"
+  }
+}

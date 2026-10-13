@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "description": "Actual local execution receipts, never used as expected query answers. Native repetitions and overlapping corpora are not unique case additions. Recognized failures remain failed assertions in strict mode.",
+  "date_utc": "2026-10-13",
+  "matrixone": {
+    "source_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7"
+  },
+  "unit_tests": 25,
+  "fixture_integrity": {
+    "tables": 14,
+    "rows": 356840,
+    "semantic_models": 24
+  },
+  "runs": [
+    {
+      "profile_or_tool": "smoke",
+      "attempt": "validate-final-smoke-004",
+      "case_count": 732,
+      "statuses": {
+        "passed": 732
+      },
+      "mode": "strict",
+      "passed": true,
+      "source_format": "full-case-json",
+      "source_sha256": "6afb67d6e3219b0513a32cc6e1bc6a0efb48d6c1ce8fe0332653f76598a564b2",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "sql",
+      "attempt": "validate-final-sql-005",
+      "case_count": 20534,
+      "statuses": {
+        "passed": 20334,
+        "known_failure": 200
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "full-case-json",
+      "source_sha256": "1517f3afe3504b69478823036c1487dc2471e17a780394d783a440824ecdc79d",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "extreme",
+      "attempt": "validate-extreme-001",
+      "case_count": 257,
+      "statuses": {
+        "passed": 257
+      },
+      "mode": "strict",
+      "passed": true,
+      "source_format": "junit-completed-case-evidence",
+      "source_sha256": "c96d83cc1392b1659cfe026500a7cd798dfe4584a0e5fdabfdbc724941e67b6e",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "metabase",
+      "attempt": "validate-metabase-001",
+      "case_count": 6880,
+      "statuses": {
+        "passed": 6880
+      },
+      "mode": "strict",
+      "passed": true,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "e995c38345a0e8006ffd2430de788d90fd55318484ed6c086a7d7b8111d71139",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": "23d8f61252f3017dff218b530817a240206fd762"
+      }
+    },
+    {
+      "profile_or_tool": "superset",
+      "attempt": "validate-superset-final-002",
+      "case_count": 553,
+      "statuses": {
+        "known_failure": 444,
+        "passed": 109
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "bda201ba7b431af6b6b879b6f1465b91068d498ec8c6f118e0e181097b059126",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "grafana",
+      "attempt": "validate-grafana-final-003",
+      "case_count": 535,
+      "statuses": {
+        "known_failure": 535
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "bd33d2cff1259f854dfdd68a52cdcc69590a70f33f1202cd51cc34a3015050f7",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": "23d8f61252f3017dff218b530817a240206fd762"
+      }
+    },
+    {
+      "profile_or_tool": "redash",
+      "attempt": "validate-redash-rill-001",
+      "case_count": 534,
+      "statuses": {
+        "passed": 492,
+        "known_failure": 42
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "f55011885fe605f816f49bc7225e78bd63b829296f429fc7d7b9a9d4b1389895",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "dataease",
+      "attempt": "validate-dataease-006",
+      "case_count": 535,
+      "statuses": {
+        "passed": 531,
+        "known_failure": 4
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "21f1128fb7a32d14ae01b0a616a317822a2f64acbbd72a4ff366a165663023be",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "evidence",
+      "attempt": "validate-node-rill-001",
+      "case_count": 534,
+      "statuses": {
+        "known_failure": 534
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "de6eb25a48f22b27c2746cc3c6b17bc53acf5a4208353657b692e1d2ca5fe4d2",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": "23d8f61252f3017dff218b530817a240206fd762"
+      }
+    },
+    {
+      "profile_or_tool": "rill",
+      "attempt": "validate-redash-rill-001",
+      "case_count": 800,
+      "statuses": {
+        "passed": 511,
+        "known_failure": 289
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "3dfb5739f762fb1e0a74c427875969615834633397cbcea2f2fd2322546e6125",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "zeppelin",
+      "attempt": "validate-zeppelin-001",
+      "case_count": 534,
+      "statuses": {
+        "passed": 533,
+        "known_failure": 1
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "e485864015437316f17dbbb9c16913bbc58b8117f6fd60cde1a2cf558d9534aa",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "sqlpad",
+      "attempt": "validate-sqlpad-001",
+      "case_count": 535,
+      "statuses": {
+        "passed": 535
+      },
+      "mode": "observe",
+      "passed": true,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "9d8d70859330c573d174328a90bca56e9e88622187f1b3681c21550653deec89",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "lightdash",
+      "attempt": "validate-node-rill-001",
+      "case_count": 4,
+      "statuses": {
+        "known_failure": 4
+      },
+      "mode": "observe",
+      "passed": false,
+      "source_format": "native-driver-case-json",
+      "source_sha256": "c839eafc2f4c0a9ba38214b4f24878c3dc7de3e7005c407a127e74f7d90645a1",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": "23d8f61252f3017dff218b530817a240206fd762"
+      }
+    },
+    {
+      "profile_or_tool": "spill",
+      "attempt": "validate-spill-full-003",
+      "case_count": 14,
+      "statuses": {
+        "passed": 14
+      },
+      "mode": "strict",
+      "passed": true,
+      "source_format": "full-case-json",
+      "source_sha256": "d2eff7fa6f4377ae7c5f5eceae4f7af848672a4cd0f0046d700d45059e7bb93c",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": null
+      }
+    },
+    {
+      "profile_or_tool": "spill-recovery",
+      "attempt": "validate-managed-recovery-002",
+      "case_count": 6,
+      "statuses": {
+        "passed": 6
+      },
+      "mode": "strict",
+      "passed": true,
+      "source_format": "full-case-json",
+      "source_sha256": "d79ada277473d84982eccd97c9ccecae9be11346f0747caf5dbf22f513f3fb6a",
+      "target": {
+        "version": "8.0.30-MatrixOne-v",
+        "git_version": "23d8f61252",
+        "expected_commit": "23d8f61252f3017dff218b530817a240206fd762"
+      }
+    }
+  ],
+  "case_receipts": {
+    "path": "validation/cases.jsonl.gz",
+    "records": 32987,
+    "sha256": "fcb5cbbe3b66dbb71914cfb6e5ab13e2e2abea4457010a46c3d15afff3db2edf"
+  },
+  "limitations": [
+    "Local verification; GitHub Actions was not dispatched and no nightly schedule was enabled.",
+    "Metabase native modeling passed with explicit SQL models; automatic grants/field synchronization is not asserted.",
+    "Lightdash adapter probes do not execute MatrixOne SQL. Rill evaluates aggregates locally after MySQL ingestion.",
+    "The default extreme profile selects 257 historically bounded passes; 11 boundary cases remain explicit opt-in.",
+    "Earlier deployment and runner attempts remain separate; only the identified final attempts are summarized."
+  ]
+}

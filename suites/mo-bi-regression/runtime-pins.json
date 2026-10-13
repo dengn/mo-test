@@ -1,0 +1,33 @@
+{
+  "matrixone": {
+    "source_commit": "23d8f61252f3017dff218b530817a240206fd762",
+    "binary_sha256": "49d2d31eeb6c8b3151612aa10314c1081cb47908410e7321fae389b0db0c80e7"
+  },
+  "images": {
+    "superset": "apache/superset@sha256:16b50bbef6648912a79e3293d418fefa743ce555d36c5af6b85d859119ed7f88",
+    "grafana": "grafana/grafana@sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572",
+    "sqlpad": "sqlpad/sqlpad@sha256:6011bd93d61711686ec7cdc91e5f7306a8185c27392bfbd457285ef19ff745a9",
+    "redash": "redash/redash:26.9.0@sha256:fced015dbdb8bf171cbffe73e7841c9331c088b0fbf9542427cf4e72daa7f3c3"
+  },
+  "metabase": {
+    "version": "v0.64.1.5",
+    "jar_sha256": "f5011831290e5db7388ad48e00e861d985ed88a9f731be701df11ab07ac0fef0"
+  },
+  "dataease": {
+    "version": "2.10.17",
+    "jar_sha256": "c00df2275d732eaf137fe5b5951e5554f67e3852ddd0a95bf5fefc74fa5f9154"
+  },
+  "npm": {
+    "@evidence-dev/mysql": "1.1.6",
+    "@lightdash/common": "2.573.1",
+    "@lightdash/warehouses": "2.573.1"
+  },
+  "rill": {
+    "version": "0.90.5",
+    "source_commit": "b9ea8c6f215e56c4c0848771e70b3ec38346eacc"
+  },
+  "zeppelin": {
+    "version": "0.12.0",
+    "mysql_connector_j": "8.4.0"
+  }
+}

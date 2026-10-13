@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "source_matrixone_commit": "23d8f61252f3017dff218b530817a240206fd762",
+  "packs": {
+    "analytics.jsonl.gz": {
+      "count": 20000,
+      "sha256": "992403aad5d34bd914617257c344b083b131cc193f1c5ba09eb713c08b0164d6",
+      "bytes": 3560415
+    },
+    "metabase.jsonl.gz": {
+      "count": 6820,
+      "sha256": "5fee4a92641537d46f60d57003f5d4a5b9fd2f226902a3ef0f65e8df837e9d89",
+      "bytes": 553887
+    },
+    "sql-projection.jsonl.gz": {
+      "count": 534,
+      "sha256": "b0f1c4adb9edc5984a6e746e6a2d277d091033413314aca195d1aa223e05cd23",
+      "bytes": 412546
+    },
+    "extreme.jsonl.gz": {
+      "count": 268,
+      "sha256": "2c5f3f9806773d6369cb3218ec9160a63fe9729a765a634405f65f7d1bfb554f",
+      "bytes": 8208308
+    },
+    "rill-metrics.jsonl.gz": {
+      "count": 800,
+      "bytes": 15948,
+      "sha256": "826980a6f16c1b3a351f16d3e5d01cfc843d81643cc6e16f445dc79bbc2e60c2"
+    }
+  },
+  "fixture_rows": {
+    "orders": 23790,
+    "invoices": 23790,
+    "touches": 23790,
+    "postings": 23790,
+    "movements": 23790,
+    "readings": 23790,
+    "tickets": 23790,
+    "attendance": 23790,
+    "shipments": 23790,
+    "outcomes": 23790,
+    "entities": 3680,
+    "entity_history": 7360,
+    "adjustments": 69500,
+    "fx_rates": 38400
+  },
+  "fixture_csv_sha256": {
+    "orders": "e5cf8b440296f4381a2e60b5472a086e5959caa325726f97e53a7396b8f153a4",
+    "invoices": "fb1bdd585637109beb5be48755beae1fbd2dca25d13c377264a109d3084dd67f",
+    "touches": "d8d0ad3ac59b1f53a5ae6d38667bf53d01675d5677bf6eb7571731c5d78b85da",
+    "postings": "db4f8e853d2811fb0950c58224313e8cbe8b1eaed8e48af671c7522ece9cfa69",
+    "movements": "7e51f053c43a011374c2aaaeedb00fa3bd3370297bcb828c47682f4972324179",
+    "readings": "4b8077e712ce46a09d0a1e4b2f108bfc491f34bf06aa963fe1bac3005eb61570",
+    "tickets": "d607b33368f4cbd792e79767d3eb17afe56e7081c58e6422ff4a16908c61945a",
+    "attendance": "1b75d4e187d7cc769f72ac6e2cf916ac422d55f1e87f443999fdaa2e171ce024",
+    "shipments": "28ac594d2f308d6fbed2873e44b48ae30db3dd863b803b41af195cf11d6fc78e",
+    "outcomes": "fe68d6aa51051b048574cbf561ea7dba0045f89b031756b08a4758bb3004f050",
+    "entities": "8d99e76f51d8aa240fb1b20b5258a160c8752bfff04f6a0cd6572e4517d1139a",
+    "entity_history": "6ac8bc548c6330372ea5548e19a9607031f7a01be1d71105200bb9f91db73126",
+    "adjustments": "20f17fc325d136a58ae607df6064543c8b7083886339bea759d1a13d9ae2c38d",
+    "fx_rates": "76a0b2fd5a2fa36c9d43cbe17fd5760ea87e48c17df69e03eb6cc96d23271489"
+  },
+  "models": 24,
+  "extreme_historical_statuses": {
+    "pass": 257,
+    "rss_watchdog": 2,
+    "wall_time_watchdog": 2,
+    "not_attempted": 2,
+    "error": 5
+  },
+  "scope": "Unique corpora overlap; do not sum native-tool executions as unique SQL. Expected values are imported independent CSV/DuckDB/Python references, never learned from target results.",
+  "known_client_values": {
+    "sha256": "e990c36701e406ab65bd6ccb2acb2ccfdbfb4698eb6afdb090ccf04897cb05b8",
+    "scope": "Diagnostic fingerprints of historical client precision/format failures; independent expected values remain authoritative. Never used as a passing reference."
+  }
+}

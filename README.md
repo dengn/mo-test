@@ -123,3 +123,10 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 ## #29927 当前 main 回归核验
 
 [原始并发索引竞态复测](suites/mo-issue-29927-recheck/README.md)：旧版本 3 轮中 1 轮复现且重启后仍坏；main `3e50e1b3` 五轮通过，负载结束及重启后共 454 项检查通过，1,081 条确认写入无缺失/错值。复测支持原报持续性损坏已修复，尚未确定具体修复 PR。原有主 case 计数不变。
+
+
+## BI 与分析 case 自动回归
+
+新增独立的 [BI/复杂分析回归套件](suites/mo-bi-regression/README.md)，纳入 20,000 个分析 case、6,820 个 Metabase 查询构建器 case、其他 BI 共用的 534 个 SQL、800 个 Rill 原生指标、268 个复杂/巨型 SQL 及 spill 回归。确定性输入与独立预期可在新环境重建，真实 BI API/SDK 与 SQL 重放分别登记；输出 JSON/JUnit，严格门禁与保留失败标签的观察模式分开。
+
+[可调用 CI](.github/workflows/bi-regression.yml) · [执行范围与验证](suites/mo-bi-regression/VALIDATION.md)。此套件与原历史批次计数分开，不改 archives、catalog 或旧 manifest，不将跨工具重复执行当成新增唯一 SQL。
