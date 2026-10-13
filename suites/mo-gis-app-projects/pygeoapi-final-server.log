@@ -1,0 +1,7 @@
+ * Serving Flask app 'pygeoapi.flask_app'
+ * Debug mode: off
+[2026-10-12T23:57:21Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:18880
+[2026-10-12T23:57:21Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - [33mPress CTRL+C to quit[0m
+[2026-10-12T23:58:21Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:58:21] "GET /collections/mo-points/items?f=json&limit=500 HTTP/1.1" 200 -
+[2026-10-12T23:58:21Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:58:21] "GET /openapi?f=json HTTP/1.1" 200 -

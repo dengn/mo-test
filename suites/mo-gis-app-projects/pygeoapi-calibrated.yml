@@ -1,0 +1,685 @@
+server:
+  bind:
+    host: 127.0.0.1
+    port: 18880
+  url: http://127.0.0.1:18880
+  mimetype: application/json; charset=UTF-8
+  encoding: utf-8
+  gzip: false
+  languages:
+  - en-US
+  - fr-CA
+  pretty_print: true
+  limits:
+    default_items: 20
+    max_items: 500
+  map:
+    url: http://127.0.0.1:18880/static/local-tile.png
+    attribution: Synthetic test features; no external basemap
+  admin: false
+  cors: true
+  templates:
+    static: /workspace/mo-gis-app-projects/pygeoapi-static
+logging:
+  level: ERROR
+metadata:
+  identification:
+    title:
+      en: MO GIS open-source application verification
+    description:
+      en: pygeoapi provides an API to geospatial data
+      fr: pygeoapi fournit une API aux données géospatiales
+    keywords:
+      en:
+      - geospatial
+      - data
+      - api
+      fr:
+      - géospatiale
+      - données
+      - api
+    keywords_type: theme
+    terms_of_service: https://creativecommons.org/licenses/by/4.0/
+    url: https://example.org
+  license:
+    name: CC-BY 4.0 license
+    url: https://creativecommons.org/licenses/by/4.0/
+  provider:
+    name: Organization Name
+    url: https://pygeoapi.io
+  contact:
+    name: Lastname, Firstname
+    position: Position Title
+    address: Mailing Address
+    city: City
+    stateorprovince: Administrative Area
+    postalcode: Zip or Postal Code
+    country: Country
+    phone: +xx-xxx-xxx-xxxx
+    fax: +xx-xxx-xxx-xxxx
+    email: you@example.org
+    url: Contact URL
+    hours: Mo-Fr 08:00-17:00
+    instructions: During hours of service. Off on weekends.
+    role: pointOfContact
+resources:
+  pg-points:
+    type: collection
+    title: pg-points
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: 127.0.0.1
+        port: 65432
+        dbname: gis_app_suite
+        user: gis
+        password: gis_local_test
+        search_path:
+        - public
+      table: points
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  pg-routes:
+    type: collection
+    title: pg-routes
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: 127.0.0.1
+        port: 65432
+        dbname: gis_app_suite
+        user: gis
+        password: gis_local_test
+        search_path:
+        - public
+      table: routes
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  pg-zones:
+    type: collection
+    title: pg-zones
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: 127.0.0.1
+        port: 65432
+        dbname: gis_app_suite
+        user: gis
+        password: gis_local_test
+        search_path:
+        - public
+      table: zones
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  pg-mixed:
+    type: collection
+    title: pg-mixed
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: PostgreSQL
+      data:
+        host: 127.0.0.1
+        port: 65432
+        dbname: gis_app_suite
+        user: gis
+        password: gis_local_test
+        search_path:
+        - public
+      table: mixed
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mysql-points:
+    type: collection
+    title: mysql-points
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: points
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-routes:
+    type: collection
+    title: mysql-routes
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: routes
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-zones:
+    type: collection
+    title: mysql-zones
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: zones
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-mixed:
+    type: collection
+    title: mysql-mixed
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: mixed
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mo-points:
+    type: collection
+    title: mo-points
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: points
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-routes:
+    type: collection
+    title: mo-routes
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: routes
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-zones:
+    type: collection
+    title: mo-zones
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: zones
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-mixed:
+    type: collection
+    title: mo-mixed
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: MySQL
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: mixed
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mysql-fixed-points:
+    type: collection
+    title: mysql-points
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: points
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-fixed-routes:
+    type: collection
+    title: mysql-routes
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: routes
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-fixed-zones:
+    type: collection
+    title: mysql-zones
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: zones
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mysql-fixed-mixed:
+    type: collection
+    title: mysql-mixed
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 63306
+        dbname: gis_app_suite
+        user: root
+        password: ''
+        search_path:
+        - gis_app_suite
+      table: mixed
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/EPSG/0/4326
+  mo-fixed-points:
+    type: collection
+    title: mo-points
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: points
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-fixed-routes:
+    type: collection
+    title: mo-routes
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: routes
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-fixed-zones:
+    type: collection
+    title: mo-zones
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: zones
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+  mo-fixed-mixed:
+    type: collection
+    title: mo-mixed
+    description: Actual SQL-backed synthetic GIS application dataset
+    keywords:
+    - gis
+    - integration
+    extents:
+      spatial:
+        bbox:
+        - -180
+        - -2
+        - 180
+        - 85
+        crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    providers:
+    - type: feature
+      name: mo_geoapi.MySQLWithSRIDProvider
+      data:
+        host: 127.0.0.1
+        port: 6013
+        dbname: gis_app_suite
+        user: root
+        password: '111'
+        search_path:
+        - gis_app_suite
+      table: mixed
+      id_field: id
+      geom_field: geom
+      editable: true
+      storage_crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84

@@ -1,0 +1,123 @@
+QFSFileEngine::open: No file name specified
+Warning 1: Value '' of field points.value parsed incompletely to integer 0.
+[
+  {
+    "engine": "mysql",
+    "table": "points",
+    "provider": "ogr-mysql",
+    "valid": true,
+    "errors": "",
+    "feature_count": 259,
+    "crs": "EPSG:4326",
+    "sample": [
+      {
+        "id": 1,
+        "has_geometry": true,
+        "wkt": "Point (116.29999999999999716 39.79999999999999716)"
+      },
+      {
+        "id": 2,
+        "has_geometry": true,
+        "wkt": "Point (116.29999999999999716 39.8019999999999996)"
+      }
+    ]
+  },
+  {
+    "engine": "mysql",
+    "table": "planar_points",
+    "provider": "ogr-mysql",
+    "valid": true,
+    "errors": "",
+    "feature_count": 259,
+    "crs": "",
+    "sample": [
+      {
+        "id": 1,
+        "has_geometry": true,
+        "wkt": "Point (116.29999999999999716 39.79999999999999716)"
+      },
+      {
+        "id": 2,
+        "has_geometry": true,
+        "wkt": "Point (116.29999999999999716 39.8019999999999996)"
+      },
+      {
+        "id": 3,
+        "has_geometry": true,
+        "wkt": "Point (116.29999999999999716 39.80399999999999494)"
+      }
+    ]
+  },
+  {
+    "engine": "mo",
+    "table": "points",
+    "provider": "ogr-mysql",
+    "valid": true,
+    "errors": "",
+    "feature_count": 259,
+    "crs": "",
+    "sample": [
+      {
+        "id": 1,
+        "has_geometry": false,
+        "wkt": ""
+      },
+      {
+        "id": 2,
+        "has_geometry": false,
+        "wkt": ""
+      },
+      {
+        "id": 3,
+        "has_geometry": false,
+        "wkt": ""
+      }
+    ]
+  },
+  {
+    "engine": "mo",
+    "table": "planar_points",
+    "provider": "ogr-mysql",
+    "valid": true,
+    "errors": "",
+    "feature_count": 259,
+    "crs": "",
+    "sample": [
+      {
+        "id": 1,
+        "has_geometry": false,
+        "wkt": ""
+      },
+      {
+        "id": 2,
+        "has_geometry": false,
+        "wkt": ""
+      },
+      {
+        "id": 3,
+        "has_geometry": false,
+        "wkt": ""
+      }
+    ]
+  },
+  {
+    "engine": "pg",
+    "valid": true,
+    "feature_count": 259,
+    "crs": "EPSG:4326",
+    "sample": [
+      {
+        "id": 1,
+        "wkt": "Point (116.29999999999999716 39.79999999999999716)"
+      },
+      {
+        "id": 2,
+        "wkt": "Point (116.29999999999999716 39.8019999999999996)"
+      },
+      {
+        "id": 3,
+        "wkt": "Point (116.29999999999999716 39.80399999999999494)"
+      }
+    ]
+  }
+]

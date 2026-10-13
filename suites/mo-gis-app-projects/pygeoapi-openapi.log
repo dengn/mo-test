@@ -1,0 +1,199 @@
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Unsupported column type JSON
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 681, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 149, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3287, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 445, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1303, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 709, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 174, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 386, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 671, in __init__
+    self.__connect()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 906, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 869, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 373, in __init__
+    self.connect()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 744, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 732, in get_table_model
+    metadata.reflect(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/sql/schema.py", line 6587, in reflect
+    with inspection.inspect(bind)._inspection_context() as insp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/inspection.py", line 141, in inspect
+    ret = reg(subject)
+          ^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/reflection.py", line 321, in _engine_insp
+    return Inspector._construct(Inspector._init_engine, bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/reflection.py", line 254, in _construct
+    init(self, bind)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/reflection.py", line 265, in _init_engine
+    engine.connect().close()
+    ^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3263, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 151, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2420, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 149, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3287, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 445, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 1303, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 709, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 176, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 174, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 386, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 671, in __init__
+    self.__connect()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 906, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 166, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 902, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 645, in connect
+    return dialect.connect(*cargs_tup, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 869, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 373, in __init__
+    self.connect()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 744, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)")
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/bin/pygeoapi", line 8, in <module>
+    sys.exit(cli())
+             ^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 1631, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 1552, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 2032, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 2032, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 1415, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/openapi.py", line 1109, in generate
+    content = generate_openapi_document(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/openapi.py", line 1049, in generate_openapi_document
+    oas = get_oas(s, fail_on_invalid_collection=fail_on_invalid_collection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/openapi.py", line 999, in get_oas
+    return get_oas_30(
+           ^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/openapi.py", line 554, in get_oas_30
+    sub_tags, sub_paths = api_module.get_oas_30(cfg, locale_)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/api/itemtypes.py", line 1094, in get_oas_30
+    p = load_plugin('provider', get_provider_by_type(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/plugin.py", line 133, in load_plugin
+    plugin = class_(plugin_def)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 854, in __init__
+    super().__init__(provider_def, driver_name, extra_conn_args)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 139, in __init__
+    self.table_model = get_table_model(
+                       ^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 736, in get_table_model
+    raise ProviderConnectionError(
+pygeoapi.provider.base.ProviderConnectionError: Could not connect to mysql+pymysql://root:***@127.0.0.1:6013/gis_app_suite (password hidden).

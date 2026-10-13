@@ -1,0 +1,512 @@
+[
+  {
+    "query": "repo:matrixorigin/matrixone TTL is:issue",
+    "total_count": 31,
+    "items": [
+      {
+        "number": 24552,
+        "title": "[Feature Request]: Native table TTL (automatic expiry)",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24552"
+      },
+      {
+        "number": 28005,
+        "title": "[Performance]: keep FULLTEXT2 cache read-only across CDC updates",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28005"
+      },
+      {
+        "number": 27632,
+        "title": "[Bug]: multi-CN HNSW query CN serves stale model after async generation update",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27632"
+      },
+      {
+        "number": 29442,
+        "title": "[Subtask]: Conditionally add a bounded disposable cache for derived View metadata",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29442"
+      },
+      {
+        "number": 29102,
+        "title": "[Bug]: DROP DATABASE / DROP TABLE does not remove fulltext2 ISCP job rows from mo_catalog.mo_iscp_log (rows accumulate for dropped tables)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29102"
+      },
+      {
+        "number": 26523,
+        "title": "[Bug]: TransferHashPage path races with TTL cleanup in TestClearPersistTransferTable",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26523"
+      },
+      {
+        "number": 29857,
+        "title": "[Feature Request]: Atomic event-ledger and checkpoint sink profiles for Kafka Connect and NiFi",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29857"
+      },
+      {
+        "number": 27445,
+        "title": "[Performance]: avoid full base materialization on FULLTEXT2 cache miss and CDC invalidation",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27445"
+      },
+      {
+        "number": 29433,
+        "title": "[Refactoring]: Make on-demand derivation the authority for ordinary View metadata",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29433"
+      },
+      {
+        "number": 27788,
+        "title": "[Bug]: FULLTEXT2 cross-CN cache invalidation can serve stale MATCH results after CDC tail append",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27788"
+      },
+      {
+        "number": 25451,
+        "title": "[Tech Request]: Intelligent Query Execution Scheduling",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/25451"
+      },
+      {
+        "number": 29080,
+        "title": "[Bug]: FULLTEXT2 FORCE_SYNC rebuild leaves warm remote CN on the old generation",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29080"
+      },
+      {
+        "number": 26983,
+        "title": "[Feature Request]: support sub-second units in Time Window aggregation",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26983"
+      },
+      {
+        "number": 28837,
+        "title": "[Bug]: COPY ALTER leaves an unaffected FULLTEXT2 index empty",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28837"
+      },
+      {
+        "number": 26157,
+        "title": "[Subtask]: Provide snapshot-correct TAE manifests and offload admission",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26157"
+      },
+      {
+        "number": 19339,
+        "title": "[Tech Request]: re-implement cdc change handle with log entries",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/19339"
+      },
+      {
+        "number": 24644,
+        "title": "Optimize RSS cache pressure for data and meta caches",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24644"
+      },
+      {
+        "number": 24664,
+        "title": "[Tech Request]: Add RSS pressure controller for memory cache target lifecycle",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24664"
+      },
+      {
+        "number": 24617,
+        "title": "[Tech Request]: Port minimal RSS cache pressure protection to main",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24617"
+      },
+      {
+        "number": 29848,
+        "title": "[Test]: Qualify lossless ecosystem adapters and full Airbyte/NiFi/Kafka Connect recovery pipelines",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29848"
+      },
+      {
+        "number": 24766,
+        "title": "[Bug] Stability test: `leak txn` \u2014 10 orphaned txns survive CN roll ~9.5h; session disconnect does not rollback",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24766"
+      },
+      {
+        "number": 16880,
+        "title": "[Bug]: CI UT TestCompaction2 fail",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/16880"
+      },
+      {
+        "number": 20744,
+        "title": "[Bug]: ut TestHandle_HandleCommitPerformanceForS3Load failed",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/20744"
+      },
+      {
+        "number": 19157,
+        "title": "[Bug]: restore from pitr panic.",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/19157"
+      },
+      {
+        "number": 19066,
+        "title": "[Bug]: restore from pitr report 'internal error: invalid checkpoints duration'.",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/19066"
+      },
+      {
+        "number": 20396,
+        "title": "[Bug]: ut TestSnapshotGC failed.",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/20396"
+      },
+      {
+        "number": 20282,
+        "title": "[Bug]:ut TestInProgressTransfer failed",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/20282"
+      },
+      {
+        "number": 19910,
+        "title": "[Bug]: Execute Update statement report internal error: invalid free, mp header corruption",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/19910"
+      },
+      {
+        "number": 17012,
+        "title": "[Bug]: Snapshot read  return \u201can error has occurred about table subscription\u201d",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/17012"
+      },
+      {
+        "number": 16997,
+        "title": "[Bug]: Drop table that is not referenced by snapshots will not be GC",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/16997"
+      },
+      {
+        "number": 10655,
+        "title": "[Tech Request]: improve check pk dup in some case",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/10655"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone TTL is:pull-request",
+    "total_count": 72,
+    "items": [
+      {
+        "number": 26655,
+        "title": "[Feature]: add TAE object lifecycle archive and restore",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26655"
+      },
+      {
+        "number": 29303,
+        "title": "fix(objectio): age out idle write arenas instead of a global drain timer",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29303"
+      },
+      {
+        "number": 29227,
+        "title": "fix(fulltext2): keep warm search cache across ordinary CDC flushes",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29227"
+      },
+      {
+        "number": 27461,
+        "title": "perf(fulltext2): add cold-load observability",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/27461"
+      },
+      {
+        "number": 28017,
+        "title": "revert(fulltext2): keep cached indexes read-only",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/28017"
+      },
+      {
+        "number": 27548,
+        "title": "fix(fileservice): scope DNS cache to file service clients",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/27548"
+      },
+      {
+        "number": 29646,
+        "title": "perf: improve large-query planning and adaptive memory control",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29646"
+      },
+      {
+        "number": 29118,
+        "title": "fix: shorten cross-CN index cache freshness checks to 30 seconds",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29118"
+      },
+      {
+        "number": 24754,
+        "title": "feat(parser): add TTL table option grammar (#24552)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24754"
+      },
+      {
+        "number": 27906,
+        "title": "design: incrementally maintained materialized views v1",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/27906"
+      },
+      {
+        "number": 24779,
+        "title": "feat(plan): persist and reflect TTL table options (#24552)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24779"
+      },
+      {
+        "number": 26527,
+        "title": "fix(tae): synchronize transfer page paths",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26527"
+      },
+      {
+        "number": 27462,
+        "title": "perf(fulltext2): reuse immutable bases across cache generations",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/27462"
+      },
+      {
+        "number": 29186,
+        "title": "fix: prevent table rename from bypassing role row filters",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29186"
+      },
+      {
+        "number": 29456,
+        "title": "docs: approve the on-demand View metadata contract",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29456"
+      },
+      {
+        "number": 28018,
+        "title": "fix(fulltext/hnsw/ivfpq/cagra): read the index at the named-snapshot TS for MATCH (#27941)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/28018"
+      },
+      {
+        "number": 26183,
+        "title": "fix(iscp): retry drain while executor initializes",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26183"
+      },
+      {
+        "number": 29028,
+        "title": " fix(vectorindex): don't retain an empty index generation, and keep a base index across COPY ALTER",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29028"
+      },
+      {
+        "number": 25947,
+        "title": "feat(iceberg): port Iceberg connector to 4.2-dev",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/25947"
+      },
+      {
+        "number": 27188,
+        "title": "test: cut resource-heavy UT wall time",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/27188"
+      },
+      {
+        "number": 25733,
+        "title": "Fix ISCP index consumer cancellation during DROP INDEX",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/25733"
+      },
+      {
+        "number": 24665,
+        "title": "add rss pressure cache controller",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24665"
+      },
+      {
+        "number": 25904,
+        "title": "feat: `fulltext2` \u2014 complete rewrite of fulltext index and add a position-free BM25 full-text retrieval index",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/25904"
+      },
+      {
+        "number": 25368,
+        "title": "feat(iceberg): add external Iceberg connector",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/25368"
+      },
+      {
+        "number": 24765,
+        "title": "fix: HLC is ahead of wall clock. iscp failed to update",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24765"
+      },
+      {
+        "number": 24615,
+        "title": "fix: port minimal RSS cache pressure protection to main",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24615"
+      },
+      {
+        "number": 24677,
+        "title": "feat: enhance Hive partitioned Parquet external tables",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24677"
+      },
+      {
+        "number": 24339,
+        "title": "fix: add bounded retry and error propagation to TransferPage write path",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24339"
+      },
+      {
+        "number": 28477,
+        "title": "fix: route partitioned classic FULLTEXT maintenance",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/pull/28477"
+      },
+      {
+        "number": 25584,
+        "title": " feat: first-class bm25 ranked-retrieval index",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/25584"
+      },
+      {
+        "number": 26981,
+        "title": "feat: execute Sirius Substrait reads through Flight",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26981"
+      },
+      {
+        "number": 24662,
+        "title": "fix: keep meta cache out of rss pressure eviction (#24648)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24662"
+      },
+      {
+        "number": 24648,
+        "title": "fix: keep meta cache out of rss pressure eviction",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24648"
+      },
+      {
+        "number": 28413,
+        "title": "perf(fileservice): share scoped object-column decompression",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/28413"
+      },
+      {
+        "number": 24543,
+        "title": "fix: keep cache pressure target under high RSS",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24543"
+      },
+      {
+        "number": 26737,
+        "title": "feat: add Sirius Substrait read admission",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26737"
+      },
+      {
+        "number": 29024,
+        "title": " fix(fulltext2): sys-admin mo_ctl knobs for the vector-index cache; unskip copy-alter BVT (#28985)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/29024"
+      },
+      {
+        "number": 26546,
+        "title": "fix: harden async lifecycle and CI test contracts",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26546"
+      },
+      {
+        "number": 24337,
+        "title": "fix: bounded retry for TransferPage write to prevent DN OOM under IO faults",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/24337"
+      },
+      {
+        "number": 26109,
+        "title": "refactor: define canonical compute-group execution and harden ingress-owned scheduling",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/pull/26109"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone \"time to live\" is:issue",
+    "total_count": 2,
+    "items": [
+      {
+        "number": 27801,
+        "title": "[Performance]: reduce CJK ngram phrase evaluation cost in FULLTEXT2",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27801"
+      },
+      {
+        "number": 27757,
+        "title": "[Bug]: 10M IVFFlat workload intermittently closes RPC/backend connections",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27757"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone \"data retention\" is:issue",
+    "total_count": 8,
+    "items": [
+      {
+        "number": 24853,
+        "title": "[Feature] Tiered hot/cold/archive data retention policy (Snowflake DATA_RETENTION_TIME_IN_DAYS + Fail-safe style, extended with storage tiers)",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24853"
+      },
+      {
+        "number": 24552,
+        "title": "[Feature Request]: Native table TTL (automatic expiry)",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24552"
+      },
+      {
+        "number": 26456,
+        "title": "bug: ALTER TABLE panic \u2014 pitr_length \u7c7b\u578b\u4e0d\u5339\u914d\uff08DDL tinyint unsigned vs \u4ee3\u7801 int64\uff09",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26456"
+      },
+      {
+        "number": 26154,
+        "title": "[Feature Request]: Substrait plan offload to Sirius sidecar",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26154"
+      },
+      {
+        "number": 27465,
+        "title": "[Bug]: DATA BRANCH DIFF fails after GC and restart",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27465"
+      },
+      {
+        "number": 27496,
+        "title": "[Bug]: nullable VARCHAR JOIN with ORDER BY LIMIT panics in strCompare.Copy",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27496"
+      },
+      {
+        "number": 28026,
+        "title": "[Bug]: DATA BRANCH cannot apply primary-key updates with ON UPDATE CASCADE",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28026"
+      },
+      {
+        "number": 27451,
+        "title": "[Bug]: DATA BRANCH DIFF loses history after branch-table mergeobjects and GC",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27451"
+      }
+    ]
+  }
+]

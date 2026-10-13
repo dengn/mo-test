@@ -1,0 +1,36 @@
+[
+  {
+    "query": "repo:matrixorigin/matrixone is:issue geometry WKT protocol",
+    "total_count": 3,
+    "items": [
+      {
+        "number": 30034,
+        "title": "[Bug]: ST_GeomFromText accepts unclosed polygon rings and exports unreadable WKB",
+        "url": "https://github.com/matrixorigin/matrixone/issues/30034",
+        "state": "open"
+      },
+      {
+        "number": 26799,
+        "title": "[Bug]: EXPLAIN emits invalid UTF-8 for composite secondary-index range bounds",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26799",
+        "state": "closed"
+      },
+      {
+        "number": 28647,
+        "title": "[Task] Maintain Top-ROI assigned bug groups",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28647",
+        "state": "open"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue GDAL",
+    "total_count": 0,
+    "items": []
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue QGIS",
+    "total_count": 0,
+    "items": []
+  }
+]

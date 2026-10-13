@@ -1,0 +1,26 @@
+[
+  {
+    "engine": "pg",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/pg-points/items?f=json&limit=2 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  },
+  {
+    "engine": "pg",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/pg-points/items?f=json&limit=500&bbox=116.299%2C39.799%2C116.315%2C39.815 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  },
+  {
+    "engine": "mysql",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/mysql-points/items?f=json&limit=2 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  },
+  {
+    "engine": "mysql",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/mysql-points/items?f=json&limit=500&bbox=116.299%2C39.799%2C116.315%2C39.815 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  },
+  {
+    "engine": "mo",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/mo-points/items?f=json&limit=2 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  },
+  {
+    "engine": "mo",
+    "error": "HTTPConnectionPool(host='127.0.0.1', port=18880): Max retries exceeded with url: /collections/mo-points/items?f=json&limit=500&bbox=116.299%2C39.799%2C116.315%2C39.815 (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=18880): Failed to establish a new connection: [Errno 111] Connection refused\"))"
+  }
+]

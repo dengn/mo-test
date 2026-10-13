@@ -1,0 +1,72 @@
+[
+  {
+    "project": "Maputnik",
+    "status": "loaded",
+    "errors": [
+      "NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.min.js' failed to load."
+    ],
+    "api": [
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      }
+    ],
+    "leafletMarkers": 0,
+    "leafletPaths": 0
+  },
+  {
+    "project": "uMap",
+    "status": "loaded",
+    "errors": [],
+    "api": [
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      }
+    ],
+    "leafletMarkers": 257,
+    "leafletPaths": 2
+  }
+]

@@ -1,0 +1,895 @@
+[
+  {
+    "project": "Maputnik",
+    "url": "http://127.0.0.1:18885/?style=http%3A%2F%2F127.0.0.1%3A18885%2Fstyles%2Fmo-style.json",
+    "status": "loaded",
+    "text": "Layers list\nLayer editor\nMap view\nMaputnikv3.1.0\nOpen\nSave\nCode Editor\nData Sources\nStyle Settings\nGlobal State\nView\nMap\nInspect\nDeuteranopia filter\nProtanopia filter\nTritanopia filter\nAchromatopsia filter\nLanguage\nDeutsch\nEnglish\nFrançais\nעברית\nItaliano\n日本語\n한국어\nTürkçe\n简体中文\nHelp\nLayers\nExpand\nAdd Layer\nbackground\nzones\nroutes\npoints\nLayer: 'points'\nLayer\nID \nType\nSource \nSource Layer\nMin Zoom \nMax Zoom \nComments \nFilter\nFilter \nevery filter matches\nno filter matches\nany filter matches\nAdd filter\nPaint properties\nRadius \nColor \nBlur \nOpacity \nTranslate \nTranslate anchor \nMapViewport\nPitch scale \nMapViewport\nPitch alignment \nMapViewport\nStroke width \nStroke color \nStroke opacity \nLayout properties\nSort key \nVisibility \nVisibleNone\nJSON Editor\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n⌄\n⌄\n{\n  \"id\": \"points\",\n  \"type\": \"circle\",\n  \"source\": \"points\",\n  \"paint\": {\n    \"circle-color\": \"#2266cc\",\n    \"circle-radius\": 4,\n    \"circle-stroke-width\": 1,\n    \"circle-stroke-color\": \"#ffffff\"\n  }\n}\nZoom: 12.00\nMapLibre",
+    "inputs": [
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "points",
+        "aria": null,
+        "outer": "<input data-wd-key=\"layer-editor.layer-id.input\" spellcheck=\"false\" class=\"maputnik-string\" value=\"points\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "circle",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" disabled=\"\" class=\"maputnik-string maputnik-string--disabled\" value=\"circle\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "downshift-_r_7_-input",
+        "value": "points",
+        "aria": null,
+        "outer": "<input aria-activedescendant=\"\" aria-autocomplete=\"list\" aria-controls=\"downshift-_r_7_-menu\" aria-expanded=\"false\" aria-labelledby=\"downshift-_r_7_-label\" autocomplete=\"off\" id=\"downshift-_r_7_-input\" role=\"combobox\" class=\"maputnik-string\" spellcheck=\"false\" value=\"points\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "downshift-_r_8_-input",
+        "value": "",
+        "aria": null,
+        "outer": "<input aria-activedescendant=\"\" aria-autocomplete=\"list\" aria-controls=\"downshift-_r_8_-menu\" aria-expanded=\"false\" aria-labelledby=\"downshift-_r_8_-label\" autocomplete=\"off\" id=\"downshift-_r_8_-input\" role=\"combobox\" class=\"maputnik-string\" spellcheck=\"false\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "range",
+        "name": "",
+        "id": "",
+        "value": "0",
+        "aria": null,
+        "outer": "<input class=\"maputnik-number-range\" max=\"24\" min=\"0\" step=\"any\" spellcheck=\"false\" data-wd-key=\"min-zoom.input-range\" type=\"range\" value=\"0\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"0\" data-wd-key=\"min-zoom.input-text\" type=\"text\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "range",
+        "name": "",
+        "id": "",
+        "value": "24",
+        "aria": null,
+        "outer": "<input class=\"maputnik-number-range\" max=\"24\" min=\"0\" step=\"any\" spellcheck=\"false\" data-wd-key=\"max-zoom.input-range\" type=\"range\" value=\"24\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"24\" data-wd-key=\"max-zoom.input-text\" type=\"text\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "4",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"5\" data-wd-key=\"spec-field-input:circle-radius\" value=\"4\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "circle-color",
+        "id": "",
+        "value": "#2266cc",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" autocomplete=\"off\" class=\"maputnik-color\" placeholder=\"#000000\" value=\"#2266cc\" name=\"circle-color\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"0\" data-wd-key=\"spec-field-input:circle-blur\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"1\" data-wd-key=\"spec-field-input:circle-opacity\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": "Translate",
+        "outer": "<input aria-label=\"Translate\" spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"0\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": "Translate",
+        "outer": "<input aria-label=\"Translate\" spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"0\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-translate-anchor",
+        "id": "",
+        "value": "map",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"map\" checked=\"\" name=\"circle-translate-anchor\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-translate-anchor",
+        "id": "",
+        "value": "viewport",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"viewport\" name=\"circle-translate-anchor\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-pitch-scale",
+        "id": "",
+        "value": "map",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"map\" checked=\"\" name=\"circle-pitch-scale\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-pitch-scale",
+        "id": "",
+        "value": "viewport",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"viewport\" name=\"circle-pitch-scale\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-pitch-alignment",
+        "id": "",
+        "value": "map",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"map\" name=\"circle-pitch-alignment\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "circle-pitch-alignment",
+        "id": "",
+        "value": "viewport",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"viewport\" checked=\"\" name=\"circle-pitch-alignment\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "1",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"0\" data-wd-key=\"spec-field-input:circle-stroke-width\" value=\"1\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "circle-stroke-color",
+        "id": "",
+        "value": "#ffffff",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" autocomplete=\"off\" class=\"maputnik-color\" placeholder=\"#000000\" value=\"#ffffff\" name=\"circle-stroke-color\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" placeholder=\"1\" data-wd-key=\"spec-field-input:circle-stroke-opacity\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "text",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": null,
+        "outer": "<input spellcheck=\"false\" class=\"maputnik-number\" data-wd-key=\"spec-field-input:circle-sort-key\" value=\"\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "visibility",
+        "id": "",
+        "value": "visible",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"visible\" checked=\"\" name=\"visibility\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "visibility",
+        "id": "",
+        "value": "none",
+        "aria": null,
+        "outer": "<input type=\"radio\" value=\"none\" name=\"visibility\" style=\"\">"
+      },
+      {
+        "type": "search",
+        "name": "",
+        "id": "",
+        "value": "",
+        "aria": "Search",
+        "outer": "<input type=\"search\" class=\"maplibregl-ctrl-geocoder--input\" placeholder=\"Search\" aria-label=\"Search\" style=\"\">"
+      }
+    ],
+    "keys": [
+      {
+        "key": "root:skip:layer-list",
+        "text": "Layers list"
+      },
+      {
+        "key": "root:skip:layer-editor",
+        "text": "Layer editor"
+      },
+      {
+        "key": "root:skip:map-view",
+        "text": "Map view"
+      },
+      {
+        "key": "nav:open",
+        "text": "Open"
+      },
+      {
+        "key": "nav:export",
+        "text": "Save"
+      },
+      {
+        "key": "nav:code-editor",
+        "text": "Code Editor"
+      },
+      {
+        "key": "nav:sources",
+        "text": "Data Sources"
+      },
+      {
+        "key": "nav:settings",
+        "text": "Style Settings"
+      },
+      {
+        "key": "nav:global-state",
+        "text": "Global State"
+      },
+      {
+        "key": "nav:inspect",
+        "text": "View\nMap\nInspect\nDeuteranopia filter\nProtanopia filter\nTritanopia filt"
+      },
+      {
+        "key": "maputnik-select",
+        "text": "Map\nInspect\nDeuteranopia filter\nProtanopia filter\nTritanopia filter\nAc"
+      },
+      {
+        "key": "map",
+        "text": "Map"
+      },
+      {
+        "key": "inspect",
+        "text": "Inspect"
+      },
+      {
+        "key": "nav:language",
+        "text": "Language\nDeutsch\nEnglish\nFrançais\nעברית\nItaliano\n日本語\n한국어\nTürkçe\n简体中文"
+      },
+      {
+        "key": "maputnik-lang-select",
+        "text": "Deutsch\nEnglish\nFrançais\nעברית\nItaliano\n日本語\n한국어\nTürkçe\n简体中文"
+      },
+      {
+        "key": "toolbar:link",
+        "text": "Help"
+      },
+      {
+        "key": "layer-list",
+        "text": "Layers\nExpand\nAdd Layer\nbackground\nzones\nroutes\npoints"
+      },
+      {
+        "key": "layer-list.header",
+        "text": "Layers\nExpand\nAdd Layer"
+      },
+      {
+        "key": "skip-target-layer-list",
+        "text": "Expand"
+      },
+      {
+        "key": "layer-list:add-layer",
+        "text": "Add Layer"
+      },
+      {
+        "key": "layer-list-item:background",
+        "text": "background"
+      },
+      {
+        "key": "layer-list-item:background:delete",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:background:copy",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:background:toggle-visibility",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:zones",
+        "text": "zones"
+      },
+      {
+        "key": "layer-list-item:zones:delete",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:zones:copy",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:zones:toggle-visibility",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:routes",
+        "text": "routes"
+      },
+      {
+        "key": "layer-list-item:routes:delete",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:routes:copy",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:routes:toggle-visibility",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:points",
+        "text": "points"
+      },
+      {
+        "key": "layer-list-item:points:delete",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:points:copy",
+        "text": ""
+      },
+      {
+        "key": "layer-list-item:points:toggle-visibility",
+        "text": ""
+      },
+      {
+        "key": "layer-editor",
+        "text": "Layer: 'points'\nLayer\nID \nType\nSource \nSource Layer\nMin Zoom \nMax Zoom"
+      },
+      {
+        "key": "layer-editor.header",
+        "text": "Layer: 'points'"
+      },
+      {
+        "key": "skip-target-layer-editor",
+        "text": ""
+      },
+      {
+        "key": "layer-editor-group:Layer",
+        "text": "Layer"
+      },
+      {
+        "key": "layer-editor.layer-id",
+        "text": "ID "
+      },
+      {
+        "key": "field-doc-button-ID",
+        "text": ""
+      },
+      {
+        "key": "layer-editor.layer-id.input",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Unique layer name."
+      },
+      {
+        "key": "field-doc-button-Source",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Name of a source description to be used for this layer. Required for a"
+      },
+      {
+        "key": "layer-source-layer",
+        "text": "Source Layer"
+      },
+      {
+        "key": "min-zoom",
+        "text": "Min Zoom "
+      },
+      {
+        "key": "field-doc-button-Min Zoom",
+        "text": ""
+      },
+      {
+        "key": "min-zoom.input-range",
+        "text": ""
+      },
+      {
+        "key": "min-zoom.input-text",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The minimum zoom level for the layer. At zoom levels less than the min"
+      },
+      {
+        "key": "max-zoom",
+        "text": "Max Zoom "
+      },
+      {
+        "key": "field-doc-button-Max Zoom",
+        "text": ""
+      },
+      {
+        "key": "max-zoom.input-range",
+        "text": ""
+      },
+      {
+        "key": "max-zoom.input-text",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The maximum zoom level for the layer. At zoom levels equal to or great"
+      },
+      {
+        "key": "layer-comment",
+        "text": "Comments "
+      },
+      {
+        "key": "field-doc-button-Comments",
+        "text": ""
+      },
+      {
+        "key": "layer-comment.input",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Comments for the current layer. This is non-standard and not in the sp"
+      },
+      {
+        "key": "layer-editor-group:Filter",
+        "text": "Filter"
+      },
+      {
+        "key": "field-doc-button-Filter",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "A expression specifying conditions on source features. Only features t"
+      },
+      {
+        "key": "layer-filter-button",
+        "text": "Add filter"
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "A expression specifying conditions on source features. Only features t"
+      },
+      {
+        "key": "layer-editor-group:Paint properties",
+        "text": "Paint properties"
+      },
+      {
+        "key": "spec-field-container:circle-radius",
+        "text": "Radius "
+      },
+      {
+        "key": "field-doc-button-Radius",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-radius",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-radius",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Circle radius."
+      },
+      {
+        "key": "spec-field-container:circle-color",
+        "text": "Color "
+      },
+      {
+        "key": "field-doc-button-Color",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-color",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The fill color of the circle."
+      },
+      {
+        "key": "spec-field-container:circle-blur",
+        "text": "Blur "
+      },
+      {
+        "key": "field-doc-button-Blur",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-blur",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-blur",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Amount to blur the circle. 1 blurs the circle such that only the cente"
+      },
+      {
+        "key": "spec-field-container:circle-opacity",
+        "text": "Opacity "
+      },
+      {
+        "key": "field-doc-button-Opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The opacity at which the circle will be drawn."
+      },
+      {
+        "key": "spec-field-container:circle-translate",
+        "text": "Translate "
+      },
+      {
+        "key": "field-doc-button-Translate",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-translate",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The geometry's offset. Values are [x, y] where negatives indicate left"
+      },
+      {
+        "key": "spec-field-container:circle-translate-anchor",
+        "text": "Translate anchor \nMapViewport"
+      },
+      {
+        "key": "field-doc-button-Translate anchor",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-translate-anchor",
+        "text": "MapViewport"
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Controls the frame of reference for circle-translate."
+      },
+      {
+        "key": "spec-field-container:circle-pitch-scale",
+        "text": "Pitch scale \nMapViewport"
+      },
+      {
+        "key": "field-doc-button-Pitch scale",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-pitch-scale",
+        "text": "MapViewport"
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Controls the scaling behavior of the circle when the map is pitched."
+      },
+      {
+        "key": "spec-field-container:circle-pitch-alignment",
+        "text": "Pitch alignment \nMapViewport"
+      },
+      {
+        "key": "field-doc-button-Pitch alignment",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-pitch-alignment",
+        "text": "MapViewport"
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Orientation of circle when map is pitched."
+      },
+      {
+        "key": "spec-field-container:circle-stroke-width",
+        "text": "Stroke width "
+      },
+      {
+        "key": "field-doc-button-Stroke width",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-stroke-width",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-stroke-width",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The width of the circle's stroke. Strokes are placed outside of the ci"
+      },
+      {
+        "key": "spec-field-container:circle-stroke-color",
+        "text": "Stroke color "
+      },
+      {
+        "key": "field-doc-button-Stroke color",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-stroke-color",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The stroke color of the circle."
+      },
+      {
+        "key": "spec-field-container:circle-stroke-opacity",
+        "text": "Stroke opacity "
+      },
+      {
+        "key": "field-doc-button-Stroke opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-stroke-opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-stroke-opacity",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "The opacity of the circle's stroke."
+      },
+      {
+        "key": "layer-editor-group:Layout properties",
+        "text": "Layout properties"
+      },
+      {
+        "key": "spec-field-container:circle-sort-key",
+        "text": "Sort key "
+      },
+      {
+        "key": "field-doc-button-Sort key",
+        "text": ""
+      },
+      {
+        "key": "spec-field:circle-sort-key",
+        "text": ""
+      },
+      {
+        "key": "spec-field-input:circle-sort-key",
+        "text": ""
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Sorts features in ascending order based on this value. Features with a"
+      },
+      {
+        "key": "spec-field-container:visibility",
+        "text": "Visibility \nVisibleNone"
+      },
+      {
+        "key": "field-doc-button-Visibility",
+        "text": ""
+      },
+      {
+        "key": "spec-field:visibility",
+        "text": "VisibleNone"
+      },
+      {
+        "key": "spec-field-doc",
+        "text": "Whether this layer is displayed."
+      },
+      {
+        "key": "layer-editor-group:JSON Editor",
+        "text": "JSON Editor"
+      },
+      {
+        "key": "json-editor",
+        "text": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n⌄\n⌄\n{\n  \"id\": \"points\",\n  \"type\": \"circle\",\n  "
+      },
+      {
+        "key": "maplibre:container",
+        "text": "Zoom: 12.00\nMapLibre"
+      },
+      {
+        "key": "maplibre:map",
+        "text": "Zoom: 12.00\nMapLibre"
+      },
+      {
+        "key": "maplibre:ctrl-zoom",
+        "text": "Zoom: 12.00"
+      }
+    ],
+    "errors": [
+      "NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.min.js' failed to load."
+    ],
+    "api": [
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+        "status": 200,
+        "features": 16
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+        "status": 200,
+        "features": 4
+      },
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      }
+    ],
+    "leafletMarkers": 0,
+    "leafletPaths": 0
+  },
+  {
+    "project": "uMap",
+    "url": "http://127.0.0.1:18881/en/map/gis_1",
+    "status": "loaded",
+    "text": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n+\n−\n2 km\n1 mi\nLocal synthetic grid — Open caption — Powered by uMap\nData browser\nFilters\nLayers\n  \nMO 实时点位 (259)\n \n New York\n 上海\n 日界线\n 点位 1 café O'Brien\n 点位 2 café O'Brien\n 点位 3 café O'Brien\n 点位 4 café O'Brien\n 点位 5 café O'Brien\n 点位 6 café O'Brien\n 点位 7 café O'Brien\n 点位 8 café O'Brien\n 点位 9 café O'Brien\n 点位 10 café O'Brien\n 点位 11 café O'Brien\n 点位 12 café O'Brien\n 点位 13 café O'Brien\n 点位 14 café O'Brien\n 点位 15 café O'Brien\n 点位 16 café O'Brien\n 点位 17 café O'Brien\n 点位 18 café O'Brien\n 点位 19 café O'Brien\n 点位 20 café O'Brien\n 点位 21 café O'Brien\n 点位 22 café O'Brien\n 点位 23 café O'Brien\n 点位 24 café O'Brien\n 点位 25 café O'Brien\n 点位 26 café O'Brien\n 点位 27 café O'Brien\n 点位 28 café O'Brien\n 点位 29 café O'Brien\n 点位 30 café O'Brien\n 点位 31 café O'Brien\n 点位 32 café O'Brien\n 点位 33 café O'Brien\n 点位 34 café O'Brien\n 点位 35 café O'Brien\n 点位 36 café O'Brien\n 点位 37 café O'Brien\n 点位 38 café O'Brien\n 点位 39 café O'Brien\n 点位 40 café O'Brien\n 点位 41 café O'Brien\n 点位 42 café O'Brien\n 点位 43 café O'Brien\n 点位 44 café O'Brien\n 点位 45 café O'Brien\n 点位 46 café O'Brien\n 点位 47 café O'Brien\n 点位 48 café O'Brien\n 点位 49 café O'Brien\n 点位 50 café O'Brien\n 点位 51 café O'Brien\n 点位 52 café O'Brien\n 点位 53 café O'Brien\n 点位 54 café O'Brien\n 点位 55 café O'Brien\n 点位 56 café O'Brien\n 点位 57 café O'Brien\n 点位 58 café O'Brien\n 点位 59 café O'Brien\n 点位 60 café O'Brien\n 点位 61 café O'Brien\n 点位 62 café O'Brien\n 点位 63 café O'Brien\n 点位 64 café O'Brien\n 点位 65 café O'Brien\n 点位 66 café O'Brien\n 点位 67 café O'Brien\n 点位 68 café O'Brien\n 点位 69 café O'Brien\n 点位 70 café O'Brien\n 点位 71 café O'Brien\n 点位 72 café O'Brien\n 点位 73 café O'Brien\n 点位 74 café O'Brien\n 点位 75 café O'Brien\n 点位 76 café O'Brien\n 点位 77 café O'Brien\n 点位 78 café O'Brien\n 点位 79 café O'Brien\n 点位 80 café O'Brien\n 点位 81 café O'Brien\n 点位 82 café O'Brien\n 点位 83 café O'Brien\n 点位 84 café O'Brien\n 点位 85 café O'Brien\n 点位 86 café O'Brien\n 点位 87 café O'Brien\n 点位 88 café O'Brien\n 点位 89 café O'Brien\n 点位 90 café O'Brien\n 点位 91 café O'Brien\n 点位 92 café O'Brien\n 点位 93 café O'Brien\n 点位 94 café O'Brien\n 点位 95 café O'Brien\n 点位 96 café O'Brien\n 点位 97 café O'Brien\n 点位 98 café O'Brien\n 点位 99 café O'Brien\n 点位 100 café O'Brien\n 点位 101 café O'Brien\n 点位 102 café O'Brien\n 点位 103 café O'Brien\n 点位 104 café O'Brien\n 点位 105 café O'Brien\n 点位 106 café O'Brien\n 点位 107 café O'Brien\n 点位 108 café O'Brien\n 点位 109 café O'Brien\n 点位 110 café O'Brien\n 点位 111 café O'Brien\n 点位 112 café O'Brien\n 点位 113 café O'Brien\n 点位 114 café O'Brien\n 点位 115 café O'Brien\n 点位 116 café O'Brien\n 点位 117 café O'Brien\n 点位 118 café O'Brien\n 点位 119 café O'Brien\n 点位 120 café O'Brien\n 点位 121 café O'Brien\n 点位 122 café O'Brien\n 点位 123 café O'Brien\n 点位 124 café O'Brien\n 点位 125 café O'Brien\n 点位 126 café O'Brien\n 点位 127 café O'Brien\n 点位 128 café O'Brien\n 点位 129 café O'Brien\n 点位 130 café O'Brien\n 点位 131 café O'Brien\n 点位 132 café O'Brien\n 点位 133 café O'Brien\n 点位 134 café O'Brien\n 点位 135 café O'Brien\n 点位 136 café O'Brien\n 点位 137 café O'Brien\n 点位 138 café O'Brien\n 点位 139 café O'Brien\n 点位 140 café O'Brien\n 点位 141 café O'Brien\n 点位 142 café O'Brien\n 点位 143 café O'Brien\n 点位 144 café O'Brien\n 点位 145 café O'Brien\n 点位 146 café O'Brien\n 点位 147 café O'Brien\n 点位 148 café O'Brien\n 点位 149 café O'Brien\n 点位 150 café O'Brien\n 点位 151 café O'Brien\n 点位 152 café O'Brien\n 点位 153 café O'Brien\n 点位 154 café O'Brien\n 点位 155 café O'Brien\n 点位 156 café O'Brien\n 点位 157 café O'Brien\n 点位 158 café O'Brien\n 点位 159 café O'Brien\n 点位 160 café O'Brien\n 点位 161 café O'Brien\n 点位 162 café O'Brien\n 点位 163 café O'Brien\n 点位 164 café O'Brien\n 点位 165 café O'Brien\n 点位 166 café O'Brien\n 点位 167 café O'Brien\n 点位 168 café O'Brien\n 点位 169 café O'Brien\n 点位 170 café O'Brien\n 点位 171 café O'Brien\n 点位 172 café O'Brien\n 点位 173 café O'Brien\n 点位 174 café O'Brien\n 点位 175 café O'Brien\n 点位 176 café O'Brien\n 点位 177 café O'Brien\n 点位 178 café O'Brien\n 点位 179 café O'Brien\n 点位 180 café O'Brien\n 点位 181 café O'Brien\n 点位 182 café O'Brien\n 点位 183 café O'Brien\n 点位 184 café O'Brien\n 点位 185 café O'Brien\n 点位 186 café O'Brien\n 点位 187 café O'Brien\n 点位 188 café O'Brien\n 点位 189 café O'Brien\n 点位 190 café O'Brien\n 点位 191 café O'Brien\n 点位 192 café O'Brien\n 点位 193 café O'Brien\n 点位 194 café O'Brien\n 点位 195 café O'Brien\n 点位 196 café O'Brien\n 点位 197 café O'Brien\n 点位 198 café O'Brien\n 点位 199 café O'Brien\n 点位 200 café O'Brien\n 点位 201 café O'Brien\n 点位 202 café O'Brien\n 点位 203 café O'Brien\n 点位 204 café O'Brien\n 点位 205 café O'Brien\n 点位 206 café O'Brien\n 点位 207 café O'Brien\n 点位 208 café O'Brien\n 点位 209 café O'Brien\n 点位 210 café O'Brien\n 点位 211 café O'Brien\n 点位 212 café O'Brien\n 点位 213 café O'Brien\n 点位 214 café O'Brien\n 点位 215 café O'Brien\n 点位 216 café O'Brien\n 点位 217 café O'Brien\n 点位 218 café O'Brien\n 点位 219 café O'Brien\n 点位 220 café O'Brien\n 点位 221 café O'Brien\n 点位 222 café O'Brien\n 点位 223 café O'Brien\n 点位 224 café O'Brien\n 点位 225 café O'Brien\n 点位 226 café O'Brien\n 点位 227 café O'Brien\n 点位 228 café O'Brien\n 点位 229 café O'Brien\n 点位 230 café O'Brien\n 点位 231 café O'Brien\n 点位 232 café O'Brien\n 点位 233 café O'Brien\n 点位 234 café O'Brien\n 点位 235 café O'Brien\n 点位 236 café O'Brien\n 点位 237 café O'Brien\n 点位 238 café O'Brien\n 点位 239 café O'Brien\n 点位 240 café O'Brien\n 点位 241 café O'Brien\n 点位 242 café O'Brien\n 点位 243 café O'Brien\n 点位 244 café O'Brien\n 点位 245 café O'Brien\n 点位 246 café O'Brien\n 点位 247 café O'Brien\n 点位 248 café O'Brien\n 点位 249 café O'Brien\n 点位 250 café O'Brien\n 点位 251 café O'Brien\n 点位 252 café O'Brien\n 点位 253 café O'Brien\n 点位 254 café O'Brien\n 点位 255 café O'Brien\n 点位 256 café O'Brien\n本地采集 (3)\n \n line\n point\n polygon",
+    "inputs": [
+      {
+        "type": "url",
+        "name": "url",
+        "id": "url",
+        "value": "",
+        "aria": null,
+        "outer": "<input type=\"url\" name=\"url\" id=\"url\" style=\"\">"
+      },
+      {
+        "type": "button",
+        "name": "",
+        "id": "",
+        "value": "Copy link",
+        "aria": null,
+        "outer": "<input type=\"button\" value=\"Copy link\" style=\"\">"
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "id": "email",
+        "value": "",
+        "aria": null,
+        "outer": "<input type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email\" required=\"\" style=\"\">"
+      },
+      {
+        "type": "submit",
+        "name": "",
+        "id": "",
+        "value": "Send me the link",
+        "aria": null,
+        "outer": "<input type=\"submit\" value=\"Send me the link\" class=\"umap-action\" style=\"\">"
+      },
+      {
+        "type": "submit",
+        "name": "",
+        "id": "your-changes",
+        "value": "Keep your changes and loose theirs",
+        "aria": null,
+        "outer": "<input id=\"your-changes\" type=\"submit\" value=\"Keep your changes and loose theirs\" style=\"\">"
+      },
+      {
+        "type": "submit",
+        "name": "",
+        "id": "their-changes",
+        "value": "Keep their changes and loose yours",
+        "aria": null,
+        "outer": "<input id=\"their-changes\" type=\"submit\" value=\"Keep their changes and loose yours\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "unit",
+        "id": "km",
+        "value": "km",
+        "aria": null,
+        "outer": "<input type=\"radio\" id=\"km\" name=\"unit\" value=\"km\" checked=\"\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "unit",
+        "id": "mi",
+        "value": "mi",
+        "aria": null,
+        "outer": "<input type=\"radio\" id=\"mi\" name=\"unit\" value=\"mi\" style=\"\">"
+      },
+      {
+        "type": "radio",
+        "name": "unit",
+        "id": "nm",
+        "value": "nm",
+        "aria": null,
+        "outer": "<input type=\"radio\" id=\"nm\" name=\"unit\" value=\"nm\" style=\"\">"
+      }
+    ],
+    "keys": [],
+    "errors": [],
+    "api": [
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      }
+    ],
+    "leafletMarkers": 257,
+    "leafletPaths": 2
+  }
+]

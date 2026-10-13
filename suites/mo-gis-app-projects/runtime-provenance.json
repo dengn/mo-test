@@ -1,0 +1,51 @@
+{
+  "distribution_versions": {
+    "pygeoapi": "0.24.0",
+    "umap-project": "3.8.1",
+    "Django": "5.2.18",
+    "GeoAlchemy2": "0.20.0",
+    "SQLAlchemy": "2.1.4",
+    "pymysql": "1.2.3",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0"
+  },
+  "provider_source_checks": {
+    "pygeoapi": {
+      "installed_source": "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py",
+      "release_source": "/workspace/mo-gis-app-projects/projects/pygeoapi/pygeoapi/provider/sql.py",
+      "installed_sha256": "1fda8fbd8582d47b3f24570dfe32a99552148cbea7f21af7d237832b7d23f968",
+      "release_sha256": "1fda8fbd8582d47b3f24570dfe32a99552148cbea7f21af7d237832b7d23f968",
+      "identical": true
+    },
+    "umap": {
+      "installed_source": "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/umap/models.py",
+      "release_source": "/workspace/mo-gis-app-projects/projects/umap/umap/models.py",
+      "installed_sha256": "8e1d6585769c956ca3baea9de1fdf30b1f1b3c049bcb99fc91ccbe57ff891688",
+      "release_sha256": "8e1d6585769c956ca3baea9de1fdf30b1f1b3c049bcb99fc91ccbe57ff891688",
+      "identical": true
+    }
+  },
+  "geoserver_about": {
+    "about": {
+      "resource": [
+        {
+          "@name": "GeoServer",
+          "Build-Timestamp": "14-Aug-2026 16:40",
+          "Version": "3.0.1",
+          "Git-Revision": "3ec7c7009c01dc1d19e8f5332d971f561fbbee36"
+        },
+        {
+          "@name": "GeoTools",
+          "Build-Timestamp": "14-Aug-2026 15:09",
+          "Version": 35.1,
+          "Git-Revision": "820904c219b584f817dbf7341ba2c480fc1a3e06"
+        },
+        {
+          "@name": "GeoWebCache",
+          "Version": "2.0.1",
+          "Git-Revision": "2.0.x/6dc564c84582f47b4d3047cdc2f6aa0ee1c7b676"
+        }
+      ]
+    }
+  }
+}

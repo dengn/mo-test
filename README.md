@@ -105,3 +105,10 @@ ClickHouse 官方 14 个窗口入口中 MO 有 11 个、缺 3 个；DolphinDB SQ
 Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过，使用共享真实 pipeline，单列不计入主 case。另有 1,000 个冷启动、50 个未来信息泄漏及 100 个速度异常正/负控制；主来源 19 表 87,672 行在执行前后逐值/哈希审计一致。观测期间服务进程未更换，OOM 计数未增加，控制台采样区间无 panic/fatal。
 
 [报告](suites/mo-analysis-needs-lab/report.json)包含完整方法、范围、修正及内存压力记录；200 次隔离、预热客户端读测覆盖 50 条代表查询，各场景中位数约 3.0–10.0 ms，包含取数和 DataFrame 构造，不是生产吞吐率。完整逐 case SQL、参数、预期/实际输出、检查点状态、日志及可重放代码都在新分卷中。
+
+
+## 五个开源 GIS 应用与 TTL 能力核验
+
+[GeoServer、pygeoapi、QGIS、uMap、Maputnik 的真实端到端测试](suites/mo-gis-app-projects/README.md)：51 个项目/后端/接入阶段工作流，保留原生失败与适配后结果；新增确认的几何协议缺陷 [#30046](https://github.com/matrixorigin/matrixone/issues/30046)。
+
+[TTL 源码、文档与 SQL 实测](suites/mo-ttl-check/README.md)：当前 main 无原生行/表 TTL，定时 SQL task 删除过期行已验证。两套后续核验均不计入原有 600,000 条主 case。

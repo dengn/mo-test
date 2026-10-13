@@ -1,0 +1,85 @@
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:5: error: package org.geotools.jdbc does not exist
+import org.geotools.jdbc.JDBCDataStore;
+                        ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:6: error: package org.geotools.jdbc does not exist
+import org.geotools.jdbc.SQLDialect;
+                        ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:7: error: package org.geotools.data.mysql does not exist
+import org.geotools.data.mysql.MySQLDataStoreFactory;
+                              ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:8: error: package org.geotools.data.mysql does not exist
+import org.geotools.data.mysql.MySQLDialectBasic;
+                              ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:11: error: cannot find symbol
+public class MatrixOneDataStoreFactory extends MySQLDataStoreFactory {
+                                               ^
+  symbol: class MySQLDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:12: error: cannot find symbol
+    private static final Param MATRIXONE_TYPE = new Param(
+                         ^
+  symbol:   class Param
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:36: error: cannot find symbol
+    protected SQLDialect createSQLDialect(JDBCDataStore store) {
+                                          ^
+  symbol:   class JDBCDataStore
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:36: error: cannot find symbol
+    protected SQLDialect createSQLDialect(JDBCDataStore store) {
+              ^
+  symbol:   class SQLDialect
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:40: error: cannot find symbol
+    public static class MatrixOneDialect extends MySQLDialectBasic {
+                                                 ^
+  symbol:   class MySQLDialectBasic
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:41: error: cannot find symbol
+        public MatrixOneDialect(JDBCDataStore store) { super(store, true); }
+                                ^
+  symbol:   class JDBCDataStore
+  location: class MatrixOneDialect
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:12: error: cannot find symbol
+    private static final Param MATRIXONE_TYPE = new Param(
+                                                    ^
+  symbol:   class Param
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:15: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:18: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:21: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:26: error: cannot find symbol
+        return super.canProcess(copy);
+               ^
+  symbol:   variable super
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:29: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:31: error: cannot find symbol
+        super.setupParameters(params);
+        ^
+  symbol:   variable super
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:32: error: cannot find symbol
+        params.put(DBTYPE.key, MATRIXONE_TYPE);
+                   ^
+  symbol:   variable DBTYPE
+  location: class MatrixOneDataStoreFactory
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:35: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:43: error: method does not override or implement a method from a supertype
+        @Override
+        ^
+/workspace/mo-gis-app-projects/adapters/java/local/gis/MatrixOneDataStoreFactory.java:48: error: cannot find symbol
+            encodeColumnName(null, column, sql);
+            ^
+  symbol:   method encodeColumnName(<null>,String,StringBuffer)
+  location: class MatrixOneDialect
+21 errors

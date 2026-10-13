@@ -1,0 +1,149 @@
+[
+  {
+    "engine": "pg",
+    "params": {
+      "f": "json",
+      "limit": 2
+    },
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "count": 2,
+      "first": {
+        "type": "Feature",
+        "properties": {
+          "id": 1,
+          "name": "点位 1 café O'Brien",
+          "kind": "school",
+          "value": 3,
+          "attrs": {
+            "tags": [
+              "urban",
+              "中文"
+            ],
+            "nullable": null,
+            "rank": 1
+          }
+        },
+        "id": 1,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.8,
+            116.3
+          ]
+        }
+      }
+    }
+  },
+  {
+    "engine": "pg",
+    "params": {
+      "f": "json",
+      "limit": 500,
+      "bbox": "116.299,39.799,116.315,39.815"
+    },
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "count": 0,
+      "first": null
+    }
+  },
+  {
+    "engine": "mysql",
+    "params": {
+      "f": "json",
+      "limit": 2
+    },
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "count": 2,
+      "first": {
+        "type": "Feature",
+        "properties": {
+          "id": 1,
+          "name": "点位 1 café O'Brien",
+          "kind": "school",
+          "value": 3,
+          "attrs": {
+            "rank": 1,
+            "tags": [
+              "urban",
+              "中文"
+            ],
+            "nullable": null
+          }
+        },
+        "id": 1,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            116.3,
+            39.8
+          ]
+        }
+      }
+    }
+  },
+  {
+    "engine": "mysql",
+    "params": {
+      "f": "json",
+      "limit": 500,
+      "bbox": "116.299,39.799,116.315,39.815"
+    },
+    "status": 500,
+    "content_type": "text/html; charset=utf-8",
+    "body": "<!doctype html>\n<html lang=en>\n  <head>\n    <title>sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3643, &#34;The SRID of the geometry does not match the SRID of the column &#39;geom&#39;. The SRID of the geometry is 0, but the SRID of the column is 4326. Consider changing the SRID of the geometry or the SRID property of the column.&#34;)\n[SQL: SELECT count(*) AS count_1 \nFROM (SE"
+  },
+  {
+    "engine": "mo",
+    "params": {
+      "f": "json",
+      "limit": 2
+    },
+    "status": 200,
+    "content_type": "application/json",
+    "body": {
+      "count": 2,
+      "first": {
+        "type": "Feature",
+        "properties": {
+          "id": 1,
+          "name": "点位 1 café O'Brien",
+          "kind": "school",
+          "value": 3,
+          "attrs": {
+            "nullable": null,
+            "rank": 1,
+            "tags": [
+              "urban",
+              "中文"
+            ]
+          }
+        },
+        "id": 1,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            39.8,
+            116.3
+          ]
+        }
+      }
+    }
+  },
+  {
+    "engine": "mo",
+    "params": {
+      "f": "json",
+      "limit": 500,
+      "bbox": "116.299,39.799,116.315,39.815"
+    },
+    "status": 500,
+    "content_type": "text/html; charset=utf-8",
+    "body": "<!doctype html>\n<html lang=en>\n  <head>\n    <title>sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (20301, &#39;invalid input: Binary geometry function MBRContains given two geometries of different srids: 0 and 4326, which should have been identical.&#39;)\n[SQL: SELECT count(*) AS count_1 \nFROM (SELECT gis_app_suite.points.id AS gis_app_suite_points_id, gis_app_suite.points.name AS"
+  }
+]
