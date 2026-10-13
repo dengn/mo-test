@@ -1,0 +1,900 @@
+{
+  "database": "index_race_repro_1791857579",
+  "phase": "post_load",
+  "checks": [
+    {
+      "name": "show_create_race_h",
+      "sql": "show create table race_h",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_h",
+          "CREATE TABLE `race_h` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `v` vecf32(64) DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING hnsw (`v`) op_type 'vector_l2_ops' ,\n  KEY `ridx_3` (`n`),\n  KEY `ridx_8` (`n`),\n  KEY `ridx_13` (`n`),\n  KEY `ridx_18` (`n`)\n)"
+        ]
+      ]
+    },
+    {
+      "name": "show_index_race_h",
+      "sql": "show index from race_h",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_h",
+          0,
+          "PRIMARY",
+          1,
+          "id",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "id"
+        ],
+        [
+          "race_h",
+          1,
+          "ann",
+          1,
+          "v",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "hnsw",
+          "",
+          "",
+          "{\"op_type\":\"vector_l2_ops\"}",
+          "YES",
+          "v"
+        ],
+        [
+          "race_h",
+          1,
+          "ridx_3",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_h",
+          1,
+          "ridx_8",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_h",
+          1,
+          "ridx_13",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_h",
+          1,
+          "ridx_18",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ]
+      ]
+    },
+    {
+      "name": "source_rows_race_h",
+      "sql": "select id,n from race_h",
+      "params": null,
+      "status": "pass",
+      "row_count": 539
+    },
+    {
+      "name": "acknowledged_writes_race_h",
+      "status": "pass",
+      "acknowledged": 38,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "name": "metadata_race_h",
+      "sql": "select distinct name,algo,algo_table_type,index_table_name,is_visible from mo_catalog.mo_indexes where table_id=(select rel_id from mo_catalog.mo_tables where reldatabase=%s and relname=%s) order by name,algo_table_type",
+      "params": [
+        "index_race_repro_1791857579",
+        "race_h"
+      ],
+      "status": "pass",
+      "rows": [
+        [
+          "PRIMARY",
+          "",
+          "",
+          null,
+          1
+        ],
+        [
+          "ann",
+          "hnsw",
+          "hnsw_index",
+          "__mo_index_secondary_01a13308-d673-705b-bd9f-d4052e897469",
+          1
+        ],
+        [
+          "ann",
+          "hnsw",
+          "hnsw_meta",
+          "__mo_index_secondary_01a13308-d673-7009-9104-d87a880417cd",
+          1
+        ],
+        [
+          "ridx_13",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e7d1-73a2-9ca4-c1a01955498d",
+          1
+        ],
+        [
+          "ridx_18",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-ecf6-7876-8917-13e393388868",
+          1
+        ],
+        [
+          "ridx_3",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e120-706f-a5e7-1e088e6d5d00",
+          1
+        ],
+        [
+          "ridx_8",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e47b-710e-8a37-d45e0e2b5c0c",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d673-7009-9104-d87a880417cd`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d673-705b-bd9f-d4052e897469`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e120-706f-a5e7-1e088e6d5d00`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          539
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e47b-710e-8a37-d45e0e2b5c0c`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          539
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e7d1-73a2-9ca4-c1a01955498d`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          539
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_h",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-ecf6-7876-8917-13e393388868`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          539
+        ]
+      ]
+    },
+    {
+      "name": "show_create_race_i",
+      "sql": "show create table race_i",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_i",
+          "CREATE TABLE `race_i` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `v` vecf32(64) DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING ivfflat (`v`) lists = 16  op_type 'vector_l2_ops' \n)"
+        ]
+      ]
+    },
+    {
+      "name": "show_index_race_i",
+      "sql": "show index from race_i",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_i",
+          0,
+          "PRIMARY",
+          1,
+          "id",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "id"
+        ],
+        [
+          "race_i",
+          1,
+          "ann",
+          1,
+          "v",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "ivfflat",
+          "",
+          "",
+          "{\"lists\":\"16\",\"op_type\":\"vector_l2_ops\"}",
+          "YES",
+          "v"
+        ]
+      ]
+    },
+    {
+      "name": "source_rows_race_i",
+      "sql": "select id,n from race_i",
+      "params": null,
+      "status": "pass",
+      "row_count": 554
+    },
+    {
+      "name": "acknowledged_writes_race_i",
+      "status": "pass",
+      "acknowledged": 54,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "name": "metadata_race_i",
+      "sql": "select distinct name,algo,algo_table_type,index_table_name,is_visible from mo_catalog.mo_indexes where table_id=(select rel_id from mo_catalog.mo_tables where reldatabase=%s and relname=%s) order by name,algo_table_type",
+      "params": [
+        "index_race_repro_1791857579",
+        "race_i"
+      ],
+      "status": "pass",
+      "rows": [
+        [
+          "PRIMARY",
+          "",
+          "",
+          null,
+          1
+        ],
+        [
+          "ann",
+          "ivfflat",
+          "centroids",
+          "__mo_index_secondary_01a13308-d748-7b7a-9a7e-c57e659d628f",
+          1
+        ],
+        [
+          "ann",
+          "ivfflat",
+          "entries",
+          "__mo_index_secondary_01a13308-d748-7b88-89d2-4004bdb81da0",
+          1
+        ],
+        [
+          "ann",
+          "ivfflat",
+          "metadata",
+          "__mo_index_secondary_01a13308-d748-7b32-a343-7ffaecc807c5",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_i",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d748-7b32-a343-7ffaecc807c5`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          7
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_i",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d748-7b7a-9a7e-c57e659d628f`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          16
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_i",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d748-7b88-89d2-4004bdb81da0`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          554
+        ]
+      ]
+    },
+    {
+      "name": "show_create_race_ft",
+      "sql": "show create table race_ft",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_ft",
+          "CREATE TABLE `race_ft` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `body` text DEFAULT NULL,\n  PRIMARY KEY (`id`),\n FULLTEXT `txt`(`body`),\n  KEY `ridx_9` (`n`),\n  KEY `ridx_14` (`n`),\n  KEY `ridx_19` (`n`),\n  KEY `ridx_24` (`n`)\n)"
+        ]
+      ]
+    },
+    {
+      "name": "show_index_race_ft",
+      "sql": "show index from race_ft",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_ft",
+          0,
+          "PRIMARY",
+          1,
+          "id",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "id"
+        ],
+        [
+          "race_ft",
+          1,
+          "txt",
+          1,
+          "body",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "fulltext",
+          "",
+          "",
+          "",
+          "YES",
+          "body"
+        ],
+        [
+          "race_ft",
+          1,
+          "ridx_9",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_ft",
+          1,
+          "ridx_14",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_ft",
+          1,
+          "ridx_19",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ],
+        [
+          "race_ft",
+          1,
+          "ridx_24",
+          1,
+          "n",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "n"
+        ]
+      ]
+    },
+    {
+      "name": "source_rows_race_ft",
+      "sql": "select id,n from race_ft",
+      "params": null,
+      "status": "pass",
+      "row_count": 565
+    },
+    {
+      "name": "acknowledged_writes_race_ft",
+      "status": "pass",
+      "acknowledged": 65,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "name": "metadata_race_ft",
+      "sql": "select distinct name,algo,algo_table_type,index_table_name,is_visible from mo_catalog.mo_indexes where table_id=(select rel_id from mo_catalog.mo_tables where reldatabase=%s and relname=%s) order by name,algo_table_type",
+      "params": [
+        "index_race_repro_1791857579",
+        "race_ft"
+      ],
+      "status": "pass",
+      "rows": [
+        [
+          "PRIMARY",
+          "",
+          "",
+          null,
+          1
+        ],
+        [
+          "ridx_14",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e472-71bc-83ed-4e56e16339a0",
+          1
+        ],
+        [
+          "ridx_19",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e906-7d03-8eb6-f2282858b8f5",
+          1
+        ],
+        [
+          "ridx_24",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-ebbb-73d1-8ce9-0e91edeeefb0",
+          1
+        ],
+        [
+          "ridx_9",
+          "",
+          "",
+          "__mo_index_secondary_01a13308-e0c9-750b-b842-19785f179661",
+          1
+        ],
+        [
+          "txt",
+          "fulltext",
+          "",
+          "__mo_index_secondary_01a13308-d787-7c1f-a522-77f290fc536b",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d787-7c1f-a522-77f290fc536b`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          2260
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e0c9-750b-b842-19785f179661`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          565
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e472-71bc-83ed-4e56e16339a0`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          565
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-e906-7d03-8eb6-f2282858b8f5`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          565
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-ebbb-73d1-8ce9-0e91edeeefb0`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          565
+        ]
+      ]
+    },
+    {
+      "name": "show_create_race_ft2",
+      "sql": "show create table race_ft2",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_ft2",
+          "CREATE TABLE `race_ft2` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `body` text DEFAULT NULL,\n  PRIMARY KEY (`id`),\n FULLTEXT2 `txt`(`body`) WITH PARSER ngram\n)"
+        ]
+      ]
+    },
+    {
+      "name": "show_index_race_ft2",
+      "sql": "show index from race_ft2",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_ft2",
+          0,
+          "PRIMARY",
+          1,
+          "id",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "",
+          "BTREE",
+          "",
+          "",
+          "",
+          "YES",
+          "id"
+        ],
+        [
+          "race_ft2",
+          1,
+          "txt",
+          1,
+          "body",
+          "A",
+          0,
+          "NULL",
+          "NULL",
+          "YES",
+          "fulltext2",
+          "",
+          "",
+          "{\"parser\":\"ngram\",\"session_vars\":{\"cfg\":{\"lower_case_table_names\":{\"t\":\"I\",\"v\":1}}}}",
+          "YES",
+          "body"
+        ]
+      ]
+    },
+    {
+      "name": "source_rows_race_ft2",
+      "sql": "select id,n from race_ft2",
+      "params": null,
+      "status": "pass",
+      "row_count": 588
+    },
+    {
+      "name": "acknowledged_writes_race_ft2",
+      "status": "pass",
+      "acknowledged": 88,
+      "missing": [],
+      "wrong": []
+    },
+    {
+      "name": "metadata_race_ft2",
+      "sql": "select distinct name,algo,algo_table_type,index_table_name,is_visible from mo_catalog.mo_indexes where table_id=(select rel_id from mo_catalog.mo_tables where reldatabase=%s and relname=%s) order by name,algo_table_type",
+      "params": [
+        "index_race_repro_1791857579",
+        "race_ft2"
+      ],
+      "status": "pass",
+      "rows": [
+        [
+          "PRIMARY",
+          "",
+          "",
+          null,
+          1
+        ],
+        [
+          "txt",
+          "fulltext2",
+          "ftv2_index",
+          "__mo_index_secondary_01a13308-d79d-75e2-9e11-5af6fcdb84dd",
+          1
+        ],
+        [
+          "txt",
+          "fulltext2",
+          "ftv2_meta",
+          "__mo_index_secondary_01a13308-d79d-75f2-b94a-06d368271c67",
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft2",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d79d-75e2-9e11-5af6fcdb84dd`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "physical_index_relation_race_ft2",
+      "sql": "select count(*) from `__mo_index_secondary_01a13308-d79d-75f2-b94a-06d368271c67`",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "name": "fresh_insert_hnsw",
+      "sql": "insert into race_h values(%s,%s,%s)",
+      "params": [
+        99010001,
+        297030003,
+        "[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
+      ],
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "fresh_hnsw_reindex",
+      "sql": "alter table race_h alter reindex ann hnsw force_sync",
+      "params": null,
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "fresh_hnsw_query",
+      "sql": "select id,l2_distance(v,%s) from race_h where n>=0 order by l2_distance(v,%s) limit 10",
+      "params": [
+        "[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]",
+        "[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]"
+      ],
+      "status": "pass",
+      "rows": [
+        [
+          99010001,
+          0.0
+        ],
+        [
+          99000002,
+          0.0
+        ],
+        [
+          167,
+          24.243349075317383
+        ],
+        [
+          1177,
+          24.243349075317383
+        ],
+        [
+          470,
+          24.243349075317383
+        ],
+        [
+          66,
+          24.243349075317383
+        ],
+        [
+          1076,
+          24.243349075317383
+        ],
+        [
+          268,
+          24.243349075317383
+        ],
+        [
+          369,
+          24.243349075317383
+        ],
+        [
+          233,
+          24.305761337280273
+        ]
+      ]
+    },
+    {
+      "name": "fresh_ivf_reindex",
+      "sql": "alter table race_i alter reindex ann ivfflat lists=16",
+      "params": null,
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "fresh_ft2_reindex",
+      "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync",
+      "params": null,
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "fresh_secondary_create",
+      "sql": "create index post_recheck on race_h(n)",
+      "params": null,
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "fresh_secondary_drop",
+      "sql": "drop index post_recheck on race_h",
+      "params": null,
+      "status": "pass",
+      "rows": []
+    },
+    {
+      "name": "show_create_after_secondary_ddl",
+      "sql": "show create table race_h",
+      "params": null,
+      "status": "pass",
+      "rows": [
+        [
+          "race_h",
+          "CREATE TABLE `race_h` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `v` vecf32(64) DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING hnsw (`v`) op_type 'vector_l2_ops' ,\n  KEY `ridx_3` (`n`),\n  KEY `ridx_8` (`n`),\n  KEY `ridx_13` (`n`),\n  KEY `ridx_18` (`n`)\n)"
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

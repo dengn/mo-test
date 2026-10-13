@@ -1,0 +1,80 @@
+[
+  {
+    "service": "old-control",
+    "port": 6015,
+    "version": "2726fb4",
+    "columns": [
+      "cn_id",
+      "txn_id",
+      "create_ts",
+      "snapshot_ts",
+      "prepared_ts",
+      "commit_ts",
+      "txn_mode",
+      "isolation",
+      "user_txn",
+      "txn_status",
+      "table_id",
+      "lock_key",
+      "lock_content",
+      "lock_mode"
+    ],
+    "transactions": [
+      {
+        "cn_id": "a9153333-3333-4333-8333-333333333333",
+        "txn_id": "c9de4b2f96abd4cb18ddf5299e8bd780",
+        "create_ts": "2026-10-13T02:16:31.130728191Z",
+        "snapshot_ts": "1791857791137490118-1",
+        "prepared_ts": "0-0",
+        "commit_ts": "0-0",
+        "txn_mode": "Pessimistic",
+        "isolation": "RC",
+        "user_txn": "true",
+        "txn_status": "Active",
+        "table_id": "",
+        "lock_key": "",
+        "lock_content": "",
+        "lock_mode": ""
+      }
+    ]
+  },
+  {
+    "service": "main",
+    "port": 6014,
+    "version": "3e50e1b3",
+    "columns": [
+      "cn_id",
+      "txn_id",
+      "create_ts",
+      "snapshot_ts",
+      "prepared_ts",
+      "commit_ts",
+      "txn_mode",
+      "isolation",
+      "user_txn",
+      "txn_status",
+      "table_id",
+      "lock_key",
+      "lock_content",
+      "lock_mode"
+    ],
+    "transactions": [
+      {
+        "cn_id": "a9273333-3333-4333-8333-333333333333",
+        "txn_id": "30234bf20d06b74c18ddf52ba513024e",
+        "create_ts": "2026-10-13T02:16:36.667608042Z",
+        "snapshot_ts": "1791857796676064343-1",
+        "prepared_ts": "0-0",
+        "commit_ts": "0-0",
+        "txn_mode": "Pessimistic",
+        "isolation": "RC",
+        "user_txn": "true",
+        "txn_status": "Active",
+        "table_id": "",
+        "lock_key": "",
+        "lock_content": "",
+        "lock_mode": ""
+      }
+    ]
+  }
+]

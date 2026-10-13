@@ -1,0 +1,9 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+2026/10/13 01:52:01.780820 +0000 INFO system/system.go:586 call runtime.GOMAXPROCS(5): 5, keep: 5
+2026/10/13 01:52:01.961811 +0000 INFO tasks/cancelablejob.go:161 cancelablejob.start.cron.job {"name": "CronJob[streamReaderGC-01a132f5-a5a9-7b64-a935-8c55255263a3-2m0s]", "interval": "2m0s"}
+MatrixOne build info:
+  The golang version used to build this binary: go version go1.27.1 linux/amd64
+  Git branch name: main
+  Git commit ID: 2726fb4
+  Buildtime: 1791515779
+  Version: main

@@ -1,0 +1,532 @@
+{
+  "expected_main_commit": "3e50e1b32d8da61bbbf70c89989fb08b671809de",
+  "runs": [
+    {
+      "run": 1,
+      "workload_exit_code": 0,
+      "seconds": 8.423,
+      "transaction_mode_samples": [
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        }
+      ],
+      "output_directory": "runs/run-01",
+      "database": "index_race_repro_1791857579",
+      "acknowledged_writes": 245,
+      "original_missing": [],
+      "original_corrupt": [],
+      "transient_client_errors": {},
+      "ddl_errors": [
+        {
+          "id": "R004",
+          "sql": "create index ridx_3 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.0113945229677483
+        },
+        {
+          "id": "R009",
+          "sql": "create index ridx_8 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.160701899032574
+        },
+        {
+          "id": "R010",
+          "sql": "create index ridx_9 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.4939669909654185
+        },
+        {
+          "id": "R014",
+          "sql": "create index ridx_13 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.9279359139618464
+        },
+        {
+          "id": "R015",
+          "sql": "create index ridx_14 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.6062745840172283
+        },
+        {
+          "id": "R019",
+          "sql": "create index ridx_18 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.3911017780192196
+        },
+        {
+          "id": "R020",
+          "sql": "create index ridx_19 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.6866412120289169
+        },
+        {
+          "id": "R025",
+          "sql": "create index ridx_24 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.49896163801895455
+        }
+      ],
+      "post_load_check_count": 44,
+      "post_load_errors": [],
+      "original_POST_LOAD_errors": [],
+      "status": "pass",
+      "post_restart_check_count": 44,
+      "post_restart_errors": []
+    },
+    {
+      "run": 2,
+      "workload_exit_code": 0,
+      "seconds": 8.688,
+      "transaction_mode_samples": [
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        }
+      ],
+      "output_directory": "runs/run-02",
+      "database": "index_race_repro_1791857588",
+      "acknowledged_writes": 208,
+      "original_missing": [],
+      "original_corrupt": [],
+      "transient_client_errors": {},
+      "ddl_errors": [
+        {
+          "id": "R004",
+          "sql": "create index ridx_3 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.6318811170058325
+        },
+        {
+          "id": "R005",
+          "sql": "create index ridx_4 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.8158513180096634
+        },
+        {
+          "id": "R009",
+          "sql": "create index ridx_8 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.471109614998568
+        },
+        {
+          "id": "R010",
+          "sql": "create index ridx_9 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.8700944539741613
+        },
+        {
+          "id": "R014",
+          "sql": "create index ridx_13 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.1242662119911984
+        },
+        {
+          "id": "R015",
+          "sql": "create index ridx_14 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.374958242988214
+        },
+        {
+          "id": "R019",
+          "sql": "create index ridx_18 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.669030303019099
+        },
+        {
+          "id": "R020",
+          "sql": "create index ridx_19 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.3236457169987261
+        },
+        {
+          "id": "R024",
+          "sql": "create index ridx_23 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.933748778013978
+        },
+        {
+          "id": "R025",
+          "sql": "create index ridx_24 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.6102480019908398
+        }
+      ],
+      "post_load_check_count": 46,
+      "post_load_errors": [],
+      "original_POST_LOAD_errors": [],
+      "status": "pass",
+      "post_restart_check_count": 46,
+      "post_restart_errors": []
+    },
+    {
+      "run": 3,
+      "workload_exit_code": 0,
+      "seconds": 10.151,
+      "transaction_mode_samples": [
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        }
+      ],
+      "output_directory": "runs/run-03",
+      "database": "index_race_repro_1791857597",
+      "acknowledged_writes": 222,
+      "original_missing": [],
+      "original_corrupt": [],
+      "transient_client_errors": {},
+      "ddl_errors": [
+        {
+          "id": "R004",
+          "sql": "create index ridx_3 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.4914201219798997
+        },
+        {
+          "id": "R005",
+          "sql": "create index ridx_4 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.4194839860429056
+        },
+        {
+          "id": "R009",
+          "sql": "create index ridx_8 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.0099638029932976
+        },
+        {
+          "id": "R010",
+          "sql": "create index ridx_9 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.8833000480080955
+        },
+        {
+          "id": "R014",
+          "sql": "create index ridx_13 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.3959316659602337
+        },
+        {
+          "id": "R015",
+          "sql": "create index ridx_14 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.185764291032683
+        },
+        {
+          "id": "R019",
+          "sql": "create index ridx_18 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.765876987017691
+        },
+        {
+          "id": "R020",
+          "sql": "create index ridx_19 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.3832544869510457
+        },
+        {
+          "id": "R024",
+          "sql": "create index ridx_23 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.5999285099678673
+        },
+        {
+          "id": "R025",
+          "sql": "create index ridx_24 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.6293718960369006
+        }
+      ],
+      "post_load_check_count": 46,
+      "post_load_errors": [],
+      "original_POST_LOAD_errors": [],
+      "status": "pass",
+      "post_restart_check_count": 46,
+      "post_restart_errors": []
+    },
+    {
+      "run": 4,
+      "workload_exit_code": 0,
+      "seconds": 9.485,
+      "transaction_mode_samples": [
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        }
+      ],
+      "output_directory": "runs/run-04",
+      "database": "index_race_repro_1791857607",
+      "acknowledged_writes": 182,
+      "original_missing": [],
+      "original_corrupt": [],
+      "transient_client_errors": {},
+      "ddl_errors": [
+        {
+          "id": "R004",
+          "sql": "create index ridx_3 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.0285304859862663
+        },
+        {
+          "id": "R005",
+          "sql": "create index ridx_4 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.46467102505266666
+        },
+        {
+          "id": "R009",
+          "sql": "create index ridx_8 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.2775131359812804
+        },
+        {
+          "id": "R010",
+          "sql": "create index ridx_9 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.7551575519610196
+        },
+        {
+          "id": "R014",
+          "sql": "create index ridx_13 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.197349316033069
+        },
+        {
+          "id": "R015",
+          "sql": "create index ridx_14 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.7757645579986274
+        },
+        {
+          "id": "R019",
+          "sql": "create index ridx_18 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.395625507051591
+        },
+        {
+          "id": "R020",
+          "sql": "create index ridx_19 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.6958838259452023
+        },
+        {
+          "id": "R024",
+          "sql": "create index ridx_23 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.772030125022866
+        },
+        {
+          "id": "R025",
+          "sql": "create index ridx_24 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.8684359239996411
+        }
+      ],
+      "post_load_check_count": 46,
+      "post_load_errors": [],
+      "original_POST_LOAD_errors": [],
+      "status": "pass",
+      "post_restart_check_count": 46,
+      "post_restart_errors": []
+    },
+    {
+      "run": 5,
+      "workload_exit_code": 0,
+      "seconds": 10.038,
+      "transaction_mode_samples": [
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        },
+        {
+          "monitor_error": "(1064, 'SQL parser error: No tables used')"
+        }
+      ],
+      "output_directory": "runs/run-05",
+      "database": "index_race_repro_1791857617",
+      "acknowledged_writes": 224,
+      "original_missing": [],
+      "original_corrupt": [],
+      "transient_client_errors": {},
+      "ddl_errors": [
+        {
+          "id": "R004",
+          "sql": "create index ridx_3 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.8734314169851132
+        },
+        {
+          "id": "R005",
+          "sql": "create index ridx_4 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.0077632009633817
+        },
+        {
+          "id": "R009",
+          "sql": "create index ridx_8 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.0689522930188105
+        },
+        {
+          "id": "R014",
+          "sql": "create index ridx_13 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.477071706962306
+        },
+        {
+          "id": "R015",
+          "sql": "create index ridx_14 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 0.5279354479862377
+        },
+        {
+          "id": "R019",
+          "sql": "create index ridx_18 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 3.047839554026723
+        },
+        {
+          "id": "R020",
+          "sql": "create index ridx_19 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.169742209953256
+        },
+        {
+          "id": "R024",
+          "sql": "create index ridx_23 on race_h(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 2.0357570410124026
+        },
+        {
+          "id": "R025",
+          "sql": "create index ridx_24 on race_ft(n)",
+          "error": "(20706, 'lock options conflict, wait policy is fast fail')",
+          "seconds": 1.3200747660011984
+        }
+      ],
+      "post_load_check_count": 45,
+      "post_load_errors": [],
+      "original_POST_LOAD_errors": [],
+      "status": "pass",
+      "post_restart_check_count": 45,
+      "post_restart_errors": []
+    }
+  ],
+  "service_restarts": [
+    {
+      "label": "before_restart",
+      "graceful_stop": true,
+      "exit_code": 0
+    },
+    {
+      "label": "final_stop",
+      "graceful_stop": true,
+      "exit_code": 0
+    }
+  ],
+  "planned_max_runs": 5,
+  "SQL_port": 6014,
+  "binary_sha256": "b370e921dbcf2e6dca4fe8999d7909c861f8321ff78dd3fd2791b9cb876c200b",
+  "runtime_version": [
+    "3e50e1b3",
+    "8.0.30-MatrixOne-v1.3.0"
+  ],
+  "total_acknowledged_writes": 1081,
+  "panic_log_matches": {
+    "server-initial.log": 0,
+    "server-restarted.log": 0
+  },
+  "all_runs_passed": true,
+  "finished_at_utc": "2026-10-13T02:13:57.024170+00:00"
+}

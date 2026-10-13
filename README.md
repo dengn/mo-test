@@ -118,3 +118,8 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 新增可独立执行的 [应用回归套件](suites/mo-app-regression/README.md)：Gotify、Blocky、Plik、Ergo、Documize、Huginn、ntfy、Memos、Baikal、FreshRSS、Adminer、phpMyAdmin、Kanboard、YOURLS、Grafana、Matomo 的原生业务/权限/精确值/重启测试，以及 20 个完整 SQL fixture（含 4 个显式开启的 panic）。统一入口输出 JSON/JUnit，提供可复用 [GitHub Actions](.github/workflows/app-regression.yml)。
 
 [1000 项候选名单](suites/mo-app-regression/catalog/projects-1000.csv) 与 [历史运行/迁移状态](suites/mo-app-regression/inventory.json) 分开保留：61 个真实尝试、58 个基本业务通过、16 个独立驱动。其余项目继续迁移；不计入已有历史批次的 case 总数。
+
+
+## #29927 当前 main 回归核验
+
+[原始并发索引竞态复测](suites/mo-issue-29927-recheck/README.md)：旧版本 3 轮中 1 轮复现且重启后仍坏；main `3e50e1b3` 五轮通过，负载结束及重启后共 454 项检查通过，1,081 条确认写入无缺失/错值。复测支持原报持续性损坏已修复，尚未确定具体修复 PR。原有主 case 计数不变。

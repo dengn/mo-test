@@ -1,0 +1,10 @@
+RUN 1 pass acked 245 DDL errors 8
+RUN 2 pass acked 208 DDL errors 10
+RUN 3 pass acked 222 DDL errors 10
+RUN 4 pass acked 182 DDL errors 10
+RUN 5 pass acked 224 DDL errors 9
+RESTART 1 errors 0
+RESTART 2 errors 0
+RESTART 3 errors 0
+RESTART 4 errors 0
+RESTART 5 errors 0

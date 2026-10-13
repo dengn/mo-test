@@ -1,0 +1,11 @@
+{
+  "database": "index_race_repro_1791857607",
+  "reproducer": "/workspace/mo-issue-29927-recheck/main-reproducer.py",
+  "writers": 8,
+  "readers": 24,
+  "ddl_operations": 25,
+  "changes_from_published_trigger": [
+    "local port changed to isolated test service",
+    "working/output directory isolated per run"
+  ]
+}

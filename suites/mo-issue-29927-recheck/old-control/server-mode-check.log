@@ -1,0 +1,257 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+2026/10/13 02:16:23.034025 +0000 INFO system/system.go:586 call runtime.GOMAXPROCS(4): 4, keep: 4
+2026/10/13 02:16:23.177762 +0000 INFO tasks/cancelablejob.go:161 cancelablejob.start.cron.job {"name": "CronJob[streamReaderGC-01a1330b-f189-7aa3-83cc-d306b4dfc61b-2m0s]", "interval": "2m0s"}
+2026/10/13 02:16:23.183080 +0000 ERROR mo-service/debug_connections.go:52 conntrack: error {"error": "netlink join-group: setsockopt: operation not permitted"}
+{"level":"WARN","time":"2026/10/13 02:16:23.197481 +0000","name":"config","caller":"config/config.go:537","msg":"mutual TLS disabled, communication is insecure"}
+{"level":"WARN","time":"2026/10/13 02:16:23.234163 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:0] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.463698 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.565188 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.669144 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.770590 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.871342 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:23.972661 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.073826 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.175266 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.233332 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.275624 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.334499 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.375999 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.437437 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.476852 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.538963 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.577868 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.640136 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.679086 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.741647 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.780493 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.842081 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.881607 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.944262 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:24.982676 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.045218 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.083645 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.146652 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.184792 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.248273 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.285852 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.350043 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.387391 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.662299 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.662554 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.662976 +0000","name":"raft","caller":"raft/raft.go:1011","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 became PreVote candidate"}
+{"level":"WARN","time":"2026/10/13 02:16:25.663136 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t3 received RequestPreVoteResp from n31072"}
+{"level":"WARN","time":"2026/10/13 02:16:25.663305 +0000","name":"raft","caller":"raft/raft.go:1029","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t4 became candidate"}
+{"level":"WARN","time":"2026/10/13 02:16:25.663594 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:833,t:3,c:833,a:833] [00000:31072] t4 received RequestVoteResp from n31072"}
+{"level":"ERROR","time":"2026/10/13 02:16:25.679512 +0000","name":"log-service","caller":"log/logger.go:134","msg":"initial cluster info already set","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111"}
+{"level":"WARN","time":"2026/10/13 02:16:25.816797 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.817998 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.818539 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.818868 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.819331 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.819621 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.819779 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.819838 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.819891 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.832813 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.832911 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.833492 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.833650 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.833698 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.833819 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.834033 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.834114 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.834671 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.835929 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.836026 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.836311 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.836395 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.837044 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.839265 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.857881 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.858077 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.865520 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.866149 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.866946 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.867515 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.868609 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.869112 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.869756 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.870237 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.871317 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.872131 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.872943 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.873409 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.873859 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.878689 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.879310 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.880371 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.881031 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.881649 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.882748 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.883784 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.884494 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.917275 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.918820 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.918890 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.918982 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.920008 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.920117 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.934616 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.934911 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.935170 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.937087 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.937183 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.937228 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.940989 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.958931 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.959110 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.966205 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.966315 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.967677 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.968734 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.968968 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.974968 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.976918 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.977144 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.977339 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.980495 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.989806 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:25.991918 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.017985 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.019158 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.019283 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.020257 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.020330 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.020411 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.035928 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037148 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037344 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037431 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037500 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037540 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.037633 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.041213 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.061806 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.061930 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.062057 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.067360 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.067489 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.071017 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.072511 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.075866 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.078841 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.078946 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.082648 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.083866 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.083995 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.092880 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.093279 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.119217 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.120522 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.120696 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.120932 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.137056 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.139080 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.145895 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.162343 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.162455 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.168491 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.170427 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.172654 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.173846 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.173967 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.176933 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.180116 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.180336 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.183374 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.183479 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.185080 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.186470 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.189004 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.193914 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194029 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194116 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194210 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194276 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194329 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194367 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194440 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194540 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194736 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.194957 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.195024 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.220535 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.221685 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.221997 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"ERROR","time":"2026/10/13 02:16:26.228116 +0000","name":"log-service","caller":"log/logger.go:134","msg":"task service is nil","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","status":"Running"}
+{"level":"ERROR","time":"2026/10/13 02:16:26.228168 +0000","name":"log-service","caller":"log/logger.go:134","msg":"task service is nil","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","status":"Created"}
+{"level":"WARN","time":"2026/10/13 02:16:26.238015 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.242775 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.247284 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.247529 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.263763 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.264994 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.272410 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.278641 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.279440 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.281403 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.283036 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.285754 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.287366 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.289171 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.292126 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.295556 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.295918 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.300146 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.322218 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.328962 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.333133 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.344819 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.358085 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.362083 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.365069 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.365448 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.366011 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.366333 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.366582 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.366856 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.367833 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.368317 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.375809 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.380692 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.383238 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.383852 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.384445 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.387641 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.388770 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.390433 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.393761 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.394143 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.397212 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.397547 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.401625 +0000","name":"raft","caller":"raft/raft.go:2123","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 dropped proposal, no leader"}
+{"level":"WARN","time":"2026/10/13 02:16:26.413606 +0000","name":"raft","caller":"raft/raft.go:1011","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 became PreVote candidate"}
+{"level":"WARN","time":"2026/10/13 02:16:26.413891 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t3 received RequestPreVoteResp from n62145"}
+{"level":"WARN","time":"2026/10/13 02:16:26.415661 +0000","name":"raft","caller":"raft/raft.go:1029","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t4 became candidate"}
+{"level":"WARN","time":"2026/10/13 02:16:26.416911 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:792,t:3,c:792,a:792] [00001:62145] t4 received RequestVoteResp from n62145"}
+{"level":"WARN","time":"2026/10/13 02:16:26.885695 +0000","caller":"disttae/logtail_consumer.go:2289","msg":"logtail.consumer.wait.server.ready","addr":"127.0.0.1:29401"}
+{"level":"ERROR","time":"2026/10/13 02:16:27.245530 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to get tn shard ID","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","shardID":0}
+{"level":"ERROR","time":"2026/10/13 02:16:27.287845 +0000","name":"log-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","address":"","error":"invalid state no CN in the cluster"}
+{"level":"ERROR","time":"2026/10/13 02:16:27.819458 +0000","name":"tn-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9152222-2222-4222-8222-222222222222","uuid":"a9152222-2222-4222-8222-222222222222","address":"","error":"invalid state no CN in the cluster"}
+{"level":"WARN","time":"2026/10/13 02:16:27.888505 +0000","caller":"disttae/logtail_consumer.go:2289","msg":"logtail.consumer.wait.server.ready","addr":"127.0.0.1:29401"}
+{"level":"ERROR","time":"2026/10/13 02:16:28.263278 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to get tn shard ID","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","shardID":0}
+{"level":"ERROR","time":"2026/10/13 02:16:28.434208 +0000","caller":"logservicedriver/replayer.go:734","msg":"Wal-Replay-Truncate-Loop","error":"context canceled"}
+{"level":"WARN","time":"2026/10/13 02:16:28.886229 +0000","caller":"disttae/logtail_consumer.go:2289","msg":"logtail.consumer.wait.server.ready","addr":"127.0.0.1:29401"}
+{"level":"ERROR","time":"2026/10/13 02:16:29.229317 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to query tasks","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","status":"Running","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:16:29.229370 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to query tasks","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","status":"Created","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:16:29.232299 +0000","name":"log-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","address":"","error":"invalid state no CN in the cluster"}
+{"level":"ERROR","time":"2026/10/13 02:16:29.236072 +0000","name":"log-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9151111-1111-4111-8111-111111111111","uuid":"a9151111-1111-4111-8111-111111111111","address":"","error":"invalid state no CN in the cluster"}
+{"level":"ERROR","time":"2026/10/13 02:16:30.938857 +0000","name":"cn-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9153333-3333-4333-8333-333333333333","uuid":"a9153333-3333-4333-8333-333333333333","address":"","error":"invalid state no CN in the cluster"}
+{"level":"WARN","time":"2026/10/13 02:16:30.972670 +0000","name":"cn-service","caller":"cnservice/server_task.go:427","msg":"failed to register lineage GC cron; retrying","uuid":"a9153333-3333-4333-8333-333333333333","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:16:31.199667 +0000","caller":"disttae/logtail_consumer.go:792","msg":"logtail.consumer.receive.error.from.logtail.client","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:16:31.199693 +0000","name":"cn-service.query-client","caller":"morpc/backend.go:1286","msg":"init remote connection failed, retry later","service":"a9153333-3333-4333-8333-333333333333","uuid":"a9153333-3333-4333-8333-333333333333","remote":"127.0.0.1:28402","backend-id":1,"can-retry":false,"error":"dial tcp4 127.0.0.1:28402: connect: connection refused","event":"connect-retry","occurrence":1}
+{"level":"ERROR","time":"2026/10/13 02:16:31.199753 +0000","name":"cn-service.query-client","caller":"morpc/backend.go:1000","msg":"fail to reset backend connection","service":"a9153333-3333-4333-8333-333333333333","uuid":"a9153333-3333-4333-8333-333333333333","remote":"127.0.0.1:28402","backend-id":1,"error":"cannot connect to backend: dial tcp4 127.0.0.1:28402: connect: connection refused","event":"reset-conn","occurrence":1}
+{"level":"ERROR","time":"2026/10/13 02:16:31.199719 +0000","caller":"disttae/logtail_consumer.go:871","msg":"logtail.consumer.receive.one.logtail.failed","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:16:31.208223 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop logtail pull worker","service":"a9152222-2222-4222-8222-222222222222","uuid":"a9152222-2222-4222-8222-222222222222","server-id":"01a1330c-0654-7a4d-8b3f-2e4aedaf96ad","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:16:31.208221 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop session error handler","service":"a9152222-2222-4222-8222-222222222222","uuid":"a9152222-2222-4222-8222-222222222222","server-id":"01a1330c-0654-7a4d-8b3f-2e4aedaf96ad","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:16:31.208300 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop subscription handler","service":"a9152222-2222-4222-8222-222222222222","uuid":"a9152222-2222-4222-8222-222222222222","server-id":"01a1330c-0654-7a4d-8b3f-2e4aedaf96ad","error":"context canceled"}

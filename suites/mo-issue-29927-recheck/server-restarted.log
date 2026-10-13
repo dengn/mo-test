@@ -1,0 +1,89 @@
+WARNING: sonic/ast only supports (go1.17~1.26 and amd64 CPU) or (go1.20~1.26 and arm64 CPU), but your environment is not suitable and will fallback to encoding/json
+2026/10/13 02:13:48.477139 +0000 INFO system/system.go:586 call runtime.GOMAXPROCS(4): 4, keep: 4
+2026/10/13 02:13:48.516645 +0000 INFO tasks/cancelablejob.go:161 cancelablejob.start.cron.job {"name": "CronJob[streamReaderGC-01a13309-9564-7994-b4c8-8e2306347af3-2m0s]", "interval": "2m0s"}
+2026/10/13 02:13:48.519228 +0000 ERROR mo-service/debug_connections.go:52 conntrack: error {"error": "netlink join-group: setsockopt: operation not permitted"}
+{"level":"WARN","time":"2026/10/13 02:13:48.525387 +0000","name":"config","caller":"config/config.go:537","msg":"mutual TLS disabled, communication is insecure"}
+{"level":"WARN","time":"2026/10/13 02:13:48.542337 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:0] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:48.675791 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:48.776768 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:48.878062 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:48.979374 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.079865 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.180695 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.281119 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.382185 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.483446 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.541159 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.583811 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.641616 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.684178 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.742468 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.785311 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.843820 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.886285 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.944378 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:49.987100 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.045148 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.088026 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.146315 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.188952 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.246871 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.289649 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.348155 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.390749 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.448819 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.491697 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.549847 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.592330 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.650279 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.692927 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.750690 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.793973 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.852011 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.895833 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.953243 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:50.996904 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.054342 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.097817 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.155411 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.199078 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.255840 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.299767 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.356712 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.400383 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.457133 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.501101 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.557800 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.601394 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.658404 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.701989 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.758755 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.804926 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.859800 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.911227 +0000","name":"raft","caller":"raft/raft.go:2154","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 dropped ReadIndex, no leader"}
+{"level":"WARN","time":"2026/10/13 02:13:51.930719 +0000","name":"raft","caller":"raft/raft.go:1011","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 became PreVote candidate"}
+{"level":"WARN","time":"2026/10/13 02:13:51.930948 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t2 received RequestPreVoteResp from n31072"}
+{"level":"WARN","time":"2026/10/13 02:13:51.931029 +0000","name":"raft","caller":"raft/raft.go:1029","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t3 became candidate"}
+{"level":"WARN","time":"2026/10/13 02:13:51.931779 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:767,t:2,c:767,a:767] [00000:31072] t3 received RequestVoteResp from n31072"}
+{"level":"WARN","time":"2026/10/13 02:13:51.932687 +0000","name":"raft","caller":"raft/raft.go:1011","msg":"[f:1,l:974,t:2,c:974,a:974] [00001:62145] t2 became PreVote candidate"}
+{"level":"WARN","time":"2026/10/13 02:13:51.932920 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:974,t:2,c:974,a:974] [00001:62145] t2 received RequestPreVoteResp from n62145"}
+{"level":"WARN","time":"2026/10/13 02:13:51.933068 +0000","name":"raft","caller":"raft/raft.go:1029","msg":"[f:1,l:974,t:2,c:974,a:974] [00001:62145] t3 became candidate"}
+{"level":"WARN","time":"2026/10/13 02:13:51.933206 +0000","name":"raft","caller":"raft/raft.go:1128","msg":"[f:1,l:974,t:2,c:974,a:974] [00001:62145] t3 received RequestVoteResp from n62145"}
+{"level":"ERROR","time":"2026/10/13 02:13:51.942198 +0000","name":"log-service","caller":"log/logger.go:134","msg":"initial cluster info already set","service":"a9271111-1111-4111-8111-111111111111","uuid":"a9271111-1111-4111-8111-111111111111"}
+{"level":"ERROR","time":"2026/10/13 02:13:52.544379 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to get tn shard ID","service":"a9271111-1111-4111-8111-111111111111","uuid":"a9271111-1111-4111-8111-111111111111","shardID":0}
+{"level":"ERROR","time":"2026/10/13 02:13:52.546768 +0000","name":"log-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9271111-1111-4111-8111-111111111111","uuid":"a9271111-1111-4111-8111-111111111111","address":"","error":"invalid state no CN in the cluster"}
+{"level":"ERROR","time":"2026/10/13 02:13:52.733311 +0000","caller":"logservicedriver/replayer.go:734","msg":"Wal-Replay-Truncate-Loop","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:52.761500 +0000","name":"tn-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9272222-2222-4222-8222-222222222222","uuid":"a9272222-2222-4222-8222-222222222222","address":"","error":"invalid state no CN in the cluster"}
+{"level":"WARN","time":"2026/10/13 02:13:53.082508 +0000","caller":"disttae/logtail_consumer.go:2327","msg":"logtail.consumer.wait.server.ready","addr":"127.0.0.1:29301"}
+{"level":"WARN","time":"2026/10/13 02:13:53.125556 +0000","caller":"disttae/logtail_consumer.go:2442","msg":"logtail.consumer.slow.subscribe.response","db-id":1,"tbl-id":3,"cost":"13.800535ms"}
+{"level":"ERROR","time":"2026/10/13 02:13:54.097351 +0000","name":"cn-service","caller":"log/logger.go:134","msg":"taskservice.holder.refresh.failed","service":"a9273333-3333-4333-8333-333333333333","uuid":"a9273333-3333-4333-8333-333333333333","address":"","error":"invalid state no CN in the cluster"}
+{"level":"WARN","time":"2026/10/13 02:13:54.116923 +0000","name":"cn-service","caller":"cnservice/server_task.go:427","msg":"failed to register lineage GC cron; retrying","uuid":"a9273333-3333-4333-8333-333333333333","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:13:54.537625 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to query tasks","service":"a9271111-1111-4111-8111-111111111111","uuid":"a9271111-1111-4111-8111-111111111111","status":"Running","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:13:54.537916 +0000","name":"log-service","caller":"log/logger.go:134","msg":"failed to query tasks","service":"a9271111-1111-4111-8111-111111111111","uuid":"a9271111-1111-4111-8111-111111111111","status":"Created","error":"invalid state task store not ready"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.087151 +0000","name":"cn-service","caller":"cnservice/server_heartbeat.go:288","msg":"failed to send cn heartbeat","uuid":"a9273333-3333-4333-8333-333333333333","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.087466 +0000","caller":"disttae/logtail_consumer.go:795","msg":"logtail.consumer.receive.error.from.logtail.client","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.087483 +0000","caller":"disttae/logtail_consumer.go:874","msg":"logtail.consumer.receive.one.logtail.failed","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.094576 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop session error handler","service":"a9272222-2222-4222-8222-222222222222","uuid":"a9272222-2222-4222-8222-222222222222","server-id":"01a13309-a5f2-7d94-8c3f-c3522128d4d1","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.094641 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop subscription handler","service":"a9272222-2222-4222-8222-222222222222","uuid":"a9272222-2222-4222-8222-222222222222","server-id":"01a13309-a5f2-7d94-8c3f-c3522128d4d1","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.094647 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop session sender","service":"a9272222-2222-4222-8222-222222222222","uuid":"a9272222-2222-4222-8222-222222222222","server-id":"01a13309-a5f2-7d94-8c3f-c3522128d4d1","stream-id":2,"remote":"127.0.0.1:58902","error":"context canceled"}
+{"level":"ERROR","time":"2026/10/13 02:13:57.094648 +0000","name":"tn-service.logtail-server","caller":"log/logger.go:134","msg":"stop logtail pull worker","service":"a9272222-2222-4222-8222-222222222222","uuid":"a9272222-2222-4222-8222-222222222222","server-id":"01a13309-a5f2-7d94-8c3f-c3522128d4d1","error":"context canceled"}
