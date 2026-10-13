@@ -1,0 +1,166 @@
+{
+  "app": "apache/superset",
+  "version": "6.1.0",
+  "schema": "mo_reg_superset_d2ba0d557393429d",
+  "analytics_schema": "mo_reg_superset_d2ba0d557393429d_analytics",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_official_wheel_and_dependency_files",
+      "passed": true
+    },
+    {
+      "name": "pinned_private_core_source",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_db_upgrade",
+      "passed": true
+    },
+    {
+      "name": "native_all_344_upgrade_events",
+      "passed": true
+    },
+    {
+      "name": "native_Alembic_release_head",
+      "passed": true
+    },
+    {
+      "name": "native_admin_create",
+      "passed": true
+    },
+    {
+      "name": "native_roles_init",
+      "passed": true
+    },
+    {
+      "name": "native_Gamma_user_create",
+      "passed": true
+    },
+    {
+      "name": "native_user_roles_and_hashes",
+      "passed": true
+    },
+    {
+      "name": "native_password_JWT_and_CSRF",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_database_metadata",
+      "passed": true
+    },
+    {
+      "name": "ordinary_user_database_create_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "native_SQL_Lab_all_fixture_values",
+      "passed": true
+    },
+    {
+      "name": "native_SQL_Lab_aggregate",
+      "passed": true
+    },
+    {
+      "name": "native_dataset_database_relation",
+      "passed": true
+    },
+    {
+      "name": "SQL_chart_dataset_dashboard_links",
+      "passed": true
+    },
+    {
+      "name": "native_chart_aggregate_exact",
+      "passed": true
+    },
+    {
+      "name": "anonymous_dashboard_denied",
+      "passed": true
+    },
+    {
+      "name": "ordinary_private_dashboard_denied",
+      "passed": true
+    },
+    {
+      "name": "ordinary_dashboard_update_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_dashboard_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_chart_links",
+      "passed": true
+    },
+    {
+      "name": "native_invalid_datasource_ENUM_denied",
+      "passed": true
+    },
+    {
+      "name": "real_Gunicorn_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_dashboard_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_chart_links",
+      "passed": true
+    },
+    {
+      "name": "native_chart_aggregate_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_Alembic_and_analytics_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_other_user_denied",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "native_runtime_attempted": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "prepared SDK only; complete dependency cold installation unverified",
+    "binary capacity/MySQL collation/downgrades/populated upgrades/full UI unverified",
+    "single-value nullable ENUM used for exact datasource CHECK; other CHECK constraints unchanged",
+    "native synchronous SQL Lab and simple cache; async Celery/full visualization/export/load unverified"
+  ],
+  "SDK_identity": {
+    "app_version": "6.1.0",
+    "dependency_packages_verified": 162,
+    "dependency_files_verified": 15043,
+    "core_git_blobs_verified": 27,
+    "core_commit": "c83fb2bb1dcfac41ac51bcebd82471f4a7180d18",
+    "adapter_sha256": "c45243b8626f07f5a99c88723fdc9597de30a0a05f57416ac50704022c95e4c6",
+    "sdk_manifest_sha256": "2d02920fe98902c5a9092bb59f4279b301d6d9e55cc70139e72eb33ed60c2a57",
+    "cold_install_verified": false
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_upgrade_log_events": 344,
+  "native_table_count": 53,
+  "finished_at_utc": "2026-10-13T03:59:27Z"
+}

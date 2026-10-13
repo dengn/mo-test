@@ -1,0 +1,43 @@
+{
+  "app": "strapi/strapi",
+  "version": "5.57.0",
+  "schema": "mo_reg_strapi_4b6c6e1dbc4440ac",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_Node_and_dependency_SDK",
+      "passed": true
+    },
+    {
+      "name": "fresh_public_scaffold_and_original_admin_build",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    }
+  ],
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "native_runtime_attempted": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "prepared dependency/admin-build SDK only; cold installation/full monorepo/full UI unverified",
+    "only article/category fixture content types and scoped UTF8 text decoding; unknown/binary types unverified",
+    "basic draft/publish/relation and native RBAC; workflows/plugins/external providers/upgrade/load unverified"
+  ],
+  "SDK_identity": {
+    "version": "5.57.0",
+    "dependency_files_verified": 66843,
+    "dependency_links_verified": 59,
+    "scaffold_files_verified": 19,
+    "admin_asset_files_verified": 336,
+    "sdk_manifest_sha256": "91476f3d9ee7a5644ae497a3e15f45e981369ef8eb9824eeb01ec87d5b731e7d",
+    "cold_install_verified": false
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "RuntimeError",
+  "failed_stage": "native_schema_sync",
+  "finished_at_utc": "2026-10-13T03:43:58Z"
+}

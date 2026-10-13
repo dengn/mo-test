@@ -92,3 +92,14 @@ OpenCart 官方4.1.0.4 zip 固定 SHA 完整验证后仅安全解包 upload/ 发
 Wakapi 固定2.18.1/347f1f45ae2863d9499236471317a76630c5308f，551个原始Git blob和精确三文件metadata/DO NOTHING适配补丁。`MO_WAKAPI_BINARY` 必须是固定适配二进制SHA `8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6`，或提供与source/Go/patch/binary匹配的 `MO_WAKAPI_BUILD_MANIFEST`。原始官方release二进制没有这份适配，不能作为缓存代替。`build_go_sdk.py --app wakapi --source-tree <pristine fixed checkout> --go <Go1.27.1> --out <new private SDK>`提供冷构建配方；原始内嵌资源完整保留，不造HTML占位；本环境在4GiB资源入场之前阻止，尚未执行冷编译。
 
 原生WebAuthn即使默认不用也校验RPID域名，因此应用站点使用localhost、仅监听127.0.0.1。原生生产环境认证、密码Argon2id、cookie密钥与默认登录/注册限流保留；按支持配置允许loopback HTTP cookie，不启用trusted-header登录。邮箱原生可选，留空以保留默认MX验证；不发送邮件。所有账号及API key由原生signup/setup生成，数据库外键创建/检查保持；leaderboard、cache warming、外部import和mail经原生配置关闭。两用户并发提交16条唯一心跳，逐值/时间/归属/原生uint64 ID核对，再验证重复请求不增行、越权零写入、实际重启及全部SQL/API读回。初次startup90秒界限，重启界限180秒；每轮记录实际启动秒数，超时仍失败，旧失败记录不改写。已有数据升级、完整UI、聚合报表及高负载尚未认证。
+
+
+## Superset 与 Strapi 的独立 SDK
+
+Superset 使用官方6.1.0已安装SDK：162个包的15043个稳定包文件摘要与27个固定c83fb2bb core Git blob；原始wheel中的完整编译资源保留。`MO_SUPERSET_RUNTIME_CONFIG` 指向JSON，字段为 `python_binary`（Python3.12 venv里的bin/python，保留venv路径）、`source_tree`（固定Superset源码）。示例：`{"python_binary":"/sdk/superset/bin/python","source_tree":"/sdk/superset-source"}`。SDK验证不绑定安装器生成的RECORD/direct_url/脚本shebang；原生CLI/Gunicorn均直接调用已校验的Python模块，core的editable selector必须匹配输入源，随后复制到私有目录，配置断言实际core模块来自本轮副本。禁用旧pyc读取/写入，配置、数据及缓存路径独立。fixtures/superset/requirements-sdk.txt提供固定已安装版本；core须从固定源码单独安装。本轮复用已准备SDK，不宣称完整冷安装通过。
+
+Superset保留原生CSRF/RBAC：native `db upgrade` 的344条升级事件与head4b2a8c9d3e1f一起核验，native fab/create-admin/init/create-user创建Admin/Gamma及权限。Python只创建两套随机库和读回；1000行fixture的DDL/DML、总额500500、图表/仪表板均通过原生SQL Lab/API。精确老适配包含config引用、bool反射、LONGBLOB拼写、PyMySQL DB-API shim、指定datasource CHECK替换为受约束的可空单值ENUM；非法值必须命中特定枚举错误并保持原值，500不是通用权限拒绝。大binary容量、MySQL大小写/collation等完整等价、降级、全UI与已有数据升级未认证。
+
+Strapi使用独立生成的5.57.0 CMS SDK、66843个依赖文件/59个内部符号链接、336个原始admin构建文件及固定Node24.20摘要。`MO_STRAPI_RUNTIME_CONFIG` JSON字段为 `node_binary`、`sdk_dir`；sdk_dir是包含node_modules及build的准备目录。仅复制19个公共脚手架定义和已校验build，再链接已校验依赖；原.env、账号、uploads、缓存不复制，新uploads目录为空，XDG目录落在本轮私有路径。全部密钥/账号/token新生成，原生schema同步与FK保持，Super Admin首注册、Author邀请token注册及真实权限检查保留；不通过SQL写用户或迁移记录。
+
+Strapi框架只保留精确MySQL typeCast组合适配，decimal/bool/date原处理保留。UTF8 fixture callback限定到本轮数据库的title/name/body文本字段；已确认category关系查询派生name列的db/table均为空、type=VAR_STRING，额外只覆盖这一个元数据形状。运行前要求整份fixture schema没有声明binary/blob列，其他未知/二进制字段仍走next。四字节字符断言不放宽；原始失真结果保留。完整UI、全内容类型/插件、已有数据升级、冷安装和高负载未认证。

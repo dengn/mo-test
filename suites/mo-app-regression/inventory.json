@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 20,
+  "independent_native_driver_count": 22,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -80,8 +80,11 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "adapter_module_adapted_and_tested",
       "adaptation_notes": "Official 6.1.0 wheel plus pinned official base requirements; all native Alembic migrations, native admin creation and initialization completed. Adapter quotes config, reflects bool, spells large binary as LONGBLOB, uses PyMySQL DB-API shim, and replaces specific datasource CHECK with enforced single-value nullable ENUM. Native SQL Lab and chart aggregate 1000 rows to 500500 cents; dataset/chart/dashboard links and Unicode readback passed; anonymous API denied. Saturation at1024:817 timeouts, recovered19.83seconds. Post-load native aggregates and API workflow passed; restart preserved dashboard;1543 distinct load dashboards persisted. Native invalid datasource_type update rejected by ENUM, valid value retained. Large binary capacity, downgrade, MySQL collation semantics and clean-machine install unverified.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "6.1.0",
+      "native_check_count": 33,
+      "automation_scope": "Prepared official SDK162 packages/15043 file hashes, private27-blob core; native344 Alembic upgrades/head, Admin/Gamma accounts and roles, native SQL Lab1000 exact Unicode fixtures/500500 aggregate, datasets/charts/dashboard relations, permissions/CSRF/ENUM rejection, real restart. Cold install/full UI/load unverified."
     },
     {
       "repo": "alextselegidis/easyappointments",
@@ -779,8 +782,11 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_and_configuration_adapted_and_tested",
       "adaptation_notes": "Official5.57.0 generated CMS with native MySQL schema sync; Node24.20. Native first admin registration, content-manager article/category creation, update, publish, API-token-authorized published read and relation, anonymous API403/admin401 passed. Framework MySQL dialect composes configured typeCast after native decimal/bool/date handling; fixture UTF-8 callback scoped to mo_strapi title/name/body because server table metadata is alias t0; schema verified no binary columns. Pinned SWC1.15.40 from upstream lock fixes native carrier runtime failure. Built native admin UI;  full monorepo tests and unknown content types unverified. Native saturation completed to 1024 concurrency with timeout boundary; Strapi reached memory guard. Restart and post-load native business/auth checks passed; 1918 unique writes persisted out of 1918 attempts, 1608 acknowledged, no duplicate or invalid native linked rows. Download preparation overlapped some load phases; these are short isolated application saturation probes, not sustained capacity certification.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "5.57.0",
+      "native_check_count": 32,
+      "automation_scope": "Prepared66843 dependency files/59links/336 admin assets, Node24.20, fresh44 native tables; super-admin and Author native signup/password/session, API token, article draft/publish/two versions/relations/UTF8, permissions, real restart. Narrow derived name metadata UTF8 decoding, unknown binary types/full UI/cold install/load unverified."
     },
     {
       "repo": "vrana/adminer",

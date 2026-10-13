@@ -1,0 +1,24 @@
+diff --git a/packages/core/database/src/dialects/mysql/index.ts b/packages/core/database/src/dialects/mysql/index.ts
+index dde78e2..328eeb1 100644
+--- a/packages/core/database/src/dialects/mysql/index.ts
++++ b/packages/core/database/src/dialects/mysql/index.ts
+@@ -30,6 +30,10 @@ export default class MysqlDialect extends Dialect {
+     if (connection.bigNumberStrings === undefined) {
+       connection.bigNumberStrings = true;
+     }
++    const customTypeCast = connection.typeCast as
++      | boolean
++      | ((field: { type: string; string: () => string; length: number }, next: () => void) => unknown)
++      | undefined;
+     connection.typeCast = (
+       field: { type: string; string: () => string; length: number },
+       next: () => void
+@@ -48,7 +52,7 @@ export default class MysqlDialect extends Dialect {
+         return field.string();
+       }
+ 
+-      return next();
++      return typeof customTypeCast === 'function' ? customTypeCast(field, next) : next();
+     };
+   }
+ 

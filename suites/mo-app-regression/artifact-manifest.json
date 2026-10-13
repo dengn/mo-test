@@ -20,18 +20,18 @@
     },
     {
       "path": "MIGRATION.csv",
-      "bytes": 61573,
-      "sha256": "664d4aa9eb27400ac630dbdbcc0c8c18a874de1ad1847763384249bf88fe9f1e"
+      "bytes": 61581,
+      "sha256": "5dcc9e95dfdda1f21d397b42426f19bc77e3fdf1923b89187a6ccf9c4b09467d"
     },
     {
       "path": "README.md",
-      "bytes": 10788,
-      "sha256": "118db8d533577abf9faf814b82326e2f541e37a34bec18b44c5628f0d4c5a9ce"
+      "bytes": 11157,
+      "sha256": "0db54033b223edd00d8518428ed13774d283459ff02e2eea30cdefc0ad4b490a"
     },
     {
       "path": "RUNTIME-SDK.md",
-      "bytes": 14579,
-      "sha256": "523b8f728e81f6e8a1c227886ea79c39be6dc15b63e3262ab4865a9394c26afc"
+      "bytes": 17385,
+      "sha256": "b37f329af2083d62e710d452d332baf5b980101c689baddf09ab9ee912fdbf8f"
     },
     {
       "path": "UPSTREAM.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 15423,
-      "sha256": "cc004a371dfab2183ae85ffc12e6d4ab6eb50adf8da523ddd5c19c24a7b0cf0f"
+      "bytes": 17901,
+      "sha256": "eaa14529f46eb9f87ead7f79fd45e1bdeef20054a34969a72f741ecd3f27d37c"
     },
     {
       "path": "adapters/README.md",
@@ -1664,6 +1664,141 @@
       "sha256": "9946c9205102e3a33da7989f67027cee15b2546b1920cb125e467911a41b6c6a"
     },
     {
+      "path": "evidence/migration-batch/strapi-entry-smoke/junit.xml",
+      "bytes": 527,
+      "sha256": "60ec5747a2f13760c0bd7190c08ac2661cbc7200c24aab32cfb12ac0902d8160"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-entry-smoke/results.json",
+      "bytes": 982,
+      "sha256": "a74707cb2c3f85cb18ad2743cc079a07e7b5716aae110716022cceacf3f647cc"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-entry-smoke/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "4e169dcbe34ddadd03560bcaa6f52bd35b18aaefd95ef85827392da9f6d4cabe"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-entry-smoke/sql/results.json",
+      "bytes": 4640,
+      "sha256": "3e6f7159fb37760fc875f4ff45567b3cd4e661ae51b750a41b4acbdc45c95164"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-entry-smoke/strapi/junit.xml",
+      "bytes": 2628,
+      "sha256": "8f2331ac26214e1edd20b44edea5563b309afde5ee95a21d8b88615b76918df0"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-entry-smoke/strapi/results.json",
+      "bytes": 4797,
+      "sha256": "a57c945f40f8fcbcb4f649bc42f80e610418ea771692050c49ee01e7bfa387e9"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round1/junit.xml",
+      "bytes": 445,
+      "sha256": "9860feccc74585bd757314b84e2a13b052532b393606c691f27246e4ae0cff7c"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round1/results.json",
+      "bytes": 1410,
+      "sha256": "c8125f73088ad010ef3d57472a836b01017130048cb321eafd5a84a27c7a0dde"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round2/junit.xml",
+      "bytes": 1891,
+      "sha256": "b623b1a581c4879d6b414f454d6c31c51631cec1ae3349d7f42334a4211c1cdc"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round2/results.json",
+      "bytes": 3636,
+      "sha256": "e8326ab0f29049410e96ec37ac8d301b2e09b82080a66036c5ee098f5d11d2bf"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round3/junit.xml",
+      "bytes": 1891,
+      "sha256": "b623b1a581c4879d6b414f454d6c31c51631cec1ae3349d7f42334a4211c1cdc"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round3/results.json",
+      "bytes": 3842,
+      "sha256": "794d21bd6e267763750f2f09e1c79487484c139f2a2357a36eed2e9ef4fd4eaf"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round4/junit.xml",
+      "bytes": 1891,
+      "sha256": "b623b1a581c4879d6b414f454d6c31c51631cec1ae3349d7f42334a4211c1cdc"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round4/results.json",
+      "bytes": 3842,
+      "sha256": "a6e401cb335cabe1165eb956c7df3fbedb7b345b211edc5745a16b1e04db07b4"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round5/junit.xml",
+      "bytes": 2628,
+      "sha256": "8f2331ac26214e1edd20b44edea5563b309afde5ee95a21d8b88615b76918df0"
+    },
+    {
+      "path": "evidence/migration-batch/strapi-portable-round5/results.json",
+      "bytes": 4797,
+      "sha256": "d6cd9caa5921671b56f0a6ac83aca851144b176c18f4f8297d4106d8f499d352"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/junit.xml",
+      "bytes": 533,
+      "sha256": "69757c2d65b052d0701bf9ac33d0ecdba3703b00d5ddbbbaf4a8e50bcbd12937"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/results.json",
+      "bytes": 985,
+      "sha256": "f144a0d9d39f7ad99304a24f5c92830d05a24fcd2640d967f59c6db5152ef962"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "0d5827ff3c3f01efa91ec3a38124cb0135b977a6ce5ce435ed900f5ab9c10ed0"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/sql/results.json",
+      "bytes": 4640,
+      "sha256": "0a87d3f5967abc95d5d499b6afeee4553353e1d5327cf7c1216a1ada4fd6b6ac"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/superset/junit.xml",
+      "bytes": 2667,
+      "sha256": "8dd94aa72aba7a0ccc3896569a991ee191cea771c2853564e234f7ea2f78d424"
+    },
+    {
+      "path": "evidence/migration-batch/superset-entry-smoke/superset/results.json",
+      "bytes": 4078,
+      "sha256": "582a8c72f7428b6484392608f2c9aacaf4779e277c8cde2fc2605c17803f10a0"
+    },
+    {
+      "path": "evidence/migration-batch/superset-first-round-sdk-manifest.json",
+      "bytes": 3123046,
+      "sha256": "330f0c55f8bb6fba43472c77dd3a2038aac173e017f54f0bcf14d75a907e7491"
+    },
+    {
+      "path": "evidence/migration-batch/superset-portable-round1/junit.xml",
+      "bytes": 2590,
+      "sha256": "dcf8bb2e4031a5f02bdf2ce970a067dc54e3403e8f4bb827179d18a9a8319c78"
+    },
+    {
+      "path": "evidence/migration-batch/superset-portable-round1/results.json",
+      "bytes": 3961,
+      "sha256": "399c536080d85a885956442678a9d3cbe7a802a6542f84fe97589a4b592b6b56"
+    },
+    {
+      "path": "evidence/migration-batch/superset-portable-round2/junit.xml",
+      "bytes": 2667,
+      "sha256": "8dd94aa72aba7a0ccc3896569a991ee191cea771c2853564e234f7ea2f78d424"
+    },
+    {
+      "path": "evidence/migration-batch/superset-portable-round2/results.json",
+      "bytes": 4078,
+      "sha256": "3d37b7d890a4240a7c5797dbbb1901a1bbf538a4004aa42ea8681516100cc16a"
+    },
+    {
       "path": "evidence/migration-batch/wakapi-cold-build-blocked.json",
       "bytes": 330,
       "sha256": "9c5cc7d51aac77e8b6cf0ed7d38794ad67977ed55128d8c3ce54d55538e4f054"
@@ -1796,7 +1931,7 @@
     {
       "path": "evidence/project-secret-scan.json",
       "bytes": 155,
-      "sha256": "0e1859a594e1d6c6b2c1075134353a8d97b3b1e0fe6dc5349ab384d95c65c4ae"
+      "sha256": "87e1eca33c3e902b512efccd10cb9d2e16845e19de72f430b74957df5b4620d9"
     },
     {
       "path": "fixtures/adminer/adminer-release-type-name.patch",
@@ -2729,6 +2864,151 @@
       "sha256": "d051d6b4a2dce21caf88be3bbdaebdb52782af05dd15784db40dc398d25b3b6f"
     },
     {
+      "path": "fixtures/strapi/LICENSE",
+      "bytes": 3004,
+      "sha256": "fd1970802135922bba6864837c6b267e64276be28e35d6d7c7dcb6e7dbb27c00"
+    },
+    {
+      "path": "fixtures/strapi/matrixone-framework.patch",
+      "bytes": 992,
+      "sha256": "611804ec702ea2c9e507c84d66f2da941d384063bf113bf24b93341700309e70"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/admin.js",
+      "bytes": 431,
+      "sha256": "b6483b5bc333d3d309b4071d822657cc8f9283e39e048a9663e72e9d35e34a6c"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/api.js",
+      "bytes": 194,
+      "sha256": "0a17622b561b06782d2b0db9ead2f8a584e0dd9f9d3fa65d59bb741d9d2c7af6"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/database.js",
+      "bytes": 3640,
+      "sha256": "ab35920087d3ba17ee5e3e7ea3aae7d60bafc3613a78b3b1c58e873b2e771e3d"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/middlewares.js",
+      "bytes": 224,
+      "sha256": "bccc9da983840b998e0c4d4e333524c870e9c0a7d0322a403341c45df4a37940"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/plugins.js",
+      "bytes": 56,
+      "sha256": "26d23223e186b080ff083dc7e7e70036a8fb16000dc3771be2bd06ebc5029d47"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/config/server.js",
+      "bytes": 237,
+      "sha256": "a950401849b70444f129f5f04fc3b7f59169a65641dd297cfe315088c23aadd1"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/package-lock.json",
+      "bytes": 776155,
+      "sha256": "f7a93d8b0d9449a3e1c54e6517c9b420dcdb5d73cfdd072e16ad2fe988cdaf4a"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/package.json",
+      "bytes": 1058,
+      "sha256": "bb9f103d0cfd7276c13c3742d72b43106ed85ac87277927e0d2716ac76f2f4b6"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/admin/app.example.js",
+      "bytes": 481,
+      "sha256": "f0032a997e6cad1ac730c5aef9e58a8bcdb8d37a4c00b4dd93ebe9d0691e958b"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/admin/vite.config.example.js",
+      "bytes": 230,
+      "sha256": "8a39682ed9cbf69451328526fdd93b9fcbc9509760ded56808bca7b7c9a6f386"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/article/content-types/article/schema.json",
+      "bytes": 509,
+      "sha256": "2cc7861d407c1d646c5f0adf5ecd26ddd234f2e98e1946393493c055a72654d0"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/article/controllers/article.js",
+      "bytes": 136,
+      "sha256": "e38806c90827295d99814d02d4ee231b7e7daa7f657acef4434669725579e992"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/article/routes/article.js",
+      "bytes": 132,
+      "sha256": "a2abc8daa095f60218e262a09846d68efef4d1e1282752e7f1e1bd1618c9d1ad"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/article/services/article.js",
+      "bytes": 133,
+      "sha256": "d1db92eeef854c300572f36ec5f932dc08a9fc0f140acec5a3b24f86624b8456"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/category/content-types/category/schema.json",
+      "bytes": 465,
+      "sha256": "e180122588724efc3f5376103446387813e325bca74f7af7f8006c3cb4dfa7b0"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/category/controllers/category.js",
+      "bytes": 138,
+      "sha256": "c434613bd91ae61f1d0c3468cb3f80e11a539835cc087f0f67ba4c6a7926795d"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/category/routes/category.js",
+      "bytes": 134,
+      "sha256": "c15562058ee8e451a3904305eb6cddc5851fd5f9584d436bb90354b8adad0641"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/api/category/services/category.js",
+      "bytes": 135,
+      "sha256": "4420d084d60eab27aa9ed0c53c53e5838007aa9b80d29d7b299553cbc2fbe681"
+    },
+    {
+      "path": "fixtures/strapi/scaffold/src/index.js",
+      "bytes": 481,
+      "sha256": "a725d91dee24be33d3e4a0f4749b801972a0c23c752a1482e8a4167eaa115e87"
+    },
+    {
+      "path": "fixtures/strapi/scaffold-manifest.json",
+      "bytes": 57403,
+      "sha256": "655aa635adf5a05f97d9e08cb554032085f5c7791ad99e22d3ae220fd297d814"
+    },
+    {
+      "path": "fixtures/strapi/sdk-manifest.json",
+      "bytes": 12922975,
+      "sha256": "91476f3d9ee7a5644ae497a3e15f45e981369ef8eb9824eeb01ec87d5b731e7d"
+    },
+    {
+      "path": "fixtures/superset/LICENSE.txt",
+      "bytes": 11585,
+      "sha256": "ff254eb676d6ed2b36f26a74e7c50411cd57e11823f3e91004ffe48fcfd273cf"
+    },
+    {
+      "path": "fixtures/superset/NOTICE",
+      "bytes": 169,
+      "sha256": "9a94a669b32e29b02157ed507fd01689b7c65237a44f6ae4984b240c6dc2a2ab"
+    },
+    {
+      "path": "fixtures/superset/core-source-manifest.json",
+      "bytes": 4440,
+      "sha256": "cff885f506a8fb773741a1603876c7432c474b4e252e5516a2287e08219c7d9f"
+    },
+    {
+      "path": "fixtures/superset/matrixone_adapter.py",
+      "bytes": 1602,
+      "sha256": "c45243b8626f07f5a99c88723fdc9597de30a0a05f57416ac50704022c95e4c6"
+    },
+    {
+      "path": "fixtures/superset/requirements-sdk.txt",
+      "bytes": 2859,
+      "sha256": "9c075278287b4c7e4dc0ef7a20b60a7d8152487088f9149a0588ac13ff54eec4"
+    },
+    {
+      "path": "fixtures/superset/sdk-manifest.json",
+      "bytes": 3011405,
+      "sha256": "2d02920fe98902c5a9092bb59f4279b301d6d9e55cc70139e72eb33ed60c2a57"
+    },
+    {
       "path": "fixtures/wakapi/LICENSE",
       "bytes": 1067,
       "sha256": "852bcc033a46c62f99fb5ffd43b3241ba2c0c440c6034aa2114505f2c4f03c4a"
@@ -2770,8 +3050,8 @@
     },
     {
       "path": "inventory.json",
-      "bytes": 88605,
-      "sha256": "385aa3c0f883c6ba5c24baf456a977f6024727c50f3bcf9305f18ce0d38623d2"
+      "bytes": 89467,
+      "sha256": "c85e77b33e0316d9c13688de6f1e7de92338a534707bb12f60af49c5dcd4776b"
     },
     {
       "path": "native_common.py",
@@ -2805,8 +3085,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 10966,
-      "sha256": "eedbe746a07c83a005286b9cf3b0aec67d83bd2839dfaec93b1455b6fcee703e"
+      "bytes": 11022,
+      "sha256": "140b56d46e341d7714de8b0f16866b69bfc3c64f104695cf5d4be98eb2634b59"
     },
     {
       "path": "run_adminer.py",
@@ -2904,6 +3184,16 @@
       "sha256": "e23719012164f77c033fec73cdd58c577b659eaeeade84ecba82a7e1b6e810ac"
     },
     {
+      "path": "run_strapi.py",
+      "bytes": 13945,
+      "sha256": "c356f07d175c9df63382e28230bc3099e9015c845e8b643ad586aafecf9e839a"
+    },
+    {
+      "path": "run_superset.py",
+      "bytes": 16089,
+      "sha256": "a59ea6d106ee43a37ff6946a393016dd6394cbffcca68c25821beb02bb656396"
+    },
+    {
       "path": "run_wakapi.py",
       "bytes": 13689,
       "sha256": "20a7f00b25010f5ef3f49273286a7531b925e9447a933a86d8bfde8b8af8cfed"
@@ -2912,6 +3202,16 @@
       "path": "run_yourls.py",
       "bytes": 12595,
       "sha256": "bb5638b2e68f0d6930d20e788251a2ae3b50b59465b4f6c68708b662454aa52d"
+    },
+    {
+      "path": "strapi_runtime.py",
+      "bytes": 2662,
+      "sha256": "1d1ddf6d20d56aeb8a8d81a14954d248d5413df0ad54f554ab143095b01c5f56"
+    },
+    {
+      "path": "superset_runtime.py",
+      "bytes": 2249,
+      "sha256": "8f0c640bd23037232cd5f29bee6f75c422a53c42d665378fc1a562658fe6379e"
     },
     {
       "path": "tests/test_reporting.py",
@@ -2925,8 +3225,13 @@
     },
     {
       "path": "tests/test_suite.py",
-      "bytes": 4386,
-      "sha256": "1f3089a014c8b4bb7b15faa4fb93b8b3b80b74146ebfd1bf81687b31827202d5"
+      "bytes": 4412,
+      "sha256": "e8de82beff1dc2bfb384d4d45e8dcdfa4bfada50a6795f3d1172f823be22e8a2"
+    },
+    {
+      "path": "tests/test_superset_sdk.py",
+      "bytes": 2623,
+      "sha256": "afdf62b16bf18ce9cc1c8837f5d6422ed8eed6433fa90fa492037662204f9830"
     },
     {
       "path": "upstream-import.json",
@@ -2936,11 +3241,11 @@
     {
       "path": "verify.py",
       "bytes": 1804,
-      "sha256": "a59e70214de6d3599cc56e95e14c4e3e9740f3ef7c73b30ae2b96557ea2abe22"
+      "sha256": "62945058e444dc8140863a5b1644477d09b8aaae123deee396d2e6db78f1545a"
     }
   ],
   "workflow": {
     "path": ".github/workflows/app-regression.yml",
-    "sha256": "6114d21ad1dcb8f86f7d8477db9734438b47054573be2e3a24e534dbfba13835"
+    "sha256": "ef57945006b4f437b114a065fdf4466a1d8f1fabcbde0408fb3e2fb9ec5d9da7"
   }
 }
