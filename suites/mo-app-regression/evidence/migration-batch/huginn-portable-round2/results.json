@@ -1,0 +1,182 @@
+{
+  "app": "huginn/huginn",
+  "commit": "d6f25e28a36f360ad80c73445c3ce5229be7e538",
+  "schema": "mo_reg_huginn_1e624f2f3e3b449f",
+  "passed": true,
+  "checks": [
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "both_native_databases_are_new",
+      "passed": true
+    },
+    {
+      "name": "pinned_ruby_version",
+      "passed": true
+    },
+    {
+      "name": "locked_bundle_check",
+      "passed": true
+    },
+    {
+      "name": "native_db:create",
+      "passed": true
+    },
+    {
+      "name": "native_db:migrate",
+      "passed": true
+    },
+    {
+      "name": "native_db:seed",
+      "passed": true
+    },
+    {
+      "name": "native_all_73_migration_versions",
+      "passed": true
+    },
+    {
+      "name": "native_seed_admin_password_and_identity",
+      "passed": true
+    },
+    {
+      "name": "native_import_two_owned_agents",
+      "passed": true
+    },
+    {
+      "name": "native_scenario_receiver_link",
+      "passed": true
+    },
+    {
+      "name": "anonymous_management_login_required",
+      "passed": true
+    },
+    {
+      "name": "native_login_CSRF_12",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_login_CSRF_14",
+      "passed": true
+    },
+    {
+      "name": "native_password_login",
+      "passed": true
+    },
+    {
+      "name": "native_authenticated_agent_list",
+      "passed": true
+    },
+    {
+      "name": "wrong_webhook_secret_denied_zero_writes",
+      "passed": true
+    },
+    {
+      "name": "native_webhook_ACK_201",
+      "passed": true
+    },
+    {
+      "name": "native_background_formatter_exact_output",
+      "passed": true
+    },
+    {
+      "name": "native_authenticated_JSON_exact_events",
+      "passed": true
+    },
+    {
+      "name": "native_signup_CSRF",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_signup",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_not_admin",
+      "passed": true
+    },
+    {
+      "name": "other_user_agent_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_events_exclude_owner",
+      "passed": true
+    },
+    {
+      "name": "wrong_owner_webhook_denied_zero_writes",
+      "passed": true
+    },
+    {
+      "name": "native_edit_form_CSRF",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_denied_zero_metadata_change",
+      "passed": true
+    },
+    {
+      "name": "real_Puma_and_AgentRunner_restart",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_events_and_owner_links_after_restart",
+      "passed": true
+    },
+    {
+      "name": "native_cookie_and_JSON_survive_restart",
+      "passed": true
+    },
+    {
+      "name": "native_worker_alive_after_restart",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "min_free_mib": 128,
+  "prepared_dependency_SDK_required": true,
+  "full_load_validation": false,
+  "limitations": [
+    "CHANGE charset/collation attributes and ALTER DATABASE charset switch omitted",
+    "case-insensitive collation equivalence and populated upgrades unverified",
+    "forced process stop does not certify graceful shutdown"
+  ],
+  "verified_source_blobs": 867,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "tasks": [
+    {
+      "name": "pinned_ruby_version",
+      "exit_code": 0
+    },
+    {
+      "name": "locked_bundle_check",
+      "exit_code": 0
+    },
+    {
+      "name": "native_db:create",
+      "exit_code": 0
+    },
+    {
+      "name": "native_db:migrate",
+      "exit_code": 0
+    },
+    {
+      "name": "native_db:seed",
+      "exit_code": 0
+    }
+  ],
+  "forced_stop": true,
+  "finished_at_utc": "2026-10-12T23:04:47Z"
+}

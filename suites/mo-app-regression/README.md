@@ -4,9 +4,9 @@
 
 | 范围 | 当前覆盖 |
 | --- | --- |
-| 可独立运行的原生应用 | Gotify v3.1.1、Blocky v0.35.0、Plik v1.4.2、Ergo v2.19.1，共 4 个；官方 release / 二进制 SHA-256 固定 |
+| 可独立运行的原生应用 | Gotify、Blocky、Plik、Ergo、Documize、Huginn、ntfy、Memos、Baikal、FreshRSS、Adminer，共 11 个；版本/源码与原生二进制或 SDK 身份核验 |
 | SQL 回归 | 20 个 fixture：4 个 panic、13 个其他已知问题、3 个正向对照；每个保留完整 SQL、错误签名、值及约束断言 |
-| 历史应用运行 | 61 个真实尝试、58 个基本业务通过；其余原生驱动仍待迁移，不计为自动化覆盖 |
+| 历史应用运行 | 61 个真实尝试、58 个基本业务通过；其中 11 个独立驱动已迁移，其余 47 个基本通过项目待迁移，不计为自动化覆盖 |
 | 候选目录 | 1000 项、939 项未运行；星数与许可证为记录时的快照 |
 | CI | 手动 GitHub Actions + workflow_call，可接入现有流水线；本次本地运行结果见 [验证记录](VALIDATION.md) |
 
@@ -27,7 +27,7 @@ export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
 .venv/bin/python run.py --profile smoke --out artifacts/smoke-001
 ```
 
-`smoke` 顺序执行 3 个正向 SQL 对照和全部 4 个原生应用。一个应用失败仍继续执行后面的驱动，最终返回失败；无报告、空报告或报告与退出码矛盾也会失败。输出目录必须是新目录，避免覆盖历史证据。
+`smoke` 顺序执行 3 个正向 SQL 对照和全部 11 个原生应用。一个应用失败仍继续执行后面的驱动，最终返回失败；无报告、空报告或报告与退出码矛盾也会失败。输出目录必须是新目录，避免覆盖历史证据。
 
 ```bash
 # 只运行一个应用；--app 可重复。SQL-only profile 不接受 --app。
@@ -46,9 +46,11 @@ export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
 .venv/bin/python run.py --profile smoke --list
 ```
 
-所有 profile 可传 `--expected-commit <完整40位SHA>`，连接版本不匹配时在创建测试库前阻止执行。运行时短 SHA 匹配仍需与源码、官方构建和二进制 hash 证据合用；[提交新 issue 前的 main 验证要求](MAIN-VERIFICATION.md)继续适用。
+所有 profile 可传 `--expected-commit <完整40位SHA>`，连接版本不匹配时在创建测试库前阻止执行。Huginn 与源码构建应用的 SDK 配置见 [RUNTIME-SDK.md](RUNTIME-SDK.md)。缺少 SDK 会失败，不会静默跳过。
 
-可用 `--app-binary-dir /path/to/pinned-binaries` 提供名为 `gotify-linux-amd64`、`blocky`、`plikd`、`ergo` 的官方二进制，驱动逐一校验 SHA。离线环境需事先安装锁定的 Python wheel 并提供二进制；不会自动跳过 hash。Gotify 保留独立 `--archive` 入口。
+运行时短 SHA 匹配仍需与源码、官方构建和二进制 hash 证据合用；[提交新 issue 前的 main 验证要求](MAIN-VERIFICATION.md)继续适用。
+
+可用 `--app-binary-dir /path/to/pinned-binaries` 提供名为 `gotify-linux-amd64`、`blocky`、`plikd`、`ergo`、`documize`、`ntfy-matrixone`、`memos` 的原生二进制，驱动逐一校验 SHA。离线环境需事先安装锁定的 Python wheel 并提供二进制；不会自动跳过 hash。Gotify 保留独立 `--archive` 入口。
 
 ## 回归和负载边界
 
@@ -58,10 +60,17 @@ export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
 | Blocky | 原生 DNS 和 GORM 迁移、64 查询、NXDOMAIN/拦截、逐条 SQL 日志、Unicode、重启后写入 | 1024 查询 / 32 workers |
 | Plik | 11 个原生迁移、密码/cookie/CSRF、权限、16 文件的原字节/MD5/Unicode、SQL 关系、重启和删除 | 256 文件 / 16 workers |
 | Ergo | 原生账号/频道、16 消息、成员权限、CHATHISTORY 分页、二进制 msgid、SQL 逐值、重启 | 1024 消息 / 8 writers，显式关闭原生 fakelag |
+| Documize | 35 个原生迁移、登录/JWT、文档/章节/FTS、精确 SQL、真实重启，25 项 | 尚待迁移负载入口 |
+| Huginn | 73 个原生迁移与 seed、Webhook→Formatter 后台处理、权限/CSRF、精确 SQL、真实重启，34 项 | 尚待迁移负载入口 |
+| ntfy | 原生 CLI 账号/ACL、WebSocket/SSE、两用户并发身份、JSON/通知生命周期/附件、真实重启，40 项 | 尚待迁移负载入口 |
+| Memos | 原生管理员注册/登录、私有笔记 CRUD、权限、并发精确值、真实重启，29 项 | 尚待迁移负载入口 |
+| Baikal | 原生网页安装、CSRF 表单、两用户 Digest、CalDAV/CardDAV、ETag、精确 BLOB/归属、重启与删除，44 项 | 尚待迁移负载入口 |
+| FreshRSS | 原生网页安装、原生账号/API 密码控制器、两用户 API、RSS 订阅、压缩正文/ID/归属、令牌拒绝、已读及重启，30 项 | 尚待迁移负载入口 |
+| Adminer | 原生 PDO/密码/cookie/CSRF、SQL/表单/类型/FK/回滚、CSV 精确值与重启，20 项 | 尚待迁移负载入口 |
 
 Ergo 仅把原生 MySQL 聊天历史后端接到 MO，账号/频道仍使用原生 BuntDB。Blocky DNS ACK 还必须与持久化日志核对；缺失不会算通过。已有高负载失败和恢复仍保留在独立项目证据里，后续成功不会覆盖早期失败。完整 UI、插件、已有数据升级和生产长期稳定性不属于本轮覆盖。
 
-入口在执行前检查剩余磁盘，默认要求 2048 MiB，`--min-free-mib` 最低 128；自定义值写入报告。原生低阈值验证必须提供已有的同 SHA 二进制；Blocky/Plik 限制为基本工作量，load profile 至少要求 2048 MiB。该检查是入场检查，运行中资源上限由专用 runner / 容器控制；不要把固定的有限负载当作自动饱和测试。本次磁盘不足，只用已有二进制及显式较低入场阈值验证基本驱动，没有执行 load profile。
+入口在执行前检查剩余磁盘，默认要求 2048 MiB，`--min-free-mib` 最低 128；自定义值写入报告。原生低阈值验证必须提供已有的同 SHA 二进制；Blocky/Plik 限制为基本工作量，load profile 至少要求 2048 MiB。该检查是入场检查，运行中资源上限由专用 runner / 容器控制；不要把固定的有限负载当作自动饱和测试。本次磁盘不足，使用已有二进制/SDK及显式较低入场阈值验证基本驱动，没有执行 load profile。
 
 ## CI 接入
 
@@ -85,4 +94,6 @@ jobs:
 
 已完成适配的项目可以按同一接口继续接入。每个新驱动需要固定源码/release 身份、可复现依赖与适配、原生建库/迁移、真实业务和拒绝路径、逐值数据/关联/权限断言、真实重启及失败退出码，且与旧工作目录和账号解耦。通过独立运行后再把 inventory 的 pending 改为 implemented，并更新入口、工作流和清单 hash。
 
-Huginn 与 Documize 的实验适配源代码已保存在 [adapters/](adapters/README.md)，尚未成为第五/第六个独立驱动。其原始 SQL 回归已纳入 `cases/`。其他应用仍按 MIGRATION.csv 的原状态跟踪；重启、压力或迁移失败不能被“基本业务通过”掩盖。
+Huginn 与 Documize 适配源代码保存在 [adapters/](adapters/README.md)，现已成为独立驱动；ntfy 的 MatrixOne 源码补丁见 [fixtures/ntfy/](fixtures/ntfy/)。相关原始 SQL 回归仍保留在 `cases/`。其他应用仍按 MIGRATION.csv 的原状态跟踪；重启、压力或迁移失败不能被“基本业务通过”掩盖。
+
+`MO_APP_RUNTIME_ROOT` 可以指定容量足够的独立私有运行目录；默认在套件 runtime/ 下。磁盘入场阈值检查该目录所在文件系统。若选用 /tmp 等 tmpfs，它会占用内存且具有临时性；原始证据仍输出到 artifacts/ 后归档。新迁移 PHP 驱动另需 MO_PHP_BINARY 以及对应固定源码/发行版 SDK，见 RUNTIME-SDK.md。

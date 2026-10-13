@@ -1,0 +1,3115 @@
+{
+  "commit": "f18d1137c63a26e85b91ce639e7bc72bb9a82736",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "git_blob": "3bf2a1261d0891b900cc5ef5629b2ab61f6ce8f2",
+      "mode": "100644"
+    },
+    {
+      "path": ".git-blame-ignore-revs",
+      "git_blob": "23002306889bcd1d1cad24cd160f1baf0829328f",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "git_blob": "e1eb061930a4cd93b6d0200a1c804636b6ecb261",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/1_bug_report.md",
+      "git_blob": "90ff2b277c4b71804ee7beec6d42cc3029da61c5",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/2_enhancement_request.md",
+      "git_blob": "790ded12a9fdfb9096c884fa7fefd3d77b36608d",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/3_tech_support.md",
+      "git_blob": "82afe7a2b18cc82cba2448f6799d53d57f439f4d",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/4_question.md",
+      "git_blob": "9d930ef0268ed766421f3db0f547c467a07e4958",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "git_blob": "6507eadc1b111cc4535ce5ab34cc31acbbd4a4e9",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/logo.png",
+      "git_blob": "351db4d70c033071f501d5262f50c03032be8e30",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/screenshot-curl.png",
+      "git_blob": "535d08301b7c306b8ec690d163b559399381341f",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/screenshot-phone-detail.jpg",
+      "git_blob": "2cd3b2fe2dc2f0604057ac068173a3358533a137",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/screenshot-phone-main.jpg",
+      "git_blob": "5caeee1463465f568de614660f8add0b88483775",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/screenshot-phone-notification.jpg",
+      "git_blob": "7924c6fde94db822f6c92151460a29b9f53124de",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/images/screenshot-web-detail.png",
+      "git_blob": "5b32aa220eaf2053e3abd6d4621501ffe957191c",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/build.yaml",
+      "git_blob": "cd2cc92025b98f8537b53ab1ff7445a02ba0d772",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/docs.yaml",
+      "git_blob": "5a00e59387f7541a904956a81098e2bac5056de9",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "git_blob": "301175c4a0bb999d3e94d7e280324d525b254d51",
+      "mode": "100644"
+    },
+    {
+      "path": ".github/workflows/test.yaml",
+      "git_blob": "e19bc5cb71ff969434b95aee5fc6e4c694b9812a",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob": "6d5deb675ddfd31f0290345fb615ac8a6f984602",
+      "mode": "100644"
+    },
+    {
+      "path": ".gitpod.yml",
+      "git_blob": "6cccd8f2625cec12440efc5e08b669e18f1d5e20",
+      "mode": "100644"
+    },
+    {
+      "path": ".go-version",
+      "git_blob": "08002f86cc8d95efc484992fe029d464924cd750",
+      "mode": "100644"
+    },
+    {
+      "path": ".goreleaser.yml",
+      "git_blob": "3c4e9c761b36fef976099fb5a70a4bfb32a3b445",
+      "mode": "100644"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "git_blob": "b9d5fcf1769b8b66345f9bc2e2d2dfa066ff5f0e",
+      "mode": "100644"
+    },
+    {
+      "path": "Dockerfile",
+      "git_blob": "45dad05d69bc64a515058d9b330240153e670d39",
+      "mode": "100644"
+    },
+    {
+      "path": "Dockerfile-arm",
+      "git_blob": "755092fde05b117a955349d0458d17c18406073f",
+      "mode": "100644"
+    },
+    {
+      "path": "Dockerfile-build",
+      "git_blob": "34fda7f8d9f83c78d59f56fa9c4f342127e985f1",
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob": "808776930891f8a100c9db6e4455f03eb49566ef",
+      "mode": "100644"
+    },
+    {
+      "path": "LICENSE.GPLv2",
+      "git_blob": "4bf894c5a4cc265e08923147e1e730b476e69756",
+      "mode": "100644"
+    },
+    {
+      "path": "Makefile",
+      "git_blob": "e15ad217250e2cdf3bac8ae91ac52fc8960a8440",
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "0206eca3e541bffcfa2b98063c5382cf5e408c4d",
+      "mode": "100644"
+    },
+    {
+      "path": "SECURITY.md",
+      "git_blob": "a96cc8238f2ebb22f61a3b6a02e2f20e1780e33f",
+      "mode": "100644"
+    },
+    {
+      "path": "action/action.go",
+      "git_blob": "6aa2a1ee35947585bc0d119365d0804a666946bf",
+      "mode": "100644"
+    },
+    {
+      "path": "action/action_test.go",
+      "git_blob": "68b4527d007a21ad000a9bf757f8ea98252635fd",
+      "mode": "100644"
+    },
+    {
+      "path": "assets/favicon.xcf",
+      "git_blob": "9f0bc699fc6181833c586cf275ae144f994fb986",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/backend.go",
+      "git_blob": "921ceb3ee4167f3a02d6ca7e2aa547874349fa23",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/backend_file.go",
+      "git_blob": "e86ff1ec5dbc16a78226f52aa9f26f8f908aede4",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/backend_s3.go",
+      "git_blob": "9a2d4bef38da980f6808d33b8839416cc05dfc3e",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/store.go",
+      "git_blob": "0b12877d7836462cac430efd44f0e550ea3d4808",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/store_file_test.go",
+      "git_blob": "0f7495b4282a100361f32119173089e31adc93c3",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/store_s3_test.go",
+      "git_blob": "b33d21a074a33bcbf6ed35b227aa177ff5269bfc",
+      "mode": "100644"
+    },
+    {
+      "path": "attachment/store_test.go",
+      "git_blob": "0cb32a3ca0b09d9ec3cede6a2d24f132f6ccb72f",
+      "mode": "100644"
+    },
+    {
+      "path": "ban/service.go",
+      "git_blob": "2390017f9c2f09e20ed483f93588995c90b826eb",
+      "mode": "100644"
+    },
+    {
+      "path": "ban/service_test.go",
+      "git_blob": "3d1ec210da81adebbf538ae6708c932b2c03c47b",
+      "mode": "100644"
+    },
+    {
+      "path": "ban/weights.go",
+      "git_blob": "f28e602bdd4e8b5a0abe7524543d4c57fb34134f",
+      "mode": "100644"
+    },
+    {
+      "path": "ban/weights_test.go",
+      "git_blob": "6aefda3c9b5a0fdd7f486ea17e25696d23ab3e2e",
+      "mode": "100644"
+    },
+    {
+      "path": "client/client.go",
+      "git_blob": "c2260966fcd77bd0391272987a1a6d4e487ecd42",
+      "mode": "100644"
+    },
+    {
+      "path": "client/client.yml",
+      "git_blob": "d93ece06fad57b9dbdb23bfee66d052c7d490418",
+      "mode": "100644"
+    },
+    {
+      "path": "client/client_test.go",
+      "git_blob": "a6784ff8a2da26cc7bde4f307e7c693a2805add3",
+      "mode": "100644"
+    },
+    {
+      "path": "client/config.go",
+      "git_blob": "444460d63f154dd9821a6a196ea0a07b9a45090a",
+      "mode": "100644"
+    },
+    {
+      "path": "client/config_darwin.go",
+      "git_blob": "c24888495f766e694aa560e22e23d8bc39c656db",
+      "mode": "100644"
+    },
+    {
+      "path": "client/config_test.go",
+      "git_blob": "5d9eeecc834987634a29356bc19349f2f70a6370",
+      "mode": "100644"
+    },
+    {
+      "path": "client/config_unix.go",
+      "git_blob": "273340e1fced4db7c70bb262529515c19c0de4dc",
+      "mode": "100644"
+    },
+    {
+      "path": "client/config_windows.go",
+      "git_blob": "2ee55328ef746e1eb6799dbf9868306e44fbba93",
+      "mode": "100644"
+    },
+    {
+      "path": "client/ntfy-client.service",
+      "git_blob": "27925d7775b27c4230d8a4716ad50e58e7f00cc4",
+      "mode": "100644"
+    },
+    {
+      "path": "client/options.go",
+      "git_blob": "b99f1673117a30799ae56fb237966f8b68e4d381",
+      "mode": "100644"
+    },
+    {
+      "path": "client/user/ntfy-client.service",
+      "git_blob": "0a9598ee3f175c2878910bd2236116ebaf13a9cc",
+      "mode": "100644"
+    },
+    {
+      "path": "cluster/registry/registry.go",
+      "git_blob": "370246c8fa2da0e279adc02fa01ec7a7feab86e7",
+      "mode": "100644"
+    },
+    {
+      "path": "cluster/registry/registry_test.go",
+      "git_blob": "41371131162e6d5c262d2da98f1bfc019e0bfe66",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/access.go",
+      "git_blob": "51d367a35d5004c3d525d56bd12b9477fa23f127",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/access_test.go",
+      "git_blob": "8810b6b3ef71d9f03b826a9e447a96e8b48452ca",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/app.go",
+      "git_blob": "d6df1add90e91bfc267793e49459a53299711299",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/app_test.go",
+      "git_blob": "f7d752f0952cc73cea20ccb02d28e8cc4e956d7b",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/config_loader.go",
+      "git_blob": "e6180bed711ec816b8714bf1a27c89051c922111",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/config_loader_test.go",
+      "git_blob": "7a7f2bf14ffafef1c77eed523407ab520fdee815",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/publish.go",
+      "git_blob": "c80c140b348b8286a86fb1e7b469db7a890b507f",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/publish_test.go",
+      "git_blob": "1de9f5f91a1789a53b8f7a249b202e0e829e6d99",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/publish_unix.go",
+      "git_blob": "d2b49a5ef6ff4246fe5463f3ff527291752344e0",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/publish_windows.go",
+      "git_blob": "92ce3112e27fa453fdabf34c86357c7ce331e6c6",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/serve.go",
+      "git_blob": "6d6b5ea374a91d9cf5d637d64fa8d636fcc7f368",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/serve_test.go",
+      "git_blob": "4b36a060e4be3b52e6690d8f48e1c6f4846fbb75",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/serve_unix.go",
+      "git_blob": "bc1ef2c06e3128f835c8bc287c7d75ffd41ebcf9",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/serve_unix_test.go",
+      "git_blob": "47b53c5a3727dd04411b9500a55a265cb12300b9",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/serve_windows.go",
+      "git_blob": "48fa69dc4b278afc6cdfe81a359f3973b57663b4",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/subscribe.go",
+      "git_blob": "844509272ed3cac98ea8bfd15fe0efe2311340a0",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/subscribe_darwin.go",
+      "git_blob": "0033554058b87c5edcc71b550b930a292d2d7125",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/subscribe_test.go",
+      "git_blob": "08dbbf5d763ad8c965a46bf21069ebe79b35a24f",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/subscribe_unix.go",
+      "git_blob": "4c9c60392e764620079d3fb4697ec5750d4eb102",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/subscribe_windows.go",
+      "git_blob": "ea5f09f03bae0e912e975173d94db99187a01f49",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/tier.go",
+      "git_blob": "de34576efda23277f1855cf1eacfcecb5584fbd7",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/tier_test.go",
+      "git_blob": "8ca2b7687403095715602c8969c9581c3445b3a6",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/token.go",
+      "git_blob": "b0393b8831c345f55bc4f59b650bd58215984546",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/token_test.go",
+      "git_blob": "456e53cd978c98aa9b14ff0cbe5874ada6b563b5",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/user.go",
+      "git_blob": "9e33e1daa354ab466a12a9e9caae9ef96ee658d9",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/user_test.go",
+      "git_blob": "bde0fa1ff2532755e9d0a7f5fa109715b440df37",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/webpush.go",
+      "git_blob": "90d9268c67669bced851f8960e7422eba31dc6f4",
+      "mode": "100644"
+    },
+    {
+      "path": "cmd/webpush_test.go",
+      "git_blob": "5a4478310473bc0de3f53a9675b6bcca53b1e2ef",
+      "mode": "100644"
+    },
+    {
+      "path": "db/db.go",
+      "git_blob": "9be26077b2357acea7a55f5d00dcdbc8923af72d",
+      "mode": "100644"
+    },
+    {
+      "path": "db/db_test.go",
+      "git_blob": "ef06c330555617f113742aeaa4a576016b583093",
+      "mode": "100644"
+    },
+    {
+      "path": "db/pg/pg.go",
+      "git_blob": "e331a78ef416b7b118ac632ad61bf2f7292b2939",
+      "mode": "100644"
+    },
+    {
+      "path": "db/pg/pg_test.go",
+      "git_blob": "9e17a8038e347db15a287bc9a26d5c8eb0a7a3b1",
+      "mode": "100644"
+    },
+    {
+      "path": "db/schema/schema.go",
+      "git_blob": "d7e13f90c837436565f2c84e9b0a8ff73d2a86b7",
+      "mode": "100644"
+    },
+    {
+      "path": "db/schema/schema_test.go",
+      "git_blob": "28e6c376f5748b04fc43b4953ba607c173fde3c3",
+      "mode": "100644"
+    },
+    {
+      "path": "db/schema/types.go",
+      "git_blob": "4294feeabdc8f7993e2fd5ada55766b371073dbe",
+      "mode": "100644"
+    },
+    {
+      "path": "db/test/schema.go",
+      "git_blob": "c3afc09fdce7caba05d00f5bd5a48c252a8cf86f",
+      "mode": "100644"
+    },
+    {
+      "path": "db/test/test.go",
+      "git_blob": "e9e854a1b98362e2c39d1b014a08e4e9895fa10a",
+      "mode": "100644"
+    },
+    {
+      "path": "db/types.go",
+      "git_blob": "137753a45f3fdc0033ed25bf8f0292ed204383fa",
+      "mode": "100644"
+    },
+    {
+      "path": "db/util.go",
+      "git_blob": "4621cb38db775a0a16705803ca60ea7f1aea6350",
+      "mode": "100644"
+    },
+    {
+      "path": "docker-compose.yml",
+      "git_blob": "d634600c9cf4c93b003d560123a7e9a06084ecf1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/_overrides/main.html",
+      "git_blob": "52483ebd286c6c9eca7458e690182e3bfa15b1b4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/ai-policy.md",
+      "git_blob": "2d1ddc713e22224392a4e1b96dbd9808c2ce3c2f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/config.md",
+      "git_blob": "715d998edc3403a201af68f915889624a4585090",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/contact.md",
+      "git_blob": "11dccfed12cc3975957a7967c748bd004da4b45f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/contributing.md",
+      "git_blob": "ea52764fd78575c1e77e33c4fd4bc50188a76b02",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/deprecations.md",
+      "git_blob": "56b1db8530302c315459c10ad263dceb4aa91843",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/develop.md",
+      "git_blob": "563d299bab49c75e11ff34059613eacb373cd14c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/emojis.md",
+      "git_blob": "d801ae09b4e83ed44fd995f799f5f004a707e5dd",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/examples.md",
+      "git_blob": "450001ffaf83b884ece8a0fa30ccdf16cf9e0473",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/faq.md",
+      "git_blob": "c7084830a0fd9a313a860ab2f0efb1686fedd936",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/hooks.py",
+      "git_blob": "4a6957d93b674787df7ff83d259ac1a38223263d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/index.md",
+      "git_blob": "6deab9e6e70d31bd6883572df306fbeaa9475747",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/install.md",
+      "git_blob": "da524655a2b898653cffbfb612394612389cb905",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/integrations.md",
+      "git_blob": "2a87329048c9b643ef2254383309e028927a8dac",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/known-issues.md",
+      "git_blob": "cdb95bb6372b6d84a3e2b97716661c2015339d0d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/privacy.md",
+      "git_blob": "322e4f342f17acc94c864db25ca43d89bf7728ba",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/publish.md",
+      "git_blob": "01827e113efba07a59281d199af394a2858c59e5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/publish/template-functions.md",
+      "git_blob": "530266278bb73300e2a29ababd58d482f21f8e80",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/releases.md",
+      "git_blob": "acd2d2a65d6628f2cbad423811a921829bef01a5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/audio/ntfy-phone-call.mp3",
+      "git_blob": "0cace65f3e1f56d6f4b5208053133afa28ee7139",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/audio/ntfy-phone-call.ogg",
+      "git_blob": "cbbf6b602270aae150e75edd9f22342b514e9c8a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/css/config-generator.css",
+      "git_blob": "4f12ca2ca17582cc9083d678a00ed64e0a9d5d5b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/css/extra.css",
+      "git_blob": "fb44f4cc04e2abde7c1e7479c3692100aa5e2f42",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/css/topic-generator.css",
+      "git_blob": "5770da228f3f542237ad05f9665961e7cd814a5f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-mono-v22-latin-regular.woff2",
+      "git_blob": "f8894bab50f641e86f695e85830a74dd395732fa",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-v30-latin-300.woff2",
+      "git_blob": "60681387e7bf93c19f6b2fcfac98037032e63531",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-v30-latin-500.woff2",
+      "git_blob": "29342a8de253983b7b1a8c94efc6bb5c4f72a5c0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-v30-latin-700.woff2",
+      "git_blob": "771fbeccc691aab1962e33dbdf2be7c659d84c27",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-v30-latin-italic.woff2",
+      "git_blob": "e1b7a79f91f29f10e58c3a255fe0f2804a9c19b9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/fonts/roboto-v30-latin-regular.woff2",
+      "git_blob": "020729ef8d353ff843438008300bedee1f519380",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-add-instant.png",
+      "git_blob": "3c6c58c57a5a87eae2bd4b2edabc26f024a62905",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-add-other.png",
+      "git_blob": "cd4a43b72c2ceaf84f154258715ae2cbf67fd808",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-add.png",
+      "git_blob": "c85b1faa99f7dd9e7fa4c10fa8817837a4aecc1a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-attachment-file.png",
+      "git_blob": "f151c936a76fe51ada5fcb4b71b4b47b7441f79f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-attachment-image.png",
+      "git_blob": "42afba8b768d5ef9bcaacd4b314bb22a52a3bf50",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-basic-notification.png",
+      "git_blob": "3a8a245d95bbe79e0e4699ed4d34f9581c86da6c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-certs-manage.jpg",
+      "git_blob": "613e97459661c6707a93d97c310701abb0536075",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-certs-warning-dialog.jpg",
+      "git_blob": "e92105e9a3150e3468c89f43c6120abc76c2c27f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-connection-error-dialog.jpg",
+      "git_blob": "a004ad73762e3e37ab8f5d86fa59caabed923e99",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-connection-error-warning.jpg",
+      "git_blob": "a019046f277118fc769b92298599b36b9b25e5a9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-custom-headers-add.jpg",
+      "git_blob": "3a1e7d89765149992e33fc91bc5fe15c7977ffdb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-custom-headers.jpg",
+      "git_blob": "090071f96f08a046e1f986f97bda5fbc567e337d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-detail.png",
+      "git_blob": "bbb924c1832bdbb55ab78de87aa7341d766148b5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-icon.png",
+      "git_blob": "68c57a16910a15c7a73511e75b6dc35a38dd1f1e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-language-chinese.jpg",
+      "git_blob": "f31cc9cc8c4f9881d239a0906390197f06bfc694",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-language-german.jpg",
+      "git_blob": "254f49997916104ef10d46d2a6bc1481a4a096f2",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-language-hebrew.jpg",
+      "git_blob": "c42356663dcf792da8e4597a4f746079bd599994",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-language-selection.jpg",
+      "git_blob": "f39befde87efe66d42fe875d824233f79647eb3c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-logs.jpg",
+      "git_blob": "e5f1d8e8bbb28f1be9264d5841ac1950fd952f3a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-macrodroid-action.png",
+      "git_blob": "7bf2c0826993b4494d2c5ad4f43e81f563ae8625",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-macrodroid-overview.png",
+      "git_blob": "5165943c5efc340c6eb4a951b2a3c2f6bd85d5d0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-macrodroid-send-action.png",
+      "git_blob": "81fc0c184dde2171836c206f912861534d01f97a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-macrodroid-send-macro.png",
+      "git_blob": "2a30176624f13be3b9cde035b70989c18c5d8473",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-macrodroid-trigger.png",
+      "git_blob": "357802bf32660a26d910583ffd779b3b4dc8e4b7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-main.png",
+      "git_blob": "3fdbcb9d4c4df935923cf57e7e16b68b81f4c02e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-muted.png",
+      "git_blob": "b9c740e5ee0ecb9a7d53f181faf5a9cb07da5d9e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-actions.png",
+      "git_blob": "f0e568d5817e34209b1b91f82bb184f9ea798758",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-details.jpg",
+      "git_blob": "6de151b17a61febcf12c1d058bc80cbacd1f5f1e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-multiline.jpg",
+      "git_blob": "f6ed661259d54595b4327695061a6eb22bd04382",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-settings.png",
+      "git_blob": "25bed4f2afdadc5dab424e522a5f7182df337f40",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-update-1.png",
+      "git_blob": "16320de4c4e83752b4cb16da0f14e1d929c00852",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-notification-update-2.png",
+      "git_blob": "e94c4f21fd20d07246df574132819cddf9533969",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-pause.png",
+      "git_blob": "270f3c5373e20c7e397025daae764588fcf92e6b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-publish-dialog.jpg",
+      "git_blob": "6d1e2f6c2abfc7186f33b31310a10ab2f3fc37a0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-publish-message-bar.jpg",
+      "git_blob": "12957400a28336b9e386374680169608abc21319",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-share-1.jpg",
+      "git_blob": "503ce9f95d3e7b65b75e6831818a5742d5930272",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-share-2.jpg",
+      "git_blob": "b408f4860ef716dea439cce2edfd2fa341c058d8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-action-edit.png",
+      "git_blob": "b47a08535bbdea623b2bc2fa9af2100f4c5302ce",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-action-http-post.png",
+      "git_blob": "aa9cbfa168196c2d29afb07c2e59c8f9e6096c60",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-event-edit.png",
+      "git_blob": "15645cb3544b7d54fc7697710d33e81bad052418",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-profile-send.png",
+      "git_blob": "fabbe13bad6e59a7ebb0ba0b82c7158d5a3f8008",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-profiles.png",
+      "git_blob": "3d92cd2f6c389653c139f9455acdd70f32a8148a",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-task-edit-post.png",
+      "git_blob": "f17832597f3a76ce766bc57e046d6ff1ac577c5d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-tasker-task-edit.png",
+      "git_blob": "eb4f0248df6bb95de9b64c0ceee4296ca2e03029",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-template-custom.png",
+      "git_blob": "8325e9a4a580ee877dc620fcec04ac9bbb47dfc5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-template-predefined.png",
+      "git_blob": "ba77c31d3ec0f59a790e094192174140b7b34b66",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-template.jpg",
+      "git_blob": "e37f7b1a513cc6095e85cc438c78f4eb34193dd9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-unifiedpush-fluffychat.jpg",
+      "git_blob": "a4334ad4026fb48dece11818cca8f2dbc80db19c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-unifiedpush-settings.jpg",
+      "git_blob": "bfcc7a5442ebfadd3ea527c3055533e7909b4746",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-screenshot-unifiedpush-subscription.jpg",
+      "git_blob": "e3a19b84b577d5e95d466cd3289cb221f1524df1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/android-video-overview.mp4",
+      "git_blob": "cf295099ac2356ff42573b5654e79167039afc0b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/badge-appstore.png",
+      "git_blob": "a8bc73a6f005fb42ebb2736ecfcac2b67bb37fd5",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/badge-fdroid.png",
+      "git_blob": "c1fc8492a9071e39a5df2ce92a315546609c3c7f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/badge-fdroid.svg",
+      "git_blob": "3a838fb429a54f2fbac2b6dc2d092ef6307dff30",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/badge-googleplay.png",
+      "git_blob": "7a06997a57236e18b5bd2a152435911b72371a89",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/cdio-setup.jpg",
+      "git_blob": "2f9e44cb2ff668da992555e9171229b7d8849836",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/cli-subscribe-video-1.mp4",
+      "git_blob": "f7cab25a56b6bd8cf19b76ef1f2a5bf2e8655997",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/cli-subscribe-video-2.webm",
+      "git_blob": "e885dab8dbf79c5dabb360c02126df031620bb08",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/cli-subscribe-video-3.webm",
+      "git_blob": "a286e2b9495c6d59194453aa02f0fc4bf3c95d30",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/config-generator.png",
+      "git_blob": "1fce59d19b04a02d928166d7e98920cb6c54e01c",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/favicon.ico",
+      "git_blob": "857fa54c43b1c8113ffdd1dd8a68ed05d81309f9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/foreground-service.png",
+      "git_blob": "09f343440c39779131ad7400dff70769e0310110",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/getting-started-add.png",
+      "git_blob": "28309c426bc5851ab31b38a5264386f2fed93b28",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/grafana-dashboard.png",
+      "git_blob": "6cb12c8060842b6ab7b3e9f978385c166570448b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/mobile-screenshot-notification.png",
+      "git_blob": "9c9147fc119bbd99d691f6eb9a39b41598744ba9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/nodered-message.png",
+      "git_blob": "46279087b134f12ee456b7d3687e71cb44fb7403",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/nodered-picture.png",
+      "git_blob": "413ba8a2ad88fe072f7958584601ff3329b3efbb",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/notification-settings.png",
+      "git_blob": "dad10b2e8b0d2991ca6d69a2c6a51c0b16b644f9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/notification-with-tags.png",
+      "git_blob": "817732206080075cfc9df65497524f789c7fca7e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/notification-with-title.png",
+      "git_blob": "fd458332f44a998706f3916dbba1cf9a9dec48b6",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/ntfy.png",
+      "git_blob": "6b969a846efc6c3dac70510793c72253e04389c9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-1.svg",
+      "git_blob": "df6a0a4907cb871d316fc72f34cf97623157197d",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-2.svg",
+      "git_blob": "10a89ad15f077c34076dffd8c14a12bff9ceba54",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-4.svg",
+      "git_blob": "a1723cf82bbdce0734401e702605586549c67f43",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-5.svg",
+      "git_blob": "2e2c44475aad99425614152dfa365ed601355406",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-detail-overview.png",
+      "git_blob": "c9321aa7f1c6b509ae93c5593b8157e6c9d2d420",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/priority-notification.png",
+      "git_blob": "31d151525a154920d927e2243932e7a456baa748",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-badge.png",
+      "git_blob": "1a22de07e24b0fc903aca4afb1d2c75be947430b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-chrome-android-menu.jpg",
+      "git_blob": "1c258d64faa59111bc785304e3da67ba0f70dcf1",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-chrome-android-popup.jpg",
+      "git_blob": "90c77c77b39fcbd8ea1338238d4d2d447b0c5eb4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-chrome-android.jpg",
+      "git_blob": "7f89503fcb84a8733cba3af608abed0eda216110",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-firefox-android-menu.jpg",
+      "git_blob": "c0aa59e73cc291820f91addfaccbfa382fec6f25",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-firefox-android-popup.jpg",
+      "git_blob": "e97a858d0cb62c7a7198d5ece74cc7606c8970c9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-macos-safari-add-to-dock.png",
+      "git_blob": "8a780605f1db305cd95418bf502a82aeb7f10def",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-safari-ios-add-icon.jpg",
+      "git_blob": "175fb8b40f2ff4d8e68dfa09312134a9009f1305",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-safari-ios-button.jpg",
+      "git_blob": "c9897c30c5854b35a6fa8756e8544572e26114ac",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install-safari-ios-menu.jpg",
+      "git_blob": "b6408afd8bc5a54ca883cf97e6bfb5f7d68a6480",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa-install.png",
+      "git_blob": "c44e7dbcec062842dd7b0336298e5c5b710d57ba",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/pwa.png",
+      "git_blob": "c26f29f116883c58000b2473d9b7a43267e043ba",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/rundeck.png",
+      "git_blob": "9c5a8a85656b0d1b2d1c3d26c48b8091476bc109",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-curl.png",
+      "git_blob": "aeb5a31a66e6c7a368b39267d628af5404270728",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-email-publishing-dns.png",
+      "git_blob": "d67b057a7e92f224147b20b15dbb9fdad566fa08",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-email-publishing-gmail.png",
+      "git_blob": "0d8a58e80dc48715f43fcd500034b01c0c0c472f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-email.png",
+      "git_blob": "48c1f39217f6d0f4a07f2d9355c8442e525b50f8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-github-webhook-config.png",
+      "git_blob": "46b784b3dee587b776b67a3be8be45ff2d8c6d89",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-phone-add.jpg",
+      "git_blob": "f728ec99cb6f56081bd66c48f11308742b5ec909",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-phone-detail.jpg",
+      "git_blob": "2cd3b2fe2dc2f0604057ac068173a3358533a137",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-phone-main.jpg",
+      "git_blob": "5caeee1463465f568de614660f8add0b88483775",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/screenshot-phone-notification.jpg",
+      "git_blob": "7924c6fde94db822f6c92151460a29b9f53124de",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimekuma-ios-down.jpg",
+      "git_blob": "330f86f956abf965e5da1dc88706841ff68341b0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimekuma-ios-test.jpg",
+      "git_blob": "1b678a696ce6135dc9d799e7e9eff08352985591",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimekuma-ios-up.jpg",
+      "git_blob": "919d9ba1af00a7815a9fa6a3f8f7919723da5522",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimekuma-settings.png",
+      "git_blob": "5b21bdd66acc42f7313531c25f25b96f3cdb13a7",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimekuma-setup.png",
+      "git_blob": "cd57baa72aa21ab54269abdad8d517b2bab2d2a8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimerobot-setup.jpg",
+      "git_blob": "232d536609ea451fa2c5829bc7a1dc66ef624ace",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/uptimerobot-test.jpg",
+      "git_blob": "d2fbfaecd05ad5cb4528689a2a3609c349c2a8c8",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-account.png",
+      "git_blob": "48e916e53c40042974d23364e4bc786db97ae04e",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-detail.png",
+      "git_blob": "aabf0dc901ef601bc314f99a4145105fd6e3f917",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-logs.png",
+      "git_blob": "2dfebdcc322528bec6af2186b9b266512ddf2046",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-markdown.png",
+      "git_blob": "612f2cf39a0c6da83efef3be1e760601742c31f4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-notification.png",
+      "git_blob": "535d08301b7c306b8ec690d163b559399381341f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-phone-verify.png",
+      "git_blob": "335aeef13848541002456ebbf93ebb17669d04e9",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-reserve-topic-dialog.png",
+      "git_blob": "e4fb4b4a8734afbe21eb8e22dcee08fba9366741",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-reserve-topic.png",
+      "git_blob": "a8ffd374c8204bbd68bd15e3431c8e27a69e2374",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-signup.png",
+      "git_blob": "62c7bd30c599c9aa08f2f2f899090477fff1e2bc",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-subscribe.png",
+      "git_blob": "ccbd049305f899ed6c1146df278e2453366a8460",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-token-create.png",
+      "git_blob": "29dcb387db17cf92a51f75d44f0eb4beceeb6f74",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/img/web-token-list.png",
+      "git_blob": "b36b2a7f15cd8818151898ea92cb6a265f8270ad",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/js/bcrypt.js",
+      "git_blob": "517ea20dc7c1c4282cefa3185f4970e638c35cc0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/js/config-generator.js",
+      "git_blob": "ffada277b834b8d40f1ffde2c5e77ec60e3dd735",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/js/extra.js",
+      "git_blob": "f9bc1e2b38fc60c4ac04cbee6f162947f9814c82",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/static/js/topic-generator.js",
+      "git_blob": "a67398918ac28b0deaedaaa0cfb50a46dcdb9e3b",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/subscribe/api.md",
+      "git_blob": "b13092238921f8644acceff13de5fb99d623b247",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/subscribe/cli.md",
+      "git_blob": "36388c71fa21dfd3f924d1531d585771aa5dfc94",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/subscribe/phone.md",
+      "git_blob": "92abf08262c9276dbcf9bd61a1fcff319ac68ea0",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/subscribe/pwa.md",
+      "git_blob": "5dcaa257edc57d9b740912f4f5616d95ba97eb72",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/subscribe/web.md",
+      "git_blob": "859f7d0a8dc439e538fae85d27eaf88c8dc0f09f",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/terms.md",
+      "git_blob": "26ced4275f543f2945e162552ffea74ec7498d62",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "git_blob": "9215bad2319c76b3cf0edb0eb2ea113f9f87475f",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/grafana-dashboard/ntfy-grafana.json",
+      "git_blob": "11273da3250cc75f1b933ca4bb57af9640913e52",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/linux-desktop-notifications/notify-desktop.sh",
+      "git_blob": "2e20fc42da40c82a878b8923195de4f081e2d575",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/publish-go/main.go",
+      "git_blob": "35fac138b41e32e2e743b58c3749ae08ac98c87f",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/publish-php/publish.php",
+      "git_blob": "c7c6eefcb4f90122f5472aaf0f18bb3cc37237b7",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/publish-python/publish.py",
+      "git_blob": "79bb1fde68072ec1a06b8f87349251d5a880760c",
+      "mode": "100755"
+    },
+    {
+      "path": "examples/ssh-login-alert/ntfy-ssh-login.sh",
+      "git_blob": "1c9c14073f240993b1c2d8ba68314faf863b5895",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/ssh-login-alert/pam_sshd",
+      "git_blob": "fe1eec6ae80b368ba3a10beb399554f3d5113ba9",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/subscribe-go/main.go",
+      "git_blob": "5f807610f6e1803714e4454a6194f3531fd15dfc",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/subscribe-php/subscribe.php",
+      "git_blob": "fcdbe98b2a07c3e443d9866bca9f05f234f0a193",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/subscribe-python/subscribe.py",
+      "git_blob": "892392eb7bfbeaaec47f010759877e2f1854d2c4",
+      "mode": "100755"
+    },
+    {
+      "path": "examples/web-example-eventsource/example-sse.html",
+      "git_blob": "e558ef1239bdba41ff397804887cb528f9ee0071",
+      "mode": "100644"
+    },
+    {
+      "path": "examples/web-example-websocket/example-ws.html",
+      "git_blob": "7025aa6075673aa754a60dfcf4acfa4190a2067b",
+      "mode": "100644"
+    },
+    {
+      "path": "go.mod",
+      "git_blob": "2ff4a0e8f03db70ac656738ed7435e925e3390e5",
+      "mode": "100644"
+    },
+    {
+      "path": "go.sum",
+      "git_blob": "29ec5d2a1440f80569d538097156b650a4301dfd",
+      "mode": "100644"
+    },
+    {
+      "path": "log/event.go",
+      "git_blob": "f16eb1804ec13ce50b222d5acf400375c297612b",
+      "mode": "100644"
+    },
+    {
+      "path": "log/log.go",
+      "git_blob": "98d9652f268e70bfc88829f5fac0ad319ea73a91",
+      "mode": "100644"
+    },
+    {
+      "path": "log/log_test.go",
+      "git_blob": "d7ceb1c96b01cc5307ab3f9407630c2be4f2a2d7",
+      "mode": "100644"
+    },
+    {
+      "path": "log/types.go",
+      "git_blob": "fd67637171b8befc9a4af15f86fb231ce8010515",
+      "mode": "100644"
+    },
+    {
+      "path": "mail/format.go",
+      "git_blob": "e68ec8eacbfaf6a13523a0b8d3504c7089681905",
+      "mode": "100644"
+    },
+    {
+      "path": "mail/format_test.go",
+      "git_blob": "4c4c461318e5a6696782f487bb3fd9d6b1a7765c",
+      "mode": "100644"
+    },
+    {
+      "path": "mail/mailer_emoji_map.json",
+      "git_blob": "8520c24c23ec3a5c7747394a56d9424ad72978ed",
+      "mode": "100644"
+    },
+    {
+      "path": "mail/sender.go",
+      "git_blob": "7e0c4063c3c815fc1dcf2a5c2a61ad569694276b",
+      "mode": "100644"
+    },
+    {
+      "path": "main.go",
+      "git_blob": "122356f662e1d9f080bc3710638cd3cebc778d57",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache.go",
+      "git_blob": "6586ee537cc4744e40adfd5838fbf494a9362c0a",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_postgres.go",
+      "git_blob": "5581c03ae7e19aece45c136bf3686201880ebfba",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_postgres_schema.go",
+      "git_blob": "c52e9f87c4152b053d2884f83b13502ce4e3e8f8",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_postgres_test.go",
+      "git_blob": "6a3e6c391718a2ffa7d54da523186176b1a439d7",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_sqlite.go",
+      "git_blob": "ded1770a3062b8ee10836bd6575f2039659fc66f",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_sqlite_schema.go",
+      "git_blob": "12c6f937de89fa11b753c8b8ca6bb6fb8a11772c",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_sqlite_test.go",
+      "git_blob": "7a005f6c5784719ea111fab6418dae95f76cba1c",
+      "mode": "100644"
+    },
+    {
+      "path": "message/cache_test.go",
+      "git_blob": "ae8d9d963af348d0c708f4b2269097205f40d465",
+      "mode": "100644"
+    },
+    {
+      "path": "metrics/metrics.go",
+      "git_blob": "1de5903c93314ab8709420af9b9d341d256e7481",
+      "mode": "100644"
+    },
+    {
+      "path": "metrics/metrics_test.go",
+      "git_blob": "70c322c5840a9b8399e536ec4028fd2d30d3b7b4",
+      "mode": "100644"
+    },
+    {
+      "path": "mkdocs.yml",
+      "git_blob": "a2b3854810a1e8d2d33cd2347549a62aa4eb0228",
+      "mode": "100644"
+    },
+    {
+      "path": "model/model.go",
+      "git_blob": "a644ff3e2f8309482eddee1cee481cdc0ac553be",
+      "mode": "100644"
+    },
+    {
+      "path": "payments/payments.go",
+      "git_blob": "76cfcc004f6d8bdadf19ad7514abee8217b306f8",
+      "mode": "100644"
+    },
+    {
+      "path": "payments/payments_dummy.go",
+      "git_blob": "4db8fc2e70db25946d59ea522539194e68a84398",
+      "mode": "100644"
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob": "9c2212a83ca0a4ea9ae3378dbcfc02a04dbc187e",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/client.go",
+      "git_blob": "412e00d30376913ca0475ab5706bd46ad95cde9b",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/client_auth.go",
+      "git_blob": "61aba73c90ef6c7e6d4db0ef3407bf6a1f6453d0",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/client_multipart.go",
+      "git_blob": "198175d450fdfc1f59bb38465655528517b0e200",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/client_test.go",
+      "git_blob": "b8a3f09749396fceb1210075d17f57b39989b4a1",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/types.go",
+      "git_blob": "677721b6f90de01607ae4ad1a5319c36d6692c0d",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/util.go",
+      "git_blob": "b759fd19b4d44e3391fbae13167e87868b9e82eb",
+      "mode": "100644"
+    },
+    {
+      "path": "s3/util_test.go",
+      "git_blob": "93ddd707cf2644baba265324dc684899ac425708",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/emoji-convert.sh",
+      "git_blob": "08cb6ebeb13bc4af547536b8692384d3be6d4d97",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/emoji.json",
+      "git_blob": "aa7dbb0a07a7b4169d961ebb76812711d24b48f9",
+      "mode": "100644"
+    },
+    {
+      "path": "scripts/postinst.sh",
+      "git_blob": "d923e7f85142ac198a0bc27ddcc8e2b4a30af9ae",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/postrm.sh",
+      "git_blob": "10b2fd955c2c1c6dcfc197360ff1027d069b9106",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/preinst.sh",
+      "git_blob": "1a40f1a71a6109d7099461c6226a6b82eb657f5c",
+      "mode": "100755"
+    },
+    {
+      "path": "scripts/prerm.sh",
+      "git_blob": "91068180bec05aaeaf6c74d0080dee7aa81a6914",
+      "mode": "100755"
+    },
+    {
+      "path": "server/ban_test.go",
+      "git_blob": "bd95a883d5889c12e817780adf485e7ae4247d50",
+      "mode": "100644"
+    },
+    {
+      "path": "server/config.go",
+      "git_blob": "518790c1d5c4cfe32b25f457dac681a130f1f429",
+      "mode": "100644"
+    },
+    {
+      "path": "server/config_test.go",
+      "git_blob": "e789d55d04e1b1b0176d00bab0ff2b32eda4088c",
+      "mode": "100644"
+    },
+    {
+      "path": "server/config_unix.go",
+      "git_blob": "5b9812b2b1d500913b3e14da6f269494f50fd69f",
+      "mode": "100644"
+    },
+    {
+      "path": "server/config_windows.go",
+      "git_blob": "fc883c38f97b12d04f78c9bd8bcc2b72c85e8a72",
+      "mode": "100644"
+    },
+    {
+      "path": "server/errors.go",
+      "git_blob": "3928b41d52e115def519d435216f50476bd25bd0",
+      "mode": "100644"
+    },
+    {
+      "path": "server/log.go",
+      "git_blob": "69c8fcca35d04d0f49c92df11e8c873855ad998b",
+      "mode": "100644"
+    },
+    {
+      "path": "server/ntfy.openrc",
+      "git_blob": "d928f28edf3f41562960249d04eb81ba230ac44f",
+      "mode": "100644"
+    },
+    {
+      "path": "server/ntfy.service",
+      "git_blob": "df42040401c385159f9a200439b1c55504a12a0b",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server.go",
+      "git_blob": "94b90fe14f7f71c0c769e38b7a28ac737fcf4fce",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server.yml",
+      "git_blob": "815f158666d7c1f0505b94207dab21e32a530834",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_account.go",
+      "git_blob": "d327f5dae989cee611262ef56f36b2d08bfc25ce",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_account_email_test.go",
+      "git_blob": "24aacaf5cd8bed4ae8f3b077f13d8fdfd8da4fd6",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_account_test.go",
+      "git_blob": "68491cfd6a3d1c597c0c027647152e6b24b17deb",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_admin.go",
+      "git_blob": "2560796f4a05adec787b2bac2e6eff51bc74860b",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_admin_test.go",
+      "git_blob": "5fb2c1d208699a376f62f3addd45743233421fae",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_auth.go",
+      "git_blob": "02690dc7605b5486fc60138af0da6cbc1cdae7e8",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_firebase.go",
+      "git_blob": "0f1bb9b10cf2688b418cbd125a18467530ff7cd2",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_firebase_dummy.go",
+      "git_blob": "6b02607553208aa8a37f70b72b11a76da519fdf9",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_firebase_test.go",
+      "git_blob": "40509fb942a7853ffdb342f4a5cbc8bd30a634f2",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_manager.go",
+      "git_blob": "204f5fbec4134c9813eb1953186b52ad590a731a",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_manager_test.go",
+      "git_blob": "7a1224b87091a19dbd86f71deb79f359bf39efe5",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_matrix.go",
+      "git_blob": "870c236fca4def776b253fde9e2953a1138b8463",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_matrix_test.go",
+      "git_blob": "e723ac035d0acc585515dc5e04de80ebf4eea625",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_middleware.go",
+      "git_blob": "117be70d4bbcd7ff0d4b8c03adec1225db8b7ce0",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_payments.go",
+      "git_blob": "76216bbef3229d3003c7c9e9f21f8ab88bcf8d95",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_payments_dummy.go",
+      "git_blob": "dcdc31c67e20f84e2d2cf9aed909f5f0056a5141",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_payments_email_test.go",
+      "git_blob": "2550d88e04893972d08e1c5cadf027fb7d32cdc3",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_payments_test.go",
+      "git_blob": "86e72c6dd76ff7d4a5039b0cd0bf9d135c399478",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_race_off_test.go",
+      "git_blob": "1ce588195925357080594455a89450a00a00d3aa",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_race_on_test.go",
+      "git_blob": "30e30e14ab10f675f34889a3e57e0104ac67f419",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_template.go",
+      "git_blob": "76639b58cf42d79a6c26e2ddeb960fd00b4e38e3",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_template_test.go",
+      "git_blob": "61e69b9bc8752029e04d4b7df7ecb5883e120abf",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_test.go",
+      "git_blob": "a3535972e6b8df91c6c81627c647e73abca80042",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_twilio.go",
+      "git_blob": "05be8eb7710c4000c38ff9b4cd110ea0f5f04382",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_twilio_test.go",
+      "git_blob": "e358260940f6313cfc787736bf4a27ce456081ab",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_web.go",
+      "git_blob": "5c350dd1f3c1f61b3967e03e164972d84657a9ac",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_webpush.go",
+      "git_blob": "3b7f0f5524137b1ef4f5c50b6991dd3b0f0b589c",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_webpush_dummy.go",
+      "git_blob": "70c2df228b34b82a2d2b36f3d3e610e6fc4cba80",
+      "mode": "100644"
+    },
+    {
+      "path": "server/server_webpush_test.go",
+      "git_blob": "e69da16d3382681f4f68c99728a1095c67608422",
+      "mode": "100644"
+    },
+    {
+      "path": "server/smtp_server.go",
+      "git_blob": "055146b6d551fbd2bdde9cbf99c58e1bc0570151",
+      "mode": "100644"
+    },
+    {
+      "path": "server/smtp_server_test.go",
+      "git_blob": "b7df768d787fd535b87ca82abed4a23a35054d19",
+      "mode": "100644"
+    },
+    {
+      "path": "server/templates/alertmanager.yml",
+      "git_blob": "4b3ae6f3e246e41c5610dfaa3a6b1cef0df6ac7e",
+      "mode": "100644"
+    },
+    {
+      "path": "server/templates/github.yml",
+      "git_blob": "aee95b42ba1f1d8f640a7b2bb08bb5ea39a2c22b",
+      "mode": "100644"
+    },
+    {
+      "path": "server/templates/grafana.yml",
+      "git_blob": "bdb64e456296173cd0fbffef108bd8a9e0af8111",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_alertmanager_firing.json",
+      "git_blob": "9155bd9e9451f3699c2625761214a66cf1697de3",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_github_comment_created.json",
+      "git_blob": "04e7cddb8c1a86fe8cec9b2b969b0f601699242a",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_github_issue_opened.json",
+      "git_blob": "1b3e74c036e58a2adda9b01f8ea428f0f8a8f3cc",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_github_pr_opened.json",
+      "git_blob": "c89d1c3b0ed49ea3849a0c7001d71e453adf4461",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_github_star_created.json",
+      "git_blob": "3009914507775324260cdfbd5364ae11b7e61176",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_github_watch_created.json",
+      "git_blob": "47440ebfea84613a1be74be9007fb6bed5e74abf",
+      "mode": "100644"
+    },
+    {
+      "path": "server/testdata/webhook_grafana_resolved.json",
+      "git_blob": "4149457874a29e4b8ccc00e3514cee68031fa641",
+      "mode": "100644"
+    },
+    {
+      "path": "server/topic.go",
+      "git_blob": "f373a5e6537f6aa08f8d50875c3db7e6c3ea7018",
+      "mode": "100644"
+    },
+    {
+      "path": "server/topic_test.go",
+      "git_blob": "f526921d92fb88e6a5f1dc76af5b0ff88e01cf0f",
+      "mode": "100644"
+    },
+    {
+      "path": "server/types.go",
+      "git_blob": "a98165726dc24a51dc581fd3807a8f0c9db7cc7f",
+      "mode": "100644"
+    },
+    {
+      "path": "server/util.go",
+      "git_blob": "33df051ae9231d79cc4d76a16bdbbcc8b4b4dba0",
+      "mode": "100644"
+    },
+    {
+      "path": "server/util_test.go",
+      "git_blob": "9530ca6ae3bd8deb3025630447d2fcb32bd58d21",
+      "mode": "100644"
+    },
+    {
+      "path": "server/visitor.go",
+      "git_blob": "8d3eed884ae3f80fdd6a4fabc7076fc1fb37323f",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/GENERATED_FROM",
+      "git_blob": "ae6d67beb5627929c503f5b3274e93589d771503",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/README.md",
+      "git_blob": "7f462cb2432948d7ff375239893d0288f56a2272",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/doc.go",
+      "git_blob": "fe63fa6e606cdf804ec8062f0af07f9df6e811fd",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/exec.go",
+      "git_blob": "b4ef0ca3983470b510dbd0b6b917b1e94bf6634a",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/fmtsort/sort.go",
+      "git_blob": "f51cdc7083a4b106bf6b9a16741c0a482e45b02e",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/funcs.go",
+      "git_blob": "734fe7bf31dca7674eaf861a8e9561aec680113f",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/helper.go",
+      "git_blob": "f5dd86cf9136a173e9c311adac16387d2b9044fe",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/option.go",
+      "git_blob": "9e0344c14c7b160e21b250a92b5d0ff78cc6b547",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/patches/0001-exec-context.patch",
+      "git_blob": "2256edd15326835e256629cb553af04e23ac14f4",
+      "mode": "100644"
+    },
+    {
+      "path": "template/gotext/template.go",
+      "git_blob": "31b0d409d27909652170e2521633692b0694b0aa",
+      "mode": "100644"
+    },
+    {
+      "path": "test/server.go",
+      "git_blob": "21e3af789b85de3d06677ca2e1cc9960e5bb2523",
+      "mode": "100644"
+    },
+    {
+      "path": "test/test.go",
+      "git_blob": "837b13962e4fe869840caa63cb09f2521a54e417",
+      "mode": "100644"
+    },
+    {
+      "path": "test/util.go",
+      "git_blob": "dcd6a96093d411847b195469f26eac5877cf4178",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/fbsend/README.md",
+      "git_blob": "1cd785a0ea0392baf95da3308e2324e3cee09cd5",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/fbsend/main.go",
+      "git_blob": "299c384ce5489b8f1576ed7af9d7ec27587bab30",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/loadgen/main.go",
+      "git_blob": "4ce201d801e5927a45bb42fba745a8a23374d480",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/loadtest/go.mod",
+      "git_blob": "3c3034a974dfcbf75726419e64d71f68a505a500",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/loadtest/go.sum",
+      "git_blob": "25a9fc4bb48d3c3817124056388f79e06069965a",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/loadtest/main.go",
+      "git_blob": "be8a65fcecafaa3a620be5ca9b0063d33b4463ee",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/pgimport/README.md",
+      "git_blob": "eff6ccad787000407de4e0186350af2748b69f5f",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/pgimport/main.go",
+      "git_blob": "77c1d4cf43b2ab56baf6cf6bf3869e31b1e3abf1",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/s3cli/main.go",
+      "git_blob": "5de8a75c8d6d3b510d418a5ef9abb2b03ca663b7",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/shrink-png.sh",
+      "git_blob": "b64ae53be22762fda3aa58ba2f8b6c7281383b21",
+      "mode": "100755"
+    },
+    {
+      "path": "twilio/client.go",
+      "git_blob": "a05676e014b31e85bbbd38a04ad0a20b680d68f1",
+      "mode": "100644"
+    },
+    {
+      "path": "twilio/client_test.go",
+      "git_blob": "381b3d68aaf3657ccc8f1a10102a7c4f7a4f326c",
+      "mode": "100644"
+    },
+    {
+      "path": "twilio/types.go",
+      "git_blob": "530187127a676154622b0238ad9653145024a926",
+      "mode": "100644"
+    },
+    {
+      "path": "user/access_cache.go",
+      "git_blob": "0218b1b630ca17a5951cd88cafe0049533f80ccf",
+      "mode": "100644"
+    },
+    {
+      "path": "user/access_cache_test.go",
+      "git_blob": "17fd2c2cc76231eedee0bb67523d4b0ce5acf2e1",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager.go",
+      "git_blob": "4cfba6f59df162483cd88eb11341143e2f33bf14",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager_postgres.go",
+      "git_blob": "c949ba68de8e7b01ac779d70e7ca41fb30723368",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager_postgres_schema.go",
+      "git_blob": "d1e585e86410e09ac31900b79fe3aa8089a7f9be",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager_sqlite.go",
+      "git_blob": "e7e1c0be996bc90c88ea44f03d68f7384ee16f58",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager_sqlite_schema.go",
+      "git_blob": "fa8952d63241b304ca8056f66c09766a47e970a3",
+      "mode": "100644"
+    },
+    {
+      "path": "user/manager_test.go",
+      "git_blob": "686ff9033463a1fb893f6a194246b4875228cb22",
+      "mode": "100644"
+    },
+    {
+      "path": "user/types.go",
+      "git_blob": "30be694192c822961ba546114583c5d5ec39f29d",
+      "mode": "100644"
+    },
+    {
+      "path": "user/types_test.go",
+      "git_blob": "690fddf34f731266d4f6cdb9137e733c5cff9c71",
+      "mode": "100644"
+    },
+    {
+      "path": "user/util.go",
+      "git_blob": "50d0c0122f4029bd252ad51c9e87eb2f77418477",
+      "mode": "100644"
+    },
+    {
+      "path": "user/util_test.go",
+      "git_blob": "2fa542ab74e792d5a8399657754aa97ad2b80b76",
+      "mode": "100644"
+    },
+    {
+      "path": "util/batching_queue.go",
+      "git_blob": "a2688bf9d672af31d5406733452f6310b0c1d943",
+      "mode": "100644"
+    },
+    {
+      "path": "util/batching_queue_test.go",
+      "git_blob": "3a4c6a943a6f27be37f7e395ebf55a08e72f22e7",
+      "mode": "100644"
+    },
+    {
+      "path": "util/content_type_writer.go",
+      "git_blob": "7174f028669648340c783032e5caf7c80e612369",
+      "mode": "100644"
+    },
+    {
+      "path": "util/content_type_writer_test.go",
+      "git_blob": "e30e821b83e5b66115fc5ad5b71efc1103858af6",
+      "mode": "100644"
+    },
+    {
+      "path": "util/embedfs.go",
+      "git_blob": "b75bf6caa17f4b621ae1383e4fbdbec4f89cecae",
+      "mode": "100644"
+    },
+    {
+      "path": "util/embedfs/test.txt",
+      "git_blob": "920d0357f30b0f15330284db30ea1b8adf6d8aa9",
+      "mode": "100644"
+    },
+    {
+      "path": "util/embedfs_test.go",
+      "git_blob": "35e5d57afb49bb9f1b234eb2ebfc0e8b29d7d137",
+      "mode": "100644"
+    },
+    {
+      "path": "util/gzip_handler.go",
+      "git_blob": "9b30fa8a618f896baa152dd9ee579903021cf2e5",
+      "mode": "100644"
+    },
+    {
+      "path": "util/gzip_handler_test.go",
+      "git_blob": "21b2358bc1e80d879b607a0ecc8ba52ba34bb5e0",
+      "mode": "100644"
+    },
+    {
+      "path": "util/limit.go",
+      "git_blob": "bdde9a7e87f8ba372726142398296e3fdb47601d",
+      "mode": "100644"
+    },
+    {
+      "path": "util/limit_test.go",
+      "git_blob": "a771d793e475c65a64dd94441fc178dcfc2088b5",
+      "mode": "100644"
+    },
+    {
+      "path": "util/linger_queue.go",
+      "git_blob": "efa620dd5771b08809b042398d01e87313e2f10a",
+      "mode": "100644"
+    },
+    {
+      "path": "util/linger_queue_test.go",
+      "git_blob": "43b02bdee45e27052eec3e39f038b7e6fa1d5fe3",
+      "mode": "100644"
+    },
+    {
+      "path": "util/lookup_cache.go",
+      "git_blob": "e3f086c722d1ac62bb15d32b10e597ec62329cd4",
+      "mode": "100644"
+    },
+    {
+      "path": "util/lookup_cache_test.go",
+      "git_blob": "5d45af34b987cbed5c534af802ae63b3f82076d7",
+      "mode": "100644"
+    },
+    {
+      "path": "util/peek.go",
+      "git_blob": "03d2e20a2d56571a0fb4d7ad45c3ae4f34f5f82e",
+      "mode": "100644"
+    },
+    {
+      "path": "util/peek_test.go",
+      "git_blob": "e076394c76119e0c483b7dc2b1e8650538816df3",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/LICENSE.txt",
+      "git_blob": "f311b1eaaaa84ce01c6fa1eb0a9a75be3f6f189c",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/crypto.go",
+      "git_blob": "da4bfc94f1e250c4df4bf644dcf941f480af7220",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/crypto_test.go",
+      "git_blob": "d6fb1736325be99a00a77f993db152006a20660d",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/date.go",
+      "git_blob": "3231e6195e39aab3388e640e7b58958127d3c418",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/date_test.go",
+      "git_blob": "ee9a9cc6523bfcf1fc8662ae5c749e07af1d0ec5",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/defaults.go",
+      "git_blob": "0d3056b9d715abbb4e1cdd560f490c623577eab1",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/defaults_test.go",
+      "git_blob": "f67c9cd91069ab0f8bcba5db56a8a854095ccfe7",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/dict.go",
+      "git_blob": "4bb16d03cbc1d6d0612a18577ee96649b386e1ca",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/dict_test.go",
+      "git_blob": "0b293140ebf2dd4e1487919bf1422fadb10e4fad",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/doc.go",
+      "git_blob": "91031d6d197ed1652ea7450e0c07e9043ecef4d5",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/example_test.go",
+      "git_blob": "2f1b74c8523b0f12c1f3c40df6f7f83613c8a8b9",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/flow_control.go",
+      "git_blob": "cfaa5081eaddc2c34f86bacadcb6179497599afd",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/flow_control_test.go",
+      "git_blob": "d4e5ebf03fddeecb666b2549b0fed92e04615783",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/functions.go",
+      "git_blob": "bd52c2540e8b8ea2ec4e5c758013bd51ee4760f9",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/functions_linux_test.go",
+      "git_blob": "cfbf253a762e0b88f9ead30a46a41b131b6260fd",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/functions_test.go",
+      "git_blob": "4e83e9936cfd5acc6f2dc76e34a340ea03e66710",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/list.go",
+      "git_blob": "fdcbf5e67a5a222922c9d05e812c8b1a866ac81f",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/list_test.go",
+      "git_blob": "e6693b2f5c144ad70a18a775c1f26d370788ed9c",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/numeric.go",
+      "git_blob": "7ee3616d9e686d3ccf231c83bef60b7407546ec5",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/numeric_test.go",
+      "git_blob": "63310c523bb69eec580e85ae3125d118ba3f1c55",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/reflect.go",
+      "git_blob": "6315a78098703472d0df4765ae01d78de21d7b0d",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/reflect_test.go",
+      "git_blob": "f102907e1fe6e76d0e1fd46474266b93cdeaa419",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/regex.go",
+      "git_blob": "9853d2e157687b8f912b4f0b3f84e0fbc56852e1",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/regex_test.go",
+      "git_blob": "60aafc2914cceef7f83fb21134fc1e13949bcde4",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/strings.go",
+      "git_blob": "f14eb8afa55e00b8d360f6b450199c809d9f2654",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/strings_test.go",
+      "git_blob": "40ce38dfd2905786a9c38cd26e96d96e54c8443b",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/url.go",
+      "git_blob": "52dac3bb608370974671a3bfe6df29f1a27e9817",
+      "mode": "100644"
+    },
+    {
+      "path": "util/sprig/url_test.go",
+      "git_blob": "16d457a7d4baa8c38ae0435000f7c53cfccd4030",
+      "mode": "100644"
+    },
+    {
+      "path": "util/time.go",
+      "git_blob": "4583e7e27efe9350b71a3bfb02ebc242da9325c9",
+      "mode": "100644"
+    },
+    {
+      "path": "util/time_test.go",
+      "git_blob": "8e49614d2c6314a3dd84b70d377ed6f398bd4065",
+      "mode": "100644"
+    },
+    {
+      "path": "util/util.go",
+      "git_blob": "a4b1d685e1c9e261a69d456994e4faebc17c1da4",
+      "mode": "100644"
+    },
+    {
+      "path": "util/util_test.go",
+      "git_blob": "157f945a1a6dc11043781809e9d3dc0d7aa8646e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/.eslintignore",
+      "git_blob": "0815afc717acfe6fd4e5c2aebed910ce8a7a9eec",
+      "mode": "100644"
+    },
+    {
+      "path": "web/.eslintrc",
+      "git_blob": "a21221fc450f3a98e74d61d5246b482ace572bdd",
+      "mode": "100644"
+    },
+    {
+      "path": "web/.prettierignore",
+      "git_blob": "565f2ebd8cefcece5f7ad06245372a143ed38559",
+      "mode": "100644"
+    },
+    {
+      "path": "web/index.html",
+      "git_blob": "5c26ff1ccc35886edda764ee965a332f2db47460",
+      "mode": "100644"
+    },
+    {
+      "path": "web/jsconfig.json",
+      "git_blob": "924531f591943346dc10cbb33a5b507368d305e1",
+      "mode": "100644"
+    },
+    {
+      "path": "web/package-lock.json",
+      "git_blob": "9458d66003c3daec9a52a2a02e2f49b7dcaf2bda",
+      "mode": "100644"
+    },
+    {
+      "path": "web/package.json",
+      "git_blob": "5cd705de7df9ece2982ad3dfac50eb4bb460ae64",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/config.js",
+      "git_blob": "62f49ed4cb6490c4532dc239d3e70168337d2c61",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/css/app.css",
+      "git_blob": "213859c0a73d74b7447739e7059572be0332718d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/css/fonts.css",
+      "git_blob": "1fd7c60770229d6cae8919c9eab4d1ca9bd01563",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/fonts/roboto-v29-latin-300.woff2",
+      "git_blob": "46445bf807becda5c338b1bb09d2e93398fc4861",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/fonts/roboto-v29-latin-500.woff2",
+      "git_blob": "ce795fa8bdd3ca2b9c42124cc89e61e9272e9fb2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/fonts/roboto-v29-latin-700.woff2",
+      "git_blob": "01d05fa509b7f91526cabe90c9bafa130e4c118a",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/fonts/roboto-v29-latin-regular.woff2",
+      "git_blob": "ebe1795f85a661c205e4a4612eaf47d56273e68e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/apple-touch-icon.png",
+      "git_blob": "8f89050995c49f6073a9167c8afd7d2831cac384",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/favicon.ico",
+      "git_blob": "857fa54c43b1c8113ffdd1dd8a68ed05d81309f9",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/ntfy-mask.svg",
+      "git_blob": "32fced6dfba627acef5388dfd6d65bbd4ffdcba2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/ntfy-splash.svg",
+      "git_blob": "a2815598e91057a7eed57b0274883770db5abd9b",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/ntfy.png",
+      "git_blob": "05c6fd88532ae8ccad3a94f064349141d826f1f2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/pwa-192x192.png",
+      "git_blob": "a82c28dfa5d191787e286bf631cc32784f79c8e3",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/images/pwa-512x512.png",
+      "git_blob": "777f457afc4aae902e112011d69d20bb102ad541",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ar.json",
+      "git_blob": "cb786842758d1bffac6b05014ea02b829f7086d3",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/be.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/bg.json",
+      "git_blob": "7e280e5813f924e44280735a48817bd901ee69a7",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/bn.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ca.json",
+      "git_blob": "966adef1a34d691669b668060e7db802e47cb611",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/cs.json",
+      "git_blob": "4590624d7d9bb2628c7d2b731ff71b08c7e279d0",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/cu.json",
+      "git_blob": "73f5da0f937dff4c52995d4d8cceee4a63e83f96",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/cy.json",
+      "git_blob": "da6c9b41fd013f06b49cc1dcf3288279c8ada924",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/da.json",
+      "git_blob": "79878892d21a1efbfc0dc17893f32d9c5010af43",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/de.json",
+      "git_blob": "8fd5a5ba85c416ae0a4f0740cfb3024067f584ee",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/en.json",
+      "git_blob": "46fbb32fcc9793219f50756290a3b31d7c1d957f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/en_GB.json",
+      "git_blob": "8c08c550af82f90ee592db167c97deacb696317b",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/eo.json",
+      "git_blob": "237262c498eb0e69338086344ebc619e1dae8e27",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/es.json",
+      "git_blob": "94ae3cb855da95ba91996f4e63ead366cc3b358c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/et.json",
+      "git_blob": "97b74fd51fdb9c6303a0afc9024c7e1310c4e7cf",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/fa.json",
+      "git_blob": "4d46c422a8fd08540ddc90889832aac2ac2d46f6",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/fi.json",
+      "git_blob": "4128fdb5ac62a6e2e4680257dad8a07388abda24",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/fr.json",
+      "git_blob": "bfbc1eea0c5d4346b33aa5d3fd9669f623ec21ad",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/gl.json",
+      "git_blob": "8e5b8b57db4ea41cd5060d6367b30d8a852cbc8b",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/he.json",
+      "git_blob": "9e46e07120e88ca0c8e3bda78cb39d3ef11deb5b",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/hu.json",
+      "git_blob": "447a493c1e5b17cf4ec40e470768ba6e5740e94f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/id.json",
+      "git_blob": "c86537ace4813e926aef22779b018bd1ecddbeb9",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/it.json",
+      "git_blob": "97a1d432ce30a6124ac1b1a6964ace28d1707412",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ja.json",
+      "git_blob": "4e2866be73dcc8dc04d8bad0f9868d173f9759b8",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ko.json",
+      "git_blob": "02b003bdcd131ff7bca458f1d68add4b2f2f80f0",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/lt.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/lv.json",
+      "git_blob": "ceb0edc4d8e4a7e1d27087e2043b118381fd415e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/mk.json",
+      "git_blob": "a8fcba29c5288001b5bf1b4dd82927c88d8bb9b9",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ml.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ms.json",
+      "git_blob": "67093d840c5ae730216b39c9d596e01f29c42092",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/nb_NO.json",
+      "git_blob": "e901b6780f11349a6cefec1d4849f0831d53fcd8",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/nl.json",
+      "git_blob": "ae920efaa1ff8f74d62c01ac5a6ca351328481f6",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/pl.json",
+      "git_blob": "2cb5d49494d65abbd13a98768c97135ddbf298de",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/pt.json",
+      "git_blob": "cc6cc63983fb4c7d55f7a7b145d9b811cb480ea0",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/pt_BR.json",
+      "git_blob": "d96daf3b45f3b35b9b2f089a2d4edab462623e27",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ro.json",
+      "git_blob": "637b9886907691e4f8965a3dc287a47c5217e8b7",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ru.json",
+      "git_blob": "fdd67d2efed4dd1996030d982725bbaa1188bdd1",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/sk.json",
+      "git_blob": "7b26ca81d53aab6663ba63d62107dcf098392257",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/sl.json",
+      "git_blob": "b13208c1d87d33483b4db6ff76b7c476f1e1742f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/sq.json",
+      "git_blob": "c146c77d56c7bb78b8222ce58c5573d08e252380",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/sv.json",
+      "git_blob": "92c7563ef47e4a386126864064ab91397212e029",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/ta.json",
+      "git_blob": "f66d7f7d0978736e00adbdfabfcb99b2ab6d5b82",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/te.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/th.json",
+      "git_blob": "fa92548d24ae7f1283b444f9e72a7c4afaf320bc",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/tr.json",
+      "git_blob": "d53cd96ba9047820b08448a29399250505b35877",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/uk.json",
+      "git_blob": "6ed7d40d2f091c3e5e6621f13d72d919787f270a",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/uz.json",
+      "git_blob": "b951406ad617724095a3fb6c795c32fc789988fc",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/vi.json",
+      "git_blob": "a05f197eb5591bdd9d60d77e00f4c515a84b8d85",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/zh_Hans.json",
+      "git_blob": "9f8d8df22706a3a4e89cc3ec4f7bdabe7815fc29",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/zh_Hant.json",
+      "git_blob": "e94536dff8c5c226324fae4e0990fdc5b81a7a52",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/static/langs/zu.json",
+      "git_blob": "0967ef424bce6791893e9a57bb952f80fd536e93",
+      "mode": "100644"
+    },
+    {
+      "path": "web/public/sw.js",
+      "git_blob": "1c0235d3f508c46ca218584d5b523078f75abfd7",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/AccountApi.js",
+      "git_blob": "6b731ca3417a7eb1e85d1a4ea6689481a592721f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/AccountApi.test.js",
+      "git_blob": "af3977cc1b4236aac9a014a653d7e4499e877e18",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Api.js",
+      "git_blob": "b2bfd06fc9af4bf355f882e63e0405f869b3eb6c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Api.test.js",
+      "git_blob": "42c8639d780e069eab7027cb6041d1e38a8eba1f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Connection.js",
+      "git_blob": "27e8c7d987e96d590c8e23c72d938dcee67a07cf",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/ConnectionManager.js",
+      "git_blob": "2b3c638e414b29cdb06b3c02a8567b25fec784b2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Notifier.js",
+      "git_blob": "5e3b9a60dce7a362e89d90d8387b4357fd29a836",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Poller.js",
+      "git_blob": "534cceadacd9604bb3eafbf70698df0490723b74",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Prefs.js",
+      "git_blob": "2d2a0808b76a90c64a261c849dcaf5348f32cc30",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Prefs.test.js",
+      "git_blob": "2e6ff0b29d8a627feeff2bd629596f2caeec5234",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Pruner.js",
+      "git_blob": "074370b24933eb0b7bd554ee0a63a8d7aaeff6b2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/Session.js",
+      "git_blob": "8db620e7c15bc9ad9415097bc25f8727dd4d9e3c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/SubscriptionManager.js",
+      "git_blob": "9303f1d957339000db23bdd09f720d4397b9724b",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/SubscriptionManager.test.js",
+      "git_blob": "935b81e8fb2457f852d7d7fdf2e6d7b6abb6851d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/UserManager.js",
+      "git_blob": "b53b1da8afeaad5189940c1c624e6b05297be578",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/VersionChecker.js",
+      "git_blob": "8f7c2c305b2e6c52f4578b0752943329b778e5f5",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/actions.js",
+      "git_blob": "43775b099771b3dd30501ee1773dfa9d505a0dbb",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/config.js",
+      "git_blob": "24e86f3a59ca0f3833e1643577a63e694726a5fe",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/db.js",
+      "git_blob": "e088a267ac91b1484f0771d7651dc876052e802a",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/emojis.js",
+      "git_blob": "b7912c3515364bcb7148b3a635a1e0a43c4005e8",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/emojisMapped.js",
+      "git_blob": "9b18708a7c8c991a63e23b398616715298bafdfd",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/errors.js",
+      "git_blob": "34c86f8d24f09f07c4aa37078d54f839a7247567",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/errors.test.js",
+      "git_blob": "6e2a827fe4f3813af7dc63c306871229dc0c1ea1",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/events.js",
+      "git_blob": "65755106bf72d5524ceb10afb76aac677cd6189c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/i18n.js",
+      "git_blob": "298f595c28b135d99c8119f834a5692934c5be42",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/notificationUtils.js",
+      "git_blob": "0fb1ef96ba10a26d92dd22bfd7824cd73ba92f29",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/notificationUtils.test.js",
+      "git_blob": "e39f81427d9ba4bb7e5d674717fe11e15cae1041",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/splash.js",
+      "git_blob": "55988cf43ffa345a89d3f0f54090c125751d1721",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/transition.js",
+      "git_blob": "a9d5d0dfc5aa2517691aabbd1aabad00dbfcf6fd",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/utils.js",
+      "git_blob": "c35f890e7ad3e054613fbe47e74f70ab71d84f83",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/app/utils.test.js",
+      "git_blob": "590c419070604799bdd6e66e1bddfb813f7e97df",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Account.jsx",
+      "git_blob": "bd920622f042be32267626ffb88c5ed27a2baa4d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/AccountContext.js",
+      "git_blob": "1bd3d724f8369fa5956fefb436b77d26bc63355f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/ActionBar.jsx",
+      "git_blob": "13483f9cf164f98efa46eaca18b3ef51741b9e59",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/App.jsx",
+      "git_blob": "ea5fbc47f7b18582b22d19427e5151384f2b8d6d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/AttachmentIcon.jsx",
+      "git_blob": "0cdcb0b0a29b0b2f3e40062f4b7955592b4007bc",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/AvatarBox.jsx",
+      "git_blob": "9f11f912454d52a8e40015d937818059350e4994",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/DialogFooter.jsx",
+      "git_blob": "bcaf4cfc6e6eb1e61141a503d458951aba9b0cab",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/EmailVerify.jsx",
+      "git_blob": "37ad910cd314fe134d12e76d5e065e970c4cac2d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/EmojiPicker.jsx",
+      "git_blob": "d5547f5ab080c604fd1227077f847981b1487795",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/ErrorBoundary.jsx",
+      "git_blob": "554a5f5b22ad1a8a8e8891dcc6365c8283029b2a",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Login.jsx",
+      "git_blob": "8fc4f626fbd60c9065c9fced76e9f2b0a9dc3100",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/MarkdownContent.jsx",
+      "git_blob": "12a66283c33b1ebc052aa9f8a2ddba83ade20094",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Messaging.jsx",
+      "git_blob": "f3610fd039f538f167983e5bf6de41cc403ab974",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Navigation.jsx",
+      "git_blob": "3cd98546cb8e0d0b750be2a5becc3f27fa2e3d0f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Notifications.jsx",
+      "git_blob": "316ebfa6cada8750b7937b93b8bde37a73557b89",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/PasswordReset.jsx",
+      "git_blob": "58a26fc6cd10d7776fd88e666d69ce9c64213cce",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/PasswordResetRequest.jsx",
+      "git_blob": "85f1161cfada07b344eb92e7e9389ed53e748af7",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/PopupMenu.jsx",
+      "git_blob": "dd9500290ad417b9407e6f3204fd7e7656bc3bf5",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Pref.jsx",
+      "git_blob": "4da1738133d85f88ee537640ec6ffa4de0bec243",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/PrefCache.jsx",
+      "git_blob": "d75b2c8558267f6206f22ffb6d50b822bee29329",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Preferences.jsx",
+      "git_blob": "68ca43cafc986c24fe67bcc3faad6072b0b1b92d",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/PublishDialog.jsx",
+      "git_blob": "4c1f492596ad58a5584eefb27cbaa03cc7051c2f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/RTLCacheProvider.jsx",
+      "git_blob": "a85fced6b5ba3adea7891704b548103a6d4a46a3",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/ReserveDialogs.jsx",
+      "git_blob": "f1febdd92076762b68b70b83b0e4ab685f1320d9",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/ReserveIcons.jsx",
+      "git_blob": "7e2f68473b54fb41ac75ca33f85d56fc17f97378",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/ReserveTopicSelect.jsx",
+      "git_blob": "39ae5df2438ef1d9817a48d5c26dbd02f65565ea",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/Signup.jsx",
+      "git_blob": "4421bdb637b20e0281d0a9751a8ed31eb6827336",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/SubscribeDialog.jsx",
+      "git_blob": "13dbdd9fdd7cc2209fd17c8cdd74a0a4d5e4534e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/SubscriptionPopup.jsx",
+      "git_blob": "1bb4f493cf3a13519fab67a13b743a7cc95c28ce",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/UpgradeDialog.jsx",
+      "git_blob": "319aa578b2c805e0a23996dd0a9d5ee883d2e82a",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/hooks.js",
+      "git_blob": "ba62f54f407e19474d7c585412a533766d6838b5",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/routes.js",
+      "git_blob": "09ffa8fd629d6e78d5cfc8e5cca4383e7301a79c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/styles.js",
+      "git_blob": "db0690bcbcdc44d5bc288f80271d8a75db126cd6",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/components/theme.js",
+      "git_blob": "f930e853ab6a6cc045bccf97377f7eaee5db3c1e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/file-app.svg",
+      "git_blob": "b66fca2c07d370dfbe8adabfb7b35bd3e05fc9bb",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/file-audio.svg",
+      "git_blob": "cf1962d6820f74c7bee73f28f76bb03bf72268ae",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/file-document.svg",
+      "git_blob": "a0bab31963ec0ced54fb3cee30a48db9c3a1f1c5",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/file-image.svg",
+      "git_blob": "3ddb0e0a1a75b5724d707b18450e4d110ea2ad00",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/file-video.svg",
+      "git_blob": "89e43dac0f26d0e278c2b17bb8ad72894d9d182c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/ntfy-filled.svg",
+      "git_blob": "a9c07fc3c977dcdfa15ebac245f34de9c65f4cf2",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/ntfy-outline.svg",
+      "git_blob": "2e215c5a4cf69372f5b9b30b5bb5f55019f5fb21",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/ntfy.png",
+      "git_blob": "92312feac6a3c9effe8323e76a6d30f2ce88d724",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/ntfy.svg",
+      "git_blob": "9e5b5136fd9740a5ed0c6e40b7c305d6d62c3183",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/priority-1.svg",
+      "git_blob": "51d8f833c01784dd61bf8658182871a85a6d34e9",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/priority-2.svg",
+      "git_blob": "854038e7a2721c5b2362908f679cd93194f5f7c8",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/priority-3.svg",
+      "git_blob": "428900f3b88096570943849c55e076efa5317933",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/priority-4.svg",
+      "git_blob": "976d23ca706072d53130dcc3c9dad4d11bc77253",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/img/priority-5.svg",
+      "git_blob": "f4e060adee4dff458b70c78688067d5ce0682cc8",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/index.jsx",
+      "git_blob": "1a123a8a4ca966061e83c0727c0bd69933df4039",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/registerSW.js",
+      "git_blob": "842cf80eb1550935a12677e62f2c24bd5f251bd6",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/beep.mp3",
+      "git_blob": "6f844460a5d85c0e252a24dfb1a94f486b13dec4",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/dadum.mp3",
+      "git_blob": "baea6b131b3fa2cd419a6175cbfa44455c28f3eb",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/ding.mp3",
+      "git_blob": "124de30d06b31b687dc7ad6a1601f7743326d434",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/juntos.mp3",
+      "git_blob": "c18d560b74a833df916954570832b140531ab70e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/pop-swoosh.mp3",
+      "git_blob": "3d5bf4761d2b22186f4b5e1180d1d5a76ee381ec",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/pop.mp3",
+      "git_blob": "007ce4bd4c4aa69a6bd0badf3bb6d1b76660735e",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/sounds/pristine.mp3",
+      "git_blob": "f1566e44b9cf43cf26dff493469e2ae3a5de05cb",
+      "mode": "100644"
+    },
+    {
+      "path": "web/src/test/setup.js",
+      "git_blob": "fa79bac9b166700cb2239b61d024c948723fc85c",
+      "mode": "100644"
+    },
+    {
+      "path": "web/vite.config.js",
+      "git_blob": "5f1e0741e7b2ced546030a2c6fe6eb66626c360f",
+      "mode": "100644"
+    },
+    {
+      "path": "web/vitest.config.js",
+      "git_blob": "8a3a406946b13ec72501f336bd1f53e7c7b7fd41",
+      "mode": "100644"
+    },
+    {
+      "path": "webpush/store.go",
+      "git_blob": "a05fee6c4668d788c8415c3c2cf87ed8e296e1a6",
+      "mode": "100644"
+    },
+    {
+      "path": "webpush/store_postgres.go",
+      "git_blob": "dbb67faa988dcf75ca74bc6757b30fd996d25041",
+      "mode": "100644"
+    },
+    {
+      "path": "webpush/store_sqlite.go",
+      "git_blob": "6a5f9683e4e4d7b3a4a6c2e3fb875bf41455c3e5",
+      "mode": "100644"
+    },
+    {
+      "path": "webpush/store_test.go",
+      "git_blob": "65dd817f1d680a1020675a53e5b9d15280e1e958",
+      "mode": "100644"
+    },
+    {
+      "path": "webpush/types.go",
+      "git_blob": "e438dcbe4232b26ae5cecb8002467883777c1c83",
+      "mode": "100644"
+    }
+  ]
+}

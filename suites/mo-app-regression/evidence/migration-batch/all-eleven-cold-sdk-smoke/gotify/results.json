@@ -1,0 +1,69 @@
+{
+  "app": "gotify/server",
+  "version": "v3.1.1",
+  "archive_sha256": "d452faad071981d191d5c95f70d0f9520dc2ef2336b2b03055e12cfabfbae2d2",
+  "binary_sha256": "7c5fbcce5fa130c8e7bf643fee4f069a3aed974ead16bc5a84a168e31930e7b7",
+  "schema": "mo_reg_gotify_5c02382ada124b9b",
+  "checks": [
+    {
+      "name": "target_is_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_initialization_and_health",
+      "passed": true
+    },
+    {
+      "name": "native_client_and_application",
+      "passed": true
+    },
+    {
+      "name": "anonymous_and_invalid_token_denied",
+      "passed": true
+    },
+    {
+      "name": "concurrent_native_acknowledgments",
+      "passed": true,
+      "attempted": 16,
+      "acknowledged": 16,
+      "unique_ids": 16,
+      "workers": 4
+    },
+    {
+      "name": "exact_native_api_readback",
+      "passed": true
+    },
+    {
+      "name": "cross_user_isolation",
+      "passed": true
+    },
+    {
+      "name": "sql_exact_content_and_owner_relationships",
+      "passed": true
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_tokens_and_exact_api_values",
+      "passed": true
+    },
+    {
+      "name": "restart_sql_durability",
+      "passed": true,
+      "durable_messages": 16
+    },
+    {
+      "name": "restart_cross_user_isolation",
+      "passed": true
+    }
+  ],
+  "started_at_utc": "2026-10-13T00:41:53Z",
+  "existing_databases_modified": false,
+  "native_schema_initialization": true,
+  "binary_source": "local_pinned_binary",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "passed": true,
+  "finished_at_utc": "2026-10-13T00:42:01Z"
+}

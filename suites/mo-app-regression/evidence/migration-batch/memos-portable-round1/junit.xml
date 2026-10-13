@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="memos-native" tests="5" failures="1"><testcase name="pinned_native_binary" classname="memos-native" /><testcase name="actual_matrixone" classname="memos-native" /><testcase name="native_schema_created" classname="memos-native" /><testcase name="no_manual_users_before_bootstrap" classname="memos-native" /><testcase name="native_first_user_admin_bootstrap" classname="memos-native"><failure message="native_first_user_admin_bootstrap" /></testcase></testsuite>

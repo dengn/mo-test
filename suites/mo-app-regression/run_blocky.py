@@ -1,3 +1,4 @@
+from native_common import runtime_root
 """Official Blocky DNS runtime with native MatrixOne query-log migration and writes."""
 import argparse,hashlib,io,json,os,secrets,signal,shutil,socket,struct,subprocess,tarfile,threading,time,uuid,urllib.request,xml.etree.ElementTree as ET
 from collections import Counter
@@ -13,7 +14,7 @@ def binary(provided, min_free_mib=2048):
   provided=provided.resolve()
   if hashlib.sha256(provided.read_bytes()).hexdigest()!=BINARY_SHA:raise RuntimeError("Official binary hash mismatch")
   return provided
- target=ROOT/'runtime/blocky-v0.35.0/blocky'
+ target=runtime_root()/'blocky-v0.35.0/blocky'
  if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest()==BINARY_SHA:return target
  target.parent.mkdir(parents=True,exist_ok=True)
  if provided:data=provided.read_bytes();assert hashlib.sha256(data).hexdigest()==BINARY_SHA
@@ -55,8 +56,8 @@ def main():
  if not 1<=a.queries<=8192 or not 1<=a.workers<=64:p.error('Bounds: 1..8192 queries and 1..64 workers')
  if 'MO_PASSWORD' not in os.environ:p.error('MO_PASSWORD is required')
  if a.min_free_mib<128 or (a.min_free_mib<2048 and (not a.binary or a.queries>64)):p.error('Below 2 GiB requires a local pinned binary and basic workload')
- if shutil.disk_usage(ROOT).free<a.min_free_mib*1024**2:p.error('Insufficient configured disk headroom')
- a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_blocky_'+uuid.uuid4().hex[:16];private=ROOT/'runtime'/schema;private.mkdir(mode=0o700,parents=True)
+ if shutil.disk_usage(runtime_root()).free<a.min_free_mib*1024**2:p.error('Insufficient configured disk headroom')
+ a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_blocky_'+uuid.uuid4().hex[:16];private=runtime_root()/schema;private.mkdir(mode=0o700,parents=True)
  cfg=dict(host=os.getenv('MO_HOST','127.0.0.1'),port=int(os.getenv('MO_PORT','6001')),user=os.getenv('MO_USER','root'),password=os.environ['MO_PASSWORD'],charset='utf8mb4',autocommit=True,connect_timeout=10,read_timeout=30)
  report={'app':'0xERR0R/blocky','version':'v0.35.0','commit':'45a242ffce62c3e203f9a2c8a87fbb8ba106c7ab','binary_sha256':BINARY_SHA,'schema':schema,'native_runtime_attempted':False,'native_GORM_migration':True,'source_edits':False,'min_free_mib':a.min_free_mib,'checks':[],'started_at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())};proc=None;log=None;up=None;finish=threading.Event()
  def check(name,value,**metrics):

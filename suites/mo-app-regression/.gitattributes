@@ -1,0 +1,3 @@
+# Diff context markers precede original tabs and blank lines; preserve patch bytes.
+fixtures/**/*.patch -whitespace
+fixtures/**/LICENSE* -whitespace

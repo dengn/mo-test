@@ -1,6 +1,6 @@
 # Huginn 稳定版实验适配
 
-固定源码 d6f25e28a36f360ad80c73445c3ce5229be7e538（MIT，867 Git blob 核对通过），实际目标 MatrixOne v4.2.5。这里只保存本轮验证所用配置和迁移源代码，不是第五个独立 CI 应用驱动。
+固定源码 d6f25e28a36f360ad80c73445c3ce5229be7e538（MIT，867 Git blob 核对通过），实际目标 MatrixOne v4.2.5。这些配置支持 run_huginn.py 独立驱动：每轮校验并复制固定源码、新建库、原生初始化及业务验证；运行环境见 ../../RUNTIME-SDK.md。
 
 `database.yml` 使用 Rails 支持的变量配置，保留原生 strict:false 对有效 SQL 模式的处理，移除其字符串拼接产生的空模式项；wait_timeout 显式设为服务器接受的 86400。
 

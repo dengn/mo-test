@@ -1,0 +1,42 @@
+{
+  "app": "FreshRSS/FreshRSS",
+  "commit": "4a810f1624b9d0b97b4400614cf9aacc8ada40e3",
+  "schema": "mo_reg_freshrss_06608c1ac70b4aa7",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP_runtime",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_prepare_directories",
+      "passed": true
+    },
+    {
+      "name": "native_install_configuration",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "source_edits": [
+    "CategoryDAO.php",
+    "EntryDAO.php"
+  ],
+  "min_free_mib": 2048,
+  "limitations": [
+    "Google Reader API only; complete UI/populated upgrades/concurrent feed commits unverified"
+  ],
+  "verified_source_blobs": 1294,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "AssertionError",
+  "failed_stage": "native_CLI_initialization",
+  "failed_check": "native_install_configuration",
+  "finished_at_utc": "2026-10-13T00:03:16Z"
+}

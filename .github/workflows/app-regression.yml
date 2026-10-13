@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       profile:
-        description: smoke is controls plus four native apps; defects is a strict failing gate until fixed
+        description: smoke is controls plus eleven native apps; defects is a strict failing gate until fixed
         type: choice
         options: [smoke, native, controls, defects, observe, load]
         default: smoke
       app:
         description: Native app selection (use all for SQL-only profiles)
         type: choice
-        options: [all, gotify, blocky, plik, ergo]
+        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer]
         default: all
       include_panic:
         description: Explicitly enable panic fixtures on a dedicated instance (defects or observe only)
@@ -60,6 +60,16 @@ jobs:
       MO_PORT: ${{ secrets.MO_TEST_PORT }}
       MO_USER: ${{ secrets.MO_TEST_USER }}
       MO_PASSWORD: ${{ secrets.MO_TEST_PASSWORD }}
+      MO_APP_RUNTIME_ROOT: ${{ vars.MO_APP_RUNTIME_ROOT }}
+      MO_PHP_BINARY: ${{ vars.MO_PHP_BINARY }}
+      MO_BAIKAL_RELEASE_DIR: ${{ vars.MO_BAIKAL_RELEASE_DIR }}
+      MO_ADMINER_RELEASE_FILE: ${{ vars.MO_ADMINER_RELEASE_FILE }}
+      MO_FRESHRSS_SOURCE_TREE: ${{ vars.MO_FRESHRSS_SOURCE_TREE }}
+      MO_NTFY_BINARY: ${{ vars.MO_NTFY_BINARY }}
+      MO_MEMOS_BINARY: ${{ vars.MO_MEMOS_BINARY }}
+      MO_NTFY_BUILD_MANIFEST: ${{ vars.MO_NTFY_BUILD_MANIFEST }}
+      MO_MEMOS_BUILD_MANIFEST: ${{ vars.MO_MEMOS_BUILD_MANIFEST }}
+      MO_HUGINN_RUNTIME_CONFIG: ${{ vars.MO_HUGINN_RUNTIME_CONFIG }}
       PROFILE: ${{ inputs.profile }}
       APP: ${{ inputs.app }}
       INCLUDE_PANIC: ${{ inputs.include_panic }}

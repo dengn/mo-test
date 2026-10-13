@@ -11,9 +11,10 @@ import sys
 import time
 import uuid
 import xml.etree.ElementTree as ET
+from native_common import runtime_root
 
 ROOT = Path(__file__).resolve().parent
-APPS = {'gotify': 'gotify-linux-amd64', 'blocky': 'blocky', 'plik': 'plikd', 'ergo': 'ergo'}
+APPS = {'gotify': 'gotify-linux-amd64', 'blocky': 'blocky', 'plik': 'plikd', 'ergo': 'ergo', 'documize': 'documize', 'huginn': None, 'ntfy': 'ntfy-matrixone', 'memos': 'memos', 'baikal': 'frankenphp', 'freshrss': 'frankenphp', 'adminer': 'frankenphp'}
 CONTROLS = ['PASS-GENERATED-UPPER', 'PASS-JSON-UNICODE', 'PASS-ROLLBACK']
 LOAD = {'gotify': ['--messages', '128', '--workers', '4'],
         'blocky': ['--queries', '1024', '--workers', '32'],
@@ -26,7 +27,7 @@ class GateBlocked(RuntimeError):
 
 
 def plan(profile, apps=None, include_panic=False, expected_commit=None, binary_dir=None, min_free_mib=2048):
-    selected = list(APPS) if apps is None else apps
+    selected = list(LOAD if profile == 'load' else APPS) if apps is None else apps
     unknown = set(selected) - set(APPS)
     if unknown:
         raise ValueError('No independent native driver: ' + ', '.join(sorted(unknown)))
@@ -40,8 +41,10 @@ def plan(profile, apps=None, include_panic=False, expected_commit=None, binary_d
         raise ValueError('--expected-commit requires a full 40-character Git SHA')
     if min_free_mib < 2048 and profile == 'load':
         raise ValueError('Load profile requires at least 2048 MiB disk headroom')
-    if min_free_mib < 2048 and profile in {'smoke', 'native'} and not binary_dir:
+    if min_free_mib < 2048 and profile in {'smoke', 'native'} and not binary_dir and any(APPS[app] for app in selected):
         raise ValueError('Below 2048 MiB native validation requires --app-binary-dir')
+    if profile == 'load' and set(selected) - set(LOAD):
+        raise ValueError('Load driver not yet implemented for selected app')
     jobs = []
     if profile in {'smoke', 'controls', 'defects', 'observe'}:
         args = []
@@ -58,9 +61,9 @@ def plan(profile, apps=None, include_panic=False, expected_commit=None, binary_d
     if profile in {'smoke', 'native', 'load'}:
         for app in dict.fromkeys(selected):
             args = LOAD[app].copy() if profile == 'load' else []
-            if binary_dir:
+            if binary_dir and APPS[app]:
                 args += ['--binary', str((Path(binary_dir) / APPS[app]).resolve())]
-            if app in {'blocky', 'plik'}:
+            if app in {'blocky', 'plik', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer'}:
                 args += ['--min-free-mib', str(min_free_mib)]
             jobs.append((app, 'run_' + app + '.py', args))
     return jobs
@@ -166,9 +169,11 @@ def main():
               'exit_code': 2, 'passed': False}
     try:
         report['target'] = preflight(args.expected_commit)
-        report['free_bytes_at_admission'] = shutil.disk_usage(ROOT).free
+        report['runtime_root'] = str(runtime_root())
+        report['free_bytes_at_admission'] = shutil.disk_usage(runtime_root()).free
         if report['free_bytes_at_admission'] < args.min_free_mib * 1024**2:
             raise GateBlocked('Insufficient disk headroom')
+        report['workspace_free_bytes_at_admission'] = shutil.disk_usage(ROOT).free
         report['jobs'] = execute(jobs, out)
         report['exit_code'] = int(any(r['exit_code'] != 0 for r in report['jobs']))
         report['passed'] = report['exit_code'] == 0 and all(r['status'] == 'passed' for r in report['jobs'])

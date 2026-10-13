@@ -1,3 +1,4 @@
+from native_common import runtime_root
 """Pinned native Plik server: password auth, file CRUD, real SQL relations, and restart."""
 import argparse,base64,hashlib,http.cookiejar,io,json,os,secrets,shutil,signal,socket,subprocess,tarfile,time,urllib.error,urllib.parse,urllib.request,uuid,xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
@@ -11,7 +12,7 @@ def binary(provided, min_free_mib=2048):
   provided=provided.resolve()
   if hashlib.sha256(provided.read_bytes()).hexdigest()!=BINARY_SHA:raise RuntimeError("Official binary hash mismatch")
   return provided
- target=ROOT/'runtime/plik-1.4.2/plikd'
+ target=runtime_root()/'plik-1.4.2/plikd'
  if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest()==BINARY_SHA:return target
  target.parent.mkdir(parents=True,exist_ok=True)
  if provided:data=provided.read_bytes()
@@ -21,7 +22,7 @@ def binary(provided, min_free_mib=2048):
   with tarfile.open(fileobj=io.BytesIO(b),mode='r:gz') as t:
    m=next(m for m in t.getmembers() if m.isfile() and m.name.endswith('/server/plikd'));data=t.extractfile(m).read()
  assert hashlib.sha256(data).hexdigest()==BINARY_SHA
- if shutil.disk_usage(ROOT).free<min_free_mib*1024**2+len(data):raise RuntimeError('Keep 2 GiB free after installing app')
+ if shutil.disk_usage(runtime_root()).free<min_free_mib*1024**2+len(data):raise RuntimeError('Keep 2 GiB free after installing app')
  target.write_bytes(data);target.chmod(0o700);return target
 
 def main():
@@ -30,8 +31,8 @@ def main():
  if not 1<=a.files<=1024 or not 1<=a.workers<=64:p.error('Bounds: 1..1024 files, 1..64 workers')
  if 'MO_PASSWORD' not in os.environ:p.error('MO_PASSWORD is required')
  if a.min_free_mib<128 or (a.min_free_mib<2048 and (not a.binary or a.files>16)):p.error('Below 2 GiB requires a local pinned binary and basic workload')
- if shutil.disk_usage(ROOT).free<a.min_free_mib*1024**2:p.error('Insufficient configured disk headroom')
- a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_plik_'+uuid.uuid4().hex[:16];private=ROOT/'runtime'/schema;private.mkdir(mode=0o700,parents=True)
+ if shutil.disk_usage(runtime_root()).free<a.min_free_mib*1024**2:p.error('Insufficient configured disk headroom')
+ a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_plik_'+uuid.uuid4().hex[:16];private=runtime_root()/schema;private.mkdir(mode=0o700,parents=True)
  cfg=dict(host=os.getenv('MO_HOST','127.0.0.1'),port=int(os.getenv('MO_PORT','6001')),user=os.getenv('MO_USER','root'),password=os.environ['MO_PASSWORD'],charset='utf8mb4',autocommit=True,connect_timeout=10,read_timeout=30)
  report={'app':'root-gg/plik','version':'1.4.2','commit':'ed7f43fbe1bd0a8a3d3365fd83c17c75e9ee4bcc','binary_sha256':BINARY_SHA,'schema':schema,'native_runtime_attempted':False,'native_GORM_gormigrate_initialization':True,'source_edits':False,'native_password_auth_and_CSRF_retained':True,'min_free_mib':a.min_free_mib,'checks':[],'passed':False};proc=None;log=None;stage='download';owner='reg_owner';owner_pass=secrets.token_urlsafe(24);other='reg_outsider';other_pass=secrets.token_urlsafe(24)
  with socket.socket() as s:s.bind(('127.0.0.1',0));port=s.getsockname()[1]

@@ -1,0 +1,125 @@
+{
+  "app": "documize/community",
+  "version": "v5.14.0",
+  "commit": "bdc19f135d9c9a7f448b07c584f1106e76d2f0d8",
+  "binary_sha256": "be729653f76fde784a339a7e89b48481db322502ef28e0e32f3df057790efb8f",
+  "schema": "mo_reg_documize_bd53ff6f9218428c",
+  "passed": true,
+  "checks": [
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_setup_token_and_fresh_database",
+      "passed": true
+    },
+    {
+      "name": "native_setup_completed",
+      "passed": true
+    },
+    {
+      "name": "native_35_migrations_and_27_tables",
+      "passed": true
+    },
+    {
+      "name": "native_setup_admin_password_and_identity",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_private_space_denied",
+      "passed": true
+    },
+    {
+      "name": "native_password_login",
+      "passed": true
+    },
+    {
+      "name": "native_private_space_create",
+      "passed": true
+    },
+    {
+      "name": "native_document_create",
+      "passed": true
+    },
+    {
+      "name": "native_document_update",
+      "passed": true
+    },
+    {
+      "name": "native_document_exact_read",
+      "passed": true
+    },
+    {
+      "name": "native_section_create_render",
+      "passed": true
+    },
+    {
+      "name": "before_restart_SQL_exact_content_and_owner_links",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_doc",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_section",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_fulltext_search",
+      "passed": true
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_exact_content_and_owner_links",
+      "passed": true
+    },
+    {
+      "name": "SQL_durability",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_doc",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_section",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_fulltext_search",
+      "passed": true
+    },
+    {
+      "name": "original_JWT_survives_restart",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "native_binary_unmodified": true,
+  "local_packet_adapter": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "min_free_mib": 2048,
+  "limitations": [
+    "physical ENGINE conversions and OPTIMIZE explicitly omitted",
+    "DDL implicit commit boundary made explicit",
+    "populated upgrades unverified"
+  ],
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_migrations_completed": 35,
+  "finished_at_utc": "2026-10-13T00:30:24Z"
+}

@@ -1,0 +1,21 @@
+{
+  "app": "huginn/huginn",
+  "commit": "d6f25e28a36f360ad80c73445c3ce5229be7e538",
+  "schema": "mo_reg_huginn_8db5b45c308d4e00",
+  "passed": false,
+  "checks": [],
+  "native_runtime_attempted": false,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "min_free_mib": 128,
+  "prepared_dependency_SDK_required": true,
+  "full_load_validation": false,
+  "limitations": [
+    "CHANGE charset/collation attributes and ALTER DATABASE charset switch omitted",
+    "case-insensitive collation equivalence and populated upgrades unverified",
+    "forced process stop does not certify graceful shutdown"
+  ],
+  "error_type": "FileNotFoundError",
+  "failed_stage": "source_and_dependency_SDK",
+  "finished_at_utc": "2026-10-12T23:02:14Z"
+}

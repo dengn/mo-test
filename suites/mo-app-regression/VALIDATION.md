@@ -25,4 +25,32 @@
 
 17 个已知失败中包含 4 个既有恢复型 panic；这不代表本轮新发现 4 个独立 panic，也不代表服务进程退出。已有 main 的状态与稳定版不同，本轮不对最新 main 宣称缺陷仍存在，不提交新 issue。新增 issue 仍须按 MAIN-VERIFICATION.md 实际验证当时 main。
 
-历史 58 个基本业务通过中的其余 54 个尚未做成独立驱动；61 个历史尝试中有 57 个驱动待迁移。1000 项总任务仍有 939 项未运行。此 PR 是已具备独立驱动的首批接入。
+首批导入时，历史 58 个基本业务通过中的其余 54 个尚未做成独立驱动；61 个历史尝试中有 57 个驱动待迁移。1000 项总任务仍有 939 项未运行。此 PR 是已具备独立驱动的首批接入。
+
+
+## 后续独立驱动迁移批次
+
+本轮新增 6 个驱动，独立应用总数从 4 增至 10；原来 54 个待迁移的基本通过项目仍剩 48 个。候选 1000 项及 61/58/939 历史运行统计不因重复试跑而增加。
+
+| 新驱动 | 独立新库实跑 | 关键范围 |
+| --- | --- | --- |
+| Documize v5.14.0 | 25 检查通过 | 官方二进制、35 原生迁移/27 表、原生 setup/登录/JWT、文档章节/FTS、SQL 逐值及重启 |
+| Huginn d6f25e28 | 34 检查通过 | 校验 867 Git blob/适配、原生 73 迁移与 seed、Puma+AgentRunner 异步 Webhook→Formatter、权限/CSRF、SQL 与重启 |
+| ntfy v2.29.0/f18d1137 | 40 检查通过 | 原生 CLI 账号/ACL、两用户共享 IP 并发身份、WebSocket/SSE、JSON/生命周期/附件、SQL 与重启 |
+| Memos d5df8915 | 29 检查通过 | 原生管理员注册/账号、密码、私有笔记权限/并发 CRUD、SQL 精确归属与重启 |
+| Baikal 0.12.1 | 44 检查通过 | 校验 1030 发行版文件、网页安装原生 14 表/账号、Digest CalDAV/CardDAV、ETag、BLOB/大小/UID/归属、重启删除 |
+| FreshRSS 4a810f16 | 30 检查通过 | 校验 1294 blob/适配、完整网页安装、原生账号/API 密码控制器、Google Reader/RSS、两用户隔离、压缩正文/标记已读/令牌拒绝/重启 |
+
+统一入口在新的官方稳定版实例再次执行 **10 个原生应用共 254 项检查 + 3 个 SQL 正向对照，全通过**，默认磁盘入场阈值 2048 MiB 保留。JSON/JUnit 见 evidence/migration-batch/all-ten-new-instance-smoke。这是基本业务回归，没有新增极限容量结论，也没有重计每次复跑。
+
+workspace 剩余空间不足时，发现另外的 /tmp tmpfs 可用约 8.5 GiB，建立独立实例 6004（PID/目录见本地继续状态）。它使用官方 v4.2.5 同一完整 SHA 1a44f3db3056e32975fde86ca0ab69a094996a3f，独立 LOG/TN/CN UUID、部署 ID、所有服务端口与全新数据目录；GOMAXPROCS=2、Go soft limit=2 GiB。旧 6001 实例与旧数据没有停掉或删除。tmpfs 使用内存，不能当作持久磁盘扩容或独立机器容量。
+
+ntfy 与 Memos SDK 均在另外的目录从固定完整源码实际重新构建，前者 622 原始 Git blob + 固定补丁，后者 1328 原始 blob；Go 1.27.1、独立缓存、构建 manifest 的实际二进制 SHA 绑定，随后分别新建库再运行 40 / 29 检查通过。第一轮 workspace 入场失败仍保留。冷构建使用明确的 CLI HTML 占位资源，完整 web UI 仍未验证；Huginn 全部依赖冷安装尚未在另一个全新 SDK 上重跑。
+
+原始失败均保留：Huginn 首次运行配置路径错误，ntfy 最初把原生 WS（含 sequence_id）错误当成 HTTP JSON（ForJSON 省略它），Memos 最初用户名包含其原生规则禁止的下划线，FreshRSS 的 FrankenPHP getopt、未完成安装 finish 步骤、本地 RSS URL 默认拒绝、兼容 API 全角标题、原生初始订阅和压缩前缀假设，均为已修正的驱动/配置问题，不提交成 MatrixOne 缺陷。FreshRSS 只放行自建 RSS 服务的确切 IP:端口；SQL 验证编码原文与解压原字节，实测 COMPRESS framing 为长度前缀+raw DEFLATE，不认证跨厂商压缩 BLOB 互通。
+
+GitHub Actions 尚未运行，相关 SDK/runner 配置见 RUNTIME-SDK.md。没有自动提交新 issue，新增数据库问题仍须先实际验证当时 main。
+
+随后 Adminer v6.1.2 独立新库通过 20 项检查，原始两轮 CSRF 状态假设失败保留；原生非法 CSRF 返回403并明确提示，SQL确无改动。当前共11个驱动，原54项剩47项。本轮新增7个驱动共222项独立检查通过；加上原4个为274项。统一全10应用那一轮的254项记录保持不改，Adminer作为后续独立轮验证。
+
+最终统一 smoke 再执行全部11个应用：**274个原生检查 + 3个SQL正向对照全部通过**。这轮 ntfy/Memos 使用本轮从源码构建并绑定 manifest 的二进制；默认为2048MiB磁盘入场要求，runtime 指向独立临时目录。证据见 evidence/migration-batch/all-eleven-cold-sdk-smoke。19项 Python合同/SDK身份测试、workflow YAML/11应用选择校验通过，GitHub Actions仍未运行。

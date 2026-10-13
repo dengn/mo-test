@@ -1,3 +1,4 @@
+from native_common import runtime_root
 """Pinned official Gotify app: native initialization, REST, SQL audit, and process restart."""
 import argparse
 import base64
@@ -24,7 +25,7 @@ BINARY_SHA = '7c5fbcce5fa130c8e7bf643fee4f069a3aed974ead16bc5a84a168e31930e7b7'
 
 
 def binary(archive):
-    target = ROOT / 'runtime' / 'gotify-v3.1.1' / 'gotify-linux-amd64'
+    target = runtime_root() / 'gotify-v3.1.1' / 'gotify-linux-amd64'
     if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() == BINARY_SHA:
         return target
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -62,7 +63,7 @@ def main():
         parser.error('MO_PASSWORD must be supplied through the environment')
     args.out.mkdir(parents=True, exist_ok=False)
     schema = 'mo_reg_gotify_' + uuid.uuid4().hex[:16]
-    private = ROOT / 'runtime' / schema
+    private = runtime_root() / schema
     private.mkdir(mode=0o700, parents=True)
     config = dict(host=os.environ.get('MO_HOST', '127.0.0.1'), port=int(os.environ.get('MO_PORT', '6001')),
                   user=os.environ.get('MO_USER', 'root'), password=password, charset='utf8mb4',

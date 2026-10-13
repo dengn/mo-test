@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 4,
+  "independent_native_driver_count": 11,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -106,8 +106,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_and_configuration_adapted_and_tested",
       "adaptation_notes": "Stable2.29.0 pinned source f18d1137; all622 Git blobs verified, complete Apache2 license read, native dual Apache2/GPL2 declaration. Explicit matrixone:// backend uses actual MatrixOne/native Go mysql1.10.0 pool10; native schema runner created message15/user9, no manual users or stamps. Native normal CLI users/token login/deny-all ACL retained. Native cache, live WebSocket/SSE, Unicode/astral/nested JSON settings, notification update/delete lifecycle, cross-user/anonymous/case-sensitive permissions and original6240-byte capability attachment SHA/link passed before/after restart. Sixteen unchanged upstream MatrixOne cache/auth assertions and eight email/primary-uniqueness assertions passed. Original default rate budget boundary preserved:496 attempts/16 acknowledgments/16 exact durable writes. Initial higher-budget cohort has2825 durable acknowledgments,1256 missing publisher identities, all retained unrepaired. Deterministic real upstream SQLite interleaving reproduced shared-IP mutable identity loss; MatrixOne-only request identity snapshot fixes core HTTP authorization, publisher/subscriber IDs and account sync without duplicating shared IP limits; native permission and shared limiter regression passed. New separate corrected32-topic cohort reached1024 without errors and4096 boundary; 7550 exact values persisted of7550 attempts/5412 timely acknowledgments, no missing acknowledgments, duplicates, content/ID/topic or publisher-link errors before/after restart. Corrected owned loopback request burst1million/1ms and subscription100000 explicitly differ from default; pool10 and synchronous cache commits retained. Native fresh schemas only; populated upgrades/replication/clustering/MatrixOne webpush unsupported. Native nofirebase/nopayments CLI placeholder site; full web UI/mobile/SMTP unverified. Indexed text VARCHAR4096; wider collation equivalence and sustained shared-fourCPU database capacity unverified.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "f18d1137c63a26e85b91ce639e7bc72bb9a82736",
+      "mo_test_portable_basic_checks": 40
     },
     {
       "repo": "ergochat/ergo",
@@ -191,7 +193,7 @@
     },
     {
       "repo": "documize/community",
-      "independent_native_driver": "pending",
+      "independent_native_driver": "implemented",
       "strict_OSI_eligibility": "not_reaudited_by_this_project",
       "repository_url": "https://github.com/documize/community",
       "category": "Wikis",
@@ -200,7 +202,9 @@
       "runtime_status": "smoke_passed_load_guarded",
       "adaptation_status": "local_SQL_adapter_and_tested",
       "adaptation_notes": "Official Community v5.14.0 unchanged binary SHA256 and pinned commit bdc19f13 verified; AGPL3 reviewed, no AGENTS. Original native MySQL provider/metadata admission succeeds and native SPA enters setup mode. First harness incorrectly expected an HTML form; native dbname/dbhash meta fields confirm setup readiness. Incorrect root namespace POST returned SPA HTTP200 with zero tables and was not counted as initialization success. Correct original POST /api/setup with native setup token invokes original migrations. Script0 CREATE search has UNIQUE NOT NULL CHAR16 id but no PRIMARY KEY, FULLTEXT(pagetitle,body), ENGINE MyISAM; MatrixOne rejects it with20101 primary key cannot be empty for fulltext index. Native transaction rolls back and tables remain empty; no schema stamps, constraints removed or manual users. Main runtime for this separate feature restriction remains unverified; no new MatrixOne issue filed for it. No document business pass. Separate fresh native installer completed scripts0-34 and27 tables, version34 and real admin password hash/account join. Packet adapter retains official binary and authentication/results; adds PK to already UNIQUE NOT NULL search ids, preserves NVARCHAR widths as Unicode VARCHAR, quotes config, sends real COMMIT before table/index DDL, and explicitly omits seven MySQL physical-engine switches plus one OPTIMIZE operation using real table-existence queries. No fake OK packets, manual users/version stamps or constraints removed. Historical failed fixtures retained. Native org SELECT alias subscription quoted and JSON COALESCE default explicitly typed; original SQL failures retained. Native password login/wrong-password401/anonymous401, private Unicode space, empty-document creation through templates/0?type=saved, document update, rendered section, exact SQL content/org-owner-space-section-meta links, native fulltext search before/after real process restart and original JWT persistence all16 checks passed. Earlier harness missing required type=saved query parameter returned404 and is not a database bug. Latest main cd8d5ab runtime separately verifies original JSON COALESCE values correct, alias remains1064; native entire app main rerun pending. Populated upgrades, physical-engine conversion and compaction, all permissions/UI/wider workloads unverified;  Native document+section load64/4 and256/16 all320 business writes acknowledged; all320 exact Unicode rendered/raw sections, doc-space-user-org-meta links, every acknowledged native document and section GET before/after real process restart preserved. No missing ACKs, duplicates, unacknowledged or partial docs. Before1024/64 phase aggregate environment memory exceeded85percent ceiling and admission stopped; failure boundary not reached. Native app soft512MiB, one native admin/JWT, shared fourCPU environment; not sustained or isolated database capacity. Two initial zero-request82percent guarded attempts remain failed; own archived-file cache hints do not modify bytes, final ceiling85percent retains2.4GiB margin in16GiB cgroup.",
-      "source_ref": "v5.14.0"
+      "source_ref": "v5.14.0",
+      "automated_version_or_commit": "v5.14.0",
+      "mo_test_portable_basic_checks": 25
     },
     {
       "repo": "apache/airflow",
@@ -355,8 +359,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "configured_and_tested",
       "adaptation_notes": "Official stable0.12.1 full native release SHA256 verified;147 release files match pinned source cfa7433e, native GPL2-or-later source notices and GPL3 LICENSE retained; no AGENTS. Unmodified native FrankenPHP/PDO_MySQL web installer creates14 real MatrixOne tables, no manual schema or stamps. Original cookie/CSRF admin setup and native password login passed; MySQL DSN host includes supported port6001 setting. First create-user harness URL lacked new/1 token, got no form and CSRF rejection; preserved as harness failure. CalDAV/CardDAV native digest business, exact blobs/UID/owner links, load and restart under verification. Native two-user creation, digest password/anonymous/wrong-password rejection, cross-user403, CalDAV event/CardDAV contact Unicode original-byte reads, conditional ETag412/204 update, exact SQL blobs/byte sizes/UID and owner links, actual PHP process restart and deletes/SQL zero rows passed. No source edits or auth/constraint bypass; full upgrades, recurring/invited scheduling/calendar sharing, lock semantics and broad collation equivalence unverified. Native load64/4,256/16,1024/64 and2048/256(events/workers) all acknowledged;3392 cumulative unique events with exact bytes, sizes, UIDs, MD5 etags and owners, every native GET before/after real restart, no missing ACKs/duplicates/unacknowledged rows. Failure boundary not reached. Ergo64-session load and small source preparation overlapped post-load GET validation only; timed writes preceded Ergo load. Shared-fourCPU bounded probes, not sustained capacity.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "cfa7433ea444b3cbc84761b3efbf2562c3a53949",
+      "mo_test_portable_basic_checks": 44
     },
     {
       "repo": "FreshRSS/FreshRSS",
@@ -368,8 +374,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Remove redundant GROUP BY on category/feed primary-key join. Replace SELECT-side user variable increment with ROW_NUMBER and transaction-bounded two-statement commit; close unbuffered bound query cursor.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "4a810f1624b9d0b97b4400614cf9aacc8ada40e3",
+      "mo_test_portable_basic_checks": 30
     },
     {
       "repo": "seaweedfs/seaweedfs",
@@ -407,8 +415,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "configured_and_tested",
       "adaptation_notes": "MySQL DSN; note write/read; normal restart passed. Default rate limits and disabled-rate-limit loads are recorded separately.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "d5df8915f70a108971f9bf01151ecd3de3e0c91f",
+      "mo_test_portable_basic_checks": 29
     },
     {
       "repo": "gogs/gogs",
@@ -633,7 +643,7 @@
     },
     {
       "repo": "huginn/huginn",
-      "independent_native_driver": "pending",
+      "independent_native_driver": "implemented",
       "strict_OSI_eligibility": "not_reaudited_by_this_project",
       "repository_url": "https://github.com/huginn/huginn",
       "category": "Automation",
@@ -642,7 +652,9 @@
       "runtime_status": "smoke_passed_load_resource_blocked",
       "adaptation_status": "native_source_and_configuration_adapted",
       "adaptation_notes": "Popular50k-star Huginn pinned master d6f25e28, all867 source Git blobs verified, MIT and no AGENTS. Isolated official Ruby3.4.11 and Bundler4.0.8, original frozen Gemfile.lock all222 production gems installed; Gemfile admits >=3.4 although lock Ruby metadata4.0.7 retained. Original native Rails db:create attempted actual MatrixOne; connection SET rejects consecutive empty sql_mode token20101, native default wait_timeout2147483 independently rejects20301 >86400. Genuine observer records native SQL without rewriting queries/results. Supported config now explicitly normalizes the same native strict:false mode flags and caps timeout86400; no extra meaningful mode removed.  original empty fixture/failures retained. Native seed/private local-only Webhook-to-Formatting scenario prepared, no manually seeded users/version rows. Fresh native db:create/db:migrate completed73 actual migrations and13 tables, including original schemas, constraints and indices. Stable CHANGE column charset/collation attributes explicitly omitted while retaining native type/length/null/default; unsupported MySQL ALTER DATABASE default-charset selection explicitly omitted to retain isolated utf8mb4 default. Full CI collation equality/uniqueness and other charsets unverified. Original two40-migration failure fixtures retained. Native db:seed created real admin; default scenario initially failed native retention7 validation, fixed to supported forever0 and original DefaultScenarioImporter.seed imported two local agents and link. Original npm lock installed and assets precompiled. No manually inserted users/version rows. Native twoPuma single-thread workers plus unchanged AgentRunner/delayed_job. Password/CSRF login, wrong-password denied though browser form re-render200, anonymous management redirect, bad webhook secret401 with zero writes, actual HTTP201 webhook-to-background-formatting pipeline, exact Chinese/astral/boolean/nested-null/9007199254740991 source and formatted payloads, owner links, invalid CSRF422 no change, actual web/jobs restart and preserved rows/native session/readback passed. Original browser-status and native Rack deep_munge array-nil fixture assumptions failed and retained; not DB bugs. Initial real restarts required forced stop after25seconds, not graceful-shutdown certification. Independent two-session advisory-lock acquire/contention0/release/reacquire control passed. No native main app run; latest0a4db0e build guarded for disk, new issues await actual main verification.  Extended25-check native round passed: native ordinary-user signup/non-admin status, cross-user agent404/event-list exclusion and wrong-owner webhook404 with zero writes, exact native API payload/owner IDs before/after restart. Some process shutdown still exceeded55seconds and required force; not graceful-shutdown certification. Proposed high-load admission rejected before any webhook writes: filesystem below1.5GiB floor. Zero admitted requests are not a pressure pass. Additional disk needed for latest-main build and larger workloads; new SQL issues not filed before runtime main recheck.",
-      "source_ref": "master"
+      "source_ref": "master",
+      "automated_version_or_commit": "d6f25e28a36f360ad80c73445c3ce5229be7e538",
+      "mo_test_portable_basic_checks": 34
     },
     {
       "repo": "writefreely/writefreely",
@@ -759,8 +771,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_and_configuration_adapted_and_tested",
       "adaptation_notes": "Official stable6.1.2 all-language PHP release verified against published SHA256 and pinned dual Apache2/GPL2 source; noAGENTS. Database management GUI/client uses actual MatrixOne through native PDO_MySQL ext=pdo; has no internal migration runner. Original MySQLi SQL console SET_OPTION EOF-vs-OK protocol warnings retained as incompatible, not certified. One scoped parsed-type-name lowercase port for actual MatrixOne preserves full type and enum literals, exact original published release SHA restored by reverse patch. Native password/cookie login, SQL DDL/CRUD, original insert/edit/browse forms, Unicode/astral, decimal/binary, enum case/NULL/signed integer, FK relation/rejection, transaction rollback, anonymous login, invalidCSRF and exactCSV passed before/after restart. Native16 sessions/ten PHP threads;256 zeroerrors,1024 produced654 client timeouts/recovered4.4seconds. 1587 exact rows persisted of1630 attempts/1111 successful native acknowledgments,43 unsuccessful unacknowledged attempts absent, no missing acknowledgments/duplicates/invalid values or relationships. All rows native CSV readbacks exact before/after restart. Early binary-function/enum-select-widget harness assumptions failed and preserved; fixed before measured workload. Shared fourCPU HTML parser/generator delays timeout callbacks; measured success latency can exceed nominal15s timeout, not sustained database capacity. Other vendors/plugins/populated schema alteration/privilege management/wider types and collation unverified.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "v6.1.2",
+      "mo_test_portable_basic_checks": 20
     },
     {
       "repo": "wagtail/wagtail",
@@ -801,5 +815,7 @@
       "independent_native_driver": "pending",
       "strict_OSI_eligibility": "not_reaudited_by_this_project"
     }
-  ]
+  ],
+  "integration_repository": "dengn/mo-test",
+  "upstream_snapshot_driver_count": 4
 }

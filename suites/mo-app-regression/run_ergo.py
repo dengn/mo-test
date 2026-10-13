@@ -1,3 +1,4 @@
+from native_common import runtime_root
 """Native IRC account/channel workflow and MatrixOne-backed persistent chat history.
 
 The upstream BuntDB account/channel store remains native; only the documented
@@ -47,7 +48,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--binary',type=Path);p.add_argument('--messages',type=int,default=16);p.add_argument('--writers',type=int,default=2);p.add_argument('--disable-fakelag',action='store_true',help='Separate load profile bypassing only native command-rate delay');p.add_argument('--out',type=Path,default=ROOT/'artifacts'/('ergo-'+uuid.uuid4().hex[:12]));a=p.parse_args()
     if not 1<=a.messages<=4096 or not 1<=a.writers<=64:p.error('Bounds: messages 1..4096, writers 1..64')
     if 'MO_PASSWORD' not in os.environ:p.error('MO_PASSWORD is required')
-    a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_ergo_'+uuid.uuid4().hex[:16];private=ROOT/'runtime'/schema;private.mkdir(parents=True,mode=0o700)
+    a.out.mkdir(parents=True,exist_ok=False);schema='mo_reg_ergo_'+uuid.uuid4().hex[:16];private=runtime_root()/schema;private.mkdir(parents=True,mode=0o700)
     report={'app':'ergochat/ergo','version':'v2.19.1','commit':'63c743a70644f0f19109508ade8580bf37f7d23d','binary_sha256':SHA,'schema':schema,'native_runtime_attempted':False,'source_edits':False,'SQL_scope':'documented persistent history only; native BuntDB account/channel store retained','native_fakelag_retained':not a.disable_fakelag,'checks':[],'attempts':[],'passed':False};proc=None;log=None;clients=[];stage='binary'
     cfg=dict(host=os.getenv('MO_HOST','127.0.0.1'),port=int(os.getenv('MO_PORT','6001')),user=os.getenv('MO_USER','root'),password=os.environ['MO_PASSWORD'],charset='utf8mb4',autocommit=True,connect_timeout=10,read_timeout=30)
     with socket.socket() as s:s.bind(('127.0.0.1',0));port=s.getsockname()[1]
@@ -65,7 +66,7 @@ def main():
             except subprocess.TimeoutExpired:os.killpg(proc.pid,signal.SIGKILL);proc.wait(timeout=5)
         proc=None
     try:
-        app=a.binary or ROOT/'runtime/ergo-v2.19.1/ergo'
+        app=a.binary or runtime_root()/'ergo-v2.19.1/ergo'
         if not app.exists():
             with urllib.request.urlopen('https://github.com/ergochat/ergo/releases/download/v2.19.1/ergo-2.19.1-linux-x86_64.tar.gz',timeout=90) as r:data=r.read(16*1024**2)
             assert hashlib.sha256(data).hexdigest()==ARCHIVE_SHA

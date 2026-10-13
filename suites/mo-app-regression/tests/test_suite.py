@@ -8,9 +8,9 @@ from run import execute, plan
 
 
 class SuiteContract(unittest.TestCase):
-    def test_smoke_has_controls_and_four_real_drivers(self):
+    def test_smoke_has_controls_and_eleven_real_drivers(self):
         jobs = plan('smoke')
-        self.assertEqual([j[0] for j in jobs], ['sql', 'gotify', 'blocky', 'plik', 'ergo'])
+        self.assertEqual([j[0] for j in jobs], ['sql', 'gotify', 'blocky', 'plik', 'ergo', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer'])
         self.assertNotIn('--allow-known', jobs[0][2])
 
     def test_panic_requires_explicit_separate_profile(self):
@@ -21,7 +21,7 @@ class SuiteContract(unittest.TestCase):
 
     def test_unmigrated_app_cannot_be_reported_as_automated(self):
         with self.assertRaises(ValueError):
-            plan('native', ['huginn'])
+            plan('native', ['gitea'])
         with self.assertRaises(ValueError):
             plan('controls', ['gotify'])
 
@@ -36,6 +36,16 @@ class SuiteContract(unittest.TestCase):
             plan('smoke', min_free_mib=128)
         jobs = plan('native', ['blocky'], binary_dir='/existing', min_free_mib=128)
         self.assertIn('--min-free-mib', jobs[0][2])
+
+    def test_runtime_sdk_driver_does_not_receive_binary_flag(self):
+        job = plan('native', ['huginn'], binary_dir='/existing', min_free_mib=128)[0]
+        self.assertNotIn('--binary', job[2])
+        self.assertIn('--min-free-mib', job[2])
+
+    def test_not_yet_migrated_load_is_rejected(self):
+        with self.assertRaises(ValueError):
+            plan('load', ['documize'])
+        self.assertEqual([job[0] for job in plan('load')], ['gotify', 'blocky', 'plik', 'ergo'])
 
     def test_failure_does_not_hide_next_driver_or_exit_code(self):
         seen = []

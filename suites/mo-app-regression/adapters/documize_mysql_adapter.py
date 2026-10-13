@@ -41,13 +41,15 @@ def rewrite(sql):
 
 async def main():
     parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,required=True)
+    parser.add_argument('--upstream-host',default='127.0.0.1')
+    parser.add_argument('--upstream-port',type=int,default=6001)
     parser.add_argument('--audit',type=pathlib.Path,required=True);args=parser.parse_args()
     args.audit.parent.mkdir(parents=True,exist_ok=True)
     audit=args.audit.open('x');args.audit.chmod(0o600)
     async def handle(reader,writer):
         upstream=None;tasks=[]
         try:
-            remote,upstream=await asyncio.open_connection('127.0.0.1',6001)
+            remote,upstream=await asyncio.open_connection(args.upstream_host,args.upstream_port)
             async def responses():
                 while data:=await remote.read(256*1024):writer.write(data);await writer.drain()
             async def requests():
