@@ -1,0 +1,44 @@
+{
+  "app": "opencart/opencart",
+  "version": "4.1.0.4",
+  "schema": "mo_reg_opencart_ae620326260a420e",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_database_and_admin_install_form",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "date-filtered derived price joins",
+    "PHP boolean SQL literals as integers",
+    "skip only OPTIMIZE, keep expired-session DELETE"
+  ],
+  "limitations": [
+    "fresh schema initializer; populated upgrades/payment/shipping/checkout/orders/extensions/load unverified",
+    "original file sessions/cache retained; SQL business data uses MatrixOne",
+    "upstream fresh installer leaves foreign keys commented out; no additional constraints removed"
+  ],
+  "verified_release_files": 4053,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "RuntimeError",
+  "failed_stage": "native_installer",
+  "finished_at_utc": "2026-10-13T02:31:45Z"
+}

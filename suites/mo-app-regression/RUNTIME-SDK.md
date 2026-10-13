@@ -73,3 +73,33 @@ Kanboard v1.2.54 与 YOURLS 1.10.6 使用同一固定 PHP SDK；MO_KANBOARD_RELE
 Grafana 官方 OSS 13.2.3 包含原生网页资源，prepare_grafana_sdk.py --out /owned/new/sdk 流式下载并同时校验完整 archive SHA 与 13361 个文件的固定 SHA；未通过完整核验前不可执行。MO_GRAFANA_RELEASE_DIR 指向该 SDK；不提供时驱动自行准备新的 SDK。解压体积约1.38GB，准备额外保留2GiB。运行时目录独立，配置通过 GF 环境变量传递，密码无需 INI 插值；原生账号、cookie、853 迁移、统一 resource 存储和组织隔离保留。SQL relay 仅重写固定 NVARCHAR MODIFY DDL，不改认证/查询结果；TLS/compression 未覆盖。按原生配置 disable_legacy_table_rename=true 保留旧表，数据迁移仍执行。统一 alertmanager 初始化存在错误，该功能未认证；仪表板测试通过不能掩盖它。
 
 Matomo 5.14.1 使用固定官方 tar.gz 与7个精确适配源文件。MO_MATOMO_RELEASE_ARCHIVE 可提供原包缓存，或默认下载验证；11888 个发行文件中的根级安装说明不执行，应用目录11887文件安全解包。原生网页安装先创建核心表，完成并启动插件后共34表。账号、bcrypt、站点权限和应用令牌均由原生安装/API生成；测试保留默认指纹识别，以不同语言的全新浏览器模拟三个独立访客，不关闭识别或伪造visitorId。原生一般API密码错误返回200+result:error，需要同时验证未新增令牌；无权限报告返回401。Live原生URL按存储的name和url_prefix重建后断言完整URL，原生登录cookie/令牌及访问记录重启保持。尚未认证归档聚合报表/rollup、插件与已有数据升级。
+
+
+## Gogs 与 Apache Answer
+
+Gogs 固定源码 dbbd717e923694c36f41b0360515b4374bbe6ee0、2646 个 Git blob 和128个精确 vendored XORM 适配文件。`MO_GOGS_BINARY` 提供历史固定 SHA 二进制；另一个构建必须提供 `MO_GOGS_BUILD_MANIFEST` 并匹配 source、Go、binary 和 adaptation-manifest hash。可用 `build_go_sdk.py --app gogs` 准备仅 API/Git 的 SDK；不产生 HTML 占位资源，两个指向 AGENTS 的源码符号链接验证 Git blob 后不复制。此次冷构建在4GiB入场阈值前被空间保护阻止，尚未执行冷编译。历史二进制原生 API/Git 的33项检查和统一入口复跑通过；其默认页面依赖未启动的 Vite，完整前端尚未验证。原生 fresh schema 初始化37表/版本22，不代表所有历史升级都已执行；并发 NextIssueIndex 竞争仍待单独处理。数据库密码以原生环境 ValueMapper 读取，不在 app.ini 插入明文；Git ASKPASS、配置和认证材料仅保存在私有 runtime。
+
+Apache Answer 使用官方 v2.0.3 压缩包与固定 SHA 二进制，`MO_ANSWER_BINARY` 可提供原始发布缓存，否则默认下载并校验包和二进制摘要。源码 revision6744295，未修改 Go 程序。原生 CLI AUTO_INSTALL 调用自己的安装控制器创建完整新库、初始管理员和版本36，随后只通过官方配置修改监听地址为 loopback。普通账号、权限及问题/回答/标签全部通过原生 API。当前管理员权限来自 user_role_rel.role_id=2，不能用兼容旧字段 user.is_admin 判定。原生 SQLite 缓存及其令牌保持，权威业务数据连接 MatrixOne；完整 UI、SMTP、AI、MCP、插件及已有数据升级未认证。
+
+
+## OpenCart
+
+OpenCart 官方4.1.0.4 zip 固定 SHA 完整验证后仅安全解包 upload/ 发行文件，原始配置和数据不继承。`MO_OPENCART_RELEASE_ARCHIVE` 可提供原包缓存，否则默认下载；PHP仍使用固定FrankenPHP，`MO_PHP_BINARY`或统一binary-dir的frankenphp文件。五个精确PHP适配源文件分别验证原始/适配摘要：日期先过滤再按优先级选择价格的派生JOIN、SQL布尔字面量整数化、只跳过OPTIMIZE保留会话过期DELETE、PHP8.5 PDO常量同义兼容。按原生安装步骤准备空config、执行原生step_3.save创建159表及管理员，随后将本轮install目录移到私有目录，所有用户/token/商品/价格规则/购物车由原生安装或控制器生成，不手工插入。遵循上游部署设置将error_display=false，原始错误日志保留，不截取JSON尾部当作成功。原生文件session/cache保持，业务数据连接MO；上游原始fresh installer中的外键创建本就注释，不额外删约束。
+
+
+## Wakapi
+
+Wakapi 固定2.18.1/347f1f45ae2863d9499236471317a76630c5308f，551个原始Git blob和精确三文件metadata/DO NOTHING适配补丁。`MO_WAKAPI_BINARY` 必须是固定适配二进制SHA `8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6`，或提供与source/Go/patch/binary匹配的 `MO_WAKAPI_BUILD_MANIFEST`。原始官方release二进制没有这份适配，不能作为缓存代替。`build_go_sdk.py --app wakapi --source-tree <pristine fixed checkout> --go <Go1.27.1> --out <new private SDK>`提供冷构建配方；原始内嵌资源完整保留，不造HTML占位；本环境在4GiB资源入场之前阻止，尚未执行冷编译。
+
+原生WebAuthn即使默认不用也校验RPID域名，因此应用站点使用localhost、仅监听127.0.0.1。原生生产环境认证、密码Argon2id、cookie密钥与默认登录/注册限流保留；按支持配置允许loopback HTTP cookie，不启用trusted-header登录。邮箱原生可选，留空以保留默认MX验证；不发送邮件。所有账号及API key由原生signup/setup生成，数据库外键创建/检查保持；leaderboard、cache warming、外部import和mail经原生配置关闭。两用户并发提交16条唯一心跳，逐值/时间/归属/原生uint64 ID核对，再验证重复请求不增行、越权零写入、实际重启及全部SQL/API读回。初次startup90秒界限，重启界限180秒；每轮记录实际启动秒数，超时仍失败，旧失败记录不改写。已有数据升级、完整UI、聚合报表及高负载尚未认证。
+
+
+## Superset 与 Strapi 的独立 SDK
+
+Superset 使用官方6.1.0已安装SDK：162个包的15043个稳定包文件摘要与27个固定c83fb2bb core Git blob；原始wheel中的完整编译资源保留。`MO_SUPERSET_RUNTIME_CONFIG` 指向JSON，字段为 `python_binary`（Python3.12 venv里的bin/python，保留venv路径）、`source_tree`（固定Superset源码）。示例：`{"python_binary":"/sdk/superset/bin/python","source_tree":"/sdk/superset-source"}`。SDK验证不绑定安装器生成的RECORD/direct_url/脚本shebang；原生CLI/Gunicorn均直接调用已校验的Python模块，core的editable selector必须匹配输入源，随后复制到私有目录，配置断言实际core模块来自本轮副本。禁用旧pyc读取/写入，配置、数据及缓存路径独立。fixtures/superset/requirements-sdk.txt提供固定已安装版本；core须从固定源码单独安装。本轮复用已准备SDK，不宣称完整冷安装通过。
+
+Superset保留原生CSRF/RBAC：native `db upgrade` 的344条升级事件与head4b2a8c9d3e1f一起核验，native fab/create-admin/init/create-user创建Admin/Gamma及权限。Python只创建两套随机库和读回；1000行fixture的DDL/DML、总额500500、图表/仪表板均通过原生SQL Lab/API。精确老适配包含config引用、bool反射、LONGBLOB拼写、PyMySQL DB-API shim、指定datasource CHECK替换为受约束的可空单值ENUM；非法值必须命中特定枚举错误并保持原值，500不是通用权限拒绝。大binary容量、MySQL大小写/collation等完整等价、降级、全UI与已有数据升级未认证。
+
+Strapi使用独立生成的5.57.0 CMS SDK、66843个依赖文件/59个内部符号链接、336个原始admin构建文件及固定Node24.20摘要。`MO_STRAPI_RUNTIME_CONFIG` JSON字段为 `node_binary`、`sdk_dir`；sdk_dir是包含node_modules及build的准备目录。仅复制19个公共脚手架定义和已校验build，再链接已校验依赖；原.env、账号、uploads、缓存不复制，新uploads目录为空，XDG目录落在本轮私有路径。全部密钥/账号/token新生成，原生schema同步与FK保持，Super Admin首注册、Author邀请token注册及真实权限检查保留；不通过SQL写用户或迁移记录。
+
+Strapi框架只保留精确MySQL typeCast组合适配，decimal/bool/date原处理保留。UTF8 fixture callback限定到本轮数据库的title/name/body文本字段；已确认category关系查询派生name列的db/table均为空、type=VAR_STRING，额外只覆盖这一个元数据形状。运行前要求整份fixture schema没有声明binary/blob列，其他未知/二进制字段仍走next。四字节字符断言不放宽；原始失真结果保留。完整UI、全内容类型/插件、已有数据升级、冷安装和高负载未认证。

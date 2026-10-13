@@ -1,0 +1,179 @@
+--- a/upload/catalog/model/catalog/product.php
++++ b/upload/catalog/model/catalog/product.php
+@@ -26,6 +26,39 @@
+ 		$this->statement['special'] = "(SELECT (CASE WHEN `ps`.`type` = 'P' THEN (`p`.`price` - (`p`.`price` * (`ps`.`price` / 100))) WHEN `ps`.`type` = 'S' THEN (`p`.`price` - `ps`.`price`) ELSE `ps`.`price` END) FROM `" . DB_PREFIX . "product_discount` `ps` WHERE `ps`.`product_id` = `p`.`product_id` AND `ps`.`customer_group_id` = '" . (int)$this->config->get('config_customer_group_id') . "' AND `ps`.`quantity` = '1' AND `ps`.`special` = '1' AND ((`ps`.`date_start` = '0000-00-00' OR `ps`.`date_start` < NOW()) AND (`ps`.`date_end` = '0000-00-00' OR `ps`.`date_end` > NOW())) ORDER BY `ps`.`priority` ASC, `ps`.`price` ASC LIMIT 1) AS `special`";
+ 		$this->statement['reward'] = "(SELECT `pr`.`points` FROM `" . DB_PREFIX . "product_reward` `pr` WHERE `pr`.`product_id` = `p`.`product_id` AND `pr`.`customer_group_id` = '" . (int)$this->config->get('config_customer_group_id') . "') AS `reward`";
+ 		$this->statement['review'] = "(SELECT COUNT(*) FROM `" . DB_PREFIX . "review` `r` WHERE `r`.`product_id` = `p`.`product_id` AND `r`.`status` = '1' GROUP BY `r`.`product_id`) AS `reviews`";
++		if (getenv('MATRIXONE_ADAPTER') === '1') {
++			$group = (int)$this->config->get('config_customer_group_id');
++			$joins = '';
++			foreach (['discount'=>0, 'special'=>1] as $kind=>$special) {
++				$alias = 'mo_'.$kind;
++				$type = '`'.$alias.'`.`mo_'.$kind.'_type`';
++				$price = '`'.$alias.'`.`mo_'.$kind.'_price`';
++				$this->statement[$kind] = "(CASE WHEN $type = 'P' THEN (`p`.`price` - (`p`.`price` * ($price / 100))) WHEN $type = 'S' THEN (`p`.`price` - $price) ELSE $price END) AS `$kind`";
++				$joins .= " LEFT JOIN (SELECT `product_id` AS `mo_{$kind}_pid`, `type` AS `mo_{$kind}_type`, `price` AS `mo_{$kind}_price`, ROW_NUMBER() OVER (PARTITION BY `product_id` ORDER BY `priority`, `price`, `product_discount_id`) AS `mo_{$kind}_rank` FROM `".DB_PREFIX."product_discount` WHERE `customer_group_id` = '$group' AND `quantity` = '1' AND `special` = '$special' AND (`date_start` = '0000-00-00' OR `date_start` < NOW()) AND (`date_end` = '0000-00-00' OR `date_end` > NOW())) `$alias` ON (`$alias`.`mo_{$kind}_pid` = `p`.`product_id` AND `$alias`.`mo_{$kind}_rank` = 1)";
++			}
++			$this->statement['reward'] = '`mo_reward`.`mo_reward_points` AS `reward`';
++			$this->statement['review'] = '`mo_review`.`mo_reviews` AS `reviews`';
++			$joins .= " LEFT JOIN (SELECT `product_id` AS `mo_reward_pid`, `points` AS `mo_reward_points` FROM `".DB_PREFIX."product_reward` WHERE `customer_group_id` = '$group') `mo_reward` ON (`mo_reward`.`mo_reward_pid` = `p`.`product_id`)";
++			$joins .= " LEFT JOIN (SELECT `product_id` AS `mo_review_pid`, COUNT(*) AS `mo_reviews` FROM `".DB_PREFIX."review` WHERE `status` = '1' GROUP BY `product_id`) `mo_review` ON (`mo_review`.`mo_review_pid` = `p`.`product_id`)";
++			$this->statement['matrixone_joins'] = $joins;
++		}
++	}
++
++	/** Add derived price/reward/review joins before the outer query's WHERE clause. */
++	private function matrixOneProductQuery(string $sql): string {
++		if (!isset($this->statement['matrixone_joins']) || !str_contains($sql, '`mo_discount_price`')) {
++			return $sql;
++		}
++		preg_match_all('~\'(?:[^\'\\\\]|\\\\.|\'\')*\'|"(?:[^"\\\\]|\\\\.|"")*"|`(?:[^`]|``)*`|--[^\r\n]*|/\*.*?\*/|[()]|\bWHERE\b~is', $sql, $tokens, PREG_OFFSET_CAPTURE);
++		$depth = 0;
++		foreach ($tokens[0] as [$token, $offset]) {
++			if ($token === '(') $depth++;
++			elseif ($token === ')') $depth--;
++			elseif ($depth === 0 && strcasecmp($token, 'WHERE') === 0) {
++				return substr($sql, 0, $offset).$this->statement['matrixone_joins'].' '.substr($sql, $offset);
++			}
++		}
++		throw new \RuntimeException('Cannot locate the outer product query filter');
+ 	}
+ 
+ 	/**
+@@ -64,7 +97,7 @@
+ 	 * $product_info = $this->model_catalog_product->getProduct($product_id);
+ 	 */
+ 	public function getProduct(int $product_id): array {
+-		$query = $this->db->query("SELECT DISTINCT *, `pd`.`name`, `p`.`image`, " . $this->statement['discount'] . ", " . $this->statement['special'] . ", " . $this->statement['reward'] . ", " . $this->statement['review'] . " FROM `" . DB_PREFIX . "product_to_store` `p2s` LEFT JOIN `" . DB_PREFIX . "product` `p` ON (`p`.`product_id` = `p2s`.`product_id` AND `p`.`status` = '1' AND `p`.`date_available` <= NOW()) LEFT JOIN `" . DB_PREFIX . "product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id`) WHERE `p2s`.`store_id` = '" . (int)$this->config->get('config_store_id') . "' AND `p2s`.`product_id` = '" . (int)$product_id . "' AND `pd`.`language_id` = '" . (int)$this->config->get('config_language_id') . "'");
++		$query = $this->db->query($this->matrixOneProductQuery("SELECT DISTINCT *, `pd`.`name`, `p`.`image`, " . $this->statement['discount'] . ", " . $this->statement['special'] . ", " . $this->statement['reward'] . ", " . $this->statement['review'] . " FROM `" . DB_PREFIX . "product_to_store` `p2s` LEFT JOIN `" . DB_PREFIX . "product` `p` ON (`p`.`product_id` = `p2s`.`product_id` AND `p`.`status` = '1' AND `p`.`date_available` <= NOW()) LEFT JOIN `" . DB_PREFIX . "product_description` `pd` ON (`p`.`product_id` = `pd`.`product_id`) WHERE `p2s`.`store_id` = '" . (int)$this->config->get('config_store_id') . "' AND `p2s`.`product_id` = '" . (int)$product_id . "' AND `pd`.`language_id` = '" . (int)$this->config->get('config_language_id') . "'"));
+ 
+ 		if ($query->num_rows) {
+ 			$product_data = $query->row;
+@@ -259,7 +292,7 @@
+ 		$product_data = $this->cache->get('product.' . $key);
+ 
+ 		if (!$product_data) {
+-			$query = $this->db->query($sql);
++			$query = $this->db->query($this->matrixOneProductQuery($sql));
+ 
+ 			$product_data = $query->rows;
+ 
+@@ -397,7 +430,7 @@
+ 			$sql .= " AND `p`.`manufacturer_id` = '" . (int)$data['filter_manufacturer_id'] . "'";
+ 		}
+ 
+-		$query = $this->db->query($sql);
++		$query = $this->db->query($this->matrixOneProductQuery($sql));
+ 
+ 		return (int)$query->row['total'];
+ 	}
+@@ -765,7 +798,7 @@
+ 		$product_data = $this->cache->get('product.' . $key);
+ 
+ 		if (!$product_data) {
+-			$query = $this->db->query($sql);
++			$query = $this->db->query($this->matrixOneProductQuery($sql));
+ 
+ 			$product_data = $query->rows;
+ 
+@@ -839,7 +872,7 @@
+ 		$product_data = $this->cache->get('product.' . $key);
+ 
+ 		if (!$product_data) {
+-			$query = $this->db->query($sql);
++			$query = $this->db->query($this->matrixOneProductQuery($sql));
+ 
+ 			$product_data = $query->rows;
+ 
+--- a/upload/admin/model/catalog/product.php
++++ b/upload/admin/model/catalog/product.php
+@@ -56,7 +56,7 @@
+ 	 * $product_id = $this->model_catalog_product->addProduct($product_data);
+ 	 */
+ 	public function addProduct(array $data): int {
+-		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET `master_id` = '" . (int)$data['master_id'] . "', `model` = '" . $this->db->escape((string)$data['model']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "', `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "', `subtract` = '" . (isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "', `shipping` = '" . (isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "', `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "', `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (bool)($data['status'] ?? 0) . "', `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_added` = NOW(), `date_modified` = NOW()");
++		$this->db->query("INSERT INTO `" . DB_PREFIX . "product` SET `master_id` = '" . (int)$data['master_id'] . "', `model` = '" . $this->db->escape((string)$data['model']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "', `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "', `subtract` = '" . (int)(isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "', `shipping` = '" . (int)(isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "', `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "', `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (int)(bool)($data['status'] ?? 0) . "', `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_added` = NOW(), `date_modified` = NOW()");
+ 
+ 		$product_id = $this->db->getLastId();
+ 
+@@ -243,7 +243,7 @@
+ 	 * $this->model_catalog_product->editProduct($product_id, $product_data);
+ 	 */
+ 	public function editProduct(int $product_id, array $data): void {
+-		$this->db->query("UPDATE `" . DB_PREFIX . "product` SET `model` = '" . $this->db->escape((string)$data['model']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "', `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "', `subtract` = '" . (isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', `image` = '" . $this->db->escape((string)$data['image']) . "', `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "', `shipping` = '" . (isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "', `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "', `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (bool)($data['status'] ?? 0) . "', `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_modified` = NOW() WHERE `product_id` = '" . (int)$product_id . "'");
++		$this->db->query("UPDATE `" . DB_PREFIX . "product` SET `model` = '" . $this->db->escape((string)$data['model']) . "', `location` = '" . $this->db->escape((string)$data['location']) . "', `variant` = '" . $this->db->escape(!empty($data['variant']) ? json_encode($data['variant']) : '') . "', `override` = '" . $this->db->escape(!empty($data['override']) ? json_encode($data['override']) : '') . "', `quantity` = '" . (int)$data['quantity'] . "', `minimum` = '" . (int)$data['minimum'] . "', `subtract` = '" . (int)(isset($data['subtract']) ? (bool)$data['subtract'] : 0) . "', `stock_status_id` = '" . (int)$data['stock_status_id'] . "', `image` = '" . $this->db->escape((string)$data['image']) . "', `date_available` = '" . $this->db->escape((string)$data['date_available']) . "', `manufacturer_id` = '" . (int)$data['manufacturer_id'] . "', `shipping` = '" . (int)(isset($data['shipping']) ? (bool)$data['shipping'] : 0) . "', `price` = '" . (float)$data['price'] . "', `points` = '" . (int)$data['points'] . "', `weight` = '" . (float)$data['weight'] . "', `weight_class_id` = '" . (int)$data['weight_class_id'] . "', `length` = '" . (float)$data['length'] . "', `width` = '" . (float)$data['width'] . "', `height` = '" . (float)$data['height'] . "', `length_class_id` = '" . (int)$data['length_class_id'] . "', `status` = '" . (int)(bool)($data['status'] ?? 0) . "', `tax_class_id` = '" . (int)$data['tax_class_id'] . "', `sort_order` = '" . (int)$data['sort_order'] . "', `date_modified` = NOW() WHERE `product_id` = '" . (int)$product_id . "'");
+ 
+ 		// Description
+ 		$this->model_catalog_product->deleteDescriptions($product_id);
+@@ -2240,7 +2240,7 @@
+ 	 * $this->model_catalog_product->addDiscount($product_id, $product_data);
+ 	 */
+ 	public function addDiscount(int $product_id, array $data): void {
+-		$this->db->query("INSERT INTO `" . DB_PREFIX . "product_discount` SET `product_id` = '" . (int)$product_id . "', `customer_group_id` = '" . (int)$data['customer_group_id'] . "', `quantity` = '" . (int)$data['quantity'] . "', `priority` = '" . (int)$data['priority'] . "', `price` = '" . (float)$data['price'] . "', `type` = '" . $this->db->escape($data['type']) . "', `special` = '" . (bool)$data['special'] . "', `date_start` = '" . $this->db->escape($data['date_start']) . "', `date_end` = '" . $this->db->escape($data['date_end']) . "'");
++		$this->db->query("INSERT INTO `" . DB_PREFIX . "product_discount` SET `product_id` = '" . (int)$product_id . "', `customer_group_id` = '" . (int)$data['customer_group_id'] . "', `quantity` = '" . (int)$data['quantity'] . "', `priority` = '" . (int)$data['priority'] . "', `price` = '" . (float)$data['price'] . "', `type` = '" . $this->db->escape($data['type']) . "', `special` = '" . (int)(bool)$data['special'] . "', `date_start` = '" . $this->db->escape($data['date_start']) . "', `date_end` = '" . $this->db->escape($data['date_end']) . "'");
+ 	}
+ 
+ 	/**
+--- a/upload/admin/model/tool/notification.php
++++ b/upload/admin/model/tool/notification.php
+@@ -30,7 +30,7 @@
+ 	 * $notification_id = $this->model_tool_notification->addNotification($notification_data);
+ 	 */
+ 	public function addNotification(array $data): int {
+-		$this->db->query("INSERT INTO `" . DB_PREFIX . "notification` SET `title` = '" . $this->db->escape((string)$data['title']) . "', `text` = '" . $this->db->escape((string)$data['text']) . "', `status` = '" . (bool)$data['status'] . "', `date_added` = NOW()");
++		$this->db->query("INSERT INTO `" . DB_PREFIX . "notification` SET `title` = '" . $this->db->escape((string)$data['title']) . "', `text` = '" . $this->db->escape((string)$data['text']) . "', `status` = '" . (int)(bool)$data['status'] . "', `date_added` = NOW()");
+ 
+ 		return $this->db->getLastId();
+ 	}
+@@ -52,7 +52,7 @@
+ 	 * $this->model_tool_notification->editStatus($notification_id, $status);
+ 	 */
+ 	public function editStatus(int $notification_id, bool $status): void {
+-		$this->db->query("UPDATE `" . DB_PREFIX . "notification` SET `status` = '" . (bool)$status . "' WHERE `notification_id` = '" . (int)$notification_id . "'");
++		$this->db->query("UPDATE `" . DB_PREFIX . "notification` SET `status` = '" . (int)(bool)$status . "' WHERE `notification_id` = '" . (int)$notification_id . "'");
+ 	}
+ 
+ 	/**
+@@ -120,7 +120,7 @@
+ 		$sql = "SELECT * FROM `" . DB_PREFIX . "notification`";
+ 
+ 		if (isset($data['filter_status']) && $data['filter_status'] !== '') {
+-			$sql .= " WHERE `status` = '" . (bool)$data['filter_status'] . "'";
++			$sql .= " WHERE `status` = '" . (int)(bool)$data['filter_status'] . "'";
+ 		}
+ 
+ 		$sql .= " ORDER BY `date_added` DESC";
+@@ -167,7 +167,7 @@
+ 		$sql = "SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "notification`";
+ 
+ 		if (isset($data['filter_status']) && $data['filter_status'] !== '') {
+-			$sql .= " WHERE `status` = '" . (bool)$data['filter_status'] . "'";
++			$sql .= " WHERE `status` = '" . (int)(bool)$data['filter_status'] . "'";
+ 		}
+ 
+ 		$query = $this->db->query($sql);
+--- a/upload/system/library/session/db.php
++++ b/upload/system/library/session/db.php
+@@ -81,7 +81,11 @@
+ 	public function gc(): bool {
+ 		if (round(mt_rand(1, $this->config->get('session_divisor') / $this->config->get('session_probability'))) == 1) {
+ 			$this->db->query("DELETE FROM `" . DB_PREFIX . "session` WHERE `expire` < '" . $this->db->escape(gmdate('Y-m-d H:i:s', time())) . "'");
++		// MatrixOne compacts storage itself and has no MySQL OPTIMIZE TABLE.
++		// Keep the expired-session DELETE above active on both databases.
++		if (getenv('MATRIXONE_ADAPTER') !== '1') {
+ 			$this->db->query("OPTIMIZE TABLE `" . DB_PREFIX . "session`");
++		}
+ 		}
+ 
+ 		return true;
+--- a/upload/system/library/db/pdo.php
++++ b/upload/system/library/db/pdo.php
+@@ -34,7 +34,7 @@
+ 		}
+ 
+ 		try {
+-			$pdo = new \PDO('mysql:host=' . $hostname . ';port=' . $port . ';dbname=' . $database . ';charset=utf8mb4', $username, $password, [\PDO::ATTR_PERSISTENT => false, \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci']);
++			$pdo = new \PDO('mysql:host=' . $hostname . ';port=' . $port . ';dbname=' . $database . ';charset=utf8mb4', $username, $password, [\PDO::ATTR_PERSISTENT => false, (PHP_VERSION_ID >= 80500 ? \Pdo\Mysql::ATTR_INIT_COMMAND : \PDO::MYSQL_ATTR_INIT_COMMAND) => 'SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci']);
+ 		} catch (\PDOException $e) {
+ 			throw new \Exception('Error: Could not make a database link using ' . $username . '@' . $hostname . '!');
+ 		}

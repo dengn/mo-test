@@ -1,0 +1,46 @@
+{
+  "app": "apache/answer",
+  "version": "2.0.3",
+  "commit": "6744295fa888e0621fc9f9a8ace04f1a4daf8554",
+  "schema": "mo_reg_answer_8d3d590c338f4e5b",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_official_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_current_schema_version",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_core_tables",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_admin_bcrypt_and_role",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "source_edits": false,
+  "native_SQLite_cache_retained": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "fresh current-schema initializer, populated upgrades unverified",
+    "community suggested editing/SMTP/federation/AI/MCP/plugins/full UI unverified"
+  ],
+  "binary_sha256": "c485f6f7190624681ad3a08c99aa0241f2dd630b04ed1c1d29bb4d8b47545824",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "AssertionError",
+  "failed_stage": "native_installation",
+  "failed_check": "native_initializer_admin_bcrypt_and_role",
+  "finished_at_utc": "2026-10-13T02:16:19Z"
+}

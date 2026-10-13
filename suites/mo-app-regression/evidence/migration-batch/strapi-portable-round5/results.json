@@ -1,0 +1,204 @@
+{
+  "app": "strapi/strapi",
+  "version": "5.57.0",
+  "schema": "mo_reg_strapi_a57fc278b5c24a88",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_Node_and_dependency_SDK",
+      "passed": true
+    },
+    {
+      "name": "fresh_public_scaffold_and_original_admin_build",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_schema_core_tables",
+      "passed": true
+    },
+    {
+      "name": "scoped_fixture_no_binary_columns",
+      "passed": true
+    },
+    {
+      "name": "native_first_admin_registration",
+      "passed": true
+    },
+    {
+      "name": "native_password_login",
+      "passed": true
+    },
+    {
+      "name": "wrong_admin_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_second_account_registration_and_hash",
+      "passed": true
+    },
+    {
+      "name": "ordinary_admin_user_management_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "native_draft_values_and_owner",
+      "passed": true
+    },
+    {
+      "name": "native_category_exact",
+      "passed": true
+    },
+    {
+      "name": "native_draft_relation",
+      "passed": true
+    },
+    {
+      "name": "ordinary_admin_privileged_token_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "native_token_draft_and_relation_readback",
+      "passed": true
+    },
+    {
+      "name": "native_publish_timestamp",
+      "passed": true
+    },
+    {
+      "name": "after_publish_native_two_versions_exact",
+      "passed": true
+    },
+    {
+      "name": "after_publish_native_relation_for_both_versions",
+      "passed": true
+    },
+    {
+      "name": "anonymous_content_API_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_admin_content_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_content_token_denied",
+      "passed": true
+    },
+    {
+      "name": "before_restart_published_API_exact",
+      "passed": true
+    },
+    {
+      "name": "native_draft_update",
+      "passed": true
+    },
+    {
+      "name": "after_update_native_two_versions_exact",
+      "passed": true
+    },
+    {
+      "name": "after_update_native_relation_for_both_versions",
+      "passed": true
+    },
+    {
+      "name": "real_Strapi_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_published_API_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_two_versions_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_relation_for_both_versions",
+      "passed": true
+    },
+    {
+      "name": "native_admin_token_after_restart",
+      "passed": true
+    },
+    {
+      "name": "ordinary_privileged_token_still_denied",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "native_runtime_attempted": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "prepared dependency/admin-build SDK only; cold installation/full monorepo/full UI unverified",
+    "only article/category fixture content types and scoped UTF8 text decoding; unknown/binary types unverified",
+    "basic draft/publish/relation and native RBAC; workflows/plugins/external providers/upgrade/load unverified"
+  ],
+  "SDK_identity": {
+    "version": "5.57.0",
+    "dependency_files_verified": 66843,
+    "dependency_links_verified": 59,
+    "scaffold_files_verified": 19,
+    "admin_asset_files_verified": 336,
+    "sdk_manifest_sha256": "91476f3d9ee7a5644ae497a3e15f45e981369ef8eb9824eeb01ec87d5b731e7d",
+    "cold_install_verified": false
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_table_count": 44,
+  "denial_HTTP_statuses": [
+    {
+      "path": "/admin/login",
+      "status": 400
+    },
+    {
+      "path": "/admin/users",
+      "status": 403
+    },
+    {
+      "path": "/admin/api-tokens",
+      "status": 403
+    },
+    {
+      "path": "/api/articles/xza137gmnovuz8d3y04grvzv",
+      "status": 403
+    },
+    {
+      "path": "/content-manager/collection-types/api::article.article/xza137gmnovuz8d3y04grvzv",
+      "status": 401
+    },
+    {
+      "path": "/api/articles/xza137gmnovuz8d3y04grvzv",
+      "status": 401
+    },
+    {
+      "path": "/admin/api-tokens",
+      "status": 403
+    }
+  ],
+  "published_readback_field_matches": {
+    "before_restart": {
+      "title": true,
+      "body": true,
+      "category_name": true,
+      "category_document": true,
+      "published_at": true
+    },
+    "after_restart": {
+      "title": true,
+      "body": true,
+      "category_name": true,
+      "category_document": true,
+      "published_at": true
+    }
+  },
+  "finished_at_utc": "2026-10-13T03:56:52Z"
+}

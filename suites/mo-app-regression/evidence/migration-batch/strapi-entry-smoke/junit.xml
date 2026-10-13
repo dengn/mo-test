@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="mo-app-regression" tests="2" failures="0"><testcase name="sql" classname="matrixone.app-suite" time="0.532"><system-out>{"name": "sql", "status": "passed", "exit_code": 0, "case_statuses": {"passed": 3}, "elapsed_seconds": 0.532}</system-out></testcase><testcase name="strapi" classname="matrixone.app-suite" time="71.069"><system-out>{"name": "strapi", "status": "passed", "exit_code": 0, "check_count": 32, "elapsed_seconds": 71.069}</system-out></testcase></testsuite>

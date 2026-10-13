@@ -1,0 +1,201 @@
+{
+  "app": "muety/wakapi",
+  "version": "2.18.1",
+  "commit": "347f1f45ae2863d9499236471317a76630c5308f",
+  "schema": "mo_reg_wakapi_9aebdf7be145468b",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_core_schema",
+      "passed": true
+    },
+    {
+      "name": "native_heartbeat_foreign_key_retained",
+      "passed": true
+    },
+    {
+      "name": "native_signup_admin",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_admin",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_admin",
+      "passed": true
+    },
+    {
+      "name": "native_signup_owner",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_owner",
+      "passed": true
+    },
+    {
+      "name": "native_signup_other",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_other",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_other",
+      "passed": true
+    },
+    {
+      "name": "native_roles_and_password_hashes",
+      "passed": true
+    },
+    {
+      "name": "native_distinct_keys_exact_SQL",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_heartbeat_read_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_API_key_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_private_read_denied",
+      "passed": true
+    },
+    {
+      "name": "native_two_user_16_heartbeats_acknowledged",
+      "passed": true
+    },
+    {
+      "name": "after_write_all_acknowledged_rows_present",
+      "passed": true
+    },
+    {
+      "name": "after_write_exact_values_times_and_user_links",
+      "passed": true
+    },
+    {
+      "name": "after_write_native_primary_ID_unique",
+      "passed": true
+    },
+    {
+      "name": "native_duplicate_batch_ACK_owner",
+      "passed": true
+    },
+    {
+      "name": "native_duplicate_batch_ACK_other",
+      "passed": true
+    },
+    {
+      "name": "native_duplicate_no_extra_rows",
+      "passed": true
+    },
+    {
+      "name": "cross_user_write_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "anonymous_write_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_API_exact_owner",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_API_exact_other",
+      "passed": true
+    },
+    {
+      "name": "real_Wakapi_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_API_exact_owner",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_API_exact_other",
+      "passed": true
+    },
+    {
+      "name": "after_restart_all_acknowledged_rows_present",
+      "passed": true
+    },
+    {
+      "name": "after_restart_exact_values_times_and_user_links",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_primary_ID_unique",
+      "passed": true
+    },
+    {
+      "name": "native_foreign_keys_unchanged_after_restart",
+      "passed": true
+    },
+    {
+      "name": "native_cookie_auth_after_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_other_user_denied",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "min_free_mib": 2048,
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "adaptation_patch_sha256": "e3055a765cffc8a770e810361e3b7c8cbea029bc96850376c9ebb015979f66d6",
+  "limitations": [
+    "fresh native schema/pre-post migrations; populated upgrades and complete UI unverified",
+    "basic finite heartbeats only; historical unproved acknowledgments remain unproved",
+    "loopback HTTP with supported insecure_cookies, native auth/rate limits retained",
+    "native leaderboard/cache warming/external import/mail disabled through supported configuration"
+  ],
+  "binary_identity": {
+    "sha256": "8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_startup_seconds": [
+    64.055,
+    105.11
+  ],
+  "native_table_count": 14,
+  "signup_HTTP_statuses": {
+    "admin": 200,
+    "owner": 200,
+    "other": 200
+  },
+  "acknowledged_heartbeats": 16,
+  "durable_heartbeats": 16,
+  "native_ID_count": 16,
+  "restart_startup_timeout_seconds": 180,
+  "finished_at_utc": "2026-10-13T03:11:14Z"
+}

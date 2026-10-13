@@ -1,0 +1,129 @@
+{
+  "app": "opencart/opencart",
+  "version": "4.1.0.4",
+  "schema": "mo_reg_opencart_492f17fa48fc4cc3",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_database_and_admin_install_form",
+      "passed": true
+    },
+    {
+      "name": "native_schema_data_and_admin_installer",
+      "passed": true
+    },
+    {
+      "name": "native_core_tables",
+      "passed": true
+    },
+    {
+      "name": "native_admin_password_hash",
+      "passed": true
+    },
+    {
+      "name": "native_install_config_written",
+      "passed": true
+    },
+    {
+      "name": "native_login_token_8",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_native_rejection",
+      "passed": true
+    },
+    {
+      "name": "native_login_token_10",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login",
+      "passed": true
+    },
+    {
+      "name": "native_admin_product_create",
+      "passed": true
+    },
+    {
+      "name": "native_product_single_ID",
+      "passed": true
+    },
+    {
+      "name": "SQL_product_description_store_relationships",
+      "passed": true
+    },
+    {
+      "name": "SQL_all_four_price_rules_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_admin_unicode_readback",
+      "passed": true
+    },
+    {
+      "name": "before_restart_date_filtered_discount_special",
+      "passed": true
+    },
+    {
+      "name": "native_cart_add",
+      "passed": true
+    },
+    {
+      "name": "SQL_cart_product_quantity_relation",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_cart_unit20_line40",
+      "passed": true
+    },
+    {
+      "name": "anonymous_management_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "invalid_native_user_token_denied_zero_write",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "official_archive_sha256": "cdef537f5a0a7e1b4ddbe16f589dd2e80b10150a09bfbe93ce76ef2d5c3218c0",
+  "adaptation_manifest_sha256": "2d1ba679c0f4c68a76aa088ec4a939c71795fd4f9f8ca375f78109f919d77da2",
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "date-filtered derived price joins",
+    "PHP boolean SQL literals as integers",
+    "skip only OPTIMIZE, keep expired-session DELETE",
+    "PHP8.5 PDO constant compatibility"
+  ],
+  "limitations": [
+    "fresh schema initializer; populated upgrades/payment/shipping/checkout/orders/extensions/load unverified",
+    "original file sessions/cache retained; SQL business data uses MatrixOne",
+    "upstream fresh installer leaves foreign keys commented out; no additional constraints removed"
+  ],
+  "verified_release_files": 4053,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_table_count": 159,
+  "native_product_id": 50,
+  "native_display_prices": [
+    "$22.50",
+    "$20.00"
+  ],
+  "error_type": "TypeError",
+  "failed_stage": "native_restart",
+  "finished_at_utc": "2026-10-13T02:34:56Z"
+}

@@ -20,7 +20,7 @@ def main():
     catalog = json.loads((ROOT / 'catalog/projects-1000.json').read_text())
     cases = [json.loads(p.read_text()) for p in (ROOT / 'cases').glob('*.json')]
     implemented = [app for app in inventory['applications'] if app['independent_native_driver'] == 'implemented']
-    assert len(implemented) == inventory['independent_native_driver_count'] == 16
+    assert len(implemented) == inventory['independent_native_driver_count'] == 22
     assert len(cases) == inventory['SQL_case_count'] == 20
     assert len({case['id'] for case in cases}) == len(cases)
     assert sum(bool(case.get('panic')) for case in cases) == 4
@@ -29,7 +29,7 @@ def main():
     assert len(inventory['applications']) == 61
     assert inventory['historical_basic_business_pass_count'] == 58
     assert sum(app['runtime_status'].startswith('smoke_passed') for app in inventory['applications']) == 58
-    print(f"PASS: {len(manifest['files'])} artifact hashes; 16 independent native drivers; 20 SQL fixtures; 1000 candidates.")
+    print(f"PASS: {len(manifest['files'])} artifact hashes; 22 independent native drivers; 20 SQL fixtures; 1000 candidates.")
 
 
 if __name__ == '__main__':
