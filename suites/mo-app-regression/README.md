@@ -4,9 +4,9 @@
 
 | 范围 | 当前覆盖 |
 | --- | --- |
-| 可独立运行的原生应用 | Gotify、Blocky、Plik、Ergo、Documize、Huginn、ntfy、Memos、Baikal、FreshRSS、Adminer、phpMyAdmin、Kanboard、YOURLS、Grafana、Matomo、Gogs、Apache Answer、OpenCart，共 19 个；版本/源码与原生二进制或 SDK 身份核验 |
+| 可独立运行的原生应用 | Gotify、Blocky、Plik、Ergo、Documize、Huginn、ntfy、Memos、Baikal、FreshRSS、Adminer、phpMyAdmin、Kanboard、YOURLS、Grafana、Matomo、Gogs、Apache Answer、OpenCart、Wakapi，共 20 个；版本/源码与原生二进制或 SDK 身份核验 |
 | SQL 回归 | 20 个 fixture：4 个 panic、13 个其他已知问题、3 个正向对照；每个保留完整 SQL、错误签名、值及约束断言 |
-| 历史应用运行 | 61 个真实尝试、58 个基本业务通过；其中 19 个独立驱动已迁移，其余 39 个基本通过项目待迁移，不计为自动化覆盖 |
+| 历史应用运行 | 61 个真实尝试、58 个基本业务通过；其中 20 个独立驱动已迁移，其余 38 个基本通过项目待迁移，不计为自动化覆盖 |
 | 候选目录 | 1000 项、939 项未运行；星数与许可证为记录时的快照 |
 | CI | 手动 GitHub Actions + workflow_call，可接入现有流水线；本次本地运行结果见 [验证记录](VALIDATION.md) |
 
@@ -27,7 +27,7 @@ export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
 .venv/bin/python run.py --profile smoke --out artifacts/smoke-001
 ```
 
-`smoke` 顺序执行 3 个正向 SQL 对照和全部 19 个原生应用。一个应用失败仍继续执行后面的驱动，最终返回失败；无报告、空报告或报告与退出码矛盾也会失败。输出目录必须是新目录，避免覆盖历史证据。
+`smoke` 顺序执行 3 个正向 SQL 对照和全部 20 个原生应用。一个应用失败仍继续执行后面的驱动，最终返回失败；无报告、空报告或报告与退出码矛盾也会失败。输出目录必须是新目录，避免覆盖历史证据。
 
 ```bash
 # 只运行一个应用；--app 可重复。SQL-only profile 不接受 --app。
@@ -74,6 +74,7 @@ export MO_HOST=127.0.0.1 MO_PORT=6001 MO_USER=root
 | Gogs | 原生初始化 37 表、密码/令牌/私有仓库、真实 Git HTTP clone/push、issue/评论、SQL/权限/重启，33 项 | 尚待迁移负载入口 |
 | Apache Answer | 官方原生安装/版本36、账号/角色、问题/回答/标签/Markdown、SQL/权限/重启，27 项 | 尚待迁移负载入口 |
 | OpenCart | 原生网页安装/159表、密码/cookie/token、Unicode商品、日期过滤折扣/特价、购物车精确金额、SQL关系/权限/重启，35项 | 尚待迁移负载入口 |
+| Wakapi | 原生14表/FK、三账号/密码/API key、两用户16条心跳全部精确落库、去重/权限/实际重启，40项；重启等待界限180秒 | 尚待迁移负载入口 |
 | Adminer | 原生 PDO/密码/cookie/CSRF、SQL/表单/类型/FK/回滚、CSV 精确值与重启，20 项 | 尚待迁移负载入口 |
 
 Ergo 仅把原生 MySQL 聊天历史后端接到 MO，账号/频道仍使用原生 BuntDB。Blocky DNS ACK 还必须与持久化日志核对；缺失不会算通过。已有高负载失败和恢复仍保留在独立项目证据里，后续成功不会覆盖早期失败。完整 UI、插件、已有数据升级和生产长期稳定性不属于本轮覆盖。

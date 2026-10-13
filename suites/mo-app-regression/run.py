@@ -14,7 +14,7 @@ import xml.etree.ElementTree as ET
 from native_common import runtime_root
 
 ROOT = Path(__file__).resolve().parent
-APPS = {'gotify': 'gotify-linux-amd64', 'blocky': 'blocky', 'plik': 'plikd', 'ergo': 'ergo', 'documize': 'documize', 'huginn': None, 'ntfy': 'ntfy-matrixone', 'memos': 'memos', 'baikal': 'frankenphp', 'freshrss': 'frankenphp', 'adminer': 'frankenphp', 'phpmyadmin': 'frankenphp', 'kanboard': 'frankenphp', 'yourls': 'frankenphp', 'grafana': None, 'matomo': 'frankenphp', 'gogs': 'gogs-matrixone-fixed', 'answer': 'answer', 'opencart': 'frankenphp'}
+APPS = {'gotify': 'gotify-linux-amd64', 'blocky': 'blocky', 'plik': 'plikd', 'ergo': 'ergo', 'documize': 'documize', 'huginn': None, 'ntfy': 'ntfy-matrixone', 'memos': 'memos', 'baikal': 'frankenphp', 'freshrss': 'frankenphp', 'adminer': 'frankenphp', 'phpmyadmin': 'frankenphp', 'kanboard': 'frankenphp', 'yourls': 'frankenphp', 'grafana': None, 'matomo': 'frankenphp', 'gogs': 'gogs-matrixone-fixed', 'answer': 'answer', 'opencart': 'frankenphp', 'wakapi': 'wakapi-matrixone'}
 CONTROLS = ['PASS-GENERATED-UPPER', 'PASS-JSON-UNICODE', 'PASS-ROLLBACK']
 LOAD = {'gotify': ['--messages', '128', '--workers', '4'],
         'blocky': ['--queries', '1024', '--workers', '32'],
@@ -63,7 +63,7 @@ def plan(profile, apps=None, include_panic=False, expected_commit=None, binary_d
             args = LOAD[app].copy() if profile == 'load' else []
             if binary_dir and APPS[app]:
                 args += ['--binary', str((Path(binary_dir) / APPS[app]).resolve())]
-            if app in {'blocky', 'plik', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer', 'phpmyadmin', 'kanboard', 'yourls', 'grafana', 'matomo', 'gogs', 'answer', 'opencart'}:
+            if app in {'blocky', 'plik', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer', 'phpmyadmin', 'kanboard', 'yourls', 'grafana', 'matomo', 'gogs', 'answer', 'opencart', 'wakapi'}:
                 args += ['--min-free-mib', str(min_free_mib)]
             jobs.append((app, 'run_' + app + '.py', args))
     return jobs

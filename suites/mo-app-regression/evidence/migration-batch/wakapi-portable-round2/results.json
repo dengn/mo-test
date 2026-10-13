@@ -1,0 +1,37 @@
+{
+  "app": "muety/wakapi",
+  "version": "2.18.1",
+  "commit": "347f1f45ae2863d9499236471317a76630c5308f",
+  "schema": "mo_reg_wakapi_bf5caa4a54c245dc",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    }
+  ],
+  "min_free_mib": 2048,
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "adaptation_patch_sha256": "e3055a765cffc8a770e810361e3b7c8cbea029bc96850376c9ebb015979f66d6",
+  "limitations": [
+    "fresh native schema/pre-post migrations; populated upgrades and complete UI unverified",
+    "basic finite heartbeats only; historical unproved acknowledgments remain unproved",
+    "loopback HTTP with supported insecure_cookies, native auth/rate limits retained",
+    "native leaderboard/cache warming/external import/mail disabled through supported configuration"
+  ],
+  "binary_identity": {
+    "sha256": "5a4c0d40156152f6f9b22aeaa841153cd12ac4feca21838a0179f90b5e2d2cd2",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "RuntimeError",
+  "failed_stage": "native_migrations",
+  "finished_at_utc": "2026-10-13T02:50:43Z"
+}

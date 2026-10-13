@@ -20,18 +20,18 @@
     },
     {
       "path": "MIGRATION.csv",
-      "bytes": 61569,
-      "sha256": "a8d0eef6b87407ad697fee001f3b49c056d79012fffd837550622b140c4b1859"
+      "bytes": 61573,
+      "sha256": "664d4aa9eb27400ac630dbdbcc0c8c18a874de1ad1847763384249bf88fe9f1e"
     },
     {
       "path": "README.md",
-      "bytes": 10592,
-      "sha256": "7dc14724e0cb16ede13f04b13bb2b62cf1f3d9761cdf8d571a6ddee35f46c8c5"
+      "bytes": 10788,
+      "sha256": "118db8d533577abf9faf814b82326e2f541e37a34bec18b44c5628f0d4c5a9ce"
     },
     {
       "path": "RUNTIME-SDK.md",
-      "bytes": 13020,
-      "sha256": "0d2f68b23c3ccf3ac5d38e269dc6e8cf5982447e77bd14dc02bd69647404cb58"
+      "bytes": 14579,
+      "sha256": "523b8f728e81f6e8a1c227886ea79c39be6dc15b63e3262ab4865a9394c26afc"
     },
     {
       "path": "UPSTREAM.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 13534,
-      "sha256": "7efa024180637843c9f6f126038ec24e1b885075d923c4625bd0002f92736d28"
+      "bytes": 15423,
+      "sha256": "cc004a371dfab2183ae85ffc12e6d4ab6eb50adf8da523ddd5c19c24a7b0cf0f"
     },
     {
       "path": "adapters/README.md",
@@ -85,8 +85,8 @@
     },
     {
       "path": "build_go_sdk.py",
-      "bytes": 9399,
-      "sha256": "ca55221ae03efe360a40321bcda6a35523b2b8ee1cfa31e45b6bd1642fe2c074"
+      "bytes": 9975,
+      "sha256": "73d223705af6339b69e5307b300c7a2761f1dd78bf43b4fe2fcd7acefe5a85af"
     },
     {
       "path": "cases/PANIC-01.json",
@@ -1664,6 +1664,116 @@
       "sha256": "9946c9205102e3a33da7989f67027cee15b2546b1920cb125e467911a41b6c6a"
     },
     {
+      "path": "evidence/migration-batch/wakapi-cold-build-blocked.json",
+      "bytes": 330,
+      "sha256": "9c5cc7d51aac77e8b6cf0ed7d38794ad67977ed55128d8c3ce54d55538e4f054"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/junit.xml",
+      "bytes": 529,
+      "sha256": "8d94382dbe333d841fd6d405f85d8a7a7944efbe214d6ab493c383f34d0e139d"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/results.json",
+      "bytes": 984,
+      "sha256": "5ed17d4bf693a6ec580123790fc416eccb1cec98e604fae1dd07a22d9dcce88e"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "2c0d1b305ec3d585f362ca4811dbc5bce9838309459f6d43b17dc3ee2296b99e"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/sql/results.json",
+      "bytes": 4640,
+      "sha256": "62075bd12dbb9cb15fdaeb93448e9035f01d53a135f44596d26f229cd1b6cf73"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/wakapi/junit.xml",
+      "bytes": 3194,
+      "sha256": "377859211b4bb36706e7eea8efe28776344bf54fa18b219c7fd6b065dc66b29f"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-entry-smoke/wakapi/results.json",
+      "bytes": 4742,
+      "sha256": "fd3946f49379d15ad0b388d53a2c74e23b57cab15abaac7897018ec7a25552f6"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round1/junit.xml",
+      "bytes": 343,
+      "sha256": "a3e3cbe85b9734089172350e3efb23a28ac569cbfadd1b4f0c6cc862951c523f"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round1/results.json",
+      "bytes": 1327,
+      "sha256": "db39445c185411d0aa06b6e6047d4ae33cffbfd5749d41f9c14b609b1cc7cacf"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round2/junit.xml",
+      "bytes": 343,
+      "sha256": "a3e3cbe85b9734089172350e3efb23a28ac569cbfadd1b4f0c6cc862951c523f"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round2/results.json",
+      "bytes": 1327,
+      "sha256": "fd0e68fa08756862bdee315226934f82692aaac4ae23c1d20baaf749dc302dbf"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round3/junit.xml",
+      "bytes": 496,
+      "sha256": "30a0ad09ac9b6e40a95ea5e3137ee7e580ce0248e7be13274c02fd9e1d86eb00"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round3/results.json",
+      "bytes": 1624,
+      "sha256": "92dfeaaabab98d134349eec63710c8b41249de73aa3c2068600e2e6c6fb3e72b"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round4/junit.xml",
+      "bytes": 496,
+      "sha256": "30a0ad09ac9b6e40a95ea5e3137ee7e580ce0248e7be13274c02fd9e1d86eb00"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round4/results.json",
+      "bytes": 1674,
+      "sha256": "e547cb2b257608c39b23a48557e22012ae310221d20354aa1e71da36a92c93fb"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round5/junit.xml",
+      "bytes": 1582,
+      "sha256": "a37190c80c2a9e4283f9ebb7b3de9078b6c8853fd8c7c5353f38a043d0180d65"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round5/results.json",
+      "bytes": 2787,
+      "sha256": "17f6ae7c7833cbacddb7cd80adfa103616e29aaa620d216c1069c048370e560e"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round6/junit.xml",
+      "bytes": 2487,
+      "sha256": "bb90ad3f8dd84bf9e476132512d51aa0a4a3a86a0b9fe54707c68738733a8537"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round6/results.json",
+      "bytes": 3835,
+      "sha256": "9272acdab8334d9640f51e0402b6888af12ece088570547b5e7da286e0ab6542"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round7/junit.xml",
+      "bytes": 3194,
+      "sha256": "377859211b4bb36706e7eea8efe28776344bf54fa18b219c7fd6b065dc66b29f"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-portable-round7/results.json",
+      "bytes": 4743,
+      "sha256": "f81fc419bd7d46b628980bc8b1bfa6ea99dbba78e68de29c1d4e4fda2db11d9d"
+    },
+    {
+      "path": "evidence/migration-batch/wakapi-sdk-selection-audit.json",
+      "bytes": 907,
+      "sha256": "9e3bd51a328d9bcb866dda6a69b69562f04f0b17a682e8bb22de8749265c4dbe"
+    },
+    {
       "path": "evidence/migration-batch/yourls-portable-round1/junit.xml",
       "bytes": 1092,
       "sha256": "a5fa295fd1b5e22089c34784c9353acdb892d2130674c0ca0563318ecf0644c2"
@@ -1686,7 +1796,7 @@
     {
       "path": "evidence/project-secret-scan.json",
       "bytes": 155,
-      "sha256": "e23e59bb293b153529361630fb7ff35a1e1f7e48a8d235445f8d7520e34cb607"
+      "sha256": "0e1859a594e1d6c6b2c1075134353a8d97b3b1e0fe6dc5349ab384d95c65c4ae"
     },
     {
       "path": "fixtures/adminer/adminer-release-type-name.patch",
@@ -2619,6 +2729,21 @@
       "sha256": "d051d6b4a2dce21caf88be3bbdaebdb52782af05dd15784db40dc398d25b3b6f"
     },
     {
+      "path": "fixtures/wakapi/LICENSE",
+      "bytes": 1067,
+      "sha256": "852bcc033a46c62f99fb5ffd43b3241ba2c0c440c6034aa2114505f2c4f03c4a"
+    },
+    {
+      "path": "fixtures/wakapi/matrixone-runtime.patch",
+      "bytes": 2926,
+      "sha256": "e3055a765cffc8a770e810361e3b7c8cbea029bc96850376c9ebb015979f66d6"
+    },
+    {
+      "path": "fixtures/wakapi/source-manifest.json",
+      "bytes": 81835,
+      "sha256": "2921593b1f87baa8ee8a5632a83e25e9aaea77cceaa107417400167c83a7efdc"
+    },
+    {
       "path": "fixtures/yourls/LICENSE",
       "bytes": 1089,
       "sha256": "3861abc81757d6640033df0fe9c8f06a0174238e0b59773f27de0f24314c8e7b"
@@ -2645,8 +2770,8 @@
     },
     {
       "path": "inventory.json",
-      "bytes": 88135,
-      "sha256": "79b6b91e7b163783e233bbe6363790fc4a0d7b5e6728c466cc3874076bb33094"
+      "bytes": 88605,
+      "sha256": "385aa3c0f883c6ba5c24baf456a977f6024727c50f3bcf9305f18ce0d38623d2"
     },
     {
       "path": "native_common.py",
@@ -2680,8 +2805,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 10926,
-      "sha256": "502c4ae96c52593d6489135c5672b64c95cd0e62811c5ed983114de16c6f158e"
+      "bytes": 10966,
+      "sha256": "eedbe746a07c83a005286b9cf3b0aec67d83bd2839dfaec93b1455b6fcee703e"
     },
     {
       "path": "run_adminer.py",
@@ -2779,6 +2904,11 @@
       "sha256": "e23719012164f77c033fec73cdd58c577b659eaeeade84ecba82a7e1b6e810ac"
     },
     {
+      "path": "run_wakapi.py",
+      "bytes": 13689,
+      "sha256": "20a7f00b25010f5ef3f49273286a7531b925e9447a933a86d8bfde8b8af8cfed"
+    },
+    {
       "path": "run_yourls.py",
       "bytes": 12595,
       "sha256": "bb5638b2e68f0d6930d20e788251a2ae3b50b59465b4f6c68708b662454aa52d"
@@ -2790,13 +2920,13 @@
     },
     {
       "path": "tests/test_sdk_identity.py",
-      "bytes": 3391,
-      "sha256": "e2bfaf0a2eea4522913b7c66e20496fdd0299feebe75c0c8f75ca8d1e42d46e0"
+      "bytes": 4293,
+      "sha256": "f7f23d8436dc2aa82c0781aecdcc6a68dec1924c24e3f212b075bc3931fe4288"
     },
     {
       "path": "tests/test_suite.py",
-      "bytes": 4378,
-      "sha256": "1ece5acf312c588989c89360e741643ef564089cbcb32b1cdaae28e6cb39c7f9"
+      "bytes": 4386,
+      "sha256": "1f3089a014c8b4bb7b15faa4fb93b8b3b80b74146ebfd1bf81687b31827202d5"
     },
     {
       "path": "upstream-import.json",
@@ -2806,11 +2936,11 @@
     {
       "path": "verify.py",
       "bytes": 1804,
-      "sha256": "a432d059974af110dbddc8f16af8967fd7fb8cd7949613de99d6b2eb6409be8e"
+      "sha256": "a59e70214de6d3599cc56e95e14c4e3e9740f3ef7c73b30ae2b96557ea2abe22"
     }
   ],
   "workflow": {
     "path": ".github/workflows/app-regression.yml",
-    "sha256": "2e5250bc79a458c002f5ec3856e87b92f6608c2400b2e45d177229a460fd1d85"
+    "sha256": "6114d21ad1dcb8f86f7d8477db9734438b47054573be2e3a24e534dbfba13835"
   }
 }

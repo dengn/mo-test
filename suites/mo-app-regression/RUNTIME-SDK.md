@@ -85,3 +85,10 @@ Apache Answer 使用官方 v2.0.3 压缩包与固定 SHA 二进制，`MO_ANSWER_
 ## OpenCart
 
 OpenCart 官方4.1.0.4 zip 固定 SHA 完整验证后仅安全解包 upload/ 发行文件，原始配置和数据不继承。`MO_OPENCART_RELEASE_ARCHIVE` 可提供原包缓存，否则默认下载；PHP仍使用固定FrankenPHP，`MO_PHP_BINARY`或统一binary-dir的frankenphp文件。五个精确PHP适配源文件分别验证原始/适配摘要：日期先过滤再按优先级选择价格的派生JOIN、SQL布尔字面量整数化、只跳过OPTIMIZE保留会话过期DELETE、PHP8.5 PDO常量同义兼容。按原生安装步骤准备空config、执行原生step_3.save创建159表及管理员，随后将本轮install目录移到私有目录，所有用户/token/商品/价格规则/购物车由原生安装或控制器生成，不手工插入。遵循上游部署设置将error_display=false，原始错误日志保留，不截取JSON尾部当作成功。原生文件session/cache保持，业务数据连接MO；上游原始fresh installer中的外键创建本就注释，不额外删约束。
+
+
+## Wakapi
+
+Wakapi 固定2.18.1/347f1f45ae2863d9499236471317a76630c5308f，551个原始Git blob和精确三文件metadata/DO NOTHING适配补丁。`MO_WAKAPI_BINARY` 必须是固定适配二进制SHA `8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6`，或提供与source/Go/patch/binary匹配的 `MO_WAKAPI_BUILD_MANIFEST`。原始官方release二进制没有这份适配，不能作为缓存代替。`build_go_sdk.py --app wakapi --source-tree <pristine fixed checkout> --go <Go1.27.1> --out <new private SDK>`提供冷构建配方；原始内嵌资源完整保留，不造HTML占位；本环境在4GiB资源入场之前阻止，尚未执行冷编译。
+
+原生WebAuthn即使默认不用也校验RPID域名，因此应用站点使用localhost、仅监听127.0.0.1。原生生产环境认证、密码Argon2id、cookie密钥与默认登录/注册限流保留；按支持配置允许loopback HTTP cookie，不启用trusted-header登录。邮箱原生可选，留空以保留默认MX验证；不发送邮件。所有账号及API key由原生signup/setup生成，数据库外键创建/检查保持；leaderboard、cache warming、外部import和mail经原生配置关闭。两用户并发提交16条唯一心跳，逐值/时间/归属/原生uint64 ID核对，再验证重复请求不增行、越权零写入、实际重启及全部SQL/API读回。初次startup90秒界限，重启界限180秒；每轮记录实际启动秒数，超时仍失败，旧失败记录不改写。已有数据升级、完整UI、聚合报表及高负载尚未认证。

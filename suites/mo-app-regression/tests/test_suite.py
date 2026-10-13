@@ -8,9 +8,9 @@ from run import execute, plan
 
 
 class SuiteContract(unittest.TestCase):
-    def test_smoke_has_controls_and_nineteen_real_drivers(self):
+    def test_smoke_has_controls_and_twenty_real_drivers(self):
         jobs = plan('smoke')
-        self.assertEqual([j[0] for j in jobs], ['sql', 'gotify', 'blocky', 'plik', 'ergo', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer', 'phpmyadmin', 'kanboard', 'yourls', 'grafana', 'matomo', 'gogs', 'answer', 'opencart'])
+        self.assertEqual([j[0] for j in jobs], ['sql', 'gotify', 'blocky', 'plik', 'ergo', 'documize', 'huginn', 'ntfy', 'memos', 'baikal', 'freshrss', 'adminer', 'phpmyadmin', 'kanboard', 'yourls', 'grafana', 'matomo', 'gogs', 'answer', 'opencart', 'wakapi'])
         self.assertNotIn('--allow-known', jobs[0][2])
 
     def test_panic_requires_explicit_separate_profile(self):

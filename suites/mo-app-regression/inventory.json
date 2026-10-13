@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 19,
+  "independent_native_driver_count": 20,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -517,8 +517,11 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "configured_and_tested",
       "adaptation_notes": "Business smoke, saturation boundary and post-load reads recorded in batch4; full compatibility is not certified. OpenGist boundary is native Git concurrent commit failure; Etherpad final decoder fix verified by database restart readback. Wakapi async accepted heartbeats are not all proved durable.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "2.18.1",
+      "native_check_count": 40,
+      "automation_scope": "Pinned adapted binary/source551 blobs/metadata+INSERT IGNORE patch; native14 tables and FK, three native signup/password accounts, original API keys, two users16 exact durable heartbeats, duplicate batches/cross-user denial, real restart/readback. Historical missing durable ACKs remain unproved. Restart startup observed125s, bound180; cold SDK blocked before build."
     },
     {
       "repo": "kanboard/kanboard",

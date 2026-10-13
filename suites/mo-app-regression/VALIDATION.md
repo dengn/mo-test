@@ -86,3 +86,12 @@ Answer 新库原生 AUTO_INSTALL、用户角色、问答/标签/Markdown逐值�
 原始失败轮次全部保留：PHP8.5弃用PDO常量使原生JSON出现提示，增加同义新常量兼容；私有凭据文件的O_EXCL重复创建；价格日期局部变量覆盖启动函数，均在harness/SDK层修正，不归为MO故障。第四轮通过。当前19个驱动分别通过的原生检查合计511项；本轮3个新增驱动合计95项，原54项已迁移15个、还剩39个。1000候选及61/58/939历史统计不增加。
 
 统一入口在另外三个全新库重跑 Gogs33、Answer27、OpenCart35，加3项SQL正向对照全部通过，退出0。OpenCart此次使用默认官方下载路径，完整zip摘要仍匹配；见 evidence/migration-batch/gogs-answer-opencart-entry-smoke。20项分类/入口/SDK合同测试通过；新增驱动load入口和线上GitHub Actions未执行。
+
+
+## Wakapi：原54项还剩38项
+
+Wakapi 第七轮全新库通过40项：14张原生表及外键、三账号/Argon2id/角色/原生API key、两普通用户并发16条心跳、16条全量落库逐值/时间/用户/FK/uint64 ID核对、重复提交去重、匿名/错误key/跨用户读写拒绝、真实重启后SQL/API/cookie一致。重复提交不计为新增持久化心跳。当前共20个独立驱动，原54项已迁移16个、还剩38个；各驱动分别通过原生检查共551项。本轮新增4个驱动共135项；候选1000/尝试61/基本通过58/未运行939不增加。
+
+原始失败保留：前两轮误选归档的未适配官方二进制，第一轮IP站点被WebAuthn拒绝、第二轮未适配metadata出现重复FK；最早的report provenance标签有误，解释见wakapi-sdk-selection-audit.json，不能当作适配SDK或新MO缺陷。正确SDK第三/四轮遇到原生邮箱MX规则（使用原生可选空邮箱保持规则），第五轮Python HTTP header编码失败（机器名用ASCII，业务JSON仍为Unicode）。第六轮重启90秒检查超时，第七轮将重启有界等待设为180秒，实际首启63.164秒、重启125.136秒后全部40检查通过；这只证明本轮基本业务与重启通过，不能解释为慢启动已修复或生产启动性能合格。慢启动根因尚未隔离，与MySQL/main对照未完成；未提交新数据库issue。完整冷SDK因不足4GiB保护未执行，使用固定历史适配二进制。
+
+Wakapi经统一入口另建新库复跑40项原生检查加3项SQL正向对照通过，退出0，见 evidence/migration-batch/wakapi-entry-smoke；其启动耗时逐轮记录，不覆盖第六轮90秒超时。21项Python合同测试及20应用workflow选择校验通过。三应用联合95项轮与本轮Wakapi40项轮分开，未宣称一次全20应用联合运行；线上CI和新增load入口尚未执行。

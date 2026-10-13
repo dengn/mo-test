@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--app', choices=['memos', 'ntfy', 'gogs'], required=True)
+    parser.add_argument('--app', choices=['memos', 'ntfy', 'gogs', 'wakapi'], required=True)
     parser.add_argument('--source-tree', type=Path, required=True, help='Pristine checkout of the full pinned commit')
     parser.add_argument('--go', default='go', help='Go 1.27.1 executable')
     parser.add_argument('--out', type=Path, required=True, help='New directory; source, cache, logs and binary remain private')
@@ -66,6 +66,13 @@ def main():
             package = '.'
             tags = 'nofirebase,nopayments,sqlite_omit_load_extension,osusergo,netgo'
             ldflags = '-s -w -X main.version=2.29.0-matrixone -X main.commit=' + manifest['commit']
+        elif args.app == 'wakapi':
+            patch = ROOT / 'fixtures/wakapi/matrixone-runtime.patch'
+            report['patch_sha256'] = digest(patch)
+            subprocess.run(['git', 'apply', '--check', str(patch)], cwd=source, check=True, capture_output=True)
+            subprocess.run(['git', 'apply', str(patch)], cwd=source, check=True, capture_output=True)
+            report['UI_scope'] = 'original embedded assets; business API/forms tested, full UI unverified'
+            placeholders, package, tags, ldflags = [], '.', '', '-s -w'
         elif args.app == 'memos':
             placeholders = ['server/frontend/dist/index.html']
             package, tags = './cmd/memos', ''
@@ -144,8 +151,8 @@ def verified_binary(path, legacy_sha, manifest_path, app):
         valid = report.get('passed') is True and report.get('build_exit') == 0 and report.get('app') == app
         valid = valid and report.get('commit') == expected['commit'] and report.get('binary_sha256') == observed
         valid = valid and report.get('source_blobs_verified') == len(expected['files']) and report.get('go_version', '').startswith('go version go1.27.1 ')
-        if app == 'ntfy':
-            valid = valid and report.get('patch_sha256') == digest(ROOT / 'fixtures/ntfy/matrixone-runtime.patch')
+        if app in {'ntfy', 'wakapi'}:
+            valid = valid and report.get('patch_sha256') == digest(ROOT / 'fixtures' / app / 'matrixone-runtime.patch')
         elif app == 'gogs':
             valid = valid and report.get('adaptation_manifest_sha256') == digest(ROOT / 'fixtures/gogs/adaptation-manifest.json')
         if valid:
