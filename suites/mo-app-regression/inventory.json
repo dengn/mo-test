@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 16,
+  "independent_native_driver_count": 19,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -135,8 +135,11 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "configured_and_tested",
       "adaptation_notes": "Business smoke, saturation boundary and post-load reads recorded in batch4; full compatibility is not certified. OpenGist boundary is native Git concurrent commit failure; Etherpad final decoder fix verified by database restart readback. Wakapi async accepted heartbeats are not all proved durable.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "v2.0.3",
+      "native_check_count": 27,
+      "automation_scope": "Pinned official binary; native AUTO_INSTALL fresh schema version36, account/role/password permissions, questions/answers/tags/Markdown relationships, real restart. Original SQLite cache retained. Full upgrades/UI/plugins/load unverified."
     },
     {
       "repo": "DjangoCRM/django-crm",
@@ -434,8 +437,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Vendored XORM metadata adapter: recognize BASE TABLE independent of engine, case-fold index prefix. Existing-schema process restart and issue read passed. Concurrent issue creation hit duplicate (repo_id,index); upstream NextIssueIndex has an explicit race FIXME; not yet fixed or compared against MySQL.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "dbbd717e923694c36f41b0360515b4374bbe6ee0",
+      "mo_test_portable_basic_checks": 33
     },
     {
       "repo": "go-vikunja/vikunja",
@@ -607,8 +612,11 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Official4.1.0.4; native CLI installation and administrator login retained. Native numeric boolean fields explicitly encode0/1; product catalog adapter replaces unsupported correlated NOW scalar queries with filtered rank1 derived joins, including customer group, active date, quantity and price type. Native admin product creation/update/Unicode readback, public discount22.50/special20 with future and expired higher-priority offers excluded, guest cart quantity2 exact line40 and anonymous admin denial passed. MatrixOne session GC retains expiry DELETE and omits unsupported MySQL OPTIMIZE TABLE because storage compacts natively. Partial earlier product50 preserved. Checkout/payment/orders and full extensions unverified;  Native saturation and post-load/restart business checks passed; 385 unique native business rows persisted out of 385 attempts, 385 timely acknowledgements, no duplicates or invalid business rows. These are short application probes under recorded resource guards, not long-duration capacity certification.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "4.1.0.4",
+      "native_check_count": 35,
+      "automation_scope": "Official SHA-pinned release with five exact PHP adapters; native fresh web installer159 tables/admin, password/cookie/token, date-filtered prices/cart, SQL relationships, real restart. Original file sessions/cache retained. Populated upgrades/orders/payment/shipping/load unverified."
     },
     {
       "repo": "Piwigo/Piwigo",

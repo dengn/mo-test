@@ -68,3 +68,21 @@ Matomo 5.14.1 随后在独立新库通过30项检查，当前独立应用16个�
 Matomo 第一次统一入口复跑未创建管理员，原生 setupSuperUser 返回自身表单而非完成后的下一步骤，退出1。该次原始响应未保存，根因未确定，不能归为已修好的驱动假设或已确认MO缺陷。新增准确的步骤完成断言并保留后续每步私有原始HTML；同一失败密码在另一全新库复现时完整31项通过，排除了该密码固定不被接受的推测。此安装稳定性现象保留，不静默重试、不自动提issue，须进一步取得失败响应并在当时main实际核查后才能归因。Matomo当前驱动多了1项安装阶段断言，总计31项，所有16应用的各自通过检查共416项。30项的先前记录保持不改。
 
 Matomo 随后第二次统一入口新库复跑，31项原生检查+3个SQL对照全部通过、退出0，证据见 evidence/migration-batch/matomo-entry-smoke-round2。第一次入口失败保持原样。当前416项来自15应用统一轮385项，加当前Matomo31项；不是声称单轮统一执行了16应用，也不叠加重复跑的检查。PHP配置引号/反斜线/美元符号/Unicode通过真实PHP执行逐字节hash核验；19合同测试及workflow YAML/16应用选择通过。GitHub Actions尚未执行。
+
+
+## 继续迁移原54项：Gogs 与 Apache Answer
+
+本轮新增 Gogs33项、Apache Answer27项，独立驱动共18个、原54项剩40项。当前18个驱动分别通过的原生检查合计476项；上一轮全15应用385项及Matomo31项的既有证据不改写。统一入口全新库执行这两个应用的60项检查加3个SQL正向对照全部通过，见 evidence/migration-batch/gogs-answer-entry-smoke。候选1000项、61个真实尝试、58个基本通过和939项未运行仍保持原统计。
+
+Gogs 在私有原生仓库真实执行 HTTP Git clone、提交、push 和逐字节读取，验证4个顺序 issue、评论、原生密码/令牌及重启后权限。首次 readiness 路径不存在、默认页面需要 Vite、初次 auto_init 缺少原生 README 类型、SQL列名/HTTP返回值假设等六轮失败全部保留；这些失败不能直接判为 MatrixOne 缺陷。使用历史固定SHA二进制通过，不宣称冷 SDK 或前端验证完成。冷构建被4GiB空间入场检查阻止且 build_started=false，见 gogs-cold-build-blocked.json。原生并发 issue 编号竞争尚未修复、未认证高并发 issue 写入。
+
+Answer 新库原生 AUTO_INSTALL、用户角色、问答/标签/Markdown逐值、拒绝路径及实际进程重启通过27项；另一个新目录默认从官方压缩包下载、验证固定摘要后同样通过27项。原始两轮失败分别来自测试误判旧 is_admin 字段及原生 answer/info 返回层级，保留于 answer-portable-round1/2；没有用SQL修补账号、迁移记录或业务数据。本轮未发现新的已证实MO缺陷、未提交新issue；后续新问题仍须在当时 main 的实际运行时复核。
+
+
+## OpenCart：原54项还剩39项
+
+第三个新增驱动OpenCart4.1.0.4在全新库通过35项：官方包完整SHA、原生网页安装159表/管理员、密码登录/错误密码、原生login_token与user_token、Unicode商品描述/店铺关联、四条精确价格规则、未来/过期较高优先级规则排除、10%折扣22.50/减5特价20.00、购物车数量2/总额40.00、匿名及非法token零写入、真实进程重启后cookie/商品/购物车读回和原生更新。原生文件session/cache保持，不认证订单/支付/运费/全量插件及已有数据升级。
+
+原始失败轮次全部保留：PHP8.5弃用PDO常量使原生JSON出现提示，增加同义新常量兼容；私有凭据文件的O_EXCL重复创建；价格日期局部变量覆盖启动函数，均在harness/SDK层修正，不归为MO故障。第四轮通过。当前19个驱动分别通过的原生检查合计511项；本轮3个新增驱动合计95项，原54项已迁移15个、还剩39个。1000候选及61/58/939历史统计不增加。
+
+统一入口在另外三个全新库重跑 Gogs33、Answer27、OpenCart35，加3项SQL正向对照全部通过，退出0。OpenCart此次使用默认官方下载路径，完整zip摘要仍匹配；见 evidence/migration-batch/gogs-answer-opencart-entry-smoke。20项分类/入口/SDK合同测试通过；新增驱动load入口和线上GitHub Actions未执行。

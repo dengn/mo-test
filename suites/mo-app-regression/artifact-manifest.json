@@ -5,8 +5,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 286,
-      "sha256": "98007a92def158a0d720dac3b3913e223cc3f344532f94e15ae5f24b70fa195d"
+      "bytes": 386,
+      "sha256": "2278d4cc8c5f56f692206ef06da8cb37def8e00170c61ebf27e8f93555c050af"
     },
     {
       "path": ".gitignore",
@@ -20,18 +20,18 @@
     },
     {
       "path": "MIGRATION.csv",
-      "bytes": 61557,
-      "sha256": "c6a39fcf200edc4dfec410a3859735e93356c38f7f71889626726618bca79c01"
+      "bytes": 61569,
+      "sha256": "a8d0eef6b87407ad697fee001f3b49c056d79012fffd837550622b140c4b1859"
     },
     {
       "path": "README.md",
-      "bytes": 10051,
-      "sha256": "21b4a3cfb7f54baf46fe3f57d5165f6b6cc080cbd18a87a2a2882fac7e27edc5"
+      "bytes": 10592,
+      "sha256": "7dc14724e0cb16ede13f04b13bb2b62cf1f3d9761cdf8d571a6ddee35f46c8c5"
     },
     {
       "path": "RUNTIME-SDK.md",
-      "bytes": 10305,
-      "sha256": "ff999bee5cb80b07bbf294d8600bd91344d62149d3dd583522e7bdecaf9f9e3b"
+      "bytes": 13020,
+      "sha256": "0d2f68b23c3ccf3ac5d38e269dc6e8cf5982447e77bd14dc02bd69647404cb58"
     },
     {
       "path": "UPSTREAM.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 10446,
-      "sha256": "655872967d0f02f884a4ee59dd0a56d657ddea9a0ce03b9a7a444db14eb6dc1f"
+      "bytes": 13534,
+      "sha256": "7efa024180637843c9f6f126038ec24e1b885075d923c4625bd0002f92736d28"
     },
     {
       "path": "adapters/README.md",
@@ -85,8 +85,8 @@
     },
     {
       "path": "build_go_sdk.py",
-      "bytes": 7663,
-      "sha256": "220b8b6ecff3c654bb7e292d344b8ac9bcd5d1db7ffebfd9164035aaf693c83b"
+      "bytes": 9399,
+      "sha256": "ca55221ae03efe360a40321bcda6a35523b2b8ee1cfa31e45b6bd1642fe2c074"
     },
     {
       "path": "cases/PANIC-01.json",
@@ -934,6 +934,46 @@
       "sha256": "a4396c55876c96930954ad8f78d639bce49361c81e550a7df5fb11cc3015c96c"
     },
     {
+      "path": "evidence/migration-batch/answer-official-download-round4/junit.xml",
+      "bytes": 2202,
+      "sha256": "1bf688a747831f5a507cf0d323b9f205751067353c55f92928d24feaf402cf72"
+    },
+    {
+      "path": "evidence/migration-batch/answer-official-download-round4/results.json",
+      "bytes": 3613,
+      "sha256": "759d63dd5d0b462396c8dce10faa57ed62c3aa8bb85bf546cc3100777cc2eaab"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round1/junit.xml",
+      "bytes": 556,
+      "sha256": "aa9266fa26a1e579a9e0c3b11a7d252cf5ddbc630a44596f851ff832f6a6ab8e"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round1/results.json",
+      "bytes": 1341,
+      "sha256": "b3e69cdd7a3bf319e771cc1b0d059450f923e3b273d6432ffcc0f402af20563f"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round2/junit.xml",
+      "bytes": 1580,
+      "sha256": "20b49929f82620e5ed93785e3543776ca17afa501e945fea88dad1fb48b87e53"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round2/results.json",
+      "bytes": 2787,
+      "sha256": "169ec59066d2900f5014e0f668f92dcf27cdf4f65258468a46926428ef7aa973"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round3/junit.xml",
+      "bytes": 2202,
+      "sha256": "1bf688a747831f5a507cf0d323b9f205751067353c55f92928d24feaf402cf72"
+    },
+    {
+      "path": "evidence/migration-batch/answer-portable-round3/results.json",
+      "bytes": 3613,
+      "sha256": "779affb5d0c89e1ba5e3802c5f37375585cd9f93a531eae3c609f54b22c1ddaa"
+    },
+    {
       "path": "evidence/migration-batch/baikal-portable-round1/junit.xml",
       "bytes": 3241,
       "sha256": "86871c30376189fe791f905ae32bbf74afe6d4edbe3aa0dcf1c99e70e809858c"
@@ -1042,6 +1082,201 @@
       "path": "evidence/migration-batch/freshrss-portable-round9/results.json",
       "bytes": 3472,
       "sha256": "917611e240277bcb0a41927d9ed67e4a6c68199997737684c1a44830488b40f1"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/answer/junit.xml",
+      "bytes": 2202,
+      "sha256": "1bf688a747831f5a507cf0d323b9f205751067353c55f92928d24feaf402cf72"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/answer/results.json",
+      "bytes": 3613,
+      "sha256": "6c0202e97697a67de190dc8f96d8a605da48d1a3a530faad0232de90ea1cc4a7"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/gogs/junit.xml",
+      "bytes": 2544,
+      "sha256": "54d6c231982d0901d57a2b5a576a5fddccd0c82e010c1f84564ea2135efde852"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/gogs/results.json",
+      "bytes": 3796,
+      "sha256": "cbd9546377b4ef50f97e4974f07cef62abf8e362fbaa8578c3215de98427aa8d"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/junit.xml",
+      "bytes": 727,
+      "sha256": "dc2a32752ef758590c0716faaa442b03d8eee9d3e1747864d92b180d0de07b06"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/results.json",
+      "bytes": 1122,
+      "sha256": "d627e275357a9d2562926f3ab0d7ce08905c349b036ae94fd96c7548fb832109"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/sql/junit.xml",
+      "bytes": 692,
+      "sha256": "6d48bd67ce6412315933a4c7188ab354c81bf77e3d98549e236ef6c6bba9af80"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-entry-smoke/sql/results.json",
+      "bytes": 4639,
+      "sha256": "935ebf6e17fcce06ca7a06592eb445289148a8066a40234dbfc733cd3dd39874"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/answer/junit.xml",
+      "bytes": 2202,
+      "sha256": "1bf688a747831f5a507cf0d323b9f205751067353c55f92928d24feaf402cf72"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/answer/results.json",
+      "bytes": 3613,
+      "sha256": "d9c19f71993fd299c907083fd4d499ccb36c7d7a956f8d2e4cdbca067d5fb634"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/gogs/junit.xml",
+      "bytes": 2544,
+      "sha256": "54d6c231982d0901d57a2b5a576a5fddccd0c82e010c1f84564ea2135efde852"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/gogs/results.json",
+      "bytes": 3796,
+      "sha256": "171b3723d3b6a6708cce71736fc9792b5defa01ebba1febc0caf9837b0bff1ed"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/junit.xml",
+      "bytes": 937,
+      "sha256": "bcb4d49429557f9b584b6e160cf88901e58c1ec3af45ad10b490c72c7d4b17d4"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/opencart/junit.xml",
+      "bytes": 2926,
+      "sha256": "cc0d15c59ddf859a3b01b22d5d16311efb08842a369495dd82796f8d6bd8c220"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/opencart/results.json",
+      "bytes": 4239,
+      "sha256": "0c0c5955129cac9fcf2683c53e6bd99b78754ca07a231e5e72c520a1c0c208e5"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/results.json",
+      "bytes": 1266,
+      "sha256": "fdf87e573d2fafade3f74017d4e86a64f5868f01dcedc4217220bee6b6b27c70"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/sql/junit.xml",
+      "bytes": 692,
+      "sha256": "71efa586403502feef6533fd0e0379ae8377364e43e1cc277e36fbf09fcfe956"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-answer-opencart-entry-smoke/sql/results.json",
+      "bytes": 4639,
+      "sha256": "401da80fb3d769b4d43b8a2c141b613016e446e73c762bc27d56976c973f0ed7"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-cold-build-blocked.json",
+      "bytes": 328,
+      "sha256": "6797a14d2eb80df39a19074d5f066c577ac46d6a518a3b69a020d2d286752a7d"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/gogs/junit.xml",
+      "bytes": 2544,
+      "sha256": "54d6c231982d0901d57a2b5a576a5fddccd0c82e010c1f84564ea2135efde852"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/gogs/results.json",
+      "bytes": 3796,
+      "sha256": "5241b133573e9c0a47ee966f9199d422f105b94a5339883697a2b59e0a756449"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/junit.xml",
+      "bytes": 523,
+      "sha256": "d261ab56b892c9747340cb43b8301ac956c5c897533a80f645100a5e3919a87f"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/results.json",
+      "bytes": 981,
+      "sha256": "4616e507a1aafe5772c1a2c4332b0f130e70a56681105ce6e0dee4cac3f8bbae"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "0aeb1a2f83459a2b86647ff9d6ea1b002bd6a496630f651c33c4c3518dc8546f"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-entry-smoke/sql/results.json",
+      "bytes": 4640,
+      "sha256": "e3ed360dba78ae799c6754216e700f6e9b67e06e8c8fdbf880f3995f582fdd1d"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round1/junit.xml",
+      "bytes": 335,
+      "sha256": "30ea47f07d2ef966fe3d6a8f2dbb2ab6a5fb21568a0a92729bc78b8254afb97b"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round1/results.json",
+      "bytes": 1141,
+      "sha256": "9390bc7e8701a8502153be826b23a41f6071f3fbf4e9eb00cb4ab36dbb1665ca"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round2/junit.xml",
+      "bytes": 335,
+      "sha256": "30ea47f07d2ef966fe3d6a8f2dbb2ab6a5fb21568a0a92729bc78b8254afb97b"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round2/results.json",
+      "bytes": 1141,
+      "sha256": "49a9d37a6f1bbbefbf00acbebbbcc50227385d7144dc09b46afd98868d5a9b11"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round3/junit.xml",
+      "bytes": 1066,
+      "sha256": "c472e807c981ddd731c853824ca5a05ea0ca8b7966f0085b10f87de242f7fc5c"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round3/results.json",
+      "bytes": 2087,
+      "sha256": "8a720dbbe5cf86c4708062cc278b55ec4515aea2863f1db4cf7f81365962039f"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round4/junit.xml",
+      "bytes": 1433,
+      "sha256": "bd2d5b48667afb85497c728865baa1adfb8ab54ba7a61fb4f640200fb1100c9a"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round4/results.json",
+      "bytes": 2531,
+      "sha256": "12057da65422e4762bbd0228fcea0c064984a9d887359bc3dd4881025db1c04e"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round5/junit.xml",
+      "bytes": 1593,
+      "sha256": "f30e4d48fbbe0356f0e5748ccd8e594f6925b748135739f25c106024800439d5"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round5/results.json",
+      "bytes": 2876,
+      "sha256": "473e2e7ea1339f10eb3dd43b0f9b0dff97ceada9aa2c99484a65f229667ab628"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round6/junit.xml",
+      "bytes": 1770,
+      "sha256": "79308f52e6e7a1784b1dff098c13feebf0a287f7236251d24014c04895eeccf3"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round6/results.json",
+      "bytes": 3005,
+      "sha256": "e6976da171e587a5e8bc778949cc58ac6cd4ac0f666614c1e43cc71e931cc8f4"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round7/junit.xml",
+      "bytes": 2544,
+      "sha256": "54d6c231982d0901d57a2b5a576a5fddccd0c82e010c1f84564ea2135efde852"
+    },
+    {
+      "path": "evidence/migration-batch/gogs-portable-round7/results.json",
+      "bytes": 3796,
+      "sha256": "6cb5df9255e4fef78e9ea6a001f1467a2933e3772c36dcc69d3f6fbaf1ce3629"
     },
     {
       "path": "evidence/migration-batch/grafana-portable-round1/junit.xml",
@@ -1374,6 +1609,46 @@
       "sha256": "96e364d65f9e6e6a9b183ae76b80eae52228d166b112c7efa9febc70007e8870"
     },
     {
+      "path": "evidence/migration-batch/opencart-portable-round1/junit.xml",
+      "bytes": 523,
+      "sha256": "aee8904f80f4d3807d2a16155f8cb7d5d561847046fd010afa99d3cc5038e758"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round1/results.json",
+      "bytes": 1318,
+      "sha256": "46114ec15ee4731c4962345251babc608599f07c4b3d406c8924538c1ae6c9c2"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round2/junit.xml",
+      "bytes": 1119,
+      "sha256": "2d19b7b15c8f7376ce09f72a72c71e87b3b6358949ca851863354caadcae55ac"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round2/results.json",
+      "bytes": 2023,
+      "sha256": "127b41d986c9bd8e75cf90ddf5dc52de84ad71790ce15a33d6fbab8f5fe83fb3"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round3/junit.xml",
+      "bytes": 2030,
+      "sha256": "23bb9c0cc7c792362aedf2be34fd2eb1074eadbdf3c19d7e9a577af1308973bd"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round3/results.json",
+      "bytes": 3250,
+      "sha256": "cdee7db5a38295613ecbb39f7538bd6f04dcf00c32b669b93bc47eb2d12a78de"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round4/junit.xml",
+      "bytes": 2926,
+      "sha256": "cc0d15c59ddf859a3b01b22d5d16311efb08842a369495dd82796f8d6bd8c220"
+    },
+    {
+      "path": "evidence/migration-batch/opencart-portable-round4/results.json",
+      "bytes": 4239,
+      "sha256": "6ec81da850e6e8211cd891c0ebc73b026c808281cb5804226acbca26c312020b"
+    },
+    {
       "path": "evidence/migration-batch/php-config-string-literal.json",
       "bytes": 99,
       "sha256": "43aa83376ce5512f400d5a74c2fe22466a93c1e63cacb74fb20606eb9b6f936e"
@@ -1411,7 +1686,7 @@
     {
       "path": "evidence/project-secret-scan.json",
       "bytes": 155,
-      "sha256": "0b50da4b6c1ce8864e608797d197d6781b57fc64a5115a05e2aca676b678a91b"
+      "sha256": "e23e59bb293b153529361630fb7ff35a1e1f7e48a8d235445f8d7520e34cb607"
     },
     {
       "path": "fixtures/adminer/adminer-release-type-name.patch",
@@ -1422,6 +1697,21 @@
       "path": "fixtures/adminer/adminer-source-type-name.patch",
       "bytes": 626,
       "sha256": "2c2b2db96407848870911b8c5be53449522699cc64ebd76dfcc0fe7c2b7f078c"
+    },
+    {
+      "path": "fixtures/answer/LICENSE",
+      "bytes": 22114,
+      "sha256": "e552089e3502b3ebf29cfe969a8837d3f773856f19d947117a554aa57d8e484e"
+    },
+    {
+      "path": "fixtures/answer/NOTICE",
+      "bytes": 168,
+      "sha256": "1d872a014b30b45de8db152cda70b23f403445ae5a539db04a041e1723bb1ab3"
+    },
+    {
+      "path": "fixtures/answer/release.json",
+      "bytes": 479,
+      "sha256": "1ba92febc71c6a67f9da484a869abe83e6ed629df453a990013ee678c0c83b64"
     },
     {
       "path": "fixtures/baikal/LICENSE",
@@ -1462,6 +1752,666 @@
       "path": "fixtures/freshrss/source-manifest.json",
       "bytes": 186636,
       "sha256": "655b13da5178454c43ac8a4dff53ada97050dfad715c415e02d00b083da1821b"
+    },
+    {
+      "path": "fixtures/gogs/LICENSE",
+      "bytes": 1054,
+      "sha256": "4b5bc6bfd453444bdeaa95f9c7c8b280113cc3a72020818ad2578a8800b18a66"
+    },
+    {
+      "path": "fixtures/gogs/adaptation-manifest.json",
+      "bytes": 21631,
+      "sha256": "9ebc143120185c17ac771c8b8f2276eb9f0bbc3175010afafae3f48dfd63c63a"
+    },
+    {
+      "path": "fixtures/gogs/go.mod",
+      "bytes": 7098,
+      "sha256": "831a1fc6c27112a5a44e26c85f9c71e49931dd59ee38d967dbb12970e2024983"
+    },
+    {
+      "path": "fixtures/gogs/matrixone.patch",
+      "bytes": 177,
+      "sha256": "1d792a969d63d172806e83f1484dfcc50eff0af24cd0f83b141e58aa0bbaccff"
+    },
+    {
+      "path": "fixtures/gogs/source-manifest.json",
+      "bytes": 405703,
+      "sha256": "b3b1d24461de35e86bb69e2e3ccc0ea21ad33e031232743b64cf18a1b7a41b55"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/.circleci/config.yml",
+      "bytes": 3579,
+      "sha256": "e63dd99e050661e195a3a3bfc8a07f1fd6da58d8dfda5f0ded0d57ac94a870ce"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/.drone.yml",
+      "bytes": 21690,
+      "sha256": "2725d5671065afb5ceb37c5b9558d4b8836505469f2dc44110a85384047bc845"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/.gitignore",
+      "bytes": 333,
+      "sha256": "3b7b69b9ee77056e1bccda5eb3dcaf68ed9bcc24dc801bb1b37165b376e4033d"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/CONTRIBUTING.md",
+      "bytes": 1934,
+      "sha256": "73c292f99a55d779f2396a2129e54f282340f1abbe637e4c0d49058e776cd8b7"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/LICENSE",
+      "bytes": 1498,
+      "sha256": "41289a3aae885599b0854b26f3366e531b4664580d7bc245ce7b75bdd5e5f67c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/README.md",
+      "bytes": 14813,
+      "sha256": "90a86a67a90b1bb9dccdcd7e3aa314de4a29363c4e529ca96d0bfd8d9c5a936e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/README_CN.md",
+      "bytes": 14633,
+      "sha256": "c5bd219b60e26141e3e1f2ef9a64d26a66e8292209ab22025d7ba1803980a610"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/cache_lru.go",
+      "bytes": 7114,
+      "sha256": "bcae72debf449a01d79d979445a02be60a8dfcb6718292357a646628152a1c85"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/cache_lru_test.go",
+      "bytes": 1135,
+      "sha256": "bb57d2da5d8ebe76ae6bcd57fed7a877c5bf70e45ac11426a7990ef2903d7743"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/cache_memory_store.go",
+      "bytes": 1061,
+      "sha256": "9f0fbe25d41fff377491711768094dce57756c0312464dbe9faf23e3e1f29307"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/cache_memory_store_test.go",
+      "bytes": 704,
+      "sha256": "8e189a3a2c405e37716cb23940fbae0de2b1dd02ae4d8fd053438db5ace8a2dc"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/cache_test.go",
+      "bytes": 4469,
+      "sha256": "e9f8e38bd3abe679d50c2e2f0c10bc8c4ec076b2ca2e217dc4c137185bf999f2"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/context_cache.go",
+      "bytes": 837,
+      "sha256": "4e92a2a1f81a1753179702d352e6650715d3efc58d339aac312f7a4d7defda89"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/convert.go",
+      "bytes": 7888,
+      "sha256": "8825da7e594c8b1ba242c4783980ba38090d24ffe1bc38605277e1ec13cd0430"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_mssql.go",
+      "bytes": 17452,
+      "sha256": "5f0e177899ba0b71ab6ff5b3f071a5cca51620064009a7ad577c4697363a7aa0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_mssql_test.go",
+      "bytes": 898,
+      "sha256": "fd347a1f23b739352abc9454aec788f7d6a29e4adfdea3befba94db7d239d034"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_mysql.go",
+      "bytes": 17176,
+      "sha256": "2ec4deefcbc57eb0e207ea795382ec98ede5b5baf04085966e691e048995ab75"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_oracle.go",
+      "bytes": 28284,
+      "sha256": "10f2917caa745a875eab40f8b738c24159c52b7fff097138ad278d0557f2cb21"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_postgres.go",
+      "bytes": 45968,
+      "sha256": "9a594b514dc248e5d77bca04652a3029edec0d4bf8a7ca6e1d8173b11a5e5e56"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_postgres_test.go",
+      "bytes": 4149,
+      "sha256": "42ccac7adba30e14ca75af3001b0b64a97f5046814b2953b4922ba09da00d1b8"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_sqlite3.go",
+      "bytes": 12544,
+      "sha256": "03ff2bffd815f6d34aa65d79c5e1b4a65a3e0cff4916bd8d281eebc9f1f78954"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/dialect_sqlite3_test.go",
+      "bytes": 787,
+      "sha256": "3adb40407703636407d7c825e2c7b5a08e588294c3e8d0366a8f937e2176666b"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/doc.go",
+      "bytes": 5193,
+      "sha256": "42518448fab7980a918670209dd0b1dc17de00e5f02cdbb3b6a0277444bcb2ce"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/docs/images/cache_design.graffle",
+      "bytes": 56031,
+      "sha256": "fbcf5d85c69b9a076945724d567ba10aa66b6ed7dbb22f182a2ddf7b90791319"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/docs/images/cache_design.png",
+      "bytes": 243596,
+      "sha256": "66ef11156366c81f7d0e90b47c131f26ff105a4d84da26f4655418617dafc504"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine.go",
+      "bytes": 45330,
+      "sha256": "f6571064d139f38d8b992c82bd76d0d483546f2b9e00ee3c56394a4f8dd4b6c0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_cond.go",
+      "bytes": 6090,
+      "sha256": "c6629b161041dd331468d3dad07df4b11cf013553451d6b0d9abd5ea59f8f6c4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_context.go",
+      "bytes": 746,
+      "sha256": "a421de2f5ced1171fa4e4f0d4a0bd54c799e41d48a12055ac444cf7555169ed6"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_context_test.go",
+      "bytes": 606,
+      "sha256": "979cc39e3601bf905c8b9de73a8ef225c378798c65cd7ef6612779dcb2ca1723"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_group.go",
+      "bytes": 5170,
+      "sha256": "6c67ba5884d7ed8ed4c76c2e743ef366a767eefcc094d4f97a0d9d60948f4781"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_group_policy.go",
+      "bytes": 2631,
+      "sha256": "1db4c30baa8b350d19dc29fe98bd6685f4be1ce59493cc41c74a9777b63d1d96"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_table.go",
+      "bytes": 2799,
+      "sha256": "fda8e1b97771bd0215097997001511a67e74b6890adb4ca79cf2ad431ce73238"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/engine_table_test.go",
+      "bytes": 625,
+      "sha256": "4d71dec3b4264eaa25e419360dc49a8966b03b29083fc10f1576ec5af629f81e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/error.go",
+      "bytes": 1608,
+      "sha256": "d4728ed72655e6f41ef9e45ac389a789bd3fda52a0bd9d8171607433f6cf4396"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/README.md",
+      "bytes": 364,
+      "sha256": "2da769380e91d83d19d05cc605ee1125100bc124b93210ea6e0f1145a17fdca7"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/cache.go",
+      "bytes": 1609,
+      "sha256": "9579aef18eb1ec14442ca1dd3d22e970a7c60d1f76716b2af4a43737d1e0e785"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/cachegoroutine.go",
+      "bytes": 2093,
+      "sha256": "fb2d5643769a4cc0e15af6d86dd2a15603b8a05e06e542935f06ac757f43652d"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/conversion.go",
+      "bytes": 1391,
+      "sha256": "092d171cbe7b7b3701ad3a8fa40c4e872fad824412233a79456367851d8babd0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/derive.go",
+      "bytes": 1150,
+      "sha256": "0c3b5f29733b8d26545e9d25e0f699b9840b54f58f9dda3d9fe27dff47d231d0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/find.go",
+      "bytes": 715,
+      "sha256": "a0d27c82424c0a28cda3b3417109f9b6ab7048c85b1b28e01997c7ebe874bd9a"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/goroutine.go",
+      "bytes": 1960,
+      "sha256": "2c42269e5a309ea2a143eeef5880284260dd1084c51b6ad86314393f54993794"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/maxconnect.go",
+      "bytes": 1865,
+      "sha256": "11e51cbe778d2d7808f0acb04f54712d799189f0b5e89d2092f03a52510bd85f"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/singlemapping.go",
+      "bytes": 916,
+      "sha256": "5b1da9ca9c88fbaac3f4997af8fa4fc7c30ae53ce8f82d3520b63710d6615c3c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/sync.go",
+      "bytes": 2152,
+      "sha256": "a769d7c3abd0e2a5a89d8ec82deb65803f60ab299d774f8461f7f7ac69b39096"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/examples/tables.go",
+      "bytes": 449,
+      "sha256": "4e953af0e88c5e92cb234945cebfe825556fabc3bede4fc307ec2de708592401"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/gen_reserved.sh",
+      "bytes": 124,
+      "sha256": "9b32904a0604ab39907ed81582f8e5d0952053795147942bd9780a72271d3933"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/go.mod",
+      "bytes": 369,
+      "sha256": "19376b8ccec60c14886fe7e9db7860628cb5a47d9da7ec5dfd7dfdf514ffc8d7"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/go.sum",
+      "bytes": 14543,
+      "sha256": "4940b30aecee1e71ee98450447c4c95f2632125e754eb9b31853a3b68dd65000"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/helpers.go",
+      "bytes": 6969,
+      "sha256": "fd89e1467cb5b8e7e46461559d45673d7da95d09eba3eb453ed3217a78d9293c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/helpers_test.go",
+      "bytes": 757,
+      "sha256": "3ee28f88b72278c0df732c0b53f6c0535d9794cb95eeba3f6539454c19306fa0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/helpler_time.go",
+      "bytes": 472,
+      "sha256": "0e5b69b5fd8ac6df85a21c17ea550725676d92f8eb2d04a63f153bc89de277c2"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/interface.go",
+      "bytes": 3945,
+      "sha256": "434e74128ec859074b9335edf9baa55e9149f6cf0b4b4647b429df16d7cf1c50"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/json.go",
+      "bytes": 808,
+      "sha256": "52dbb3aeffd0e578a4d2170de6e285aa80a9a04ca434562edd061afb9d800780"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/logger.go",
+      "bytes": 4538,
+      "sha256": "96fccc3bac6ed22e89d8bf6ff89a6c314b627910cc46f264773f5a2c3cd2efea"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/migrate/migrate.go",
+      "bytes": 5517,
+      "sha256": "f67c45d6a818d934b2a0f4fa1edd04604dacce853aa8ede6aee153c04cc52c6c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/migrate/migrate_test.go",
+      "bytes": 2914,
+      "sha256": "0a5d13fa75f617cd86d81fa54439385e8ccce9b60105083dd11ab7e85286a2e0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/pg_reserved.txt",
+      "bytes": 31387,
+      "sha256": "a3f8c52f153f584e989895aca1acfac6a35bbd150c6bc4d49dded5a50c9e61d0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/processors.go",
+      "bytes": 2050,
+      "sha256": "4b530727cced9be967107db052fdd3c3bd2fc87a6f530a0eadc4167a4d1a4983"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/processors_test.go",
+      "bytes": 22464,
+      "sha256": "bb8d45355c7f09f93d771c5b94576b75518664db3286f7e80a56b21031bc12c7"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/rows.go",
+      "bytes": 2647,
+      "sha256": "c075cae30dbbb31f670cc286b033ab497517a6428b01389f0e932411d2a2b871"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/rows_test.go",
+      "bytes": 3026,
+      "sha256": "dd800ee072a00068aaf17cddbd36481cb1ffa2a3accc6a2398dc4ad0163a1a30"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session.go",
+      "bytes": 24701,
+      "sha256": "d8a40f51a5f3e2695e42b49654317eb556008398ccf33a36d7b993367069f1ac"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_cols.go",
+      "bytes": 4115,
+      "sha256": "1955246451b78d591f20def55e3dcb938926119229370119f36a9f37b3129397"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_cols_test.go",
+      "bytes": 3396,
+      "sha256": "b1d7e6ae026ba74ecbc0395b3ac08ea3bb3f11a6874bd9cd4e9688b099a19378"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_cond.go",
+      "bytes": 2178,
+      "sha256": "a2e02ccee5ba1b983a2246777ff2542c8e75c0d49bdebde51d9d611d79ca546e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_cond_test.go",
+      "bytes": 6071,
+      "sha256": "b4811f4ddeed2e1ad6736556f2cb3a57f2855b50985e4d7ab8cf09f6f211e3c4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_context.go",
+      "bytes": 615,
+      "sha256": "ed68feff0b50d424b9f9847728297680cd1073b024b632104c9e148491d513f8"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_context_test.go",
+      "bytes": 828,
+      "sha256": "3a576a9a70ecfa40bb5d6a16030b66005b8f37ac60d01a78a38f369a4b81c51a"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_convert.go",
+      "bytes": 20093,
+      "sha256": "dab08b360859e23f6b250edbb5ae002806eb20269c98ec0aff52719f7f17fd8e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_delete.go",
+      "bytes": 6768,
+      "sha256": "49796485799df9aa4187fac663995bff0336337f87a25b6cae0360ab82d72ac5"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_delete_test.go",
+      "bytes": 6379,
+      "sha256": "8db6ec2ca6bd63bbc1f54f1a48502a1b2c70f68a27dfbcacce86d1134c23e88b"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_exist.go",
+      "bytes": 2519,
+      "sha256": "7b7ddd1e995d459af3b075cc5cbf712332c3a21ca753836c5e426e02b6b78ec9"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_exist_test.go",
+      "bytes": 1864,
+      "sha256": "0dbfc4037b8ca73fdf37f545319785ddf4f4d8bd5816a251c487b099de65fbdb"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_find.go",
+      "bytes": 13287,
+      "sha256": "3b4c4c2e7574418b85b1f1e58814272e718b45c41851ff478ca395fa7f19dedf"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_find_test.go",
+      "bytes": 18495,
+      "sha256": "838b71ce82669ad11149a396bfb38950c49bbc0ec834a1d94413d9957898227e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_get.go",
+      "bytes": 8610,
+      "sha256": "6a6ac094992fa9b8e86aa8ba1e4e292e50f7376b3c452fd34e3ab135f3e0cca8"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_get_test.go",
+      "bytes": 16828,
+      "sha256": "293425a755423c82840f1840b47ca3b0c79dcc1e97cbf822eb3c2df37bc5e23d"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_insert.go",
+      "bytes": 22540,
+      "sha256": "9c7c078ed37d5589422980d2c61113b0575e5b3711f79c9941204e883ba1190f"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_insert_test.go",
+      "bytes": 24974,
+      "sha256": "4570a9d6f8e0509cbbd55124cbd8aefe5dcf472ffd8d1a12bd80490d35710eac"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_iterate.go",
+      "bytes": 2361,
+      "sha256": "9106aefd85fcfcd89107a0fdaef2767282720712ce19436687abdde68ea713f5"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_iterate_test.go",
+      "bytes": 2165,
+      "sha256": "b155449da77c5784908336988796bbc6564cd5c5c5735bfad66525d7b496cb03"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_pk_test.go",
+      "bytes": 22319,
+      "sha256": "7d86e8b83ae8b4528d04bc439512bcabf3f1b9c1e6f588496414a40a23bffc74"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_query.go",
+      "bytes": 8126,
+      "sha256": "57fb77ac0bd81834c6c07ff866cdf127cc1a999318333b921198f90682f010bb"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_query_test.go",
+      "bytes": 9943,
+      "sha256": "d32ddf061a7dce334fe42b02be4d03ee044729045c8cd76c8d576a7cdc959902"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_raw.go",
+      "bytes": 5467,
+      "sha256": "2c7b735e0d79e2e68f020113d227e639dbd225306b9a828c16d85d27258e2f64"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_raw_test.go",
+      "bytes": 1008,
+      "sha256": "8bbe3c38fde590e2164091af4c3acf57618c3fb9fca1d835dec79c0cfaa7ff12"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_schema.go",
+      "bytes": 11436,
+      "sha256": "16cf4ac54351f7d17703ea37a9104afcc77fa9527eb81056bf4d864d0280b4d4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_schema_test.go",
+      "bytes": 8562,
+      "sha256": "6c052a05404855b3fd4749ed868ce7fb8154a4097f6da0f7c1511f08e554b397"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_stats.go",
+      "bytes": 2728,
+      "sha256": "47a1aac0fd4ae5e62331a8de6e829553a554452d01dc592f854de9abc00ab122"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_stats_test.go",
+      "bytes": 6281,
+      "sha256": "952ecfe5181ee2557a8444e96edefe6c10475056405bdca2220692354beb10e3"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_test.go",
+      "bytes": 931,
+      "sha256": "a95e5eb18934073e513faa93ac3b5fa10021b43df44c58fc5e23c6ade354b3e7"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_tx.go",
+      "bytes": 2392,
+      "sha256": "f98f8cd4fdbfc770437cd4330541c565bfaf45544aec6949a3da8fdcf2c03c5a"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_tx_test.go",
+      "bytes": 4367,
+      "sha256": "eb5bbc5bdd031481d49473aec89ef6dc5894d0097774a9b67b74786966196da5"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_update.go",
+      "bytes": 15347,
+      "sha256": "9b46c0faf4ed22cce854361fd20ba81819a498dd44df0670b2fa56346c3b5f76"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/session_update_test.go",
+      "bytes": 30042,
+      "sha256": "61859a111b20cb4f11e409ac722e34e0ca8d68c2b19c50218c8ea583f77ea22b"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement.go",
+      "bytes": 35177,
+      "sha256": "635d83dc761c02833737fd65a847f07366395069b58d9438c3789cba10fe57f6"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement_args.go",
+      "bytes": 3625,
+      "sha256": "48ee87b80d490171896d0fbef09a519dea82e8bb72e89503b175b604846b726e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement_columnmap.go",
+      "bytes": 594,
+      "sha256": "6b98309fd5548aaf9c3f9e9f810471a9f1f1f868e648071744ad75d0a796b88d"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement_exprparam.go",
+      "bytes": 2452,
+      "sha256": "41c00da54946ee2f1d8e98c08d5d760035d1925c2a704946d8ad7d3bfc17c02e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement_quote.go",
+      "bytes": 352,
+      "sha256": "447ba034e99b531aae3b2eb43ed9fc766f1482e7056031757582f7f9ebd6b7d4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/statement_test.go",
+      "bytes": 6010,
+      "sha256": "cf89629ed7f4185968c29b10d9624e56af545d51ec0d7f587e65d4509497b61f"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/syslogger.go",
+      "bytes": 2077,
+      "sha256": "4a0527860f6a250d89bfdda0461553f8087da26305f6645a408cfd4855aeb8af"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag.go",
+      "bytes": 7275,
+      "sha256": "8dc5a283489997b6bda9433d98598a94386143be5dcee89d7d9f1f8ece1961c5"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag_cache_test.go",
+      "bytes": 833,
+      "sha256": "2febc5b92b23f4814543be3c0551128d15f6014efd0c8886e96f5df52b4c5623"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag_extends_test.go",
+      "bytes": 15768,
+      "sha256": "63a2f24380245660d65879d3d6618efe2e497ea9c7c6d1ab2d3c2a13656cfba4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag_id_test.go",
+      "bytes": 1734,
+      "sha256": "91b3b294140218f18d1c22659c4d70cb04f96f483e6442150c1d2ee253533be3"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag_test.go",
+      "bytes": 14348,
+      "sha256": "f13f187b04018b6ea2fb3711e4e28c1e581898f810285911ccca8cce2a35445f"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/tag_version_test.go",
+      "bytes": 4196,
+      "sha256": "e95be6ef527547fde0e416db1a6bc734578f2e0088a2fdf83643f184d68fb49a"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mssql.sh",
+      "bytes": 107,
+      "sha256": "f12c60d8a972d006aea94d5b346d9fca6d172ca1e7b11d5fba16f60f26b65bbe"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mssql_cache.sh",
+      "bytes": 107,
+      "sha256": "bc47dcfb73a6ec8fdb145f6d9aaadf1f7ec38812666f96d85de2906da0a49d9c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mymysql.sh",
+      "bytes": 47,
+      "sha256": "9d7afe1c6912e42e9baf84c2af3d8c970e93f6733eb2a5980a5fe5a5cd2a9480"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mymysql_cache.sh",
+      "bytes": 59,
+      "sha256": "641f1ac7853657e71dd9892e5fbf30f3f56aa02b3b4ff8640b44f2bd51aaca48"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mysql.sh",
+      "bytes": 46,
+      "sha256": "d62058a59522fc98a5fc32f93ed608f2eb33ca7f9bd7094506cbd78f003c5a38"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_mysql_cache.sh",
+      "bytes": 58,
+      "sha256": "877b3fb038dd332f7eda5cf6e03ad7fa2dc079c30341a35531f4e4498711a505"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_postgres.sh",
+      "bytes": 65,
+      "sha256": "b26089e1ac45ff6ec356f2bbbe6930badc0fe4cd343c66b20c15ad44a652a1ab"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_postgres_cache.sh",
+      "bytes": 77,
+      "sha256": "e32fc6b731010eeb1047c20be74ffa62fc7d62c1431d2382461b3c0b46f305cb"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_sqlite.sh",
+      "bytes": 63,
+      "sha256": "600f40d328eef5f21fd90923ee6fa6150dcc73bc81a4636cf9ebf052ce9085c4"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_sqlite_cache.sh",
+      "bytes": 75,
+      "sha256": "63d82313fc1630114d9746d1e252aa68ca48e4b35a6d587421ab761cd19d6504"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/test_tidb.sh",
+      "bytes": 92,
+      "sha256": "f11d4be6af1d116dfde46f6315503409e530cf3887b3f5732ca72e78147afabf"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/time_test.go",
+      "bytes": 14001,
+      "sha256": "db3ebab3ac8a4a37cff3a6e0174f759414dbc351c1624451f0930640be8dc62a"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/transaction.go",
+      "bytes": 655,
+      "sha256": "0a85037858bf336fdd3ed0ab31c2972075481a0f368fed9a5a79c0626b77b63c"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/transancation_test.go",
+      "bytes": 1185,
+      "sha256": "9764ad72e7e7167ccf52f63fb4536f2ecf3eba0a5d8b5a30bf75306b1b26dd0b"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/types.go",
+      "bytes": 303,
+      "sha256": "f41da4113cc4b02334eab72379f6ab48ae9d06acf486dae95a6db02b4b30568e"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/types_null_test.go",
+      "bytes": 7504,
+      "sha256": "e1c6632f26243839e972307ee7e022e20219f1754ee94e55597e75f8f065481b"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/types_test.go",
+      "bytes": 7621,
+      "sha256": "9430ef0ac9b35958c5ad7d3bc81cf56c2d123f5dfc563c834979edc5bfeef2d0"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/xorm.go",
+      "bytes": 3783,
+      "sha256": "ab9ac66fb47f0cf12761e91c523145a897b3cb2785386fc4e2f8b5a5a6f7508d"
+    },
+    {
+      "path": "fixtures/gogs/third_party/xorm/xorm_test.go",
+      "bytes": 4850,
+      "sha256": "18ade68da235d7785f752b09ea0428105ce40eb5a66acf0a3a30c5883349c394"
     },
     {
       "path": "fixtures/grafana/LICENSE",
@@ -1594,6 +2544,51 @@
       "sha256": "ae0750a8a3a642890138cc7112874ac5f137b6325b6e8d42c037315d2ba6a83c"
     },
     {
+      "path": "fixtures/opencart/LICENSE.md",
+      "bytes": 34529,
+      "sha256": "7dc1b53ca93ae00e5229fc3ddc24fe5fd6b52dbbc38dc0af44c66def3877b7bd"
+    },
+    {
+      "path": "fixtures/opencart/adaptation-manifest.json",
+      "bytes": 1246,
+      "sha256": "2d1ba679c0f4c68a76aa088ec4a939c71795fd4f9f8ca375f78109f919d77da2"
+    },
+    {
+      "path": "fixtures/opencart/adapted/admin/model/catalog/product.php",
+      "bytes": 101795,
+      "sha256": "4300b8db96194fd294ff26541974f75224752de757fe0fb7cd8bc51cb0734a03"
+    },
+    {
+      "path": "fixtures/opencart/adapted/admin/model/tool/notification.php",
+      "bytes": 4791,
+      "sha256": "2793605dfa35c20e639c24caa71c074fa867604910b337007545ba04777d3577"
+    },
+    {
+      "path": "fixtures/opencart/adapted/catalog/model/catalog/product.php",
+      "bytes": 41183,
+      "sha256": "b8035d9d721157c53f3282e08925e13d3b07015ea26c531f361a61f125aa2b61"
+    },
+    {
+      "path": "fixtures/opencart/adapted/system/library/db/pdo.php",
+      "bytes": 3055,
+      "sha256": "f2ff57f62833f21add1678548ec0fa2d846606551535c0c655ce45294991a568"
+    },
+    {
+      "path": "fixtures/opencart/adapted/system/library/session/db.php",
+      "bytes": 2362,
+      "sha256": "2753af623d895a580ae28a4dbb61dcf05225ea453b7970ac5ff42991b96aa92e"
+    },
+    {
+      "path": "fixtures/opencart/matrixone.patch",
+      "bytes": 17990,
+      "sha256": "64072776f75171a079a0ec1ae1040a7b249584ff293e396f4e269a1d39862110"
+    },
+    {
+      "path": "fixtures/opencart/release.json",
+      "bytes": 385,
+      "sha256": "8411d1ce3568857f4d9122cc7412fad5fa91428e0147a00ab48895a6923e1114"
+    },
+    {
       "path": "fixtures/phpmyadmin/LICENSE",
       "bytes": 18092,
       "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
@@ -1650,8 +2645,8 @@
     },
     {
       "path": "inventory.json",
-      "bytes": 87280,
-      "sha256": "71ad475e74420a46de29f0da3264d0e8a9ec4fd2eb63cd519c1a62fa675819a7"
+      "bytes": 88135,
+      "sha256": "79b6b91e7b163783e233bbe6363790fc4a0d7b5e6728c466cc3874076bb33094"
     },
     {
       "path": "native_common.py",
@@ -1685,13 +2680,18 @@
     },
     {
       "path": "run.py",
-      "bytes": 10818,
-      "sha256": "6c59cdc0b7aba0c6b9df5c04d5fc0924cdebd1add7096cea8606ef6ce8622192"
+      "bytes": 10926,
+      "sha256": "502c4ae96c52593d6489135c5672b64c95cd0e62811c5ed983114de16c6f158e"
     },
     {
       "path": "run_adminer.py",
       "bytes": 13895,
       "sha256": "cefeb82b8b53e6e49ed437467960ba0167bc4cbff6278d625fd5748cdba43f6b"
+    },
+    {
+      "path": "run_answer.py",
+      "bytes": 13134,
+      "sha256": "5b4bea98fdd06e052a6f3944b48d4081807ade927400dd666ac0a7dee3d754da"
     },
     {
       "path": "run_baikal.py",
@@ -1717,6 +2717,11 @@
       "path": "run_freshrss.py",
       "bytes": 17470,
       "sha256": "ec59b410653e5544aac7defa73c0f35e7af95b1308e1c8d524277a1e6bbc2878"
+    },
+    {
+      "path": "run_gogs.py",
+      "bytes": 15688,
+      "sha256": "54fee40adff7709f0fe00380f2d9a06b335b3b98237e8d0fdc79b7073ff11888"
     },
     {
       "path": "run_gotify.py",
@@ -1754,6 +2759,11 @@
       "sha256": "4c969a6301a4a52213f015353e66dbe8450db3697d514eb9c712a9af598efa0b"
     },
     {
+      "path": "run_opencart.py",
+      "bytes": 17419,
+      "sha256": "3c522d4caab85bd0f9ef50635f8554b9a05fba0930fd1a2d4b0cd0d463999670"
+    },
+    {
       "path": "run_phpmyadmin.py",
       "bytes": 15089,
       "sha256": "b34b6baa6d9e3ad46018471b38db7982fbef57cb2ee99fb03ebf78c818ba79aa"
@@ -1780,13 +2790,13 @@
     },
     {
       "path": "tests/test_sdk_identity.py",
-      "bytes": 2467,
-      "sha256": "6dd5b4e5461d8dbb7db3f8d298b0f2da712670ea368b247e1c2b10c1c4b3a481"
+      "bytes": 3391,
+      "sha256": "e2bfaf0a2eea4522913b7c66e20496fdd0299feebe75c0c8f75ca8d1e42d46e0"
     },
     {
       "path": "tests/test_suite.py",
-      "bytes": 4347,
-      "sha256": "46f874dd620ca927e89b89bc4e8056897b3551378f45fa90686ab4e0dd660707"
+      "bytes": 4378,
+      "sha256": "1ece5acf312c588989c89360e741643ef564089cbcb32b1cdaae28e6cb39c7f9"
     },
     {
       "path": "upstream-import.json",
@@ -1796,11 +2806,11 @@
     {
       "path": "verify.py",
       "bytes": 1804,
-      "sha256": "e7001670a0bec7c5933a13c8fba8a74be704127e472c3d3478caae24437fd5a7"
+      "sha256": "a432d059974af110dbddc8f16af8967fd7fb8cd7949613de99d6b2eb6409be8e"
     }
   ],
   "workflow": {
     "path": ".github/workflows/app-regression.yml",
-    "sha256": "1cecf0c01383d4c99354576a10af796326e9ddcfc6d59a94af788edfd3e81d3e"
+    "sha256": "2e5250bc79a458c002f5ec3856e87b92f6608c2400b2e45d177229a460fd1d85"
   }
 }

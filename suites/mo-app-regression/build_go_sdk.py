@@ -1,4 +1,4 @@
-"""Build pinned Memos/ntfy source into a private, independently attested test SDK."""
+"""Build pinned application source into a private, digest-bound test SDK."""
 import argparse
 import hashlib
 import json
@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--app', choices=['memos', 'ntfy'], required=True)
+    parser.add_argument('--app', choices=['memos', 'ntfy', 'gogs'], required=True)
     parser.add_argument('--source-tree', type=Path, required=True, help='Pristine checkout of the full pinned commit')
     parser.add_argument('--go', default='go', help='Go 1.27.1 executable')
     parser.add_argument('--out', type=Path, required=True, help='New directory; source, cache, logs and binary remain private')
@@ -41,6 +41,13 @@ def main():
             if relative.is_absolute() or '..' in relative.parts:
                 raise RuntimeError('Unsafe source manifest path')
             original = args.source_tree / relative
+            if args.app == 'gogs' and entry['mode'] == '120000':
+                target = os.readlink(original).encode()
+                observed = hashlib.sha1(b'blob ' + str(len(target)).encode() + b'\0' + target).hexdigest()
+                if observed != entry['git_blob'] or target.decode() != entry['symlink_target']:
+                    raise RuntimeError('Pinned instruction-link target differs')
+                report.setdefault('validated_instruction_links_not_emitted', []).append(entry['path'])
+                continue
             if original.is_symlink() or entry['mode'] not in {'100644', '100755'}:
                 raise RuntimeError('Unsupported source file mode')
             data = original.read_bytes()
@@ -59,11 +66,27 @@ def main():
             package = '.'
             tags = 'nofirebase,nopayments,sqlite_omit_load_extension,osusergo,netgo'
             ldflags = '-s -w -X main.version=2.29.0-matrixone -X main.commit=' + manifest['commit']
-        else:
+        elif args.app == 'memos':
             placeholders = ['server/frontend/dist/index.html']
             package, tags = './cmd/memos', ''
             ldflags = ('-s -w -X github.com/usememos/memos/internal/version.Version=26.10 '
                        '-X github.com/usememos/memos/internal/version.Commit=' + manifest['commit'])
+        else:
+            fixture = ROOT / 'fixtures/gogs'
+            report['UI_scope'] = 'native API/Git only; separate frontend SDK unverified'
+            adaptations = json.loads((fixture / 'adaptation-manifest.json').read_text())
+            report['adaptation_manifest_sha256'] = digest(fixture / 'adaptation-manifest.json')
+            for entry in adaptations['files']:
+                relative = Path(entry['path'])
+                if relative.is_absolute() or '..' in relative.parts:
+                    raise RuntimeError('Unsafe Gogs adaptation path')
+                adapted = fixture / relative
+                if adapted.stat().st_size != entry['bytes'] or digest(adapted) != entry['sha256']:
+                    raise RuntimeError('Pinned Gogs adaptation differs')
+                target = source / relative; target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(adapted.read_bytes())
+            placeholders = []
+            package, tags, ldflags = './cmd/gogs', '', '-s -w'
         for relative in placeholders:
             path = source / relative; path.parent.mkdir(parents=True, exist_ok=True)
             if not path.exists():
@@ -123,6 +146,8 @@ def verified_binary(path, legacy_sha, manifest_path, app):
         valid = valid and report.get('source_blobs_verified') == len(expected['files']) and report.get('go_version', '').startswith('go version go1.27.1 ')
         if app == 'ntfy':
             valid = valid and report.get('patch_sha256') == digest(ROOT / 'fixtures/ntfy/matrixone-runtime.patch')
+        elif app == 'gogs':
+            valid = valid and report.get('adaptation_manifest_sha256') == digest(ROOT / 'fixtures/gogs/adaptation-manifest.json')
         if valid:
             return {'sha256': observed, 'provenance': 'prepared_SDK_build_manifest', 'commit': report['commit']}
     raise RuntimeError('Binary differs from pinned source build; valid prepared SDK build manifest required')

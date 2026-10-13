@@ -3,3 +3,5 @@ fixtures/**/*.patch -whitespace
 fixtures/**/LICENSE* -whitespace
 # Preserve original upstream whitespace in digest-verified source fixtures.
 fixtures/matomo/adapted/core/Db/Schema/Mysql.php -whitespace
+# Preserve the digest-pinned original vendored XORM files.
+fixtures/gogs/third_party/** -whitespace

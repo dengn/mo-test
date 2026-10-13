@@ -73,3 +73,15 @@ Kanboard v1.2.54 与 YOURLS 1.10.6 使用同一固定 PHP SDK；MO_KANBOARD_RELE
 Grafana 官方 OSS 13.2.3 包含原生网页资源，prepare_grafana_sdk.py --out /owned/new/sdk 流式下载并同时校验完整 archive SHA 与 13361 个文件的固定 SHA；未通过完整核验前不可执行。MO_GRAFANA_RELEASE_DIR 指向该 SDK；不提供时驱动自行准备新的 SDK。解压体积约1.38GB，准备额外保留2GiB。运行时目录独立，配置通过 GF 环境变量传递，密码无需 INI 插值；原生账号、cookie、853 迁移、统一 resource 存储和组织隔离保留。SQL relay 仅重写固定 NVARCHAR MODIFY DDL，不改认证/查询结果；TLS/compression 未覆盖。按原生配置 disable_legacy_table_rename=true 保留旧表，数据迁移仍执行。统一 alertmanager 初始化存在错误，该功能未认证；仪表板测试通过不能掩盖它。
 
 Matomo 5.14.1 使用固定官方 tar.gz 与7个精确适配源文件。MO_MATOMO_RELEASE_ARCHIVE 可提供原包缓存，或默认下载验证；11888 个发行文件中的根级安装说明不执行，应用目录11887文件安全解包。原生网页安装先创建核心表，完成并启动插件后共34表。账号、bcrypt、站点权限和应用令牌均由原生安装/API生成；测试保留默认指纹识别，以不同语言的全新浏览器模拟三个独立访客，不关闭识别或伪造visitorId。原生一般API密码错误返回200+result:error，需要同时验证未新增令牌；无权限报告返回401。Live原生URL按存储的name和url_prefix重建后断言完整URL，原生登录cookie/令牌及访问记录重启保持。尚未认证归档聚合报表/rollup、插件与已有数据升级。
+
+
+## Gogs 与 Apache Answer
+
+Gogs 固定源码 dbbd717e923694c36f41b0360515b4374bbe6ee0、2646 个 Git blob 和128个精确 vendored XORM 适配文件。`MO_GOGS_BINARY` 提供历史固定 SHA 二进制；另一个构建必须提供 `MO_GOGS_BUILD_MANIFEST` 并匹配 source、Go、binary 和 adaptation-manifest hash。可用 `build_go_sdk.py --app gogs` 准备仅 API/Git 的 SDK；不产生 HTML 占位资源，两个指向 AGENTS 的源码符号链接验证 Git blob 后不复制。此次冷构建在4GiB入场阈值前被空间保护阻止，尚未执行冷编译。历史二进制原生 API/Git 的33项检查和统一入口复跑通过；其默认页面依赖未启动的 Vite，完整前端尚未验证。原生 fresh schema 初始化37表/版本22，不代表所有历史升级都已执行；并发 NextIssueIndex 竞争仍待单独处理。数据库密码以原生环境 ValueMapper 读取，不在 app.ini 插入明文；Git ASKPASS、配置和认证材料仅保存在私有 runtime。
+
+Apache Answer 使用官方 v2.0.3 压缩包与固定 SHA 二进制，`MO_ANSWER_BINARY` 可提供原始发布缓存，否则默认下载并校验包和二进制摘要。源码 revision6744295，未修改 Go 程序。原生 CLI AUTO_INSTALL 调用自己的安装控制器创建完整新库、初始管理员和版本36，随后只通过官方配置修改监听地址为 loopback。普通账号、权限及问题/回答/标签全部通过原生 API。当前管理员权限来自 user_role_rel.role_id=2，不能用兼容旧字段 user.is_admin 判定。原生 SQLite 缓存及其令牌保持，权威业务数据连接 MatrixOne；完整 UI、SMTP、AI、MCP、插件及已有数据升级未认证。
+
+
+## OpenCart
+
+OpenCart 官方4.1.0.4 zip 固定 SHA 完整验证后仅安全解包 upload/ 发行文件，原始配置和数据不继承。`MO_OPENCART_RELEASE_ARCHIVE` 可提供原包缓存，否则默认下载；PHP仍使用固定FrankenPHP，`MO_PHP_BINARY`或统一binary-dir的frankenphp文件。五个精确PHP适配源文件分别验证原始/适配摘要：日期先过滤再按优先级选择价格的派生JOIN、SQL布尔字面量整数化、只跳过OPTIMIZE保留会话过期DELETE、PHP8.5 PDO常量同义兼容。按原生安装步骤准备空config、执行原生step_3.save创建159表及管理员，随后将本轮install目录移到私有目录，所有用户/token/商品/价格规则/购物车由原生安装或控制器生成，不手工插入。遵循上游部署设置将error_display=false，原始错误日志保留，不截取JSON尾部当作成功。原生文件session/cache保持，业务数据连接MO；上游原始fresh installer中的外键创建本就注释，不额外删约束。

@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="answer-native" tests="5" failures="1"><testcase name="pinned_official_binary" classname="answer-native" /><testcase name="actual_matrixone" classname="answer-native" /><testcase name="native_initializer_current_schema_version" classname="answer-native" /><testcase name="native_initializer_core_tables" classname="answer-native" /><testcase name="native_initializer_admin_bcrypt_and_role" classname="answer-native"><failure message="native_initializer_admin_bcrypt_and_role" /></testcase></testsuite>
