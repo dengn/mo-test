@@ -1,0 +1,17 @@
+{
+  "repo": "kanboard/kanboard",
+  "version": "v1.2.54",
+  "commit": "9ce6a5edc5b646ef15780cb445bc6d2c39d9898f",
+  "files": [
+    {
+      "path": "libs/picodb/lib/PicoDb/Driver/Mysql.php",
+      "original_sha256": "3b774a8c926d83aa4631002576874dee10fc6176d6ca78d73c68b0cbbc8942a5",
+      "adapted_sha256": "276bec7a7d9201c2c3a00aea71942b240207ee1f7867559486fc695c879bc066"
+    },
+    {
+      "path": "libs/picodb/lib/PicoDb/Driver/MatrixOnePdo.php",
+      "original_sha256": null,
+      "adapted_sha256": "6cc751d6438edaf6f4a9bf34b204eb2ce2eb1896dd0d2c020d1d6fb60812b666"
+    }
+  ]
+}

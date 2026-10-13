@@ -1,0 +1,175 @@
+{
+  "app": "matomo-org/matomo",
+  "version": "5.14.1",
+  "commit": "edb949cf54455cb8cbbd7f8c5a36fda8d32f532a",
+  "schema": "mo_reg_matomo_a2a69c44a71b4c74",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_core_tables_created",
+      "passed": true
+    },
+    {
+      "name": "native_plugins_finish_34_tables",
+      "passed": true
+    },
+    {
+      "name": "native_superuser_bcrypt",
+      "passed": true
+    },
+    {
+      "name": "native_website_Unicode_exact",
+      "passed": true
+    },
+    {
+      "name": "native_user_owner",
+      "passed": true
+    },
+    {
+      "name": "native_user_other",
+      "passed": true
+    },
+    {
+      "name": "native_site_view_permission",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_native_token_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_live_report_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_live_report_denied",
+      "passed": true
+    },
+    {
+      "name": "native_login_nonce_retained",
+      "passed": true
+    },
+    {
+      "name": "native_UI_password_cookie_login",
+      "passed": true
+    },
+    {
+      "name": "native_tracker_ack_0",
+      "passed": true
+    },
+    {
+      "name": "native_visitor_action_SQL_exact_0",
+      "passed": true
+    },
+    {
+      "name": "native_tracker_ack_1",
+      "passed": true
+    },
+    {
+      "name": "native_visitor_action_SQL_exact_1",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "official_archive_sha256": "6e2938c9a482fa715a02cacacc490f2e7d6fb1f4068e45de41181089c129080e",
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "explicit server-version alias",
+    "native Unicode charset and metadata case",
+    "split actual column/index DDL",
+    "match exact missing-table diagnostic",
+    "transactional native sequence allocation",
+    "bounded explicit-order ROW_NUMBER ranking"
+  ],
+  "limitations": [
+    "archived reports/ranking rollup/plugins/import/populated upgrades/wider collation unverified"
+  ],
+  "verified_release_files": 11887,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_installer_steps": [
+    {
+      "step": "welcome",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "welcome"
+    },
+    {
+      "step": "systemCheck",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "systemCheck"
+    },
+    {
+      "step": "databaseSetup",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "tablesCreation"
+    },
+    {
+      "step": "tablesCreation",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "tablesCreation"
+    },
+    {
+      "step": "setupSuperUser",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "firstWebsiteSetup"
+    },
+    {
+      "step": "firstWebsiteSetup",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "trackingCode"
+    },
+    {
+      "step": "trackingCode",
+      "http_status": 200,
+      "final_module": "Installation",
+      "final_action": "trackingCode"
+    },
+    {
+      "step": "finished",
+      "http_status": 200,
+      "final_module": "",
+      "final_action": ""
+    }
+  ],
+  "native_denials": [
+    {
+      "method": "UsersManager.createAppSpecificTokenAuth",
+      "http_status": 200,
+      "native_error": true
+    },
+    {
+      "method": "Live.getLastVisitsDetails",
+      "http_status": 401,
+      "native_error": true
+    },
+    {
+      "method": "Live.getLastVisitsDetails",
+      "http_status": 401,
+      "native_error": true
+    }
+  ],
+  "error_type": "AssertionError",
+  "failed_stage": "native_tracking",
+  "failed_check": "native_visitor_action_SQL_exact_1",
+  "finished_at_utc": "2026-10-13T01:25:54Z"
+}

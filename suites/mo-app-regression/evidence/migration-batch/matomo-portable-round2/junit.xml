@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite name="matomo-native" tests="4" failures="1"><testcase name="pinned_FrankenPHP" classname="matomo-native" /><testcase name="fresh_official_release_without_old_config" classname="matomo-native" /><testcase name="actual_matrixone" classname="matomo-native" /><testcase name="native_34_tables_created" classname="matomo-native"><failure message="native_34_tables_created" /></testcase></testsuite>

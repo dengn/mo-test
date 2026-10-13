@@ -65,3 +65,11 @@ FreshRSS 的 MO_FRESHRSS_SOURCE_TREE 指向固定 4a810f16 的源码或仅带精
 MO_APP_RUNTIME_ROOT 可把私有运行副本放在另外的可写目录。当前测试使用 /tmp 的 tmpfs 与独立 6004 稳定版实例，旧 6001 实例和旧数据保留；tmpfs 容量同时消耗 cgroup 内存，不代表新增持久磁盘。CI 应配置容量足够的专用持久测试空间，并管理其测试库/私有运行目录生命周期。
 
 Adminer 使用官方 6.1.2 all-language PHP 文件与固定摘要，默认下载；MO_ADMINER_RELEASE_FILE 可提供原始发布文件或精确适配 SHA。只有实际 MatrixOne 的解析后类型名转小写，完整类型/长度/枚举字面值不改。原生 PDO 路径、密码/cookie/CSRF 保留。它无内部迁移程序，所有业务 fixture DDL/DML 都通过原生 HTTP SQL 控制台/表单执行，Python 仅创建新库和读回。非法 CSRF 的原生 403 与错误提示是有效拒绝，不当成 MO 失败。HTML 表单解析依赖固定 wheel SHA 的 BeautifulSoup/soupsieve/typing_extensions；安装全部按 requirements.lock。
+
+phpMyAdmin 5.2.3 从固定 SHA 的官方 all-languages tar.xz 重新解包 4314 文件，MO_PHPMYADMIN_RELEASE_ARCHIVE 可提供原始缓存包。驱动只接受完整官方 archive，不复制旧安装配置；三个源文件适配及原始/适配 SHA 随仓库发布。保留原生 cookie 密码认证、CSRF、真实查询、FK/回滚与 CSV；不启用或认证可选 configuration storage。SQL fixture 全部通过原生 HTTP 执行。
+
+Kanboard v1.2.54 与 YOURLS 1.10.6 使用同一固定 PHP SDK；MO_KANBOARD_RELEASE_ARCHIVE / MO_YOURLS_RELEASE_ARCHIVE 提供原始 codeload tar.gz，或默认下载完整固定 SHA 并安全解包。只应用精确提交的两个/一个适配文件；原配置、账号、数据不复制。Kanboard 原生 139 迁移和新用户创建/私有项目、数据库 session 认证保留；初始 admin/admin 只在自建 loopback 实例 bootstrap 使用，随后经原生 API 删除。非法 CSRF 的原生 getValues 返回空请求，200 重新显示“标题必填”且零写入。YOURLS 配置账号按上游方式提供并由原生程序散列，所有管理账号共享全局权限，不认证跨账号隔离；跳转客户端不跟随外部目标。重复 URL 的原生 409 被准确断言，不当作成功新增。
+
+Grafana 官方 OSS 13.2.3 包含原生网页资源，prepare_grafana_sdk.py --out /owned/new/sdk 流式下载并同时校验完整 archive SHA 与 13361 个文件的固定 SHA；未通过完整核验前不可执行。MO_GRAFANA_RELEASE_DIR 指向该 SDK；不提供时驱动自行准备新的 SDK。解压体积约1.38GB，准备额外保留2GiB。运行时目录独立，配置通过 GF 环境变量传递，密码无需 INI 插值；原生账号、cookie、853 迁移、统一 resource 存储和组织隔离保留。SQL relay 仅重写固定 NVARCHAR MODIFY DDL，不改认证/查询结果；TLS/compression 未覆盖。按原生配置 disable_legacy_table_rename=true 保留旧表，数据迁移仍执行。统一 alertmanager 初始化存在错误，该功能未认证；仪表板测试通过不能掩盖它。
+
+Matomo 5.14.1 使用固定官方 tar.gz 与7个精确适配源文件。MO_MATOMO_RELEASE_ARCHIVE 可提供原包缓存，或默认下载验证；11888 个发行文件中的根级安装说明不执行，应用目录11887文件安全解包。原生网页安装先创建核心表，完成并启动插件后共34表。账号、bcrypt、站点权限和应用令牌均由原生安装/API生成；测试保留默认指纹识别，以不同语言的全新浏览器模拟三个独立访客，不关闭识别或伪造visitorId。原生一般API密码错误返回200+result:error，需要同时验证未新增令牌；无权限报告返回401。Live原生URL按存储的name和url_prefix重建后断言完整URL，原生登录cookie/令牌及访问记录重启保持。尚未认证归档聚合报表/rollup、插件与已有数据升级。

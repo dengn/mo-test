@@ -54,3 +54,17 @@ GitHub Actions 尚未运行，相关 SDK/runner 配置见 RUNTIME-SDK.md。没�
 随后 Adminer v6.1.2 独立新库通过 20 项检查，原始两轮 CSRF 状态假设失败保留；原生非法 CSRF 返回403并明确提示，SQL确无改动。当前共11个驱动，原54项剩47项。本轮新增7个驱动共222项独立检查通过；加上原4个为274项。统一全10应用那一轮的254项记录保持不改，Adminer作为后续独立轮验证。
 
 最终统一 smoke 再执行全部11个应用：**274个原生检查 + 3个SQL正向对照全部通过**。这轮 ntfy/Memos 使用本轮从源码构建并绑定 manifest 的二进制；默认为2048MiB磁盘入场要求，runtime 指向独立临时目录。证据见 evidence/migration-batch/all-eleven-cold-sdk-smoke。19项 Python合同/SDK身份测试、workflow YAML/11应用选择校验通过，GitHub Actions仍未运行。
+
+## 继续迁移原54项：phpMyAdmin、Kanboard、YOURLS、Grafana
+
+这四个新增驱动在每轮全新库中分别实跑22、34、28、27项检查，共111项。当前共15个独立驱动，原54项待迁移项目还剩43项；1000候选的61/58/939历史运行统计不变。
+
+phpMyAdmin官方5.2.3的4314文件、Kanboard139原生迁移、YOURLS原生web安装/schema507、Grafana官方13.2.3的13361发行文件与853成功迁移分别核验；应用自己的安装、账号、认证与真实业务保留。SQL逐值核对、关联、原生权限拒绝、真实进程重启通过。Grafana官方包完整460956549字节流SHA匹配；alertmanager原生初始化仍报错，告警功能不认证。
+
+随后通过统一入口再执行全部15个应用：**385项原生检查+3个SQL正向对照，全部通过、退出0**。证据见 evidence/migration-batch/all-fifteen-native-smoke；本轮ntfy/Memos仍使用冷构建SDK。Kanboard首轮把原生CSRF空请求返回200误判为应403，YOURLS首轮误把重复URL409预期为成功，均已按源代码和SQL零写入修正；原始失败JSON/JUnit保留。19项合同测试通过；GitHub Actions尚未运行，无新增issue。
+
+Matomo 5.14.1 随后在独立新库通过30项检查，当前独立应用16个，原54项剩42项。本批截至目前总计415项原生检查实际通过；全部15应用的一轮385项保持原样，Matomo为随后新增轮次。原生install、34表、普通账号/权限/令牌、三独立访客、完整UTF8动作/URL/身份关联、Live报告、真实重启和原cookie/令牌读回均已验证。前六轮发行包根级说明文件、插件建表时机、API scalar包装/错误状态、默认访客指纹合并等驱动预期问题保留，不提交为MO缺陷。
+
+Matomo 第一次统一入口复跑未创建管理员，原生 setupSuperUser 返回自身表单而非完成后的下一步骤，退出1。该次原始响应未保存，根因未确定，不能归为已修好的驱动假设或已确认MO缺陷。新增准确的步骤完成断言并保留后续每步私有原始HTML；同一失败密码在另一全新库复现时完整31项通过，排除了该密码固定不被接受的推测。此安装稳定性现象保留，不静默重试、不自动提issue，须进一步取得失败响应并在当时main实际核查后才能归因。Matomo当前驱动多了1项安装阶段断言，总计31项，所有16应用的各自通过检查共416项。30项的先前记录保持不改。
+
+Matomo 随后第二次统一入口新库复跑，31项原生检查+3个SQL对照全部通过、退出0，证据见 evidence/migration-batch/matomo-entry-smoke-round2。第一次入口失败保持原样。当前416项来自15应用统一轮385项，加当前Matomo31项；不是声称单轮统一执行了16应用，也不叠加重复跑的检查。PHP配置引号/反斜线/美元符号/Unicode通过真实PHP执行逐字节hash核验；19合同测试及workflow YAML/16应用选择通过。GitHub Actions尚未执行。

@@ -1,0 +1,198 @@
+{
+  "app": "sabre-io/Baikal",
+  "version": "0.12.1",
+  "commit": "cfa7433ea444b3cbc84761b3efbf2562c3a53949",
+  "schema": "mo_reg_baikal_98a5a6bff0a64714",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP_runtime",
+      "passed": true
+    },
+    {
+      "name": "fresh_release_without_existing_installation",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_admin_settings_and_database_form",
+      "passed": true
+    },
+    {
+      "name": "native_MatrixOne_schema_installer",
+      "passed": true
+    },
+    {
+      "name": "native_14_tables",
+      "passed": true
+    },
+    {
+      "name": "native_admin_password_login",
+      "passed": true
+    },
+    {
+      "name": "native_user_creation_CSRF_owner",
+      "passed": true
+    },
+    {
+      "name": "native_user_creation_owner",
+      "passed": true
+    },
+    {
+      "name": "native_user_creation_CSRF_other",
+      "passed": true
+    },
+    {
+      "name": "native_user_creation_other",
+      "passed": true
+    },
+    {
+      "name": "native_PROPFIND_401_11",
+      "passed": true
+    },
+    {
+      "name": "native_PROPFIND_401_12",
+      "passed": true
+    },
+    {
+      "name": "native_PROPFIND_207_13",
+      "passed": true
+    },
+    {
+      "name": "native_PUT_201_14",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_15",
+      "passed": true
+    },
+    {
+      "name": "native_calendar_original_bytes",
+      "passed": true
+    },
+    {
+      "name": "native_GET_403_17",
+      "passed": true
+    },
+    {
+      "name": "native_PUT_201_18",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_19",
+      "passed": true
+    },
+    {
+      "name": "native_contact_original_bytes",
+      "passed": true
+    },
+    {
+      "name": "native_DELETE_403_21",
+      "passed": true
+    },
+    {
+      "name": "native_PUT_412_22",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_23",
+      "passed": true
+    },
+    {
+      "name": "failed_ETag_update_preserves_bytes",
+      "passed": true
+    },
+    {
+      "name": "native_PUT_204_25",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_26",
+      "passed": true
+    },
+    {
+      "name": "native_conditional_update_exact_bytes",
+      "passed": true
+    },
+    {
+      "name": "SQL_calendar_exact_blob_size_UID_owner",
+      "passed": true
+    },
+    {
+      "name": "SQL_contact_exact_blob_size_owner",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "SQL_calendar_exact_blob_size_UID_owner",
+      "passed": true
+    },
+    {
+      "name": "SQL_contact_exact_blob_size_owner",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_original_rows",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_34",
+      "passed": true
+    },
+    {
+      "name": "restart_calendar_original_bytes",
+      "passed": true
+    },
+    {
+      "name": "native_GET_200_36",
+      "passed": true
+    },
+    {
+      "name": "restart_contact_original_bytes",
+      "passed": true
+    },
+    {
+      "name": "native_DELETE_204_38",
+      "passed": true
+    },
+    {
+      "name": "native_GET_404_39",
+      "passed": true
+    },
+    {
+      "name": "native_DELETE_204_40",
+      "passed": true
+    },
+    {
+      "name": "native_GET_404_41",
+      "passed": true
+    },
+    {
+      "name": "SQL_deleted_calendar_and_contact_absent",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "source_edits": false,
+  "native_auth_and_CSRF_retained": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "min_free_mib": 2048,
+  "limitations": [
+    "full upgrades, recurring/invited scheduling, sharing and locking semantics unverified"
+  ],
+  "verified_release_files": 1030,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "finished_at_utc": "2026-10-13T01:14:24Z"
+}

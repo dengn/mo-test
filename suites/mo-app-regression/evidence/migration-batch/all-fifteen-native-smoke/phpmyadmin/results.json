@@ -1,0 +1,116 @@
+{
+  "app": "phpmyadmin/phpmyadmin",
+  "version": "5.2.3",
+  "commit": "962857e4f63d42e38f11ff4d63f5e722018add76",
+  "schema": "mo_reg_phpmyadmin_92935f7b5ee543f2",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "wrong_database_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login",
+      "passed": true
+    },
+    {
+      "name": "private_configuration_not_served",
+      "passed": true
+    },
+    {
+      "name": "native_SQL_three_tables_created",
+      "passed": true
+    },
+    {
+      "name": "native_insert_values_and_FK_relation",
+      "passed": true
+    },
+    {
+      "name": "native_update_decimal_exact",
+      "passed": true
+    },
+    {
+      "name": "native_transaction_rollback_exact",
+      "passed": true
+    },
+    {
+      "name": "native_FK_rejection_zero_row",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_write_denied_no_change",
+      "passed": true
+    },
+    {
+      "name": "native_ENUM_NULL_signed_integer_exact",
+      "passed": true
+    },
+    {
+      "name": "anonymous_SQL_requires_login",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_result_grid_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_CSV_exact",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "original_cookie_after_restart_native_result_grid_exact",
+      "passed": true
+    },
+    {
+      "name": "original_cookie_after_restart_native_CSV_exact",
+      "passed": true
+    },
+    {
+      "name": "SQL_original_values_after_restart",
+      "passed": true
+    },
+    {
+      "name": "native_delete_and_zero_relation",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "official_archive_sha256": "57881348297c4412f86c410547cf76b4d8a236574dd2c6b7d6a2beebe7fc44e3",
+  "existing_databases_modified": false,
+  "optional_configuration_storage_unverified": true,
+  "all_fixture_DDL_and_DML_through_native_HTTP": true,
+  "source_edits": [
+    "SHOW COLLATION metadata",
+    "foreign-key boolean case",
+    "role without host",
+    "avoid redundant session SET around native transaction"
+  ],
+  "min_free_mib": 2048,
+  "limitations": [
+    "full schema alteration/privilege management/import/plugins/populated upgrade unverified"
+  ],
+  "verified_release_files": 4314,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "finished_at_utc": "2026-10-13T01:14:43Z"
+}

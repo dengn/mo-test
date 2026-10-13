@@ -1,0 +1,23 @@
+{
+  "repo": "phpmyadmin/phpmyadmin",
+  "version": "5.2.3",
+  "commit": "962857e4f63d42e38f11ff4d63f5e722018add76",
+  "archive_sha256": "57881348297c4412f86c410547cf76b4d8a236574dd2c6b7d6a2beebe7fc44e3",
+  "files": [
+    {
+      "path": "libraries/classes/Charsets.php",
+      "original_sha256": "66bff1f46d0783848323b8095161f85b28598515f1ccea4a761aa7336d064649",
+      "adapted_sha256": "073781767be9772c6b6e1df261d1fd02abb8792c85dbf818fa71c3a2a83eba87"
+    },
+    {
+      "path": "libraries/classes/DatabaseInterface.php",
+      "original_sha256": "56dc7a4a3057bf79815af0b4ab786aee8ab685abeac37f9323bab097a1d1fd0f",
+      "adapted_sha256": "0c3e3757918add7b7687e4ce9e3132d4d1ade7b67bf2eac36975257ca4f3fdae"
+    },
+    {
+      "path": "libraries/classes/Utils/ForeignKey.php",
+      "original_sha256": "5dbfbfcb37096301c5e2aa9bdbcdf51bbeafda8d76cc9a820883605fb2818245",
+      "adapted_sha256": "cbf012a9b901f0dceb90fec0637e220b5290fd5bf75b0ae32982d71e8f8c379e"
+    }
+  ]
+}

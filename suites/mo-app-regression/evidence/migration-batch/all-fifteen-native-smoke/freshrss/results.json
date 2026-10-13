@@ -1,0 +1,150 @@
+{
+  "app": "FreshRSS/FreshRSS",
+  "commit": "4a810f1624b9d0b97b4400614cf9aacc8ada40e3",
+  "schema": "mo_reg_freshrss_c3bef93aa0164a45",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP_runtime",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_prepare_directories",
+      "passed": true
+    },
+    {
+      "name": "native_language_and_session_step",
+      "passed": true
+    },
+    {
+      "name": "native_database_installer_step",
+      "passed": true
+    },
+    {
+      "name": "native_admin_created",
+      "passed": true
+    },
+    {
+      "name": "native_admin_setup_and_migration_marker",
+      "passed": true
+    },
+    {
+      "name": "native_controller_account_and_API_password_owner",
+      "passed": true
+    },
+    {
+      "name": "native_controller_account_and_API_password_other",
+      "passed": true
+    },
+    {
+      "name": "native_both_users_isolated_tables",
+      "passed": true
+    },
+    {
+      "name": "native_API_password_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_API_password_login_other",
+      "passed": true
+    },
+    {
+      "name": "anonymous_API_denied",
+      "passed": true
+    },
+    {
+      "name": "native_write_token",
+      "passed": true
+    },
+    {
+      "name": "native_RSS_quickadd",
+      "passed": true
+    },
+    {
+      "name": "native_exact_UTF8_titles_and_HTML_content",
+      "passed": true
+    },
+    {
+      "name": "native_subscription_listing",
+      "passed": true
+    },
+    {
+      "name": "other_user_has_no_owner_subscription",
+      "passed": true
+    },
+    {
+      "name": "other_user_database_has_no_owner_entries",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_GUID_UTF8_compressed_content_feed_links",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_GUID_UTF8_compressed_content_feed_links_API_identifiers_match_SQL",
+      "passed": true
+    },
+    {
+      "name": "invalid_write_token_rejected_no_state_change",
+      "passed": true
+    },
+    {
+      "name": "native_mark_read_and_SQL_state",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_feed_content",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_feed_content_API_identifiers_match_SQL",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_original_values_and_links",
+      "passed": true
+    },
+    {
+      "name": "native_original_API_auth_and_content_after_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_native_read_state_preserved",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "manual_SQL_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "source_edits": [
+    "CategoryDAO.php",
+    "EntryDAO.php"
+  ],
+  "min_free_mib": 2048,
+  "limitations": [
+    "Google Reader API only; complete UI/populated upgrades/concurrent feed commits unverified"
+  ],
+  "verified_source_blobs": 1294,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_internal_host_allowlist": [
+    "127.0.0.1:32901"
+  ],
+  "native_initial_subscription_count": 1,
+  "quickadd_HTTP_status": 200,
+  "quickadd_num_results": 1,
+  "observed_COMPRESS_framing": "raw_deflate",
+  "finished_at_utc": "2026-10-13T01:14:30Z"
+}

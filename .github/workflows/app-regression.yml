@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       profile:
-        description: smoke is controls plus eleven native apps; defects is a strict failing gate until fixed
+        description: smoke is controls plus sixteen native apps; defects is a strict failing gate until fixed
         type: choice
         options: [smoke, native, controls, defects, observe, load]
         default: smoke
       app:
         description: Native app selection (use all for SQL-only profiles)
         type: choice
-        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer]
+        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer, phpmyadmin, kanboard, yourls, grafana, matomo]
         default: all
       include_panic:
         description: Explicitly enable panic fixtures on a dedicated instance (defects or observe only)
@@ -63,6 +63,11 @@ jobs:
       MO_APP_RUNTIME_ROOT: ${{ vars.MO_APP_RUNTIME_ROOT }}
       MO_PHP_BINARY: ${{ vars.MO_PHP_BINARY }}
       MO_BAIKAL_RELEASE_DIR: ${{ vars.MO_BAIKAL_RELEASE_DIR }}
+      MO_PHPMYADMIN_RELEASE_ARCHIVE: ${{ vars.MO_PHPMYADMIN_RELEASE_ARCHIVE }}
+      MO_KANBOARD_RELEASE_ARCHIVE: ${{ vars.MO_KANBOARD_RELEASE_ARCHIVE }}
+      MO_YOURLS_RELEASE_ARCHIVE: ${{ vars.MO_YOURLS_RELEASE_ARCHIVE }}
+      MO_GRAFANA_RELEASE_DIR: ${{ vars.MO_GRAFANA_RELEASE_DIR }}
+      MO_MATOMO_RELEASE_ARCHIVE: ${{ vars.MO_MATOMO_RELEASE_ARCHIVE }}
       MO_ADMINER_RELEASE_FILE: ${{ vars.MO_ADMINER_RELEASE_FILE }}
       MO_FRESHRSS_SOURCE_TREE: ${{ vars.MO_FRESHRSS_SOURCE_TREE }}
       MO_NTFY_BINARY: ${{ vars.MO_NTFY_BINARY }}

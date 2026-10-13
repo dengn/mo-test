@@ -1,0 +1,137 @@
+{
+  "profile": "smoke",
+  "policy": "strict",
+  "started_at_utc": "2026-10-13T01:11:29Z",
+  "jobs": [
+    {
+      "name": "sql",
+      "status": "passed",
+      "exit_code": 0,
+      "case_statuses": {
+        "passed": 3
+      },
+      "elapsed_seconds": 0.35
+    },
+    {
+      "name": "gotify",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 12,
+      "elapsed_seconds": 3.89
+    },
+    {
+      "name": "blocky",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 10,
+      "elapsed_seconds": 2.548
+    },
+    {
+      "name": "plik",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 17,
+      "elapsed_seconds": 11.28
+    },
+    {
+      "name": "ergo",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 13,
+      "elapsed_seconds": 2.574
+    },
+    {
+      "name": "documize",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 25,
+      "elapsed_seconds": 13.725
+    },
+    {
+      "name": "huginn",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 34,
+      "elapsed_seconds": 129.317
+    },
+    {
+      "name": "ntfy",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 40,
+      "elapsed_seconds": 3.769
+    },
+    {
+      "name": "memos",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 29,
+      "elapsed_seconds": 2.973
+    },
+    {
+      "name": "baikal",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 44,
+      "elapsed_seconds": 4.631
+    },
+    {
+      "name": "freshrss",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 30,
+      "elapsed_seconds": 5.365
+    },
+    {
+      "name": "adminer",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 20,
+      "elapsed_seconds": 4.118
+    },
+    {
+      "name": "phpmyadmin",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 22,
+      "elapsed_seconds": 9.108
+    },
+    {
+      "name": "kanboard",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 34,
+      "elapsed_seconds": 42.807
+    },
+    {
+      "name": "yourls",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 28,
+      "elapsed_seconds": 8.815
+    },
+    {
+      "name": "grafana",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 27,
+      "elapsed_seconds": 23.053
+    }
+  ],
+  "min_free_mib": 2048,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 0,
+  "passed": true,
+  "target": {
+    "server_version": "8.0.30-MatrixOne-v4.2.5",
+    "runtime_git_version": "1a44f3d",
+    "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+    "health": true
+  },
+  "runtime_root": "/tmp/mo-app-migration-runtime",
+  "free_bytes_at_admission": 4543459328,
+  "workspace_free_bytes_at_admission": 225783808,
+  "finished_at_utc": "2026-10-13T01:15:58Z"
+}

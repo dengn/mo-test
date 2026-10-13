@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 11,
+  "independent_native_driver_count": 16,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -333,8 +333,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Official1.10.6; native web installer completed on mo_yourls; log.shorturl binary varchar spelling adapted to VARBINARY100 for validated short keywords. Native authenticated short-link create/expand, Unicode title, public redirect and click counter, anonymous management API403 passed. Public redirect target is an isolated .invalid fixture and was not followed. MySQL collation semantics, binary trailing-space behavior, plugins and all admin workflows unverified. Native short saturation completed; restart and post-load business checks passed; 359 distinct native business writes persisted out of 359 attempts, 184 timely acknowledgements, no duplicate or invalid business rows.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "1.10.6",
+      "mo_test_portable_basic_checks": 28
     },
     {
       "repo": "phpmyadmin/phpmyadmin",
@@ -346,8 +348,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_and_configuration_adapted_and_tested",
       "adaptation_notes": "Official5.2.3 full GPLv2 release verified against official checksum and pinned commit. Native cookie/password authentication, CSRF SQL form, create/insert/update, Unicode/decimal/binary result grid, linked FK rows, invalid FK rejection, explicit SQL transaction rollback, exact CSV export, anonymous login requirement and invalid-CSRF denial passed. MatrixOne SHOW COLLATION supplies its empty IS view; hostless roles retain native privilege lookup without granting permissions. Exact FK boolean on/off metadata normalization and verified redundant-only FK SET avoidance preserve transaction rollback; constraints remain active. Native rollback-checkbox engine recognition, user/grant management, comparison collations and wider schema tools unverified;  Native SQL saturation completed with one shared authenticated PHP session; 372 distinct load writes persisted out of 372 attempts, 371 timely acknowledgements. Full native CSV export of load rows matches MatrixOne counts, names, decimals and binary payloads before and after restart; no duplicate or invalid rows. Short application probes include frontend/session work and do not establish sustained database capacity.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "5.2.3",
+      "mo_test_portable_basic_checks": 22
     },
     {
       "repo": "sabre-io/Baikal",
@@ -521,8 +525,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Official1.2.54; native fresh mo_kanboard_final schema target139 completed. Native PicoDB PDO adapter quotes reserved config and DDL end column, commits before real ALTER/DROP/RENAME as MySQL DDL does, resolves native foreign-key UUID names from SHOW CREATE TABLE, and treats absent implicit FK-support user_id index as already meeting the index-removal target. Native password login and administrator user creation, project/task update, Unicode, linked comment, anonymous JSON-RPC401 passed. Earlier partial migration databases preserved. Collation equivalence, populated-upgrade recovery and long-duration load unverified. Native short saturation completed; restart and post-load business checks passed; 358 distinct native business writes persisted out of 358 attempts, 190 timely acknowledgements, no duplicate or invalid business rows.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "v1.2.54",
+      "mo_test_portable_basic_checks": 34
     },
     {
       "repo": "matomo-org/matomo",
@@ -534,8 +540,10 @@
       "runtime_status": "smoke_passed_archive_blocked",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Official5.14.1; isolated fresh mo_matomo_clean2 native web installation completed without updater warnings or manual stamps. Current adapter fixes server-version alias and missing-table error mapping; schema normalizes SHOW COLUMNS keys and uses sequential column/index ALTERs; dimension updater retains native Unicode without unsupported per-column MySQL collation clauses. utf8mb4 charset detection/config fixed; native tracker persisted visit and Unicode action with correct join, native live report returned visit, anonymous report denied401. Earlier partial databases/updater warnings preserved; collation equivalence and full plugin coverage unverified. Archive sequence needs row-lock transaction because LAST_INSERT_ID(argument) is unsupported; Actions non-rollup ranking ported to bounded ROW_NUMBER; Referrers rollup still blocked. VisitsSummary archive is not passed.  Native saturation completed to 1024 concurrency with timeout boundary; Strapi reached memory guard. Restart and post-load native business/auth checks passed; 1432 unique writes persisted out of 1432 attempts, 905 acknowledged, no duplicate or invalid native linked rows. Download preparation overlapped some load phases; these are short isolated application saturation probes, not sustained capacity certification.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "5.14.1",
+      "mo_test_portable_basic_checks": 31
     },
     {
       "repo": "wallabag/wallabag",
@@ -732,8 +740,10 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "gateway_adapted_and_tested",
       "adaptation_notes": "Official OSS 13.2.3; native migrations with loopback-only NVARCHAR-to-VARCHAR DDL rewrite (port6002). Native disable_legacy_table_rename preserves legacy tables; data migrations still run. Dashboard create/update/panel readback and anonymous denial passed. Alertmanager defaults emitted errors; alerting not certified. 256-concurrency boundary: 95 timeouts; recovery and post-load update/read/denial passed. Restart preserved panel. 485 distinct load dashboards persisted in authoritative unified resource storage; legacy dashboard table empty. Inactive public native release cache reclaimed after passed restart; original data/config and immutable release SHA preserved. Use rehydrate_grafana_release.py before rerunning; its stream verifies exact official SHA before activation.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_version_or_commit": "13.2.3",
+      "mo_test_portable_basic_checks": 27
     },
     {
       "repo": "tinode/chat",

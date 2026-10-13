@@ -1,0 +1,137 @@
+{
+  "app": "YOURLS/YOURLS",
+  "version": "1.10.6",
+  "commit": "8220c8dd191e5f212bf5d77048e62975b2e2de4d",
+  "schema": "mo_reg_yourls_3d39ee1729e24e82",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_web_installer_three_tables",
+      "passed": true
+    },
+    {
+      "name": "native_installer_schema_507",
+      "passed": true
+    },
+    {
+      "name": "anonymous_management_API_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_API_denied",
+      "passed": true
+    },
+    {
+      "name": "native_login_nonce_retained",
+      "passed": true
+    },
+    {
+      "name": "native_UI_cookie_password_login",
+      "passed": true
+    },
+    {
+      "name": "private_config_not_served",
+      "passed": true
+    },
+    {
+      "name": "native_short_link_created",
+      "passed": true
+    },
+    {
+      "name": "native_link_UTF8_URL_exact",
+      "passed": true
+    },
+    {
+      "name": "native_duplicate_URL_rejected_no_extra_row",
+      "passed": true
+    },
+    {
+      "name": "native_public_redirect_exact_no_external_fetch",
+      "passed": true
+    },
+    {
+      "name": "native_click_count_exact",
+      "passed": true
+    },
+    {
+      "name": "native_binary_keyword_click_log_relation",
+      "passed": true
+    },
+    {
+      "name": "native_edit_nonce_and_values",
+      "passed": true
+    },
+    {
+      "name": "invalid_nonce_native_rejection_zero_write",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_URL_title_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_stats_clicks_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_original_cookie_UI_values",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_URL_title_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_stats_clicks_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_original_cookie_UI_values",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_values_and_schema",
+      "passed": true
+    },
+    {
+      "name": "native_nonce_delete_exact",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "official_archive_sha256": "95549b8463c67a88eaa93f5dd8079599bc895f5ca047001ce385d1afdda26563",
+  "existing_databases_modified": false,
+  "manual_migration_stamps": false,
+  "native_config_users_retained": true,
+  "source_edits": [
+    "MatrixOne click log VARCHAR BINARY becomes VARBINARY only"
+  ],
+  "min_free_mib": 2048,
+  "limitations": [
+    "plugins/import/export/populated upgrades/global manager accounts and wider collation unverified"
+  ],
+  "verified_release_files": 639,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "finished_at_utc": "2026-10-13T01:05:31Z"
+}

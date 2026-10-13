@@ -1,0 +1,92 @@
+--- a/libs/picodb/lib/PicoDb/Driver/Mysql.php
++++ b/libs/picodb/lib/PicoDb/Driver/Mysql.php
+@@ -42,7 +42,11 @@
+      */
+     public function createConnection(array $settings)
+     {
+-        $this->pdo = new PDO(
++        $pdoClass = getenv('MATRIXONE_ADAPTER') === '1' ? MatrixOnePdo::class : PDO::class;
++        if ($pdoClass === MatrixOnePdo::class) {
++            require_once __DIR__.'/MatrixOnePdo.php';
++        }
++        $this->pdo = new $pdoClass(
+             $this->buildDsn($settings),
+             $settings['username'],
+             $settings['password'],
+@@ -83,7 +87,7 @@
+     {
+         $charset = empty($settings['charset']) ? 'utf8' : $settings['charset'];
+         $options = array(
+-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET sql_mode = STRICT_ALL_TABLES, NAMES ' . $charset,
++            (PHP_VERSION_ID >= 80500 ? \Pdo\Mysql::ATTR_INIT_COMMAND : PDO::MYSQL_ATTR_INIT_COMMAND) => 'SET sql_mode = STRICT_ALL_TABLES, NAMES ' . $charset,
+         );
+ 
+         if (! empty($settings['ssl_key'])) {
+--- /dev/null
++++ b/libs/picodb/lib/PicoDb/Driver/MatrixOnePdo.php
+@@ -0,0 +1,65 @@
++<?php
++namespace PicoDb\Driver;
++
++/** Keep native PDO results and transactions; quote MatrixOne's reserved identifier. */
++class MatrixOnePdo extends \PDO
++{
++    private function rewrite(string $sql): string
++    {
++        if (preg_match('/^\s*ALTER\s+TABLE\s+(comments|user_has_notifications)\s+DROP\s+FOREIGN\s+KEY\s+`?([a-z_]+ibfk_[12])`?\s*$/i', $sql, $drop)) {
++            $targets = ['comments_ibfk_2'=>['user_id','users'], 'user_has_notifications_ibfk_1'=>['user_id','users'], 'user_has_notifications_ibfk_2'=>['project_id','projects']];
++            if (!isset($targets[$drop[2]])) {
++                throw new \RuntimeException('Unknown migration foreign key');
++            }
++            [$column, $parent] = $targets[$drop[2]];
++            $definition = parent::query('SHOW CREATE TABLE `'.$drop[1].'`')->fetch(\PDO::FETCH_NUM)[1];
++            if (!preg_match('/CONSTRAINT `([^`]+)` FOREIGN KEY \(`'.$column.'`\) REFERENCES `'.$parent.'` \(`id`\)/', $definition, $match)) {
++                throw new \RuntimeException('Cannot resolve native migration foreign key');
++            }
++            return 'ALTER TABLE `'.$drop[1].'` DROP FOREIGN KEY `'.str_replace('`', '``', $match[1]).'`';
++        }
++        return preg_replace_callback(
++            '~\'(?:[^\'\\\\]|\\\\.|\'\')*\'|"(?:[^"\\\\]|\\\\.|"")*"|`(?:[^`]|``)*`|--[^\r\n]*|/\*.*?\*/|\bconfig\b|\bend(?=\s+INT\b)~is',
++            static fn(array $match): string => in_array(strtolower($match[0]), ['config', 'end'], true) ? '`'.$match[0].'`' : $match[0],
++            $sql
++        );
++    }
++
++    public function exec(string $statement): int|false
++    {
++        if (preg_match('/^\s*ALTER\s+TABLE\s+user_has_notifications\s+DROP\s+KEY\s+`user_id`\s*$/i', $statement)) {
++            // MySQL creates an implicit FK-support index; MatrixOne may not create it.
++            // The migration's target is absence of this redundant index before adding a composite unique index.
++            $indexes = parent::query('SHOW INDEX FROM `user_has_notifications`')->fetchAll(\PDO::FETCH_ASSOC);
++            $exists = false;
++            foreach ($indexes as $index) {
++                $keys = array_change_key_case($index, CASE_LOWER);
++                $exists = $exists || ($keys['key_name'] ?? '') === 'user_id';
++            }
++            if (!$exists) {
++                return 0;
++            }
++        }
++        // MySQL ALTER/DROP commits implicitly; MatrixOne rejects them in a transaction.
++        // Commit preceding work before executing the real DDL, then resume the caller's transaction.
++        if ($this->inTransaction() && preg_match('/^\s*(?:ALTER|DROP|RENAME|TRUNCATE)\b/i', $statement)) {
++            parent::commit();
++            try {
++                return parent::exec($this->rewrite($statement));
++            } finally {
++                parent::beginTransaction();
++            }
++        }
++        return parent::exec($this->rewrite($statement));
++    }
++
++    public function prepare(string $query, array $options = []): \PDOStatement|false
++    {
++        return parent::prepare($this->rewrite($query), $options);
++    }
++
++    public function query(string $query, ?int $fetchMode = null, mixed ...$fetchModeArgs): \PDOStatement|false
++    {
++        return $fetchMode === null ? parent::query($this->rewrite($query)) : parent::query($this->rewrite($query), $fetchMode, ...$fetchModeArgs);
++    }
++}

@@ -1,0 +1,135 @@
+{
+  "app": "grafana/grafana",
+  "version": "13.2.3",
+  "commit": "90ffed056f0884267356c12a0eeb72a022af53f1",
+  "schema": "mo_reg_grafana_dcdf1df0d65944b4",
+  "passed": true,
+  "checks": [
+    {
+      "name": "full_pinned_official_release",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_official_version_and_commit",
+      "passed": true
+    },
+    {
+      "name": "native_migrations_zero_failures",
+      "passed": true
+    },
+    {
+      "name": "native_bootstrap_admin",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_owner",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_other",
+      "passed": true
+    },
+    {
+      "name": "native_owner_active_org",
+      "passed": true
+    },
+    {
+      "name": "native_password_session_cookie",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_login_denied",
+      "passed": true
+    },
+    {
+      "name": "ordinary_user_server_admin_denied",
+      "passed": true
+    },
+    {
+      "name": "native_dashboard_create",
+      "passed": true
+    },
+    {
+      "name": "SQL_unified_resource_values_exact",
+      "passed": true
+    },
+    {
+      "name": "anonymous_dashboard_denied",
+      "passed": true
+    },
+    {
+      "name": "other_org_dashboard_read_denied",
+      "passed": true
+    },
+    {
+      "name": "other_org_dashboard_delete_denied_no_change",
+      "passed": true
+    },
+    {
+      "name": "native_invalid_origin_CSRF_denied_no_change",
+      "passed": true
+    },
+    {
+      "name": "native_dashboard_update_version",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_panel_JSON_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_SQL_panel_JSON_and_org_exact",
+      "passed": true
+    },
+    {
+      "name": "real_Grafana_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_panel_JSON_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_panel_JSON_and_org_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_original_resource_unchanged",
+      "passed": true
+    },
+    {
+      "name": "after_restart_other_org_denied",
+      "passed": true
+    },
+    {
+      "name": "native_delete_HTTP_and_SQL_zero_live_row",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "source_edits": false,
+  "SQL_adapter": "NVARCHAR MODIFY fixed width only; real MatrixOne auth/results",
+  "native_disable_legacy_table_rename": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "unified alerting initialization emits errors and is not certified",
+    "plugins/LDAP/OAuth/populated upgrades/full observability queries unverified"
+  ],
+  "verified_release_files": 13361,
+  "official_archive_sha256": "6107ad27016296aac38e0d7ffa8753ab540b5541ad27e94790f771289d733235",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_migration_count": 853,
+  "native_dashboard_namespace": "org-2",
+  "finished_at_utc": "2026-10-13T01:10:09Z"
+}
