@@ -1,0 +1,29 @@
+{
+  "sha256": {
+    "requirements-replay.txt": "83b1a49f0ed04e9f967c1b2dce7f3b5520a2a05eda51b88b1e061e9e9a95b474",
+    "evidence.zip": "d4c5695310fe8c93f278bc6d2bb76fc0257d0f2de3b33caece0e33a3fd954444",
+    "summary.json": "0a7ad89809c264c3cc0ea38127476e012256f8ac99888480640eaaed663bd437",
+    "bootstrap.py": "d4825f09c04ffe4e6922b48fa4b05db78d2d06635257dff47b6ba670a3d1cb9e",
+    "prepare_replay.py": "ea28b3482d600346e4ccc41274f2a17b5e613eff01824270a79f22a65ad1b89c",
+    "frozen-source/windowed/native_airflow.py": "6f54b4d43352b7b4a159c488e234009c813504c55f7ce5c3363df778fc7854a8",
+    "frozen-source/windowed/native_iceberg.py": "cb72a92d30b22114b827100f742c189ca13c0042388dc035f786a626a8cd5908",
+    "frozen-source/windowed/driver_routes.py": "acc1bb77d289c7d61875488b50467db0b129873bc8a130ede29c615f86574102",
+    "frozen-source/windowed/recycle_profile.py": "b92159dcb16965b3b49551555807175c4d713812684db9b2c96902354c23bccd",
+    "frozen-source/windowed/heavy.py": "6fa17c372a004378af2f9e20371180534409354e15e7ee43c6fc138cd70a5ff7",
+    "frozen-source/windowed/core.py": "bf00811547efaf32d2f4e1001475e16d2ba37f6f50b637b8a40b4e5cc3f406a1",
+    "frozen-source/windowed/runtime.py": "6648f26c1df856ad996960b91e93b19c31e79e557c278b54020506dd2c1e24be",
+    "frozen-source/native-dsf/run_windows_preserved.py": "d01fc2ab90c7127b6dccf9f69865908dff9574e2a93266cea23ab0df59e14b47",
+    "frozen-source/native-dsf/run_native_pilot.py": "86052350d7ea193263d9b65f92979e56a07766770dac9aaf2953518b8384672e",
+    "frozen-source/native-dsf/guard_6g.py": "05c4a8b355b40117b509330f38b89fe6a8b16c6e7ca9de76411c0276dae68c41",
+    "frozen-source/native-dsf/OwnedSqlSubmit.java": "bfdb0c17303af8a61738a797b69af8b26ee142150f85603b5c6af5a749957fc5",
+    "frozen-source/native-dsf/flink_cdc.py": "953e5d02f326e951092dea1cdf72b5f4f92130949439779f8a1f672d04b57847",
+    "frozen-source/native-dsf/datax_temporal_stage.py": "34f5ace94e06fcb538abc6ae4d18430b1c1ddd123bdec612ed4e838ad572c0fd",
+    "frozen-source/native-dsf/actual_batch.py": "34f23c141a57f4aa0e2ed7bed491f8a1b56ec4ab6fb2a0795a0fe7f71ad46fbc",
+    "frozen-source/native-dsf/native_batch.py": "041b16658eb74e08ac71e295b17ecfe206aff90abd483ad883ba6b60c6f21af1",
+    "README.md": "be1f92416fe0aad53993e340ccfc4ef646c756a6c5b8d17a909cc5e1f0512039"
+  },
+  "executed_original_cases": 122,
+  "new_cases_from_replay_scaffolding": 0,
+  "replay_scaffolding_verification": "Python compilation only; no additional native execution claimed",
+  "scope": "end-of-round source snapshot; deterministic oracle hashes checked against original records; optional portability preparation is compiled-only"
+}
