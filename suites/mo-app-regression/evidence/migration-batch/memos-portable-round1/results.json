@@ -1,0 +1,43 @@
+{
+  "app": "usememos/memos",
+  "commit": "d5df8915f70a108971f9bf01151ecd3de3e0c91f",
+  "binary_sha256": "97e52d79444628fcd5b3343d2c048be8ac81e9393c7c8d551d0dc8f2dd46c98e",
+  "schema": "mo_reg_memos_3d9f130fcb034057",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_schema_created",
+      "passed": true
+    },
+    {
+      "name": "no_manual_users_before_bootstrap",
+      "passed": true
+    },
+    {
+      "name": "native_first_user_admin_bootstrap",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "source_edits": false,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "native_rate_limits_retained": true,
+  "limitations": [
+    "native API only; full browser UI, integrations and populated upgrades unverified"
+  ],
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "AssertionError",
+  "failed_stage": "native_bootstrap",
+  "failed_check": "native_first_user_admin_bootstrap",
+  "finished_at_utc": "2026-10-12T23:19:25Z"
+}

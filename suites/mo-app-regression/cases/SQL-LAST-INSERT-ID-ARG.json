@@ -1,0 +1,19 @@
+{
+  "id": "SQL-LAST-INSERT-ID-ARG",
+  "title": "LAST_INSERT_ID argument overload",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "trigger",
+      "sql": "SELECT LAST_INSERT_ID(1)",
+      "expected_error": {
+        "code": 20203,
+        "contains": [
+          "invalid argument function last_insert_id"
+        ]
+      }
+    }
+  ]
+}

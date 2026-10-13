@@ -1,0 +1,70 @@
+# mo-test 接入实跑验证
+
+本轮在隔离环境实际运行 MatrixOne 官方稳定版 v4.2.5，完整构建 SHA `1a44f3db3056e32975fde86ca0ab69a094996a3f`，运行时 git_version `1a44f3d`。结果记录使用 UTC 时间；每个业务驱动使用全新的随机库。
+
+| 验证 | 实际结果 |
+| --- | --- |
+| Python 合同测试 | 14 项通过，覆盖错误签名、失败继续执行、缺失报告、观察标签、健康失败、panic opt-in、未迁移应用、commit 和低磁盘负载拒绝 |
+| Gotify 原生业务 | 12 项通过：16 消息 / 4 workers，真实 API、SQL、权限和重启 |
+| Blocky 原生 DNS | 10 项通过：64 查询 / 4 workers，精确持久化日志和真实重启 |
+| Plik 原生文件服务 | 17 项通过：16 文件 / 4 workers，原生认证/CSRF、字节/MD5、权限、SQL、重启和删除 |
+| Ergo 原生聊天历史 | 13 项通过：16 消息 / 2 writers，原生 fakelag 保留，IRC/SQL/权限/重启 |
+| smoke SQL 对照 | 3 项通过：Unicode/JSON、事务回滚、生成列 UPPER 索引 |
+| 全部 20 SQL fixture（观察） | 17 known_failure、3 passed，所有触发后健康检查通过；观察返回 0，但 suite passed 为 false |
+| 严格缺陷门禁（默认不含 panic） | 13 known_failure、3 passed，正确返回 1 |
+| 错误完整 commit | 在创建测试库前阻止，返回 2，jobs 为空 |
+| 默认磁盘阈值 | 2 GiB 入场要求因本地约 330 MiB 余量被拒绝，返回 2，jobs 为空 |
+| 凭据检查 | 对当前检出的 115 个公共文件检查 113 个历史私有值，无命中；runtime/artifacts 未提交 |
+| Workflow | YAML 与接入字段校验通过；没有在 GitHub Actions 执行，没有配置或改写仓库密钥 |
+
+证据目录：[evidence/integration/](evidence/integration/)。每个应用和 SQL 执行均保留 JSON / JUnit。主入口子任务级 JUnit 与子目录断言级 JUnit 是不同粒度，不能相加当作独立业务检查数量。
+
+第一轮 Gotify / Ergo / 3 个 SQL 对照通过，Blocky 和 Plik 因各自旧的 2 GiB 保护被阻止，最终返回 1。该轮原始失败保存为 `integration-smoke`。统一入口与两驱动的入场阈值、直接使用同 SHA 本地二进制后，独立第二轮 `integration-smoke-round2` 全部通过；没有覆盖第一次失败。
+
+本次有限基本验证显式使用 `--min-free-mib 128`，二进制逐一校验 SHA，直接执行本地文件，不复制或重新下载。默认 CI 仍要求 2048 MiB；低阈值原生验证要求已有二进制，Blocky/Plik 限定基本工作量，load profile 仍要求至少 2048 MiB。本次没有执行 load profile，也没有声称达到饱和容量。
+
+17 个已知失败中包含 4 个既有恢复型 panic；这不代表本轮新发现 4 个独立 panic，也不代表服务进程退出。已有 main 的状态与稳定版不同，本轮不对最新 main 宣称缺陷仍存在，不提交新 issue。新增 issue 仍须按 MAIN-VERIFICATION.md 实际验证当时 main。
+
+首批导入时，历史 58 个基本业务通过中的其余 54 个尚未做成独立驱动；61 个历史尝试中有 57 个驱动待迁移。1000 项总任务仍有 939 项未运行。此 PR 是已具备独立驱动的首批接入。
+
+
+## 后续独立驱动迁移批次
+
+本轮新增 6 个驱动，独立应用总数从 4 增至 10；原来 54 个待迁移的基本通过项目仍剩 48 个。候选 1000 项及 61/58/939 历史运行统计不因重复试跑而增加。
+
+| 新驱动 | 独立新库实跑 | 关键范围 |
+| --- | --- | --- |
+| Documize v5.14.0 | 25 检查通过 | 官方二进制、35 原生迁移/27 表、原生 setup/登录/JWT、文档章节/FTS、SQL 逐值及重启 |
+| Huginn d6f25e28 | 34 检查通过 | 校验 867 Git blob/适配、原生 73 迁移与 seed、Puma+AgentRunner 异步 Webhook→Formatter、权限/CSRF、SQL 与重启 |
+| ntfy v2.29.0/f18d1137 | 40 检查通过 | 原生 CLI 账号/ACL、两用户共享 IP 并发身份、WebSocket/SSE、JSON/生命周期/附件、SQL 与重启 |
+| Memos d5df8915 | 29 检查通过 | 原生管理员注册/账号、密码、私有笔记权限/并发 CRUD、SQL 精确归属与重启 |
+| Baikal 0.12.1 | 44 检查通过 | 校验 1030 发行版文件、网页安装原生 14 表/账号、Digest CalDAV/CardDAV、ETag、BLOB/大小/UID/归属、重启删除 |
+| FreshRSS 4a810f16 | 30 检查通过 | 校验 1294 blob/适配、完整网页安装、原生账号/API 密码控制器、Google Reader/RSS、两用户隔离、压缩正文/标记已读/令牌拒绝/重启 |
+
+统一入口在新的官方稳定版实例再次执行 **10 个原生应用共 254 项检查 + 3 个 SQL 正向对照，全通过**，默认磁盘入场阈值 2048 MiB 保留。JSON/JUnit 见 evidence/migration-batch/all-ten-new-instance-smoke。这是基本业务回归，没有新增极限容量结论，也没有重计每次复跑。
+
+workspace 剩余空间不足时，发现另外的 /tmp tmpfs 可用约 8.5 GiB，建立独立实例 6004（PID/目录见本地继续状态）。它使用官方 v4.2.5 同一完整 SHA 1a44f3db3056e32975fde86ca0ab69a094996a3f，独立 LOG/TN/CN UUID、部署 ID、所有服务端口与全新数据目录；GOMAXPROCS=2、Go soft limit=2 GiB。旧 6001 实例与旧数据没有停掉或删除。tmpfs 使用内存，不能当作持久磁盘扩容或独立机器容量。
+
+ntfy 与 Memos SDK 均在另外的目录从固定完整源码实际重新构建，前者 622 原始 Git blob + 固定补丁，后者 1328 原始 blob；Go 1.27.1、独立缓存、构建 manifest 的实际二进制 SHA 绑定，随后分别新建库再运行 40 / 29 检查通过。第一轮 workspace 入场失败仍保留。冷构建使用明确的 CLI HTML 占位资源，完整 web UI 仍未验证；Huginn 全部依赖冷安装尚未在另一个全新 SDK 上重跑。
+
+原始失败均保留：Huginn 首次运行配置路径错误，ntfy 最初把原生 WS（含 sequence_id）错误当成 HTTP JSON（ForJSON 省略它），Memos 最初用户名包含其原生规则禁止的下划线，FreshRSS 的 FrankenPHP getopt、未完成安装 finish 步骤、本地 RSS URL 默认拒绝、兼容 API 全角标题、原生初始订阅和压缩前缀假设，均为已修正的驱动/配置问题，不提交成 MatrixOne 缺陷。FreshRSS 只放行自建 RSS 服务的确切 IP:端口；SQL 验证编码原文与解压原字节，实测 COMPRESS framing 为长度前缀+raw DEFLATE，不认证跨厂商压缩 BLOB 互通。
+
+GitHub Actions 尚未运行，相关 SDK/runner 配置见 RUNTIME-SDK.md。没有自动提交新 issue，新增数据库问题仍须先实际验证当时 main。
+
+随后 Adminer v6.1.2 独立新库通过 20 项检查，原始两轮 CSRF 状态假设失败保留；原生非法 CSRF 返回403并明确提示，SQL确无改动。当前共11个驱动，原54项剩47项。本轮新增7个驱动共222项独立检查通过；加上原4个为274项。统一全10应用那一轮的254项记录保持不改，Adminer作为后续独立轮验证。
+
+最终统一 smoke 再执行全部11个应用：**274个原生检查 + 3个SQL正向对照全部通过**。这轮 ntfy/Memos 使用本轮从源码构建并绑定 manifest 的二进制；默认为2048MiB磁盘入场要求，runtime 指向独立临时目录。证据见 evidence/migration-batch/all-eleven-cold-sdk-smoke。19项 Python合同/SDK身份测试、workflow YAML/11应用选择校验通过，GitHub Actions仍未运行。
+
+## 继续迁移原54项：phpMyAdmin、Kanboard、YOURLS、Grafana
+
+这四个新增驱动在每轮全新库中分别实跑22、34、28、27项检查，共111项。当前共15个独立驱动，原54项待迁移项目还剩43项；1000候选的61/58/939历史运行统计不变。
+
+phpMyAdmin官方5.2.3的4314文件、Kanboard139原生迁移、YOURLS原生web安装/schema507、Grafana官方13.2.3的13361发行文件与853成功迁移分别核验；应用自己的安装、账号、认证与真实业务保留。SQL逐值核对、关联、原生权限拒绝、真实进程重启通过。Grafana官方包完整460956549字节流SHA匹配；alertmanager原生初始化仍报错，告警功能不认证。
+
+随后通过统一入口再执行全部15个应用：**385项原生检查+3个SQL正向对照，全部通过、退出0**。证据见 evidence/migration-batch/all-fifteen-native-smoke；本轮ntfy/Memos仍使用冷构建SDK。Kanboard首轮把原生CSRF空请求返回200误判为应403，YOURLS首轮误把重复URL409预期为成功，均已按源代码和SQL零写入修正；原始失败JSON/JUnit保留。19项合同测试通过；GitHub Actions尚未运行，无新增issue。
+
+Matomo 5.14.1 随后在独立新库通过30项检查，当前独立应用16个，原54项剩42项。本批截至目前总计415项原生检查实际通过；全部15应用的一轮385项保持原样，Matomo为随后新增轮次。原生install、34表、普通账号/权限/令牌、三独立访客、完整UTF8动作/URL/身份关联、Live报告、真实重启和原cookie/令牌读回均已验证。前六轮发行包根级说明文件、插件建表时机、API scalar包装/错误状态、默认访客指纹合并等驱动预期问题保留，不提交为MO缺陷。
+
+Matomo 第一次统一入口复跑未创建管理员，原生 setupSuperUser 返回自身表单而非完成后的下一步骤，退出1。该次原始响应未保存，根因未确定，不能归为已修好的驱动假设或已确认MO缺陷。新增准确的步骤完成断言并保留后续每步私有原始HTML；同一失败密码在另一全新库复现时完整31项通过，排除了该密码固定不被接受的推测。此安装稳定性现象保留，不静默重试、不自动提issue，须进一步取得失败响应并在当时main实际核查后才能归因。Matomo当前驱动多了1项安装阶段断言，总计31项，所有16应用的各自通过检查共416项。30项的先前记录保持不改。
+
+Matomo 随后第二次统一入口新库复跑，31项原生检查+3个SQL对照全部通过、退出0，证据见 evidence/migration-batch/matomo-entry-smoke-round2。第一次入口失败保持原样。当前416项来自15应用统一轮385项，加当前Matomo31项；不是声称单轮统一执行了16应用，也不叠加重复跑的检查。PHP配置引号/反斜线/美元符号/Unicode通过真实PHP执行逐字节hash核验；19合同测试及workflow YAML/16应用选择通过。GitHub Actions尚未执行。

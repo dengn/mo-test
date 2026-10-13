@@ -1,0 +1,88 @@
+{
+  "app": "FreshRSS/FreshRSS",
+  "commit": "4a810f1624b9d0b97b4400614cf9aacc8ada40e3",
+  "schema": "mo_reg_freshrss_115dd6089d6d4089",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP_runtime",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_prepare_directories",
+      "passed": true
+    },
+    {
+      "name": "native_language_and_session_step",
+      "passed": true
+    },
+    {
+      "name": "native_database_installer_step",
+      "passed": true
+    },
+    {
+      "name": "native_admin_created",
+      "passed": true
+    },
+    {
+      "name": "native_admin_setup_and_migration_marker",
+      "passed": true
+    },
+    {
+      "name": "native_controller_account_and_API_password_owner",
+      "passed": true
+    },
+    {
+      "name": "native_controller_account_and_API_password_other",
+      "passed": true
+    },
+    {
+      "name": "native_both_users_isolated_tables",
+      "passed": true
+    },
+    {
+      "name": "native_API_password_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_API_password_login_other",
+      "passed": true
+    },
+    {
+      "name": "anonymous_API_denied",
+      "passed": true
+    },
+    {
+      "name": "native_write_token",
+      "passed": true
+    },
+    {
+      "name": "native_RSS_quickadd",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "source_edits": [
+    "CategoryDAO.php",
+    "EntryDAO.php"
+  ],
+  "min_free_mib": 2048,
+  "limitations": [
+    "Google Reader API only; complete UI/populated upgrades/concurrent feed commits unverified"
+  ],
+  "verified_source_blobs": 1294,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "quickadd_HTTP_status": 200,
+  "quickadd_num_results": 0,
+  "error_type": "AssertionError",
+  "failed_stage": "native_feed_subscription",
+  "failed_check": "native_RSS_quickadd",
+  "finished_at_utc": "2026-10-13T00:14:20Z"
+}

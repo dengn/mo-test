@@ -1,0 +1,162 @@
+{
+  "app": "ergochat/ergo",
+  "version": "v2.19.1",
+  "commit": "63c743a70644f0f19109508ade8580bf37f7d23d",
+  "binary_sha256": "680545a7902b169386160412469097cc63c362b75e85bee2206898d800886a4e",
+  "schema": "mo_reg_ergo_05349850f3de4108",
+  "native_runtime_attempted": true,
+  "source_edits": false,
+  "SQL_scope": "documented persistent history only; native BuntDB account/channel store retained",
+  "native_fakelag_retained": true,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_schema_versions",
+      "passed": true
+    },
+    {
+      "name": "native_account_registration",
+      "passed": true
+    },
+    {
+      "name": "native_channel_registration",
+      "passed": true
+    },
+    {
+      "name": "nonmember_history_denied",
+      "passed": true
+    },
+    {
+      "name": "native_echo_acknowledgments",
+      "passed": true,
+      "messages": 16,
+      "writers": 2,
+      "seconds": 1.6569
+    },
+    {
+      "name": "SQL_exact_Unicode_binary_msgid_and_channel_links",
+      "passed": true
+    },
+    {
+      "name": "native_CHATHISTORY_exact_messages",
+      "passed": true
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_messages",
+      "passed": true
+    },
+    {
+      "name": "restart_original_row_bytes_and_identifiers",
+      "passed": true
+    },
+    {
+      "name": "restart_native_authenticated_history",
+      "passed": true
+    }
+  ],
+  "attempts": [
+    {
+      "index": 0,
+      "message": "d3fe4cb201ec-0: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 1,
+      "message": "d3fe4cb201ec-1: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 2,
+      "message": "d3fe4cb201ec-2: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 3,
+      "message": "d3fe4cb201ec-3: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 4,
+      "message": "d3fe4cb201ec-4: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 5,
+      "message": "d3fe4cb201ec-5: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 6,
+      "message": "d3fe4cb201ec-6: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 7,
+      "message": "d3fe4cb201ec-7: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 8,
+      "message": "d3fe4cb201ec-8: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 9,
+      "message": "d3fe4cb201ec-9: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 10,
+      "message": "d3fe4cb201ec-10: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 11,
+      "message": "d3fe4cb201ec-11: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 12,
+      "message": "d3fe4cb201ec-12: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 13,
+      "message": "d3fe4cb201ec-13: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 14,
+      "message": "d3fe4cb201ec-14: 中文 😀𠮷",
+      "acknowledged": true
+    },
+    {
+      "index": 15,
+      "message": "d3fe4cb201ec-15: 中文 😀𠮷",
+      "acknowledged": true
+    }
+  ],
+  "passed": true,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "native_tables": [
+    "account_messages",
+    "conversations",
+    "correspondents",
+    "forget",
+    "history",
+    "metadata",
+    "sequence"
+  ],
+  "time_utc": "2026-10-12T22:41:33Z"
+}

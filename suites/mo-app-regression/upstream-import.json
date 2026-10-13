@@ -1,0 +1,321 @@
+{
+  "repository": "matrixorigin/matrixone-app-regression",
+  "commit": "e3f59736522ec3128cc47b541d292fafc6dcfbd1",
+  "files": [
+    {
+      "path": "run_sql.py",
+      "bytes": 9739,
+      "upstream_sha256": "e23719012164f77c033fec73cdd58c577b659eaeeade84ecba82a7e1b6e810ac"
+    },
+    {
+      "path": "run_gotify.py",
+      "bytes": 12783,
+      "upstream_sha256": "8ed18581be7dcc3558bdb9eab173d27c71776da1d0e92319ac41d44a190fc09d"
+    },
+    {
+      "path": "run_blocky.py",
+      "bytes": 10257,
+      "upstream_sha256": "8f8a7bb35a29106ad30f3388c1a4732836f31f638cd49531d65186797b346e2d"
+    },
+    {
+      "path": "run_plik.py",
+      "bytes": 12075,
+      "upstream_sha256": "baa84f71bac57b6a00417701f0ee1172dfac07a8f69544eaad4984262eb59108"
+    },
+    {
+      "path": "run_ergo.py",
+      "bytes": 14134,
+      "upstream_sha256": "1e967bfbed02094237e83d0d70a7d14d7aad8bce7e11fd2c8957a4217ca6d993"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 15,
+      "upstream_sha256": "717df355044876c89125a135b47595ca5732eeaa670a13fb2e0b9feb6b4badd8"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 94,
+      "upstream_sha256": "2e403f607a1152af1b454360ab0db9e0b74ed372e9a72883be74ba4ef123dcdb"
+    },
+    {
+      "path": "inventory.json",
+      "bytes": 85896,
+      "upstream_sha256": "bf5d5837a2e3d19804068c0296126f74a0538a19b2239a85b06ccfaaa26b1d2d"
+    },
+    {
+      "path": "MAIN-VERIFICATION.md",
+      "bytes": 2389,
+      "upstream_sha256": "589a4269d158e59dad3e77e0eb99b98f67c2ac1fd86ad84bfed3219feba3e9e3"
+    },
+    {
+      "path": "cases/SQL-LAST-INSERT-ID-ARG.json",
+      "bytes": 473,
+      "upstream_sha256": "465c2dc9061c8458ec2ab4bf17c087806ce5e0d3811156ff254555b9b153185c"
+    },
+    {
+      "path": "cases/SQL-JSON-DEFAULT.json",
+      "bytes": 505,
+      "upstream_sha256": "cef91b80cbc57d442758e6be456076262e33bec1c9c6606130b4a73d4145ee9b"
+    },
+    {
+      "path": "cases/SQL-INDEX-NAME-CASE.sql",
+      "bytes": 394,
+      "upstream_sha256": "696d8ef79427de25731a25186f8a39e35b6bc4320648d347744772416b859379"
+    },
+    {
+      "path": "cases/SQL-FULLTEXT-INSERT-ID.sql",
+      "bytes": 409,
+      "upstream_sha256": "0840feb7b22895cd5a6905a1e2d5af81ff4cb2990700ccde24e0c89716d61e1f"
+    },
+    {
+      "path": "cases/PANIC-03.json",
+      "bytes": 1148,
+      "upstream_sha256": "694df34892925524a6b0a16550f46291c5919df8e30621ad57669d7228d2c855"
+    },
+    {
+      "path": "cases/SQL-EXPRESSION-INDEX.json",
+      "bytes": 655,
+      "upstream_sha256": "b5d45db1a7b2848d10a689975ad45d286782ec1d686c856a124029dbf17f7730"
+    },
+    {
+      "path": "cases/PANIC-02.sql",
+      "bytes": 2641,
+      "upstream_sha256": "dcecc9146aad4d147b1bc52ec736dd4aa4644c750bc03824383b9f454571e75f"
+    },
+    {
+      "path": "cases/SQL-CHECK-DROP-CONSTRAINT.json",
+      "bytes": 628,
+      "upstream_sha256": "675f7fd6f66b567211233e583fae8629266cce9468f72a3ebf163b531f62a83c"
+    },
+    {
+      "path": "cases/PASS-GENERATED-UPPER.json",
+      "bytes": 954,
+      "upstream_sha256": "bdc5ea4a4e13605185fe91084f172b99fd774f29ace96ee2df4c75c00c0bffb0"
+    },
+    {
+      "path": "cases/PASS-GENERATED-UPPER.sql",
+      "bytes": 508,
+      "upstream_sha256": "ebe03223da270403f2de2e53a72d4da0ed4ff9fc426bbd4de00f4062e3b0dcd6"
+    },
+    {
+      "path": "cases/SQL-SUBSCRIPTION-ALIAS.sql",
+      "bytes": 267,
+      "upstream_sha256": "a76b9a632eea92b330aca2e83776bd66be455c30d901fa1c626f04b20100ddf8"
+    },
+    {
+      "path": "cases/SQL-INDEX-NAME-CASE.json",
+      "bytes": 807,
+      "upstream_sha256": "beed0851ea563849ffa64a4ed033e8f480d39be97c94cdecf13c3a1414e8f6a9"
+    },
+    {
+      "path": "cases/PANIC-01.sql",
+      "bytes": 1322,
+      "upstream_sha256": "9fbfc065144770f45af689cf3c763e78759340a42058c82f8a2cb3edd1c60140"
+    },
+    {
+      "path": "cases/SQL-HUGINN-SQLMODE-EMPTY-TOKEN.json",
+      "bytes": 974,
+      "upstream_sha256": "e497a5722cb95b076b277a8adbc5018a12d35d4d7f8d93b7a9c4a2abece50bd3"
+    },
+    {
+      "path": "cases/PASS-JSON-UNICODE.json",
+      "bytes": 767,
+      "upstream_sha256": "8981e99b4393ea5f6f540a5f77adf50ced9f60e15e0f58272268f3bcb63e6a05"
+    },
+    {
+      "path": "cases/SQL-QUALIFIED-RANK.json",
+      "bytes": 2624,
+      "upstream_sha256": "81cd4740f915df0976a0f6d2e1a3f10ab332b6d8dc14acb047e24cc4012058b6"
+    },
+    {
+      "path": "cases/SQL-CHECK-DROP.sql",
+      "bytes": 330,
+      "upstream_sha256": "16f73edae8d8d015d8f07c1a324181850bead319dab89aae213655965cfada5c"
+    },
+    {
+      "path": "cases/SQL-CHECK-DROP.json",
+      "bytes": 1057,
+      "upstream_sha256": "c2931373ba8cff8b6f56a8d9ed24e504d0a9f1547f1daf5911938645763eab26"
+    },
+    {
+      "path": "cases/SQL-QUALIFIED-RANK.sql",
+      "bytes": 743,
+      "upstream_sha256": "aeae7482fa371dfb971a8c5d1221c10e55b79fb7aedb3efc951396aa926d4a47"
+    },
+    {
+      "path": "cases/SQL-SELF-FK-ALTER.json",
+      "bytes": 1277,
+      "upstream_sha256": "c4cb64479b4c0734bc4eb97d2bb14235fad512c7884c0f168925bb56711a0802"
+    },
+    {
+      "path": "cases/SQL-COMBINED-FK.json",
+      "bytes": 744,
+      "upstream_sha256": "36cacb251acf9743e321fac962d7a366ccffc3c2baf8bda1b49d8ee6df9319c1"
+    },
+    {
+      "path": "cases/SQL-COMBINED-FK.sql",
+      "bytes": 360,
+      "upstream_sha256": "3a6ea2914916b91ac0c975486584a19b92ca5570d5e7c23ef28d62ff070ebb3d"
+    },
+    {
+      "path": "cases/SQL-FULLTEXT-INSERT-ID.json",
+      "bytes": 851,
+      "upstream_sha256": "24f5e1ffc605d72994e5000f4d740626b2a5a0e89924ff1ad30b859c5626560b"
+    },
+    {
+      "path": "cases/PANIC-03.sql",
+      "bytes": 380,
+      "upstream_sha256": "56e6bfba02cc12a3f34c5b6843c0912178cbc82d9568f61408be9ea17276596b"
+    },
+    {
+      "path": "cases/PASS-ROLLBACK.sql",
+      "bytes": 392,
+      "upstream_sha256": "e2f1e66849dd7eb0b4a28c88419ceb538ed55365c3602502f11cc6b153c034c0"
+    },
+    {
+      "path": "cases/SQL-JSON-DEFAULT.sql",
+      "bytes": 189,
+      "upstream_sha256": "6a51bae6ef58f78d0b0857b21aecc6c3864009173308e1f9c5fe89de18b64102"
+    },
+    {
+      "path": "cases/SQL-HUGINN-TEXT-CHARSET-COLLATION.sql",
+      "bytes": 317,
+      "upstream_sha256": "3129702ab87fd69d37d531e1f433238614b13af614fc4ed163c8e088e0f518bd"
+    },
+    {
+      "path": "cases/SQL-LAST-INSERT-ID-ARG.sql",
+      "bytes": 164,
+      "upstream_sha256": "1bacf946f0d36c30048de53bc5a367ea2a313ec252b08094ad139f4c3969887f"
+    },
+    {
+      "path": "cases/PANIC-04.sql",
+      "bytes": 1707,
+      "upstream_sha256": "5973f64d62be364de5442a9fccfb751ed5fc9f7915222e9002f00b67cba44575"
+    },
+    {
+      "path": "cases/SQL-EXPRESSION-INDEX.sql",
+      "bytes": 296,
+      "upstream_sha256": "6d4415c6a447938fe43760337af1b4dbffe0d213e4d672e4e4986721e4e2eb52"
+    },
+    {
+      "path": "cases/PASS-ROLLBACK.json",
+      "bytes": 834,
+      "upstream_sha256": "3deb24641ac234bee571c9da7e27a12dbbda18ab57fc5e26db7d86999e3f6568"
+    },
+    {
+      "path": "cases/SQL-HUGINN-TEXT-CHARSET-COLLATION.json",
+      "bytes": 1617,
+      "upstream_sha256": "25a270896daa09072ef0eda59087816a8a43bc3cabc51d2869fcf5be0bb6c19f"
+    },
+    {
+      "path": "cases/PASS-JSON-UNICODE.sql",
+      "bytes": 394,
+      "upstream_sha256": "b535e44c1d625ae1059f7ba44de033693bd95e1ba199d70d282d775b7b20dc72"
+    },
+    {
+      "path": "cases/PANIC-04.json",
+      "bytes": 2441,
+      "upstream_sha256": "1d411265e58f00e020c7c85e3aecfeef01a5ae6742e25d7eb9a302518c551488"
+    },
+    {
+      "path": "cases/SQL-SELF-FK-ALTER.sql",
+      "bytes": 567,
+      "upstream_sha256": "4e73199606490a2829af75b8f73441ba922cf053a2ebfadde3cf8f6ebb5d97b5"
+    },
+    {
+      "path": "cases/PANIC-02.json",
+      "bytes": 3549,
+      "upstream_sha256": "46598618b67c12cec28d862354f8c95c97bb4787cfc23ae9ac06da67f8a56913"
+    },
+    {
+      "path": "cases/SQL-HUGINN-SQLMODE-EMPTY-TOKEN.sql",
+      "bytes": 136,
+      "upstream_sha256": "6c4d3ee8cb9d72b106b55ebd4e3373f7418c25cf2158f7529c31c41b0b4574e1"
+    },
+    {
+      "path": "cases/SQL-SUBSCRIPTION-ALIAS.json",
+      "bytes": 1355,
+      "upstream_sha256": "de8c167f85e083270fd829a71a8a7d0b20c9a4ff5cfa1207526b0343727cb52f"
+    },
+    {
+      "path": "cases/SQL-CHECK-DROP-CONSTRAINT.sql",
+      "bytes": 296,
+      "upstream_sha256": "6f546e52c093d84aec35f5734648f6323bd53a6e5f5fb321653d600efd130cd3"
+    },
+    {
+      "path": "cases/PANIC-01.json",
+      "bytes": 1813,
+      "upstream_sha256": "ea3ab58cef6d17f28a3ea8c963b7ff173d69c9245373c84d93b88db3cb646bea"
+    },
+    {
+      "path": "fixtures/ergo-v2.19.1/upstream-defaults.json",
+      "bytes": 8623,
+      "upstream_sha256": "add97e72b33487c334b90e0b389918c3d3dd400a96f9b9752fca924278893d30"
+    },
+    {
+      "path": "fixtures/ergo-v2.19.1/LICENSE",
+      "bytes": 1200,
+      "upstream_sha256": "f6933396a2a93c3c23be6989d1d0c5c65c18897025cbbd0a263c635650b5f97e"
+    },
+    {
+      "path": "tests/test_reporting.py",
+      "bytes": 1070,
+      "upstream_sha256": "fb14676253ee1305e42eed098711b11885548a61e989406150f04f5b092dc867"
+    },
+    {
+      "path": "catalog/projects-1000.csv",
+      "bytes": 1149715,
+      "upstream_sha256": "ae5cc5e7b06685b56b780e39b815b3cdae2a1695879e8dfcaf6c83581e46a76a"
+    },
+    {
+      "path": "catalog/projects-1000.json",
+      "bytes": 2694963,
+      "upstream_sha256": "d44effb06aa6c60b5b7ecd6ffac9263219b0ad6e28b56c18f34fadb7e5f60f4f"
+    },
+    {
+      "path": "catalog/catalog-summary.json",
+      "bytes": 2246,
+      "upstream_sha256": "b1f263cf36aa4c1b40ca04750c7732a0d1cfa5049ff867e16beee4a464d81e8c"
+    },
+    {
+      "path": "catalog/validation.json",
+      "bytes": 758,
+      "upstream_sha256": "71f1e83e46583431be5ddcff976d82777098a6db8d18f4e89b1f3045b4aebd78"
+    },
+    {
+      "path": "adapters/huginn/debian-sdk-package-pins.json",
+      "bytes": 857,
+      "upstream_sha256": "125be55245e6b2b6c8041957715118e4d40ea62a628f9d24a18f137e0e79a981"
+    },
+    {
+      "path": "adapters/huginn/ruby-runtime-source-pin.json",
+      "bytes": 311,
+      "upstream_sha256": "33229322e399bfca4fc39a127e8dcd996780ebf05893ae6de4a0a4e8dd4b4e17"
+    },
+    {
+      "path": "adapters/huginn/set_charset_for_mysql.rb",
+      "bytes": 2727,
+      "upstream_sha256": "8fdf1311158904419d6d95d10daf48679a6b3388f37c05ee71c2c6bbb130e104"
+    },
+    {
+      "path": "adapters/huginn/database.yml",
+      "bytes": 2658,
+      "upstream_sha256": "6926d243f07c1b474524492a32be1225a480307e166a4f0047f419b6adadde24"
+    },
+    {
+      "path": "adapters/huginn/README.md",
+      "bytes": 1733,
+      "upstream_sha256": "31a61fbb22578f229c283bd2763b7da5e45a5090d7a53f7ebeb0f8e975aff152"
+    },
+    {
+      "path": "adapters/documize_mysql_adapter.py",
+      "bytes": 5497,
+      "upstream_sha256": "436b39030ca6b2f0ea7660959f8420ee0ca3caf44b9ba8f74ee8ce8d65132a11"
+    },
+    {
+      "path": "adapters/README.md",
+      "bytes": 1093,
+      "upstream_sha256": "44dbf7fae332e7aad5c64466bab3009797e2828c93f93fc55075cad8147f2239"
+    }
+  ]
+}

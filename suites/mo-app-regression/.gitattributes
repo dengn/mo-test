@@ -1,0 +1,5 @@
+# Diff context markers precede original tabs and blank lines; preserve patch bytes.
+fixtures/**/*.patch -whitespace
+fixtures/**/LICENSE* -whitespace
+# Preserve original upstream whitespace in digest-verified source fixtures.
+fixtures/matomo/adapted/core/Db/Schema/Mysql.php -whitespace

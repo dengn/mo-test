@@ -1,0 +1,11 @@
+--- a/includes/functions-install.php
++++ b/includes/functions-install.php
+@@ -241,7 +241,7 @@
+         'CREATE TABLE IF NOT EXISTS `'.YOURLS_DB_TABLE_LOG.'` ('.
+         '`click_id` int(11) NOT NULL auto_increment,'.
+         '`click_time` datetime NOT NULL,'.
+-        '`shorturl` varchar(100) BINARY NOT NULL,'.
++        (getenv('MATRIXONE_ADAPTER') === '1' ? '`shorturl` varbinary(100) NOT NULL,' : '`shorturl` varchar(100) BINARY NOT NULL,').
+         '`referrer` varchar(200) NOT NULL,'.
+         '`user_agent` varchar(255) NOT NULL,'.
+         '`ip_address` varchar(41) NOT NULL,'.

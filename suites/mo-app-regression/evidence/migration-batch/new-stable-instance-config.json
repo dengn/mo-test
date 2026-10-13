@@ -1,0 +1,17 @@
+{
+  "ports": {
+    "sql": 6004,
+    "cn_base": 38000,
+    "tn_base": 39000,
+    "raft": 34000,
+    "logservice": 34001,
+    "gossip": 34002,
+    "status": 7004
+  },
+  "data_directory": "/tmp/mo-app-migration-instance/mo-data",
+  "original_service_and_data_preserved": true,
+  "official_stable_full_sha": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+  "tmpfs_volatile": true,
+  "Go_soft_memory_limit": "2GiB",
+  "GOMAXPROCS": 2
+}

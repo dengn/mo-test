@@ -1,0 +1,141 @@
+{
+  "app": "usememos/memos",
+  "commit": "d5df8915f70a108971f9bf01151ecd3de3e0c91f",
+  "binary_sha256": "97e52d79444628fcd5b3343d2c048be8ac81e9393c7c8d551d0dc8f2dd46c98e",
+  "schema": "mo_reg_memos_0dc7585897c3476a",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_schema_created",
+      "passed": true
+    },
+    {
+      "name": "no_manual_users_before_bootstrap",
+      "passed": true
+    },
+    {
+      "name": "native_first_user_admin_bootstrap",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_password_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_creation",
+      "passed": true
+    },
+    {
+      "name": "native_password_login_other",
+      "passed": true
+    },
+    {
+      "name": "native_password_hashes_and_roles",
+      "passed": true
+    },
+    {
+      "name": "native_private_memo_create",
+      "passed": true
+    },
+    {
+      "name": "native_exact_content_and_creator_read",
+      "passed": true
+    },
+    {
+      "name": "anonymous_private_memo_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_private_memo_denied",
+      "passed": true
+    },
+    {
+      "name": "cross_user_update_denied_zero_content_change",
+      "passed": true
+    },
+    {
+      "name": "native_memo_update_exact",
+      "passed": true
+    },
+    {
+      "name": "native_concurrent_ACK_identifiers_unique",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_all_content_and_owner_links",
+      "passed": true
+    },
+    {
+      "name": "native_authenticated_list_exact",
+      "passed": true
+    },
+    {
+      "name": "ordinary_user_list_excludes_owner_private_memos",
+      "passed": true
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_SQL_exact_all_content_and_owner_links",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_original_content_after_restart",
+      "passed": true
+    },
+    {
+      "name": "native_original_token_list_after_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_ordinary_user_private_read_denied",
+      "passed": true
+    },
+    {
+      "name": "native_memo_delete",
+      "passed": true
+    },
+    {
+      "name": "native_deleted_memo_not_readable",
+      "passed": true
+    },
+    {
+      "name": "SQL_deleted_memo_absent",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "source_edits": false,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "min_free_mib": 128,
+  "native_rate_limits_retained": true,
+  "limitations": [
+    "native API only; full browser UI, integrations and populated upgrades unverified"
+  ],
+  "binary_identity": {
+    "sha256": "97e52d79444628fcd5b3343d2c048be8ac81e9393c7c8d551d0dc8f2dd46c98e",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "finished_at_utc": "2026-10-12T23:30:20Z"
+}

@@ -1,0 +1,105 @@
+{
+  "app": "vrana/adminer",
+  "version": "v6.1.2",
+  "schema": "mo_reg_adminer_e3f6b4b878684930",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "wrong_database_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_PDO_password_cookie_login",
+      "passed": true
+    },
+    {
+      "name": "native_SQL_three_tables_created",
+      "passed": true
+    },
+    {
+      "name": "native_edit_Unicode_decimal_binary",
+      "passed": true
+    },
+    {
+      "name": "native_insert_form_and_owner_relation",
+      "passed": true
+    },
+    {
+      "name": "native_ENUM_literal_case_preserved",
+      "passed": true
+    },
+    {
+      "name": "native_console_rollback_exact",
+      "passed": true
+    },
+    {
+      "name": "native_FK_rejection_zero_row",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_write_denied_no_change",
+      "passed": true
+    },
+    {
+      "name": "native_ENUM_NULL_signed_integer_exact",
+      "passed": true
+    },
+    {
+      "name": "anonymous_SQL_requires_login",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_browse_grid",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_CSV_exact",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "original_cookie_after_restart_native_browse_grid",
+      "passed": true
+    },
+    {
+      "name": "original_cookie_after_restart_native_CSV_exact",
+      "passed": true
+    },
+    {
+      "name": "SQL_original_values_after_restart",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "official_release_sha256": "b32316156bd18ffa99c1a27617142c2e5ad72260e37f15da4e9937a3dbb15f57",
+  "adapted_release_sha256": "18c566f45c5b885dd9b937b91ba0e6347203740b6344ba0b74ec5508fcf9b0ab",
+  "source_edits": [
+    "actual MatrixOne parsed type-name lowercase only"
+  ],
+  "native_driver": "PDO_MySQL",
+  "application_has_no_internal_migration_runner": true,
+  "all_fixture_DDL_and_DML_through_native_HTTP": true,
+  "existing_databases_modified": false,
+  "min_free_mib": 2048,
+  "limitations": [
+    "other database drivers/plugins/full privilege management/populated schema changes unverified"
+  ],
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "finished_at_utc": "2026-10-13T00:44:39Z"
+}

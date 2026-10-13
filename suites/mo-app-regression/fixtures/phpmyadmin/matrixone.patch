@@ -1,0 +1,67 @@
+--- a/libraries/classes/Charsets.php
++++ b/libraries/classes/Charsets.php
+@@ -141,6 +141,11 @@
+             }
+         }
+ 
++        // MatrixOne exposes collations through SHOW, while its IS view is empty.
++        if (getenv('MATRIXONE_ADAPTER') === '1') {
++            $sql = 'SHOW COLLATION';
++        }
++
+         $res = $dbi->query($sql);
+ 
+         self::$collations = [];
+--- a/libraries/classes/DatabaseInterface.php
++++ b/libraries/classes/DatabaseInterface.php
+@@ -1074,7 +1074,11 @@
+                 $modifier = '';
+         }
+ 
+-        return $this->fetchValue('SHOW' . $modifier . ' VARIABLES LIKE \'' . $var . '\';', 1, $link);
++        $value = $this->fetchValue('SHOW' . $modifier . ' VARIABLES LIKE \'' . $var . '\';', 1, $link);
++        if (getenv('MATRIXONE_ADAPTER') === '1' && strtoupper($var) === 'FOREIGN_KEY_CHECKS' && is_string($value)) {
++            $value = strtoupper($value); // MO uses lowercase on/off for this boolean.
++        }
++        return $value;
+     }
+ 
+     /**
+@@ -1919,7 +1923,11 @@
+             $roles = $this->getCurrentRoles();
+ 
+             $this->currentRoleAndHost = array_map(static function (string $role) {
+-                return explode('@', $role);
++                $parts = explode('@', $role);
++                if (getenv('MATRIXONE_ADAPTER') === '1' && count($parts) === 1) {
++                    $parts[] = ''; // Native MatrixOne role names have no host component.
++                }
++                return $parts;
+             }, $roles);
+         }
+ 
+--- a/libraries/classes/Utils/ForeignKey.php
++++ b/libraries/classes/Utils/ForeignKey.php
+@@ -65,6 +65,11 @@
+         global $dbi;
+ 
+         $defaultCheckValue = $dbi->getVariable('FOREIGN_KEY_CHECKS') === 'ON';
++        // Avoid redundant SET: MatrixOne session SET implicitly commits a transaction.
++        if (getenv('MATRIXONE_ADAPTER') === '1' && isset($_REQUEST['fk_checks'])
++            && !empty($_REQUEST['fk_checks']) === $defaultCheckValue) {
++            return $defaultCheckValue;
++        }
+         if (isset($_REQUEST['fk_checks'])) {
+             if (empty($_REQUEST['fk_checks'])) {
+                 // Disable foreign key checks
+@@ -87,6 +92,10 @@
+     {
+         global $dbi;
+ 
++        if (getenv('MATRIXONE_ADAPTER') === '1'
++            && ($dbi->getVariable('FOREIGN_KEY_CHECKS') === 'ON') === $defaultCheckValue) {
++            return;
++        }
+         $dbi->setVariable('FOREIGN_KEY_CHECKS', $defaultCheckValue ? 'ON' : 'OFF');
+     }
+ }

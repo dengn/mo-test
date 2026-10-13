@@ -1,0 +1,108 @@
+{
+  "id": "SQL-QUALIFIED-RANK",
+  "title": "Piwigo qualified reserved rank identifier in bulk UPDATE",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Exact native Piwigo two-table UPDATE shape; synthetic two-table rows. Types/keys retained for relevant columns.",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE rank_source (id INT PRIMARY KEY, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))"
+    },
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE rank_stage (id INT UNIQUE, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO rank_source VALUES (1,1,'old'),(2,42,'unchanged 中文')"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO rank_stage VALUES (1,9,'updated 中文')"
+    },
+    {
+      "phase": "trigger",
+      "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.rank = t2.rank, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+      "expected_error": {
+        "code": 1064,
+        "contains": [
+          "SQL parser error",
+          "rank = t2.rank"
+        ]
+      }
+    }
+  ],
+  "on_success_postchecks": [
+    {
+      "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          9,
+          "updated 中文"
+        ],
+        [
+          2,
+          42,
+          "unchanged 中文"
+        ]
+      ]
+    },
+    {
+      "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.`rank` = t2.`rank`, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+      "expected_rows": []
+    },
+    {
+      "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          9,
+          "updated 中文"
+        ],
+        [
+          2,
+          42,
+          "unchanged 中文"
+        ]
+      ]
+    }
+  ],
+  "on_failure_postchecks": [
+    {
+      "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          1,
+          "old"
+        ],
+        [
+          2,
+          42,
+          "unchanged 中文"
+        ]
+      ]
+    },
+    {
+      "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.`rank` = t2.`rank`, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+      "expected_rows": []
+    },
+    {
+      "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          9,
+          "updated 中文"
+        ],
+        [
+          2,
+          42,
+          "unchanged 中文"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "profile": "defects",
+  "policy": "strict",
+  "started_at_utc": "2026-10-12T22:45:44Z",
+  "jobs": [
+    {
+      "name": "sql",
+      "status": "failed",
+      "exit_code": 1,
+      "case_statuses": {
+        "passed": 3,
+        "known_failure": 13
+      },
+      "elapsed_seconds": 1.012
+    }
+  ],
+  "min_free_mib": 128,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 1,
+  "passed": false,
+  "target": {
+    "server_version": "8.0.30-MatrixOne-v4.2.5",
+    "runtime_git_version": "1a44f3d",
+    "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+    "health": true
+  },
+  "free_bytes_at_admission": 338771968,
+  "finished_at_utc": "2026-10-12T22:45:45Z"
+}

@@ -1,0 +1,176 @@
+--- a/core/Columns/Updater.php
++++ b/core/Columns/Updater.php
+@@ -80,6 +80,14 @@
+         foreach ($changingColumns as $table => $columns) {
+             if (empty($columns) || !is_array($columns)) {
+                 continue;
++            }
++
++            if (stripos(\Piwik\Db::get()->getServerVersion(), 'MatrixOne') !== false) {
++                // MatrixOne has no per-column charset/collation ALTER support.
++                // Keep its native Unicode storage; MySQL collation semantics are not certified.
++                $columns = array_map(function ($definition) {
++                    return preg_replace('/ CHARACTER SET utf8 COLLATE utf8_general_ci/i', '', $definition);
++                }, $columns);
+             }
+ 
+             if (Schema::getInstance()->supportsComplexColumnUpdates()) {
+--- a/core/DbHelper.php
++++ b/core/DbHelper.php
+@@ -218,6 +218,11 @@
+      */
+     public static function getDefaultCharset(): string
+     {
++        if (stripos(Db::get()->getServerVersion(), 'MatrixOne') !== false) {
++            // MatrixOne's SHOW CHARACTER SET omits utf8mb4 despite native Unicode storage.
++            $setting = Db::get()->fetchRow("SHOW VARIABLES LIKE 'character_set_database'");
++            return ($setting['Value'] ?? $setting['value'] ?? '') === 'utf8mb4' ? 'utf8mb4' : 'utf8';
++        }
+         $result = Db::get()->fetchRow("SHOW CHARACTER SET LIKE 'utf8mb4'");
+ 
+         if (empty($result)) {
+--- a/core/Db/Schema/Mysql.php
++++ b/core/Db/Schema/Mysql.php
+@@ -487,6 +487,12 @@
+ 
+         $fields = array();
+         foreach ($allColumns as $column) {
++            // MatrixOne sends SHOW metadata names in lowercase.
++            foreach (array('Field', 'Type', 'Null', 'Key', 'Default', 'Extra') as $name) {
++                if (!array_key_exists($name, $column) && array_key_exists(strtolower($name), $column)) {
++                    $column[$name] = $column[strtolower($name)];
++                }
++            }
+             $fields[trim($column['Field'])] = $column;
+         }
+ 
+@@ -705,7 +711,8 @@
+ 
+     public function supportsComplexColumnUpdates(): bool
+     {
+-        return true;
++        // A new column cannot be referenced by an index in the same MatrixOne ALTER.
++        return stripos($this->getDb()->getServerVersion(), 'MatrixOne') === false;
+     }
+ 
+     /**
+--- a/core/Db/Adapter/Mysqli.php
++++ b/core/Db/Adapter/Mysqli.php
+@@ -113,10 +113,10 @@
+     {
+         // prioritizing SELECT @@VERSION in case the connection version string is incorrect (which can
+         // occur on Azure)
+-        $versionInfo = $this->fetchAll('SELECT @@VERSION');
++        $versionInfo = $this->fetchAll('SELECT @@VERSION AS matomo_version');
+ 
+         if (count($versionInfo)) {
+-            return $versionInfo[0]['@@VERSION'];
++            return $versionInfo[0]['matomo_version'];
+         }
+ 
+         return parent::getServerVersion();
+--- a/core/Db/Adapter/Pdo/Mysql.php
++++ b/core/Db/Adapter/Pdo/Mysql.php
+@@ -154,10 +154,10 @@
+     {
+         // prioritizing SELECT @@VERSION in case the connection version string is incorrect (which can
+         // occur on Azure)
+-        $versionInfo = $this->fetchAll('SELECT @@VERSION');
++        $versionInfo = $this->fetchAll('SELECT @@VERSION AS matomo_version');
+ 
+         if (count($versionInfo)) {
+-            return $versionInfo[0]['@@VERSION'];
++            return $versionInfo[0]['matomo_version'];
+         }
+ 
+         return parent::getServerVersion();
+@@ -234,6 +234,13 @@
+      */
+     public static function isPdoErrorNumber($e, $errno)
+     {
++        // MatrixOne reports missing tables as 1064. Match this exact diagnostic
++        // only; other parser errors must keep their original behavior.
++        if ((int) $errno === 1146
++            && preg_match('/(?:\[|\s)1064(?:\]|\s)/', $e->getMessage())
++            && preg_match('/SQL parser error: table "[^"]+" does not exist/', $e->getMessage())) {
++            return true;
++        }
+         if (preg_match('/(?:\[|\s)([0-9]{4})(?:\]|\s)/', $e->getMessage(), $match)) {
+             return $match[1] == $errno;
+         }
+@@ -254,7 +261,7 @@
+             return false;
+         }
+ 
+-        $charset = $charsetInfo[0]['Value'];
++        $charset = $charsetInfo[0]['Value'] ?? $charsetInfo[0]['value'];
+         return strpos($charset, 'utf8') === 0;
+     }
+ 
+--- a/core/RankingQuery.php
++++ b/core/RankingQuery.php
+@@ -358,6 +358,23 @@
+             $initCounter = '( SELECT @counter:=0 ) initCounter,';
+         }
+ 
++        if (!$withRollup && $this->columnToMarkExcludedRows === false
++            && stripos(Db::get()->getServerVersion(), 'MatrixOne') !== false) {
++            $orderBy = DbHelper::extractOrderByFromQuery($innerQuery);
++            if (null === $orderBy) {
++                throw new \RuntimeException('MatrixOne ranking requires an explicit inner ordering.');
++            }
++            // The derived query exposes column names, not its original table aliases.
++            $orderBy = preg_replace('/(^|,\s*)(?:`?\w+`?\.)/', '$1', $orderBy);
++            $partition = $this->partitionColumn === false ? '' : 'PARTITION BY `' . $this->partitionColumn . '` ';
++            $counterExpression = 'LEAST(ROW_NUMBER() OVER (' . $partition . 'ORDER BY ' . $orderBy . '), ' . $limit . ')';
++            if ($this->partitionColumn !== false) {
++                $allowed = implode(',', array_map('intval', $this->partitionColumnValues));
++                $counterExpression = 'CASE WHEN `' . $this->partitionColumn . '` IN (' . $allowed . ') THEN ' . $counterExpression . ' ELSE 0 END';
++            }
++            $initCounter = '';
++        }
++
+         $counterRollupExpression = '';
+ 
+         if ($withRollup) {
+--- a/core/Sequence.php
++++ b/core/Sequence.php
+@@ -91,7 +91,37 @@
+      */
+     public function getNextId()
+     {
+-        $sql   = 'UPDATE ' . $this->table . ' SET value = LAST_INSERT_ID(value + 1) WHERE name = ?';
++        if (stripos($this->db->getServerVersion(), 'MatrixOne') !== false) {
++            $connection = $this->db->getConnection();
++            if (!$connection instanceof \PDO) {
++                throw new Exception('MatrixOne sequence adapter requires PDO.');
++            }
++            $ownsTransaction = !$connection->inTransaction();
++            if ($ownsTransaction) {
++                $this->db->beginTransaction();
++            }
++            try {
++                $value = $this->db->fetchOne('SELECT value FROM `' . $this->table . '` WHERE name = ? FOR UPDATE', array($this->name));
++                if ($value === false) {
++                    throw new Exception("Sequence '" . $this->name . "' not found.");
++                }
++                if ((int) $value >= PHP_INT_MAX) {
++                    throw new Exception('Sequence exceeds PHP integer range.');
++                }
++                $this->db->query('UPDATE `' . $this->table . '` SET value = value + 1 WHERE name = ?', array($this->name));
++                $createdId = $this->db->fetchOne('SELECT value FROM `' . $this->table . '` WHERE name = ?', array($this->name));
++                if ($ownsTransaction) {
++                    $this->db->commit();
++                }
++                return (int) $createdId;
++            } catch (\Throwable $error) {
++                if ($ownsTransaction && $connection->inTransaction()) {
++                    $this->db->rollBack();
++                }
++                throw $error;
++            }
++        }
++        $sql = 'UPDATE ' . $this->table . ' SET value = LAST_INSERT_ID(value + 1) WHERE name = ?';
+ 
+         $result   = $this->db->query($sql, array($this->name));
+         $rowCount = $result->rowCount();

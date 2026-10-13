@@ -1,0 +1,9 @@
+{
+  "source_tree": "prepared/huginn-d6f25e28",
+  "ruby_binary": "prepared/ruby-3.4.11/bin/ruby",
+  "bundle_binary": "prepared/gems/bin/bundle",
+  "gem_home": "prepared/gems",
+  "bundle_path": "prepared/bundle",
+  "assets_dir": "prepared/huginn-d6f25e28/public/assets",
+  "native_library_dirs": ["prepared/mysql-sdk/usr/lib/x86_64-linux-gnu"]
+}

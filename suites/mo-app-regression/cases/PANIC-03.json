@@ -1,0 +1,43 @@
+{
+  "id": "PANIC-03",
+  "title": "Unique LOWER expression index",
+  "panic": true,
+  "known_issue": true,
+  "fixture_origin": "Reconstructed minimal table; not claimed to be a historical schema snapshot",
+  "trigger_origin": "Exact full original CREATE UNIQUE INDEX from independent probe log",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE mo_index_probe (id INT PRIMARY KEY, email VARCHAR(254))"
+    },
+    {
+      "phase": "trigger",
+      "sql": "CREATE UNIQUE INDEX mo_unique_email_expression ON mo_index_probe ((LOWER(email)))",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "panic",
+          "nil pointer dereference",
+          "ColNameOrigin",
+          "buildUniqueIndexTable"
+        ]
+      }
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO mo_index_probe VALUES(1,'MiXeD@owned.invalid')"
+    }
+  ],
+  "postchecks": [],
+  "on_success_postchecks": [
+    {
+      "sql": "INSERT INTO mo_index_probe VALUES(2,'mixed@owned.invalid')",
+      "expected_rejection": {
+        "code": 1062,
+        "contains": [
+          "Duplicate entry"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "SQL-SUBSCRIPTION-ALIAS",
+  "title": "Documize unquoted subscription result alias blocks org lookup and login",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Native Documize v5.14.0 organization SELECT result alias; reduced VARCHAR fixture isolates parser from JSON coercion",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE doc_alias(id INT PRIMARY KEY,c_sub VARCHAR(200) NULL)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO doc_alias VALUES(1,'中文 😀𠮷'),(2,NULL)"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,c_sub AS subscription FROM doc_alias ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          "中文 😀𠮷"
+        ],
+        [
+          2,
+          null
+        ]
+      ],
+      "expected_error": {
+        "code": 1064,
+        "contains": [
+          "SQL parser error",
+          "subscription"
+        ]
+      }
+    }
+  ],
+  "postchecks": [
+    {
+      "sql": "SELECT id,c_sub AS `subscription` FROM doc_alias ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          "中文 😀𠮷"
+        ],
+        [
+          2,
+          null
+        ]
+      ]
+    },
+    {
+      "sql": "INSERT INTO doc_alias(id) VALUES(1)",
+      "expected_rejection": {
+        "code": 1062,
+        "contains": []
+      }
+    }
+  ]
+}
