@@ -1,0 +1,223 @@
+{
+  "app": "wagtail/wagtail",
+  "version": "8.0",
+  "schema": "mo_reg_wagtail_51273f14bb344c4d",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_wheel_SDK_and_dependencies",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "fresh_schema_empty",
+      "passed": true
+    },
+    {
+      "name": "native_all_migrations",
+      "passed": true
+    },
+    {
+      "name": "native_migration_plan",
+      "passed": true
+    },
+    {
+      "name": "all_native_migration_records_and_plan",
+      "passed": true
+    },
+    {
+      "name": "native_no_pending_migration_gate",
+      "passed": true
+    },
+    {
+      "name": "permission_backfill_has_no_nulls",
+      "passed": true
+    },
+    {
+      "name": "native_createsuperuser",
+      "passed": true
+    },
+    {
+      "name": "native_observer_create",
+      "passed": true
+    },
+    {
+      "name": "native_two_password_hashes",
+      "passed": true
+    },
+    {
+      "name": "observer_has_only_native_admin_access",
+      "passed": true
+    },
+    {
+      "name": "native_admin_password_session",
+      "passed": true
+    },
+    {
+      "name": "native_observer_password_session",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_not_authenticated",
+      "passed": true
+    },
+    {
+      "name": "native_draft_exact_SQL_and_tree",
+      "passed": true
+    },
+    {
+      "name": "draft_absent_from_public_API",
+      "passed": true
+    },
+    {
+      "name": "native_subclass_link",
+      "passed": true
+    },
+    {
+      "name": "native_draft_revision_exact_JSON",
+      "passed": true
+    },
+    {
+      "name": "observer_page_edit_denied",
+      "passed": true
+    },
+    {
+      "name": "observer_page_update_denied_zero_revision",
+      "passed": true
+    },
+    {
+      "name": "anonymous_admin_login_required",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_denied_zero_revision",
+      "passed": true
+    },
+    {
+      "name": "native_editor_action-publish",
+      "passed": true
+    },
+    {
+      "name": "first_publish_public_API_exact",
+      "passed": true
+    },
+    {
+      "name": "first_publish_public_HTML_exact",
+      "passed": true
+    },
+    {
+      "name": "first_publish_published_SQL_exact",
+      "passed": true
+    },
+    {
+      "name": "native_editor_action-save-draft",
+      "passed": true
+    },
+    {
+      "name": "new_draft_exact_revision",
+      "passed": true
+    },
+    {
+      "name": "draft_keeps_live_version_public_API_exact",
+      "passed": true
+    },
+    {
+      "name": "draft_keeps_live_version_public_HTML_exact",
+      "passed": true
+    },
+    {
+      "name": "draft_keeps_live_version_published_SQL_exact",
+      "passed": true
+    },
+    {
+      "name": "native_editor_action-publish",
+      "passed": true
+    },
+    {
+      "name": "second_publish_public_API_exact",
+      "passed": true
+    },
+    {
+      "name": "second_publish_public_HTML_exact",
+      "passed": true
+    },
+    {
+      "name": "second_publish_published_SQL_exact",
+      "passed": true
+    },
+    {
+      "name": "real_Gunicorn_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_public_API_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_public_HTML_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_published_SQL_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_admin_session",
+      "passed": true
+    },
+    {
+      "name": "after_restart_observer_session_still_authenticated",
+      "passed": true
+    },
+    {
+      "name": "after_restart_observer_denied",
+      "passed": true
+    },
+    {
+      "name": "after_restart_revision_and_migrations_exact",
+      "passed": true
+    },
+    {
+      "name": "native_unpublish_SQL_and_public_denial",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "min_free_mib": 1024,
+  "existing_databases_modified": false,
+  "manual_SQL_users_or_migration_stamps": false,
+  "observer_provisioning": "Django create_user and native permission ORM in fixture command",
+  "limitations": [
+    "prepared dependencies only; full cold installation unverified",
+    "minimal HomePage fixture; browser/static UI, StreamField, uploads, workflows, search and load unverified",
+    "no SAVEPOINT; upgrade/downgrade and transaction nesting unverified",
+    "specific legacy permission CHECK replaced with stricter NOT NULL after verified backfill; general CHECK unverified",
+    "0086 correlated UPDATE uses native ORM row updates; original panic is not retested or claimed fixed"
+  ],
+  "SDK_identity": {
+    "version": "8.0",
+    "source_commit": "24e624cc63b5d17a1ff1c1cd0d0e0817524cbd8d",
+    "dependency_packages_verified": 41,
+    "dependency_files_verified": 10230,
+    "official_wheel_sha256": "34dde727917ace7e4ab182054f78f01c2cc24d85ccc402932d3d5c6315a7cd00",
+    "official_wheel_files_audited": 4250,
+    "modified_wheel_files": [
+      "wagtail/migrations/0086_populate_grouppagepermission_permission.py"
+    ],
+    "sdk_manifest_sha256": "ea264eed0f3b00d675178a924b4a5fd748d5e6eff53acc8ba71f53934da3cc10",
+    "project_manifest_sha256": "17b9cd07fd1ae9d014618c496cc4137b7faa5e19d7d56753a856afa07484462e",
+    "cold_install_verified": false
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_migrations": 222,
+  "native_tables": 53,
+  "finished_at_utc": "2026-10-14T08:45:53Z"
+}

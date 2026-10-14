@@ -1,0 +1,22 @@
+{
+  "stable_version": "8.0.30-MatrixOne-v4.2.5",
+  "stable_full_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+  "known_case": "PANIC-04",
+  "existing_issue": "https://github.com/matrixorigin/matrixone/issues/29899",
+  "native_HTTP_status": 500,
+  "error_code": 20101,
+  "error_family": [
+    "panic",
+    "nil pointer dereference",
+    "ReCalcNodeStats",
+    "finishIrregularIndexMaintenance"
+  ],
+  "full_SQL_sha256": "bb25169f2c527338d1057de092aa3e0be19ca433ecd050c3f70d73e7a289f469",
+  "parameters_captured_from_native_Django_execute_wrapper": true,
+  "SQL_literals_rendered_by_PyMySQL": true,
+  "native_schema": "mo_reg_wagtail_9f42ebb271e34687",
+  "post_trigger_health": true,
+  "server_process_exit_observed": false,
+  "latest_main_runtime_verified": false,
+  "new_issue_filed": false
+}

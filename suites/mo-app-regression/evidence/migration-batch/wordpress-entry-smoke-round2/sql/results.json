@@ -1,0 +1,158 @@
+{
+  "started_at_utc": "2026-10-14T08:54:46Z",
+  "cases": [
+    {
+      "id": "PASS-GENERATED-UPPER",
+      "schema": "mo_reg_dc88cd3eb1d2442e",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE expr_probe(id INT PRIMARY KEY,email VARCHAR(254),email_upper VARCHAR(254) GENERATED ALWAYS AS (UPPER(email)) STORED)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE INDEX idx_upper ON expr_probe(email_upper)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO expr_probe(id,email) VALUES(1,'MiXeD中文😀𠮷@owned.invalid'),(2,NULL)",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,email_upper FROM expr_probe ORDER BY id",
+          "rows": [
+            [
+              1,
+              "MIXED中文😀𠮷@OWNED.INVALID"
+            ],
+            [
+              2,
+              null
+            ]
+          ],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ed38b73ed0906778ec3f2b22fa9d3719424271746e8017115018a33ae21bd801",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.195
+    },
+    {
+      "id": "PASS-JSON-UNICODE",
+      "schema": "mo_reg_7565099195284d83",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE values_probe(id INT PRIMARY KEY,payload JSON,label TEXT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO values_probe VALUES(1,'{\"value\":\"中文 😀𠮷\"}','中文 😀𠮷')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,label,JSON_UNQUOTE(JSON_EXTRACT(payload,'$.value')) FROM values_probe",
+          "rows": [
+            [
+              1,
+              "中文 😀𠮷",
+              "中文 😀𠮷"
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ef0136846bf253ecb7186280d9e8b604e030316ba6bb4bfe43cffd561eb7881f",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.058
+    },
+    {
+      "id": "PASS-ROLLBACK",
+      "schema": "mo_reg_002899578b064786",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE txn_probe(id INT PRIMARY KEY,value INT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO txn_probe VALUES(1,17)",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "START TRANSACTION",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "UPDATE txn_probe SET value=99 WHERE id=1",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "ROLLBACK",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,value FROM txn_probe",
+          "rows": [
+            [
+              1,
+              17
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "bea17ef1e29472973faed86d94ba4d28f412e092808c3442b0359b438dc8f116",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.056
+    }
+  ],
+  "policy": "strict",
+  "existing_databases_modified": false,
+  "fixtures_preserved": true,
+  "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "runtime_commit_matches": true,
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-14T08:54:47Z"
+}
