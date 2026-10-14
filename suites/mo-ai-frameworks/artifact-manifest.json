@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".gitignore",
-      "sha256": "a41280ad6c3637130aa7896009e0f71cb5fed57452be1c8a5e881c3fc4f4a712",
-      "size_bytes": 72
+      "sha256": "2045cb18ea252710c142a89c2caa88b0d548766528afd958d01f5b3a386dcff6",
+      "size_bytes": 112
     },
     {
       "path": ".pytest_cache/.gitignore",
@@ -28,23 +28,28 @@
     },
     {
       "path": ".pytest_cache/v/cache/nodeids",
-      "sha256": "88430d0ff3b6aee4f539ec2830a910f98984ec9972caa8719cd9ae112333188e",
-      "size_bytes": 1852
+      "sha256": "8507cb6420dcf63ae8dd644ee1b086d1807fdcab06d8bb5b2457595f9d9dc1b6",
+      "size_bytes": 2483
     },
     {
       "path": "KNOWN_ISSUES.md",
-      "sha256": "19ff3b7c5a5471af5cf8afa7452497d7778b03228186e06efb55b3dbc61f545b",
-      "size_bytes": 2378
+      "sha256": "acb8605e7f89b943a0114933768c49f4c8c841dae75a1fed3b9479ca6344387f",
+      "size_bytes": 2859
     },
     {
       "path": "README.md",
-      "sha256": "c693aae599e90d34406d0d25148e0c731b730fca6f3cd8b6b42b1424a5a40fc0",
-      "size_bytes": 4943
+      "sha256": "28bc92b3baf333ca4493ef946a95721a3757efde143b3439f8bda06ae3178010",
+      "size_bytes": 6141
     },
     {
       "path": "adapters/__init__.py",
       "sha256": "2d3d496ae929c57305910ee264835af64caa9be1a46af20e2b2d339a16a57ad2",
       "size_bytes": 87
+    },
+    {
+      "path": "adapters/ag_ui_journal.py",
+      "sha256": "c7750904ef01573202b419c2c62ea24c385de5ce67da84e0d914b18e6945ceb6",
+      "size_bytes": 2049
     },
     {
       "path": "adapters/agentscope_state.py",
@@ -60,6 +65,16 @@
       "path": "adapters/crewai_persistence.py",
       "sha256": "ad542bb11d073a6c03e0044b9b60f4a957e245208373c6b94348c3f0115c90da",
       "size_bytes": 1912
+    },
+    {
+      "path": "adapters/framework_json.py",
+      "sha256": "8972ee25e4dffd3a2d7d3ca6f80d5790c5543db0642de683ce4e2098fd362da6",
+      "size_bytes": 1965
+    },
+    {
+      "path": "adapters/langextract_store.py",
+      "sha256": "9e452ce5f7487da1314aa51f1540e733ba473357728829e0c05b2c8b64c1c3d4",
+      "size_bytes": 676
     },
     {
       "path": "adapters/langgraph_checkpoint.py",
@@ -103,13 +118,18 @@
     },
     {
       "path": "catalog/top100.csv",
-      "sha256": "ab1feab7b3ab463e0d260b2720039b4077568e082a214ec0eb1b17c491ffa761",
-      "size_bytes": 53688
+      "sha256": "fcd9764e56cf1b0de947a579994ba2285abc493afc572aed9e8ed2a64550ee57",
+      "size_bytes": 54176
     },
     {
       "path": "conftest.py",
       "sha256": "5e10f343a6ec970f8e2db23c20e7081d7db7831f3f2abb3076f34c088fca8c9b",
       "size_bytes": 2567
+    },
+    {
+      "path": "evidence/ag-ui-tests.json",
+      "sha256": "dcd4ac8b3d538b0befe7d07547f2e733089c16aa9ccbe6d3f9861862e74ef8c4",
+      "size_bytes": 2042
     },
     {
       "path": "evidence/agentscope-tests.json",
@@ -118,8 +138,13 @@
     },
     {
       "path": "evidence/artifact-validation.json",
-      "sha256": "516770df5f1b734b8c98505efe8afaa96b1551d0e71af3a0e7784f82d98c5830",
+      "sha256": "0c5381d3301dc1efa2a81ba05aeb0db2caad2d0939733e175f32a747efd962da",
       "size_bytes": 150
+    },
+    {
+      "path": "evidence/batch1-artifact-manifest.json",
+      "sha256": "a6a3cdccbda52648fdb4b66f3587b9b78328626dfde7ae59dff53dc11f8db312",
+      "size_bytes": 25125
     },
     {
       "path": "evidence/camel-initial-dependency.log",
@@ -142,9 +167,34 @@
       "size_bytes": 1483
     },
     {
+      "path": "evidence/deepagents-initial-state-shape.json",
+      "sha256": "d80cee2f198b6f4b7e497c23fef4f15583d9dbc2094c5cd4b9f9d5724b2b4d79",
+      "size_bytes": 20548
+    },
+    {
+      "path": "evidence/deepagents-tests.json",
+      "sha256": "5a8a3daa654b378ff35bf4e7c76935424bf2feae8600f7817b713e062f2ab81f",
+      "size_bytes": 3293
+    },
+    {
       "path": "evidence/dependency-conflicts.json",
       "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
       "size_bytes": 3
+    },
+    {
+      "path": "evidence/issue-status-2026-10-14.json",
+      "sha256": "f03768528f95e8a7132fd5fae2fe037f6b7335eefc51a91dfdaa814ba57876d4",
+      "size_bytes": 1465
+    },
+    {
+      "path": "evidence/langextract-initial-import.log",
+      "sha256": "c8b8c3958199a24b6cdb7f819b5de1e3afc66a8ad700bd6405c482ca794931cd",
+      "size_bytes": 393
+    },
+    {
+      "path": "evidence/langextract-tests.json",
+      "sha256": "5057bd8fbb6e7b2901900962747c0b1432e38358f4946aa8215fb30837f86aea",
+      "size_bytes": 1880
     },
     {
       "path": "evidence/migration-all-initial-summary.json",
@@ -163,8 +213,18 @@
     },
     {
       "path": "evidence/project-source-evidence.json",
-      "sha256": "89bb4c7545ed9f95750f559f9ce15e535fc4fe595f6ece9ccb4912b4eebdd368",
-      "size_bytes": 47945
+      "sha256": "db4dd26a00d7a137842e6a22c22e47ebaf0a8408f2e26bbb8cd849da229f1972",
+      "size_bytes": 56133
+    },
+    {
+      "path": "evidence/swarm-source-provenance.json",
+      "sha256": "14bc59e581f6d412cc30c6e9475c44a6ad85df9f8c5537de24b7e9d32c0a79ca",
+      "size_bytes": 1115
+    },
+    {
+      "path": "evidence/swarm-tests.json",
+      "sha256": "ef53f4b7525c0828de2b5bdabe5f469af6695725d15311e9dfe8360045d3312c",
+      "size_bytes": 1980
     },
     {
       "path": "evidence/validation/agents/cleanup.log",
@@ -272,6 +332,41 @@
       "size_bytes": 801
     },
     {
+      "path": "evidence/validation/deep/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/validation/deep/databases.json",
+      "sha256": "352b62d5a8b6e61878f75445bedbc238cffb33d32d1cd1bac832c1669166f227",
+      "size_bytes": 230
+    },
+    {
+      "path": "evidence/validation/deep/environment.json",
+      "sha256": "396c65dda3a50aba70106c28f34dddd1372f457d7fb04141ae28b4822f3eada5",
+      "size_bytes": 270
+    },
+    {
+      "path": "evidence/validation/deep/junit.xml",
+      "sha256": "1c059dd6cc79970a062f11fe4e98df422f40496293c994fbb671b240aeb63960",
+      "size_bytes": 626
+    },
+    {
+      "path": "evidence/validation/deep/readiness.log",
+      "sha256": "96ac41a6637c5946c0b1b056b2e849ae150d1fd577ada5daf7e0ac68edd913da",
+      "size_bytes": 237
+    },
+    {
+      "path": "evidence/validation/deep/summary.json",
+      "sha256": "33b8a050f8cc12718822757d18e84248f11bf64a2e15069193ae79e18ba1a639",
+      "size_bytes": 948
+    },
+    {
+      "path": "evidence/validation/deep/tests.log",
+      "sha256": "d5ececd495606968a476661360a915fd97c8f9bef2bb53cc69c3331e3eef3da0",
+      "size_bytes": 210
+    },
+    {
       "path": "evidence/validation/flow/cleanup.log",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size_bytes": 0
@@ -305,6 +400,41 @@
       "path": "evidence/validation/flow/tests.log",
       "sha256": "a625f42183efeac1cf2e7e49e0e1eac0789bc957908ef7e72061fcb1b62c072b",
       "size_bytes": 203
+    },
+    {
+      "path": "evidence/validation/interfaces/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/validation/interfaces/databases.json",
+      "sha256": "8a5d77928d11fea193adfea42c5affb140be15cd5b8afdd148697830c0e36792",
+      "size_bytes": 230
+    },
+    {
+      "path": "evidence/validation/interfaces/environment.json",
+      "sha256": "1c47452caf31ccacc17abe8c661389b5a7b674301accff58dc6440e0b8120630",
+      "size_bytes": 242
+    },
+    {
+      "path": "evidence/validation/interfaces/junit.xml",
+      "sha256": "d8b7b7c34e2d6341bd8b383dccde2042e4cf6a5c67e56536ee127278a70e0469",
+      "size_bytes": 653
+    },
+    {
+      "path": "evidence/validation/interfaces/readiness.log",
+      "sha256": "e000d0b077e30ce52e409aaed92f374208eab3ff47619df4890a9957b9ff35d0",
+      "size_bytes": 213
+    },
+    {
+      "path": "evidence/validation/interfaces/summary.json",
+      "sha256": "e524312da00649ab2201bbfe31ac742e3d68eb3b71253e842a7b4b9699619a04",
+      "size_bytes": 978
+    },
+    {
+      "path": "evidence/validation/interfaces/tests.log",
+      "sha256": "89d695bee432745ed0b40c0b9872839ea65ee94f67a52bbf802a9e4864afb83d",
+      "size_bytes": 222
     },
     {
       "path": "evidence/validation/javascript/cleanup.log",
@@ -517,6 +647,41 @@
       "size_bytes": 205
     },
     {
+      "path": "evidence/validation/swarm/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "evidence/validation/swarm/databases.json",
+      "sha256": "a7577d9ba1f0ae7fa9d54781c1e881d50d87884c5902e6fc562b0035aa5e1fad",
+      "size_bytes": 150
+    },
+    {
+      "path": "evidence/validation/swarm/environment.json",
+      "sha256": "8ce8f510c2bbf5c8d119b606d00a29757a5064ccc8087d13d30bf954c006aad8",
+      "size_bytes": 205
+    },
+    {
+      "path": "evidence/validation/swarm/junit.xml",
+      "sha256": "e6bc40c02126a40e66a6c252d126728a3a5b361f5a5b7a07dc8eb57c4e4f9044",
+      "size_bytes": 446
+    },
+    {
+      "path": "evidence/validation/swarm/readiness.log",
+      "sha256": "13b92aee4e65286688f7448d15e73939b8cce457942816f556644ef3205806c3",
+      "size_bytes": 180
+    },
+    {
+      "path": "evidence/validation/swarm/summary.json",
+      "sha256": "161d3f1e768feb44f00cf9838235a9979ccfec716e7210a552c1d35f8f61cec0",
+      "size_bytes": 776
+    },
+    {
+      "path": "evidence/validation/swarm/tests.log",
+      "sha256": "a1cdc3e2787528608dacb927c34b57f741cc64c4aa4b1046edd2ece06f3adf34",
+      "size_bytes": 225
+    },
+    {
       "path": "evidence/validation/tools/cleanup.log",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size_bytes": 0
@@ -552,14 +717,24 @@
       "size_bytes": 203
     },
     {
+      "path": "evidence/validation-report-batch1.json",
+      "sha256": "91d5c281511e95784a72f5f018044f3671e035da58534cfb9cce750531b8793e",
+      "size_bytes": 8392
+    },
+    {
       "path": "evidence/validation-report.json",
-      "sha256": "ca571a2ea881abce2d731a7babacf90be73057c83ba891a1b99ca7b275a8eab9",
-      "size_bytes": 8393
+      "sha256": "bd88410be3c52bce80288fdff9418b1da1bb5e350d6d3d723984e12233e317b4",
+      "size_bytes": 10633
     },
     {
       "path": "flows/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "size_bytes": 0
+    },
+    {
+      "path": "flows/ag_ui_workflow.py",
+      "sha256": "18114f4e7762593b0d958caec75010e43a525957607165290ce41580b835435a",
+      "size_bytes": 5791
     },
     {
       "path": "flows/agentscope_workflow.py",
@@ -575,6 +750,21 @@
       "path": "flows/crewai_workflow.py",
       "sha256": "d2e5b785dd1eaaea5faa4c0c312ebc195fc7bc61cccc04284b8e2573a2a76b7d",
       "size_bytes": 2118
+    },
+    {
+      "path": "flows/deepagents_workflow.py",
+      "sha256": "a2e1c22a4b58f643cdccb73efbecbcd9d7702caca0c64e07010f90bf0a42f541",
+      "size_bytes": 4303
+    },
+    {
+      "path": "flows/langextract_workflow.py",
+      "sha256": "14eab0e5422610b4e2e3e7a47489979805bd2ce1afd32cb3e473b928e53f6d95",
+      "size_bytes": 4752
+    },
+    {
+      "path": "flows/swarm_workflow.py",
+      "sha256": "2cd6904ceb7534836946dcc8ae03e615d3553e82ca9a1fc35e76ebf61c043d0c",
+      "size_bytes": 4935
     },
     {
       "path": "flows/tool_workflows.py",
@@ -593,8 +783,8 @@
     },
     {
       "path": "projects.json",
-      "sha256": "e8a79795f6f605d1f619d4ab9a21e59e81db513c0f2b7e5d3d74a433cff12d94",
-      "size_bytes": 10875
+      "sha256": "2642288c889be674f8a0e057cf72d0d5df717c39865e0353b69b79cad06ffd7b",
+      "size_bytes": 13349
     },
     {
       "path": "pytest.ini",
@@ -617,9 +807,19 @@
       "size_bytes": 2084
     },
     {
+      "path": "requirements/deep.txt",
+      "sha256": "dbe27a2aed9ca2c84be058717955bfa48d78a9170070163279eca36f2159b15a",
+      "size_bytes": 1176
+    },
+    {
       "path": "requirements/flow.txt",
       "sha256": "f6f1d807598376e4445e559f97c73aaf88bcd1a5e262be34be20abe3b71d6443",
       "size_bytes": 2793
+    },
+    {
+      "path": "requirements/interfaces.txt",
+      "sha256": "b23b218e89dce07bad39d9922027e04020e1addd804345c69051fcbfc0200a97",
+      "size_bytes": 1251
     },
     {
       "path": "requirements/javascript.txt",
@@ -652,6 +852,11 @@
       "size_bytes": 1479
     },
     {
+      "path": "requirements/swarm.txt",
+      "sha256": "6e64657afd8479e3a08b59b979a6d09fbdb02c16b4c9f92d36378f728d384da7",
+      "size_bytes": 991
+    },
+    {
       "path": "requirements/tools.txt",
       "sha256": "c1a967630dc820d57e0d95188c9d219658ce26ac17e4823a3f253671e3533aa0",
       "size_bytes": 1389
@@ -663,8 +868,8 @@
     },
     {
       "path": "setup.py",
-      "sha256": "636ee20b95b1f381aa68be285feee8e8fec55203683f10b76ead3d75c58140dc",
-      "size_bytes": 1581
+      "sha256": "510f78682fb83efcf4354035435e7e2fe87c361b233b466676971914df17a292",
+      "size_bytes": 1617
     },
     {
       "path": "shared.py",
@@ -687,9 +892,19 @@
       "size_bytes": 5404
     },
     {
+      "path": "tests/test_deep.py",
+      "sha256": "299220e04cf4eed83debc89134126484eaa286165e3305fa5fde666608aa6c77",
+      "size_bytes": 678
+    },
+    {
       "path": "tests/test_flow.py",
       "sha256": "d908e0f6be0edae606565e687a92a23419748ebf1cc99724c80ea34ad2e389f4",
       "size_bytes": 1189
+    },
+    {
+      "path": "tests/test_interfaces.py",
+      "sha256": "c4d9fa50b72e5db90246a7abb5c77c31f070e2e8dd3e1dca63e6efb2bd9d2227",
+      "size_bytes": 688
     },
     {
       "path": "tests/test_javascript.mjs",
@@ -727,13 +942,58 @@
       "size_bytes": 2356
     },
     {
+      "path": "tests/test_swarm.py",
+      "sha256": "9c7f99418d500e12ee3bedb333145c765be5c3cce133b580eae079cbd0066137",
+      "size_bytes": 537
+    },
+    {
       "path": "tests/test_tools.py",
       "sha256": "a8cdd4dbf428b6e27680c2777bcef93152583f89c1f99c104fa01eb750f3c485",
       "size_bytes": 629
     },
     {
+      "path": "vendor/swarm/LICENSE",
+      "sha256": "d831db55645e47ca8e491c5a0e37f1ee744d7b10bf5aa8d50146c795ac0176c0",
+      "size_bytes": 1063
+    },
+    {
+      "path": "vendor/swarm/README.md",
+      "sha256": "59245018ba7a6681c116b503428bf573b78494aaaeab7c29ea54d65c901ef3eb",
+      "size_bytes": 16860
+    },
+    {
+      "path": "vendor/swarm/pyproject.toml",
+      "sha256": "1c557fcb2d563b509abf60fdb4132d72373474dbf6d059d752b2b780788d43ed",
+      "size_bytes": 80
+    },
+    {
+      "path": "vendor/swarm/setup.cfg",
+      "sha256": "c553bbdfcea29838238c7510a2356a87a12c319769a4ca75f4cfdd7861565cc6",
+      "size_bytes": 549
+    },
+    {
+      "path": "vendor/swarm/swarm/__init__.py",
+      "sha256": "27a5a4284ef143567d928ba5f7bad4082df42cc55efbc4e1dabf6cd7799b6bb9",
+      "size_bytes": 101
+    },
+    {
+      "path": "vendor/swarm/swarm/core.py",
+      "sha256": "b393be51475f83aa185a84f19c6a9ee35abe62a52738aa3e5547ee301e13e881",
+      "size_bytes": 10219
+    },
+    {
+      "path": "vendor/swarm/swarm/types.py",
+      "sha256": "871eb1e477e7e0c004f4d7bdc3336a1c4c902867cef5ba1e1d72d4440c68b848",
+      "size_bytes": 1102
+    },
+    {
+      "path": "vendor/swarm/swarm/util.py",
+      "sha256": "0f2539e5b32d06a7480d2fcde8e56a3ff40d50ce83870831eded59271d57ac4a",
+      "size_bytes": 2469
+    },
+    {
       "path": "verify.py",
-      "sha256": "0e9e9a10036b32b1a78bd8318b19dd10c43ac568a966432ef85045fb6c28cc90",
+      "sha256": "3b2e8210e4d1f79928b0c243cd79f98c2f542c1141ba0b415a0b1dae4f1818c8",
       "size_bytes": 1448
     }
   ]

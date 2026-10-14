@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/ai-matrixone-compat/scripts/test_langextract.py", line 10, in <module>
+    from langextract.core.exceptions import ResolverParsingError
+ImportError: cannot import name 'ResolverParsingError' from 'langextract.core.exceptions' (/workspace/ai-matrixone-compat/runtime/extract-env/lib/python3.12/site-packages/langextract/core/exceptions.py)

@@ -127,6 +127,6 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 
 ## AI 框架 MatrixOne 自动回归
 
-[AI 框架回归套件](suites/mo-ai-frameworks/README.md)纳入 22 个已适配项目、11 个隔离依赖组、33 个必跑测试；JSON/JUnit 对失败、跳过、缺失与超时严格判失败，带随机测试库和运行归属检查清理。包括 LangChain/LangGraph、LlamaIndex、Haystack、Mem0、LightRAG、OpenAI Agents、ADK、CrewAI、AgentScope、CAMEL 等真实接入角色，模型使用确定性替身。
+[AI 框架回归套件](suites/mo-ai-frameworks/README.md)纳入 26 个已适配项目、14 个隔离依赖组、43 个必跑测试；JSON/JUnit 对失败、跳过、缺失与超时严格判失败，带随机测试库和运行归属检查清理。包括 LangChain/LangGraph、LlamaIndex、Haystack、Mem0、LightRAG、OpenAI Agents、ADK、CrewAI、AgentScope、CAMEL 等真实接入角色，模型使用确定性替身。
 
-[Top100 策展目录](suites/mo-ai-frameworks/catalog/top100.csv)保留 100 项源码初筛、25 项实际接口/原生对照证据，正向门禁不计入 MLflow/Langfuse/pgvector 的原生阻断或对照项。22 项、33 个用例本地全部通过；沿用现有自托管 runner 的 [GitHub Actions](.github/workflows/ai-framework-regression.yml)尚待远端实际执行。此套件独立计数，不修改已有大批次 case 总数。
+[Top100 策展目录](suites/mo-ai-frameworks/catalog/top100.csv)保留 100 项源码初筛、29 项实际接口/原生对照证据，正向门禁不计入 MLflow/Langfuse/pgvector 的原生阻断或对照项。26 项、43 个用例本地全部通过；沿用现有自托管 runner 的 [GitHub Actions](.github/workflows/ai-framework-regression.yml)尚待远端实际执行。此套件独立计数，不修改已有大批次 case 总数。

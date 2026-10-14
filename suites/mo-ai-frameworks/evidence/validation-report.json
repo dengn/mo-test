@@ -1,7 +1,7 @@
 {
   "status": "PASS",
-  "validated_project_count": 22,
-  "validated_test_count": 33,
+  "validated_project_count": 26,
+  "validated_test_count": 43,
   "groups": [
     {
       "group": "core",
@@ -277,6 +277,81 @@
       "cleanup_exit_code": 0,
       "status": "PASS",
       "elapsed_seconds": 2.45
+    },
+    {
+      "group": "deep",
+      "projects": [
+        "deepagents"
+      ],
+      "expected_tests": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "requirements_sha256": "dbe27a2aed9ca2c84be058717955bfa48d78a9170070163279eca36f2159b15a",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.861
+    },
+    {
+      "group": "interfaces",
+      "projects": [
+        "langextract",
+        "ag-ui"
+      ],
+      "expected_tests": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "requirements_sha256": "b23b218e89dce07bad39d9922027e04020e1addd804345c69051fcbfc0200a97",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.149
+    },
+    {
+      "group": "swarm",
+      "projects": [
+        "swarm"
+      ],
+      "expected_tests": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "requirements_sha256": "6e64657afd8479e3a08b59b979a6d09fbdb02c16b4c9f92d36378f728d384da7",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 1.298
     }
   ],
   "method": "Latest completed passing attempt per group; prior attempts are retained separately, not added to project/test counts",

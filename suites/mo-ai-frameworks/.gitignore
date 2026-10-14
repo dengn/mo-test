@@ -6,3 +6,6 @@ runtime/
 __pycache__/
 *.pyc
 .env
+
+vendor/**/build/
+vendor/**/*.egg-info/

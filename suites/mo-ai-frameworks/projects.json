@@ -111,6 +111,36 @@
         "pymysql": "1.2.3"
       }
     },
+    "deep": {
+      "module": "tests/test_deep.py",
+      "requirements": "requirements/deep.txt",
+      "packages": {
+        "deepagents": "0.7.25",
+        "langchain-core": "1.6.10",
+        "langgraph": "1.2.15",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "interfaces": {
+      "module": "tests/test_interfaces.py",
+      "requirements": "requirements/interfaces.txt",
+      "packages": {
+        "langextract": "1.7.1",
+        "ag-ui-protocol": "1.0.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "swarm": {
+      "module": "tests/test_swarm.py",
+      "requirements": "requirements/swarm.txt",
+      "packages": {
+        "swarm": "0.1.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
     "javascript": {
       "module": "tests/test_javascript.mjs",
       "requirements": "requirements/javascript.txt",
@@ -320,6 +350,52 @@
       "gate_tests": [
         "test_camel_chat_agent_history_restore_continue",
         "test_camel_native_json_reference"
+      ]
+    },
+    {
+      "id": "deepagents",
+      "repository": "langchain-ai/deepagents",
+      "group": "deep",
+      "scope": "原生文件工具/checkpoint恢复与审批中断恢复；StateBackend、确定性模型",
+      "source_commit": "9f0e39d55a5f31003b206b31b955154f2f1bc49a",
+      "gate_tests": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ]
+    },
+    {
+      "id": "langextract",
+      "repository": "google/langextract",
+      "group": "interfaces",
+      "scope": "原生extract/对齐/AnnotatedDocument保存恢复；确定性provider、JSONL对照",
+      "source_commit": "74df59f5d20f3ae854204caf59bc21e28d2157ff",
+      "gate_tests": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl"
+      ]
+    },
+    {
+      "id": "ag-ui",
+      "repository": "ag-ui-protocol/ag-ui",
+      "group": "interfaces",
+      "scope": "原生typed Event/SSE编码与自定义事件journal/cursor回放；无浏览器HTTP认证",
+      "source_commit": "2aabfc8cada0b429927e4c256c9cf990a6791e5f",
+      "gate_tests": [
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ]
+    },
+    {
+      "id": "swarm",
+      "repository": "openai/swarm",
+      "group": "swarm",
+      "scope": "固定源码Swarm.run工具/上下文/Agent交接与自定义会话恢复；模型替身",
+      "source_commit": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+      "gate_tests": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
       ]
     },
     {

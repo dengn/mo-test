@@ -1,6 +1,6 @@
 # AI 框架 MatrixOne 自动回归
 
-22 个已适配项目、11 个隔离依赖组、33 个必跑测试。统一入口输出 JSON 和 JUnit；失败、超时、必跑用例跳过/缺失、端点未就绪或清理失败均返回非零。实际角色与固定包版本见 [projects.json](projects.json)，[本地执行证据](evidence/validation-report.json)来自 MatrixOne main `dd38098853ea197699ed3fac3e69dc53975ac061`。没有认证框架全部能力、真实模型推理、ANN、并发多写者或数据库容灾。
+26 个已适配项目、14 个隔离依赖组、43 个必跑测试。统一入口输出 JSON 和 JUnit；失败、超时、必跑用例跳过/缺失、端点未就绪或清理失败均返回非零。实际角色与固定包版本见 [projects.json](projects.json)，[本地执行证据](evidence/validation-report.json)来自 MatrixOne main `dd38098853ea197699ed3fac3e69dc53975ac061`。没有认证框架全部能力、真实模型推理、ANN、并发多写者或数据库容灾。
 
 ## 覆盖
 
@@ -17,10 +17,13 @@
 | flow | CrewAI；原生 SQLite 对照 | 2 |
 | scope | AgentScope Toolkit 与 typed AgentState | 1 |
 | camel | CAMEL ChatAgent/ChatHistoryMemory；原生 JSON 对照 | 2 |
+| deep | DeepAgents StateBackend 文件工具/checkpoint 与审批中断恢复 | 4 |
+| interfaces | LangExtract 抽取/对齐/文档恢复、AG-UI 类型化事件/SSE/cursor | 4 |
+| swarm | Swarm SQL工具/context/Agent交接与自定义会话恢复 | 2 |
 
 CrewAI 验证真实 Flow start/listen/persist、恢复后继续 11→22；AgentScope 验证真实工具与类型化状态，不是完整 Agent 模型循环；CAMEL 旧 context 进入下一次 ChatAgent 模型请求，使用 StubModel。其他模型依赖使用确定性替身。Mem0 SQLite history、LightRAG Graph/doc_status 保留原生存储。
 
-[Top100 源码初筛目录](catalog/top100.csv)为 146 个策展候选按 2026-10-11 Stars 排序；25 项有实际接口/原生对照证据、75 项尚未集成实测。本正向门禁只纳入 22 个通过接入角色；MLflow、Langfuse、pgvector 原生阻断/对照单独记录，不算正向通过。本套件的计数与仓库已有大批次 case 分开。
+[Top100 源码初筛目录](catalog/top100.csv)为 146 个策展候选按 2026-10-11 Stars 排序；29 项有实际接口/原生对照证据、71 项尚未集成实测。本正向门禁只纳入 26 个通过接入角色；MLflow、Langfuse、pgvector 原生阻断/对照单独记录，不算正向通过。本套件的计数与仓库已有大批次 case 分开。
 
 ## 执行
 
@@ -48,10 +51,14 @@ python3.12 run.py --group javascript --project langchainjs --output results/js-r
 
 ## GitHub Actions
 
-[ai-framework-regression.yml](../../.github/workflows/ai-framework-regression.yml)提供手工、可复用和 main 路径变更触发入口，11 组隔离执行，上传 JSON/JUnit。沿用仓库现有 `[self-hosted, Linux, X64]` runner，使用 MO_TEST_HOST、MO_TEST_PORT、MO_TEST_USER、MO_TEST_PASSWORD secrets 连接测试实例。runner 必须能访问该实例；工作流不启动/重置数据库。输入 group 支持 all 或上表组名。配置 secrets/runner 后即可持续运行；本地验证不冒充已经运行过 GitHub Actions。
+[ai-framework-regression.yml](../../.github/workflows/ai-framework-regression.yml)提供手工、可复用和 main 路径变更触发入口，14 组隔离执行，上传 JSON/JUnit。沿用仓库现有 `[self-hosted, Linux, X64]` runner，使用 MO_TEST_HOST、MO_TEST_PORT、MO_TEST_USER、MO_TEST_PASSWORD secrets 连接测试实例。runner 必须能访问该实例；工作流不启动/重置数据库。输入 group 支持 all 或上表组名。配置 secrets/runner 后即可持续运行；本地验证不冒充已经运行过 GitHub Actions。
 
 ## 已知问题与复现边界
 
 [KNOWN_ISSUES.md](KNOWN_ISSUES.md)记录数据库问题、绕过与本批非数据库错误。Agno 保留版本固定的专用 engine 私有 dialect 绕过；OpenAI session 补 VARCHAR 长度、省显式子索引，保留 FK/CASCADE；JS 显式 utf8mb4；LangGraph 使用自定义同步 saver。CrewAI 凭据目录重定位只用于测试生成的隔离 key，保留 HOME。CAMEL 固定 MCP 1.28.1；恢复时先构造 ChatAgent 再通过公开 memory 属性挂载已有历史，避免构造器主动清空。
 
-[evidence/validation/](evidence/validation/)保留每组最新完整通过的原始执行结果；此前运行器目录问题、Node 句柄超时与 CAMEL 模型替身失败保留在 evidence/*initial*。修正后仅重跑受影响组，不将重复尝试增加为逻辑测试数量。所有 33 个用例在本地已完成、清理成功；使用经过版本检查的既有隔离环境，尚未全组从空 venv 重装验证。源码与证据哈希见 artifact-manifest.json，verify.py 可离线检查。
+[evidence/validation/](evidence/validation/)保留每组最新完整通过的原始执行结果；此前运行器目录问题、Node 句柄超时与 CAMEL 模型替身失败保留在 evidence/*initial*。修正后仅重跑受影响组，不将重复尝试增加为逻辑测试数量。所有 43 个用例在本地已完成、清理成功；使用经过版本检查的既有隔离环境，尚未全组从空 venv 重装验证。源码与证据哈希见 artifact-manifest.json，verify.py 可离线检查。
+
+本批新增四项的十五组原生/MO/MySQL后端工作流全部通过；新依赖组对应十个回归入口通过。DeepAgents 使用 FakeMessagesListChatModel，LangExtract 使用固定 BaseLanguageModel provider，AG-UI 是协议编码/存储角色，Swarm 使用固定 ChatCompletion client；没有运行子Agent、外部模型或浏览器HTTP前端。AG-UI 检查显式事务内先写有效事件、随后 SQL 非法JSON失败并回滚，原有事件逐值不变。Swarm 二次恢复保存了本轮用户输入、完整新增messages与context，不只检查工具返回值。
+
+Swarm 固定Git SHA `6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22` 的八份源码原样放在 vendor/swarm，全部逐SHA256核对；requirements/swarm.txt 使用本地 vendor 路径，防止安装同名PyPI项目。setup.py 从套件目录解析本地依赖路径。项目版本和源码证据见 projects.json 与 evidence/swarm-source-provenance.json。

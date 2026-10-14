@@ -13,10 +13,10 @@ def main():
     env=dict(os.environ,PIP_CACHE_DIR=str(ROOT/'.cache/pip'),PIP_DISABLE_PIP_VERSION_CHECK='1',npm_config_cache=str(ROOT/'.cache/npm'))
     for group in selected:
         target=ROOT/'.venvs'/group
-        subprocess.run([args.python,'-m','venv',str(target)],check=True,env=env)
+        subprocess.run([args.python,'-m','venv',str(target)],check=True,env=env,cwd=ROOT)
         python=str(target/'bin/python')
-        subprocess.run([python,'-m','pip','install','-r',str(ROOT/groups[group]['requirements'])],check=True,env=env)
-        subprocess.run([python,'-m','pip','check'],check=True,env=env)
-        if group=='javascript':subprocess.run([args.npm,'ci','--prefix',str(ROOT),'--no-audit','--no-fund'],check=True,env=env)
+        subprocess.run([python,'-m','pip','install','-r',str(ROOT/groups[group]['requirements'])],check=True,env=env,cwd=ROOT)
+        subprocess.run([python,'-m','pip','check'],check=True,env=env,cwd=ROOT)
+        if group=='javascript':subprocess.run([args.npm,'ci','--prefix',str(ROOT),'--no-audit','--no-fund'],check=True,env=env,cwd=ROOT)
     return 0
 if __name__=='__main__':raise SystemExit(main())

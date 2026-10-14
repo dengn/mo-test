@@ -10,7 +10,7 @@ def main():
         if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=entry['sha256']:
             raise RuntimeError('Artifact changed: '+entry['path'])
     catalog=json.loads((ROOT/'projects.json').read_text())
-    assert len({p['id'] for p in catalog['projects']})==22
+    assert len({p['id'] for p in catalog['projects']})==26
     report=json.loads((ROOT/'evidence/validation-report.json').read_text())
     entries={g['group']:g for g in report['groups']}
     for group in catalog['groups']:
@@ -20,6 +20,6 @@ def main():
         assert not entry['missing'] and not entry['problems']
         assert set(entry['passed'])==expected
         assert entry['requirements_sha256']==hashlib.sha256((ROOT/catalog['groups'][group]['requirements']).read_bytes()).hexdigest()
-    assert sum(len(g['passed']) for g in entries.values())==33
-    print(json.dumps(dict(status='PASS',projects=22,groups=11,required_tests=33,files_checked=len(manifest['files']))))
+    assert sum(len(g['passed']) for g in entries.values())==43
+    print(json.dumps(dict(status='PASS',projects=26,groups=14,required_tests=43,files_checked=len(manifest['files']))))
 if __name__=='__main__':main()

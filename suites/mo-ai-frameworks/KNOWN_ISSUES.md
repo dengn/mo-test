@@ -1,6 +1,6 @@
 # 已知问题与绕过
 
-SQL/驱动 bug 在 main dd38098853 编译实例与 MySQL 对照确认。以下 issue 的开放状态核对时间为 2026-10-13，非实时状态。
+SQL/驱动 bug 在 main dd38098853 编译实例与 MySQL 对照确认。以下 issue 的开放状态核对时间为 2026-10-14，非实时状态。
 
 | 触发 | 归因与跟踪 | 回归接入 |
 |---|---|---|
@@ -18,3 +18,5 @@ SQL/驱动 bug 在 main dd38098853 编译实例与 MySQL 对照确认。以下 i
 | Node用例结束但SDK句柄未退出 | 测试运行器清理问题 | Node原生 --test-force-exit，失败断言仍返回非零 |
 
 本轮新增 CrewAI、AgentScope、CAMEL 没有确认新的 MatrixOne 核心 bug。已知 issue 的详细原始探针保留在独立 AI 适配报告，本套件保存通过门禁的版本、源码链接、JUnit和后端结果。
+
+DeepAgents 首次按旧版行列表校验新版 StateBackend 字符串 content，六条原生/MO/MySQL失败均属于测试接口假设，已修正重跑；LangExtract 首次 ResolverParsingError 导入模块不正确，未访问DB。原始失败保留在 evidence/deepagents-initial-state-shape.json 和 evidence/langextract-initial-import.log。新四项没有确认新增MO核心bug；2026-10-14五个已报问题均仍open，快照见 evidence/issue-status-2026-10-14.json。

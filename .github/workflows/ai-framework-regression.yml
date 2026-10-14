@@ -9,7 +9,7 @@ on:
       group:
         description: Dependency group or all
         type: choice
-        options: [all, core, storage, sessions, agents, memory, tools, rag, javascript, flow, scope, camel]
+        options: [all, core, storage, sessions, agents, memory, tools, rag, javascript, flow, scope, camel, deep, interfaces, swarm]
         default: all
   workflow_call:
     inputs:

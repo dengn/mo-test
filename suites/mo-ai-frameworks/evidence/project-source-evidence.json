@@ -430,6 +430,25 @@
     ]
   },
   {
+    "rank": 39,
+    "project": "google/langextract",
+    "stars": 38934,
+    "category": "采集/数据抽取",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/google/langextract",
+    "source_commit": "74df59f5d20f3ae854204caf59bc21e28d2157ff",
+    "github_updated_at": "2026-10-10T20:14:48Z",
+    "source_files": 3,
+    "backend_mentions": "",
+    "native_or_adapted_state": "抽取结果存储局部通过",
+    "conclusion": "原生extract/parser/字符对齐、typed AnnotatedDocument存储重开/更新/隔离/删除通过；原生JSONL/MySQL对照。固定provider，非法输出预期拒绝，非模型抽取质量认证",
+    "proposed_route": "输出文档/结构化数据持久化到MatrixOne；原应用元数据/队列独立评估",
+    "validation_plan": "数据落库；schema映射；文档去重；增量更新；失败重试与幂等；不把Redis/队列直接替换",
+    "priority": "P1",
+    "adapter": "adapters/langextract_store.py",
+    "evidence": []
+  },
+  {
     "rank": 41,
     "project": "stanfordnlp/dspy",
     "stars": 38584,
@@ -501,6 +520,62 @@
         "line": 129,
         "text": "\"milvus-lite>=3.1.0\",",
         "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L129"
+      }
+    ]
+  },
+  {
+    "rank": 57,
+    "project": "langchain-ai/deepagents",
+    "stars": 30109,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/langchain-ai/deepagents",
+    "source_commit": "9f0e39d55a5f31003b206b31b955154f2f1bc49a",
+    "github_updated_at": "2026-10-10T23:51:37Z",
+    "source_files": 5,
+    "backend_mentions": "mongodb,pgvector,postgres,postgresql,sqlite",
+    "native_or_adapted_state": "自定义checkpoint局部通过",
+    "conclusion": "原生create_deep_agent文件write/read、新graph和saver恢复、审批中断恢复通过；原生InMemorySaver/MySQL对照通过。StateBackend、确定性模型，未测跨会话StoreBackend/异步/子Agent/并发",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/langgraph_checkpoint.py",
+    "evidence": [
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 1,
+        "text": "\"\"\"Isolate pgvector dimensions and migrations by embedding generation.",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L1"
+      },
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 3,
+        "text": "This module drives internals of `langgraph-checkpoint-postgres` that are not public",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L3"
+      },
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 7,
+        "text": "so the `postgres` extra pins that dependency to a single minor version. Widening the",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L7"
+      },
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 18,
+        "text": "from langgraph.store.postgres.aio import AsyncPostgresStore",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L18"
+      },
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 24,
+        "text": "msg = \"History vector generations require a dedicated PostgreSQL connection\"",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L24"
+      },
+      {
+        "path": "libs/talon/deepagents_talon/history_postgres.py",
+        "line": 48,
+        "text": "msg = \"History vector generations require a dedicated PostgreSQL connection\"",
+        "url": "https://github.com/langchain-ai/deepagents/blob/9f0e39d55a5f31003b206b31b955154f2f1bc49a/libs/talon/deepagents_talon/history_postgres.py#L48"
       }
     ]
   },
@@ -710,6 +785,25 @@
     "validation_plan": "建表/批量写入；delete/upsert；metadata过滤后top-k；距离与得分映射；索引召回；原生基线比较",
     "priority": "P0",
     "adapter": "adapters/vector_store.py",
+    "evidence": []
+  },
+  {
+    "rank": 76,
+    "project": "openai/swarm",
+    "stars": 22049,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/openai/swarm",
+    "source_commit": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+    "github_updated_at": "2026-10-10T19:44:43Z",
+    "source_files": 3,
+    "backend_mentions": "",
+    "native_or_adapted_state": "工具/状态局部通过",
+    "conclusion": "固定Git提交原生Swarm.run工具调用、Result context、Agent交接及自定义JSON会话恢复通过；原生文件/MySQL对照。模型替身，Swarm本身stateless，非内建数据库后端",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/framework_json.py",
     "evidence": []
   },
   {
@@ -959,6 +1053,62 @@
         "line": 28,
         "text": "mongodb:",
         "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L28"
+      }
+    ]
+  },
+  {
+    "rank": 94,
+    "project": "ag-ui-protocol/ag-ui",
+    "stars": 16442,
+    "category": "工具/交互/业务Agent",
+    "license": "MIT",
+    "repo_url": "https://github.com/ag-ui-protocol/ag-ui",
+    "source_commit": "2aabfc8cada0b429927e4c256c9cf990a6791e5f",
+    "github_updated_at": "2026-10-10T23:29:43Z",
+    "source_files": 5,
+    "backend_mentions": "sqlite",
+    "native_or_adapted_state": "协议事件存储局部通过",
+    "conclusion": "原生typed Event/SSE编码、11事件journal按cursor恢复、消息/工具关联/嵌套state、隔离/删除/非法批次拒绝和SQL失败回滚通过；原生编码文件/MySQL对照，非浏览器HTTP端到端",
+    "proposed_route": "通过SQL/MCP/检索工具增加MatrixOne访问；本地持久化迁移另行实现",
+    "validation_plan": "工具调用协议；参数化SQL；用户隔离；结果格式；只读权限；若迁主库必须跑真实启动/升级",
+    "priority": "P1",
+    "adapter": "adapters/ag_ui_journal.py",
+    "evidence": [
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 34,
+        "text": "_ENV_PROVIDER = \"CREWAI_CHECKPOINT_PROVIDER\"  # \"json\" (default) | \"sqlite\"",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L34"
+      },
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 84,
+        "text": "if provider not in (\"json\", \"sqlite\"):",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L84"
+      },
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 130,
+        "text": "``sqlite`` requests, so a partial install degrades rather than silently",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L130"
+      },
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 136,
+        "text": "sqlite_cls = _caps.SqliteProvider",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L136"
+      },
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 137,
+        "text": "if provider == \"sqlite\":",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L137"
+      },
+      {
+        "path": "integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py",
+        "line": 138,
+        "text": "primary, fallback, requested = sqlite_cls, json_cls, \"sqlite\"",
+        "url": "https://github.com/ag-ui-protocol/ag-ui/blob/2aabfc8cada0b429927e4c256c9cf990a6791e5f/integrations/crew-ai/python/ag_ui_crewai/_checkpoint.py#L138"
       }
     ]
   }
