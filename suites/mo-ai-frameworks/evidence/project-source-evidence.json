@@ -1,0 +1,965 @@
+[
+  {
+    "rank": 6,
+    "project": "langchain-ai/langchain",
+    "stars": 147565,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/langchain-ai/langchain",
+    "source_commit": "b060a7466482ed5dac5fa1ef12e3ad21cccce385",
+    "github_updated_at": "2026-10-10T23:53:49Z",
+    "source_files": 4,
+    "backend_mentions": "",
+    "native_or_adapted_state": "局部通过（含修复）",
+    "conclusion": "VectorStore CRUD、SQL工具与SQLChatMessageHistory通过；原包filter被忽略，修复适配器通过租户隔离",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P0",
+    "adapter": "adapters/vector_store.py",
+    "evidence": []
+  },
+  {
+    "rank": 18,
+    "project": "mem0ai/mem0",
+    "stars": 66955,
+    "category": "记忆/图谱",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/mem0ai/mem0",
+    "source_commit": "b7ad69afda6b6ed030347c66d48a13e4de9dec08",
+    "github_updated_at": "2026-10-11T00:17:27Z",
+    "source_files": 7,
+    "backend_mentions": "elasticsearch,mysql,qdrant,redis,sqlalchemy,sqlite",
+    "native_or_adapted_state": "自定义存储局部通过",
+    "conclusion": "Mem0 2.2.1真实Memory写/查/改/删/重开通过；Qdrant本地原生对照通过，过滤和正负余弦分数一致；infer=False，保留SQLite history，未验证抽取/图谱/混合检索",
+    "proposed_route": "可插拔记忆存储；向量与关系表分开评估；图数据库语义需重做",
+    "validation_plan": "记忆去重与更新；用户隔离；时间/metadata过滤；会话迁移；图遍历一致性；记忆删除",
+    "priority": "P1",
+    "adapter": "adapters/mem0_vector_store.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 156,
+        "text": "3. Using hosted Qdrant vectors? See the [Platform migration guide](https://docs.mem0.ai/migration/oss-to-platform) to import them into Mem0 Platform.",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/README.md#L156"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 17,
+        "text": "\"qdrant-client>=1.12.0\",",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/pyproject.toml#L17"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 23,
+        "text": "\"sqlalchemy>=2.0.31\",",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/pyproject.toml#L23"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 50,
+        "text": "\"redis>=5.0.0,<6.0.0\",",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/pyproject.toml#L50"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 52,
+        "text": "\"elasticsearch>=8.0.0,<9.0.0\",",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/pyproject.toml#L52"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 74,
+        "text": "\"elasticsearch>=8.0.0,<9.0.0\",",
+        "url": "https://github.com/mem0ai/mem0/blob/b7ad69afda6b6ed030347c66d48a13e4de9dec08/pyproject.toml#L74"
+      }
+    ]
+  },
+  {
+    "rank": 20,
+    "project": "microsoft/autogen",
+    "stars": 61344,
+    "category": "Agent/编排",
+    "license": "CC-BY-4.0",
+    "repo_url": "https://github.com/microsoft/autogen",
+    "source_commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+    "github_updated_at": "2026-10-11T00:17:01Z",
+    "source_files": 5,
+    "backend_mentions": "",
+    "native_or_adapted_state": "工具/状态局部通过",
+    "conclusion": "原生FunctionTool调用通过；AssistantAgent save_state→MatrixOne JSON→新Agent load_state→继续运行通过，使用ReplayChatCompletionClient替身",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_agent_frameworks.py",
+    "evidence": []
+  },
+  {
+    "rank": 21,
+    "project": "BerriAI/litellm",
+    "stars": 60911,
+    "category": "模型训练/推理/网关",
+    "license": "MIT核心/可能混合许可证",
+    "repo_url": "https://github.com/BerriAI/litellm",
+    "source_commit": "9e2aae8490654e79632d2a666126c5ca0b2da439",
+    "github_updated_at": "2026-10-11T00:12:21Z",
+    "source_files": 5,
+    "backend_mentions": "mongodb,postgres,postgresql,redis,sqlite",
+    "native_or_adapted_state": "日志回调局部通过",
+    "conclusion": "原生completion/acompletion成功回调落SQL JSON、重开读取、租户隔离、重复事件幂等通过；两端进程隔离对照，未替换Proxy Prisma主库",
+    "proposed_route": "作为外部数据/日志/请求存储；不替换训练或GPU推理内核",
+    "validation_plan": "数据批次读取；token/延迟日志聚合；缓存幂等；作业元数据；不将数据库指标当模型指标",
+    "priority": "P1",
+    "adapter": "adapters/litellm_logger.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 423,
+        "text": "| [VoyageAI by MongoDB (`voyage`)](https://docs.litellm.ai/docs/providers/voyage) |  |  |  | ✅ |  |  |  |  |  |  |",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/README.md#L423"
+      },
+      {
+        "path": "README.md",
+        "line": 470,
+        "text": "Run the LiteLLM proxy as a production-ready componentized stack (gateway, backend, UI on separate services; managed Postgres + Redis + object store) using the published Terraform modules. Both modules are on the [public ",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/README.md#L470"
+      },
+      {
+        "path": "README.md",
+        "line": 594,
+        "text": "- Managed Postgres (writer + reader) and Redis",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/README.md#L594"
+      },
+      {
+        "path": "docker-compose.liteadmin.yml",
+        "line": 27,
+        "text": "STATE_DB: /var/data/events.sqlite3",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/docker-compose.liteadmin.yml#L27"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 18,
+        "text": "DATABASE_URL: \"postgresql://llmproxy:dbpassword9090@db:5432/litellm\"",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/docker-compose.yml#L18"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 23,
+        "text": "# DATABASE_URL_READ_REPLICA: \"postgresql://llmproxy:dbpassword9090@db-reader:5432/litellm\"",
+        "url": "https://github.com/BerriAI/litellm/blob/9e2aae8490654e79632d2a666126c5ca0b2da439/docker-compose.yml#L23"
+      }
+    ]
+  },
+  {
+    "rank": 22,
+    "project": "crewAIInc/crewAI",
+    "stars": 59543,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/crewAIInc/crewAI",
+    "source_commit": "6b93fa0e25a926215ca7bb52a95d4db7d9d7262d",
+    "github_updated_at": "2026-10-11T00:23:54Z",
+    "source_files": 3,
+    "backend_mentions": "mongodb,qdrant,redis,sqlalchemy",
+    "native_or_adapted_state": "自定义持久化局部通过",
+    "conclusion": "原生Flow persist/start/listen接入SQL持久化，恢复并继续11→22；MatrixOne/MySQL/SQLite对照通过。未验证human feedback、并发和完整Crew模型流程",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/crewai_persistence.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 32,
+        "text": "\"types-redis~=4.6\",",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L32"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 178,
+        "text": "# onnxruntime 1.24+ dropped Python 3.10 wheels; cap it so qdrant[fastembed] resolves on 3.10.",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L178"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 258,
+        "text": "# qdrant-client -> httpx[http2].",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L258"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 261,
+        "text": "# snowflake-sqlalchemy <1.11.0 has GHSA-8g6f-qw9x-4q6q (SQL injection and local file disclosure); fixed in",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L261"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 262,
+        "text": "# 1.11.0. Declared as crewai-tools[snowflake] \"snowflake-sqlalchemy>=1.7.3\", which the lock resolved to 1.10.0.",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L262"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 281,
+        "text": "# (crewai-tools[mongodb]) and is repeated here.",
+        "url": "https://github.com/crewAIInc/crewAI/blob/6b93fa0e25a926215ca7bb52a95d4db7d9d7262d/pyproject.toml#L281"
+      }
+    ]
+  },
+  {
+    "rank": 25,
+    "project": "run-llama/llama_index",
+    "stars": 52462,
+    "category": "RAG/知识应用",
+    "license": "MIT",
+    "repo_url": "https://github.com/run-llama/llama_index",
+    "source_commit": "6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95",
+    "github_updated_at": "2026-10-10T23:02:41Z",
+    "source_files": 7,
+    "backend_mentions": "mysql,postgres,redis,sqlalchemy",
+    "native_or_adapted_state": "自定义原型通过",
+    "conclusion": "VectorStoreIndex真实retriever、node/doc_id映射与删除通过；metadata filters尚未实现",
+    "proposed_route": "优先接入可插拔VectorStore/DocumentStore；应用元数据库单独验证",
+    "validation_plan": "建表/批量写入；delete/upsert；metadata过滤后top-k；距离与得分映射；索引召回；原生基线比较",
+    "priority": "P0",
+    "adapter": "adapters/vector_store.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 22,
+        "text": "\"types-redis==4.5.5.0\",",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/pyproject.toml#L22"
+      },
+      {
+        "path": "llama-index-core/llama_index/core/vector_stores/types.py",
+        "line": 262,
+        "text": "# NOTE: currently only used by postgres hybrid search",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/llama-index-core/llama_index/core/vector_stores/types.py#L262"
+      },
+      {
+        "path": "llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py",
+        "line": 12,
+        "text": "from llama_index.vector_stores.volcengine_mysql import VolcengineMySQLVectorStore",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py#L12"
+      },
+      {
+        "path": "llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py",
+        "line": 21,
+        "text": "# - VEM_HOST, VEM_PORT, VEM_USER, VEM_PASSWORD, VEM_DATABASE: MySQL",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py#L21"
+      },
+      {
+        "path": "llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py",
+        "line": 23,
+        "text": "# - VEM_TABLE (optional): MySQL table name for the vector store; defaults to",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py#L23"
+      },
+      {
+        "path": "llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py",
+        "line": 139,
+        "text": "# MySQL connection parameters are read from environment variables and must",
+        "url": "https://github.com/run-llama/llama_index/blob/6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95/llama-index-integrations/vector_stores/llama-index-vector-stores-volcenginemysql/examples/volcengine_mysql_vector_store_demo.py#L139"
+      }
+    ]
+  },
+  {
+    "rank": 32,
+    "project": "langchain-ai/langgraph",
+    "stars": 43027,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/langchain-ai/langgraph",
+    "source_commit": "b4991f1ba36a2449ab59c38ab71828ee865bff84",
+    "github_updated_at": "2026-10-10T23:59:53Z",
+    "source_files": 6,
+    "backend_mentions": "pgvector,postgres,postgresql",
+    "native_or_adapted_state": "原生失败→自定义通过",
+    "conclusion": "社区MySQL saver因JSON_TABLE charset失败；自定义saver中断/恢复/重连读取/隔离/delete通过",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P0",
+    "adapter": "adapters/langgraph_checkpoint.py",
+    "evidence": [
+      {
+        "path": "libs/checkpoint-postgres/langgraph/checkpoint/postgres/base.py",
+        "line": 32,
+        "text": "\"You're using incompatible versions of langgraph and checkpoint-postgres. Please upgrade langgraph to avoid unexpected behavior.\",",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/checkpoint/postgres/base.py#L32"
+      },
+      {
+        "path": "libs/checkpoint-postgres/langgraph/store/postgres/aio.py",
+        "line": 24,
+        "text": "from langgraph.checkpoint.postgres import _ainternal",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/store/postgres/aio.py#L24"
+      },
+      {
+        "path": "libs/checkpoint-postgres/langgraph/store/postgres/aio.py",
+        "line": 25,
+        "text": "from langgraph.store.postgres.base import (",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/store/postgres/aio.py#L25"
+      },
+      {
+        "path": "libs/checkpoint-postgres/langgraph/store/postgres/aio.py",
+        "line": 43,
+        "text": "\"\"\"Asynchronous Postgres-backed store with optional vector search using pgvector.",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/store/postgres/aio.py#L43"
+      },
+      {
+        "path": "libs/checkpoint-postgres/langgraph/store/postgres/aio.py",
+        "line": 48,
+        "text": "from langgraph.store.postgres import AsyncPostgresStore",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/store/postgres/aio.py#L48"
+      },
+      {
+        "path": "libs/checkpoint-postgres/langgraph/store/postgres/aio.py",
+        "line": 50,
+        "text": "conn_string = \"postgresql://user:pass@localhost:5432/dbname\"",
+        "url": "https://github.com/langchain-ai/langgraph/blob/b4991f1ba36a2449ab59c38ab71828ee865bff84/libs/checkpoint-postgres/langgraph/store/postgres/aio.py#L50"
+      }
+    ]
+  },
+  {
+    "rank": 33,
+    "project": "agno-agi/agno",
+    "stars": 42652,
+    "category": "Agent/编排",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/agno-agi/agno",
+    "source_commit": "df4a5861be6e13f508a75378465ef0c595bc49db",
+    "github_updated_at": "2026-10-11T00:22:56Z",
+    "source_files": 5,
+    "backend_mentions": "mysql,postgres,postgresql,sqlalchemy",
+    "native_or_adapted_state": "原生失败→改造通过",
+    "conclusion": "SQLAlchemy生成AS new失败；专用engine改用VALUES后native MySQLDb insert/upsert/readback通过",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P0",
+    "adapter": "adapters/sqlalchemy_engine.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 38,
+        "text": "Your coding agent will set up your agent platform and run it locally using Docker, giving you a REST API for serving your agents, a Postgres database for storing your data and traces, an MCP server, and a control plane.",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/README.md#L38"
+      },
+      {
+        "path": "README.md",
+        "line": 52,
+        "text": "- [100+ integrations](https://docs.agno.com/tools/toolkits/overview). Connect to GitHub, Slack, Postgres, and more using pre-built toolkits.",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/README.md#L52"
+      },
+      {
+        "path": "libs/agno/agno/db/mysql/mysql.py",
+        "line": 12,
+        "text": "from agno.db.mysql.schemas import get_table_schema_definition",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/libs/agno/agno/db/mysql/mysql.py#L12"
+      },
+      {
+        "path": "libs/agno/agno/db/mysql/mysql.py",
+        "line": 13,
+        "text": "from agno.db.mysql.utils import (",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/libs/agno/agno/db/mysql/mysql.py#L13"
+      },
+      {
+        "path": "libs/agno/agno/db/mysql/mysql.py",
+        "line": 50,
+        "text": "from sqlalchemy import TEXT, ForeignKey, Index, UniqueConstraint, and_, cast, func, or_, update",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/libs/agno/agno/db/mysql/mysql.py#L50"
+      },
+      {
+        "path": "libs/agno/agno/db/mysql/mysql.py",
+        "line": 51,
+        "text": "from sqlalchemy.dialects import mysql",
+        "url": "https://github.com/agno-agi/agno/blob/df4a5861be6e13f508a75378465ef0c595bc49db/libs/agno/agno/db/mysql/mysql.py#L51"
+      }
+    ]
+  },
+  {
+    "rank": 36,
+    "project": "HKUDS/LightRAG",
+    "stars": 40057,
+    "category": "RAG/知识应用",
+    "license": "MIT",
+    "repo_url": "https://github.com/HKUDS/LightRAG",
+    "source_commit": "453dce83d6d0354a06e46c8d4029a0895c4e054b",
+    "github_updated_at": "2026-10-10T22:10:50Z",
+    "source_files": 7,
+    "backend_mentions": "milvus,mongodb,neo4j,pgvector,postgres,postgresql,qdrant,redis",
+    "native_or_adapted_state": "自定义存储局部通过",
+    "conclusion": "KV/向量原型接入真实ainsert、naive aquery_data、重建客户端、workspace隔离、adelete_by_doc_id；原生文件对照通过。Graph/doc_status保留原生，空图/模型替身，非完整图谱认证",
+    "proposed_route": "优先接入可插拔VectorStore/DocumentStore；应用元数据库单独验证",
+    "validation_plan": "建表/批量写入；delete/upsert；metadata过滤后top-k；距离与得分映射；索引召回；原生基线比较",
+    "priority": "P1",
+    "adapter": "adapters/lightrag_storage.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 95,
+        "text": "- [2025.02]🎯[New Feature] You can now use MongoDB as an all-in-one storage solution for unified data management.",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L95"
+      },
+      {
+        "path": "README.md",
+        "line": 98,
+        "text": "- [2025.01]🎯You can now use PostgreSQL as an all-in-one storage solution for data management.",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L98"
+      },
+      {
+        "path": "README.md",
+        "line": 101,
+        "text": "- [2024.11]🎯[New Feature] You can now [use Neo4J for Storage](https://github.com/HKUDS/LightRAG?tab=readme-ov-file#using-neo4j-for-storage)-enabling graph database support.",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L101"
+      },
+      {
+        "path": "README.md",
+        "line": 203,
+        "text": "> On Apple Silicon (macOS 26) without Docker Desktop, you can run the same Postgres/Neo4j/Milvus storage stack on Apple's native `container` runtime — see [docs/AppleContainerSetup.md](./docs/AppleContainerSetup.md).",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L203"
+      },
+      {
+        "path": "README.md",
+        "line": 273,
+        "text": "- **Multiple Storage Backends:** LightRAG's default KV, vector, and graph stores are in-memory databases with local file persistence — suitable only for small-scale testing and evaluation, **not for production**. LightRA",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L273"
+      },
+      {
+        "path": "README.md",
+        "line": 316,
+        "text": "**Important Note**: The Embedding model must be determined before document indexing, and the same model must be used in the query phase. Once selected, embedding models generally cannot be changed. If changed, you will n",
+        "url": "https://github.com/HKUDS/LightRAG/blob/453dce83d6d0354a06e46c8d4029a0895c4e054b/README.md#L316"
+      }
+    ]
+  },
+  {
+    "rank": 41,
+    "project": "stanfordnlp/dspy",
+    "stars": 38584,
+    "category": "观测/评测",
+    "license": "MIT",
+    "repo_url": "https://github.com/stanfordnlp/dspy",
+    "source_commit": "f1260ff14610286cb295c7d3a5ee2cbfd0ba5cb9",
+    "github_updated_at": "2026-10-10T21:59:36Z",
+    "source_files": 3,
+    "backend_mentions": "",
+    "native_or_adapted_state": "Agent工具链局部通过",
+    "conclusion": "ReAct→Tool→真实SQL→trajectory observation→答案提取通过；MatrixOne/MySQL对照，DummyLM替身，未验证优化器/真实推理",
+    "proposed_route": "评测结果/trace导出到MatrixOne；原生主库迁移另行验证",
+    "validation_plan": "schema迁移；span层级；事件幂等；时间分区/聚合；TTL；大JSON；原生查询与驱动协议",
+    "priority": "P1",
+    "adapter": "scripts/test_tool_frameworks.py",
+    "evidence": []
+  },
+  {
+    "rank": 51,
+    "project": "agentscope-ai/agentscope",
+    "stars": 33043,
+    "category": "Agent/编排",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/agentscope-ai/agentscope",
+    "source_commit": "e4c1e074dee3f0f6cca28ca29e934c4ec0605354",
+    "github_updated_at": "2026-10-11T00:23:52Z",
+    "source_files": 4,
+    "backend_mentions": "elasticsearch,milvus,mongodb,qdrant,redis,sqlalchemy,sqlite",
+    "native_or_adapted_state": "工具/状态局部通过",
+    "conclusion": "原生Toolkit/FunctionTool SQL工具与typed AgentState JSON保存、重开、恢复后继续调用在MatrixOne/MySQL通过；非完整Agent模型循环",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/agentscope_state.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 73,
+        "text": "storage-redis = [\"redis\"]",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L73"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 74,
+        "text": "# Async SQLAlchemy 2.0 + Alembic. The concrete driver",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L74"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 78,
+        "text": "\"sqlalchemy[asyncio]>=2.0\",",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L78"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 126,
+        "text": "vdb-qdrant = [\"qdrant-client\"]",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L126"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 127,
+        "text": "vdb-milvus = [",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L127"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 129,
+        "text": "\"milvus-lite>=3.1.0\",",
+        "url": "https://github.com/agentscope-ai/agentscope/blob/e4c1e074dee3f0f6cca28ca29e934c4ec0605354/pyproject.toml#L129"
+      }
+    ]
+  },
+  {
+    "rank": 59,
+    "project": "openai/openai-agents-python",
+    "stars": 29955,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/openai/openai-agents-python",
+    "source_commit": "125efa029b4bfd84238bd2c4fd69c3406f802663",
+    "github_updated_at": "2026-10-10T23:03:19Z",
+    "source_files": 5,
+    "backend_mentions": "mongodb,mysql,postgres,postgresql,redis,sqlalchemy,sqlite",
+    "native_or_adapted_state": "原生失败→改造通过",
+    "conclusion": "FunctionTool检索通过；原生session schema缺VARCHAR长度，补长后MatrixOne级联删除panic；补长并省显式子索引后写读/隔离/clear通过（#29954）",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/openai_sqlalchemy_session.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 37,
+        "text": "For voice support, install with the optional `voice` group: `pip install 'openai-agents[voice]'`. For Redis session support, install with the optional `redis` group: `pip install 'openai-agents[redis]'`.",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/README.md#L37"
+      },
+      {
+        "path": "README.md",
+        "line": 48,
+        "text": "For voice support, install with the optional `voice` group: `uv add 'openai-agents[voice]'`. For Redis session support, install with the optional `redis` group: `uv add 'openai-agents[redis]'`.",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/README.md#L48"
+      },
+      {
+        "path": "README.md",
+        "line": 184,
+        "text": "- [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy)",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/README.md#L184"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 52,
+        "text": "sqlalchemy = [\"SQLAlchemy[asyncio]>=2.0\", \"asyncpg>=0.29.0\"]",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/pyproject.toml#L52"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 54,
+        "text": "redis = [\"redis>=7\"]",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/pyproject.toml#L54"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 61,
+        "text": "mongodb = [\"pymongo>=4.14\"]",
+        "url": "https://github.com/openai/openai-agents-python/blob/125efa029b4bfd84238bd2c4fd69c3406f802663/pyproject.toml#L61"
+      }
+    ]
+  },
+  {
+    "rank": 61,
+    "project": "huggingface/smolagents",
+    "stars": 29775,
+    "category": "Agent/编排",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/huggingface/smolagents",
+    "source_commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+    "github_updated_at": "2026-10-11T00:20:37Z",
+    "source_files": 3,
+    "backend_mentions": "sqlalchemy",
+    "native_or_adapted_state": "Agent工具链局部通过",
+    "conclusion": "ToolCallingAgent.run调用真实SQL工具，结果进入下一轮模型输入并完成final_answer；4种tenant情形在MatrixOne/MySQL通过，模型为固定替身",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_tool_frameworks.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 112,
+        "text": "\"sqlalchemy\", # for ./examples",
+        "url": "https://github.com/huggingface/smolagents/blob/96f33faaf028479119ec8d34507b47694cf14e34/pyproject.toml#L112"
+      }
+    ]
+  },
+  {
+    "rank": 63,
+    "project": "mastra-ai/mastra",
+    "stars": 28694,
+    "category": "Agent/编排",
+    "license": "Apache-2.0核心/可能混合许可证",
+    "repo_url": "https://github.com/mastra-ai/mastra",
+    "source_commit": "4e31d07d07972fae9110f56f4fa71a33a1020102",
+    "github_updated_at": "2026-10-10T23:23:05Z",
+    "source_files": 5,
+    "backend_mentions": "libsql,pgvector",
+    "native_or_adapted_state": "JS工具局部通过",
+    "conclusion": "createTool/execute检索回调通过；没有替换内建Memory或跑完整Agent；mysql2需显式charset=utf8mb4",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_js_frameworks.mjs",
+    "evidence": [
+      {
+        "path": "stores/pg/src/index.ts",
+        "line": 11,
+        "text": "export { PGVECTOR_PROMPT } from './vector/prompt';",
+        "url": "https://github.com/mastra-ai/mastra/blob/4e31d07d07972fae9110f56f4fa71a33a1020102/stores/pg/src/index.ts#L11"
+      },
+      {
+        "path": "stores/libsql/src/index.ts",
+        "line": 3,
+        "text": "export { LIBSQL_PROMPT } from './vector/prompt';",
+        "url": "https://github.com/mastra-ai/mastra/blob/4e31d07d07972fae9110f56f4fa71a33a1020102/stores/libsql/src/index.ts#L3"
+      }
+    ]
+  },
+  {
+    "rank": 64,
+    "project": "microsoft/semantic-kernel",
+    "stars": 28639,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/microsoft/semantic-kernel",
+    "source_commit": "11f072362e24207da9db55779c0fd73eb15123b1",
+    "github_updated_at": "2026-10-10T20:20:22Z",
+    "source_files": 4,
+    "backend_mentions": "elasticsearch,pgvector,postgres,postgresql",
+    "native_or_adapted_state": "工具链局部通过",
+    "conclusion": "原生Kernel.add_plugin/invoke调用真实SQL检索与tenant过滤通过；未配置真实chat completion服务",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_agent_frameworks.py",
+    "evidence": [
+      {
+        "path": "README.md",
+        "line": 32,
+        "text": "- **Vector DB Support**: Seamless integration with [Azure AI Search](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search), [Elasticsearch](https://www.elastic.co/), [Chroma](https://docs.trychroma.",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/README.md#L32"
+      },
+      {
+        "path": "python/semantic_kernel/connectors/postgres.py",
+        "line": 56,
+        "text": "# Limitation based on pgvector documentation https://github.com/pgvector/pgvector#what-if-i-want-to-index-vectors-with-more-than-2000-dimensions",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/python/semantic_kernel/connectors/postgres.py#L56"
+      },
+      {
+        "path": "python/semantic_kernel/connectors/postgres.py",
+        "line": 97,
+        "text": "def _python_type_to_postgres(python_type_str: str) -> str | None:",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/python/semantic_kernel/connectors/postgres.py#L97"
+      },
+      {
+        "path": "python/semantic_kernel/connectors/postgres.py",
+        "line": 98,
+        "text": "\"\"\"Convert a string representation of a Python type to a PostgreSQL data type.",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/python/semantic_kernel/connectors/postgres.py#L98"
+      },
+      {
+        "path": "python/semantic_kernel/connectors/postgres.py",
+        "line": 104,
+        "text": "Corresponding PostgreSQL data type as a string, if found. If the type is not found, return None.",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/python/semantic_kernel/connectors/postgres.py#L104"
+      },
+      {
+        "path": "python/semantic_kernel/connectors/postgres.py",
+        "line": 106,
+        "text": "# Basic type mapping from Python types (in string form) to PostgreSQL types",
+        "url": "https://github.com/microsoft/semantic-kernel/blob/11f072362e24207da9db55779c0fd73eb15123b1/python/semantic_kernel/connectors/postgres.py#L106"
+      }
+    ]
+  },
+  {
+    "rank": 67,
+    "project": "vercel/ai",
+    "stars": 27233,
+    "category": "工具/交互/业务Agent",
+    "license": "Apache-2.0核心/可能混合许可证",
+    "repo_url": "https://github.com/vercel/ai",
+    "source_commit": "ba05943b69ad070558bb5bc912da99ec66d7d263",
+    "github_updated_at": "2026-10-10T23:38:14Z",
+    "source_files": 5,
+    "backend_mentions": "",
+    "native_or_adapted_state": "JS工具局部通过",
+    "conclusion": "AI SDK tool execute检索回调通过；没有验证generateText真实模型循环；mysql2需显式charset=utf8mb4",
+    "proposed_route": "通过SQL/MCP/检索工具增加MatrixOne访问；本地持久化迁移另行实现",
+    "validation_plan": "工具调用协议；参数化SQL；用户隔离；结果格式；只读权限；若迁主库必须跑真实启动/升级",
+    "priority": "P1",
+    "adapter": "scripts/test_js_frameworks.mjs",
+    "evidence": []
+  },
+  {
+    "rank": 68,
+    "project": "deepset-ai/haystack",
+    "stars": 26715,
+    "category": "RAG/知识应用",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/deepset-ai/haystack",
+    "source_commit": "c5e13354117d1376d4d8caf0efe77abe80120fc0",
+    "github_updated_at": "2026-10-10T23:03:27Z",
+    "source_files": 9,
+    "backend_mentions": "",
+    "native_or_adapted_state": "自定义原型通过",
+    "conclusion": "DocumentWriter和自定义Retriever Pipeline、tenant等值过滤、删除通过；序列化与完整协议未认证",
+    "proposed_route": "优先接入可插拔VectorStore/DocumentStore；应用元数据库单独验证",
+    "validation_plan": "建表/批量写入；delete/upsert；metadata过滤后top-k；距离与得分映射；索引召回；原生基线比较",
+    "priority": "P0",
+    "adapter": "adapters/vector_store.py",
+    "evidence": []
+  },
+  {
+    "rank": 78,
+    "project": "google/adk-python",
+    "stars": 21770,
+    "category": "Agent/编排",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/google/adk-python",
+    "source_commit": "bcac35a6efb21f176eef9d28d663db247f4e5afd",
+    "github_updated_at": "2026-10-10T22:05:31Z",
+    "source_files": 6,
+    "backend_mentions": "mongodb,postgres,postgresql,redis,sqlalchemy",
+    "native_or_adapted_state": "原生存储/工具局部通过",
+    "conclusion": "FunctionTool检索与native DatabaseSessionService建会话、append_event、state_delta、新service读回、user隔离均通过；MySQL对照通过",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_next_frameworks.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 146,
+        "text": "\"redis>=4.2\",",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L146"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 149,
+        "text": "\"sqlalchemy[asyncio]>=2,<3\",",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L149"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 150,
+        "text": "\"sqlalchemy-spanner>=1.14\",",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L150"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 177,
+        "text": "\"sqlalchemy[asyncio]>=2,<3\",",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L177"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 178,
+        "text": "\"sqlalchemy-spanner>=1.14\",",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L178"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 294,
+        "text": "optional-dependencies.mongodb = [ \"pymongo>=4.9,<5\" ]",
+        "url": "https://github.com/google/adk-python/blob/bcac35a6efb21f176eef9d28d663db247f4e5afd/pyproject.toml#L294"
+      }
+    ]
+  },
+  {
+    "rank": 81,
+    "project": "pydantic/pydantic-ai",
+    "stars": 20535,
+    "category": "Agent/编排",
+    "license": "MIT",
+    "repo_url": "https://github.com/pydantic/pydantic-ai",
+    "source_commit": "69ea1e57201ed59e7d30fbe4a7590d193acecce0",
+    "github_updated_at": "2026-10-10T22:45:18Z",
+    "source_files": 6,
+    "backend_mentions": "postgres,postgresql,redis",
+    "native_or_adapted_state": "工具链局部通过",
+    "conclusion": "Agent使用确定性FunctionModel调用真实MatrixOne检索工具，tenant过滤和ToolReturn往返通过；未验证真实模型推理",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "scripts/test_next_frameworks.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 287,
+        "text": "\"redis>=8.1.0\",",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/pyproject.toml#L287"
+      },
+      {
+        "path": "src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py",
+        "line": 1,
+        "text": "\"\"\"PostgreSQL `MediaStore` over an asyncpg-compatible caller-owned pool.",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py#L1"
+      },
+      {
+        "path": "src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py",
+        "line": 28,
+        "text": "# Postgres truncates identifiers past 63 bytes, which would let two distinct",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py#L28"
+      },
+      {
+        "path": "src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py",
+        "line": 30,
+        "text": "# is unquoted, so Postgres folds it to lowercase and `'Media'` would share a",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py#L30"
+      },
+      {
+        "path": "src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py",
+        "line": 62,
+        "text": "\"\"\"The asyncpg-compatible pool surface used by the Postgres stores.\"\"\"",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py#L62"
+      },
+      {
+        "path": "src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py",
+        "line": 70,
+        "text": "\"\"\"PostgreSQL store. One row per blob in a `media` table keyed by sha256 hex.",
+        "url": "https://github.com/pydantic/pydantic-ai/blob/69ea1e57201ed59e7d30fbe4a7590d193acecce0/src/pydantic_ai_harness/pydantic_ai_harness/media/_postgres.py#L70"
+      }
+    ]
+  },
+  {
+    "rank": 87,
+    "project": "langchain-ai/langchainjs",
+    "stars": 18252,
+    "category": "工具/交互/业务Agent",
+    "license": "MIT",
+    "repo_url": "https://github.com/langchain-ai/langchainjs",
+    "source_commit": "b2c113459e362121564e7c5924e1e530f87a92c5",
+    "github_updated_at": "2026-10-10T14:45:31Z",
+    "source_files": 6,
+    "backend_mentions": "mysql",
+    "native_or_adapted_state": "JS工具局部通过",
+    "conclusion": "StructuredTool.invoke接入mysql2真实二进制预编译向量查询、参数绑定、tenant过滤通过；须显式charset=utf8mb4（#30014）",
+    "proposed_route": "通过SQL/MCP/检索工具增加MatrixOne访问；本地持久化迁移另行实现",
+    "validation_plan": "工具调用协议；参数化SQL；用户隔离；结果格式；只读权限；若迁主库必须跑真实启动/升级",
+    "priority": "P1",
+    "adapter": "scripts/test_js_frameworks.mjs",
+    "evidence": [
+      {
+        "path": "package.json",
+        "line": 74,
+        "text": "\"mysql2\": \">=3.23.1\",",
+        "url": "https://github.com/langchain-ai/langchainjs/blob/b2c113459e362121564e7c5924e1e530f87a92c5/package.json#L74"
+      }
+    ]
+  },
+  {
+    "rank": 89,
+    "project": "camel-ai/camel",
+    "stars": 17851,
+    "category": "Agent/编排",
+    "license": "Apache-2.0",
+    "repo_url": "https://github.com/camel-ai/camel",
+    "source_commit": "24fde60ad739b4be8f8f533fea9ba54256fbc4a2",
+    "github_updated_at": "2026-10-10T23:56:58Z",
+    "source_files": 4,
+    "backend_mentions": "neo4j,pgvector,qdrant,redis,sqlalchemy",
+    "native_or_adapted_state": "自定义聊天记忆局部通过",
+    "conclusion": "原生ChatAgent.step/ChatHistoryMemory重开继续，旧context进入新模型请求；MatrixOne/MySQL/JsonStorage对照通过。StubModel，mcp固定1.28.1，未测真实推理与并发",
+    "proposed_route": "自定义SQL工具/会话与checkpoint存储",
+    "validation_plan": "会话写入与重连读取；thread/namespace隔离；中断恢复；pending writes；并发写冲突",
+    "priority": "P1",
+    "adapter": "adapters/camel_storage.py",
+    "evidence": [
+      {
+        "path": "pyproject.toml",
+        "line": 77,
+        "text": "\"qdrant-client>=1.9.0,<2\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L77"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 84,
+        "text": "\"neo4j>=5.18.0,<6\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L84"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 218,
+        "text": "\"qdrant-client>=1.9.0,<2\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L218"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 222,
+        "text": "\"neo4j>=5.18.0,<6\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L222"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 224,
+        "text": "\"redis>=5.0.6,<6\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L224"
+      },
+      {
+        "path": "pyproject.toml",
+        "line": 235,
+        "text": "\"pgvector>=0.2.4,<0.3\",",
+        "url": "https://github.com/camel-ai/camel/blob/24fde60ad739b4be8f8f533fea9ba54256fbc4a2/pyproject.toml#L235"
+      }
+    ]
+  },
+  {
+    "rank": 91,
+    "project": "MemoriLabs/Memori",
+    "stars": 17149,
+    "category": "记忆/图谱",
+    "license": "Apache-2.0核心/可能混合许可证",
+    "repo_url": "https://github.com/MemoriLabs/Memori",
+    "source_commit": "574b1ea3e876f100ef82c37817d603eb7e258e59",
+    "github_updated_at": "2026-10-10T17:50:15Z",
+    "source_files": 8,
+    "backend_mentions": "mongodb,mysql,postgres,postgresql,sqlalchemy",
+    "native_or_adapted_state": "原生存储局部通过",
+    "conclusion": "MySQL原生migration与entity insert通过；未运行托管augmentation/LLM记忆抽取",
+    "proposed_route": "可插拔记忆存储；向量与关系表分开评估；图数据库语义需重做",
+    "validation_plan": "记忆去重与更新；用户隔离；时间/metadata过滤；会话迁移；图遍历一致性；记忆删除",
+    "priority": "P1",
+    "adapter": "scripts/triage_and_retest.py",
+    "evidence": [
+      {
+        "path": "docker-compose.yml",
+        "line": 18,
+        "text": "- DATABASE_URL=postgresql://memori:memori@postgres:5432/memori_test",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L18"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 19,
+        "text": "- MONGODB_URL=mongodb://memori:memori@mongodb:27017/memori_test?authSource=admin",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L19"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 20,
+        "text": "- MYSQL_DATABASE_URL=mysql+pymysql://memori:memori@mysql:3306/memori_test",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L20"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 21,
+        "text": "- OCEANBASE_DATABASE_URL=mysql+oceanbase://root:@oceanbase:2881/memori_test?charset=utf8mb4",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L21"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 26,
+        "text": "postgres:",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L26"
+      },
+      {
+        "path": "docker-compose.yml",
+        "line": 28,
+        "text": "mongodb:",
+        "url": "https://github.com/MemoriLabs/Memori/blob/574b1ea3e876f100ef82c37817d603eb7e258e59/docker-compose.yml#L28"
+      }
+    ]
+  }
+]

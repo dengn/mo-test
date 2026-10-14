@@ -1,0 +1,92 @@
+name: AI framework MatrixOne regression
+
+on:
+  push:
+    branches: [main]
+    paths: ['suites/mo-ai-frameworks/**', '.github/workflows/ai-framework-regression.yml']
+  workflow_dispatch:
+    inputs:
+      group:
+        description: Dependency group or all
+        type: choice
+        options: [all, core, storage, sessions, agents, memory, tools, rag, javascript, flow, scope, camel]
+        default: all
+  workflow_call:
+    inputs:
+      group:
+        type: string
+        default: all
+    secrets:
+      MO_TEST_HOST:
+        required: true
+      MO_TEST_PORT:
+        required: true
+      MO_TEST_USER:
+        required: true
+      MO_TEST_PASSWORD:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  select:
+    runs-on: ubuntu-24.04
+    outputs:
+      groups: ${{ steps.groups.outputs.groups }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: suites/mo-ai-frameworks
+      - id: groups
+        env:
+          SELECTED_GROUP: ${{ inputs.group || 'all' }}
+        run: |
+          groups=$(python3 suites/mo-ai-frameworks/run.py --group "$SELECTED_GROUP" --list-groups-json)
+          echo "groups=$groups" >> "$GITHUB_OUTPUT"
+  regression:
+    needs: select
+    runs-on: [self-hosted, Linux, X64]
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        group: ${{ fromJSON(needs.select.outputs.groups) }}
+    defaults:
+      run:
+        working-directory: suites/mo-ai-frameworks
+    env:
+      MO_HOST: ${{ secrets.MO_TEST_HOST }}
+      MO_PORT: ${{ secrets.MO_TEST_PORT }}
+      MO_USER: ${{ secrets.MO_TEST_USER }}
+      MO_PASSWORD: ${{ secrets.MO_TEST_PASSWORD }}
+      GROUP: ${{ matrix.group }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            suites/mo-ai-frameworks
+            .github/workflows/ai-framework-regression.yml
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.19.0'
+      - name: Validate suite and failure gate contracts
+        run: |
+          python verify.py
+          python -m unittest discover -s tests -p test_runner_contract.py -v
+      - name: Install isolated pinned dependencies
+        run: python setup.py --group "$GROUP"
+      - name: Execute real framework workflows
+        run: python run.py --group "$GROUP" --output "results/ci-${{ github.run_id }}-${{ github.run_attempt }}-$GROUP"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ai-framework-${{ matrix.group }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: suites/mo-ai-frameworks/results/
+          if-no-files-found: error

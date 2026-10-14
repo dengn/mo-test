@@ -1,0 +1,25 @@
+{
+  "package_version": "2.0.10",
+  "records": [
+    {
+      "project": "agentscope-ai/agentscope",
+      "name": "Toolkit_typed_state_reopen_resume",
+      "backend": "matrixone",
+      "kind": "custom_tool_state",
+      "server": "8.0.30-MatrixOne-v",
+      "status": "PASS",
+      "details": "native Toolkit/FunctionTool/streaming ToolResponse; typed AgentState JSON save/new store model_validate/reused Toolkit; context, iteration, session isolation, upsert/delete; no complete Agent model loop",
+      "elapsed_ms": 416.4190030132886
+    },
+    {
+      "project": "agentscope-ai/agentscope",
+      "name": "Toolkit_typed_state_reopen_resume",
+      "backend": "mysql",
+      "kind": "custom_tool_state",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "native Toolkit/FunctionTool/streaming ToolResponse; typed AgentState JSON save/new store model_validate/reused Toolkit; context, iteration, session isolation, upsert/delete; no complete Agent model loop",
+      "elapsed_ms": 233.97525402833708
+    }
+  ]
+}

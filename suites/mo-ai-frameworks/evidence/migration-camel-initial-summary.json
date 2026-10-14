@@ -1,0 +1,40 @@
+{
+  "run_id": "0b7459e477eb",
+  "started_utc": "2026-10-14T01:07:18Z",
+  "groups": [
+    {
+      "group": "camel",
+      "projects": [
+        "camel"
+      ],
+      "expected_tests": [
+        "test_camel_chat_agent_history_restore_continue",
+        "test_camel_native_json_reference"
+      ],
+      "requirements_sha256": "6365ed5d4e2d295885d2894119a1fb1731d16954fd94f0be894a92853f07ffff",
+      "readiness_exit_code": 0,
+      "test_exit_code": 1,
+      "passed": [],
+      "problems": [
+        {
+          "name": "test_camel_chat_agent_history_restore_continue",
+          "status": "failure"
+        },
+        {
+          "name": "test_camel_native_json_reference",
+          "status": "failure"
+        }
+      ],
+      "missing": [
+        "test_camel_chat_agent_history_restore_continue",
+        "test_camel_native_json_reference"
+      ],
+      "cleanup_exit_code": 0,
+      "status": "FAIL",
+      "elapsed_seconds": 2.098
+    }
+  ],
+  "status": "FAIL",
+  "tested_projects": 1,
+  "passed_tests": 0
+}

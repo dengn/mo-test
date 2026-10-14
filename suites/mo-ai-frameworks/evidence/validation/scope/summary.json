@@ -1,0 +1,27 @@
+{
+  "run_id": "3f5fee368960",
+  "started_utc": "2026-10-14T01:07:16Z",
+  "groups": [
+    {
+      "group": "scope",
+      "projects": [
+        "agentscope"
+      ],
+      "expected_tests": [
+        "test_agentscope_toolkit_state_restore_continue"
+      ],
+      "requirements_sha256": "211053844fdc3e143d123bfc5234c3e258139e63e673628f21f16f316946a9cf",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_agentscope_toolkit_state_restore_continue"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 1.547
+    }
+  ],
+  "status": "PASS"
+}
