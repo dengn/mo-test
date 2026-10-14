@@ -20,18 +20,18 @@
     },
     {
       "path": "MIGRATION.csv",
-      "bytes": 61581,
-      "sha256": "5dcc9e95dfdda1f21d397b42426f19bc77e3fdf1923b89187a6ccf9c4b09467d"
+      "bytes": 61527,
+      "sha256": "da8aae8bdf05630f7960e44f11eb231badace7a1e8a79e2e908d6a247d268740"
     },
     {
       "path": "README.md",
-      "bytes": 11157,
-      "sha256": "0db54033b223edd00d8518428ed13774d283459ff02e2eea30cdefc0ad4b490a"
+      "bytes": 11668,
+      "sha256": "74b8fd4fca4fa0b61ab2817f6face87251e99c553c3682b1028d2e78e56ab119"
     },
     {
       "path": "RUNTIME-SDK.md",
-      "bytes": 17385,
-      "sha256": "b37f329af2083d62e710d452d332baf5b980101c689baddf09ab9ee912fdbf8f"
+      "bytes": 18849,
+      "sha256": "74ad7591aa56ca7640ca86483c41642ad0cceafe4f7fa8e0f4f0d34705e0d8a4"
     },
     {
       "path": "UPSTREAM.md",
@@ -40,8 +40,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 17901,
-      "sha256": "eaa14529f46eb9f87ead7f79fd45e1bdeef20054a34969a72f741ecd3f27d37c"
+      "bytes": 22113,
+      "sha256": "84f952522024986f564c2872afd211ccb342627f733ef6835f73d68acc4504b6"
     },
     {
       "path": "adapters/README.md",
@@ -482,6 +482,11 @@
       "path": "evidence/integration/integration-wrong-commit/results.json",
       "bytes": 447,
       "sha256": "dc6a185222d2866ad64666a14006e54698e290e0ca4fe6b82c48803a318927a7"
+    },
+    {
+      "path": "evidence/migration-batch/WAGTAIL-FAILURES.md",
+      "bytes": 2634,
+      "sha256": "fe43022b21b964ed7814c2184bb08817143e2a60f84d57ef29e6f409fffaeffe"
     },
     {
       "path": "evidence/migration-batch/adminer-portable-round1/junit.xml",
@@ -1799,6 +1804,111 @@
       "sha256": "3d37b7d890a4240a7c5797dbbb1901a1bbf538a4004aa42ea8681516100cc16a"
     },
     {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/junit.xml",
+      "bytes": 531,
+      "sha256": "e9d7b61add8bdc73eb587b07a7b25c66cc683dae5c0c6de603dffffcd5ab4c70"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/results.json",
+      "bytes": 985,
+      "sha256": "85161cbc48b925e6b233783e9c03c4d9ffa01c65ff670361ffebf997f15d615d"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/sql/junit.xml",
+      "bytes": 691,
+      "sha256": "1c332607d642fb4af0377019341c4e79aa71071908a2c3e517da39ff855f3930"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/sql/results.json",
+      "bytes": 4638,
+      "sha256": "2fbcb9e1c42f51a2542191014a8fabb813edaeaed022fe009329c5ef5f8563bc"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/wagtail/junit.xml",
+      "bytes": 3689,
+      "sha256": "4cec79cf15b7ea7ea48c1cc1b86f21ad8b1b6379647d1df92901277d12240f07"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-entry-smoke/wagtail/results.json",
+      "bytes": 5546,
+      "sha256": "b02d9eae9623d989ddb70d1a5e8f01247b7c427263728bfdcdbebf86f3927fe1"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-fulltext-native-panic.json",
+      "bytes": 800,
+      "sha256": "a0d13dc93253781bc6fd60ff0be86ce9c04ccd124ca1fece60a83cb28761fa47"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-fulltext-native-panic.sql",
+      "bytes": 1728,
+      "sha256": "bb25169f2c527338d1057de092aa3e0be19ca433ecd050c3f70d73e7a289f469"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-latest-main-admission-blocked.json",
+      "bytes": 587,
+      "sha256": "f0e8c36e56ffb8e03944c3fc603cdbf488a9f301b28cb7b48736418a3f7afcd8"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round1/junit.xml",
+      "bytes": 603,
+      "sha256": "97a8a58516841c7d73fd39e2306ea1093e0c9b0f9e65afd54714b6f7d4bd0306"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round1/results.json",
+      "bytes": 2228,
+      "sha256": "21bf1055b2f2eda62f22facbeddef71d30afac48e99e67b295a537b17ac6fe07"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round2/junit.xml",
+      "bytes": 1125,
+      "sha256": "80239b87f3eca45ce5efdfc4abc54fa2320469f6afc08b6e24bf46fad64498a3"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round2/results.json",
+      "bytes": 2782,
+      "sha256": "9f478f151f3b273d63079fc48375633c7d14d636ed552d96486a5306aa50c2dc"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round3/junit.xml",
+      "bytes": 1363,
+      "sha256": "231512df93d5a934cabcddd68c5b80e45062e158fa668143aa5ae0fe6a110416"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round3/results.json",
+      "bytes": 3037,
+      "sha256": "7ed52fc0a67aea3b864b4f6ea307628f5d26fc329404be9a68520fbd2296a72f"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round4/junit.xml",
+      "bytes": 1650,
+      "sha256": "f8aed43d0b007d41716653542a265e5ca701a4b0e38ef3864ad2a98601863f12"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round4/results.json",
+      "bytes": 3451,
+      "sha256": "a50563fed52c28f61dce126c93cd0a77c134d25c03715774498f54dbe0e25f31"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round5/junit.xml",
+      "bytes": 3689,
+      "sha256": "4cec79cf15b7ea7ea48c1cc1b86f21ad8b1b6379647d1df92901277d12240f07"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-portable-round5/results.json",
+      "bytes": 5546,
+      "sha256": "349863eccb0deab984a4f585bf9870e4b9d557b1bdd3c0b6389a1627459201b2"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-round1-2-settings.py",
+      "bytes": 2433,
+      "sha256": "6f999d39dc2b13cbe7ed208cd6182f495d9db7a9b0ebdb6f6d8dc5c557a1f47c"
+    },
+    {
+      "path": "evidence/migration-batch/wagtail-round3-settings.py",
+      "bytes": 2689,
+      "sha256": "ef02090e9b87d5b3fe6206538040a4c8d6a1c18e30cfd14fa2a4864b416bbb3c"
+    },
+    {
       "path": "evidence/migration-batch/wakapi-cold-build-blocked.json",
       "bytes": 330,
       "sha256": "9c5cc7d51aac77e8b6cf0ed7d38794ad67977ed55128d8c3ce54d55538e4f054"
@@ -1909,6 +2019,111 @@
       "sha256": "9e3bd51a328d9bcb866dda6a69b69562f04f0b17a682e8bb22de8749265c4dbe"
     },
     {
+      "path": "evidence/migration-batch/wordpress-distinct-term-query.sql",
+      "bytes": 407,
+      "sha256": "515fe36c844465237474302dc71e4e15292c1dcc3e1e7a19e6de1ae24a5ddb70"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/junit.xml",
+      "bytes": 533,
+      "sha256": "f286ef4b4befd71ca31f8778174a3e4b65c2a600809c3b3f607a629d244174ef"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/results.json",
+      "bytes": 986,
+      "sha256": "45657013939969b1cd68557887f9b59102be5026a8715ff19389e95a140ac0a0"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "0501d8a6950a806b1da5f94a4280cbb8ee11550317a40e8967c057defda072af"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/sql/results.json",
+      "bytes": 4640,
+      "sha256": "6a7724575fef7c04fb87273169943720c7efd448d5cc0ff6c1729d811e476802"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/wordpress/junit.xml",
+      "bytes": 2697,
+      "sha256": "3923f1570f8a0d2be268ecd35a8b1740cd34cf1a8fe22c99a43da2f8ca907469"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke/wordpress/results.json",
+      "bytes": 3609,
+      "sha256": "119e3d56cab7f326690509330999999d1a464e1c3386ccc923bca1f56a538b37"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/junit.xml",
+      "bytes": 533,
+      "sha256": "d385db2fbcdf5e42fdd65308227674e4e2a0b2f9d99d0823575edf5a94ae013d"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/results.json",
+      "bytes": 986,
+      "sha256": "e0276be9e7addd910e78099ea828b0a3bbcf81b8cd803331c5412ac518f3ff17"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/sql/junit.xml",
+      "bytes": 693,
+      "sha256": "88961663befdd26b185c6bb05c27d52fafaedb16735ef7b0c36e0a9314bfd8ad"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/sql/results.json",
+      "bytes": 4640,
+      "sha256": "cb9a82d0d5a0cc788fa9c100ac160e06650aebe81ffaafa5107035e66d7a8eaa"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/wordpress/junit.xml",
+      "bytes": 2785,
+      "sha256": "bb0d34c83a37aae98b231ffeaf6a02f9016e29a747b04845884a2d7c6c3a5aec"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-entry-smoke-round2/wordpress/results.json",
+      "bytes": 3700,
+      "sha256": "dbdf1fd139ea2ab7dc37c3f8290dcffa0451f1b74a07d90ea8518571ea1b8013"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-initial-db.php",
+      "bytes": 2055,
+      "sha256": "1eb1267136b79e060a79bf8724bda77abd0499452c4d6a6bdd04927f509663b0"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-initial-log-audit.json",
+      "bytes": 1012,
+      "sha256": "35a6d20ea05d52f8c6af65613f27f68559961e4a3344481bc48abc1f8f2e54ed"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round1/junit.xml",
+      "bytes": 1924,
+      "sha256": "59b6e92af453800e29dacec80297c41ca654f5d118d6de173330e3c568ea6850"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round1/results.json",
+      "bytes": 2869,
+      "sha256": "d361a49cde1749a021699328bfa4b57bfb4b7ac0ede94b791012ef3b58ae5982"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round2/junit.xml",
+      "bytes": 2697,
+      "sha256": "3923f1570f8a0d2be268ecd35a8b1740cd34cf1a8fe22c99a43da2f8ca907469"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round2/results.json",
+      "bytes": 3609,
+      "sha256": "c5ab49dce02fa428c182eb1b15fcf87e2365d6879a47c3cb05246420bac4e174"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round3/junit.xml",
+      "bytes": 2785,
+      "sha256": "bb0d34c83a37aae98b231ffeaf6a02f9016e29a747b04845884a2d7c6c3a5aec"
+    },
+    {
+      "path": "evidence/migration-batch/wordpress-portable-round3/results.json",
+      "bytes": 3700,
+      "sha256": "7514e48e3adcf6fc2b3979e5b6b10c1a8875db97773a5651395672bda53dfecc"
+    },
+    {
       "path": "evidence/migration-batch/yourls-portable-round1/junit.xml",
       "bytes": 1092,
       "sha256": "a5fa295fd1b5e22089c34784c9353acdb892d2130674c0ca0563318ecf0644c2"
@@ -1930,8 +2145,8 @@
     },
     {
       "path": "evidence/project-secret-scan.json",
-      "bytes": 155,
-      "sha256": "87e1eca33c3e902b512efccd10cb9d2e16845e19de72f430b74957df5b4620d9"
+      "bytes": 243,
+      "sha256": "f28137cce125e0a50d5b8c017526b70b880afb708029bd6a9c107afe94876611"
     },
     {
       "path": "fixtures/adminer/adminer-release-type-name.patch",
@@ -3009,6 +3224,136 @@
       "sha256": "2d02920fe98902c5a9092bb59f4279b301d6d9e55cc70139e72eb33ed60c2a57"
     },
     {
+      "path": "fixtures/wagtail/LICENSE",
+      "bytes": 1512,
+      "sha256": "d1a88beff449d9890e8ec726448ee8a709ae511ad8ea1f0c474076e27add4505"
+    },
+    {
+      "path": "fixtures/wagtail/README.md",
+      "bytes": 2564,
+      "sha256": "0df1a911ff58d9b343c2d0f5b4de3e3d23635cec00010eaebe902a1dac7a4513"
+    },
+    {
+      "path": "fixtures/wagtail/matrixone-migration.patch",
+      "bytes": 1548,
+      "sha256": "aef06e6220a6031cccdf6a8dfa7a70e9b96cf0b8169e53cce272c72b49cf1146"
+    },
+    {
+      "path": "fixtures/wagtail/migration-0086-adapted.py",
+      "bytes": 4323,
+      "sha256": "054e8ef1bfa557fc651dad11bff942a35ecb546aade92b4e628c1d38e852dad5"
+    },
+    {
+      "path": "fixtures/wagtail/migration-0086-original.py",
+      "bytes": 3468,
+      "sha256": "bd8b17615a7ecca2dae78156d6dffd9f01fbbe1eff524bf07bc1905f38667845"
+    },
+    {
+      "path": "fixtures/wagtail/official-wheel-audit.json",
+      "bytes": 580,
+      "sha256": "958a691fee331b9b1071952954a85216048f20792757656bdaf2559965066436"
+    },
+    {
+      "path": "fixtures/wagtail/project/create_observer.py",
+      "bytes": 488,
+      "sha256": "d3317ef1c3313ead8ae65095c82f337173191ab4ee120cba2fe8aea6fee747cf"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/apps.py",
+      "bytes": 140,
+      "sha256": "e70c1e04cbcd3edde26bf92d4640a9cd0b28d5cab7923bee1ac0a38e7de3aa21"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/migrations/0001_initial.py",
+      "bytes": 806,
+      "sha256": "0c6c22b5db259219f3fa1e30ae62364d6dad8d963d71bc59b82da57327950ebb"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/migrations/0002_create_homepage.py",
+      "bytes": 1884,
+      "sha256": "d3ac4dc8ac9a7c5b2a00b0a30830d03268a598d8f26073081a83a5b314a7aa8d"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/migrations/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/models.py",
+      "bytes": 95,
+      "sha256": "1af87e891b4a1333cd8d2113faa148040b5ce998408e39f59b1db4b68dbc7aa5"
+    },
+    {
+      "path": "fixtures/wagtail/project/home/templates/home/home_page.html",
+      "bytes": 181,
+      "sha256": "e43ad67d1161c53772acd490f40697e97931bc21c728008914931066582b220f"
+    },
+    {
+      "path": "fixtures/wagtail/project/manage.py",
+      "bytes": 179,
+      "sha256": "843538c0c5d45f5a614569d9837627462ac06fd9b21a0cab4710f2f94a2a408e"
+    },
+    {
+      "path": "fixtures/wagtail/project/matrixone_backend/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "fixtures/wagtail/project/matrixone_backend/base.py",
+      "bytes": 6048,
+      "sha256": "7ea80cef95d0c0719fb33a6fef74fd6e0a8bd00a595a17c37ef483c96f0df642"
+    },
+    {
+      "path": "fixtures/wagtail/project/matrixone_backend/features.py",
+      "bytes": 406,
+      "sha256": "caedd61ecd0130eeb8d0b72b01799b60fb0fddff67ed8db4178215d816fb1ab5"
+    },
+    {
+      "path": "fixtures/wagtail/project/matrixone_backend/introspection.py",
+      "bytes": 1541,
+      "sha256": "589c204f1be7a0d48b193b4e7b788ead02d5a531d6b0f1055a9711402b9853be"
+    },
+    {
+      "path": "fixtures/wagtail/project/matrixone_backend/lookups.py",
+      "bytes": 676,
+      "sha256": "05c85e2d0b0d724796283a8369b8f02a7d7b545305cbd53ffe9354886c724bc5"
+    },
+    {
+      "path": "fixtures/wagtail/project/settings.py",
+      "bytes": 2847,
+      "sha256": "a421d020ecc9d45426ab1ef58ab9172d2e261cf6db4166cd84aa122fd743a7a8"
+    },
+    {
+      "path": "fixtures/wagtail/project/urls.py",
+      "bytes": 513,
+      "sha256": "3afde7026fc9e45b6d98f3a20c5ba102be46d3329670563314495a59475b39de"
+    },
+    {
+      "path": "fixtures/wagtail/project/wsgi.py",
+      "bytes": 158,
+      "sha256": "02fd437cdae79f5edeb766cde8bb8d46a04f9b73eb053f2bb9181c1830c68d7c"
+    },
+    {
+      "path": "fixtures/wagtail/project-manifest.json",
+      "bytes": 2328,
+      "sha256": "17b9cd07fd1ae9d014618c496cc4137b7faa5e19d7d56753a856afa07484462e"
+    },
+    {
+      "path": "fixtures/wagtail/requirements-sdk.txt",
+      "bytes": 797,
+      "sha256": "6ed7483779ee91ea2126778687b2e8554e914a8edb65405c4b38073f848e1ba0"
+    },
+    {
+      "path": "fixtures/wagtail/sdk-manifest.json",
+      "bytes": 2142880,
+      "sha256": "ea264eed0f3b00d675178a924b4a5fd748d5e6eff53acc8ba71f53934da3cc10"
+    },
+    {
       "path": "fixtures/wakapi/LICENSE",
       "bytes": 1067,
       "sha256": "852bcc033a46c62f99fb5ffd43b3241ba2c0c440c6034aa2114505f2c4f03c4a"
@@ -3022,6 +3367,26 @@
       "path": "fixtures/wakapi/source-manifest.json",
       "bytes": 81835,
       "sha256": "2921593b1f87baa8ee8a5632a83e25e9aaea77cceaa107417400167c83a7efdc"
+    },
+    {
+      "path": "fixtures/wordpress/LICENSE",
+      "bytes": 19903,
+      "sha256": "49e97f629ce763abb2f8f1f13da74cb5a8a9a72a0e72a7477d1540c98cef5141"
+    },
+    {
+      "path": "fixtures/wordpress/README.md",
+      "bytes": 1966,
+      "sha256": "1f4aa9081817dc5f720f64aefd4f3c3a6e9e0f5055f4c35d23ff8584335e77de"
+    },
+    {
+      "path": "fixtures/wordpress/db.php",
+      "bytes": 2062,
+      "sha256": "1e07bf3c671b9a35c16c6a31b610f8916225115e242425376444cc4715f31730"
+    },
+    {
+      "path": "fixtures/wordpress/source-manifest.json",
+      "bytes": 836735,
+      "sha256": "2938113ceb584b3cd2e2f660112ab65cf90efd6dfe6b9afe94d8e6754ddb124d"
     },
     {
       "path": "fixtures/yourls/LICENSE",
@@ -3050,8 +3415,8 @@
     },
     {
       "path": "inventory.json",
-      "bytes": 89467,
-      "sha256": "c85e77b33e0316d9c13688de6f1e7de92338a534707bb12f60af49c5dcd4776b"
+      "bytes": 89555,
+      "sha256": "772c68f6f5e394c4e733540cc76a581b38c03e86beb2e367935dcedb4f3c835e"
     },
     {
       "path": "native_common.py",
@@ -3085,8 +3450,8 @@
     },
     {
       "path": "run.py",
-      "bytes": 11022,
-      "sha256": "140b56d46e341d7714de8b0f16866b69bfc3c64f104695cf5d4be98eb2634b59"
+      "bytes": 11090,
+      "sha256": "948f5c56ceba80fd277cf073bafa46e939a48ab6a7803982702f75c76f4989e5"
     },
     {
       "path": "run_adminer.py",
@@ -3194,9 +3559,19 @@
       "sha256": "a59ea6d106ee43a37ff6946a393016dd6394cbffcca68c25821beb02bb656396"
     },
     {
+      "path": "run_wagtail.py",
+      "bytes": 17426,
+      "sha256": "4b37d6d02c32b79928e83512a890398f94d7c4922de2deb326e26fa06d22f87c"
+    },
+    {
       "path": "run_wakapi.py",
       "bytes": 13689,
       "sha256": "20a7f00b25010f5ef3f49273286a7531b925e9447a933a86d8bfde8b8af8cfed"
+    },
+    {
+      "path": "run_wordpress.py",
+      "bytes": 17063,
+      "sha256": "f0d9acffd22ea382042eda8f09c666c94ac0f612ce8e81be1359eff1e13c8fe5"
     },
     {
       "path": "run_yourls.py",
@@ -3225,13 +3600,18 @@
     },
     {
       "path": "tests/test_suite.py",
-      "bytes": 4412,
-      "sha256": "e8de82beff1dc2bfb384d4d45e8dcdfa4bfada50a6795f3d1172f823be22e8a2"
+      "bytes": 4437,
+      "sha256": "674d40ad36f9d4f7d4aa547baba747151bbf0a2802e86b42091df32edf459f3b"
     },
     {
       "path": "tests/test_superset_sdk.py",
       "bytes": 2623,
       "sha256": "afdf62b16bf18ce9cc1c8837f5d6422ed8eed6433fa90fa492037662204f9830"
+    },
+    {
+      "path": "tests/test_wagtail_sdk.py",
+      "bytes": 2932,
+      "sha256": "2b269a5683b5d013891c534317c186c1bad508b7ccb8bd399d45f75c89922927"
     },
     {
       "path": "upstream-import.json",
@@ -3241,11 +3621,16 @@
     {
       "path": "verify.py",
       "bytes": 1804,
-      "sha256": "62945058e444dc8140863a5b1644477d09b8aaae123deee396d2e6db78f1545a"
+      "sha256": "a5d9b9f5d7b35f005ee762b4c8e85cd9ddb1fd08c627f6ee223d6cd0e50c2b79"
+    },
+    {
+      "path": "wagtail_runtime.py",
+      "bytes": 2768,
+      "sha256": "f48db3fb9b5238232232059b48084df6006e5f542218818b2584eb5a59a34b0a"
     }
   ],
   "workflow": {
     "path": ".github/workflows/app-regression.yml",
-    "sha256": "ef57945006b4f437b114a065fdf4466a1d8f1fabcbde0408fb3e2fb9ec5d9da7"
+    "sha256": "62dbd83f1ee8ee44fa23db2cbac0d4754fd3edac6e7ddda897ab0d78ccccfbe6"
   }
 }

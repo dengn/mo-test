@@ -1,0 +1,13 @@
+{
+  "version": "8.0",
+  "source_commit": "24e624cc63b5d17a1ff1c1cd0d0e0817524cbd8d",
+  "wheel_url": "https://files.pythonhosted.org/packages/8f/a5/59476b1fa6151a0dcb2cb65bf724b8b8ca11a03f94327262bc3339e0b01e/wagtail-8.0-py3-none-any.whl",
+  "wheel_sha256": "34dde727917ace7e4ab182054f78f01c2cc24d85ccc402932d3d5c6315a7cd00",
+  "application_files_compared": 4250,
+  "missing_files": [],
+  "changed_files": [
+    "wagtail/migrations/0086_populate_grouppagepermission_permission.py"
+  ],
+  "original_0086_matches_pinned_git_blob": true,
+  "dependency_cold_install_verified": false
+}

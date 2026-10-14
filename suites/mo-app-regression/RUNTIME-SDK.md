@@ -54,7 +54,7 @@ Go SDK 入口使用明确标记的 CLI 测试 HTML 占位资源及 ntfy 的 nofi
 
 原有 MO_TEST_* 连接密钥继续使用。新增仓库变量是 runner 文件路径：MO_HUGINN_RUNTIME_CONFIG、MO_NTFY_BINARY、MO_MEMOS_BINARY；若使用 SDK 新构建，再设置 MO_NTFY_BUILD_MANIFEST、MO_MEMOS_BUILD_MANIFEST。
 
-默认 smoke 会执行所有十一个驱动；缺少 SDK 会失败，不能跳过后算通过。可显式选 `--app` / workflow app 输入只跑准备好的应用。load profile 当前仅迁移 Gotify、Blocky、Plik、Ergo 的负载入口；对其他七个选择 load 会明确拒绝，不伪造压力通过。新的 cold CI 与 GitHub Actions 仍待在容量足够的专用 runner 上执行。
+默认 smoke 会执行所有二十四个驱动；缺少 SDK 会失败，不能跳过后算通过。可显式选 `--app` / workflow app 输入只跑准备好的应用。load profile 当前仅迁移 Gotify、Blocky、Plik、Ergo 的负载入口；对其他二十个选择 load 会明确拒绝，不伪造压力通过。新的 cold CI 与 GitHub Actions 仍待在容量足够的专用 runner 上执行。
 
 ## Baikal / FreshRSS
 
@@ -103,3 +103,12 @@ Superset保留原生CSRF/RBAC：native `db upgrade` 的344条升级事件与head
 Strapi使用独立生成的5.57.0 CMS SDK、66843个依赖文件/59个内部符号链接、336个原始admin构建文件及固定Node24.20摘要。`MO_STRAPI_RUNTIME_CONFIG` JSON字段为 `node_binary`、`sdk_dir`；sdk_dir是包含node_modules及build的准备目录。仅复制19个公共脚手架定义和已校验build，再链接已校验依赖；原.env、账号、uploads、缓存不复制，新uploads目录为空，XDG目录落在本轮私有路径。全部密钥/账号/token新生成，原生schema同步与FK保持，Super Admin首注册、Author邀请token注册及真实权限检查保留；不通过SQL写用户或迁移记录。
 
 Strapi框架只保留精确MySQL typeCast组合适配，decimal/bool/date原处理保留。UTF8 fixture callback限定到本轮数据库的title/name/body文本字段；已确认category关系查询派生name列的db/table均为空、type=VAR_STRING，额外只覆盖这一个元数据形状。运行前要求整份fixture schema没有声明binary/blob列，其他未知/二进制字段仍走next。四字节字符断言不放宽；原始失真结果保留。完整UI、全内容类型/插件、已有数据升级、冷安装和高负载未认证。
+
+
+## WordPress / Wagtail
+
+WordPress 使用 MO_PHP_BINARY 与 MO_WORDPRESS_SOURCE_TREE，固定源码5c09ed3…、5028 Git blob、7.2-alpha-64292。它是历史 alpha 快照，不是稳定版 WordPress 的认证。全新私有副本只添加固定 wpdb drop-in 和新环境配置，通过原生网页安装、REST账号/应用密码/业务及重启，不使用WP-CLI，不复制旧账号或配置。完整来源、适配与边界见 fixtures/wordpress/README.md。
+
+Wagtail 使用 MO_WAGTAIL_RUNTIME_CONFIG，JSON内容如 {"python_binary":"/owned/wagtail-venv/bin/python"}。固定官方8.0 wheel完整SHA、41包/10230稳定文件、Python解释器SHA；原始wheel4250个应用文件只有0086带精确适配，且原始迁移与固定Git blob一致。运行不修改SDK，按清单复制小型HomePage fixture到新目录。依赖版本见 fixtures/wagtail/requirements-sdk.txt，尚未完成完整冷安装；解释器和包文件必须与准备清单匹配，不能随意替换runner上的全局Python。详情见 fixtures/wagtail/README.md。
+
+Wagtail明确使用原生 modelsearch.backends.database.fallback。原生多FULLTEXT索引写入仍会触发已知PANIC-04/#29899，本轮失败和完整SQL另存 evidence/migration-batch/WAGTAIL-FAILURES.md，没有把fallback业务通过解释为全文能力已修复。新增MO_WORDPRESS_SOURCE_TREE/MO_WAGTAIL_RUNTIME_CONFIG工作流变量指向自建runner的准备输入；线上Actions仍未执行。

@@ -1,0 +1,156 @@
+{
+  "app": "WordPress/WordPress",
+  "version": "7.2-alpha-64292",
+  "commit": "5c09ed3ccb354b0553e9b59c2876be0fc40574ca",
+  "schema": "mo_reg_wordpress_92903e189d744490",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_PHP_runtime",
+      "passed": true
+    },
+    {
+      "name": "pinned_all_source_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_web_installer",
+      "passed": true
+    },
+    {
+      "name": "native_core_tables",
+      "passed": true
+    },
+    {
+      "name": "native_admin_password_hash_and_role",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login",
+      "passed": true
+    },
+    {
+      "name": "native_REST_nonce",
+      "passed": true
+    },
+    {
+      "name": "native_application_password_auth",
+      "passed": true
+    },
+    {
+      "name": "native_subscriber_role",
+      "passed": true
+    },
+    {
+      "name": "wrong_application_password_denied",
+      "passed": true
+    },
+    {
+      "name": "subscriber_post_create_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "anonymous_post_create_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "native_duplicate_category_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "native_draft_SQL_exact",
+      "passed": true
+    },
+    {
+      "name": "anonymous_draft_denied",
+      "passed": true
+    },
+    {
+      "name": "subscriber_private_draft_denied",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_raw_content_and_author",
+      "passed": true
+    },
+    {
+      "name": "before_restart_public_rendered_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_SQL_post_category_exact",
+      "passed": true
+    },
+    {
+      "name": "native_comment_SQL_owner_and_post",
+      "passed": true
+    },
+    {
+      "name": "native_revision_parent_and_previous_published_title",
+      "passed": true
+    },
+    {
+      "name": "invalid_cookie_REST_nonce_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "subscriber_update_denied_zero_write",
+      "passed": true
+    },
+    {
+      "name": "real_PHP_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_raw_content_and_author",
+      "passed": true
+    },
+    {
+      "name": "after_restart_public_rendered_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_post_category_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_comment_API_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_subscriber_auth_and_denial",
+      "passed": true
+    },
+    {
+      "name": "native_application_password_revoke",
+      "passed": true
+    },
+    {
+      "name": "no_native_WordPress_database_error_logs",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "min_free_mib": 1024,
+  "existing_databases_modified": false,
+  "manual_SQL_users_or_migration_stamps": false,
+  "limitations": [
+    "pinned historical alpha snapshot; not stable-release certification",
+    "native local-environment application passwords on owned loopback server only",
+    "cron, automatic core/plugin updates disabled; plugins, uploads, multisite, upgrades and load unverified"
+  ],
+  "verified_source_blobs": 5028,
+  "adapter_sha256": "1e07bf3c671b9a35c16c6a31b610f8916225115e242425376444cc4715f31730",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_table_count": 12,
+  "finished_at_utc": "2026-10-14T08:55:04Z"
+}
