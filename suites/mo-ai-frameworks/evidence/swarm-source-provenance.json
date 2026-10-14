@@ -1,0 +1,38 @@
+{
+  "repository": "openai/swarm",
+  "commit": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "d831db55645e47ca8e491c5a0e37f1ee744d7b10bf5aa8d50146c795ac0176c0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "59245018ba7a6681c116b503428bf573b78494aaaeab7c29ea54d65c901ef3eb"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "1c557fcb2d563b509abf60fdb4132d72373474dbf6d059d752b2b780788d43ed"
+    },
+    {
+      "path": "setup.cfg",
+      "sha256": "c553bbdfcea29838238c7510a2356a87a12c319769a4ca75f4cfdd7861565cc6"
+    },
+    {
+      "path": "swarm/__init__.py",
+      "sha256": "27a5a4284ef143567d928ba5f7bad4082df42cc55efbc4e1dabf6cd7799b6bb9"
+    },
+    {
+      "path": "swarm/core.py",
+      "sha256": "b393be51475f83aa185a84f19c6a9ee35abe62a52738aa3e5547ee301e13e881"
+    },
+    {
+      "path": "swarm/types.py",
+      "sha256": "871eb1e477e7e0c004f4d7bdc3336a1c4c902867cef5ba1e1d72d4440c68b848"
+    },
+    {
+      "path": "swarm/util.py",
+      "sha256": "0f2539e5b32d06a7480d2fcde8e56a3ff40d50ce83870831eded59271d57ac4a"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "4e5ea1252219",
+  "started_utc": "2026-10-13T08:45:15Z",
+  "groups": [
+    {
+      "group": "agents",
+      "projects": [
+        "autogen",
+        "semantic-kernel"
+      ],
+      "expected_tests": [
+        "test_autogen_function_tool",
+        "test_autogen_state_save_load_resume",
+        "test_semantic_kernel_plugin_invoke"
+      ],
+      "requirements_sha256": "10ce8777bfa7d065d2fe6e7ce995dd432be70c7def2db4f89339a5d8bb7649ff",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_autogen_function_tool",
+        "test_autogen_state_save_load_resume",
+        "test_semantic_kernel_plugin_invoke"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.702
+    }
+  ],
+  "status": "PASS"
+}

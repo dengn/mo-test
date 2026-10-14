@@ -1,0 +1,39 @@
+{
+  "versions": {
+    "ag-ui-protocol": "1.0.0"
+  },
+  "records": [
+    {
+      "project": "ag-ui-protocol/ag-ui",
+      "name": "typed_event_SSE_journal_cursor_replay",
+      "backend": "native",
+      "kind": "native_control",
+      "status": "PASS",
+      "details": "native AG-UI typed events/EventEncoder SSE roundtrip, 11-event ordered journal/reopen/cursor resume; message deltas/tool correlation/nested state preserved; tenant/run isolation, mixed invalid batch rejected atomically, delete; no browser HTTP client or concurrent stream certification",
+      "elapsed_ms": 2.2456939914263785
+    },
+    {
+      "project": "ag-ui-protocol/ag-ui",
+      "name": "typed_event_SSE_journal_cursor_replay",
+      "backend": "matrixone",
+      "kind": "custom_integration",
+      "server": "8.0.30-MatrixOne-v",
+      "server_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+      "status": "PASS",
+      "details": "native AG-UI typed events/EventEncoder SSE roundtrip, 11-event ordered journal/reopen/cursor resume; message deltas/tool correlation/nested state preserved; tenant/run isolation, mixed invalid batch rejected atomically, delete; no browser HTTP client or concurrent stream certification; valid append followed by SQL-invalid JSON rolls back and preserves pre-existing event",
+      "cleanup": "PASS",
+      "elapsed_ms": 644.131094974
+    },
+    {
+      "project": "ag-ui-protocol/ag-ui",
+      "name": "typed_event_SSE_journal_cursor_replay",
+      "backend": "mysql",
+      "kind": "custom_integration",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "native AG-UI typed events/EventEncoder SSE roundtrip, 11-event ordered journal/reopen/cursor resume; message deltas/tool correlation/nested state preserved; tenant/run isolation, mixed invalid batch rejected atomically, delete; no browser HTTP client or concurrent stream certification; valid append followed by SQL-invalid JSON rolls back and preserves pre-existing event",
+      "cleanup": "PASS",
+      "elapsed_ms": 413.1767160142772
+    }
+  ]
+}

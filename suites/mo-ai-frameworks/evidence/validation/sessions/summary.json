@@ -1,0 +1,37 @@
+{
+  "run_id": "4e5ea1252219",
+  "started_utc": "2026-10-13T08:45:15Z",
+  "groups": [
+    {
+      "group": "sessions",
+      "projects": [
+        "openai-agents",
+        "pydantic-ai",
+        "google-adk"
+      ],
+      "expected_tests": [
+        "test_openai_function_tool",
+        "test_openai_sqlalchemy_session",
+        "test_pydantic_ai_agent_tool_return",
+        "test_adk_function_tool",
+        "test_adk_database_session"
+      ],
+      "requirements_sha256": "6df5212b56282ccba0ddc61d9ef85875b55cd9f99fb9a2280546101e2489b31b",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_openai_function_tool",
+        "test_openai_sqlalchemy_session",
+        "test_pydantic_ai_agent_tool_return",
+        "test_adk_function_tool",
+        "test_adk_database_session"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.906
+    }
+  ],
+  "status": "PASS"
+}

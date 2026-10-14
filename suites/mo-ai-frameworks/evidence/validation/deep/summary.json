@@ -1,0 +1,35 @@
+{
+  "run_id": "b38c63b3bb77",
+  "started_utc": "2026-10-14T05:18:04Z",
+  "groups": [
+    {
+      "group": "deep",
+      "projects": [
+        "deepagents"
+      ],
+      "expected_tests": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "requirements_sha256": "dbe27a2aed9ca2c84be058717955bfa48d78a9170070163279eca36f2159b15a",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.861
+    }
+  ],
+  "status": "PASS",
+  "tested_projects": 1,
+  "passed_tests": 4
+}

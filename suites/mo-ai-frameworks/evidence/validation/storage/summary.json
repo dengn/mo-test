@@ -1,0 +1,33 @@
+{
+  "run_id": "4e5ea1252219",
+  "started_utc": "2026-10-13T08:45:15Z",
+  "groups": [
+    {
+      "group": "storage",
+      "projects": [
+        "langgraph",
+        "agno",
+        "memori"
+      ],
+      "expected_tests": [
+        "test_langgraph_interrupt_resume_checkpoint",
+        "test_agno_legacy_upsert_session",
+        "test_memori_native_schema_entity"
+      ],
+      "requirements_sha256": "64f9881cd3d09b212691974e652de74c22eeac7d6217005aca2009a6986c6e3f",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langgraph_interrupt_resume_checkpoint",
+        "test_agno_legacy_upsert_session",
+        "test_memori_native_schema_entity"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.055
+    }
+  ],
+  "status": "PASS"
+}

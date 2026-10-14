@@ -123,3 +123,10 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 ## #29927 当前 main 回归核验
 
 [原始并发索引竞态复测](suites/mo-issue-29927-recheck/README.md)：旧版本 3 轮中 1 轮复现且重启后仍坏；main `3e50e1b3` 五轮通过，负载结束及重启后共 454 项检查通过，1,081 条确认写入无缺失/错值。复测支持原报持续性损坏已修复，尚未确定具体修复 PR。原有主 case 计数不变。
+
+
+## AI 框架 MatrixOne 自动回归
+
+[AI 框架回归套件](suites/mo-ai-frameworks/README.md)纳入 26 个已适配项目、14 个隔离依赖组、43 个必跑测试；JSON/JUnit 对失败、跳过、缺失与超时严格判失败，带随机测试库和运行归属检查清理。包括 LangChain/LangGraph、LlamaIndex、Haystack、Mem0、LightRAG、OpenAI Agents、ADK、CrewAI、AgentScope、CAMEL 等真实接入角色，模型使用确定性替身。
+
+[Top100 策展目录](suites/mo-ai-frameworks/catalog/top100.csv)保留 100 项源码初筛、29 项实际接口/原生对照证据，正向门禁不计入 MLflow/Langfuse/pgvector 的原生阻断或对照项。26 项、43 个用例本地全部通过；沿用现有自托管 runner 的 [GitHub Actions](.github/workflows/ai-framework-regression.yml)尚待远端实际执行。此套件独立计数，不修改已有大批次 case 总数。
