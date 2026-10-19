@@ -1,0 +1,394 @@
+Python package flask-cors required for CORS support
+ * Serving Flask app 'pygeoapi.flask_app'
+ * Debug mode: on
+[2026-10-12T23:02:23Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:18880
+[2026-10-12T23:02:23Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - [33mPress CTRL+C to quit[0m
+[2026-10-12T23:02:23Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO -  * Restarting with stat
+Python package flask-cors required for CORS support
+[2026-10-12T23:02:25Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} WARNING -  * Debugger is active!
+[2026-10-12T23:02:25Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO -  * Debugger PIN: [REDACTED_LOCAL_DEBUGGER_PIN]
+[2026-10-12T23:04:32Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:04:32] "GET /collections/pg-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:04:32Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:04:32] "GET /collections/pg-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1" 200 -
+[2026-10-12T23:06:12Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:12] "GET /collections/pg-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:06:12Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:12] "GET /collections/pg-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1" 200 -
+[2026-10-12T23:06:13Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:13] "GET /collections/mysql-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:06:13Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:13] "[35m[1mGET /collections/mysql-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.OperationalError: (3643, "The SRID of the geometry does not match the SRID of the column 'geom'. The SRID of the geometry is 0, but the SRID of the column is 4326. Consider changing the SRID of the geometry or the SRID property of the column.")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 309, in collection_items
+    return execute_from_flask(itemtypes_api.get_collection_items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 155, in execute_from_flask
+    headers, status, content = api_function(actual_api, api_request, *args)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/api/itemtypes.py", line 557, in get_collection_items
+    content = p.query(offset=offset, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 212, in query
+    matched = results.count()
+              ^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 3207, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2899, in scalar
+    ret = self.one()
+          ^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2872, in one
+    return self._iter().one()  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2921, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2473, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2363, in _execute_internal
+    compile_state_cls.orm_execute_statement(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 316, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1451, in execute
+    return meth(
+           ^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 533, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1671, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1825, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2335, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3643, "The SRID of the geometry does not match the SRID of the column 'geom'. The SRID of the geometry is 0, but the SRID of the column is 4326. Consider changing the SRID of the geometry or the SRID property of the column.")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT gis_app_suite.points.id AS gis_app_suite_points_id, gis_app_suite.points.name AS gis_app_suite_points_name, gis_app_suite.points.kind AS gis_app_suite_points_kind, gis_app_suite.points.value AS gis_app_suite_points_value, gis_app_suite.points.attrs AS gis_app_suite_points_attrs, gis_app_suite.points.geom AS gis_app_suite_points_geom 
+FROM gis_app_suite.points 
+WHERE MBRContains(ST_GeomFromText(%(ST_GeomFromText_1)s), gis_app_suite.points.geom)) AS anon_1]
+[parameters: {'ST_GeomFromText_1': 'POLYGON((39.799 116.299, 39.815 116.299, 39.815 116.315, 39.799 116.315, 39.799 116.299))'}]
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
+[2026-10-12T23:06:39Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:39] "GET /collections/pg-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:06:39Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:39] "GET /collections/pg-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1" 200 -
+[2026-10-12T23:06:39Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:39] "GET /collections/mysql-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:06:39Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:39] "[35m[1mGET /collections/mysql-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.OperationalError: (3643, "The SRID of the geometry does not match the SRID of the column 'geom'. The SRID of the geometry is 0, but the SRID of the column is 4326. Consider changing the SRID of the geometry or the SRID property of the column.")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 309, in collection_items
+    return execute_from_flask(itemtypes_api.get_collection_items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 155, in execute_from_flask
+    headers, status, content = api_function(actual_api, api_request, *args)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/api/itemtypes.py", line 557, in get_collection_items
+    content = p.query(offset=offset, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 212, in query
+    matched = results.count()
+              ^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 3207, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2899, in scalar
+    ret = self.one()
+          ^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2872, in one
+    return self._iter().one()  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2921, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2473, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2363, in _execute_internal
+    compile_state_cls.orm_execute_statement(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 316, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1451, in execute
+    return meth(
+           ^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 533, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1671, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1825, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2335, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (3643, "The SRID of the geometry does not match the SRID of the column 'geom'. The SRID of the geometry is 0, but the SRID of the column is 4326. Consider changing the SRID of the geometry or the SRID property of the column.")
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT gis_app_suite.points.id AS gis_app_suite_points_id, gis_app_suite.points.name AS gis_app_suite_points_name, gis_app_suite.points.kind AS gis_app_suite_points_kind, gis_app_suite.points.value AS gis_app_suite_points_value, gis_app_suite.points.attrs AS gis_app_suite_points_attrs, gis_app_suite.points.geom AS gis_app_suite_points_geom 
+FROM gis_app_suite.points 
+WHERE MBRContains(ST_GeomFromText(%(ST_GeomFromText_1)s), gis_app_suite.points.geom)) AS anon_1]
+[parameters: {'ST_GeomFromText_1': 'POLYGON((39.799 116.299, 39.815 116.299, 39.815 116.315, 39.799 116.315, 39.799 116.299))'}]
+(Background on this error at: https://sqlalche.me/e/21/e3q8)
+[2026-10-12T23:06:40Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:40] "GET /collections/mo-points/items?f=json&limit=2 HTTP/1.1" 200 -
+[2026-10-12T23:06:40Z] {/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/werkzeug/_internal.py:97} INFO - 127.0.0.1 - - [12/Oct/2026 23:06:40] "[35m[1mGET /collections/mo-points/items?f=json&limit=500&bbox=116.299,39.799,116.315,39.815 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+pymysql.err.OperationalError: (20301, 'invalid input: Binary geometry function MBRContains given two geometries of different srids: 0 and 4326, which should have been identical.')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 309, in collection_items
+    return execute_from_flask(itemtypes_api.get_collection_items,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/flask_app.py", line 155, in execute_from_flask
+    headers, status, content = api_function(actual_api, api_request, *args)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/api/itemtypes.py", line 557, in get_collection_items
+    content = p.query(offset=offset, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pygeoapi/provider/sql.py", line 212, in query
+    matched = results.count()
+              ^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 3207, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2899, in scalar
+    ret = self.one()
+          ^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2872, in one
+    return self._iter().one()  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2921, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2473, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2363, in _execute_internal
+    compile_state_cls.orm_execute_statement(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/orm/context.py", line 316, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1451, in execute
+    return meth(
+           ^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 533, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1671, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1825, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2335, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1946, in _exec_single_context
+    self.dialect.do_execute(
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 1192, in do_execute
+    cursor.execute(statement, parameters)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/cursors.py", line 335, in _query
+    conn.query(q)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 581, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 857, in _read_query_result
+    result.read()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 1290, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/connections.py", line 810, in _read_packet
+    packet.raise_for_error()
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/pymysql/err.py", line 154, in raise_mysql_exception
+    raise errorclass(errno, errval, sqlstate=sqlstate)
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (20301, 'invalid input: Binary geometry function MBRContains given two geometries of different srids: 0 and 4326, which should have been identical.')
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT gis_app_suite.points.id AS gis_app_suite_points_id, gis_app_suite.points.name AS gis_app_suite_points_name, gis_app_suite.points.kind AS gis_app_suite_points_kind, gis_app_suite.points.value AS gis_app_suite_points_value, gis_app_suite.points.attrs AS gis_app_suite_points_attrs, gis_app_suite.points.geom AS gis_app_suite_points_geom 
+FROM gis_app_suite.points 
+WHERE MBRContains(ST_GeomFromText(%(ST_GeomFromText_1)s), gis_app_suite.points.geom)) AS anon_1]
+[parameters: {'ST_GeomFromText_1': 'POLYGON((39.799 116.299, 39.815 116.299, 39.815 116.315, 39.799 116.315, 39.799 116.299))'}]
+(Background on this error at: https://sqlalche.me/e/21/e3q8)

@@ -1,0 +1,33 @@
+{
+  "run_id": "0427b9296b15",
+  "started_utc": "2026-10-13T10:04:02Z",
+  "groups": [
+    {
+      "group": "memory",
+      "projects": [
+        "mem0"
+      ],
+      "expected_tests": [
+        "test_mem0_memory_lifecycle_filter_reopen",
+        "test_mem0_invalid_batch_rollback",
+        "test_mem0_qdrant_cosine_equivalence",
+        "test_mem0_qdrant_typed_filter_equivalence"
+      ],
+      "requirements_sha256": "3610f88503dda29d86f5a00a98533e45c4a341b821c1cd8c20d7457d716388da",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_mem0_memory_lifecycle_filter_reopen",
+        "test_mem0_invalid_batch_rollback",
+        "test_mem0_qdrant_cosine_equivalence",
+        "test_mem0_qdrant_typed_filter_equivalence"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.554
+    }
+  ],
+  "status": "PASS"
+}

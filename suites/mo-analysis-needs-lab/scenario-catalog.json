@@ -1,0 +1,902 @@
+[
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 0,
+    "question": "已知数据滚动特征",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-8 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+1 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 1,
+    "question": "缺失与观测覆盖",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-11 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+2 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 2,
+    "question": "双时态属性特征",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-14 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+3 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 3,
+    "question": "历史趋势与跨度",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-17 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+4 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 4,
+    "question": "已知修订敏感性",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-20 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+5 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 5,
+    "question": "未来信息可见性断言",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-23 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+1 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 6,
+    "question": "严格时点训练标签",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day BETWEEN 20 AND 24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-10 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+2 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 7,
+    "question": "截面标准化特征",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-13 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+3 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 8,
+    "question": "多版本连接基数",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day=24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-16 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+4 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 0,
+    "name": "point_in_time",
+    "title": "严格时点特征",
+    "template": 9,
+    "question": "历史训练到当前预测",
+    "cases": 1000,
+    "example_sql": "WITH anchors AS (SELECT u.uid,u.region,c.day FROM units u JOIN calendar c ON c.day BETWEEN 20 AND 24 WHERE u.uid BETWEEN 1 AND 3),\nvisible AS (SELECT a.uid,a.day anchor_day,m.rid,m.event_id,m.day,m.received_day,m.revision,m.valid,m.v,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day,m.event_id ORDER BY m.revision DESC,m.rid DESC) choice FROM anchors a JOIN observations m ON m.uid=a.uid AND m.day BETWEEN a.day-19 AND a.day-1 AND m.received_day<=a.day),\npicked AS (SELECT * FROM visible WHERE choice=1 AND valid=1),\nattr_versions AS (SELECT a.uid,a.day,b.aid,b.recorded_day,b.scale,ROW_NUMBER() OVER(PARTITION BY a.uid,a.day ORDER BY b.recorded_day DESC,b.revision DESC,b.aid DESC) choice FROM anchors a LEFT JOIN attrs b ON b.uid=a.uid AND b.valid_from<=a.day AND b.valid_to>a.day AND b.recorded_day<=a.day),\nfeatures AS (SELECT a.uid,a.day,a.region,COUNT(x.v) n,COUNT(x.event_id) n_rows,SUM(x.v) val_sum,AVG(x.v) mean_val,VAR_POP(x.v) var_val,MIN(x.v) min_val,MAX(x.v) max_val,MAX(x.received_day) max_received,MAX(x.revision) max_revision FROM anchors a LEFT JOIN picked x ON x.uid=a.uid AND x.anchor_day=a.day GROUP BY a.uid,a.day,a.region)\nSELECT f.*,b.aid,b.recorded_day,COALESCE(b.scale,CAST(1 AS DOUBLE)) attr_scale,l.y label_y,l.ready_day FROM features f LEFT JOIN attr_versions b ON f.uid=b.uid AND f.day=b.day AND b.choice=1 LEFT JOIN labels l ON l.uid=f.uid AND l.day=f.day+5 AND l.ready_day<=24 ORDER BY f.uid,f.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 0,
+    "question": "增量日总额",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 16 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 1,
+    "question": "更正后的滚动均值",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 13 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 2,
+    "question": "删除后的累计指标",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 10 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 3,
+    "question": "更正窗口差分",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 7 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 4,
+    "question": "历史峰谷重算",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 4 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 5,
+    "question": "受影响期间分组",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 1 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 6,
+    "question": "零观测与完整日历",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 14 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 7,
+    "question": "异常基线修正",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 11 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 8,
+    "question": "区间预算与累计",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 8 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 1,
+    "name": "incremental",
+    "title": "增量修正",
+    "template": 9,
+    "question": "最新状态及更正敏感性",
+    "cases": 1000,
+    "example_sql": "WITH amounts AS (SELECT uid,day,SUM(v) raw_total,COUNT(v) raw_n FROM inc_state GROUP BY uid,day)\nSELECT u.uid,c.day,COALESCE(a.total,CAST(0 AS DOUBLE)) v,COALESCE(a.n,0) n,COALESCE(b.raw_total,CAST(0 AS DOUBLE)) raw_total,COALESCE(b.raw_n,0) raw_n,c.weekday FROM units u JOIN calendar c ON c.day BETWEEN 5 AND 24 LEFT JOIN inc_daily a ON a.uid=u.uid AND a.day=c.day LEFT JOIN amounts b ON b.uid=u.uid AND b.day=c.day WHERE u.uid BETWEEN 1 AND 3 ORDER BY u.uid,c.day"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 0,
+    "question": "事件时间桶",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -10 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>2 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 1,
+    "question": "乱序后的滚动汇总",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -16 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>3 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 2,
+    "question": "迟到策略及接纳密度",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -22 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>4 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 3,
+    "question": "去重事件指标",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -28 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>5 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 4,
+    "question": "会话切分与合并",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -34 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>6 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 5,
+    "question": "已关闭窗口状态",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -40 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>2 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 6,
+    "question": "条件事件指标",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -14 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>3 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 7,
+    "question": "事件类型转移",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -20 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>4 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 8,
+    "question": "状态及观测缺失",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -26 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>5 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 2,
+    "name": "streaming",
+    "title": "流式事件",
+    "template": 9,
+    "question": "恢复与幂等状态",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT event_id,uid,event_min,batch,v,kind,LAG(event_min) OVER(PARTITION BY uid ORDER BY event_min,event_id) prev_min FROM stream_accepted WHERE policy=0 AND uid BETWEEN 1 AND 3 AND event_min BETWEEN -32 AND 6),\nflags AS (SELECT *,CASE WHEN prev_min IS NULL OR event_min-prev_min>6 THEN 1 ELSE 0 END boundary FROM a)\nSELECT event_id,uid,event_min,batch,v,kind,prev_min,SUM(boundary) OVER(PARTITION BY uid ORDER BY event_min,event_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) session_id FROM flags ORDER BY uid,event_min,event_id"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 0,
+    "question": "随机实验Welch差异",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 1,
+    "question": "CUPED调整",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 2,
+    "question": "双重差分",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 3,
+    "question": "Hajek逆倾向加权",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid>384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 4,
+    "question": "基线最近邻匹配",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid>384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 5,
+    "question": "聚类稳健标准误",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 6,
+    "question": "分层Bootstrap区间",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 7,
+    "question": "Beta-Binomial转化后验",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 8,
+    "question": "分群异质性",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 3,
+    "name": "causal",
+    "title": "实验与因果",
+    "template": 9,
+    "question": "多重比较BH校正",
+    "cases": 1000,
+    "example_sql": "SELECT s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre,\nAVG(CASE WHEN o.day<32 THEN o.y ELSE NULL END) pre_mean,AVG(CASE WHEN o.day>=32 THEN o.y ELSE NULL END) post_mean,\nCOUNT(CASE WHEN o.day<32 THEN 1 ELSE NULL END) n_pre,COUNT(CASE WHEN o.day>=32 THEN 1 ELSE NULL END) n_post,\nSUM(CASE WHEN o.day>=32 THEN o.converted ELSE 0 END) successes\nFROM subjects s JOIN outcomes o ON o.sid=s.sid AND o.ready_day<=38 AND o.day BETWEEN 8 AND 38 WHERE s.uid BETWEEN 1 AND 3 AND s.sid<=384 GROUP BY s.sid,s.uid,s.segment,s.arm,s.propensity,s.age,s.pre ORDER BY s.sid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 0,
+    "question": "最后触点",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-11520 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 16 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 1,
+    "question": "首次触点",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-15840 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 13 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 2,
+    "question": "线性归因",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-20160 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 10 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 3,
+    "question": "时间衰减归因",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-24480 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 7 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 4,
+    "question": "位置归因",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-28800 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 4 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 5,
+    "question": "精确Shapley归因",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-33120 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 1 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 6,
+    "question": "Markov移除效应",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-14400 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 14 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 7,
+    "question": "转化时长及漏斗",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-18720 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 11 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 8,
+    "question": "渠道去重信用",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-23040 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 8 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 4,
+    "name": "attribution",
+    "title": "归因与旅程",
+    "template": 9,
+    "question": "预算约束收益分配",
+    "cases": 1000,
+    "example_sql": "WITH eligible_touches AS (SELECT t.* FROM touches t JOIN identities z ON z.device=t.device AND z.person=t.person AND z.recorded_day<=24 WHERE t.received_day<=24),\neligible AS (SELECT c.cid,c.person,c.day,c.minute conversion_min,c.revenue,c.converted,t.tid,t.channel,t.minute touch_min,t.score\nFROM conversions c LEFT JOIN eligible_touches t ON t.person=c.person AND t.minute BETWEEN c.minute-27360 AND c.minute AND t.received_day<=24\nWHERE c.person BETWEEN 1 AND 3 AND c.day BETWEEN 5 AND 24)\nSELECT e.*,k.spend,k.quality FROM eligible e LEFT JOIN campaigns k ON k.channel=e.channel ORDER BY cid,touch_min,tid"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 0,
+    "question": "季节朴素预测",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 16 AND 25 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 1,
+    "question": "趋势季节Ridge",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 13 AND 26 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 2,
+    "question": "自回归Ridge",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 10 AND 27 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 3,
+    "question": "多项式趋势预测",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 7 AND 28 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 4,
+    "question": "滚动原点回测",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 4 AND 29 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 5,
+    "question": "层级协调",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 1 AND 25 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 6,
+    "question": "残差分位区间",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 14 AND 26 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 7,
+    "question": "已知日历协变量",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 11 AND 27 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 8,
+    "question": "冷启动回退",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 8 AND 28 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 5,
+    "name": "hierarchical_forecast",
+    "title": "层级预测回测",
+    "template": 9,
+    "question": "近期加权漂移适应",
+    "cases": 1000,
+    "example_sql": "SELECT d.uid,d.day,u.region,c.weekday,c.holiday,d.signal,d.demand,d.price,d.weather,CASE WHEN d.day<=24 THEN 1 ELSE 0 END train_flag\nFROM daily d JOIN units u ON u.uid=d.uid JOIN calendar c ON c.day=d.day WHERE d.uid BETWEEN 1 AND 3 AND d.day BETWEEN 5 AND 29 ORDER BY d.uid,d.day"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 0,
+    "question": "时序可达路径",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 16 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 1,
+    "question": "循环资金路径",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 13 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 2,
+    "question": "扇入扇出团伙",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 10 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 3,
+    "question": "样本路径中心性",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 7 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 4,
+    "question": "动态加权PageRank",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 4 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 5,
+    "question": "原生递归时序路径",
+    "cases": 1000,
+    "example_sql": "WITH RECURSIVE edges AS (SELECT * FROM flows WHERE day BETWEEN 1 AND 24 AND received_day<=24),\npaths AS (SELECT src uid,dst node,minute last_min,CAST(amount AS DOUBLE) amount,CAST(1 AS BIGINT) hops,CAST(src*33+dst AS BIGINT) code FROM edges WHERE src=1\nUNION ALL SELECT p.uid,e.dst,e.minute,p.amount+e.amount,p.hops+1,p.code*33+e.dst FROM paths p JOIN edges e ON e.src=p.node AND e.minute>p.last_min AND e.minute-p.last_min<=280 WHERE p.hops<2)\nSELECT uid,node,last_min,amount,hops,code FROM paths ORDER BY last_min,code,hops,amount"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 6,
+    "question": "最短风险路径",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 14 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 7,
+    "question": "动态连通分量",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 11 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 8,
+    "question": "资金集中度",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 8 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 6,
+    "name": "temporal_graph",
+    "title": "时序图与反欺诈",
+    "template": 9,
+    "question": "时点图差异",
+    "cases": 1000,
+    "example_sql": "SELECT f.fid,f.src,f.dst,f.day,f.minute,f.amount,u.region,u.sector FROM flows f JOIN units u ON f.src=u.uid WHERE f.day BETWEEN 5 AND 24 AND f.received_day<=24 AND (f.src BETWEEN 1 AND 3 OR f.dst BETWEEN 1 AND 3) ORDER BY f.minute,f.fid"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 0,
+    "question": "Gaussian VaR-CVaR",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 16 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 1,
+    "question": "多资产Monte Carlo",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 13 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 2,
+    "question": "情景压力损失",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 10 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 3,
+    "question": "相关冲击",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 7 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 4,
+    "question": "重要性及暴露集中度",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 4 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 5,
+    "question": "CVaR约束分配",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 1 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 6,
+    "question": "Delta-Gamma模拟",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 14 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 7,
+    "question": "方差降低与反向样本",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 11 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 8,
+    "question": "分群资本分配",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 8 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 7,
+    "name": "risk_simulation",
+    "title": "风险与模拟",
+    "template": 9,
+    "question": "模拟尾部置信区间",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT d.uid,d.day,d.price,d.signal,d.weather,u.region,LAG(d.price) OVER(PARTITION BY d.uid ORDER BY d.day) prev_price FROM daily d JOIN units u ON d.uid=u.uid WHERE d.uid BETWEEN 1 AND 4 AND d.day BETWEEN 5 AND 24)\nSELECT uid,day,price,signal,weather,region,CASE WHEN prev_price IS NULL THEN NULL ELSE LN(price/prev_price) END x_return FROM a ORDER BY uid,day"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 0,
+    "question": "围栏严格包含",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 16 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 1,
+    "question": "围栏边界覆盖",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 13 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 2,
+    "question": "轨迹相交",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 10 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 3,
+    "question": "区域停留",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 7 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 4,
+    "question": "速度异常",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 4 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 5,
+    "question": "时空邻近",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 1 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 6,
+    "question": "道路路径",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 14 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 7,
+    "question": "网格热力",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 1 AND 3 AND g.day BETWEEN 11 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 8,
+    "question": "日界线最短距离",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 31 AND 32 AND g.day BETWEEN 8 AND 24 AND g.received_day<=24 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 8,
+    "name": "spatial",
+    "title": "空间轨迹",
+    "template": 9,
+    "question": "DST重复民用时间",
+    "cases": 1000,
+    "example_sql": "WITH a AS (SELECT g.*,u.region,LAG(g.lat) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lat,LAG(g.lon) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_lon,LAG(g.minute) OVER(PARTITION BY g.uid ORDER BY g.minute,g.pid) prev_min FROM gps g JOIN units u ON g.uid=u.uid WHERE g.uid BETWEEN 2 AND 3 AND g.day BETWEEN 12 AND 22 AND g.received_day<=22 AND g.valid=1)\nSELECT pid,uid,day,minute,lat,lon,offset_min,local_min,fold,region,prev_lat,prev_lon,prev_min FROM a ORDER BY uid,minute,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 0,
+    "question": "AUC含并列",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 16 AND 24 AND model=0 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 1,
+    "question": "校准及ECE",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 13 AND 24 AND model=1 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 2,
+    "question": "Brier与LogLoss",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 10 AND 24 AND model=0 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 3,
+    "question": "分群TPR-FPR",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 7 AND 24 AND model=1 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 4,
+    "question": "PSI分布漂移",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 4 AND 24 AND model=0 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 5,
+    "question": "KS分布漂移",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 1 AND 24 AND model=1 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 6,
+    "question": "特征相关漂移",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 14 AND 24 AND model=0 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 7,
+    "question": "迟到标签回填",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 11 AND 24 AND model=1 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 8,
+    "question": "阈值敏感性",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 8 AND 24 AND model=0 ORDER BY day,pid"
+  },
+  {
+    "domain": 9,
+    "name": "model_monitoring",
+    "title": "模型监控漂移",
+    "template": 9,
+    "question": "分群显著性BH",
+    "cases": 1000,
+    "example_sql": "SELECT pid,uid,day,model,segment,prob,CASE WHEN ready_day<=24 THEN label ELSE NULL END AS label,ready_day,feature,\nCASE WHEN ready_day<=27 THEN label ELSE NULL END backfill_label FROM predictions WHERE uid BETWEEN 1 AND 3 AND day BETWEEN 5 AND 24 AND model=1 ORDER BY day,pid"
+  }
+]

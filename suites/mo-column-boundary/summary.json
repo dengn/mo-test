@@ -1,0 +1,412 @@
+{
+  "base_cases": [
+    {
+      "columns": 1000,
+      "table": "wide_1000",
+      "steps": [
+        {
+          "stage": "1000_create",
+          "status": "success",
+          "seconds": 0.08675258903531358,
+          "error": null
+        },
+        {
+          "stage": "1000_metadata_count",
+          "status": "success",
+          "seconds": 0.05969825101783499,
+          "error": null
+        },
+        {
+          "stage": "1000_insert_all",
+          "status": "success",
+          "seconds": 0.07797261700034142,
+          "error": null
+        },
+        {
+          "stage": "1000_select_edges",
+          "status": "success",
+          "seconds": 0.004553251026663929,
+          "error": null
+        },
+        {
+          "stage": "1000_select_star",
+          "status": "success",
+          "seconds": 0.032833317993208766,
+          "error": null
+        },
+        {
+          "stage": "1000_update_tail",
+          "status": "success",
+          "seconds": 0.0818992150016129,
+          "error": null
+        },
+        {
+          "stage": "1000_verify_update",
+          "status": "success",
+          "seconds": 0.009918867028318346,
+          "error": null
+        },
+        {
+          "stage": "1000_restore_tail",
+          "status": "success",
+          "seconds": 0.09250451700063422,
+          "error": null
+        }
+      ],
+      "health": {
+        "select_1": [
+          [
+            1
+          ]
+        ],
+        "table_exists": [
+          [
+            1
+          ]
+        ],
+        "status": "healthy"
+      }
+    },
+    {
+      "columns": 10000,
+      "table": "wide_10000",
+      "steps": [
+        {
+          "stage": "10000_create",
+          "status": "success",
+          "seconds": 1.5195319299818948,
+          "error": null
+        },
+        {
+          "stage": "10000_metadata_count",
+          "status": "success",
+          "seconds": 0.2485562670044601,
+          "error": null
+        },
+        {
+          "stage": "10000_insert_all",
+          "status": "success",
+          "seconds": 0.5134733060258441,
+          "error": null
+        },
+        {
+          "stage": "10000_select_edges",
+          "status": "success",
+          "seconds": 0.015893719042651355,
+          "error": null
+        },
+        {
+          "stage": "10000_select_star",
+          "status": "success",
+          "seconds": 1.3301732229883783,
+          "error": null
+        },
+        {
+          "stage": "10000_update_tail",
+          "status": "success",
+          "seconds": 1.1323096010019071,
+          "error": null
+        },
+        {
+          "stage": "10000_verify_update",
+          "status": "success",
+          "seconds": 0.05309083097381517,
+          "error": null
+        },
+        {
+          "stage": "10000_restore_tail",
+          "status": "success",
+          "seconds": 0.8578533660038374,
+          "error": null
+        }
+      ],
+      "health": {
+        "select_1": [
+          [
+            1
+          ]
+        ],
+        "table_exists": [
+          [
+            1
+          ]
+        ],
+        "status": "healthy"
+      }
+    },
+    {
+      "columns": 100000,
+      "table": "wide_100000",
+      "steps": [
+        {
+          "stage": "100000_create",
+          "status": "error",
+          "seconds": 32.59936147596454,
+          "error": {
+            "type": "OperationalError",
+            "code": 2013,
+            "message": "(2013, 'Lost connection to MySQL server during query')"
+          }
+        }
+      ],
+      "health": {
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 2003,
+          "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")"
+        }
+      }
+    },
+    {
+      "columns": 1000000,
+      "table": "wide_1000000",
+      "steps": [
+        {
+          "stage": "1000000_create",
+          "status": "error",
+          "seconds": 930.2990705390112,
+          "error": {
+            "type": "OperationalError",
+            "code": 2013,
+            "message": "(2013, 'Lost connection to MySQL server during query (timed out)')"
+          }
+        }
+      ],
+      "health": {
+        "select_1": [
+          [
+            1
+          ]
+        ],
+        "table_exists": [
+          [
+            0
+          ]
+        ],
+        "status": "healthy"
+      }
+    },
+    {
+      "columns": 65532,
+      "table": "wide_65532",
+      "steps": [
+        {
+          "stage": "65532_create",
+          "status": "success",
+          "seconds": 22.597814262029715,
+          "error": null
+        },
+        {
+          "stage": "65532_metadata_count",
+          "status": "success",
+          "seconds": 0.5086845529731363,
+          "error": null
+        },
+        {
+          "stage": "65532_insert_all",
+          "status": "success",
+          "seconds": 4.899023502017371,
+          "error": null
+        },
+        {
+          "stage": "65532_select_edges",
+          "status": "error",
+          "seconds": 0.137569184997119,
+          "error": {
+            "type": "AssertionError",
+            "code": [
+              [
+                [
+                  1,
+                  32766,
+                  null
+                ]
+              ],
+              [
+                [
+                  1,
+                  32766,
+                  65532
+                ]
+              ]
+            ],
+            "message": "(((1, 32766, None),), ((1, 32766, 65532),))"
+          }
+        },
+        {
+          "stage": "65532_select_star",
+          "status": "error",
+          "seconds": 56.74531566799851,
+          "error": {
+            "type": "AssertionError",
+            "code": "wide row mismatch",
+            "message": "wide row mismatch"
+          }
+        },
+        {
+          "stage": "65532_update_tail",
+          "status": "success",
+          "seconds": 3.7370206160121597,
+          "error": null
+        },
+        {
+          "stage": "65532_verify_update",
+          "status": "error",
+          "seconds": 0.12452134897466749,
+          "error": {
+            "type": "AssertionError",
+            "code": [
+              [
+                [
+                  null
+                ]
+              ],
+              [
+                [
+                  -65532
+                ]
+              ]
+            ],
+            "message": "(((None,),), ((-65532,),))"
+          }
+        },
+        {
+          "stage": "65532_restore_tail",
+          "status": "success",
+          "seconds": 3.554914901033044,
+          "error": null
+        }
+      ],
+      "health": {
+        "select_1": [
+          [
+            1
+          ]
+        ],
+        "table_exists": [
+          [
+            1
+          ]
+        ],
+        "status": "healthy"
+      }
+    },
+    {
+      "columns": 65533,
+      "table": "wide_65533",
+      "steps": [
+        {
+          "stage": "65533_create",
+          "status": "error",
+          "seconds": 19.78648351196898,
+          "error": {
+            "type": "OperationalError",
+            "code": 2013,
+            "message": "(2013, 'Lost connection to MySQL server during query')"
+          }
+        }
+      ],
+      "health": {
+        "status": "error",
+        "error": {
+          "type": "OperationalError",
+          "code": 2003,
+          "message": "(2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")"
+        }
+      }
+    },
+    {
+      "columns": 65530,
+      "table": "wide_65530",
+      "steps": [
+        {
+          "stage": "65530_create",
+          "status": "success",
+          "seconds": 19.30917572497856,
+          "error": null
+        },
+        {
+          "stage": "65530_metadata_count",
+          "status": "success",
+          "seconds": 0.3725137760047801,
+          "error": null
+        },
+        {
+          "stage": "65530_insert_all",
+          "status": "success",
+          "seconds": 5.998727435013279,
+          "error": null
+        },
+        {
+          "stage": "65530_select_edges",
+          "status": "success",
+          "seconds": 0.11178058199584484,
+          "error": null
+        },
+        {
+          "stage": "65530_select_star",
+          "status": "success",
+          "seconds": 50.0710088769556,
+          "error": null
+        },
+        {
+          "stage": "65530_update_tail",
+          "status": "success",
+          "seconds": 2.864725510997232,
+          "error": null
+        },
+        {
+          "stage": "65530_verify_update",
+          "status": "success",
+          "seconds": 0.13695688999723643,
+          "error": null
+        },
+        {
+          "stage": "65530_restore_tail",
+          "status": "success",
+          "seconds": 3.6246154559776187,
+          "error": null
+        }
+      ],
+      "health": {
+        "select_1": [
+          [
+            1
+          ]
+        ],
+        "table_exists": [
+          [
+            1
+          ]
+        ],
+        "status": "healthy"
+      }
+    }
+  ],
+  "largest_verified_full_row_columns": 65530,
+  "smallest_tested_primary_key_fatal_columns": 65533,
+  "first_tested_bad_tail_columns": 65531,
+  "million_probe": {
+    "million_probe": "cancelled_by_user",
+    "client_runner_present": false,
+    "matching_connection_count": 0,
+    "health": [
+      [
+        1
+      ]
+    ]
+  },
+  "issue": "https://github.com/matrixorigin/matrixone/issues/30011",
+  "final_health": {
+    "pid": 411382,
+    "health": [
+      [
+        1
+      ]
+    ],
+    "1000_all_values_match": true,
+    "10000_all_values_match": true,
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "app": "binwiederhier/ntfy",
+  "version": "v2.29.0",
+  "commit": "f18d1137c63a26e85b91ce639e7bc72bb9a82736",
+  "binary_sha256": "9158288f609906d7bca174a71ad2ccf5603425bb10459d22a890e81568cccca1",
+  "schema": "mo_reg_ntfy_63981efc4acb48d5",
+  "checks": [
+    {
+      "name": "pinned_adapted_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_CLI_create_owner",
+      "passed": true
+    },
+    {
+      "name": "native_CLI_ACL_owner",
+      "passed": true
+    },
+    {
+      "name": "native_CLI_create_other",
+      "passed": true
+    },
+    {
+      "name": "native_CLI_ACL_other",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "native_password_token_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_password_token_login_other",
+      "passed": true
+    },
+    {
+      "name": "native_schema_message15_user9",
+      "passed": true
+    },
+    {
+      "name": "native_normal_user_password_rows",
+      "passed": true
+    },
+    {
+      "name": "native_two_user_ACL_links",
+      "passed": true
+    },
+    {
+      "name": "cross_user_publish_denied",
+      "passed": true
+    },
+    {
+      "name": "cross_user_cache_read_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_publish_denied",
+      "passed": true
+    },
+    {
+      "name": "case_sensitive_topic_ACL",
+      "passed": true
+    },
+    {
+      "name": "denied_publishes_no_rows",
+      "passed": true
+    },
+    {
+      "name": "native_WebSocket_open",
+      "passed": true
+    },
+    {
+      "name": "native_WebSocket_exact_notification",
+      "passed": false
+    }
+  ],
+  "passed": false,
+  "native_runtime_attempted": true,
+  "native_CLI_users_and_ACL": true,
+  "source_adapted": true,
+  "manual_users_or_migration_stamps": false,
+  "existing_databases_modified": false,
+  "native_default_rate_limits_retained": true,
+  "limitations": [
+    "explicit MatrixOne backend with fresh schema only",
+    "populated upgrades, clustering and MatrixOne webpush unsupported",
+    "upstream nofirebase/nopayments build; placeholder web UI not verified",
+    "indexed text VARCHAR4096; broader collation equivalence unverified"
+  ],
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "AssertionError",
+  "failed_stage": "native_live_delivery",
+  "failed_check": "native_WebSocket_exact_notification",
+  "finished_at_utc": "2026-10-12T23:11:42Z"
+}

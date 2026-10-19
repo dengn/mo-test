@@ -1,0 +1,143 @@
+{
+  "type": "umap",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      116.31,
+      39.81
+    ]
+  },
+  "properties": {
+    "name": "GIS 开源应用测试",
+    "zoom": 12,
+    "miniMap": false,
+    "tilelayer": {
+      "maxZoom": 22,
+      "minZoom": 0,
+      "attribution": "Local synthetic grid",
+      "url_template": "http://127.0.0.1:18880/static/local-tile.png"
+    },
+    "description": "Edited through real uMap HTTP",
+    "moreControl": true,
+    "displayDataBrowserOnLoad": true
+  },
+  "uri": "http://127.0.0.1:18881/en/map/gis_5",
+  "layers": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              116.3,
+              39.8
+            ]
+          },
+          "properties": {
+            "name": "point"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                116.3,
+                39.8
+              ],
+              [
+                116.315,
+                39.81
+              ],
+              [
+                116.33,
+                39.8
+              ]
+            ]
+          },
+          "properties": {
+            "name": "line"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  116.299,
+                  39.799
+                ],
+                [
+                  116.315,
+                  39.799
+                ],
+                [
+                  116.315,
+                  39.815
+                ],
+                [
+                  116.299,
+                  39.815
+                ],
+                [
+                  116.299,
+                  39.799
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "name": "polygon"
+          }
+        }
+      ],
+      "_umap_options": {
+        "name": "本地采集",
+        "displayOnLoad": true,
+        "color": "DarkOrange",
+        "remoteData": {}
+      },
+      "properties": {
+        "name": "本地采集",
+        "color": "DarkOrange",
+        "remoteData": {},
+        "displayOnLoad": true
+      }
+    },
+    {
+      "type": "FeatureCollection",
+      "features": [],
+      "_umap_options": {
+        "name": "MO 实时点位",
+        "displayOnLoad": true,
+        "color": "RoyalBlue",
+        "iconClass": "Circle",
+        "remoteData": {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "format": "geojson",
+          "dynamic": false,
+          "proxy": false,
+          "ttl": 0
+        }
+      },
+      "properties": {
+        "name": "MO 实时点位",
+        "color": "RoyalBlue",
+        "iconClass": "Circle",
+        "remoteData": {
+          "ttl": 0,
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "proxy": false,
+          "format": "geojson",
+          "dynamic": false
+        },
+        "displayOnLoad": true
+      }
+    }
+  ]
+}

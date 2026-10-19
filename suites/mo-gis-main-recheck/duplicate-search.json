@@ -1,0 +1,68 @@
+[
+  {
+    "query": "repo:matrixorigin/matrixone is:issue intersection polygon empty",
+    "total_count": 1,
+    "issues": [
+      {
+        "number": 28193,
+        "title": "[Bug]: multiple binary spatial functions compute across mismatched SRIDs",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28193"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue isvalid repeated",
+    "total_count": 2,
+    "issues": [
+      {
+        "number": 28183,
+        "title": "[Bug]: ST_SymDifference creates an invalid polygon and wrong area for collinear partial overlap",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28183"
+      },
+      {
+        "number": 27644,
+        "title": "[Bug]: Connector/J ConnectionPoolDataSource cannot borrow connections because reset commands are unsupported",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27644"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue polygon ring closed",
+    "total_count": 1,
+    "issues": [
+      {
+        "number": 28183,
+        "title": "[Bug]: ST_SymDifference creates an invalid polygon and wrong area for collinear partial overlap",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28183"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue geometry invalid WKB",
+    "total_count": 3,
+    "issues": [
+      {
+        "number": 28795,
+        "title": "[Compatibility]: ST_SRID lacks MySQL two-argument SRID setter form",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28795"
+      },
+      {
+        "number": 28186,
+        "title": "[Bug]: GEOMETRY32 silently stores infinity when finite coordinates overflow float32",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28186"
+      },
+      {
+        "number": 28647,
+        "title": "[Task] Maintain Top-ROI assigned bug groups",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28647"
+      }
+    ]
+  }
+]

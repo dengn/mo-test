@@ -1,0 +1,118 @@
+{
+  "app": "kanboard/kanboard",
+  "version": "v1.2.54",
+  "commit": "9ce6a5edc5b646ef15780cb445bc6d2c39d9898f",
+  "schema": "mo_reg_kanboard_e458d89e10e44cc9",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    },
+    {
+      "name": "fresh_official_release_without_old_config",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_139_migrations",
+      "passed": true
+    },
+    {
+      "name": "native_default_admin_hash",
+      "passed": true
+    },
+    {
+      "name": "native_bootstrap_admin_created",
+      "passed": true
+    },
+    {
+      "name": "native_initial_default_admin_removed",
+      "passed": true
+    },
+    {
+      "name": "native_two_ordinary_users",
+      "passed": true
+    },
+    {
+      "name": "native_owner_password_RPC",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_RPC_denied",
+      "passed": true
+    },
+    {
+      "name": "native_login_CSRF_retained",
+      "passed": true
+    },
+    {
+      "name": "native_UI_cookie_password_login",
+      "passed": true
+    },
+    {
+      "name": "native_private_project_owner",
+      "passed": true
+    },
+    {
+      "name": "other_user_project_denied",
+      "passed": true
+    },
+    {
+      "name": "native_eight_concurrent_tasks_exact",
+      "passed": true
+    },
+    {
+      "name": "native_task_update",
+      "passed": true
+    },
+    {
+      "name": "native_comment_and_relation_exact",
+      "passed": true
+    },
+    {
+      "name": "other_user_task_read_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_task_update_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_task_RPC_denied",
+      "passed": true
+    },
+    {
+      "name": "native_task_form_CSRF_retained",
+      "passed": true
+    },
+    {
+      "name": "invalid_CSRF_native_rejection_zero_write",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "official_archive_sha256": "6548946b406bc8640dfe20a884dd9cdf708d8d6c25eeacdabd374a36d5e98237",
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "reserved identifiers outside SQL literals/comments",
+    "resolve native renamed FK/index",
+    "real DDL commits at MySQL migration boundaries",
+    "PHP8.5 PDO constant"
+  ],
+  "limitations": [
+    "populated upgrades/attachments/automation/plugins/LDAP/full project roles unverified"
+  ],
+  "verified_release_files": 2101,
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "AssertionError",
+  "failed_stage": "native_tasks",
+  "failed_check": "invalid_CSRF_native_rejection_zero_write",
+  "finished_at_utc": "2026-10-13T01:00:41Z"
+}

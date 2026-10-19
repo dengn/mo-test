@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/mo-gis-main-recheck/recheck.py", line 151, in <module>
+    main()
+  File "/workspace/mo-gis-main-recheck/recheck.py", line 127, in main
+    assert 'index' in str(plan).lower(),plan
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (('Project',), ('  ->  Sort',), ('        Sort Key: app_places.id INTERNAL',), ('        ->  Table Scan on gis_main_verification.app_places',), ("              Filter Cond: st_contains('POLYGON((116.396 39.907,116.399 39.907,116.399 39.91,116.396 39.91,116.396 39.907))', app_places.g)",))

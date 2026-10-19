@@ -1,0 +1,11 @@
+.venvs/
+.cache/
+node_modules/
+results/
+runtime/
+__pycache__/
+*.pyc
+.env
+
+vendor/**/build/
+vendor/**/*.egg-info/

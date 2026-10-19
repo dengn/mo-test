@@ -51,3 +51,8 @@ python report.py
 
 
 复测 NULL 的实际值与 NULL 位：设置当前 MO_SERVER_PID，并运行 `python null_default_value_recheck.py`；24 个查询分别断言 panic、typed NULL 错值及正确控制，结果另写 `results/null-default-value-recheck.json`。
+
+
+## 已发布的英文功能请求
+
+已发布 19 个独立功能请求与 [#29950 汇总追踪](https://github.com/matrixorigin/matrixone/issues/29950)，并给已有 #10182 补充回归案例。完整索引、297 次最终只读验证及重跑脚本见 [feature-issues/README.md](feature-issues/README.md)。这些补充验证不新增主 case 总数。

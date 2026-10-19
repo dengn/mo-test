@@ -1,0 +1,76 @@
+START alter_4095_pk_create 53274
+END alter_4095_pk_create success 0.332 
+START alter_4095_pk_extra_a 48
+END alter_4095_pk_extra_a error 0.01 {'type': 'OperationalError', 'code': 1117, 'message': "(1117, 'Too many columns')"}
+START alter_4095_pk_extra_a_metadata 124
+END alter_4095_pk_extra_a_metadata success 0.083 
+START alter_4095_pk_extra_b 48
+END alter_4095_pk_extra_b error 0.004 {'type': 'OperationalError', 'code': 1117, 'message': "(1117, 'Too many columns')"}
+START alter_4095_pk_extra_b_metadata 124
+END alter_4095_pk_extra_b_metadata success 0.094 
+START alter_4096_pk_create 53287
+END alter_4096_pk_create success 0.411 
+START alter_4096_pk_extra_a 48
+END alter_4096_pk_extra_a success 1.532 
+START alter_4096_pk_extra_a_metadata 124
+END alter_4096_pk_extra_a_metadata success 0.108 
+START alter_4096_pk_extra_b 48
+END alter_4096_pk_extra_b success 1.331 
+START alter_4096_pk_extra_b_metadata 124
+END alter_4096_pk_extra_b_metadata success 0.1 
+START alter_4097_pk_create 53300
+END alter_4097_pk_create success 0.22 
+START alter_4097_pk_extra_a 48
+END alter_4097_pk_extra_a success 1.912 
+START alter_4097_pk_extra_a_metadata 124
+END alter_4097_pk_extra_a_metadata success 0.066 
+START alter_4097_pk_extra_b 48
+END alter_4097_pk_extra_b success 1.293 
+START alter_4097_pk_extra_b_metadata 124
+END alter_4097_pk_extra_b_metadata success 0.105 
+START alter_4094_nopk_create 53251
+END alter_4094_nopk_create success 0.436 
+START alter_4094_nopk_extra_a 50
+END alter_4094_nopk_extra_a error 0.013 {'type': 'OperationalError', 'code': 1117, 'message': "(1117, 'Too many columns')"}
+START alter_4094_nopk_extra_a_metadata 126
+END alter_4094_nopk_extra_a_metadata success 0.082 
+START alter_4094_nopk_extra_b 50
+END alter_4094_nopk_extra_b error 0.015 {'type': 'OperationalError', 'code': 1117, 'message': "(1117, 'Too many columns')"}
+START alter_4094_nopk_extra_b_metadata 126
+END alter_4094_nopk_extra_b_metadata success 0.068 
+START alter_4095_nopk_create 53264
+END alter_4095_nopk_create success 0.238 
+START alter_4095_nopk_extra_a 50
+END alter_4095_nopk_extra_a success 1.821 
+START alter_4095_nopk_extra_a_metadata 126
+END alter_4095_nopk_extra_a_metadata success 0.107 
+START alter_4095_nopk_extra_b 50
+END alter_4095_nopk_extra_b success 1.533 
+START alter_4095_nopk_extra_b_metadata 126
+END alter_4095_nopk_extra_b_metadata success 0.108 
+START alter_4096_nopk_create 53277
+END alter_4096_nopk_create success 0.348 
+START alter_4096_nopk_extra_a 50
+END alter_4096_nopk_extra_a success 1.598 
+START alter_4096_nopk_extra_a_metadata 126
+END alter_4096_nopk_extra_a_metadata success 0.084 
+START alter_4096_nopk_extra_b 50
+END alter_4096_nopk_extra_b success 1.685 
+START alter_4096_nopk_extra_b_metadata 126
+END alter_4096_nopk_extra_b_metadata success 0.242 
+START alter_4097_nopk_create 53290
+END alter_4097_nopk_create success 0.627 
+START alter_4097_nopk_extra_a 50
+END alter_4097_nopk_extra_a success 1.06 
+START alter_4097_nopk_extra_a_metadata 126
+END alter_4097_nopk_extra_a_metadata success 0.066 
+START alter_4097_nopk_extra_b 50
+END alter_4097_nopk_extra_b success 0.957 
+START alter_4097_nopk_extra_b_metadata 126
+END alter_4097_nopk_extra_b_metadata success 0.072 
+START alter_multi_pk_create 53275
+END alter_multi_pk_create success 0.197 
+START alter_multi_pk_add_two 73
+END alter_multi_pk_add_two error 0.008 {'type': 'OperationalError', 'code': 1117, 'message': "(1117, 'Too many columns')"}
+START alter_multi_pk_metadata 125
+END alter_multi_pk_metadata success 0.069 

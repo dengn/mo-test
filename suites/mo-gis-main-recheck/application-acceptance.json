@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "geodetic_distance_m": 140.14093600382313,
+  "geofence_ids": [
+    1,
+    2
+  ],
+  "radius_200m_ids": [
+    [
+      1
+    ],
+    [
+      2
+    ]
+  ],
+  "geodetic_explain": [
+    [
+      "Project"
+    ],
+    [
+      "  ->  Sort"
+    ],
+    [
+      "        Sort Key: app_places.id INTERNAL"
+    ],
+    [
+      "        ->  Table Scan on gis_main_verification.app_places"
+    ],
+    [
+      "              Filter Cond: st_contains('POLYGON((116.396 39.907,116.399 39.907,116.399 39.91,116.396 39.91,116.396 39.907))', app_places.g)"
+    ]
+  ],
+  "geodetic_index_pushdown": "disabled_by_current_planner_correctness_guard",
+  "planar_spatial_index_explain": [
+    [
+      "Project"
+    ],
+    [
+      "  ->  Sort"
+    ],
+    [
+      "        Sort Key: __mo_index_pri_col INTERNAL"
+    ],
+    [
+      "        ->  Index Table Scan on app_planar.planar_geo"
+    ],
+    [
+      "              Filter Cond: st_contains('POLYGON((-1 -1,2 -1,2 2,-1 2,-1 -1))', __mo_index_idx_col)"
+    ]
+  ],
+  "explicit_srid": 4326,
+  "rollback": "pass",
+  "geojson_points": 3
+}

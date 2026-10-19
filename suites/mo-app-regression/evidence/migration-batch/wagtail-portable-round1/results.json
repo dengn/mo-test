@@ -1,0 +1,65 @@
+{
+  "app": "wagtail/wagtail",
+  "version": "8.0",
+  "schema": "mo_reg_wagtail_4e000cafae9548dd",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_wheel_SDK_and_dependencies",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "fresh_schema_empty",
+      "passed": true
+    },
+    {
+      "name": "native_all_migrations",
+      "passed": true
+    },
+    {
+      "name": "native_migration_plan",
+      "passed": true
+    },
+    {
+      "name": "all_native_migration_records_and_plan",
+      "passed": false
+    }
+  ],
+  "native_runtime_attempted": true,
+  "min_free_mib": 2048,
+  "existing_databases_modified": false,
+  "manual_SQL_users_or_migration_stamps": false,
+  "observer_provisioning": "Django create_user and native permission ORM in fixture command",
+  "limitations": [
+    "prepared dependencies only; full cold installation unverified",
+    "minimal HomePage fixture; browser/static UI, StreamField, uploads, workflows, search and load unverified",
+    "no SAVEPOINT; upgrade/downgrade and transaction nesting unverified",
+    "specific legacy permission CHECK replaced with stricter NOT NULL after verified backfill; general CHECK unverified",
+    "0086 correlated UPDATE uses native ORM row updates; original panic is not retested or claimed fixed"
+  ],
+  "SDK_identity": {
+    "version": "8.0",
+    "source_commit": "24e624cc63b5d17a1ff1c1cd0d0e0817524cbd8d",
+    "dependency_packages_verified": 41,
+    "dependency_files_verified": 10230,
+    "official_wheel_sha256": "34dde727917ace7e4ab182054f78f01c2cc24d85ccc402932d3d5c6315a7cd00",
+    "official_wheel_files_audited": 4250,
+    "modified_wheel_files": [
+      "wagtail/migrations/0086_populate_grouppagepermission_permission.py"
+    ],
+    "sdk_manifest_sha256": "ea264eed0f3b00d675178a924b4a5fd748d5e6eff53acc8ba71f53934da3cc10",
+    "cold_install_verified": false
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_migrations": 207,
+  "native_tables": 52,
+  "error_type": "AssertionError",
+  "failed_stage": "native_migrations",
+  "failed_check": "all_native_migration_records_and_plan",
+  "finished_at_utc": "2026-10-13T05:39:52Z"
+}

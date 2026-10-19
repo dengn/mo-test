@@ -1,0 +1,28 @@
+{
+  "mode": "pilot",
+  "indices": [
+    0
+  ],
+  "domains": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "workers": 4,
+  "code_sha256": {
+    "analytics.py": "87b2c99205dacb13e1df4025bedbe62891905aea2f77d9cb730787e0c09ae1ab",
+    "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+    "scenarios.py": "b9b94ccc0aeebb1eb2c779e9c95985870a2b903052523e8d33c4ce9f508154ef",
+    "run.py": "12092b3ee083a7a6b79414bb4728511f01ccb816d40aeee06440e0ba23835a49",
+    "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+    "data.py": "c47e51a3bf3798dba21a43d627e1378ef653b49e1605a295b9e0801bab321124"
+  },
+  "start_utc": "2026-10-12T06:10:14Z"
+}

@@ -1,6 +1,6 @@
 {
-  "canonical_cases": 260000,
-  "canonical_passed": 255792,
+  "canonical_cases": 360000,
+  "canonical_passed": 355792,
   "canonical_nonpass": 4208,
   "suites": [
     {
@@ -93,6 +93,27 @@
         "mo-timeseries-lab/cases.jsonl"
       ],
       "catalog": "catalog/mo-timeseries-lab.jsonl.gz"
+    },
+    {
+      "name": "mo-analysis-needs-lab",
+      "canonical_cases": 100000,
+      "canonical_statuses": {
+        "pass": 100000
+      },
+      "canonical_members": [
+        "mo-analysis-needs-lab/results/main-001/point_in_time.jsonl",
+        "mo-analysis-needs-lab/results/main-001/incremental.jsonl",
+        "mo-analysis-needs-lab/results/main-001/streaming.jsonl",
+        "mo-analysis-needs-lab/results/main-001/causal.jsonl",
+        "mo-analysis-needs-lab/results/main-001/attribution.jsonl",
+        "mo-analysis-needs-lab/results/main-001/hierarchical_forecast.jsonl",
+        "mo-analysis-needs-lab/results/main-001/temporal_graph.jsonl",
+        "mo-analysis-needs-lab/results/main-001/risk_simulation.jsonl",
+        "mo-analysis-needs-lab/results/main-001/spatial.jsonl",
+        "mo-analysis-needs-lab/results/main-001/model_monitoring.jsonl",
+        "mo-analysis-needs-lab/results/retest/cases.jsonl"
+      ],
+      "catalog": "catalog/mo-analysis-needs-lab.jsonl.gz"
     }
   ],
   "case_ids": "Each suite independently covers unique contiguous [0, expected-1]. Global identifier is (suite, case_id).",

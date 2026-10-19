@@ -1,0 +1,24 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting shapely
+  Downloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+Collecting pyproj
+  Downloading pyproj-3.8.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting psycopg[binary]
+  Downloading psycopg-3.3.6-py3-none-any.whl.metadata (4.4 kB)
+Requirement already satisfied: typing-extensions>=4.6 in ./toolchains/python/lib/python3.12/site-packages (from psycopg[binary]) (4.16.0)
+Collecting psycopg-binary==3.3.6 (from psycopg[binary])
+  Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+Requirement already satisfied: numpy>=1.26 in ./toolchains/python/lib/python3.12/site-packages (from shapely) (2.5.3)
+Requirement already satisfied: certifi in ./toolchains/python/lib/python3.12/site-packages (from pyproj) (2026.7.22)
+Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 29.4 MB/s eta 0:00:00
+Downloading shapely-2.2.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 33.4 MB/s eta 0:00:00
+Downloading pyproj-3.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (10.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 36.4 MB/s eta 0:00:00
+Downloading psycopg-3.3.6-py3-none-any.whl (215 kB)
+Installing collected packages: shapely, pyproj, psycopg-binary, psycopg
+Successfully installed psycopg-3.3.6 psycopg-binary-3.3.6 pyproj-3.8.0 shapely-2.2.0
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

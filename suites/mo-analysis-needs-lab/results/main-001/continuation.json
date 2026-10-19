@@ -1,0 +1,77 @@
+{
+  "start_utc": "2026-10-12T06:37:38Z",
+  "pid": 64524,
+  "completed_prefix_cases": 32435,
+  "process_workers": 3,
+  "code_sha256": {
+    "analytics.py": "87b2c99205dacb13e1df4025bedbe62891905aea2f77d9cb730787e0c09ae1ab",
+    "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+    "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+    "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+    "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+    "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+  },
+  "prefix": [
+    {
+      "member": "results/main-001/point_in_time.jsonl",
+      "bytes": 31782471,
+      "sha256": "240a3f80452181342bbd73af91c195e7df254288761187fb6db03c37e68a59ea",
+      "records": 10000
+    },
+    {
+      "member": "results/main-001/incremental.jsonl",
+      "bytes": 17625216,
+      "sha256": "b13ad8ca98e57e5105f193e2aa1436f6851b5d2db68d0b890e5cd9209b4c57af",
+      "records": 10000
+    },
+    {
+      "member": "results/main-001/streaming.jsonl",
+      "bytes": 18496551,
+      "sha256": "360e3be0fcb4bcb7ac0a2cf6f45034a07d19a8395792abd2a2552e6dc0518981",
+      "records": 10000
+    },
+    {
+      "member": "results/main-001/causal.jsonl",
+      "bytes": 4240777,
+      "sha256": "4484f640e4dc9368a43f5cede780f49be275e19bd40d8a4afe13505f267c5061",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/attribution.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/hierarchical_forecast.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/temporal_graph.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/risk_simulation.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/spatial.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    },
+    {
+      "member": "results/main-001/model_monitoring.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "records": 2435
+    }
+  ],
+  "scope": "Driver continuation using unchanged frozen run.execute. Initial evaluator was stopped to replace GIL-bound threads with three independent Python processes. Completed bytes are preserved, IDs resumed without duplicate counts; no MO restart or source mutation."
+}

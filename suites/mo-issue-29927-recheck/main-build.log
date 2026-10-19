@@ -1,0 +1,708 @@
+fatal: No names found, cannot describe anything.
+[Verify Go package graph]
+native provenance: cleaning thirdparty and CGo outputs before rebuilding cpu/release, simsimd=0
+make[1]: Entering directory '/workspace/matrixone-29927-main/cgo'
+rm -f *.o *.a *.so *.dylib
+make -C cuda clean
+make[2]: Entering directory '/workspace/matrixone-29927-main/cgo/cuda'
+>>> WARNING - libcuda.so not found, CUDA Driver is not installed.  Please re-install the driver. <<<
+rm -f *.o *.a mocl_kernel64.fatbin mytest
+make[2]: Leaving directory '/workspace/matrixone-29927-main/cgo/cuda'
+make -C cuvs clean
+make[2]: Entering directory '/workspace/matrixone-29927-main/cgo/cuvs'
+Cleaning up...
+rm -f libmocuvs.so *.o test_cuvs_worker benchmark_cuvs benchmark_filter test_kmeans test_dynb test_ivfpq_filter bench_hostview bench_wiki88 bench_upload_cost
+rm -rf obj
+make[2]: Leaving directory '/workspace/matrixone-29927-main/cgo/cuvs'
+make[1]: Leaving directory '/workspace/matrixone-29927-main/cgo'
+make[1]: Entering directory '/workspace/matrixone-29927-main/thirdparties'
+rm -rf install _usearch_build _stringzilla _simsimd _fp16 _croaring_build _jemalloc_build
+make[1]: Leaving directory '/workspace/matrixone-29927-main/thirdparties'
+make[1]: Entering directory '/workspace/matrixone-29927-main/thirdparties'
+mkdir -p install
+mkdir -p install/include install/lib
+rm -rf _fp16
+mkdir -p _fp16
+tar zxf fp16.tar.gz -C _fp16 --strip-components=1
+cp -r _fp16/include/* install/include
+rm -rf _simsimd
+mkdir -p _simsimd
+tar zxf SimSIMD-6.5.3.tar.gz -C _simsimd --strip-components=1
+cp -r _simsimd/include/* install/include
+rm -rf _stringzilla
+mkdir -p _stringzilla
+tar zxf StringZilla-4.2.1.tar.gz -C _stringzilla --strip-components=1
+cp -r _stringzilla/include/* install/include
+rm -rf _usearch_build
+mkdir -p _usearch_build
+tar zxf usearch-2.25.3.tar.gz -C _usearch_build --strip-components=1
+mkdir -p _usearch_build/fp16 _usearch_build/simsimd _usearch_build/stringzilla
+cp -r _fp16/* _usearch_build/fp16
+cp -r _simsimd/* _usearch_build/simsimd
+cp -r _stringzilla/* _usearch_build/stringzilla
+(cd _usearch_build && cmake -B build -DUSEARCH_BUILD_BENCH_CPP=OFF -DUSEARCH_BUILD_TEST_C=OFF -DUSEARCH_BUILD_TEST_CPP=OFF -DUSEARCH_BUILD_LIB_C=ON -DCMAKE_CXX_FLAGS=-I/workspace/matrixone-29927-main/thirdparties/install/include -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DUSEARCH_USE_OPENMP=1 && cmake --build build --config Release)
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test USEARCH_CAN_COMPILE_FP16
+-- Performing Test USEARCH_CAN_COMPILE_FP16 - Failed
+-- Performing Test USEARCH_CAN_COMPILE_FLOAT16
+-- Performing Test USEARCH_CAN_COMPILE_FLOAT16 - Success
+-- Performing Test USEARCH_CAN_COMPILE_BF16
+-- Performing Test USEARCH_CAN_COMPILE_BF16 - Success
+-- Performing Test USEARCH_CAN_COMPILE_BFLOAT16
+-- Performing Test USEARCH_CAN_COMPILE_BFLOAT16 - Failed
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found OpenMP_C: -fopenmp (found version "4.5")
+-- Found OpenMP_CXX: -fopenmp (found version "4.5")
+-- Found OpenMP: TRUE (found version "4.5")
+-- Configuring done (1.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /workspace/matrixone-29927-main/thirdparties/_usearch_build/build
+gmake[2]: Entering directory '/workspace/matrixone-29927-main/thirdparties/_usearch_build/build'
+[ 25%] Building CXX object c/CMakeFiles/usearch_c.dir/lib.cpp.o
+[ 50%] Linking CXX shared library ../libusearch_c.so
+[ 50%] Built target usearch_c
+[ 75%] Building CXX object c/CMakeFiles/usearch_static_c.dir/lib.cpp.o
+[100%] Linking CXX static library ../libusearch_static_c.a
+[100%] Built target usearch_static_c
+gmake[2]: Leaving directory '/workspace/matrixone-29927-main/thirdparties/_usearch_build/build'
+cp _usearch_build/build/*.so install/lib
+cp _usearch_build/build/libusearch_static_c.a install/lib/libusearch_c.a
+cp _usearch_build/c/usearch.h install/include
+rm -rf _fp16
+rm -rf _simsimd
+rm -rf _stringzilla
+rm -rf _usearch_build
+mkdir -p _xxhash_build
+tar zxf xxHash-0.8.3.tar.gz -C _xxhash_build --strip-components=1
+cp _xxhash_build/xxhash.h install/include
+rm -rf _xxhash_build
+rm -rf _croaring_build
+mkdir -p _croaring_build
+tar zxf CRoaring-4.7.0.tar.gz -C _croaring_build --strip-components=1
+(cd _croaring_build && bash amalgamation.sh)
+We are about to amalgamate all CRoaring files into one source file.
+For rationale, see: https://www.sqlite.org/amalgamation.html
+and: https://en.wikipedia.org/wiki/Single_Compilation_Unit
+
+Creating roaring.h...
+Creating roaring.c...
+Creating amalgamation_demo.c...
+Creating roaring.hh...
+Creating amalgamation_demo.cpp...
+
+Files have been written to . 
+-rw------- 1 agent agent   1335 Oct 13 01:48 ./amalgamation_demo.c
+-rw------- 1 agent agent   2506 Oct 13 01:48 ./amalgamation_demo.cpp
+-rw------- 1 agent agent 844866 Oct 13 01:48 ./roaring.c
+-rw------- 1 agent agent 405202 Oct 13 01:48 ./roaring.h
+-rw------- 1 agent agent 110946 Oct 13 01:48 ./roaring.hh
+
+The interface is found in the file 'include/roaring/roaring.h'.
+
+Go to ./.
+For C, try:
+cc -O3 -std=c11  -o amalgamation_demo amalgamation_demo.c  && ./amalgamation_demo 
+
+For C++, try:
+c++ -O3 -std=c++11 -o amalgamation_demo amalgamation_demo.cpp roaring.c  && ./amalgamation_demo 
+
+You can build a shared library with the following command:
+cc -O3 -std=c11 -shared -o libroaring.so -fPIC roaring.c
+cc -O3 -fPIC -std=c11 -I_croaring_build -c _croaring_build/roaring.c -o _croaring_build/roaring.o
+ar rcs install/lib/libroaring.a _croaring_build/roaring.o
+cp _croaring_build/roaring.h install/include/roaring.h
+rm -rf _croaring_build
+rm -rf _jemalloc_build
+mkdir -p _jemalloc_build
+tar xjf jemalloc-5.3.1.tar.bz2 -C _jemalloc_build --strip-components=1
+(cd _jemalloc_build && CC="cc" CFLAGS=" -fPIC" ./configure --disable-shared --enable-static --enable-stats --with-jemalloc-prefix=mo_je_ --with-private-namespace=mo_je_)
+checking for xsltproc... false
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether compiler is cray... no
+checking whether compiler supports -std=gnu11... yes
+checking whether compiler supports -Werror=unknown-warning-option... no
+checking whether compiler supports -Wall... yes
+checking whether compiler supports -Wextra... yes
+checking whether compiler supports -Wshorten-64-to-32... no
+checking whether compiler supports -Wsign-compare... yes
+checking whether compiler supports -Wundef... yes
+checking whether compiler supports -Wno-format-zero-length... yes
+checking whether compiler supports -Wpointer-arith... yes
+checking whether compiler supports -Wno-missing-braces... yes
+checking whether compiler supports -Wno-missing-field-initializers... yes
+checking whether compiler supports -Wno-missing-attributes... yes
+checking whether compiler supports -pipe... yes
+checking whether compiler supports -g3... yes
+checking how to run the C preprocessor... cc -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ supports C++17 features with -std=c++17... yes
+checking whether compiler supports -Wall... yes
+checking whether compiler supports -Wextra... yes
+checking whether compiler supports -g3... yes
+checking whether libstdc++ linkage is compilable... yes
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+checking size of void *... 8
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of intmax_t... 8
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking whether pause instruction is compilable... yes
+checking number of significant virtual address bits... 57
+checking rdtscp support... yes
+checking asm volatile support... yes
+checking __int128 support... yes
+checking for ar... ar
+checking for nm... nm
+checking for gawk... no
+checking for mawk... mawk
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking whether malloc_usable_size definition can use const argument... no
+checking for library containing log... -lm
+checking whether __attribute__ syntax is compilable... yes
+checking whether compiler supports -fvisibility=hidden... yes
+checking whether compiler supports -fvisibility=hidden... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether tls_model attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether alloc_size attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether format(gnu_printf, ...) attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether format(printf, ...) attribute is compilable... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether format(printf, ...) attribute is compilable... yes
+checking whether compiler supports -Wimplicit-fallthrough... yes
+checking whether fallthrough attribute is compilable... yes
+checking whether compiler supports -Wimplicit-fallthrough... yes
+checking whether compiler supports -Wimplicit-fallthrough... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether cold attribute is compilable... yes
+checking whether compiler supports -Wdeprecated-declarations... yes
+checking whether deprecated attribute is compilable... yes
+checking whether compiler supports -Wdeprecated-declarations... yes
+checking whether compiler supports -Wdeprecated-declarations... yes
+checking whether vm_make_tag is compilable... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking for ld... /usr/bin/ld
+checking for autoconf... false
+checking for memalign... yes
+checking for valloc... yes
+checking for pvalloc... yes
+checking for malloc_size... no
+checking whether compiler supports -O3... yes
+checking whether compiler supports -O3... yes
+checking whether compiler supports -funroll-loops... yes
+checking configured backtracing method... N/A
+checking for sbrk... yes
+checking whether utrace(2) is compilable... no
+checking whether utrace(2) with label is compilable... no
+checking whether a program using __builtin_unreachable is compilable... yes
+checking whether a program using __builtin_ffsl is compilable... yes
+checking whether a program using __builtin_popcountl is compilable... yes
+checking LG_PAGE... 12
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_create in -lpthread... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking for dlsym... yes
+checking whether pthread_atfork(3) is compilable... yes
+checking whether pthread_setname_np(3) is compilable... yes
+checking whether pthread_getname_np(3) is compilable... yes
+checking whether pthread_set_name_np(3) is compilable... no
+checking whether pthread_get_name_np(3) is compilable... no
+checking for library containing clock_gettime... none required
+checking whether clock_gettime(CLOCK_MONOTONIC_COARSE, ...) is compilable... yes
+checking whether clock_gettime(CLOCK_MONOTONIC, ...) is compilable... yes
+checking whether mach_absolute_time() is compilable... no
+checking whether clock_gettime(CLOCK_REALTIME, ...) is compilable... yes
+checking whether clock_gettime_nsec_np() is compilable... no
+checking whether compiler supports -Werror... yes
+checking whether syscall(2) is compilable... yes
+checking for secure_getenv... yes
+checking for sched_getcpu... yes
+checking for sched_setaffinity... yes
+checking for pthread_setaffinity_np... yes
+checking for issetugid... no
+checking for _malloc_thread_cleanup... no
+checking for _pthread_mutex_init_calloc_cb... no
+checking for memcntl... no
+checking for prctl... yes
+checking for TLS... yes
+checking whether C11 atomics is compilable... yes
+checking whether GCC __atomic atomics is compilable... yes
+checking whether GCC 8-bit __atomic atomics is compilable... yes
+checking whether GCC __sync atomics is compilable... yes
+checking whether GCC 8-bit __sync atomics is compilable... yes
+checking whether Darwin OSAtomic*() is compilable... no
+checking whether madvise(2) is compilable... yes
+checking whether madvise(..., MADV_FREE) is compilable... yes
+checking whether madvise(..., MADV_DONTNEED) is compilable... yes
+checking whether madvise(..., MADV_DO[NT]DUMP) is compilable... yes
+checking whether madvise(..., MADV_[NO]HUGEPAGE) is compilable... yes
+checking whether madvise(..., MADV_[NO]CORE) is compilable... no
+checking whether madvise(..., MADV_COLLAPSE) is compilable... yes
+checking whether process_madvise(2) is compilable... no
+checking whether mprotect(2) is compilable... yes
+checking for __builtin_clz... yes
+checking whether Darwin os_unfair_lock_*() is compilable... no
+checking whether glibc malloc hook is compilable... no
+checking whether glibc memalign hook is compilable... no
+checking whether pthreads adaptive mutexes is compilable... yes
+checking whether gettid is compilable... yes
+checking whether compiler supports -D_GNU_SOURCE... yes
+checking whether compiler supports -Werror... yes
+checking whether compiler supports -herror_on_warning... no
+checking whether strerror_r returns char with gnu source is compilable... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating jemalloc.pc
+config.status: creating doc/html.xsl
+config.status: creating doc/manpages.xsl
+config.status: creating doc/jemalloc.xml
+config.status: creating include/jemalloc/jemalloc_macros.h
+config.status: creating include/jemalloc/jemalloc_protos.h
+config.status: creating include/jemalloc/jemalloc_typedefs.h
+config.status: creating include/jemalloc/internal/jemalloc_preamble.h
+config.status: creating test/test.sh
+config.status: creating test/include/test/jemalloc_test.h
+config.status: creating config.stamp
+config.status: creating bin/jemalloc-config
+config.status: creating bin/jemalloc.sh
+config.status: creating bin/jeprof
+config.status: creating include/jemalloc/jemalloc_defs.h
+config.status: include/jemalloc/jemalloc_defs.h is unchanged
+config.status: creating include/jemalloc/internal/jemalloc_internal_defs.h
+config.status: creating test/include/test/jemalloc_test_defs.h
+config.status: test/include/test/jemalloc_test_defs.h is unchanged
+config.status: executing include/jemalloc/internal/public_symbols.txt commands
+config.status: executing include/jemalloc/internal/private_symbols.awk commands
+config.status: executing include/jemalloc/internal/private_symbols_jet.awk commands
+config.status: executing include/jemalloc/internal/public_namespace.h commands
+config.status: executing include/jemalloc/internal/public_unnamespace.h commands
+config.status: executing include/jemalloc/jemalloc_protos_jet.h commands
+config.status: executing include/jemalloc/jemalloc_rename.h commands
+config.status: executing include/jemalloc/jemalloc_mangle.h commands
+config.status: executing include/jemalloc/jemalloc_mangle_jet.h commands
+config.status: executing include/jemalloc/jemalloc.h commands
+===============================================================================
+jemalloc version   : 5.3.1-0-g81034ce1f1373e37dc865038e1bc8eeecf559ce8
+library revision   : 2
+
+CONFIG             : --disable-shared --enable-static --enable-stats --with-jemalloc-prefix=mo_je_ --with-private-namespace=mo_je_ CC=cc 'CFLAGS= -fPIC'
+CC                 : cc
+CONFIGURE_CFLAGS   : -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops
+SPECIFIED_CFLAGS   :  -fPIC
+EXTRA_CFLAGS       : 
+CPPFLAGS           : -D_GNU_SOURCE -D_REENTRANT
+CXX                : g++ -std=c++17
+CONFIGURE_CXXFLAGS : -Wall -Wextra -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3
+SPECIFIED_CXXFLAGS : 
+EXTRA_CXXFLAGS     : 
+CONFIGURE_LDFLAGS  : 
+SPECIFIED_LDFLAGS  : 
+EXTRA_LDFLAGS      : 
+DSO_LDFLAGS        : -shared -Wl,-soname,$(@F)
+LIBS               : -lm -lstdc++ -pthread
+RPATH_EXTRA        : 
+
+XSLTPROC           : false
+XSLROOT            : 
+
+PREFIX             : /usr/local
+BINDIR             : /usr/local/bin
+DATADIR            : /usr/local/share
+INCLUDEDIR         : /usr/local/include
+LIBDIR             : /usr/local/lib
+MANDIR             : /usr/local/share/man
+
+LG_PAGE            : 12
+
+srcroot            : 
+abs_srcroot        : /workspace/matrixone-29927-main/thirdparties/_jemalloc_build/
+objroot            : 
+abs_objroot        : /workspace/matrixone-29927-main/thirdparties/_jemalloc_build/
+
+JEMALLOC_PREFIX    : mo_je_
+JEMALLOC_PRIVATE_NAMESPACE
+                   : mo_je_je_
+install_suffix     : 
+malloc_conf        : 
+documentation      : 1
+shared libs        : 0
+static libs        : 1
+autogen            : 0
+debug              : 0
+stats              : 1
+user_config        : 1
+experimental_smallocx : 0
+prof               : 0
+prof-libunwind     : 0
+prof-frameptr      : 0
+prof-libgcc        : 0
+prof-gcc           : 0
+fill               : 1
+utrace             : 0
+xmalloc            : 0
+log                : 0
+lazy_lock          : 0
+cache-oblivious    : 1
+pageid             : 0
+cxx                : 1
+dss                : 1
+tsan               : 0
+ubsan              : 0
+===============================================================================
+make -C _jemalloc_build build_lib
+make[2]: Entering directory '/workspace/matrixone-29927-main/thirdparties/_jemalloc_build'
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/jemalloc.sym.o src/jemalloc.c
+nm -a src/jemalloc.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/jemalloc.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/arena.sym.o src/arena.c
+nm -a src/arena.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/arena.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/background_thread.sym.o src/background_thread.c
+nm -a src/background_thread.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/background_thread.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/base.sym.o src/base.c
+nm -a src/base.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/base.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/bin.sym.o src/bin.c
+nm -a src/bin.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/bin.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/bin_info.sym.o src/bin_info.c
+nm -a src/bin_info.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/bin_info.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/bitmap.sym.o src/bitmap.c
+nm -a src/bitmap.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/bitmap.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/buf_writer.sym.o src/buf_writer.c
+nm -a src/buf_writer.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/buf_writer.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/cache_bin.sym.o src/cache_bin.c
+nm -a src/cache_bin.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/cache_bin.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/ckh.sym.o src/ckh.c
+nm -a src/ckh.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/ckh.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/counter.sym.o src/counter.c
+nm -a src/counter.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/counter.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/ctl.sym.o src/ctl.c
+nm -a src/ctl.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/ctl.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/decay.sym.o src/decay.c
+nm -a src/decay.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/decay.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/div.sym.o src/div.c
+nm -a src/div.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/div.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/ecache.sym.o src/ecache.c
+nm -a src/ecache.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/ecache.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/edata.sym.o src/edata.c
+nm -a src/edata.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/edata.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/edata_cache.sym.o src/edata_cache.c
+nm -a src/edata_cache.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/edata_cache.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/ehooks.sym.o src/ehooks.c
+nm -a src/ehooks.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/ehooks.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/emap.sym.o src/emap.c
+nm -a src/emap.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/emap.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/eset.sym.o src/eset.c
+nm -a src/eset.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/eset.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/exp_grow.sym.o src/exp_grow.c
+nm -a src/exp_grow.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/exp_grow.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/extent.sym.o src/extent.c
+nm -a src/extent.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/extent.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/extent_dss.sym.o src/extent_dss.c
+nm -a src/extent_dss.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/extent_dss.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/extent_mmap.sym.o src/extent_mmap.c
+nm -a src/extent_mmap.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/extent_mmap.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/fxp.sym.o src/fxp.c
+nm -a src/fxp.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/fxp.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/san.sym.o src/san.c
+nm -a src/san.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/san.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/san_bump.sym.o src/san_bump.c
+nm -a src/san_bump.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/san_bump.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hook.sym.o src/hook.c
+nm -a src/hook.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hook.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hpa.sym.o src/hpa.c
+nm -a src/hpa.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hpa.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hpa_central.sym.o src/hpa_central.c
+nm -a src/hpa_central.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hpa_central.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hpa_hooks.sym.o src/hpa_hooks.c
+nm -a src/hpa_hooks.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hpa_hooks.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hpa_utils.sym.o src/hpa_utils.c
+nm -a src/hpa_utils.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hpa_utils.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/hpdata.sym.o src/hpdata.c
+nm -a src/hpdata.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/hpdata.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/inspect.sym.o src/inspect.c
+nm -a src/inspect.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/inspect.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/large.sym.o src/large.c
+nm -a src/large.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/large.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/log.sym.o src/log.c
+nm -a src/log.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/log.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/malloc_io.sym.o src/malloc_io.c
+nm -a src/malloc_io.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/malloc_io.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/conf.sym.o src/conf.c
+nm -a src/conf.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/conf.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/mutex.sym.o src/mutex.c
+nm -a src/mutex.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/mutex.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/nstime.sym.o src/nstime.c
+nm -a src/nstime.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/nstime.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/pa.sym.o src/pa.c
+nm -a src/pa.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/pa.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/pa_extra.sym.o src/pa_extra.c
+nm -a src/pa_extra.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/pa_extra.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/pac.sym.o src/pac.c
+nm -a src/pac.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/pac.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/pages.sym.o src/pages.c
+nm -a src/pages.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/pages.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/peak_event.sym.o src/peak_event.c
+nm -a src/peak_event.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/peak_event.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof.sym.o src/prof.c
+nm -a src/prof.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_data.sym.o src/prof_data.c
+nm -a src/prof_data.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_data.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_log.sym.o src/prof_log.c
+nm -a src/prof_log.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_log.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_recent.sym.o src/prof_recent.c
+nm -a src/prof_recent.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_recent.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_stack_range.sym.o src/prof_stack_range.c
+nm -a src/prof_stack_range.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_stack_range.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_stats.sym.o src/prof_stats.c
+nm -a src/prof_stats.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_stats.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/prof_sys.sym.o src/prof_sys.c
+nm -a src/prof_sys.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/prof_sys.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/psset.sym.o src/psset.c
+nm -a src/psset.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/psset.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/rtree.sym.o src/rtree.c
+nm -a src/rtree.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/rtree.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/safety_check.sym.o src/safety_check.c
+nm -a src/safety_check.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/safety_check.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/sc.sym.o src/sc.c
+nm -a src/sc.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/sc.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/sec.sym.o src/sec.c
+nm -a src/sec.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/sec.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/stats.sym.o src/stats.c
+nm -a src/stats.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/stats.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/sz.sym.o src/sz.c
+nm -a src/sz.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/sz.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/tcache.sym.o src/tcache.c
+nm -a src/tcache.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/tcache.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/test_hooks.sym.o src/test_hooks.c
+nm -a src/test_hooks.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/test_hooks.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/thread_event.sym.o src/thread_event.c
+nm -a src/thread_event.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/thread_event.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/thread_event_registry.sym.o src/thread_event_registry.c
+nm -a src/thread_event_registry.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/thread_event_registry.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/ticker.sym.o src/ticker.c
+nm -a src/ticker.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/ticker.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/tsd.sym.o src/tsd.c
+nm -a src/tsd.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/tsd.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/util.sym.o src/util.c
+nm -a src/util.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/util.sym
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -DJEMALLOC_NO_PRIVATE_NAMESPACE -o src/witness.sym.o src/witness.c
+nm -a src/witness.sym.o | mawk -f include/jemalloc/internal/private_symbols.awk > src/witness.sym
+/bin/sh include/jemalloc/internal/private_namespace.sh src/jemalloc.sym src/arena.sym src/background_thread.sym src/base.sym src/bin.sym src/bin_info.sym src/bitmap.sym src/buf_writer.sym src/cache_bin.sym src/ckh.sym src/counter.sym src/ctl.sym src/decay.sym src/div.sym src/ecache.sym src/edata.sym src/edata_cache.sym src/ehooks.sym src/emap.sym src/eset.sym src/exp_grow.sym src/extent.sym src/extent_dss.sym src/extent_mmap.sym src/fxp.sym src/san.sym src/san_bump.sym src/hook.sym src/hpa.sym src/hpa_central.sym src/hpa_hooks.sym src/hpa_utils.sym src/hpdata.sym src/inspect.sym src/large.sym src/log.sym src/malloc_io.sym src/conf.sym src/mutex.sym src/nstime.sym src/pa.sym src/pa_extra.sym src/pac.sym src/pages.sym src/peak_event.sym src/prof.sym src/prof_data.sym src/prof_log.sym src/prof_recent.sym src/prof_stack_range.sym src/prof_stats.sym src/prof_sys.sym src/psset.sym src/rtree.sym src/safety_check.sym src/sc.sym src/sec.sym src/stats.sym src/sz.sym src/tcache.sym src/test_hooks.sym src/thread_event.sym src/thread_event_registry.sym src/ticker.sym src/tsd.sym src/util.sym src/witness.sym > include/jemalloc/internal/private_namespace.gen.h
+cp include/jemalloc/internal/private_namespace.gen.h include/jemalloc/internal/private_namespace.h
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/jemalloc.o src/jemalloc.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/arena.o src/arena.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/background_thread.o src/background_thread.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/base.o src/base.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bin.o src/bin.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bin_info.o src/bin_info.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bitmap.o src/bitmap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/buf_writer.o src/buf_writer.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/cache_bin.o src/cache_bin.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ckh.o src/ckh.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/counter.o src/counter.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ctl.o src/ctl.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/decay.o src/decay.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/div.o src/div.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ecache.o src/ecache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/edata.o src/edata.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/edata_cache.o src/edata_cache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ehooks.o src/ehooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/emap.o src/emap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/eset.o src/eset.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/exp_grow.o src/exp_grow.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent.o src/extent.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent_dss.o src/extent_dss.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent_mmap.o src/extent_mmap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/fxp.o src/fxp.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/san.o src/san.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/san_bump.o src/san_bump.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hook.o src/hook.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa.o src/hpa.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_central.o src/hpa_central.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_hooks.o src/hpa_hooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_utils.o src/hpa_utils.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpdata.o src/hpdata.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/inspect.o src/inspect.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/large.o src/large.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/log.o src/log.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/malloc_io.o src/malloc_io.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/conf.o src/conf.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/mutex.o src/mutex.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/nstime.o src/nstime.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pa.o src/pa.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pa_extra.o src/pa_extra.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pac.o src/pac.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pages.o src/pages.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/peak_event.o src/peak_event.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof.o src/prof.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_data.o src/prof_data.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_log.o src/prof_log.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_recent.o src/prof_recent.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_stack_range.o src/prof_stack_range.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_stats.o src/prof_stats.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_sys.o src/prof_sys.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/psset.o src/psset.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/rtree.o src/rtree.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/safety_check.o src/safety_check.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sc.o src/sc.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sec.o src/sec.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/stats.o src/stats.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sz.o src/sz.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tcache.o src/tcache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/test_hooks.o src/test_hooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/thread_event.o src/thread_event.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/thread_event_registry.o src/thread_event_registry.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ticker.o src/ticker.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tsd.o src/tsd.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/util.o src/util.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/witness.o src/witness.c
+g++ -std=c++17 -Wall -Wextra -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/jemalloc_cpp.o src/jemalloc_cpp.cpp
+ar crus lib/libjemalloc.a src/jemalloc.o src/arena.o src/background_thread.o src/base.o src/bin.o src/bin_info.o src/bitmap.o src/buf_writer.o src/cache_bin.o src/ckh.o src/counter.o src/ctl.o src/decay.o src/div.o src/ecache.o src/edata.o src/edata_cache.o src/ehooks.o src/emap.o src/eset.o src/exp_grow.o src/extent.o src/extent_dss.o src/extent_mmap.o src/fxp.o src/san.o src/san_bump.o src/hook.o src/hpa.o src/hpa_central.o src/hpa_hooks.o src/hpa_utils.o src/hpdata.o src/inspect.o src/large.o src/log.o src/malloc_io.o src/conf.o src/mutex.o src/nstime.o src/pa.o src/pa_extra.o src/pac.o src/pages.o src/peak_event.o src/prof.o src/prof_data.o src/prof_log.o src/prof_recent.o src/prof_stack_range.o src/prof_stats.o src/prof_sys.o src/psset.o src/rtree.o src/safety_check.o src/sc.o src/sec.o src/stats.o src/sz.o src/tcache.o src/test_hooks.o src/thread_event.o src/thread_event_registry.o src/ticker.o src/tsd.o src/util.o src/witness.o src/jemalloc_cpp.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/jemalloc.pic.o src/jemalloc.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/arena.pic.o src/arena.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/background_thread.pic.o src/background_thread.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/base.pic.o src/base.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bin.pic.o src/bin.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bin_info.pic.o src/bin_info.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/bitmap.pic.o src/bitmap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/buf_writer.pic.o src/buf_writer.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/cache_bin.pic.o src/cache_bin.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ckh.pic.o src/ckh.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/counter.pic.o src/counter.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ctl.pic.o src/ctl.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/decay.pic.o src/decay.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/div.pic.o src/div.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ecache.pic.o src/ecache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/edata.pic.o src/edata.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/edata_cache.pic.o src/edata_cache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ehooks.pic.o src/ehooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/emap.pic.o src/emap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/eset.pic.o src/eset.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/exp_grow.pic.o src/exp_grow.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent.pic.o src/extent.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent_dss.pic.o src/extent_dss.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/extent_mmap.pic.o src/extent_mmap.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/fxp.pic.o src/fxp.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/san.pic.o src/san.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/san_bump.pic.o src/san_bump.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hook.pic.o src/hook.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa.pic.o src/hpa.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_central.pic.o src/hpa_central.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_hooks.pic.o src/hpa_hooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpa_utils.pic.o src/hpa_utils.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/hpdata.pic.o src/hpdata.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/inspect.pic.o src/inspect.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/large.pic.o src/large.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/log.pic.o src/log.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/malloc_io.pic.o src/malloc_io.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/conf.pic.o src/conf.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/mutex.pic.o src/mutex.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/nstime.pic.o src/nstime.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pa.pic.o src/pa.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pa_extra.pic.o src/pa_extra.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pac.pic.o src/pac.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/pages.pic.o src/pages.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/peak_event.pic.o src/peak_event.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof.pic.o src/prof.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_data.pic.o src/prof_data.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_log.pic.o src/prof_log.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_recent.pic.o src/prof_recent.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_stack_range.pic.o src/prof_stack_range.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_stats.pic.o src/prof_stats.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/prof_sys.pic.o src/prof_sys.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/psset.pic.o src/psset.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/rtree.pic.o src/rtree.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/safety_check.pic.o src/safety_check.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sc.pic.o src/sc.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sec.pic.o src/sec.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/stats.pic.o src/stats.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/sz.pic.o src/sz.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tcache.pic.o src/tcache.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/test_hooks.pic.o src/test_hooks.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/thread_event.pic.o src/thread_event.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/thread_event_registry.pic.o src/thread_event_registry.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/ticker.pic.o src/ticker.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/tsd.pic.o src/tsd.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/util.pic.o src/util.c
+cc -std=gnu11 -Wall -Wextra -Wsign-compare -Wundef -Wno-format-zero-length -Wpointer-arith -Wno-missing-braces -Wno-missing-field-initializers -Wno-missing-attributes -pipe -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -funroll-loops -fPIC -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/witness.pic.o src/witness.c
+g++ -std=c++17 -Wall -Wextra -g3 -fvisibility=hidden -Wimplicit-fallthrough -Wdeprecated-declarations -O3 -fPIC -DPIC -c -D_GNU_SOURCE -D_REENTRANT -Iinclude -Iinclude -o src/jemalloc_cpp.pic.o src/jemalloc_cpp.cpp
+ar crus lib/libjemalloc_pic.a src/jemalloc.pic.o src/arena.pic.o src/background_thread.pic.o src/base.pic.o src/bin.pic.o src/bin_info.pic.o src/bitmap.pic.o src/buf_writer.pic.o src/cache_bin.pic.o src/ckh.pic.o src/counter.pic.o src/ctl.pic.o src/decay.pic.o src/div.pic.o src/ecache.pic.o src/edata.pic.o src/edata_cache.pic.o src/ehooks.pic.o src/emap.pic.o src/eset.pic.o src/exp_grow.pic.o src/extent.pic.o src/extent_dss.pic.o src/extent_mmap.pic.o src/fxp.pic.o src/san.pic.o src/san_bump.pic.o src/hook.pic.o src/hpa.pic.o src/hpa_central.pic.o src/hpa_hooks.pic.o src/hpa_utils.pic.o src/hpdata.pic.o src/inspect.pic.o src/large.pic.o src/log.pic.o src/malloc_io.pic.o src/conf.pic.o src/mutex.pic.o src/nstime.pic.o src/pa.pic.o src/pa_extra.pic.o src/pac.pic.o src/pages.pic.o src/peak_event.pic.o src/prof.pic.o src/prof_data.pic.o src/prof_log.pic.o src/prof_recent.pic.o src/prof_stack_range.pic.o src/prof_stats.pic.o src/prof_sys.pic.o src/psset.pic.o src/rtree.pic.o src/safety_check.pic.o src/sc.pic.o src/sec.pic.o src/stats.pic.o src/sz.pic.o src/tcache.pic.o src/test_hooks.pic.o src/thread_event.pic.o src/thread_event_registry.pic.o src/ticker.pic.o src/tsd.pic.o src/util.pic.o src/witness.pic.o src/jemalloc_cpp.pic.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: Leaving directory '/workspace/matrixone-29927-main/thirdparties/_jemalloc_build'
+cp _jemalloc_build/lib/libjemalloc.a install/lib/libjemalloc.a
+cp _jemalloc_build/include/jemalloc/jemalloc.h install/include/jemalloc.h
+rm -rf _jemalloc_build
+using prebuilt ONNX Runtime 1.26.0 from /workspace/toolchains/onnxruntime/1.26.0
+make[1]: Leaving directory '/workspace/matrixone-29927-main/thirdparties'
+make[1]: Entering directory '/workspace/matrixone-29927-main/cgo'
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c mo.c -o mo.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c arith.c -o arith.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c compare.c -o compare.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c logic.c -o logic.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c xcall.c -o xcall.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c usearchex.c -o usearchex.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c bloom.c -o bloom.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c croaring.c -o croaring.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c cbitmap.c -o cbitmap.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c sorted64.c -o sorted64.o
+cc -L../thirdparties/install/lib -lusearch_c -lroaring -shared -o libmo.so mo.o arith.o compare.o logic.o xcall.o usearchex.o bloom.o croaring.o cbitmap.o sorted64.o
+ar -rcs libmo.a mo.o arith.o compare.o logic.o xcall.o usearchex.o bloom.o croaring.o cbitmap.o sorted64.o
+make[1]: Leaving directory '/workspace/matrixone-29927-main/cgo'
+[Stage jieba dict]
+rm -rf /workspace/matrixone-29927-main/dict
+cp -r /workspace/matrixone-29927-main/pkg/monlp/tokenizer/dict /workspace/matrixone-29927-main/dict
+[Build binary]
+GOAMD64=v3 GOEXPERIMENT=simd  CGO_CFLAGS="-I/workspace/matrixone-29927-main/cgo -I/workspace/matrixone-29927-main/thirdparties/install/include  " go build -mod=readonly   -ldflags=" -extldflags ' -L/workspace/matrixone-29927-main/cgo -lmo -L/workspace/matrixone-29927-main/thirdparties/install/lib  -Wl,-rpath,\${ORIGIN}/lib -fopenmp' -X 'github.com/matrixorigin/matrixone/pkg/version.GoVersion=go version go1.27.1 linux/amd64' -X 'github.com/matrixorigin/matrixone/pkg/version.BranchName=HEAD' -X 'github.com/matrixorigin/matrixone/pkg/version.CommitID=3e50e1b3' -X 'github.com/matrixorigin/matrixone/pkg/version.BuildTime=1791856072' -X 'github.com/matrixorigin/matrixone/pkg/version.Version='"   -o mo-service ./cmd/mo-service

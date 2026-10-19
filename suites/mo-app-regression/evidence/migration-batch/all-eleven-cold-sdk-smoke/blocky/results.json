@@ -1,0 +1,70 @@
+{
+  "app": "0xERR0R/blocky",
+  "version": "v0.35.0",
+  "commit": "45a242ffce62c3e203f9a2c8a87fbb8ba106c7ab",
+  "binary_sha256": "7e09c167b1276818fcae3699e0f4713a97c15cde7e00e41afe9a3fcfb9f14030",
+  "schema": "mo_reg_blocky_4f7a6fc1b85e410f",
+  "native_runtime_attempted": true,
+  "native_GORM_migration": true,
+  "source_edits": false,
+  "min_free_mib": 2048,
+  "checks": [
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_migration_and_DNS_listener",
+      "passed": true
+    },
+    {
+      "name": "exact_DNS_answers_and_blocking",
+      "passed": true,
+      "queries": 64,
+      "workers": 4,
+      "seconds": 0.0285,
+      "queries_per_second": 2244.57
+    },
+    {
+      "name": "initial_one_row_per_native_query",
+      "passed": true
+    },
+    {
+      "name": "SQL_exact_DNS_values_and_Unicode_client",
+      "passed": true,
+      "persisted": 64
+    },
+    {
+      "name": "real_process_restart",
+      "passed": true
+    },
+    {
+      "name": "restart_one_row_per_native_query",
+      "passed": true
+    },
+    {
+      "name": "restart_exact_querylog_durability",
+      "passed": true
+    },
+    {
+      "name": "restart_native_DNS_query",
+      "passed": true
+    },
+    {
+      "name": "restart_native_database_writer",
+      "passed": true
+    }
+  ],
+  "started_at_utc": "2026-10-13T00:42:01Z",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "query_cohort": "bc82f97ef5d8",
+  "last_SQL_audit": {
+    "phase": "restart",
+    "expected": 64,
+    "observed": 64,
+    "unique_names": 64,
+    "missing": 0
+  },
+  "passed": true,
+  "finished_at_utc": "2026-10-13T00:42:04Z"
+}

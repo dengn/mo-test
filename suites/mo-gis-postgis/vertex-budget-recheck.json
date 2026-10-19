@@ -1,0 +1,30 @@
+[
+  {
+    "sql": "select @@max_points_in_geometry",
+    "rows": [
+      [
+        "65536"
+      ]
+    ]
+  },
+  {
+    "sql": "set max_points_in_geometry=131072",
+    "rows": []
+  },
+  {
+    "sql": "select st_length(st_geomfromtext(%s,0))",
+    "rows": [
+      [
+        99999.0
+      ]
+    ]
+  },
+  {
+    "sql": "select @@max_points_in_geometry",
+    "rows": [
+      [
+        "131072"
+      ]
+    ]
+  }
+]

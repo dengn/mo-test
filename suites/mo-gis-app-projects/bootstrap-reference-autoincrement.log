@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/bootstrap.py", line 54, in <module>
+    if e=='pg':query(c,f"select setval(pg_get_serial_seq('{table}','id'),(select max(id) from {table}))")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/mo-gis-app-projects/common.py", line 27, in query
+    q.execute(sql,args)
+  File "/workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedFunction: function pg_get_serial_seq(unknown, unknown) does not exist
+LINE 1: select setval(pg_get_serial_seq('points','id'),(select max(i...
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

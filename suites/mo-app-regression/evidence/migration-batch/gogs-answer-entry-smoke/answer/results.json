@@ -1,0 +1,158 @@
+{
+  "app": "apache/answer",
+  "version": "2.0.3",
+  "commit": "6744295fa888e0621fc9f9a8ace04f1a4daf8554",
+  "schema": "mo_reg_answer_ed426def667445e5",
+  "passed": true,
+  "checks": [
+    {
+      "name": "pinned_official_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_current_schema_version",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_core_tables",
+      "passed": true
+    },
+    {
+      "name": "native_initializer_admin_bcrypt_and_role",
+      "passed": true
+    },
+    {
+      "name": "native_admin_password_login",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_owner",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_other",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_login_denied",
+      "passed": true
+    },
+    {
+      "name": "ordinary_user_admin_API_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_question_write_denied",
+      "passed": true
+    },
+    {
+      "name": "native_seed_tag_created",
+      "passed": true
+    },
+    {
+      "name": "native_question_values_and_owner",
+      "passed": true
+    },
+    {
+      "name": "native_question_tag_relation",
+      "passed": true
+    },
+    {
+      "name": "native_answer_relation_and_owner",
+      "passed": true
+    },
+    {
+      "name": "native_answer_update_exact",
+      "passed": true
+    },
+    {
+      "name": "other_user_question_delete_denied_no_change",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_question_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_native_answer_exact",
+      "passed": true
+    },
+    {
+      "name": "before_restart_SQL_question_answer_relation",
+      "passed": true
+    },
+    {
+      "name": "real_Answer_process_restart",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_question_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_native_answer_exact",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_question_answer_relation",
+      "passed": true
+    },
+    {
+      "name": "after_restart_SQL_original_values_and_version",
+      "passed": true
+    },
+    {
+      "name": "after_restart_ordinary_admin_denied",
+      "passed": true
+    },
+    {
+      "name": "post_trigger_SQL_health",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "source_edits": false,
+  "native_SQLite_cache_retained": true,
+  "min_free_mib": 2048,
+  "limitations": [
+    "fresh current-schema initializer, populated upgrades unverified",
+    "community suggested editing/SMTP/federation/AI/MCP/plugins/full UI unverified"
+  ],
+  "binary_sha256": "c485f6f7190624681ad3a08c99aa0241f2dd630b04ed1c1d29bb4d8b47545824",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_denials": [
+    {
+      "path": "/answer/api/v1/user/login/email",
+      "http_status": 400,
+      "native_code": 400
+    },
+    {
+      "path": "/answer/admin/api/user",
+      "http_status": 403,
+      "native_code": 403
+    },
+    {
+      "path": "/answer/api/v1/question",
+      "http_status": 401,
+      "native_code": 401
+    },
+    {
+      "path": "/answer/api/v1/question",
+      "http_status": 403,
+      "native_code": 403
+    },
+    {
+      "path": "/answer/admin/api/users/page",
+      "http_status": 403,
+      "native_code": 403
+    }
+  ],
+  "finished_at_utc": "2026-10-13T02:27:25Z"
+}

@@ -1,0 +1,2762 @@
+{
+  "repo": "muety/wakapi",
+  "ref": "2.18.1",
+  "commit": "347f1f45ae2863d9499236471317a76630c5308f",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "mode": "100644",
+      "git_blob": "4ce5c008898b067ac0be60eca9e38c24c8489926"
+    },
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "git_blob": "87cfc572f6fec1617fbb6b1ab74a996e9c605737"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "git_blob": "f29bea378e1771ccfca6eb9a1c244f000637e94b"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.md",
+      "mode": "100644",
+      "git_blob": "d7746178eda965a50601e626d66405274127cae1"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/other.md",
+      "mode": "100644",
+      "git_blob": "a47afa6614d86a871a279e3b668965480bc506aa"
+    },
+    {
+      "path": ".github/assets/frachtwerk_logo.png",
+      "mode": "100644",
+      "git_blob": "8a58c69f77a7fd85a7ad45f36f0c3da2ce0d9134"
+    },
+    {
+      "path": ".github/assets/screenshot_browser_plugin.png",
+      "mode": "100644",
+      "git_blob": "5ec6464fd86c7aa0566fd00b9545a4bfdc652a69"
+    },
+    {
+      "path": ".github/assets/screenshot_gnome.png",
+      "mode": "100644",
+      "git_blob": "8ac48f559be08ab7d408b1e02a4a78d996a64003"
+    },
+    {
+      "path": ".github/assets/servercamp_logo.png",
+      "mode": "100644",
+      "git_blob": "ba6cf4feb0fe771d7a7bef6d5153036c2e9342b4"
+    },
+    {
+      "path": ".github/assets/tuta_logo.svg",
+      "mode": "100644",
+      "git_blob": "0ed46356a09d9c68e6a513f6abbd36b218c6a8da"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "git_blob": "96ae3c2bde705fae50a91e2fb4b9fa1b7dc06cea"
+    },
+    {
+      "path": ".github/workflows/docker.yml",
+      "mode": "100644",
+      "git_blob": "339d9db255d37547d4875c02a2c843a826b8f296"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "mode": "100644",
+      "git_blob": "82fa3811403de63eb56a614f3e34bb9aa122b41e"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "git_blob": "920cfb2ea69072fc2c0457b3d37bfce06c09ecc9"
+    },
+    {
+      "path": ".gitpod.yml",
+      "mode": "100644",
+      "git_blob": "b81f1e3fc0ddd022a8fc4e7b3b370253708d4d0c"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "git_blob": "0fb971b6357c16f243d4c55181c0b39b5e651f08"
+    },
+    {
+      "path": "Dockerfile",
+      "mode": "100644",
+      "git_blob": "c9cc70e4a7ea9607dc5cb5453c0bd27192a74ad0"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "git_blob": "853b46db127831eb9f8e8a7a8576e41c98619be4"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_blob": "ce5f15f2198397dd5b41a6a1eb1be08ccab0d626"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "git_blob": "82b130f0d9adf2b91fa25e952169c196331f6b1c"
+    },
+    {
+      "path": "bruno/Heartbeats/Create heartbeat.bru",
+      "mode": "100644",
+      "git_blob": "3052195a111609b3e1fdcddb5eb8134ff0e9364a"
+    },
+    {
+      "path": "bruno/Heartbeats/folder.bru",
+      "mode": "100644",
+      "git_blob": "0af48729bb0d9c3647718cab245f0a754c616eef"
+    },
+    {
+      "path": "bruno/Misc/Get health.bru",
+      "mode": "100644",
+      "git_blob": "3102d16bbecd2e07080b3e02973549671b329b18"
+    },
+    {
+      "path": "bruno/Misc/Get metrics.bru",
+      "mode": "100644",
+      "git_blob": "d4a592f4c1c6a000518b9cca77d85373b7b87e83"
+    },
+    {
+      "path": "bruno/Misc/Send diagnostics.bru",
+      "mode": "100644",
+      "git_blob": "86bbad10c7e30c6c1a47e01da922ebade5294785"
+    },
+    {
+      "path": "bruno/Misc/folder.bru",
+      "mode": "100644",
+      "git_blob": "fce8254878cbc98d87b4c8cea4267b86b93b29de"
+    },
+    {
+      "path": "bruno/Shields/Get Shields data.bru",
+      "mode": "100644",
+      "git_blob": "6197e6531ef719dbc0d0ce85d91971b770fe351b"
+    },
+    {
+      "path": "bruno/Shields/folder.bru",
+      "mode": "100644",
+      "git_blob": "920b581ecf9b468ffe1a47387688d5671b87352a"
+    },
+    {
+      "path": "bruno/Summary/Get summary.bru",
+      "mode": "100644",
+      "git_blob": "4de3dfdd79edecd6903800f00ec921d2a7cd8891"
+    },
+    {
+      "path": "bruno/Summary/folder.bru",
+      "mode": "100644",
+      "git_blob": "bc895d02f06f69466e1e6bc051394989183a3aa1"
+    },
+    {
+      "path": "bruno/WakaTime/Get all time.bru",
+      "mode": "100644",
+      "git_blob": "4b81c3887c33c5f22d6b8b7703c7b4cefdb35fd8"
+    },
+    {
+      "path": "bruno/WakaTime/Get heartbeats.bru",
+      "mode": "100644",
+      "git_blob": "e13dd70bd449e39ffa6b54ea1e1037332a5b6971"
+    },
+    {
+      "path": "bruno/WakaTime/Get stats with range.bru",
+      "mode": "100644",
+      "git_blob": "cae1752f77e2d0c1efdb36c3c887a3adc8d2efd0"
+    },
+    {
+      "path": "bruno/WakaTime/Get stats.bru",
+      "mode": "100644",
+      "git_blob": "ce1c1c9fd685739218f2c079e45c2a80cf87d429"
+    },
+    {
+      "path": "bruno/WakaTime/Get statusbar.bru",
+      "mode": "100644",
+      "git_blob": "1496c6be17000783c92bd45bfe3d7781f6c0afc7"
+    },
+    {
+      "path": "bruno/WakaTime/Get summaries.bru",
+      "mode": "100644",
+      "git_blob": "34949c24f2ba14e14d0413403e16bc946b5c7c90"
+    },
+    {
+      "path": "bruno/WakaTime/folder.bru",
+      "mode": "100644",
+      "git_blob": "acdca4dc6b74c38fb1e5aebed9b4704916e2547e"
+    },
+    {
+      "path": "bruno/bruno.json",
+      "mode": "100644",
+      "git_blob": "f0fc270159d615d36ed67acdb95199b38c80871c"
+    },
+    {
+      "path": "bruno/collection.bru",
+      "mode": "100644",
+      "git_blob": "fc6a5b58d99d31f5f8cfd1b6f3988f49a96df319"
+    },
+    {
+      "path": "bruno/environments/dev.bru",
+      "mode": "100644",
+      "git_blob": "8eec37879204f5393570f11333914ddaeccb081a"
+    },
+    {
+      "path": "compose.yml",
+      "mode": "100644",
+      "git_blob": "8ece30ec67607d9afd88931de3590003dd2a8b6e"
+    },
+    {
+      "path": "config.default.yml",
+      "mode": "100644",
+      "git_blob": "4e7671c54cf5efd316681f6f31b649360b1a143a"
+    },
+    {
+      "path": "config/config.go",
+      "mode": "100644",
+      "git_blob": "1733a9a7de92ce8d98cf345817975078efa60f56"
+    },
+    {
+      "path": "config/config_test.go",
+      "mode": "100644",
+      "git_blob": "b4d0e2284a0578b94a9494aaa5699cc27b1637bc"
+    },
+    {
+      "path": "config/cookie.go",
+      "mode": "100644",
+      "git_blob": "0cb06648b28d4889c658841163abf3045a0d29a5"
+    },
+    {
+      "path": "config/db.go",
+      "mode": "100644",
+      "git_blob": "3317261338f53c3cc649d6358f4f7bbec56289cb"
+    },
+    {
+      "path": "config/db_opts.go",
+      "mode": "100644",
+      "git_blob": "9c25fec33f97f4b91621abf732e0a68ae841d685"
+    },
+    {
+      "path": "config/eventbus.go",
+      "mode": "100644",
+      "git_blob": "a74bc2d771d330b90c4d0c1affc3000ee1c0d0c7"
+    },
+    {
+      "path": "config/fs.go",
+      "mode": "100644",
+      "git_blob": "2237aa737b90dd9a7eaa2921005760f5491d3259"
+    },
+    {
+      "path": "config/jobqueue.go",
+      "mode": "100644",
+      "git_blob": "5072f5730ca399788db7b72f222791f19bd81a56"
+    },
+    {
+      "path": "config/logging.go",
+      "mode": "100644",
+      "git_blob": "a36b75f42ae335c98157a27718ac91375abe3bc3"
+    },
+    {
+      "path": "config/oidc.go",
+      "mode": "100644",
+      "git_blob": "59e23711bbddcd18c5a2135391b3df905dd10f6a"
+    },
+    {
+      "path": "config/oidc_test.go",
+      "mode": "100644",
+      "git_blob": "d968b839a3c966e34830453b982f690245311624"
+    },
+    {
+      "path": "config/sentry.go",
+      "mode": "100644",
+      "git_blob": "9cbe9580ecf6072c9f312a0ef4c53ffb8ac256de"
+    },
+    {
+      "path": "config/shared_data.go",
+      "mode": "100644",
+      "git_blob": "cf6b4f7b3cf530a3fcb981bc1f69d7d3cbdd4629"
+    },
+    {
+      "path": "config/templates.go",
+      "mode": "100644",
+      "git_blob": "6475e3d1c21ee1290a124befd9b5b6dd9d938037"
+    },
+    {
+      "path": "config/testutils.go",
+      "mode": "100644",
+      "git_blob": "7e02fa462d629e2099fcc692ae3c7126e66b69bb"
+    },
+    {
+      "path": "coverage/coverage.out",
+      "mode": "100644",
+      "git_blob": "02cc767bf22c8170f1eedcfbc3dc27a633789855"
+    },
+    {
+      "path": "data/colors.json",
+      "mode": "100644",
+      "git_blob": "5272fe5d952cb973c83e626406c21437474ead74"
+    },
+    {
+      "path": "data/data.go",
+      "mode": "100644",
+      "git_blob": "1f80735b61de7209421535a8fa56153371530848"
+    },
+    {
+      "path": "doap.rdf",
+      "mode": "100644",
+      "git_blob": "1de830a1cb0725caed9cd31a3cbddcf8e4445133"
+    },
+    {
+      "path": "entrypoint.sh",
+      "mode": "100755",
+      "git_blob": "6568e9f21590535b85ffde6e100ce6c47cea15e8"
+    },
+    {
+      "path": "etc/Caddyfile",
+      "mode": "100644",
+      "git_blob": "ed71bdb41d670b9a3b5b8c7cf06fc44d318c21b8"
+    },
+    {
+      "path": "etc/wakapi.service",
+      "mode": "100644",
+      "git_blob": "b85d81b8d11c038b2e9e058461957eaffd70ef14"
+    },
+    {
+      "path": "funding.json",
+      "mode": "100644",
+      "git_blob": "9bfbbb728a473f6287f6080bfb2610f879b2f02d"
+    },
+    {
+      "path": "go.mod",
+      "mode": "100644",
+      "git_blob": "cc3bfa9bffd58d2d42f5fa8ae7f6379c40f9fe94"
+    },
+    {
+      "path": "go.sum",
+      "mode": "100644",
+      "git_blob": "16f2a755180b5a8074da077eebed3d1617ee357e"
+    },
+    {
+      "path": "helpers/date.go",
+      "mode": "100644",
+      "git_blob": "b91f6dfddf33f5bed533c9e2769aea35a13fcbf1"
+    },
+    {
+      "path": "helpers/helpers.go",
+      "mode": "100644",
+      "git_blob": "f6c2dbf63ab72e2204abd7e9147f5ccc83d844ff"
+    },
+    {
+      "path": "helpers/http.go",
+      "mode": "100644",
+      "git_blob": "b38854c098080ae3e8fe1c848f8444eda8a043dc"
+    },
+    {
+      "path": "helpers/interval.go",
+      "mode": "100644",
+      "git_blob": "c1119226613ce739f09c1b0a31eea05e9f3737d0"
+    },
+    {
+      "path": "helpers/interval_test.go",
+      "mode": "100644",
+      "git_blob": "88b0e14250defc3baf7329db01221ce3ddae0f3d"
+    },
+    {
+      "path": "helpers/summary.go",
+      "mode": "100644",
+      "git_blob": "80d77af664ff9c5a82058ea3e6c2f28540742a7a"
+    },
+    {
+      "path": "lib/concurrent_map.go",
+      "mode": "100644",
+      "git_blob": "d1cd0d34fbc80c442a11fcade35db3047c5f9daf"
+    },
+    {
+      "path": "main.go",
+      "mode": "100644",
+      "git_blob": "834fca115aa673834bf1c64a8e00a685549d9df6"
+    },
+    {
+      "path": "middlewares/authenticate.go",
+      "mode": "100644",
+      "git_blob": "0df73386e3632948ec2ab22c0df9539e64834313"
+    },
+    {
+      "path": "middlewares/authenticate_test.go",
+      "mode": "100644",
+      "git_blob": "20c8ec8353022c6c5ddba90f81cae1f73cebd265"
+    },
+    {
+      "path": "middlewares/custom/wakatime.go",
+      "mode": "100644",
+      "git_blob": "c3272b0a30a7383212c88b6b90ba8e9422fcc86b"
+    },
+    {
+      "path": "middlewares/custom/wakatime_test.go",
+      "mode": "100644",
+      "git_blob": "fe980b0c090b214485afb7514006ff14b2f71145"
+    },
+    {
+      "path": "middlewares/filetype.go",
+      "mode": "100644",
+      "git_blob": "428ddc2038d7cdec8d31e83b81a32b9a6c922e45"
+    },
+    {
+      "path": "middlewares/logging.go",
+      "mode": "100644",
+      "git_blob": "aab4bf8fb416c9de6d71b0a90b8d5db47b122b19"
+    },
+    {
+      "path": "middlewares/principal.go",
+      "mode": "100644",
+      "git_blob": "f8185060b838eaa91462109cc111cf8a3ae26c13"
+    },
+    {
+      "path": "middlewares/security.go",
+      "mode": "100644",
+      "git_blob": "bdbd5b8dce8e8803e7547bcb7d4a80fb7947ece6"
+    },
+    {
+      "path": "middlewares/sentry.go",
+      "mode": "100644",
+      "git_blob": "4be2438e61cddd850250be35ce0afc32d4cdafba"
+    },
+    {
+      "path": "middlewares/shared_data.go",
+      "mode": "100644",
+      "git_blob": "a265030ac987e12c8a44c790458301a588acbddf"
+    },
+    {
+      "path": "migrations/20201103_rename_language_mappings_table.go",
+      "mode": "100644",
+      "git_blob": "ddff0eae62beb73d7fbcfc53a5e355938a14c69b"
+    },
+    {
+      "path": "migrations/20201106_migration_cascade_constraints.go",
+      "mode": "100644",
+      "git_blob": "1bffd689794e94d6f995eaf13748d1f0e1631aa4"
+    },
+    {
+      "path": "migrations/20210202_fix_cascade_for_alias_user_constraint.go",
+      "mode": "100644",
+      "git_blob": "8f9bfa29edb05028f5ae7f859f15fe3ea42761eb"
+    },
+    {
+      "path": "migrations/20210206_drop_badges_column_add_sharing_flags.go",
+      "mode": "100644",
+      "git_blob": "25e27b2863c4e2e2d183e0d760e9c3c45abe15fd"
+    },
+    {
+      "path": "migrations/20210213_add_has_data_field.go",
+      "mode": "100644",
+      "git_blob": "73dddcbca11a9319aa8ec8b0713e6fd226105891"
+    },
+    {
+      "path": "migrations/20210221_add_created_date_column.go",
+      "mode": "100644",
+      "git_blob": "bceeb263681a0c26cf857df8398efc4b71773b5b"
+    },
+    {
+      "path": "migrations/20210411_add_imprint_content.go",
+      "mode": "100644",
+      "git_blob": "d275d8e3738806e293cfec95c667ab1b37fd9ac8"
+    },
+    {
+      "path": "migrations/20210411_drop_migrations_table.go",
+      "mode": "100644",
+      "git_blob": "f630263e6adf5b5a0675968b7b5005c5681a5d2e"
+    },
+    {
+      "path": "migrations/20210806_remove_persisted_project_labels.go",
+      "mode": "100644",
+      "git_blob": "79fb452eb36aff89d133438e0bedcc81f7dbae7a"
+    },
+    {
+      "path": "migrations/20211215_migrate_id_to_bigint.go",
+      "mode": "100644",
+      "git_blob": "a0e4ac1e3707ea7c6ae349415d5287d97cda515e"
+    },
+    {
+      "path": "migrations/20212212_total_summary_heartbeats.go",
+      "mode": "100644",
+      "git_blob": "639fee67f8952d06b76e9606aac5306077e1622b"
+    },
+    {
+      "path": "migrations/20220317_align_num_heartbeats.go",
+      "mode": "100644",
+      "git_blob": "8c5dc6f3368163d3c6185a3f6f6a9cf2f4fe224a"
+    },
+    {
+      "path": "migrations/20220318_mysql_timestamp_precision.go",
+      "mode": "100644",
+      "git_blob": "a6efd892d60b5bee30fe763a70702251ce56d329"
+    },
+    {
+      "path": "migrations/202203191_drop_diagnostics_user.go",
+      "mode": "100644",
+      "git_blob": "6a1c72293c2cbcb3b92042e3ab4002f04613fe4d"
+    },
+    {
+      "path": "migrations/20220403_drop_user_project_idx.go",
+      "mode": "100644",
+      "git_blob": "a7cef3ad4803f8bbcde2c19ef398fcd1c7d16576"
+    },
+    {
+      "path": "migrations/20220930_drop_heartbeats_entity_idx.go",
+      "mode": "100644",
+      "git_blob": "1b517dc99c07641a93a60b91de35dfbf4ab46423"
+    },
+    {
+      "path": "migrations/20221002_fix_summary_id_types.go",
+      "mode": "100644",
+      "git_blob": "b235cfd50da384e1fb9eebd880356c9fc481b0c6"
+    },
+    {
+      "path": "migrations/20221016_drop_rank_column.go",
+      "mode": "100644",
+      "git_blob": "ea483f8fabb5944b0a069f2fee2b6c8f479e4745"
+    },
+    {
+      "path": "migrations/20221028_fix_heartbeats_time_user_idx.go",
+      "mode": "100644",
+      "git_blob": "2254f5de5c2c36c53d61af8733004fd814c9f904"
+    },
+    {
+      "path": "migrations/20230219_add_astro_language.go",
+      "mode": "100644",
+      "git_blob": "8d096e2e09e7b23148fbe0f40a4f2afe2911f13d"
+    },
+    {
+      "path": "migrations/20230219_add_subscription_renewal.go",
+      "mode": "100644",
+      "git_blob": "b228c3e8e1405fd11b1c6b525aabaa0bd94499e1"
+    },
+    {
+      "path": "migrations/20231023_fill_last_branch.go",
+      "mode": "100644",
+      "git_blob": "b4b45101bc679de3150f9759e4538ffb9d75e9af"
+    },
+    {
+      "path": "migrations/20241220_share_activity_chart_flag.go",
+      "mode": "100644",
+      "git_blob": "6d581bc04d8d962375b80d1845fc0a09a668f2bc"
+    },
+    {
+      "path": "migrations/20250219_update_heartbeats_timeout.go",
+      "mode": "100644",
+      "git_blob": "8b2d278e31e0c2c4d59d443405f9fd91fbf166f1"
+    },
+    {
+      "path": "migrations/20250313_fix_browsing_category.go",
+      "mode": "100644",
+      "git_blob": "29ab3a3732f2059fbd5d32b18ebfe5cf30e3db15"
+    },
+    {
+      "path": "migrations/20250425_add_durations_primary_key.go",
+      "mode": "100644",
+      "git_blob": "763edb5b316728b8cc59831708857213a9a287a5"
+    },
+    {
+      "path": "migrations/20250802_fix_default_coding_category.go",
+      "mode": "100644",
+      "git_blob": "9953a62e6d7aa8b8823b670514cffa72a242c161"
+    },
+    {
+      "path": "migrations/20250802_fix_wsl_os.go",
+      "mode": "100644",
+      "git_blob": "9637ca26f633c89eb8ac4fd7edc4e14bdbe35d5e"
+    },
+    {
+      "path": "migrations/20250907_add_user_heartbeats_range_view.go",
+      "mode": "100644",
+      "git_blob": "d1112aa88c11f297acd82daa52222c469c0868ca"
+    },
+    {
+      "path": "migrations/20251005-drop_duplicate_emails.go",
+      "mode": "100644",
+      "git_blob": "1da768eb02591606d897c7f1452fcc08a9cce87d"
+    },
+    {
+      "path": "migrations/20260103_add_webauthn_fields.go",
+      "mode": "100644",
+      "git_blob": "a7b6b41f6e126fd9cec1973290043b5e310d71a5"
+    },
+    {
+      "path": "migrations/20260214_nullify_empty_email.go",
+      "mode": "100644",
+      "git_blob": "48f245b6b95c586659987811aff9d92b743aff70"
+    },
+    {
+      "path": "migrations/20260214_nullify_empty_sub.go",
+      "mode": "100644",
+      "git_blob": "30ce7bb2ed10f9b5f1342020627d33421bc12b2b"
+    },
+    {
+      "path": "migrations/20260214_sqlite_recreate_views.go",
+      "mode": "100644",
+      "git_blob": "c7a629f6fb98f2494e2b9caa78519b8773f2361e"
+    },
+    {
+      "path": "migrations/20260722_sqlite_convert_time_to_integer.go",
+      "mode": "100644",
+      "git_blob": "6b5e6cff9bc84bce369f4940bf9cdd5ae2de7297"
+    },
+    {
+      "path": "migrations/20260820_fix_ai_model_as_editor.go",
+      "mode": "100644",
+      "git_blob": "17576ae50657b4f62009138ef7d56431cdce41cd"
+    },
+    {
+      "path": "migrations/20260831_lowercase_oidc_provider_names.go",
+      "mode": "100644",
+      "git_blob": "d94f301b89479930303331d440850ea1b7bbc876"
+    },
+    {
+      "path": "migrations/20260925_drop_orphaned_durations.go",
+      "mode": "100644",
+      "git_blob": "15139dfd5a514a71469a1d5b22ece9c0f1594217"
+    },
+    {
+      "path": "migrations/20260925_rename_summary_items_index_mysql.go",
+      "mode": "100644",
+      "git_blob": "9909f1d68e298be9993e32ed170da41d903cd1ff"
+    },
+    {
+      "path": "migrations/20260929_drop_durations_time_index.go",
+      "mode": "100644",
+      "git_blob": "ef414c3faca851a72e5ac1da3100199ba62dfc1f"
+    },
+    {
+      "path": "migrations/20261002_fix_neovim_wakatime_editor.go",
+      "mode": "100644",
+      "git_blob": "30f93305e1f4144f4bf8e7ca49b93cd93fea344c"
+    },
+    {
+      "path": "migrations/migrations.go",
+      "mode": "100644",
+      "git_blob": "f49e148b352feb2ace51f716134bba1dd25faa8c"
+    },
+    {
+      "path": "migrations/shared.go",
+      "mode": "100644",
+      "git_blob": "478a4f19fb1375c56add7e1725fe6c23db423b88"
+    },
+    {
+      "path": "mocks/alias_repository.go",
+      "mode": "100644",
+      "git_blob": "8ad917d8903756e96fd7f55a09bc9b45642ba934"
+    },
+    {
+      "path": "mocks/alias_service.go",
+      "mode": "100644",
+      "git_blob": "37c9eafa97671b4bbde0700b84de03064a7ddf8e"
+    },
+    {
+      "path": "mocks/api_key_service.go",
+      "mode": "100644",
+      "git_blob": "866aa19973ae5122c76068dac7a322f9f6f8a5d6"
+    },
+    {
+      "path": "mocks/base_repository.go",
+      "mode": "100644",
+      "git_blob": "e0b1c876a05f5ac4ea409dfe8acdc549a3677ea8"
+    },
+    {
+      "path": "mocks/duration_repository.go",
+      "mode": "100644",
+      "git_blob": "4a484f149dc1acbf5398acd6c3e6c2eda6c86f0e"
+    },
+    {
+      "path": "mocks/duration_service.go",
+      "mode": "100644",
+      "git_blob": "def31c62dca951d59f0c9f7de828235025cb5d71"
+    },
+    {
+      "path": "mocks/heartbeat_repository.go",
+      "mode": "100644",
+      "git_blob": "a8c9a97919977128d12b6d390ad91abcffa4a3f0"
+    },
+    {
+      "path": "mocks/heartbeat_service.go",
+      "mode": "100644",
+      "git_blob": "25ce14fc8e387d356d219c34dd308a22bf4efd11"
+    },
+    {
+      "path": "mocks/key_value_service.go",
+      "mode": "100644",
+      "git_blob": "b09707a300094a8d39d9a57432d7de417963df60"
+    },
+    {
+      "path": "mocks/language_mapping_service.go",
+      "mode": "100644",
+      "git_blob": "b45fd0a95a9610170f53f454792cbf4891b168ef"
+    },
+    {
+      "path": "mocks/mail_service.go",
+      "mode": "100644",
+      "git_blob": "a855ee5ca731f86a394616da04e43739197d76e3"
+    },
+    {
+      "path": "mocks/project_label_service.go",
+      "mode": "100644",
+      "git_blob": "92dadde3e9bfb89007438b9dc20c4492c5c16ad7"
+    },
+    {
+      "path": "mocks/project_service.go",
+      "mode": "100644",
+      "git_blob": "7636fce109a9211a6814bbab71df0cbde5044d77"
+    },
+    {
+      "path": "mocks/summary_repository.go",
+      "mode": "100644",
+      "git_blob": "84aaae3c9a77bc5e672f617a0fd69109bc3679b0"
+    },
+    {
+      "path": "mocks/summary_service.go",
+      "mode": "100644",
+      "git_blob": "fabe479331c6bae584cd0b9c3bc5092a480e60b9"
+    },
+    {
+      "path": "mocks/user_repository.go",
+      "mode": "100644",
+      "git_blob": "84511f6a000a623501586f9b9874474fd0e2b004"
+    },
+    {
+      "path": "mocks/user_service.go",
+      "mode": "100644",
+      "git_blob": "09ab931f9e1e51fa489927b406c80dbcc13d0794"
+    },
+    {
+      "path": "mocks/webauthn_service.go",
+      "mode": "100644",
+      "git_blob": "17c7a526f51e1777effd3347e45c84e69542fc91"
+    },
+    {
+      "path": "models/alias.go",
+      "mode": "100644",
+      "git_blob": "ffc09787b2836bda492c37403e24d20163c76f88"
+    },
+    {
+      "path": "models/api_key.go",
+      "mode": "100644",
+      "git_blob": "fb42b9a36b5257800db7b39a98c55e84bf14fe28"
+    },
+    {
+      "path": "models/canonical_names.go",
+      "mode": "100644",
+      "git_blob": "8b83e3ef043265469a500fa015ec245ff893861d"
+    },
+    {
+      "path": "models/compat/shields/v1/badge.go",
+      "mode": "100644",
+      "git_blob": "6ef754dea90f6f17f99b4d183412740392055602"
+    },
+    {
+      "path": "models/compat/wakatime/v1/all_time.go",
+      "mode": "100644",
+      "git_blob": "55dc68fc5f31a22dbc1c294b7b8f757103bf162f"
+    },
+    {
+      "path": "models/compat/wakatime/v1/data_dump.go",
+      "mode": "100644",
+      "git_blob": "07c95bac59c13c5ae8195c1d5e3b95396fce951f"
+    },
+    {
+      "path": "models/compat/wakatime/v1/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "0f5ab1ea266e524904f2b3e0821dfae17863376d"
+    },
+    {
+      "path": "models/compat/wakatime/v1/json_export.go",
+      "mode": "100644",
+      "git_blob": "4677bc7335893ab15e2e2c2ddfb58ab9c721655e"
+    },
+    {
+      "path": "models/compat/wakatime/v1/leaders.go",
+      "mode": "100644",
+      "git_blob": "b048967818ea9cdb78d305877a88ea43cd4d68d9"
+    },
+    {
+      "path": "models/compat/wakatime/v1/machine.go",
+      "mode": "100644",
+      "git_blob": "526b72d1cdcad7e1bff04b1ca4b7036f54ef1f02"
+    },
+    {
+      "path": "models/compat/wakatime/v1/project.go",
+      "mode": "100644",
+      "git_blob": "374d55712ec69ba72e53d77ac84600fa543aa960"
+    },
+    {
+      "path": "models/compat/wakatime/v1/stats.go",
+      "mode": "100644",
+      "git_blob": "78e143fe9bf76b35ba2dc84bb506e358d0855b18"
+    },
+    {
+      "path": "models/compat/wakatime/v1/summaries.go",
+      "mode": "100644",
+      "git_blob": "f52c67d228b4ac7d064c1949bc6a4081e99efa14"
+    },
+    {
+      "path": "models/compat/wakatime/v1/user.go",
+      "mode": "100644",
+      "git_blob": "775a2eeb61bbe04f369c1a282577c6fb7be4787f"
+    },
+    {
+      "path": "models/compat/wakatime/v1/user_agent.go",
+      "mode": "100644",
+      "git_blob": "80368b5c7c33b9354bd97ba997e3f3b663099747"
+    },
+    {
+      "path": "models/diagnostics.go",
+      "mode": "100644",
+      "git_blob": "6031edddc01da6bb04f5bb352109760d4c463dc4"
+    },
+    {
+      "path": "models/duration.go",
+      "mode": "100644",
+      "git_blob": "f6deb5a779edca903dde38ec6e264a77217a22b8"
+    },
+    {
+      "path": "models/durations.go",
+      "mode": "100644",
+      "git_blob": "1b23407dc923ec57407693cea033ac75fd556017"
+    },
+    {
+      "path": "models/filters.go",
+      "mode": "100644",
+      "git_blob": "9a84d493ec6d143d1a9f55f7f009cb84b35ed340"
+    },
+    {
+      "path": "models/filters_test.go",
+      "mode": "100644",
+      "git_blob": "40ba0afa09e900ce4602005c55b75538c735853b"
+    },
+    {
+      "path": "models/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "eb6dda43120ff4f2803d5220a1c797992117bba6"
+    },
+    {
+      "path": "models/heartbeat_test.go",
+      "mode": "100644",
+      "git_blob": "661d4ab12945a4f789eba7d1d75da9fbb00f749c"
+    },
+    {
+      "path": "models/heartbeats.go",
+      "mode": "100644",
+      "git_blob": "28e1d6670528b5dd6a20b88587290a81ba696377"
+    },
+    {
+      "path": "models/init_test.go",
+      "mode": "100644",
+      "git_blob": "da98d0d990b45bccfc465c3408a4e9bcd13d255e"
+    },
+    {
+      "path": "models/interval.go",
+      "mode": "100644",
+      "git_blob": "6e4f721d42bcfe2130fef575a7ee8ab8064b3c35"
+    },
+    {
+      "path": "models/language_mapping.go",
+      "mode": "100644",
+      "git_blob": "371cf9af41ce3425f623f19688d61936fa6e1b86"
+    },
+    {
+      "path": "models/leaderboard.go",
+      "mode": "100644",
+      "git_blob": "975e6bd420dc917052c80f959d3ab5e55b138ea7"
+    },
+    {
+      "path": "models/lib/extensions.go",
+      "mode": "100644",
+      "git_blob": "d55ddb13b0af8d5e7b313f40b6a8a1693fcfdd8d"
+    },
+    {
+      "path": "models/mail.go",
+      "mode": "100644",
+      "git_blob": "851198e7c1a5f7ec1111e04201bd2d738389b5a6"
+    },
+    {
+      "path": "models/mail_address.go",
+      "mode": "100644",
+      "git_blob": "d0c0c1f816d2814fc258af838976a12cec7828fd"
+    },
+    {
+      "path": "models/mail_address_test.go",
+      "mode": "100644",
+      "git_blob": "f6be71dfee979ff0a992f42ff3954315c653ea84"
+    },
+    {
+      "path": "models/metrics/counter_metric.go",
+      "mode": "100644",
+      "git_blob": "def7531eae0e028bf1bcc8481c4d0519e32ca37e"
+    },
+    {
+      "path": "models/metrics/gauge_metric.go",
+      "mode": "100644",
+      "git_blob": "651281bd2ea1677b7fc65011c0c1e3f23d435f87"
+    },
+    {
+      "path": "models/metrics/label.go",
+      "mode": "100644",
+      "git_blob": "1a34e9113067575b687a89308d4b05840f827668"
+    },
+    {
+      "path": "models/metrics/metric.go",
+      "mode": "100644",
+      "git_blob": "d348cb1614bc98b3499361e7f6848a754161f893"
+    },
+    {
+      "path": "models/models.go",
+      "mode": "100644",
+      "git_blob": "b65fe2021826bdd392a28e980324dea9b9ebcd2b"
+    },
+    {
+      "path": "models/project_label.go",
+      "mode": "100644",
+      "git_blob": "d143e50f951d731c3a55974812766900dede0762"
+    },
+    {
+      "path": "models/project_stats.go",
+      "mode": "100644",
+      "git_blob": "8ae1478bd28b6f7413f9b276d36145ba9a1ae83b"
+    },
+    {
+      "path": "models/report.go",
+      "mode": "100644",
+      "git_blob": "87ec057e7d22b534e0c7b8f718c5c734f642b2d3"
+    },
+    {
+      "path": "models/shared.go",
+      "mode": "100644",
+      "git_blob": "0e91e6c39cc53e0ee72c9748ccdeb58370218304"
+    },
+    {
+      "path": "models/shared_test.go",
+      "mode": "100644",
+      "git_blob": "5d35bc678d0b6251cd8fb1b579d21f05d8053ec8"
+    },
+    {
+      "path": "models/summary.go",
+      "mode": "100644",
+      "git_blob": "fb834fadef092195cb596bbcebcd7cdedd24e01a"
+    },
+    {
+      "path": "models/summary_test.go",
+      "mode": "100644",
+      "git_blob": "99ad2498761acacf64650124c764d3045745a9a4"
+    },
+    {
+      "path": "models/types/types.go",
+      "mode": "100644",
+      "git_blob": "359380bf45aa27ad20ccc848418859cbaf49d7cf"
+    },
+    {
+      "path": "models/user.go",
+      "mode": "100644",
+      "git_blob": "fc4f62f3e05ea11a01db26827084d28453e1356b"
+    },
+    {
+      "path": "models/user_agent.go",
+      "mode": "100644",
+      "git_blob": "370fddaa6ee056b539f2c5f84ba101bb6b9783b2"
+    },
+    {
+      "path": "models/user_test.go",
+      "mode": "100644",
+      "git_blob": "d35c70ae89f098408f103b50d5293acea9b95417"
+    },
+    {
+      "path": "models/view/common.go",
+      "mode": "100644",
+      "git_blob": "45e05333f7be9285745f6c41869f704dfad6f65b"
+    },
+    {
+      "path": "models/view/home.go",
+      "mode": "100644",
+      "git_blob": "b00ebb43e09b0e7bdd15b13da42719fe6aaea8f6"
+    },
+    {
+      "path": "models/view/imprint.go",
+      "mode": "100644",
+      "git_blob": "8e472c7a2717f796241d4d1773833f62d4c68b99"
+    },
+    {
+      "path": "models/view/leaderboard.go",
+      "mode": "100644",
+      "git_blob": "28021f29315f8765fce875de5f2b911547a1b339"
+    },
+    {
+      "path": "models/view/login.go",
+      "mode": "100644",
+      "git_blob": "119d13ea8aff72219052bda92f04d755380cdb30"
+    },
+    {
+      "path": "models/view/projects.go",
+      "mode": "100644",
+      "git_blob": "e035125f300d30069fa4ba97f448ffe917d071e7"
+    },
+    {
+      "path": "models/view/settings.go",
+      "mode": "100644",
+      "git_blob": "5a56816485f3744687ae6edb71097d1f87e54929"
+    },
+    {
+      "path": "models/view/setup.go",
+      "mode": "100644",
+      "git_blob": "0e5b93e4541e4f0f9a1ed9a6c514ee07d600a754"
+    },
+    {
+      "path": "models/view/summary.go",
+      "mode": "100644",
+      "git_blob": "e3885c7cd035d3c25f0c159c160b755079e6f124"
+    },
+    {
+      "path": "models/view/utils.go",
+      "mode": "100644",
+      "git_blob": "7911b5c4def20421d85e3fcdfc19b15fbeacb378"
+    },
+    {
+      "path": "models/webauthn.go",
+      "mode": "100644",
+      "git_blob": "1f5ebc93a69088cf603813a84879bb36e0967cbf"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "git_blob": "28712880d0f3fcfddafa9ce5ce1c1c84a0dc974a"
+    },
+    {
+      "path": "repositories/alias.go",
+      "mode": "100644",
+      "git_blob": "16534236fc6e8fb2c29a2e47bb60abad4eb2dbb1"
+    },
+    {
+      "path": "repositories/api_key.go",
+      "mode": "100644",
+      "git_blob": "1ff0bcb60c618d4ae5aba647d2bab277323867ac"
+    },
+    {
+      "path": "repositories/base.go",
+      "mode": "100644",
+      "git_blob": "054cb10b34276e48bcb8b8377642d5366f6dc1e3"
+    },
+    {
+      "path": "repositories/diagnostics.go",
+      "mode": "100644",
+      "git_blob": "ac964b11173f39be7501afd4206ab21eeae81050"
+    },
+    {
+      "path": "repositories/duration.go",
+      "mode": "100644",
+      "git_blob": "f3e28d2c2c99b8d67bdab284e0572744a5bae118"
+    },
+    {
+      "path": "repositories/duration_test.go",
+      "mode": "100644",
+      "git_blob": "ed8cd11155285305540cdacfd6423ea987ecc802"
+    },
+    {
+      "path": "repositories/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "78f50503015e890e39c0eb0d026012efbcb2be0f"
+    },
+    {
+      "path": "repositories/heartbeat_test.go",
+      "mode": "100644",
+      "git_blob": "6c85b3f2bbdbcd73bcd743b78e6d49f563bef318"
+    },
+    {
+      "path": "repositories/key_value.go",
+      "mode": "100644",
+      "git_blob": "b4f03b0d49d0b22fb3646ed7a6d4c2d035d10e86"
+    },
+    {
+      "path": "repositories/language_mapping.go",
+      "mode": "100644",
+      "git_blob": "914b89185744762597fc6d92ac7d8da0254d751f"
+    },
+    {
+      "path": "repositories/leaderboard.go",
+      "mode": "100644",
+      "git_blob": "5611019fcc4403f95d6f175cf8abca840621ccc7"
+    },
+    {
+      "path": "repositories/metrics.go",
+      "mode": "100644",
+      "git_blob": "adf34a9c4cb2f3dc31b2c8dab9c1a0afe6811259"
+    },
+    {
+      "path": "repositories/project_label.go",
+      "mode": "100644",
+      "git_blob": "7c0a61bb99a6085600b5853d466f281740a622fa"
+    },
+    {
+      "path": "repositories/repositories.go",
+      "mode": "100644",
+      "git_blob": "b03c208f759dbdaeefe32cbc1152821b91a7efea"
+    },
+    {
+      "path": "repositories/summary.go",
+      "mode": "100644",
+      "git_blob": "b2b720d56f726d8612901ff7ee52ad8864ea9d82"
+    },
+    {
+      "path": "repositories/user.go",
+      "mode": "100644",
+      "git_blob": "61246e63dae9512dea011fe3f873054c1e9b339b"
+    },
+    {
+      "path": "repositories/webauthn.go",
+      "mode": "100644",
+      "git_blob": "ace87ce2cd0f36157a770374bc1e63fc57c78e89"
+    },
+    {
+      "path": "routes/api/activity.go",
+      "mode": "100644",
+      "git_blob": "6678401f053bc643386c37fa8050f4f490a6bcbb"
+    },
+    {
+      "path": "routes/api/avatar.go",
+      "mode": "100644",
+      "git_blob": "bfd74f501277fecd89674d210f6d15ec155eb81e"
+    },
+    {
+      "path": "routes/api/badge.go",
+      "mode": "100644",
+      "git_blob": "50adb6efcacba5b249eb059e6c619c9fd52ec553"
+    },
+    {
+      "path": "routes/api/badge_test.go",
+      "mode": "100644",
+      "git_blob": "3e2c127d0dda9db6af4b9d5d2cf59f9fed2f8a8a"
+    },
+    {
+      "path": "routes/api/captcha.go",
+      "mode": "100644",
+      "git_blob": "af552ab1e3d8abf670359a74ac31ae6f923afaa4"
+    },
+    {
+      "path": "routes/api/diagnostics.go",
+      "mode": "100644",
+      "git_blob": "9222f72ff5536875cb7773f6da7cb19a2147a5dc"
+    },
+    {
+      "path": "routes/api/health.go",
+      "mode": "100644",
+      "git_blob": "47ff1ca2672a140f51a98a67ed50b5e88823f3a8"
+    },
+    {
+      "path": "routes/api/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "f962730f33a6a31ead8f1d01bc56fdd7cee2cf48"
+    },
+    {
+      "path": "routes/api/heartbeat_test.go",
+      "mode": "100644",
+      "git_blob": "8bde7a4a2b1d2cad39c2a8a9ed0afb6def8e4aff"
+    },
+    {
+      "path": "routes/api/metrics.go",
+      "mode": "100644",
+      "git_blob": "877caf3e153dca1aa2e4b3ac76ecf9140114d0eb"
+    },
+    {
+      "path": "routes/api/root.go",
+      "mode": "100644",
+      "git_blob": "6190371fac8eec9b8c2f3db5c0273afbf24f2a7b"
+    },
+    {
+      "path": "routes/api/root_test.go",
+      "mode": "100644",
+      "git_blob": "cd07d97d1d047bb690248c59a3deec2df8c31343"
+    },
+    {
+      "path": "routes/api/summary.go",
+      "mode": "100644",
+      "git_blob": "5aab7c8bf28e00fdb8e677860a65bb49ee364bfa"
+    },
+    {
+      "path": "routes/compat/shields/v1/badge.go",
+      "mode": "100644",
+      "git_blob": "fb0573933403aea64a8f4f8a58f42bb66d28a87f"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/all_time.go",
+      "mode": "100644",
+      "git_blob": "a5bd1ce9caa3d7b21ec0c7839919fc862def4cc3"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "45b4e3c3bf747c0eb0cce1d49452ad28629db9e7"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/leaders.go",
+      "mode": "100644",
+      "git_blob": "62483e40db38b379c1a6c7e2143abef8b5a7af5a"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/projects.go",
+      "mode": "100644",
+      "git_blob": "26fe543020b7ea72f4557ff5e407e9b9f364e7fb"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/stats.go",
+      "mode": "100644",
+      "git_blob": "9d712ca8b51b5f1c838a71908598a40864b12f9b"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/statusbar.go",
+      "mode": "100644",
+      "git_blob": "ec0ec6df5af25b762d59cb9e59b37fd225fffa64"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/summaries.go",
+      "mode": "100644",
+      "git_blob": "174868fe4eedc6447cf55b638d8eb954e9086e15"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/test_utils_test.go",
+      "mode": "100644",
+      "git_blob": "941d3f5ca2e095c4e5901754898c31876518066f"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/user_agents.go",
+      "mode": "100644",
+      "git_blob": "5e87ef25a21c610eb44f79c7e213520936d3e6de"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/users.go",
+      "mode": "100644",
+      "git_blob": "4965d27343cbec3a819a7b8b2fee875ac818c48f"
+    },
+    {
+      "path": "routes/compat/wakatime/v1/users_test.go",
+      "mode": "100644",
+      "git_blob": "90366145c2585e9a32bd4531a71e92806b9254a8"
+    },
+    {
+      "path": "routes/handler.go",
+      "mode": "100644",
+      "git_blob": "e5ff45ee3801a735411240f9674c0552607c4f07"
+    },
+    {
+      "path": "routes/home.go",
+      "mode": "100644",
+      "git_blob": "5673144c30059237916413774d4d1a5496493260"
+    },
+    {
+      "path": "routes/home_test.go",
+      "mode": "100644",
+      "git_blob": "f6128858c6005684e4c0b5cc942e0fcaada5614e"
+    },
+    {
+      "path": "routes/imprint.go",
+      "mode": "100644",
+      "git_blob": "1c88448a37438ecd961ef46060461aae76355236"
+    },
+    {
+      "path": "routes/leaderboard.go",
+      "mode": "100644",
+      "git_blob": "1628b55e3df5ea95ee5308f44a6cef7342cce4ff"
+    },
+    {
+      "path": "routes/login.go",
+      "mode": "100644",
+      "git_blob": "1e596fa90ad78d054a1d0be33f4ec80512dc9d32"
+    },
+    {
+      "path": "routes/login_test.go",
+      "mode": "100644",
+      "git_blob": "661f403c657c6d717d397980ca49f7d2916789e8"
+    },
+    {
+      "path": "routes/misc.go",
+      "mode": "100644",
+      "git_blob": "6d9c2c8cce41f2ad28e3ffe5d24a670196a38eaa"
+    },
+    {
+      "path": "routes/projects.go",
+      "mode": "100644",
+      "git_blob": "975b7148e149ab2e8419cc9dcd45b377561d8fa0"
+    },
+    {
+      "path": "routes/routes.go",
+      "mode": "100644",
+      "git_blob": "376bb1122d69d792329fa6aed654c93daa443027"
+    },
+    {
+      "path": "routes/settings.go",
+      "mode": "100644",
+      "git_blob": "c419ce428cc55e52a9b270d79327b5a11f404c23"
+    },
+    {
+      "path": "routes/settings_test.go",
+      "mode": "100644",
+      "git_blob": "8982d7369f2c063704c407d9d0a78e6032dba523"
+    },
+    {
+      "path": "routes/setup.go",
+      "mode": "100644",
+      "git_blob": "a7b94ef3a8fa18b3f2e7daef204b62aa654286d2"
+    },
+    {
+      "path": "routes/subscription.go",
+      "mode": "100644",
+      "git_blob": "d43796aa58048c237becbefc8935e5baa06e774e"
+    },
+    {
+      "path": "routes/summary.go",
+      "mode": "100644",
+      "git_blob": "63b0a2d4747d34c9c66987110733cf599a239b2f"
+    },
+    {
+      "path": "routes/test_utils.go",
+      "mode": "100644",
+      "git_blob": "1c7605aa24fac990264b8f8aa38bde48049eb3bc"
+    },
+    {
+      "path": "routes/utils/badge_utils.go",
+      "mode": "100644",
+      "git_blob": "3904c27efa524cb1e3fd20fa5df646f7a76fbbe4"
+    },
+    {
+      "path": "routes/utils/cookie.go",
+      "mode": "100644",
+      "git_blob": "9d70a66c90cb6e7889a0933a5c5857a0c138ef29"
+    },
+    {
+      "path": "routes/utils/filter_utils.go",
+      "mode": "100644",
+      "git_blob": "95332cee765067df5993d59b882285a6f7a9182c"
+    },
+    {
+      "path": "routes/utils/filter_utils_test.go",
+      "mode": "100644",
+      "git_blob": "6b199ff544a0a2666f777cc2dac11c948b90bafe"
+    },
+    {
+      "path": "routes/utils/heartbeat_utils.go",
+      "mode": "100644",
+      "git_blob": "1c441a179de26c0d0354756730af56a67fb42574"
+    },
+    {
+      "path": "routes/utils/json.go",
+      "mode": "100644",
+      "git_blob": "a506ef4be2f652108d59784f4a17feb2c0fea073"
+    },
+    {
+      "path": "routes/utils/messages.go",
+      "mode": "100644",
+      "git_blob": "5072377dd54e0d746623ba29f731df6e2aa13e38"
+    },
+    {
+      "path": "routes/utils/oidc.go",
+      "mode": "100644",
+      "git_blob": "30c83443098e07b486bd8b756cd902ed8eb465cf"
+    },
+    {
+      "path": "routes/utils/principal.go",
+      "mode": "100644",
+      "git_blob": "2219bd58bb2f78ffe458382618e59b57a6f78c83"
+    },
+    {
+      "path": "routes/utils/project_utils.go",
+      "mode": "100644",
+      "git_blob": "e34b87d67e70bee324bda59b945fc70a3c8cd8d0"
+    },
+    {
+      "path": "routes/utils/session.go",
+      "mode": "100644",
+      "git_blob": "457663b3c849bb22a97ea7dd3b4b58272ff1aba7"
+    },
+    {
+      "path": "routes/utils/summary_utils.go",
+      "mode": "100644",
+      "git_blob": "b4164c4acf8c8a69406711887425fda66a4c9103"
+    },
+    {
+      "path": "routes/utils/user_utils.go",
+      "mode": "100644",
+      "git_blob": "868c16c9da3ac1091e1c75c5b64f126556f9f231"
+    },
+    {
+      "path": "routes/utils/user_utils_test.go",
+      "mode": "100644",
+      "git_blob": "45ef8c40b8f6102cda8e5146d343f78065a1117d"
+    },
+    {
+      "path": "routes/utils/wakatime_utils.go",
+      "mode": "100644",
+      "git_blob": "c706a1c3b1a33f9d39ee41cf4149301d2eb5e141"
+    },
+    {
+      "path": "routes/utils/wakatime_utils_test.go",
+      "mode": "100644",
+      "git_blob": "6d1a6c59116c71ba29ab879446a27e44e168cdf6"
+    },
+    {
+      "path": "routes/utils/webauthn.go",
+      "mode": "100644",
+      "git_blob": "040974168ae01b62d769e678f774c5b255bba571"
+    },
+    {
+      "path": "routes/webauthn_test.go",
+      "mode": "100644",
+      "git_blob": "211ede21390c7a165d5857ec39436e94f06472b2"
+    },
+    {
+      "path": "scripts/aggregate_durations_mysql.sql",
+      "mode": "100644",
+      "git_blob": "1bc12fba32c5f3e9087d129e19a29a76003d91e0"
+    },
+    {
+      "path": "scripts/aggregate_durations_postgres.sql",
+      "mode": "100644",
+      "git_blob": "a52056fdc44d818c3f3c1ffb16db5016bb50e5ec"
+    },
+    {
+      "path": "scripts/build.sh",
+      "mode": "100644",
+      "git_blob": "e5ac1ee48631878b333a2dd41b27848353a32841"
+    },
+    {
+      "path": "scripts/bundle_icons.js",
+      "mode": "100755",
+      "git_blob": "0543e1a7fd67787b82ecc106e210c8937eb778ad"
+    },
+    {
+      "path": "scripts/clean_duplicates.sql",
+      "mode": "100644",
+      "git_blob": "5825175504da2ea58fb767edc248d399c5ab1fdb"
+    },
+    {
+      "path": "scripts/convert_colors.py",
+      "mode": "100644",
+      "git_blob": "c4f069f4cd1049beb1ecff9b0d049fe72646017d"
+    },
+    {
+      "path": "scripts/count_duplicates_by_user.sql",
+      "mode": "100644",
+      "git_blob": "54fcdaba1ef8f92c01ef25cea74d7ed4e82b11f6"
+    },
+    {
+      "path": "scripts/create_user.sh",
+      "mode": "100644",
+      "git_blob": "b888ba361c322cd0f11eb3982f74a8c41dddec27"
+    },
+    {
+      "path": "scripts/database_size_mysql.sql",
+      "mode": "100644",
+      "git_blob": "95912e323db177f678997a4b4297829b86f28d1a"
+    },
+    {
+      "path": "scripts/dbmigrate.go",
+      "mode": "100644",
+      "git_blob": "1123d6928c4b5c7e4e172e5ca22f62b6b5457179"
+    },
+    {
+      "path": "scripts/docker_mariadb.sh",
+      "mode": "100644",
+      "git_blob": "91f1046a4327b480ba2c641f1f4c5841650e210c"
+    },
+    {
+      "path": "scripts/docker_mysql.sh",
+      "mode": "100644",
+      "git_blob": "64be4440335712b0b9d81e5f8d40ed5b8638cd57"
+    },
+    {
+      "path": "scripts/docker_postgres.sh",
+      "mode": "100644",
+      "git_blob": "40d2c391af2acf815fe4ec60b12e3985ed0f148b"
+    },
+    {
+      "path": "scripts/download_heartbeats.py",
+      "mode": "100644",
+      "git_blob": "155118d157c3c7530618f5a149f4d45ddfdeb5db"
+    },
+    {
+      "path": "scripts/email_checker.go",
+      "mode": "100644",
+      "git_blob": "82000ddc8e2dc582ef30e49330defaa503803a20"
+    },
+    {
+      "path": "scripts/get.sh",
+      "mode": "100644",
+      "git_blob": "bfc13215e11696ea598fa70a247861a6c511e7b0"
+    },
+    {
+      "path": "scripts/go.mod",
+      "mode": "100644",
+      "git_blob": "cef90771df72a8eff42db37d434beb475f269de8"
+    },
+    {
+      "path": "scripts/go.sum",
+      "mode": "100644",
+      "git_blob": "e91f9bac85c42a5bee896af01025feef4da8cae0"
+    },
+    {
+      "path": "scripts/healthcheck.go",
+      "mode": "100644",
+      "git_blob": "f44acef0e6938289979903bd74ff445022d805d2"
+    },
+    {
+      "path": "scripts/loadtest.sh",
+      "mode": "100644",
+      "git_blob": "8aa8bccd17d529a8ad3db67dafe11908916feb01"
+    },
+    {
+      "path": "scripts/mysql_highmem_watcher.sh",
+      "mode": "100644",
+      "git_blob": "3842bc1c7fa7911a5fe614b0e1ca20861298ab17"
+    },
+    {
+      "path": "scripts/mysql_tsv_export.sh",
+      "mode": "100644",
+      "git_blob": "6dd57a22c99d109d6cee22ad5dd9b2933ab712c0"
+    },
+    {
+      "path": "scripts/mysql_tsv_import.sh",
+      "mode": "100644",
+      "git_blob": "a932238496dace142056171ffae5b92b87827d85"
+    },
+    {
+      "path": "scripts/sample_data.py",
+      "mode": "100644",
+      "git_blob": "4151d7fa80cf686b849c683ef4a8441128e71850"
+    },
+    {
+      "path": "scripts/send_mail.py",
+      "mode": "100644",
+      "git_blob": "6db7b271370e6e38fb6b4a6eb1e8c55619d38f75"
+    },
+    {
+      "path": "scripts/upload_heartbeats.py",
+      "mode": "100644",
+      "git_blob": "ca8d4bc149a7f024821897640eeb0348c745f115"
+    },
+    {
+      "path": "services/activity.go",
+      "mode": "100644",
+      "git_blob": "e51a3daa845cd73e235fd2acead3220cb0470b52"
+    },
+    {
+      "path": "services/aggregation.go",
+      "mode": "100644",
+      "git_blob": "9f9e0e80f93fbba68e74a977a728b4fa7665feb8"
+    },
+    {
+      "path": "services/aggregation_test.go",
+      "mode": "100644",
+      "git_blob": "9b6b8bda7d0f1ae65672eef39637890c3b7b2dbb"
+    },
+    {
+      "path": "services/alias.go",
+      "mode": "100644",
+      "git_blob": "0566fc627fc9eeeb00106b316c4db0e47cf60c26"
+    },
+    {
+      "path": "services/alias_test.go",
+      "mode": "100644",
+      "git_blob": "2351b6fab9fd54ae1101057e82d5c15849aa0767"
+    },
+    {
+      "path": "services/api_key.go",
+      "mode": "100644",
+      "git_blob": "7a3d2ec496f0e93625a955bb7af0f0783fbca73e"
+    },
+    {
+      "path": "services/diagnostics.go",
+      "mode": "100644",
+      "git_blob": "59edb79c28019d265f05b7f657bbb8f3de96c1f2"
+    },
+    {
+      "path": "services/duration.go",
+      "mode": "100644",
+      "git_blob": "8047ab6a32f50e5bdb594c50498a1ee419743bc4"
+    },
+    {
+      "path": "services/duration_test.go",
+      "mode": "100644",
+      "git_blob": "68365385da0e4710599d25b6014ab3bca625d7d7"
+    },
+    {
+      "path": "services/heartbeat.go",
+      "mode": "100644",
+      "git_blob": "db19a30090ee784039972f474560bbeebf040858"
+    },
+    {
+      "path": "services/housekeeping.go",
+      "mode": "100644",
+      "git_blob": "0ad86af6bd514446c4680dbba54f6d5e523922eb"
+    },
+    {
+      "path": "services/housekeeping_test.go",
+      "mode": "100644",
+      "git_blob": "ab363b544483ea02bde0ea5f02057eb5a48638a6"
+    },
+    {
+      "path": "services/imports/importers.go",
+      "mode": "100644",
+      "git_blob": "668bd918b0807d6f0ee92416e43d0065fac8138d"
+    },
+    {
+      "path": "services/imports/wakatime.go",
+      "mode": "100644",
+      "git_blob": "6dea28911eb978993b46e09ca3efd52c50fc2786"
+    },
+    {
+      "path": "services/imports/wakatime_dump.go",
+      "mode": "100644",
+      "git_blob": "c17d98e5884bcc3a2ae6e426b6acc592b1339c80"
+    },
+    {
+      "path": "services/imports/wakatime_heartbeats.go",
+      "mode": "100644",
+      "git_blob": "e3314294cc7909fb94f6dc57bdec9928a9da8586"
+    },
+    {
+      "path": "services/imports/wakatime_test.go",
+      "mode": "100644",
+      "git_blob": "294dea1fe503a3086d6406824ac81493958b4bb6"
+    },
+    {
+      "path": "services/imports/wakatime_utils.go",
+      "mode": "100644",
+      "git_blob": "36f446665eb9537c11195d99785e2e5ae42493ae"
+    },
+    {
+      "path": "services/key_value.go",
+      "mode": "100644",
+      "git_blob": "850eb61d4c5d2c4ba157a6f5e27ab5834166846d"
+    },
+    {
+      "path": "services/language_mapping.go",
+      "mode": "100644",
+      "git_blob": "8e68a21f14c751aaf28d5d67afb0daada94d7274"
+    },
+    {
+      "path": "services/leaderboard.go",
+      "mode": "100644",
+      "git_blob": "70c04b4da81761f23eb2e88305cd483d90d861ec"
+    },
+    {
+      "path": "services/mail/mail.go",
+      "mode": "100644",
+      "git_blob": "f3eaa4931c1c5fb5c0e21930a33f197c6454e2b2"
+    },
+    {
+      "path": "services/mail/noop.go",
+      "mode": "100644",
+      "git_blob": "9c5545015dd6c827df6dee170a618b921bdbd447"
+    },
+    {
+      "path": "services/mail/smtp.go",
+      "mode": "100644",
+      "git_blob": "0952219094f2d2400d4e982e8612f6235d080bae"
+    },
+    {
+      "path": "services/mail/smtp_test.go",
+      "mode": "100644",
+      "git_blob": "5afbdc4accde0af62e4ae794464611410e0e625d"
+    },
+    {
+      "path": "services/mail/types.go",
+      "mode": "100644",
+      "git_blob": "9f95c782f42ea68e35e47ebc6c1533c9f1a602a8"
+    },
+    {
+      "path": "services/mail/utils.go",
+      "mode": "100644",
+      "git_blob": "9ca19e8467c6207536a6ce3039f601ea0fb42347"
+    },
+    {
+      "path": "services/misc.go",
+      "mode": "100644",
+      "git_blob": "9b8631787f10f7d6000b8f29fb933de869cd3236"
+    },
+    {
+      "path": "services/project.go",
+      "mode": "100644",
+      "git_blob": "12cc1bf83e949e03fd6202b51241e80916caea70"
+    },
+    {
+      "path": "services/project_label.go",
+      "mode": "100644",
+      "git_blob": "1684c3fe129e0d7d00e6e189963dff6b0f7ca3df"
+    },
+    {
+      "path": "services/project_test.go",
+      "mode": "100644",
+      "git_blob": "f31e90fbbbbabc6d96eb4c3cff307892b12590f1"
+    },
+    {
+      "path": "services/report.go",
+      "mode": "100644",
+      "git_blob": "e24d1787dd0571908c12c3c18fd899ad1b5e240f"
+    },
+    {
+      "path": "services/services.go",
+      "mode": "100644",
+      "git_blob": "e54c6739749e72dc0217d83e4205f0d4223d59d4"
+    },
+    {
+      "path": "services/summary.go",
+      "mode": "100644",
+      "git_blob": "f0bd1709c316dabdb82c1e1bc693978dd1130c9b"
+    },
+    {
+      "path": "services/summary_test.go",
+      "mode": "100644",
+      "git_blob": "ee39c419189925a6342090b22c40f2bba0e6b9e1"
+    },
+    {
+      "path": "services/user.go",
+      "mode": "100644",
+      "git_blob": "19d9cce25a824962ce180e04837f8053e386b530"
+    },
+    {
+      "path": "services/user_test.go",
+      "mode": "100644",
+      "git_blob": "ba0d5a35c8681053992900df195beb2323d99212"
+    },
+    {
+      "path": "services/webauthn.go",
+      "mode": "100644",
+      "git_blob": "5b7119628a298fdfde1743af5e53ff374b11ee8a"
+    },
+    {
+      "path": "sonar-project.properties",
+      "mode": "100644",
+      "git_blob": "7b521a87badab9d72ccd6b7e2894e33d0eb71de6"
+    },
+    {
+      "path": "static/assets/css/app.css",
+      "mode": "100644",
+      "git_blob": "73c77e0c9828aea4a9ba3da4040c0bf75a6cc48e"
+    },
+    {
+      "path": "static/assets/css/app.dist.css",
+      "mode": "100644",
+      "git_blob": "ee03077fc528cd7f29b1fcde87873ec0895944a7"
+    },
+    {
+      "path": "static/assets/css/app.dist.css.br",
+      "mode": "100644",
+      "git_blob": "616062b7c3f127cf4b745e586f616ef11107754c"
+    },
+    {
+      "path": "static/assets/images/badge_go.svg",
+      "mode": "100644",
+      "git_blob": "c9fe7d0f91f43fb4b011e576828588c4abac0d1e"
+    },
+    {
+      "path": "static/assets/images/badge_license.svg",
+      "mode": "100644",
+      "git_blob": "25b390f0e8d32b6afcf8d6d8cc3ff33991c668ec"
+    },
+    {
+      "path": "static/assets/images/icon-192x192.png",
+      "mode": "100644",
+      "git_blob": "fc8ce60d1d2b9e6d0ce8dceab937091ad85e3284"
+    },
+    {
+      "path": "static/assets/images/icon-512x512.png",
+      "mode": "100644",
+      "git_blob": "4b15bdd94dde8e834edc6b627869c0c731d28273"
+    },
+    {
+      "path": "static/assets/images/icon-512x512.webp",
+      "mode": "100644",
+      "git_blob": "e38b1c4636c00843337ab4f6b71c6da99712e50a"
+    },
+    {
+      "path": "static/assets/images/icon.svg",
+      "mode": "100644",
+      "git_blob": "3ee1b3b1fbe988aa974928b1b95efcc943968da2"
+    },
+    {
+      "path": "static/assets/images/logo-gh.svg",
+      "mode": "100755",
+      "git_blob": "6c8d4ab8494876299efc8715e06ef263bec3661f"
+    },
+    {
+      "path": "static/assets/images/logo-marketing.svg",
+      "mode": "100644",
+      "git_blob": "7ba32bf2ba668196f051a30c024b4b3b626dcfbf"
+    },
+    {
+      "path": "static/assets/images/logo.svg",
+      "mode": "100755",
+      "git_blob": "1f5dfb0c0e449c5c7025c181f69578f01e54d371"
+    },
+    {
+      "path": "static/assets/images/no_data.svg",
+      "mode": "100644",
+      "git_blob": "ff49c9b46cce0bf5edca02dc4a4572763956d87f"
+    },
+    {
+      "path": "static/assets/images/screenshot.webp",
+      "mode": "100644",
+      "git_blob": "c4312cc6e28ed7b40fc35c8e5cd35d6f585afe6c"
+    },
+    {
+      "path": "static/assets/images/unknown.svg",
+      "mode": "100644",
+      "git_blob": "59ab10093ae68fbce45d1b34034e8a8ee2d28419"
+    },
+    {
+      "path": "static/assets/images/welcome.svg",
+      "mode": "100644",
+      "git_blob": "dc8fd8445b4c6e9a9b3d2d11644ee75b854e1426"
+    },
+    {
+      "path": "static/assets/js/base.js",
+      "mode": "100644",
+      "git_blob": "678fdf0123cc98f73661826aa9d45108d7faa6a2"
+    },
+    {
+      "path": "static/assets/js/components/entity-filter.js",
+      "mode": "100644",
+      "git_blob": "d1def070cffd660f801d9ab125b536c44baec798"
+    },
+    {
+      "path": "static/assets/js/components/menu-main.js",
+      "mode": "100644",
+      "git_blob": "93dfb2500619c4955edfa9fa1cb8133264487d61"
+    },
+    {
+      "path": "static/assets/js/components/settings.js",
+      "mode": "100644",
+      "git_blob": "07fb16174d827156352e5866271f263dfa085aea"
+    },
+    {
+      "path": "static/assets/js/components/signup.js",
+      "mode": "100644",
+      "git_blob": "19f802e175ac082812dbd1eb01fff2b65ec3e429"
+    },
+    {
+      "path": "static/assets/js/components/summary.js",
+      "mode": "100644",
+      "git_blob": "9e33979c0aa57568ca5a8ba2816ef1afd0b9bfeb"
+    },
+    {
+      "path": "static/assets/js/components/time-picker.js",
+      "mode": "100644",
+      "git_blob": "b421101171c822f6a0616aea9af6fe68640e3329"
+    },
+    {
+      "path": "static/assets/js/icons.dist.js",
+      "mode": "100644",
+      "git_blob": "83026149ab2e7600561dcd5b877a72fdd070d736"
+    },
+    {
+      "path": "static/assets/js/icons.dist.js.br",
+      "mode": "100644",
+      "git_blob": "9cabeca1c6594c8b34dc9c53b5b32f687d408b7c"
+    },
+    {
+      "path": "static/assets/js/login.js",
+      "mode": "100644",
+      "git_blob": "466b813ea39918598de50861542c233fef32eef0"
+    },
+    {
+      "path": "static/assets/js/summary.js",
+      "mode": "100644",
+      "git_blob": "a2fc5c3539f6c459a5f1e674b15f1a6715c15102"
+    },
+    {
+      "path": "static/assets/js/summaryColors.js",
+      "mode": "100644",
+      "git_blob": "482f61d9c09b974d1fb51335847c0fcae9d22eb5"
+    },
+    {
+      "path": "static/assets/js/timezones.js",
+      "mode": "100644",
+      "git_blob": "7c437f1b7cb1dd36bf6ea8e64b5bd08701bc8b09"
+    },
+    {
+      "path": "static/assets/site.webmanifest",
+      "mode": "100644",
+      "git_blob": "38832ee2fd0ff5df77271ed5be2ca1df79751db3"
+    },
+    {
+      "path": "static/assets/vendor/chart.min.js",
+      "mode": "100644",
+      "git_blob": "e01df717208cf8e089ee955dde8eae9124a9b846"
+    },
+    {
+      "path": "static/assets/vendor/chart.min.js.br",
+      "mode": "100644",
+      "git_blob": "0cc3d6c8d7efd08b61686d56bea6bf584819caeb"
+    },
+    {
+      "path": "static/assets/vendor/chartjs-plugin-zoom.min.js",
+      "mode": "100644",
+      "git_blob": "0c7b6b45a51e0b7b39c6beb730d043cb9ce2f52f"
+    },
+    {
+      "path": "static/assets/vendor/chartjs-plugin-zoom.min.js.br",
+      "mode": "100644",
+      "git_blob": "98186a39bbf1f9fd4a701df2ee2809e22be649dd"
+    },
+    {
+      "path": "static/assets/vendor/hammer.min.js",
+      "mode": "100644",
+      "git_blob": "94b653d8a4cdb835a7d80872b52debecd12f1f11"
+    },
+    {
+      "path": "static/assets/vendor/hammer.min.js.br",
+      "mode": "100644",
+      "git_blob": "f693a1eb27f1c778f5d940c13406a9f8c270f1a0"
+    },
+    {
+      "path": "static/assets/vendor/iconify.basic.min.js",
+      "mode": "100644",
+      "git_blob": "1fc0c823fb8ac3b6d66d2865071eb29bafaae457"
+    },
+    {
+      "path": "static/assets/vendor/petite-vue.min.js",
+      "mode": "100644",
+      "git_blob": "5a6b1f96f74b0b286b1a1c95b842f2985f53f89b"
+    },
+    {
+      "path": "static/assets/vendor/petite-vue.min.js.br",
+      "mode": "100644",
+      "git_blob": "af2385896736086baac8efa423b546a2ff940cbb"
+    },
+    {
+      "path": "static/assets/vendor/seedrandom.min.js",
+      "mode": "100644",
+      "git_blob": "56e1afcdcb91a8e570ab8cbe15904d1ac3deb0e7"
+    },
+    {
+      "path": "static/assets/vendor/seedrandom.min.js.br",
+      "mode": "100644",
+      "git_blob": "8cb2e7d443525f70cc0f2d9e6566f13661580563"
+    },
+    {
+      "path": "static/assets/vendor/simplewebauthn.umd.min.js",
+      "mode": "100644",
+      "git_blob": "60923ef4f193124a9cd8f5d115fea2b7c1fd5462"
+    },
+    {
+      "path": "static/assets/vendor/simplewebauthn.umd.min.js.br",
+      "mode": "100644",
+      "git_blob": "5f29ce17c04583ccf156b1d67164f15436816dc0"
+    },
+    {
+      "path": "static/assets/vendor/source-sans-3.css",
+      "mode": "100644",
+      "git_blob": "2d2c274f85778f6593958ce2e348df5ed6771f07"
+    },
+    {
+      "path": "static/assets/vendor/source-sans-3_latin-ext_400.woff2",
+      "mode": "100644",
+      "git_blob": "9304bf159969e636714cce60f7073a2b96ee5b6a"
+    },
+    {
+      "path": "static/assets/vendor/source-sans-3_latin-ext_600.woff2",
+      "mode": "100644",
+      "git_blob": "0e5c839e17c3094293fc15eec59329adc601792a"
+    },
+    {
+      "path": "static/assets/vendor/source-sans-3_latin_400.woff2",
+      "mode": "100644",
+      "git_blob": "d7e9da94e5a86a1a9e64f019c4a04df38e983070"
+    },
+    {
+      "path": "static/assets/vendor/source-sans-3_latin_600.woff2",
+      "mode": "100644",
+      "git_blob": "64bb981d55e6076fa7e70f2ff2945431ca250d6c"
+    },
+    {
+      "path": "static/contribute.json",
+      "mode": "100644",
+      "git_blob": "e3ba3d218dc77e810e977e4fcd00c069fb988ace"
+    },
+    {
+      "path": "static/docs/docs.go",
+      "mode": "100644",
+      "git_blob": "b47664650ac7ceebf4a996d8f0723f2739b67b76"
+    },
+    {
+      "path": "static/docs/swagger.json",
+      "mode": "100644",
+      "git_blob": "b5ebd8075ba660ef1d39fb1b6f4dd863745b6502"
+    },
+    {
+      "path": "static/docs/swagger.yaml",
+      "mode": "100644",
+      "git_blob": "170f66ed6aa788eccbc3d96bd0206b4f4e2e8a57"
+    },
+    {
+      "path": "tailwind.config.js",
+      "mode": "100644",
+      "git_blob": "8f159b56f71afd902b0df9ae990fe0ebeb9b3b80"
+    },
+    {
+      "path": "testing/compose.yml",
+      "mode": "100644",
+      "git_blob": "ba1e8640c12e38bd46b6e4b9b640fd53278b9bf8"
+    },
+    {
+      "path": "testing/config.mysql.yml",
+      "mode": "100644",
+      "git_blob": "32f815a5df673ab9cfa16046a13c2098dfb57026"
+    },
+    {
+      "path": "testing/config.postgres.yml",
+      "mode": "100644",
+      "git_blob": "9146a11583f1d2d840837e596573276ab10f4e0c"
+    },
+    {
+      "path": "testing/config.sqlite.yml",
+      "mode": "100644",
+      "git_blob": "b26f87a62ece8d86731c05387245ddb99d72d33b"
+    },
+    {
+      "path": "testing/data.sql",
+      "mode": "100644",
+      "git_blob": "7eeea9345c57a86dfdddc1456682d1716ca33991"
+    },
+    {
+      "path": "testing/run_api_tests.sh",
+      "mode": "100755",
+      "git_blob": "20ce9086c6895de2f0e6de0d7f4c9e586db6fe23"
+    },
+    {
+      "path": "testing/run_mail_tests.sh",
+      "mode": "100755",
+      "git_blob": "702df3e5e8158df28d311ea985702c4981137d73"
+    },
+    {
+      "path": "testing/schema.sql",
+      "mode": "100644",
+      "git_blob": "3cc9d5b40f6ff0a22313aeb0a5cac036986f0992"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Authenticate (header).bru",
+      "mode": "100644",
+      "git_blob": "9043181f15d62fe491ec882b377f48c3885a013b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Authenticate (header, full access key).bru",
+      "mode": "100644",
+      "git_blob": "a94edc56e123fbe8f8ed97bdcb9eacd64b699933"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Authenticate (header, readonly key).bru",
+      "mode": "100644",
+      "git_blob": "ec29fcf4c9b10e173d5c197759d11877750203ca"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Authenticate (query param).bru",
+      "mode": "100644",
+      "git_blob": "056fb5f846a8216d9d7a2f8b33fff3d16a7fece4"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Login (by email).bru",
+      "mode": "100644",
+      "git_blob": "1d8b5ad69c2ce75c271e48c5bf166f225761c128"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Login (wrong password).bru",
+      "mode": "100644",
+      "git_blob": "7ca32c99002d9d4818c526c0b62de64c991719da"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Login.bru",
+      "mode": "100644",
+      "git_blob": "4e8241bbfe630148e1e7c7559a5a69ff594dc130"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Sign up existing user (conflict).bru",
+      "mode": "100644",
+      "git_blob": "dab7d530a1a868f650312f1dfc8b91e66839ea0d"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/Sign up user.bru",
+      "mode": "100644",
+      "git_blob": "540217276eb39718128ed0894e79146934cb2e26"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Auth/folder.bru",
+      "mode": "100644",
+      "git_blob": "627ac699fea8651cbbf0e65b4aab5ea5f057d7be"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (AI thinking time).bru",
+      "mode": "100644",
+      "git_blob": "958b2bb419dcccfa1094f238a4513ed9bc060e6b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (all invalid).bru",
+      "mode": "100644",
+      "git_blob": "e8b67c3f6ad90c5b5727158277d9e170e027ad20"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 1).bru",
+      "mode": "100644",
+      "git_blob": "5aa66f538548c787aebfd12c0ae3abf5977ee389"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 2).bru",
+      "mode": "100644",
+      "git_blob": "dfc5b67fdba56cc6a68ce5d4e559d8ecd7e8dc24"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 3).bru",
+      "mode": "100644",
+      "git_blob": "4acbb0959281454a097f6c4f564807dcb17fa2b0"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 4, single).bru",
+      "mode": "100644",
+      "git_blob": "3e169ca55b8c1278f0b452daf0f955b0ed9845e3"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 5, single).bru",
+      "mode": "100644",
+      "git_blob": "5cd88a828474c87b838574615c4ee36b3360bfb6"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 6, single).bru",
+      "mode": "100644",
+      "git_blob": "7b8e89f67fdff01d1d586c0c55aa08be8b240f03"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 7, single).bru",
+      "mode": "100644",
+      "git_blob": "dc2d64185b165e776bde0d8c89463e43997f6456"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (alt 8, single, additional full access key).bru",
+      "mode": "100644",
+      "git_blob": "206f921c948591f77b7cb0b9f245e599fb867865"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (get heartbeats test).bru",
+      "mode": "100644",
+      "git_blob": "2f46ab0e53821431236dbe49db6c19ee804d7387"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (non-matching).bru",
+      "mode": "100644",
+      "git_blob": "4726824277ee282a36719b005659db1b7497db7a"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (unauthorized).bru",
+      "mode": "100644",
+      "git_blob": "0ec97df580b5d5fb6a417e66cb5655753bcecf89"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats (unauthorized, readonly key).bru",
+      "mode": "100644",
+      "git_blob": "460b39ddaf1c653a6049d190d648d99d3d96d79d"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Create heartbeats.bru",
+      "mode": "100644",
+      "git_blob": "b2b5079cd2bf747726637e7836fbf4fa121cc09d"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Get heartbeats (full access key).bru",
+      "mode": "100644",
+      "git_blob": "4d8228df24a326f78f98f645dfb5701d04fe7b5a"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Get heartbeats (readonly key).bru",
+      "mode": "100644",
+      "git_blob": "de27d385e07caf17f07dbda3904a89b4a57fc4ea"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/Get heartbeats.bru",
+      "mode": "100644",
+      "git_blob": "f140519507276f20da814520a7d8c46bf46b9ebd"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Heartbeats/folder.bru",
+      "mode": "100644",
+      "git_blob": "0af48729bb0d9c3647718cab245f0a754c616eef"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Metrics/Get admin metrics.bru",
+      "mode": "100644",
+      "git_blob": "fe0a250cd602fde35d9d5947cbb504fb9313f75e"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Metrics/Get metrics (unauthorized).bru",
+      "mode": "100644",
+      "git_blob": "e8531a800cea9b74a545a8f28598a2c284c501eb"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Metrics/Get user metrics.bru",
+      "mode": "100644",
+      "git_blob": "c0c3e499872b1ff151890f60c25c1c9d42c145c3"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Metrics/folder.bru",
+      "mode": "100644",
+      "git_blob": "4f6944672e859f28c941a06fb300c522a1f5a5e1"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Change E-Mail/1. Login.bru",
+      "mode": "100644",
+      "git_blob": "6808bf8b51ce1959b9c5a686541962958980de25"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Change E-Mail/2. Set e-mail.bru",
+      "mode": "100644",
+      "git_blob": "344015fd6d579886f95c7cd43a687490573e4e0c"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Change E-Mail/3. Check e-mail.bru",
+      "mode": "100644",
+      "git_blob": "95e8cfbdf51e45d4f39c09e8b2cea1adf74ea370"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Change E-Mail/folder.bru",
+      "mode": "100644",
+      "git_blob": "16788afed704d71a7f84e3882e66ba99c6859f4b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/1. Login.bru",
+      "mode": "100644",
+      "git_blob": "6808bf8b51ce1959b9c5a686541962958980de25"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/2. Add custom mapping.bru",
+      "mode": "100644",
+      "git_blob": "c20e364409770bb45369dbb85138a67212fa0a1f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/3. Check summary.bru",
+      "mode": "100644",
+      "git_blob": "c93e087aec8217bfa4f24bab8d59762f114f454b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/4. Remove custom mapping.bru",
+      "mode": "100644",
+      "git_blob": "473e41dfc1b25e08e987af3ca8b63aa3bfdc02f7"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/5. Check summary again.bru",
+      "mode": "100644",
+      "git_blob": "502ffca72bc69cb00d28b0ffc6598d6467fc5474"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/Use Case- Custom Mappings/folder.bru",
+      "mode": "100644",
+      "git_blob": "56610469fe2868cd213c87777300ebe32821e886"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Settings/folder.bru",
+      "mode": "100644",
+      "git_blob": "2ca17793350f03dea178d1ef8bd44b718d71e9e5"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/Get shields (filter).bru",
+      "mode": "100644",
+      "git_blob": "14e58864be9d449de303999ad36b7f08d1369a2e"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/Get shields (invalid range).bru",
+      "mode": "100644",
+      "git_blob": "6e4a992c96efec71d0d8397905758228c19f2bfb"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/Get shields (non-shared entity type).bru",
+      "mode": "100644",
+      "git_blob": "5f2bac860d7df7c1972c2e42110a5988d3e4c276"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/Get shields (not sharing).bru",
+      "mode": "100644",
+      "git_blob": "1d65afe3c31f0d45cce079049ae4abf87e0011de"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/Get shields.bru",
+      "mode": "100644",
+      "git_blob": "d8f2fcec19da87bc1f4437050ddc28cdc328a60f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Shields/folder.bru",
+      "mode": "100644",
+      "git_blob": "61f5b88fd3afce805b651521a6d39c5e5008d4e6"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (AI thinking time excluded).bru",
+      "mode": "100644",
+      "git_blob": "b7e678e58c7d1bd7722b60f3dd6afe21cde77604"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (default tz).bru",
+      "mode": "100644",
+      "git_blob": "dee3691ff627b73fe3cbd5c2c7c7625797d37c6b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (last 7 days).bru",
+      "mode": "100644",
+      "git_blob": "31011ccb1c44fe6280bb137c03815a0c0127ad0f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (parse tz).bru",
+      "mode": "100644",
+      "git_blob": "021761938851a5d085e8f94d82f07a6c46c2592a"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (range).bru",
+      "mode": "100644",
+      "git_blob": "299de1bc0f499418e5aa5598341be0b6b139e08e"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (today).bru",
+      "mode": "100644",
+      "git_blob": "2383adefb74f5cc883e51457ae23eca6ab75e380"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (today, filtered non-matching).bru",
+      "mode": "100644",
+      "git_blob": "5796d77bb4758c46d8389b590f3faa9ebe1b4867"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (today, filtered).bru",
+      "mode": "100644",
+      "git_blob": "95a6a77821137c6168a73b4168bddb1f018d7441"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (unauthenticated).bru",
+      "mode": "100644",
+      "git_blob": "e34f3c2adfc0e171986af4f16b657269d840a3b5"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/Get summary (week).bru",
+      "mode": "100644",
+      "git_blob": "9f8cefff7e91598223145aec3cf4692bb6da9918"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Summary/folder.bru",
+      "mode": "100644",
+      "git_blob": "bc895d02f06f69466e1e6bc051394989183a3aa1"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get all time (unauthenticated).bru",
+      "mode": "100644",
+      "git_blob": "1829b8bcabdeb2d2e438a2907d3907606d33d7f6"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get all time.bru",
+      "mode": "100644",
+      "git_blob": "920a71cf0a035cf636a2cd5f0666083d99cbd31b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get projects (unauthenticated).bru",
+      "mode": "100644",
+      "git_blob": "1189b99d6b3567928fd2744a96248d000ece341f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get projects.bru",
+      "mode": "100644",
+      "git_blob": "2833bbb026752a76c7c3c67fe6e4d4e3a8e0e74a"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (by user).bru",
+      "mode": "100644",
+      "git_blob": "ef0ef69dde3137ac63f813568f027cd8b6197a0f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (current).bru",
+      "mode": "100644",
+      "git_blob": "2387d77345ad25ecf42ee2ac09a9de2308816fd7"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (current, alt 1).bru",
+      "mode": "100644",
+      "git_blob": "887724d620cdc282091e9707c49619ec845cf24e"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (filtered non-matching).bru",
+      "mode": "100644",
+      "git_blob": "f0f96d28fdee1b6a15841fc26a43e011bc4f5b97"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (filtered).bru",
+      "mode": "100644",
+      "git_blob": "0a7fe1bbd9199abf45aceb70e6a9854239c5d321"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (not sharing).bru",
+      "mode": "100644",
+      "git_blob": "9bacef645889fcfcf681661777626f7995f7dbaf"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (out of range).bru",
+      "mode": "100644",
+      "git_blob": "e191023e2e35639d7ce665dd67bab62e8b8ec73f"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get stats (range).bru",
+      "mode": "100644",
+      "git_blob": "4fab1c36cc28c4913e2f5e50cb632ea6e55005f6"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get statusbar (current).bru",
+      "mode": "100644",
+      "git_blob": "cca029eec50eb6f8342a8dcb1a8c2b032b1daafb"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get user (current).bru",
+      "mode": "100644",
+      "git_blob": "376351b3f71c4d9049e23dc7b399155d043c21c7"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get user (forbidden user).bru",
+      "mode": "100644",
+      "git_blob": "2fbd9301086d5e99884e111d9ee5df98e8fc949b"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/Get user (unauthenticated).bru",
+      "mode": "100644",
+      "git_blob": "bd48f6d49f108147639efb54b023cc1326e34285"
+    },
+    {
+      "path": "testing/wakapi_api_tests/WakaTime/folder.bru",
+      "mode": "100644",
+      "git_blob": "faa1f244a50b5e975ab2bc96da48e59407ee0a58"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Head.bru",
+      "mode": "100644",
+      "git_blob": "00a96214574fd875b5454ca68ec9f10fcc9a96db"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Imprint.bru",
+      "mode": "100644",
+      "git_blob": "ae092febb095f72a73dd9f4e9dd03dc357566fe8"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Leaderboard (public).bru",
+      "mode": "100644",
+      "git_blob": "ea90a5012e1768771499d3c0cab985628b685b59"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Leaderboard.bru",
+      "mode": "100644",
+      "git_blob": "0817ddcd834a864c2622e8fdace6639025405dbf"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Login.bru",
+      "mode": "100644",
+      "git_blob": "56e2ae30f07d2c5f0be52d9607c765c19e22bcc2"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Logout.bru",
+      "mode": "100644",
+      "git_blob": "96cfd037e3186caf59abfb008ff4243e6ebb9952"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Projects.bru",
+      "mode": "100644",
+      "git_blob": "73ddc88974384d9d4d9a1cb6d7810125411b8283"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Settings.bru",
+      "mode": "100644",
+      "git_blob": "c40c506a559522af828e257377e463464ae308af"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/Summary.bru",
+      "mode": "100644",
+      "git_blob": "78b3b6be0ed1ea59c512e9956205daea5e61ed0c"
+    },
+    {
+      "path": "testing/wakapi_api_tests/Web Views/folder.bru",
+      "mode": "100644",
+      "git_blob": "e23512df23fc729a8ca7f2f1ff48d80d7c3ab727"
+    },
+    {
+      "path": "testing/wakapi_api_tests/bruno.json",
+      "mode": "100644",
+      "git_blob": "43e64566d94016b59a1853d21ef56a34ab5351df"
+    },
+    {
+      "path": "testing/wakapi_api_tests/collection.bru",
+      "mode": "100644",
+      "git_blob": "a678c1b86256fc87762a2325e2a002bb290725d7"
+    },
+    {
+      "path": "utils/auth.go",
+      "mode": "100644",
+      "git_blob": "ad068bf70496548314ba00f606255d29edfe85b9"
+    },
+    {
+      "path": "utils/collection.go",
+      "mode": "100644",
+      "git_blob": "1e9bcf10c2a24411c11efca9a9af52270a4e14bc"
+    },
+    {
+      "path": "utils/color.go",
+      "mode": "100644",
+      "git_blob": "c8d586fefeb6d1d40c69c79b3e9ebbfd2fd42b20"
+    },
+    {
+      "path": "utils/cron.go",
+      "mode": "100644",
+      "git_blob": "d2444f3651c9555ff091d3103097747593aeda48"
+    },
+    {
+      "path": "utils/date.go",
+      "mode": "100644",
+      "git_blob": "ca276668943befd20353cb7caebee160e1efb059"
+    },
+    {
+      "path": "utils/date_test.go",
+      "mode": "100644",
+      "git_blob": "842c1138f2be2067f3c4c93bc2e0921a72be9cbc"
+    },
+    {
+      "path": "utils/db.go",
+      "mode": "100644",
+      "git_blob": "bb0d3b1b5276db918b5a1c86b1f7112b88b40b1e"
+    },
+    {
+      "path": "utils/dns.go",
+      "mode": "100644",
+      "git_blob": "5c761593539076e0aaf2cd63548139964b6c9da8"
+    },
+    {
+      "path": "utils/fs/exists.go",
+      "mode": "100644",
+      "git_blob": "a0b0d6d4f4ced55893244442d055a445f5b16eb4"
+    },
+    {
+      "path": "utils/fs/neutered.go",
+      "mode": "100644",
+      "git_blob": "a65abd184a3f4736ba73722f5185170eecaf1127"
+    },
+    {
+      "path": "utils/func.go",
+      "mode": "100644",
+      "git_blob": "8db1a4327d94ff682188d791eaa2d413e96907a7"
+    },
+    {
+      "path": "utils/http.go",
+      "mode": "100644",
+      "git_blob": "a7d9634b59580ff879345c78c9f602e9bd9e3717"
+    },
+    {
+      "path": "utils/http_test.go",
+      "mode": "100644",
+      "git_blob": "f78c4f27ec2d33d1be8d709cb1b4c128822c587e"
+    },
+    {
+      "path": "utils/json.go",
+      "mode": "100644",
+      "git_blob": "1aa6d0a8b08d12d2788cb412761702b5c63d78b6"
+    },
+    {
+      "path": "utils/net.go",
+      "mode": "100644",
+      "git_blob": "aeb8af0ac1c9aa066e0ab0fb1bff0896f2dd0100"
+    },
+    {
+      "path": "utils/random.go",
+      "mode": "100644",
+      "git_blob": "202c0f9e789e81cef9c9638b453b50c386eda6bb"
+    },
+    {
+      "path": "utils/strings.go",
+      "mode": "100644",
+      "git_blob": "aba395592d1235cc15a14ebb15f64ebb0ba4c90d"
+    },
+    {
+      "path": "utils/sync.go",
+      "mode": "100644",
+      "git_blob": "0536970211fcb60001c5dba42c73f5ee91f752ce"
+    },
+    {
+      "path": "utils/system.go",
+      "mode": "100644",
+      "git_blob": "919b470365604ca36473f33dec79241c9f9e14bb"
+    },
+    {
+      "path": "utils/template.go",
+      "mode": "100644",
+      "git_blob": "02d0e94beb459a9ef3a59cc69f08b4461340085f"
+    },
+    {
+      "path": "utils/test/test_utils.go",
+      "mode": "100644",
+      "git_blob": "ff61b87b940a0efeb14ad321c0ac805ade01628f"
+    },
+    {
+      "path": "version.txt",
+      "mode": "100644",
+      "git_blob": "38f8e886e1a6d733aa9bfa7282568f83c133ecd6"
+    },
+    {
+      "path": "views/alerts.tpl.html",
+      "mode": "100644",
+      "git_blob": "7b85db201bc3716e4de0d9219f65a005f83d26a6"
+    },
+    {
+      "path": "views/entity-filter.tpl.html",
+      "mode": "100644",
+      "git_blob": "014852c23cc4de843e0f693567eedf6c0fda3f6a"
+    },
+    {
+      "path": "views/foot.tpl.html",
+      "mode": "100644",
+      "git_blob": "268517691a952a79069ecca6f968d77f22b95d1a"
+    },
+    {
+      "path": "views/footer.tpl.html",
+      "mode": "100644",
+      "git_blob": "3d50040e195b1792925994163c6b7c0139ebe022"
+    },
+    {
+      "path": "views/head.tpl.html",
+      "mode": "100644",
+      "git_blob": "12f24762324fece08a9ccad1ba9265556c62aeaa"
+    },
+    {
+      "path": "views/header.tpl.html",
+      "mode": "100644",
+      "git_blob": "6fb81a543ca3ccbbee9ab93f17caad2ecfc35930"
+    },
+    {
+      "path": "views/imprint.tpl.html",
+      "mode": "100644",
+      "git_blob": "1727574bca7d151f2f299892861f591f66041b60"
+    },
+    {
+      "path": "views/index.tpl.html",
+      "mode": "100644",
+      "git_blob": "743256d0239a18d75651788768c9b84dee9d41d5"
+    },
+    {
+      "path": "views/leaderboard.tpl.html",
+      "mode": "100644",
+      "git_blob": "ebfcaa0969f023ed5a971abe5333d5c4efdef365"
+    },
+    {
+      "path": "views/login-btn.tpl.html",
+      "mode": "100644",
+      "git_blob": "b013b5e38a34c2879334b7cca2789a98b86ee0b6"
+    },
+    {
+      "path": "views/login.tpl.html",
+      "mode": "100644",
+      "git_blob": "f9dc65a7852ae49dd9da0f92c928d6739538d5b8"
+    },
+    {
+      "path": "views/logo.tpl.html",
+      "mode": "100644",
+      "git_blob": "436bded5ade0cde0b9092b597c884df762d50a79"
+    },
+    {
+      "path": "views/mail/head.tpl.html",
+      "mode": "100644",
+      "git_blob": "b76f453399ed6f127f2351fdd361a42ad10ae4aa"
+    },
+    {
+      "path": "views/mail/import_finished.tpl.html",
+      "mode": "100644",
+      "git_blob": "a8ddda13518c547ef379d2d0b5ad7412b7100c67"
+    },
+    {
+      "path": "views/mail/mail.go",
+      "mode": "100644",
+      "git_blob": "2a27047be14f09305ca8e9c8e397425866a5437c"
+    },
+    {
+      "path": "views/mail/report.tpl.html",
+      "mode": "100644",
+      "git_blob": "c91c821357aac6660c2166ca786a918ea6043648"
+    },
+    {
+      "path": "views/mail/reset_password.tpl.html",
+      "mode": "100644",
+      "git_blob": "953bb59e155e91edc2c42925c39354e32e2913ac"
+    },
+    {
+      "path": "views/mail/subscription_expiring.tpl.html",
+      "mode": "100644",
+      "git_blob": "4424f06af31e28e357b2060b1be3227f830b541d"
+    },
+    {
+      "path": "views/mail/tfooter.tpl.html",
+      "mode": "100644",
+      "git_blob": "d2801e9cb8f845d3010f391b61fd5fa00a14b41c"
+    },
+    {
+      "path": "views/mail/theader.tpl.html",
+      "mode": "100644",
+      "git_blob": "c9a26913836d9534c13b040bcb654b1a1cb829f1"
+    },
+    {
+      "path": "views/mail/wakatime_connection_failure.tpl.html",
+      "mode": "100644",
+      "git_blob": "e80be3dd642fa50eadde31ae763047e703cf7a19"
+    },
+    {
+      "path": "views/menu-main.tpl.html",
+      "mode": "100644",
+      "git_blob": "ddc63a8b708740f97b2b6c2ba3cceb03fa5a214e"
+    },
+    {
+      "path": "views/projects.tpl.html",
+      "mode": "100644",
+      "git_blob": "e312c2a1f7a03a606574ca1f1ceac943db15f14b"
+    },
+    {
+      "path": "views/reset-password.tpl.html",
+      "mode": "100644",
+      "git_blob": "92c2e6e964420162db6e8adf8cd3fe3ca82b2f15"
+    },
+    {
+      "path": "views/set-password.tpl.html",
+      "mode": "100644",
+      "git_blob": "d4c9ab67d2f2690c93db45aa62097fc6d5e9b287"
+    },
+    {
+      "path": "views/settings.tpl.html",
+      "mode": "100644",
+      "git_blob": "42e2a28d018ebf09a25492a3b35aa12907d6a6c6"
+    },
+    {
+      "path": "views/setup.tpl.html",
+      "mode": "100644",
+      "git_blob": "7fade8571d784f93012b3ec5af48f0757fe34cc7"
+    },
+    {
+      "path": "views/signup.tpl.html",
+      "mode": "100644",
+      "git_blob": "1a490b6ef1668e67c6baae6fa211858228ccf49a"
+    },
+    {
+      "path": "views/summary.tpl.html",
+      "mode": "100644",
+      "git_blob": "387e7c07566efbf8119c31e93d9b0316f02e8626"
+    },
+    {
+      "path": "views/time-picker.tpl.html",
+      "mode": "100644",
+      "git_blob": "97a158bfc0855ad2114469739484ebc9da6d2727"
+    },
+    {
+      "path": "views/views.go",
+      "mode": "100644",
+      "git_blob": "51849c29ddf2c43c6b008ec92902d34de277e7fa"
+    },
+    {
+      "path": "yarn.lock",
+      "mode": "100644",
+      "git_blob": "111422ce5bed121d9ce9b1f277f3d7b187454bcb"
+    }
+  ]
+}

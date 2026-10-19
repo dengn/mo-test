@@ -1,0 +1,269 @@
+[
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "error": {
+      "type": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "error": {
+      "type": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "feature": "edge_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))')))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "feature": "corner_intersection",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))'),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))')))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "feature": "duplicate_vertex_validity",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)'))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "feature": "unclosed_ring",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))'))",
+    "error": {
+      "type": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  }
+]

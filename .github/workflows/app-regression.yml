@@ -1,0 +1,120 @@
+name: Native application regression
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: smoke is controls plus twenty-four native apps; defects is a strict failing gate until fixed
+        type: choice
+        options: [smoke, native, controls, defects, observe, load]
+        default: smoke
+      app:
+        description: Native app selection (use all for SQL-only profiles)
+        type: choice
+        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer, phpmyadmin, kanboard, yourls, grafana, matomo, gogs, answer, opencart, wakapi, superset, strapi, wordpress, wagtail]
+        default: all
+      include_panic:
+        description: Explicitly enable panic fixtures on a dedicated instance (defects or observe only)
+        type: boolean
+        default: false
+      expected_commit:
+        description: Optional full 40-character MatrixOne source SHA
+        type: string
+        default: ''
+  workflow_call:
+    inputs:
+      profile:
+        type: string
+        default: smoke
+      app:
+        type: string
+        default: all
+      include_panic:
+        type: boolean
+        default: false
+      expected_commit:
+        type: string
+        default: ''
+    secrets:
+      MO_TEST_HOST:
+        required: true
+      MO_TEST_PORT:
+        required: true
+      MO_TEST_USER:
+        required: true
+      MO_TEST_PASSWORD:
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  app-regression:
+    runs-on: [self-hosted, Linux, X64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: suites/mo-app-regression
+    env:
+      MO_HOST: ${{ secrets.MO_TEST_HOST }}
+      MO_PORT: ${{ secrets.MO_TEST_PORT }}
+      MO_USER: ${{ secrets.MO_TEST_USER }}
+      MO_PASSWORD: ${{ secrets.MO_TEST_PASSWORD }}
+      MO_APP_RUNTIME_ROOT: ${{ vars.MO_APP_RUNTIME_ROOT }}
+      MO_PHP_BINARY: ${{ vars.MO_PHP_BINARY }}
+      MO_BAIKAL_RELEASE_DIR: ${{ vars.MO_BAIKAL_RELEASE_DIR }}
+      MO_PHPMYADMIN_RELEASE_ARCHIVE: ${{ vars.MO_PHPMYADMIN_RELEASE_ARCHIVE }}
+      MO_KANBOARD_RELEASE_ARCHIVE: ${{ vars.MO_KANBOARD_RELEASE_ARCHIVE }}
+      MO_YOURLS_RELEASE_ARCHIVE: ${{ vars.MO_YOURLS_RELEASE_ARCHIVE }}
+      MO_WAGTAIL_RUNTIME_CONFIG: ${{ vars.MO_WAGTAIL_RUNTIME_CONFIG }}
+      MO_WORDPRESS_SOURCE_TREE: ${{ vars.MO_WORDPRESS_SOURCE_TREE }}
+      MO_STRAPI_RUNTIME_CONFIG: ${{ vars.MO_STRAPI_RUNTIME_CONFIG }}
+      MO_SUPERSET_RUNTIME_CONFIG: ${{ vars.MO_SUPERSET_RUNTIME_CONFIG }}
+      MO_WAKAPI_BINARY: ${{ vars.MO_WAKAPI_BINARY }}
+      MO_WAKAPI_BUILD_MANIFEST: ${{ vars.MO_WAKAPI_BUILD_MANIFEST }}
+      MO_OPENCART_RELEASE_ARCHIVE: ${{ vars.MO_OPENCART_RELEASE_ARCHIVE }}
+      MO_ANSWER_BINARY: ${{ vars.MO_ANSWER_BINARY }}
+      MO_GOGS_BINARY: ${{ vars.MO_GOGS_BINARY }}
+      MO_GOGS_BUILD_MANIFEST: ${{ vars.MO_GOGS_BUILD_MANIFEST }}
+      MO_GRAFANA_RELEASE_DIR: ${{ vars.MO_GRAFANA_RELEASE_DIR }}
+      MO_MATOMO_RELEASE_ARCHIVE: ${{ vars.MO_MATOMO_RELEASE_ARCHIVE }}
+      MO_ADMINER_RELEASE_FILE: ${{ vars.MO_ADMINER_RELEASE_FILE }}
+      MO_FRESHRSS_SOURCE_TREE: ${{ vars.MO_FRESHRSS_SOURCE_TREE }}
+      MO_NTFY_BINARY: ${{ vars.MO_NTFY_BINARY }}
+      MO_MEMOS_BINARY: ${{ vars.MO_MEMOS_BINARY }}
+      MO_NTFY_BUILD_MANIFEST: ${{ vars.MO_NTFY_BUILD_MANIFEST }}
+      MO_MEMOS_BUILD_MANIFEST: ${{ vars.MO_MEMOS_BUILD_MANIFEST }}
+      MO_HUGINN_RUNTIME_CONFIG: ${{ vars.MO_HUGINN_RUNTIME_CONFIG }}
+      PROFILE: ${{ inputs.profile }}
+      APP: ${{ inputs.app }}
+      INCLUDE_PANIC: ${{ inputs.include_panic }}
+      EXPECTED_COMMIT: ${{ inputs.expected_commit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The repo contains large historical archives unrelated to this portable suite.
+          filter: blob:none
+          sparse-checkout: |
+            suites/mo-app-regression
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --require-hashes -r requirements.lock
+      - name: Verify imported coverage and launcher contracts
+        run: |
+          python verify.py
+          python -m unittest discover -s tests -v
+      - name: Execute actual MatrixOne and native application workflows
+        shell: bash
+        run: |
+          args=(--profile "$PROFILE" --out artifacts/ci)
+          if [ "$APP" != all ]; then args+=(--app "$APP"); fi
+          if [ "$INCLUDE_PANIC" = true ]; then args+=(--include-panic); fi
+          if [ -n "$EXPECTED_COMMIT" ]; then args+=(--expected-commit "$EXPECTED_COMMIT"); fi
+          python run.py "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: app-regression-${{ inputs.profile }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: suites/mo-app-regression/artifacts/
+          if-no-files-found: error

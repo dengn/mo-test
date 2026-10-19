@@ -1,0 +1,9 @@
+/usr/lib/python3/dist-packages/osgeo/ogr.py:601: FutureWarning: Neither ogr.UseExceptions() nor ogr.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/workspace/mo-gis-app-projects/gdal_wire_probe.py", line 29, in <module>
+    geom=feature.GetGeometryRef();rows.append({'id':feature.GetField('id'),'wkt':geom.ExportToWkt() if geom else None})
+                                                    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3/dist-packages/osgeo/ogr.py", line 3831, in GetField
+    raise KeyError("Illegal field requested in GetField()")
+KeyError: 'Illegal field requested in GetField()'

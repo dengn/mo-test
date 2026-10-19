@@ -1,0 +1,645 @@
+{
+  "files": [
+    {
+      "path": "third_party/xorm/.circleci/config.yml",
+      "bytes": 3579,
+      "sha256": "e63dd99e050661e195a3a3bfc8a07f1fd6da58d8dfda5f0ded0d57ac94a870ce"
+    },
+    {
+      "path": "third_party/xorm/.drone.yml",
+      "bytes": 21690,
+      "sha256": "2725d5671065afb5ceb37c5b9558d4b8836505469f2dc44110a85384047bc845"
+    },
+    {
+      "path": "third_party/xorm/.gitignore",
+      "bytes": 333,
+      "sha256": "3b7b69b9ee77056e1bccda5eb3dcaf68ed9bcc24dc801bb1b37165b376e4033d"
+    },
+    {
+      "path": "third_party/xorm/CONTRIBUTING.md",
+      "bytes": 1934,
+      "sha256": "73c292f99a55d779f2396a2129e54f282340f1abbe637e4c0d49058e776cd8b7"
+    },
+    {
+      "path": "third_party/xorm/LICENSE",
+      "bytes": 1498,
+      "sha256": "41289a3aae885599b0854b26f3366e531b4664580d7bc245ce7b75bdd5e5f67c"
+    },
+    {
+      "path": "third_party/xorm/README.md",
+      "bytes": 14813,
+      "sha256": "90a86a67a90b1bb9dccdcd7e3aa314de4a29363c4e529ca96d0bfd8d9c5a936e"
+    },
+    {
+      "path": "third_party/xorm/README_CN.md",
+      "bytes": 14633,
+      "sha256": "c5bd219b60e26141e3e1f2ef9a64d26a66e8292209ab22025d7ba1803980a610"
+    },
+    {
+      "path": "third_party/xorm/cache_lru.go",
+      "bytes": 7114,
+      "sha256": "bcae72debf449a01d79d979445a02be60a8dfcb6718292357a646628152a1c85"
+    },
+    {
+      "path": "third_party/xorm/cache_lru_test.go",
+      "bytes": 1135,
+      "sha256": "bb57d2da5d8ebe76ae6bcd57fed7a877c5bf70e45ac11426a7990ef2903d7743"
+    },
+    {
+      "path": "third_party/xorm/cache_memory_store.go",
+      "bytes": 1061,
+      "sha256": "9f0fbe25d41fff377491711768094dce57756c0312464dbe9faf23e3e1f29307"
+    },
+    {
+      "path": "third_party/xorm/cache_memory_store_test.go",
+      "bytes": 704,
+      "sha256": "8e189a3a2c405e37716cb23940fbae0de2b1dd02ae4d8fd053438db5ace8a2dc"
+    },
+    {
+      "path": "third_party/xorm/cache_test.go",
+      "bytes": 4469,
+      "sha256": "e9f8e38bd3abe679d50c2e2f0c10bc8c4ec076b2ca2e217dc4c137185bf999f2"
+    },
+    {
+      "path": "third_party/xorm/context_cache.go",
+      "bytes": 837,
+      "sha256": "4e92a2a1f81a1753179702d352e6650715d3efc58d339aac312f7a4d7defda89"
+    },
+    {
+      "path": "third_party/xorm/convert.go",
+      "bytes": 7888,
+      "sha256": "8825da7e594c8b1ba242c4783980ba38090d24ffe1bc38605277e1ec13cd0430"
+    },
+    {
+      "path": "third_party/xorm/dialect_mssql.go",
+      "bytes": 17452,
+      "sha256": "5f0e177899ba0b71ab6ff5b3f071a5cca51620064009a7ad577c4697363a7aa0"
+    },
+    {
+      "path": "third_party/xorm/dialect_mssql_test.go",
+      "bytes": 898,
+      "sha256": "fd347a1f23b739352abc9454aec788f7d6a29e4adfdea3befba94db7d239d034"
+    },
+    {
+      "path": "third_party/xorm/dialect_mysql.go",
+      "bytes": 17176,
+      "sha256": "2ec4deefcbc57eb0e207ea795382ec98ede5b5baf04085966e691e048995ab75"
+    },
+    {
+      "path": "third_party/xorm/dialect_oracle.go",
+      "bytes": 28284,
+      "sha256": "10f2917caa745a875eab40f8b738c24159c52b7fff097138ad278d0557f2cb21"
+    },
+    {
+      "path": "third_party/xorm/dialect_postgres.go",
+      "bytes": 45968,
+      "sha256": "9a594b514dc248e5d77bca04652a3029edec0d4bf8a7ca6e1d8173b11a5e5e56"
+    },
+    {
+      "path": "third_party/xorm/dialect_postgres_test.go",
+      "bytes": 4149,
+      "sha256": "42ccac7adba30e14ca75af3001b0b64a97f5046814b2953b4922ba09da00d1b8"
+    },
+    {
+      "path": "third_party/xorm/dialect_sqlite3.go",
+      "bytes": 12544,
+      "sha256": "03ff2bffd815f6d34aa65d79c5e1b4a65a3e0cff4916bd8d281eebc9f1f78954"
+    },
+    {
+      "path": "third_party/xorm/dialect_sqlite3_test.go",
+      "bytes": 787,
+      "sha256": "3adb40407703636407d7c825e2c7b5a08e588294c3e8d0366a8f937e2176666b"
+    },
+    {
+      "path": "third_party/xorm/doc.go",
+      "bytes": 5193,
+      "sha256": "42518448fab7980a918670209dd0b1dc17de00e5f02cdbb3b6a0277444bcb2ce"
+    },
+    {
+      "path": "third_party/xorm/docs/images/cache_design.graffle",
+      "bytes": 56031,
+      "sha256": "fbcf5d85c69b9a076945724d567ba10aa66b6ed7dbb22f182a2ddf7b90791319"
+    },
+    {
+      "path": "third_party/xorm/docs/images/cache_design.png",
+      "bytes": 243596,
+      "sha256": "66ef11156366c81f7d0e90b47c131f26ff105a4d84da26f4655418617dafc504"
+    },
+    {
+      "path": "third_party/xorm/engine.go",
+      "bytes": 45330,
+      "sha256": "f6571064d139f38d8b992c82bd76d0d483546f2b9e00ee3c56394a4f8dd4b6c0"
+    },
+    {
+      "path": "third_party/xorm/engine_cond.go",
+      "bytes": 6090,
+      "sha256": "c6629b161041dd331468d3dad07df4b11cf013553451d6b0d9abd5ea59f8f6c4"
+    },
+    {
+      "path": "third_party/xorm/engine_context.go",
+      "bytes": 746,
+      "sha256": "a421de2f5ced1171fa4e4f0d4a0bd54c799e41d48a12055ac444cf7555169ed6"
+    },
+    {
+      "path": "third_party/xorm/engine_context_test.go",
+      "bytes": 606,
+      "sha256": "979cc39e3601bf905c8b9de73a8ef225c378798c65cd7ef6612779dcb2ca1723"
+    },
+    {
+      "path": "third_party/xorm/engine_group.go",
+      "bytes": 5170,
+      "sha256": "6c67ba5884d7ed8ed4c76c2e743ef366a767eefcc094d4f97a0d9d60948f4781"
+    },
+    {
+      "path": "third_party/xorm/engine_group_policy.go",
+      "bytes": 2631,
+      "sha256": "1db4c30baa8b350d19dc29fe98bd6685f4be1ce59493cc41c74a9777b63d1d96"
+    },
+    {
+      "path": "third_party/xorm/engine_table.go",
+      "bytes": 2799,
+      "sha256": "fda8e1b97771bd0215097997001511a67e74b6890adb4ca79cf2ad431ce73238"
+    },
+    {
+      "path": "third_party/xorm/engine_table_test.go",
+      "bytes": 625,
+      "sha256": "4d71dec3b4264eaa25e419360dc49a8966b03b29083fc10f1576ec5af629f81e"
+    },
+    {
+      "path": "third_party/xorm/error.go",
+      "bytes": 1608,
+      "sha256": "d4728ed72655e6f41ef9e45ac389a789bd3fda52a0bd9d8171607433f6cf4396"
+    },
+    {
+      "path": "third_party/xorm/examples/README.md",
+      "bytes": 364,
+      "sha256": "2da769380e91d83d19d05cc605ee1125100bc124b93210ea6e0f1145a17fdca7"
+    },
+    {
+      "path": "third_party/xorm/examples/cache.go",
+      "bytes": 1609,
+      "sha256": "9579aef18eb1ec14442ca1dd3d22e970a7c60d1f76716b2af4a43737d1e0e785"
+    },
+    {
+      "path": "third_party/xorm/examples/cachegoroutine.go",
+      "bytes": 2093,
+      "sha256": "fb2d5643769a4cc0e15af6d86dd2a15603b8a05e06e542935f06ac757f43652d"
+    },
+    {
+      "path": "third_party/xorm/examples/conversion.go",
+      "bytes": 1391,
+      "sha256": "092d171cbe7b7b3701ad3a8fa40c4e872fad824412233a79456367851d8babd0"
+    },
+    {
+      "path": "third_party/xorm/examples/derive.go",
+      "bytes": 1150,
+      "sha256": "0c3b5f29733b8d26545e9d25e0f699b9840b54f58f9dda3d9fe27dff47d231d0"
+    },
+    {
+      "path": "third_party/xorm/examples/find.go",
+      "bytes": 715,
+      "sha256": "a0d27c82424c0a28cda3b3417109f9b6ab7048c85b1b28e01997c7ebe874bd9a"
+    },
+    {
+      "path": "third_party/xorm/examples/goroutine.go",
+      "bytes": 1960,
+      "sha256": "2c42269e5a309ea2a143eeef5880284260dd1084c51b6ad86314393f54993794"
+    },
+    {
+      "path": "third_party/xorm/examples/maxconnect.go",
+      "bytes": 1865,
+      "sha256": "11e51cbe778d2d7808f0acb04f54712d799189f0b5e89d2092f03a52510bd85f"
+    },
+    {
+      "path": "third_party/xorm/examples/singlemapping.go",
+      "bytes": 916,
+      "sha256": "5b1da9ca9c88fbaac3f4997af8fa4fc7c30ae53ce8f82d3520b63710d6615c3c"
+    },
+    {
+      "path": "third_party/xorm/examples/sync.go",
+      "bytes": 2152,
+      "sha256": "a769d7c3abd0e2a5a89d8ec82deb65803f60ab299d774f8461f7f7ac69b39096"
+    },
+    {
+      "path": "third_party/xorm/examples/tables.go",
+      "bytes": 449,
+      "sha256": "4e953af0e88c5e92cb234945cebfe825556fabc3bede4fc307ec2de708592401"
+    },
+    {
+      "path": "third_party/xorm/gen_reserved.sh",
+      "bytes": 124,
+      "sha256": "9b32904a0604ab39907ed81582f8e5d0952053795147942bd9780a72271d3933"
+    },
+    {
+      "path": "third_party/xorm/go.mod",
+      "bytes": 369,
+      "sha256": "19376b8ccec60c14886fe7e9db7860628cb5a47d9da7ec5dfd7dfdf514ffc8d7"
+    },
+    {
+      "path": "third_party/xorm/go.sum",
+      "bytes": 14543,
+      "sha256": "4940b30aecee1e71ee98450447c4c95f2632125e754eb9b31853a3b68dd65000"
+    },
+    {
+      "path": "third_party/xorm/helpers.go",
+      "bytes": 6969,
+      "sha256": "fd89e1467cb5b8e7e46461559d45673d7da95d09eba3eb453ed3217a78d9293c"
+    },
+    {
+      "path": "third_party/xorm/helpers_test.go",
+      "bytes": 757,
+      "sha256": "3ee28f88b72278c0df732c0b53f6c0535d9794cb95eeba3f6539454c19306fa0"
+    },
+    {
+      "path": "third_party/xorm/helpler_time.go",
+      "bytes": 472,
+      "sha256": "0e5b69b5fd8ac6df85a21c17ea550725676d92f8eb2d04a63f153bc89de277c2"
+    },
+    {
+      "path": "third_party/xorm/interface.go",
+      "bytes": 3945,
+      "sha256": "434e74128ec859074b9335edf9baa55e9149f6cf0b4b4647b429df16d7cf1c50"
+    },
+    {
+      "path": "third_party/xorm/json.go",
+      "bytes": 808,
+      "sha256": "52dbb3aeffd0e578a4d2170de6e285aa80a9a04ca434562edd061afb9d800780"
+    },
+    {
+      "path": "third_party/xorm/logger.go",
+      "bytes": 4538,
+      "sha256": "96fccc3bac6ed22e89d8bf6ff89a6c314b627910cc46f264773f5a2c3cd2efea"
+    },
+    {
+      "path": "third_party/xorm/migrate/migrate.go",
+      "bytes": 5517,
+      "sha256": "f67c45d6a818d934b2a0f4fa1edd04604dacce853aa8ede6aee153c04cc52c6c"
+    },
+    {
+      "path": "third_party/xorm/migrate/migrate_test.go",
+      "bytes": 2914,
+      "sha256": "0a5d13fa75f617cd86d81fa54439385e8ccce9b60105083dd11ab7e85286a2e0"
+    },
+    {
+      "path": "third_party/xorm/pg_reserved.txt",
+      "bytes": 31387,
+      "sha256": "a3f8c52f153f584e989895aca1acfac6a35bbd150c6bc4d49dded5a50c9e61d0"
+    },
+    {
+      "path": "third_party/xorm/processors.go",
+      "bytes": 2050,
+      "sha256": "4b530727cced9be967107db052fdd3c3bd2fc87a6f530a0eadc4167a4d1a4983"
+    },
+    {
+      "path": "third_party/xorm/processors_test.go",
+      "bytes": 22464,
+      "sha256": "bb8d45355c7f09f93d771c5b94576b75518664db3286f7e80a56b21031bc12c7"
+    },
+    {
+      "path": "third_party/xorm/rows.go",
+      "bytes": 2647,
+      "sha256": "c075cae30dbbb31f670cc286b033ab497517a6428b01389f0e932411d2a2b871"
+    },
+    {
+      "path": "third_party/xorm/rows_test.go",
+      "bytes": 3026,
+      "sha256": "dd800ee072a00068aaf17cddbd36481cb1ffa2a3accc6a2398dc4ad0163a1a30"
+    },
+    {
+      "path": "third_party/xorm/session.go",
+      "bytes": 24701,
+      "sha256": "d8a40f51a5f3e2695e42b49654317eb556008398ccf33a36d7b993367069f1ac"
+    },
+    {
+      "path": "third_party/xorm/session_cols.go",
+      "bytes": 4115,
+      "sha256": "1955246451b78d591f20def55e3dcb938926119229370119f36a9f37b3129397"
+    },
+    {
+      "path": "third_party/xorm/session_cols_test.go",
+      "bytes": 3396,
+      "sha256": "b1d7e6ae026ba74ecbc0395b3ac08ea3bb3f11a6874bd9cd4e9688b099a19378"
+    },
+    {
+      "path": "third_party/xorm/session_cond.go",
+      "bytes": 2178,
+      "sha256": "a2e02ccee5ba1b983a2246777ff2542c8e75c0d49bdebde51d9d611d79ca546e"
+    },
+    {
+      "path": "third_party/xorm/session_cond_test.go",
+      "bytes": 6071,
+      "sha256": "b4811f4ddeed2e1ad6736556f2cb3a57f2855b50985e4d7ab8cf09f6f211e3c4"
+    },
+    {
+      "path": "third_party/xorm/session_context.go",
+      "bytes": 615,
+      "sha256": "ed68feff0b50d424b9f9847728297680cd1073b024b632104c9e148491d513f8"
+    },
+    {
+      "path": "third_party/xorm/session_context_test.go",
+      "bytes": 828,
+      "sha256": "3a576a9a70ecfa40bb5d6a16030b66005b8f37ac60d01a78a38f369a4b81c51a"
+    },
+    {
+      "path": "third_party/xorm/session_convert.go",
+      "bytes": 20093,
+      "sha256": "dab08b360859e23f6b250edbb5ae002806eb20269c98ec0aff52719f7f17fd8e"
+    },
+    {
+      "path": "third_party/xorm/session_delete.go",
+      "bytes": 6768,
+      "sha256": "49796485799df9aa4187fac663995bff0336337f87a25b6cae0360ab82d72ac5"
+    },
+    {
+      "path": "third_party/xorm/session_delete_test.go",
+      "bytes": 6379,
+      "sha256": "8db6ec2ca6bd63bbc1f54f1a48502a1b2c70f68a27dfbcacce86d1134c23e88b"
+    },
+    {
+      "path": "third_party/xorm/session_exist.go",
+      "bytes": 2519,
+      "sha256": "7b7ddd1e995d459af3b075cc5cbf712332c3a21ca753836c5e426e02b6b78ec9"
+    },
+    {
+      "path": "third_party/xorm/session_exist_test.go",
+      "bytes": 1864,
+      "sha256": "0dbfc4037b8ca73fdf37f545319785ddf4f4d8bd5816a251c487b099de65fbdb"
+    },
+    {
+      "path": "third_party/xorm/session_find.go",
+      "bytes": 13287,
+      "sha256": "3b4c4c2e7574418b85b1f1e58814272e718b45c41851ff478ca395fa7f19dedf"
+    },
+    {
+      "path": "third_party/xorm/session_find_test.go",
+      "bytes": 18495,
+      "sha256": "838b71ce82669ad11149a396bfb38950c49bbc0ec834a1d94413d9957898227e"
+    },
+    {
+      "path": "third_party/xorm/session_get.go",
+      "bytes": 8610,
+      "sha256": "6a6ac094992fa9b8e86aa8ba1e4e292e50f7376b3c452fd34e3ab135f3e0cca8"
+    },
+    {
+      "path": "third_party/xorm/session_get_test.go",
+      "bytes": 16828,
+      "sha256": "293425a755423c82840f1840b47ca3b0c79dcc1e97cbf822eb3c2df37bc5e23d"
+    },
+    {
+      "path": "third_party/xorm/session_insert.go",
+      "bytes": 22540,
+      "sha256": "9c7c078ed37d5589422980d2c61113b0575e5b3711f79c9941204e883ba1190f"
+    },
+    {
+      "path": "third_party/xorm/session_insert_test.go",
+      "bytes": 24974,
+      "sha256": "4570a9d6f8e0509cbbd55124cbd8aefe5dcf472ffd8d1a12bd80490d35710eac"
+    },
+    {
+      "path": "third_party/xorm/session_iterate.go",
+      "bytes": 2361,
+      "sha256": "9106aefd85fcfcd89107a0fdaef2767282720712ce19436687abdde68ea713f5"
+    },
+    {
+      "path": "third_party/xorm/session_iterate_test.go",
+      "bytes": 2165,
+      "sha256": "b155449da77c5784908336988796bbc6564cd5c5c5735bfad66525d7b496cb03"
+    },
+    {
+      "path": "third_party/xorm/session_pk_test.go",
+      "bytes": 22319,
+      "sha256": "7d86e8b83ae8b4528d04bc439512bcabf3f1b9c1e6f588496414a40a23bffc74"
+    },
+    {
+      "path": "third_party/xorm/session_query.go",
+      "bytes": 8126,
+      "sha256": "57fb77ac0bd81834c6c07ff866cdf127cc1a999318333b921198f90682f010bb"
+    },
+    {
+      "path": "third_party/xorm/session_query_test.go",
+      "bytes": 9943,
+      "sha256": "d32ddf061a7dce334fe42b02be4d03ee044729045c8cd76c8d576a7cdc959902"
+    },
+    {
+      "path": "third_party/xorm/session_raw.go",
+      "bytes": 5467,
+      "sha256": "2c7b735e0d79e2e68f020113d227e639dbd225306b9a828c16d85d27258e2f64"
+    },
+    {
+      "path": "third_party/xorm/session_raw_test.go",
+      "bytes": 1008,
+      "sha256": "8bbe3c38fde590e2164091af4c3acf57618c3fb9fca1d835dec79c0cfaa7ff12"
+    },
+    {
+      "path": "third_party/xorm/session_schema.go",
+      "bytes": 11436,
+      "sha256": "16cf4ac54351f7d17703ea37a9104afcc77fa9527eb81056bf4d864d0280b4d4"
+    },
+    {
+      "path": "third_party/xorm/session_schema_test.go",
+      "bytes": 8562,
+      "sha256": "6c052a05404855b3fd4749ed868ce7fb8154a4097f6da0f7c1511f08e554b397"
+    },
+    {
+      "path": "third_party/xorm/session_stats.go",
+      "bytes": 2728,
+      "sha256": "47a1aac0fd4ae5e62331a8de6e829553a554452d01dc592f854de9abc00ab122"
+    },
+    {
+      "path": "third_party/xorm/session_stats_test.go",
+      "bytes": 6281,
+      "sha256": "952ecfe5181ee2557a8444e96edefe6c10475056405bdca2220692354beb10e3"
+    },
+    {
+      "path": "third_party/xorm/session_test.go",
+      "bytes": 931,
+      "sha256": "a95e5eb18934073e513faa93ac3b5fa10021b43df44c58fc5e23c6ade354b3e7"
+    },
+    {
+      "path": "third_party/xorm/session_tx.go",
+      "bytes": 2392,
+      "sha256": "f98f8cd4fdbfc770437cd4330541c565bfaf45544aec6949a3da8fdcf2c03c5a"
+    },
+    {
+      "path": "third_party/xorm/session_tx_test.go",
+      "bytes": 4367,
+      "sha256": "eb5bbc5bdd031481d49473aec89ef6dc5894d0097774a9b67b74786966196da5"
+    },
+    {
+      "path": "third_party/xorm/session_update.go",
+      "bytes": 15347,
+      "sha256": "9b46c0faf4ed22cce854361fd20ba81819a498dd44df0670b2fa56346c3b5f76"
+    },
+    {
+      "path": "third_party/xorm/session_update_test.go",
+      "bytes": 30042,
+      "sha256": "61859a111b20cb4f11e409ac722e34e0ca8d68c2b19c50218c8ea583f77ea22b"
+    },
+    {
+      "path": "third_party/xorm/statement.go",
+      "bytes": 35177,
+      "sha256": "635d83dc761c02833737fd65a847f07366395069b58d9438c3789cba10fe57f6"
+    },
+    {
+      "path": "third_party/xorm/statement_args.go",
+      "bytes": 3625,
+      "sha256": "48ee87b80d490171896d0fbef09a519dea82e8bb72e89503b175b604846b726e"
+    },
+    {
+      "path": "third_party/xorm/statement_columnmap.go",
+      "bytes": 594,
+      "sha256": "6b98309fd5548aaf9c3f9e9f810471a9f1f1f868e648071744ad75d0a796b88d"
+    },
+    {
+      "path": "third_party/xorm/statement_exprparam.go",
+      "bytes": 2452,
+      "sha256": "41c00da54946ee2f1d8e98c08d5d760035d1925c2a704946d8ad7d3bfc17c02e"
+    },
+    {
+      "path": "third_party/xorm/statement_quote.go",
+      "bytes": 352,
+      "sha256": "447ba034e99b531aae3b2eb43ed9fc766f1482e7056031757582f7f9ebd6b7d4"
+    },
+    {
+      "path": "third_party/xorm/statement_test.go",
+      "bytes": 6010,
+      "sha256": "cf89629ed7f4185968c29b10d9624e56af545d51ec0d7f587e65d4509497b61f"
+    },
+    {
+      "path": "third_party/xorm/syslogger.go",
+      "bytes": 2077,
+      "sha256": "4a0527860f6a250d89bfdda0461553f8087da26305f6645a408cfd4855aeb8af"
+    },
+    {
+      "path": "third_party/xorm/tag.go",
+      "bytes": 7275,
+      "sha256": "8dc5a283489997b6bda9433d98598a94386143be5dcee89d7d9f1f8ece1961c5"
+    },
+    {
+      "path": "third_party/xorm/tag_cache_test.go",
+      "bytes": 833,
+      "sha256": "2febc5b92b23f4814543be3c0551128d15f6014efd0c8886e96f5df52b4c5623"
+    },
+    {
+      "path": "third_party/xorm/tag_extends_test.go",
+      "bytes": 15768,
+      "sha256": "63a2f24380245660d65879d3d6618efe2e497ea9c7c6d1ab2d3c2a13656cfba4"
+    },
+    {
+      "path": "third_party/xorm/tag_id_test.go",
+      "bytes": 1734,
+      "sha256": "91b3b294140218f18d1c22659c4d70cb04f96f483e6442150c1d2ee253533be3"
+    },
+    {
+      "path": "third_party/xorm/tag_test.go",
+      "bytes": 14348,
+      "sha256": "f13f187b04018b6ea2fb3711e4e28c1e581898f810285911ccca8cce2a35445f"
+    },
+    {
+      "path": "third_party/xorm/tag_version_test.go",
+      "bytes": 4196,
+      "sha256": "e95be6ef527547fde0e416db1a6bc734578f2e0088a2fdf83643f184d68fb49a"
+    },
+    {
+      "path": "third_party/xorm/test_mssql.sh",
+      "bytes": 107,
+      "sha256": "f12c60d8a972d006aea94d5b346d9fca6d172ca1e7b11d5fba16f60f26b65bbe"
+    },
+    {
+      "path": "third_party/xorm/test_mssql_cache.sh",
+      "bytes": 107,
+      "sha256": "bc47dcfb73a6ec8fdb145f6d9aaadf1f7ec38812666f96d85de2906da0a49d9c"
+    },
+    {
+      "path": "third_party/xorm/test_mymysql.sh",
+      "bytes": 47,
+      "sha256": "9d7afe1c6912e42e9baf84c2af3d8c970e93f6733eb2a5980a5fe5a5cd2a9480"
+    },
+    {
+      "path": "third_party/xorm/test_mymysql_cache.sh",
+      "bytes": 59,
+      "sha256": "641f1ac7853657e71dd9892e5fbf30f3f56aa02b3b4ff8640b44f2bd51aaca48"
+    },
+    {
+      "path": "third_party/xorm/test_mysql.sh",
+      "bytes": 46,
+      "sha256": "d62058a59522fc98a5fc32f93ed608f2eb33ca7f9bd7094506cbd78f003c5a38"
+    },
+    {
+      "path": "third_party/xorm/test_mysql_cache.sh",
+      "bytes": 58,
+      "sha256": "877b3fb038dd332f7eda5cf6e03ad7fa2dc079c30341a35531f4e4498711a505"
+    },
+    {
+      "path": "third_party/xorm/test_postgres.sh",
+      "bytes": 65,
+      "sha256": "b26089e1ac45ff6ec356f2bbbe6930badc0fe4cd343c66b20c15ad44a652a1ab"
+    },
+    {
+      "path": "third_party/xorm/test_postgres_cache.sh",
+      "bytes": 77,
+      "sha256": "e32fc6b731010eeb1047c20be74ffa62fc7d62c1431d2382461b3c0b46f305cb"
+    },
+    {
+      "path": "third_party/xorm/test_sqlite.sh",
+      "bytes": 63,
+      "sha256": "600f40d328eef5f21fd90923ee6fa6150dcc73bc81a4636cf9ebf052ce9085c4"
+    },
+    {
+      "path": "third_party/xorm/test_sqlite_cache.sh",
+      "bytes": 75,
+      "sha256": "63d82313fc1630114d9746d1e252aa68ca48e4b35a6d587421ab761cd19d6504"
+    },
+    {
+      "path": "third_party/xorm/test_tidb.sh",
+      "bytes": 92,
+      "sha256": "f11d4be6af1d116dfde46f6315503409e530cf3887b3f5732ca72e78147afabf"
+    },
+    {
+      "path": "third_party/xorm/time_test.go",
+      "bytes": 14001,
+      "sha256": "db3ebab3ac8a4a37cff3a6e0174f759414dbc351c1624451f0930640be8dc62a"
+    },
+    {
+      "path": "third_party/xorm/transaction.go",
+      "bytes": 655,
+      "sha256": "0a85037858bf336fdd3ed0ab31c2972075481a0f368fed9a5a79c0626b77b63c"
+    },
+    {
+      "path": "third_party/xorm/transancation_test.go",
+      "bytes": 1185,
+      "sha256": "9764ad72e7e7167ccf52f63fb4536f2ecf3eba0a5d8b5a30bf75306b1b26dd0b"
+    },
+    {
+      "path": "third_party/xorm/types.go",
+      "bytes": 303,
+      "sha256": "f41da4113cc4b02334eab72379f6ab48ae9d06acf486dae95a6db02b4b30568e"
+    },
+    {
+      "path": "third_party/xorm/types_null_test.go",
+      "bytes": 7504,
+      "sha256": "e1c6632f26243839e972307ee7e022e20219f1754ee94e55597e75f8f065481b"
+    },
+    {
+      "path": "third_party/xorm/types_test.go",
+      "bytes": 7621,
+      "sha256": "9430ef0ac9b35958c5ad7d3bc81cf56c2d123f5dfc563c834979edc5bfeef2d0"
+    },
+    {
+      "path": "third_party/xorm/xorm.go",
+      "bytes": 3783,
+      "sha256": "ab9ac66fb47f0cf12761e91c523145a897b3cb2785386fc4e2f8b5a5a6f7508d"
+    },
+    {
+      "path": "third_party/xorm/xorm_test.go",
+      "bytes": 4850,
+      "sha256": "18ade68da235d7785f752b09ea0428105ce40eb5a66acf0a3a30c5883349c394"
+    },
+    {
+      "path": "go.mod",
+      "bytes": 7098,
+      "sha256": "831a1fc6c27112a5a44e26c85f9c71e49931dd59ee38d967dbb12970e2024983"
+    }
+  ],
+  "scope": "Exact historical pinned XORM source adapter and go.mod, no new Go source change"
+}

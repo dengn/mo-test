@@ -1,0 +1,23 @@
+{
+  "id": "SQL-CHECK-DROP-CONSTRAINT",
+  "title": "DROP CONSTRAINT cannot find CHECK",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))"
+    },
+    {
+      "phase": "trigger",
+      "sql": "ALTER TABLE checks DROP CONSTRAINT chk_minimum",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "Can't DROP 'chk_minimum'"
+        ]
+      }
+    }
+  ]
+}

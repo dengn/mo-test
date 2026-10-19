@@ -1,0 +1,145 @@
+[
+  {
+    "stage": "65531_create",
+    "sql_bytes": 851939,
+    "sql_sha256": "5947c627cd46270270afac707fc8dabba8e8a2c1904b56290299474fd11d7c29",
+    "before": {
+      "unix_time": 1791800061.3930364,
+      "memory.current": "27144163328",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118518899022\nuser_usec 92301214545\nsystem_usec 26217684476\nnice_usec 0\nnr_periods 2845715\nnr_throttled 43504\nthrottled_usec 1760100358\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5081444352,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2113636 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65531_create.sql.gz",
+    "affected_rows": 0,
+    "result_rows": 0,
+    "result_columns": 0,
+    "rows": [],
+    "status": "success",
+    "seconds": 20.63183139998,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800082.0462482,
+      "memory.current": "27615461376",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118548773952\nuser_usec 92327199574\nsystem_usec 26221574377\nnice_usec 0\nnr_periods 2845922\nnr_throttled 43505\nthrottled_usec 1760106270\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5517766656,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2538580 kB",
+      "Threads": "15"
+    }
+  },
+  {
+    "stage": "65531_insert_all",
+    "sql_bytes": 382110,
+    "sql_sha256": "40993545b058795faaa1041229b096a250433379b5a8e92797e3fe399b4a5bcd",
+    "before": {
+      "unix_time": 1791800082.0644083,
+      "memory.current": "27614740480",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118548824579\nuser_usec 92327245392\nsystem_usec 26221579186\nnice_usec 0\nnr_periods 2845922\nnr_throttled 43505\nthrottled_usec 1760106270\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5517029376,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2538580 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65531_insert_all.sql.gz",
+    "affected_rows": 1,
+    "result_rows": 0,
+    "result_columns": 0,
+    "rows": [],
+    "status": "success",
+    "seconds": 5.3301057309727184,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800087.4140182,
+      "memory.current": "27904131072",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118557346419\nuser_usec 92333364077\nsystem_usec 26223982341\nnice_usec 0\nnr_periods 2845976\nnr_throttled 43506\nthrottled_usec 1760106414\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5794189312,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2808172 kB",
+      "Threads": "15"
+    }
+  },
+  {
+    "stage": "65531_select_tail",
+    "sql_bytes": 49,
+    "sql_sha256": "6c001002fe4226698e93b193a3050c971e1d109257e591f61db9f072acaedd2f",
+    "before": {
+      "unix_time": 1791800087.414943,
+      "memory.current": "27902468096",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118557346419\nuser_usec 92333364077\nsystem_usec 26223982341\nnice_usec 0\nnr_periods 2845976\nnr_throttled 43506\nthrottled_usec 1760106414\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5792526336,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2808172 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65531_select_tail.sql.gz",
+    "affected_rows": 1,
+    "result_rows": 1,
+    "result_columns": 3,
+    "rows": [
+      [
+        65529,
+        65530,
+        null
+      ]
+    ],
+    "status": "error",
+    "error": {
+      "type": "AssertionError",
+      "code": [
+        [
+          [
+            65529,
+            65530,
+            null
+          ]
+        ],
+        [
+          [
+            65529,
+            65530,
+            65531
+          ]
+        ]
+      ],
+      "message": "(((65529, 65530, None),), ((65529, 65530, 65531),))"
+    },
+    "seconds": 0.12317898700712249,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800087.5389073,
+      "memory.current": "27923439616",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118557539131\nuser_usec 92333537031\nsystem_usec 26224002100\nnice_usec 0\nnr_periods 2845977\nnr_throttled 43506\nthrottled_usec 1760106414\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 5813567488,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4187296 kB",
+      "VmRSS": "2828640 kB",
+      "Threads": "15"
+    }
+  }
+]

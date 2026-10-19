@@ -1,0 +1,14 @@
+{
+  "runtime_commit": "fa7cc1d9b38e3324572a4efc5617033522de0cbf",
+  "latest_main_observed": "3e50e1b32d8da61bbbf70c89989fb08b671809de",
+  "identical_capability_paths": [
+    "pkg/sql/parsers",
+    "pkg/sql/plan/build_ddl.go",
+    "pkg/catalog",
+    "pkg/taskservice",
+    "pkg/frontend/sql_task_handler.go",
+    "pkg/vm/engine/tae/db/gc"
+  ],
+  "changes_in_these_paths": [],
+  "scope": "TTL parser/DDL/catalog/task/GC source unchanged; not a rebuild of latest main"
+}

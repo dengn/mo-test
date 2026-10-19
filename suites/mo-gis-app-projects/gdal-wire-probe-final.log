@@ -1,0 +1,56 @@
+/usr/lib/python3/dist-packages/osgeo/ogr.py:601: FutureWarning: Neither ogr.UseExceptions() nor ogr.DontUseExceptions() has been explicitly called. In GDAL 4.0, exceptions will be enabled by default.
+  warnings.warn(
+[
+  {
+    "engine": "mysql",
+    "raw_type_code": 255,
+    "raw_python_type": "bytes",
+    "raw_hex": "0000000001010000003333333333135d406666666666e64340",
+    "raw_bytes": 25,
+    "explicit_wkb_hex": "01010000003333333333135d406666666666e64340",
+    "explicit_srid": 0,
+    "mysql_geometry_binary_prefix_valid": true,
+    "gdal_open": true,
+    "gdal_sample": [
+      {
+        "id": 1,
+        "wkt": "POINT (116.3 39.8)"
+      },
+      {
+        "id": 2,
+        "wkt": "POINT (116.3 39.802)"
+      },
+      {
+        "id": 3,
+        "wkt": "POINT (116.3 39.804)"
+      }
+    ],
+    "gdal_errors": []
+  },
+  {
+    "engine": "mo",
+    "raw_type_code": 255,
+    "raw_python_type": "bytes",
+    "raw_hex": "504f494e54283131362e332033392e3829",
+    "raw_bytes": 17,
+    "explicit_wkb_hex": "01010000003333333333135d406666666666e64340",
+    "explicit_srid": 0,
+    "mysql_geometry_binary_prefix_valid": false,
+    "gdal_open": true,
+    "gdal_sample": [
+      {
+        "id": 1,
+        "wkt": null
+      },
+      {
+        "id": 2,
+        "wkt": null
+      },
+      {
+        "id": 3,
+        "wkt": null
+      }
+    ],
+    "gdal_errors": []
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "mo": {
+    "rows_after_failed_or_successful_wfs_transaction": [
+      [
+        260,
+        "GIS WFS edit 中文",
+        456,
+        "POINT(116.315 39.815)",
+        4326
+      ]
+    ],
+    "total_before_teardown": 260,
+    "total_after_owned_row_teardown": 259
+  },
+  "pg": {
+    "rows_after_failed_or_successful_wfs_transaction": [],
+    "total_before_teardown": 259,
+    "total_after_owned_row_teardown": 259
+  },
+  "mysql": {
+    "rows_after_failed_or_successful_wfs_transaction": [],
+    "total_before_teardown": 259,
+    "total_after_owned_row_teardown": 259
+  }
+}

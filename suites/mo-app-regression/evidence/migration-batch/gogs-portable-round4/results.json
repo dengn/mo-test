@@ -1,0 +1,99 @@
+{
+  "app": "gogs/gogs",
+  "commit": "dbbd717e923694c36f41b0360515b4374bbe6ee0",
+  "schema": "mo_reg_gogs_0c3b186260534541",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_schema_version_22",
+      "passed": true
+    },
+    {
+      "name": "native_schema_core_tables",
+      "passed": true
+    },
+    {
+      "name": "native_CLI_bootstrap_user",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_owner",
+      "passed": true
+    },
+    {
+      "name": "native_ordinary_user_other",
+      "passed": true
+    },
+    {
+      "name": "native_PBKDF2_passwords_exact",
+      "passed": true
+    },
+    {
+      "name": "native_token_hash_not_plaintext",
+      "passed": true
+    },
+    {
+      "name": "native_owner_token_identity",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_token_denied_zero_new_token",
+      "passed": true
+    },
+    {
+      "name": "ordinary_user_admin_creation_denied",
+      "passed": true
+    },
+    {
+      "name": "native_private_repository_owner",
+      "passed": true
+    },
+    {
+      "name": "other_user_private_repo_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_private_repo_denied",
+      "passed": true
+    },
+    {
+      "name": "native_Git_HTTP_clone",
+      "passed": true
+    },
+    {
+      "name": "native_Git_HTTP_push_and_exact_bytes",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "pinned vendored XORM table and index metadata recognition"
+  ],
+  "limitations": [
+    "known native concurrent NextIssueIndex race remains; issue writes here are sequential",
+    "full new UI/SSH/mirrors/hooks/plugins/populated upgrades unverified",
+    "periodic cron disabled on this owned test instance"
+  ],
+  "binary_identity": {
+    "sha256": "472668c143db076052594ce046de109203df181f703ad615286ddd9b83b6bf2d",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "Git_fixture_sha256": "74fcca624d17764ddfd705465eabeef646d650eb28268fe5c5e426b6ce90e1f4",
+  "Git_fixture_commit": "3fbd52134ffda17b9d1054fdeebce319f39dadc6",
+  "error_type": "OperationalError",
+  "failed_stage": "native_issues_comments",
+  "finished_at_utc": "2026-10-13T02:03:59Z"
+}

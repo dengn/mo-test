@@ -1,0 +1,28 @@
+{
+  "case": {
+    "id": "GIS001425",
+    "category": "constructive",
+    "feature": "st_intersection.rectangle.4",
+    "function": "st_intersection",
+    "mo_sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((253 52,258 52,258 55,253 55,253 52))',0),st_geomfromtext('POLYGON((254 49,259 49,259 52,254 52,254 49))',0)))",
+    "pg_sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((253 52,258 52,258 55,253 55,253 52))',0),st_geomfromtext('POLYGON((254 49,259 49,259 52,254 52,254 49))',0)))",
+    "mode": "geometry"
+  },
+  "rows": {
+    "mo": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ],
+    "pg": [
+      [
+        "LINESTRING(254 52,258 52)"
+      ]
+    ],
+    "mysql": [
+      [
+        "LINESTRING(254 52,258 52)"
+      ]
+    ]
+  }
+}

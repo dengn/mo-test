@@ -1,0 +1,53 @@
+{
+  "profile": "smoke",
+  "policy": "strict",
+  "started_at_utc": "2026-10-13T02:37:16Z",
+  "jobs": [
+    {
+      "name": "sql",
+      "status": "passed",
+      "exit_code": 0,
+      "case_statuses": {
+        "passed": 3
+      },
+      "elapsed_seconds": 0.428
+    },
+    {
+      "name": "gogs",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 33,
+      "elapsed_seconds": 10.93
+    },
+    {
+      "name": "answer",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 27,
+      "elapsed_seconds": 17.971
+    },
+    {
+      "name": "opencart",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 35,
+      "elapsed_seconds": 17.922
+    }
+  ],
+  "min_free_mib": 2048,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 0,
+  "passed": true,
+  "target": {
+    "server_version": "8.0.30-MatrixOne-v4.2.5",
+    "runtime_git_version": "1a44f3d",
+    "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+    "health": true
+  },
+  "runtime_root": "/tmp/mo-app-migration-runtime",
+  "free_bytes_at_admission": 2614566912,
+  "workspace_free_bytes_at_admission": 163651584,
+  "finished_at_utc": "2026-10-13T02:38:03Z"
+}

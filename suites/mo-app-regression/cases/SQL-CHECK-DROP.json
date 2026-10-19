@@ -1,0 +1,48 @@
+{
+  "id": "SQL-CHECK-DROP",
+  "title": "DROP CHECK parser restriction",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))"
+    },
+    {
+      "phase": "trigger",
+      "sql": "ALTER TABLE checks DROP CHECK chk_minimum",
+      "expected_error": {
+        "code": 1064,
+        "contains": [
+          "SQL parser error"
+        ]
+      }
+    }
+  ],
+  "on_failure_postchecks": [
+    {
+      "sql": "INSERT INTO checks VALUES (1,-1)",
+      "expected_rejection": {
+        "code": 3819,
+        "contains": [
+          "Check constraint"
+        ]
+      }
+    }
+  ],
+  "on_success_postchecks": [
+    {
+      "sql": "INSERT INTO checks VALUES(1,-1)",
+      "expected_rows": []
+    },
+    {
+      "sql": "SELECT minimum FROM checks",
+      "expected_rows": [
+        [
+          -1
+        ]
+      ]
+    }
+  ]
+}

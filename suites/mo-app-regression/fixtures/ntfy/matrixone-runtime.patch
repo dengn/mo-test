@@ -1,0 +1,1021 @@
+diff --git a/cmd/serve.go b/cmd/serve.go
+--- a/cmd/serve.go
++++ b/cmd/serve.go
+@@ -330,7 +330,10 @@
+ 	}
+ 
+ 	// Check values
+-	if databaseURL != "" && !strings.HasPrefix(databaseURL, "postgres://") && !strings.HasPrefix(databaseURL, "postgresql://") {
++	if strings.HasPrefix(databaseURL, "matrixone://") && (len(databaseReplicaURLs) > 0 || clusterListen != "") {
++		return errors.New("MatrixOne backend supports one native node; replicas/clustering not implemented")
++	}
++	if databaseURL != "" && !strings.HasPrefix(databaseURL, "postgres://") && !strings.HasPrefix(databaseURL, "postgresql://") && !strings.HasPrefix(databaseURL, "matrixone://") {
+ 		return errors.New("if database-url is set, it must start with postgres:// or postgresql://")
+ 	} else if databaseURL != "" && (authFile != "" || cacheFile != "" || webPushFile != "") {
+ 		return errors.New("if database-url is set, auth-file, cache-file, and web-push-file must not be set")
+diff --git a/cmd/user.go b/cmd/user.go
+--- a/cmd/user.go
++++ b/cmd/user.go
+@@ -13,6 +13,7 @@
+ 	"github.com/urfave/cli/v2"
+ 	"github.com/urfave/cli/v2/altsrc"
+ 	"heckel.io/ntfy/v2/db"
++	"heckel.io/ntfy/v2/db/matrixone"
+ 	"heckel.io/ntfy/v2/db/pg"
+ 	"heckel.io/ntfy/v2/mail"
+ 	"heckel.io/ntfy/v2/server"
+@@ -466,6 +467,13 @@
+ 		AccessCacheEnabled:  false, // Do not cache for CLI commands
+ 	}
+ 	if databaseURL != "" {
++		if matrixone.IsURL(databaseURL) {
++			host, e := matrixone.Open(databaseURL)
++			if e != nil {
++				return nil, e
++			}
++			return user.NewMatrixOneManager(db.New(host, nil), authConfig)
++		}
+ 		host, dbErr := pg.Open(databaseURL)
+ 		if dbErr != nil {
+ 			return nil, dbErr
+diff --git a/db/schema/schema.go b/db/schema/schema.go
+--- a/db/schema/schema.go
++++ b/db/schema/schema.go
+@@ -31,7 +31,7 @@
+ // Migrate creates or upgrades the named store's schema to targetVersion in one transaction, or
+ // creates a new database using the "create" function.
+ func Migrate(db *sql.DB, dialect Dialect, store string, targetVersion int, create MigrateFunc, migrations map[int]MigrateFunc) error {
+-	if dialect != Postgres && dialect != SQLite {
++	if dialect != Postgres && dialect != SQLite && dialect != MatrixOne {
+ 		return fmt.Errorf("unsupported schema dialect %d", dialect)
+ 	}
+ 	tx, err := db.Begin()
+@@ -85,6 +85,9 @@
+ }
+ 
+ func createVersionTableQuery(dialect Dialect) string {
++	if dialect == MatrixOne {
++		return "CREATE TABLE IF NOT EXISTS schema_version (store VARCHAR(64) PRIMARY KEY, version INT NOT NULL)"
++	}
+ 	if dialect == Postgres {
+ 		return postgresCreateVersionTableQuery
+ 	}
+@@ -92,7 +95,9 @@
+ }
+ 
+ func readVersion(tx *sql.Tx, dialect Dialect, store string) (version int, err error) {
+-	if dialect == Postgres {
++	if dialect == MatrixOne {
++		err = tx.QueryRow("SELECT version FROM schema_version WHERE store = ?", store).Scan(&version)
++	} else if dialect == Postgres {
+ 		err = tx.QueryRow(postgresSelectVersionQuery, store).Scan(&version)
+ 	} else {
+ 		err = tx.QueryRow(sqliteSelectVersionQuery).Scan(&version)
+@@ -102,7 +107,9 @@
+ 
+ func writeVersion(tx *sql.Tx, dialect Dialect, store string, version int) error {
+ 	var err error
+-	if dialect == Postgres {
++	if dialect == MatrixOne {
++		_, err = tx.Exec("INSERT INTO schema_version (store, version) VALUES (?, ?) ON DUPLICATE KEY UPDATE version=VALUES(version)", store, version)
++	} else if dialect == Postgres {
+ 		_, err = tx.Exec(postgresUpsertVersionQuery, store, version)
+ 	} else {
+ 		_, err = tx.Exec(sqliteUpsertVersionQuery, version)
+diff --git a/db/schema/types.go b/db/schema/types.go
+--- a/db/schema/types.go
++++ b/db/schema/types.go
+@@ -9,6 +9,7 @@
+ const (
+ 	SQLite Dialect = iota
+ 	Postgres
++	MatrixOne
+ )
+ 
+ // MigrateFunc applies one schema change inside the setup transaction: the initial creation of
+diff --git a/go.mod b/go.mod
+--- a/go.mod
++++ b/go.mod
+@@ -47,6 +47,7 @@
+ 	cloud.google.com/go/iam v1.14.0 // indirect
+ 	cloud.google.com/go/longrunning v1.3.0 // indirect
+ 	cloud.google.com/go/monitoring v1.31.0 // indirect
++	filippo.io/edwards25519 v1.2.0 // indirect
+ 	github.com/AlekSi/pointer v1.2.0 // indirect
+ 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.62.0 // indirect
+ 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.62.0 // indirect
+@@ -103,3 +104,5 @@
+ 	google.golang.org/protobuf v1.36.12 // indirect
+ 	gopkg.in/yaml.v3 v3.0.1 // indirect
+ )
++
++require github.com/go-sql-driver/mysql v1.10.0
+diff --git a/go.sum b/go.sum
+--- a/go.sum
++++ b/go.sum
+@@ -22,6 +22,8 @@
+ cloud.google.com/go/storage v1.69.0/go.mod h1:PELYsxTYm2peE4mwLEC1+mS1dA/kUSRUxNv56rOy44g=
+ cloud.google.com/go/trace v1.16.0 h1:GmQovzFc5F0CNfl0VLgL64aoTtu7xsM0YajW2GlG9+E=
+ cloud.google.com/go/trace v1.16.0/go.mod h1:r+bdAn16dKLSV1G2D5v3e58IlQlizfxWrUfjx7kM7X0=
++filippo.io/edwards25519 v1.2.0 h1:crnVqOiS4jqYleHd9vaKZ+HKtHfllngJIiOpNpoJsjo=
++filippo.io/edwards25519 v1.2.0/go.mod h1:xzAOLCNug/yB62zG1bQ8uziwrIqIuxhctzJT18Q77mc=
+ firebase.google.com/go/v4 v4.22.0 h1:+7ClMN69jOITseDXC7q0OKjMkRl3ZEJwZaLB900mvYs=
+ firebase.google.com/go/v4 v4.22.0/go.mod h1:tXyH/bqgOst15PmgHUSFaLX9woyDwclTtz/cRX+NocQ=
+ github.com/AlekSi/pointer v1.2.0 h1:glcy/gc4h8HnG2Z3ZECSzZ1IX1x2JxRVuDzaJwQE0+w=
+@@ -74,6 +76,8 @@
+ github.com/go-logr/logr v1.4.4/go.mod h1:9T104GzyrTigFIr8wt5mBrctHMim0Nb2HLGrmQ40KvY=
+ github.com/go-logr/stdr v1.2.2 h1:hSWxHoqTgW2S2qGc0LTAI563KZ5YKYRhT3MFKZMbjag=
+ github.com/go-logr/stdr v1.2.2/go.mod h1:mMo/vtBO5dYbehREoey6XUKy/eSumjCCveDpRre4VKE=
++github.com/go-sql-driver/mysql v1.10.0 h1:Q+1LV8DkHJvSYAdR83XzuhDaTykuDx0l6fkXxoWCWfw=
++github.com/go-sql-driver/mysql v1.10.0/go.mod h1:M+cqaI7+xxXGG9swrdeUIoPG3Y3KCkF0pZej+SK+nWk=
+ github.com/golang-jwt/jwt/v4 v4.4.2/go.mod h1:m21LjoU+eqJr34lmDMbreY2eSTRJ1cv77w39/MY0Ch0=
+ github.com/golang-jwt/jwt/v4 v4.5.2 h1:YtQM7lnr8iZ+j5q71MGKkNw9Mn7AjHM68uc9g5fXeUI=
+ github.com/golang-jwt/jwt/v4 v4.5.2/go.mod h1:m21LjoU+eqJr34lmDMbreY2eSTRJ1cv77w39/MY0Ch0=
+diff --git a/user/manager.go b/user/manager.go
+--- a/user/manager.go
++++ b/user/manager.go
+@@ -7,6 +7,7 @@
+ 	"encoding/json"
+ 	"errors"
+ 	"fmt"
++	"github.com/go-sql-driver/mysql"
+ 	"net/netip"
+ 	"slices"
+ 	"strings"
+@@ -1981,6 +1982,10 @@
+ 
+ // isUniqueConstraintError checks if the error is a unique constraint violation for both SQLite and PostgreSQL
+ func isUniqueConstraintError(err error) bool {
++	var mysqlErr *mysql.MySQLError
++	if errors.As(err, &mysqlErr) && mysqlErr.Number == 1062 {
++		return true
++	}
+ 	errStr := err.Error()
+ 	return strings.Contains(errStr, "UNIQUE constraint failed") || strings.Contains(errStr, "23505")
+ }
+diff --git a/server/server.go b/server/server.go
+--- a/server/server.go
++++ b/server/server.go
+@@ -34,6 +34,7 @@
+ 	"heckel.io/ntfy/v2/attachment"
+ 	"heckel.io/ntfy/v2/ban"
+ 	"heckel.io/ntfy/v2/db"
++	"heckel.io/ntfy/v2/db/matrixone"
+ 	"heckel.io/ntfy/v2/db/pg"
+ 	"heckel.io/ntfy/v2/log"
+ 	"heckel.io/ntfy/v2/mail"
+@@ -201,7 +202,11 @@
+ 	// Open shared PostgreSQL connection pool if configured
+ 	var pool *db.DB
+ 	if conf.DatabaseURL != "" {
+-		primary, err := pg.Open(conf.DatabaseURL)
++		open := pg.Open
++		if matrixone.IsURL(conf.DatabaseURL) {
++			open = matrixone.Open
++		}
++		primary, err := open(conf.DatabaseURL)
+ 		if err != nil {
+ 			return nil, err
+ 		}
+@@ -227,6 +232,9 @@
+ 	var wp *webpush.Store
+ 	if conf.WebPushPublicKey != "" {
+ 		if pool != nil {
++			if matrixone.IsURL(conf.DatabaseURL) {
++				return nil, fmt.Errorf("MatrixOne webpush store is not implemented")
++			}
+ 			wp, err = webpush.NewPostgresStore(pool)
+ 		} else {
+ 			wp, err = webpush.NewSQLiteStore(conf.WebPushFile, conf.WebPushStartupQueries)
+@@ -278,7 +286,11 @@
+ 			AccessCacheReloadInterval: conf.AuthAccessCacheReloadInterval,
+ 		}
+ 		if pool != nil {
+-			userManager, err = user.NewPostgresManager(pool, authConfig)
++			if matrixone.IsURL(conf.DatabaseURL) {
++				userManager, err = user.NewMatrixOneManager(pool, authConfig)
++			} else {
++				userManager, err = user.NewPostgresManager(pool, authConfig)
++			}
+ 		} else {
+ 			userManager, err = user.NewSQLiteManager(conf.AuthFile, conf.AuthStartupQueries, authConfig)
+ 		}
+@@ -336,6 +348,9 @@
+ 	if conf.CacheDuration == 0 {
+ 		return message.NewNopStore()
+ 	} else if pool != nil {
++		if matrixone.IsURL(conf.DatabaseURL) {
++			return message.NewMatrixOneStore(pool, conf.CacheBatchSize, conf.CacheBatchTimeout)
++		}
+ 		return message.NewPostgresStore(pool, conf.CacheBatchSize, conf.CacheBatchTimeout)
+ 	} else if conf.CacheFile != "" {
+ 		return message.NewSQLiteStore(conf.CacheFile, conf.CacheStartupQueries, conf.CacheDuration, conf.CacheBatchSize, conf.CacheBatchTimeout, false)
+@@ -586,7 +601,7 @@
+ 		ev.Info("Connection closed with HTTP %d (ntfy error %d)", httpErr.HTTPCode, httpErr.Code)
+ 	}
+ 	if isRateLimiting && s.config.StripeSecretKey != "" {
+-		u := v.User()
++		u := requestUser(r, v)
+ 		if u == nil || u.Tier == nil {
+ 			httpErr = httpErr.Wrap("increase your limits with a paid plan, see %s", s.config.BaseURL)
+ 		}
+@@ -927,7 +942,7 @@
+ 	}
+ 	if email != "" {
+ 		var httpErr *errHTTP
+-		email, httpErr = s.convertEmailAddress(v.User(), email)
++		email, httpErr = s.convertEmailAddress(requestUser(r, v), email)
+ 		if httpErr != nil {
+ 			return nil, httpErr.With(t)
+ 		} else if !vrate.EmailAllowed() {
+@@ -936,7 +951,7 @@
+ 	}
+ 	if call != "" {
+ 		var httpErr *errHTTP
+-		call, httpErr = s.convertPhoneNumber(v.User(), call)
++		call, httpErr = s.convertPhoneNumber(requestUser(r, v), call)
+ 		if httpErr != nil {
+ 			return nil, httpErr.With(t)
+ 		} else if !vrate.CallAllowed() {
+@@ -947,7 +962,7 @@
+ 		m = model.NewPollRequestMessage(t.ID, m.PollID)
+ 	}
+ 	m.Sender = v.IP()
+-	m.User = v.MaybeUserID()
++	m.User = requestUserID(r, v)
+ 	if cache {
+ 		m.Expires = time.Unix(m.Time, 0).Add(v.Limits().MessageExpiryDuration).Unix()
+ 	}
+@@ -1008,7 +1023,7 @@
+ 			return nil, err
+ 		}
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if s.userManager != nil && u != nil && u.Tier != nil {
+ 		go s.userManager.EnqueueUserStats(u.ID, v.Stats())
+ 	}
+@@ -1084,7 +1099,7 @@
+ 	// Create an action message with the given event type
+ 	m := model.NewActionMessage(event, t.ID, sequenceID)
+ 	m.Sender = v.IP()
+-	m.User = v.MaybeUserID()
++	m.User = requestUserID(r, v)
+ 	m.Expires = time.Unix(m.Time, 0).Add(v.Limits().MessageExpiryDuration).Unix()
+ 	// Publish to subscribers, Firebase (for Android clients), and web push endpoints
+ 	if err := s.dispatch(v, t, m, dispatchOpts{firebase: true, webPush: true}); err != nil {
+@@ -1390,7 +1405,7 @@
+ 	if s.attachment == nil || s.config.BaseURL == "" {
+ 		return errHTTPBadRequestAttachmentsDisallowed.With(m)
+ 	}
+-	vinfo, err := v.Info()
++	vinfo, err := v.InfoForUser(requestUser(r, v))
+ 	if err != nil {
+ 		return err
+ 	}
+@@ -1545,7 +1560,7 @@
+ 	defer cancel()
+ 	subscriberIDs := make([]int, 0)
+ 	for _, t := range topics {
+-		subscriberIDs = append(subscriberIDs, t.Subscribe(sub, v.MaybeUserID(), cancel))
++		subscriberIDs = append(subscriberIDs, t.Subscribe(sub, requestUserID(r, v), cancel))
+ 	}
+ 	defer func() {
+ 		for i, subscriberID := range subscriberIDs {
+@@ -1694,7 +1709,7 @@
+ 	}
+ 	subscriberIDs := make([]int, 0)
+ 	for _, t := range topics {
+-		subscriberIDs = append(subscriberIDs, t.Subscribe(sub, v.MaybeUserID(), cancel))
++		subscriberIDs = append(subscriberIDs, t.Subscribe(sub, requestUserID(r, v), cancel))
+ 	}
+ 	defer func() {
+ 		for i, subscriberID := range subscriberIDs {
+@@ -1776,10 +1791,10 @@
+ 			return err
+ 		}
+ 		if ownerUserID == "" {
+-			if err := s.userManager.Authorize(v.User(), t.ID, user.PermissionWrite); err == nil {
++			if err := s.userManager.Authorize(requestUser(r, v), t.ID, user.PermissionWrite); err == nil {
+ 				writableRateTopics = append(writableRateTopics, t)
+ 			}
+-		} else if ownerUserID == v.MaybeUserID() {
++		} else if ownerUserID == requestUserID(r, v) {
+ 			writableRateTopics = append(writableRateTopics, t)
+ 		}
+ 	}
+diff --git a/server/server_account.go b/server/server_account.go
+--- a/server/server_account.go
++++ b/server/server_account.go
+@@ -23,7 +23,7 @@
+ )
+ 
+ func (s *Server) handleAccountCreate(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if !u.IsAdmin() { // u may be nil, but that's fine
+ 		if !s.config.EnableSignup {
+ 			return errHTTPBadRequestSignupNotEnabled
+@@ -66,7 +66,7 @@
+ }
+ 
+ func (s *Server) handleAccountGet(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	info, err := v.Info()
++	info, err := v.InfoForUser(requestUser(r, v))
+ 	if err != nil {
+ 		return err
+ 	}
+@@ -98,7 +98,7 @@
+ 			AttachmentTotalSizeRemaining: stats.AttachmentTotalSizeRemaining,
+ 		},
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if u != nil {
+ 		response.Username = u.Name
+ 		response.Role = string(u.Role)
+@@ -217,7 +217,7 @@
+ 	} else if req.Password == "" {
+ 		return errHTTPBadRequest
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if _, err := s.userManager.Authenticate(u.Name, req.Password); err != nil {
+ 		return errHTTPBadRequestIncorrectPasswordConfirmation
+ 	}
+@@ -255,7 +255,7 @@
+ 	} else if req.Password == "" || req.NewPassword == "" {
+ 		return errHTTPBadRequest
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if _, err := s.userManager.Authenticate(u.Name, req.Password); err != nil {
+ 		return errHTTPBadRequestIncorrectPasswordConfirmation
+ 	}
+@@ -274,7 +274,7 @@
+ // the token endpoint (which exists to mint arbitrary API tokens), this endpoint's job is to log a
+ // user in, so it also reports who they are (the identifier they typed may be a primary email).
+ func (s *Server) handleAccountLogin(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	logvr(v, r).Tag(tagAccount).Info("Logging in user %s", u.Name)
+ 	token, err := s.userManager.CreateToken(u.ID, "", time.Now().Add(tokenExpiryDuration), v.IP(), false)
+ 	if err != nil {
+@@ -300,7 +300,7 @@
+ 	if req.Expires != nil {
+ 		expires = time.Unix(*req.Expires, 0)
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	logvr(v, r).
+ 		Tag(tagAccount).
+ 		Fields(log.Context{
+@@ -323,7 +323,7 @@
+ }
+ 
+ func (s *Server) handleAccountTokenUpdate(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if u == nil {
+ 		// ensureUser already checked, but the user can be nil'd between that check and this
+ 		// re-read: IP-keyed visitors are shared, and a concurrent anonymous request on the
+@@ -370,7 +370,7 @@
+ }
+ 
+ func (s *Server) handleAccountTokenDelete(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	token := readParam(r, "X-Token", "Token") // DELETEs cannot have a body, and we don't want it in the path
+ 	if token == "" {
+ 		token = u.Token
+@@ -396,7 +396,7 @@
+ 	if err != nil {
+ 		return err
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	if u.Prefs == nil {
+ 		u.Prefs = &user.Prefs{}
+ 	}
+@@ -436,7 +436,7 @@
+ 	if err != nil {
+ 		return err
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	prefs := u.Prefs
+ 	if prefs == nil {
+ 		prefs = &user.Prefs{}
+@@ -459,7 +459,7 @@
+ 	if err != nil {
+ 		return err
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	prefs := u.Prefs
+ 	if prefs == nil || prefs.Subscriptions == nil {
+ 		return errHTTPNotFound
+@@ -486,7 +486,7 @@
+ 	// DELETEs cannot have a body, and we don't want it in the path
+ 	deleteBaseURL := readParam(r, "X-BaseURL", "BaseURL")
+ 	deleteTopic := readParam(r, "X-Topic", "Topic")
+-	u := v.User()
++	u := requestUser(r, v)
+ 	prefs := u.Prefs
+ 	if prefs == nil || prefs.Subscriptions == nil {
+ 		return nil
+@@ -512,7 +512,7 @@
+ // with enough remaining reservations left, or if the user is an admin. Admins can always reserve a topic, unless
+ // it is already reserved by someone else.
+ func (s *Server) handleAccountReservationAdd(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountReservationRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -567,7 +567,7 @@
+ 	if !topicRegex.MatchString(topic) {
+ 		return errHTTPBadRequestTopicInvalid
+ 	}
+-	u := v.User()
++	u := requestUser(r, v)
+ 	authorized, err := s.userManager.HasReservation(u.Name, topic)
+ 	if err != nil {
+ 		return err
+@@ -614,7 +614,7 @@
+ }
+ 
+ func (s *Server) handleAccountPhoneNumberVerify(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountPhoneNumberVerifyRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -645,7 +645,7 @@
+ }
+ 
+ func (s *Server) handleAccountPhoneNumberAdd(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountPhoneNumberAddRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -667,7 +667,7 @@
+ }
+ 
+ func (s *Server) handleAccountPhoneNumberDelete(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountPhoneNumberAddRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -686,7 +686,7 @@
+ // magic-link token, stores a pending verification, and emails the link. The address is NOT
+ // added to the verified list until the user clicks the link (handleAccountEmailVerify).
+ func (s *Server) handleAccountEmailAdd(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountEmailRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -735,7 +735,7 @@
+ 		return err
+ 	}
+ 	logvr(v, r).Tag(tagAccount).Field("email", m.Email).Info("Email verified")
+-	// Refresh the verified user's other sessions. The request is unauthenticated (v.User() is
++	// Refresh the verified user's other sessions. The request is unauthenticated (requestUser(r, v) is
+ 	// usually nil), so resolve the user from the token row and publish to their sync topic.
+ 	s.publishSyncEventForUserIDAsync(v, m.UserID)
+ 	return s.writeJSON(w, newSuccessResponse())
+@@ -744,7 +744,7 @@
+ // handleAccountEmailDelete removes an email address, whether verified or still pending
+ // (DELETE /v1/account/email). Removing the primary leaves the account with no primary.
+ func (s *Server) handleAccountEmailDelete(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountEmailRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -765,7 +765,7 @@
+ // handleAccountEmailSetPrimary marks an already-verified email as the user's primary (recovery)
+ // email (POST /v1/account/email/primary).
+ func (s *Server) handleAccountEmailSetPrimary(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountEmailRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+@@ -786,7 +786,7 @@
+ 
+ // handleAccountEmailResend re-sends a pending email verification (POST /v1/account/email/resend).
+ func (s *Server) handleAccountEmailResend(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-	u := v.User()
++	u := requestUser(r, v)
+ 	req, err := readJSONWithLimit[apiAccountEmailRequest](r.Body, jsonBodyBytesLimit, false)
+ 	if err != nil {
+ 		return err
+diff --git a/server/server_auth.go b/server/server_auth.go
+--- a/server/server_auth.go
++++ b/server/server_auth.go
+@@ -7,6 +7,7 @@
+ 	"strings"
+ 	"time"
+ 
++	"heckel.io/ntfy/v2/db/matrixone"
+ 	"heckel.io/ntfy/v2/user"
+ )
+ 
+@@ -28,6 +29,10 @@
+ 	// handleError) can reuse it without re-parsing headers, and so an account-keyed (tier'd) visitor --
+ 	// whose shared visitor object has a stale v.ip -- is still attributed to the actual request IP.
+ 	r = withContext(r, map[contextKey]any{contextVisitorIP: ip})
++	// An explicit typed nil also captures anonymous/failed authentication.
++	if matrixone.IsURL(s.config.DatabaseURL) {
++		r = withContext(r, map[contextKey]any{contextRequestIdentity: (*user.User)(nil)})
++	}
+ 	vip := s.visitor(ip, nil)
+ 	if s.userManager == nil {
+ 		return r, vip, nil
+@@ -49,6 +54,9 @@
+ 		return r, vip, errHTTPUnauthorized // Always return visitor, even when error occurs!
+ 	}
+ 	// Authentication with user was successful
++	if matrixone.IsURL(s.config.DatabaseURL) {
++		r = withContext(r, map[contextKey]any{contextRequestIdentity: u})
++	}
+ 	return r, s.visitor(ip, u), nil
+ }
+ 
+diff --git a/server/server_middleware.go b/server/server_middleware.go
+--- a/server/server_middleware.go
++++ b/server/server_middleware.go
+@@ -80,7 +80,7 @@
+ 
+ func (s *Server) ensureUser(next handleFunc) handleFunc {
+ 	return s.ensureUserManager(func(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-		if v.User() == nil {
++		if requestUser(r, v) == nil {
+ 			return errHTTPUnauthorized
+ 		}
+ 		return next(w, r, v)
+@@ -89,7 +89,7 @@
+ 
+ func (s *Server) ensureAdmin(next handleFunc) handleFunc {
+ 	return s.ensureUserManager(func(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-		if !v.User().IsAdmin() {
++		if !requestUser(r, v).IsAdmin() {
+ 			return errHTTPUnauthorized
+ 		}
+ 		return next(w, r, v)
+@@ -125,7 +125,7 @@
+ 
+ func (s *Server) ensureStripeCustomer(next handleFunc) handleFunc {
+ 	return s.ensureUser(func(w http.ResponseWriter, r *http.Request, v *visitor) error {
+-		if v.User().Billing.StripeCustomerID == "" {
++		if requestUser(r, v).Billing.StripeCustomerID == "" {
+ 			return errHTTPBadRequestNotAPaidUser
+ 		}
+ 		return next(w, r, v)
+@@ -136,7 +136,7 @@
+ 	return func(w http.ResponseWriter, r *http.Request, v *visitor) error {
+ 		err := next(w, r, v)
+ 		if err == nil {
+-			s.publishSyncEventAsync(v)
++			s.publishSyncEventForRequestAsync(v, requestUser(r, v))
+ 		}
+ 		return err
+ 	}
+@@ -159,7 +159,7 @@
+ 		if err != nil {
+ 			return err
+ 		}
+-		u := v.User()
++		u := requestUser(r, v)
+ 		for _, t := range topics {
+ 			if err := s.userManager.Authorize(u, t.ID, perm); err != nil {
+ 				logvr(v, r).With(t).Err(err).Debug("Access to topic %s not authorized", t.ID)
+diff --git a/server/visitor.go b/server/visitor.go
+--- a/server/visitor.go
++++ b/server/visitor.go
+@@ -484,7 +484,10 @@
+ 	}
+ }
+ 
+-func (v *visitor) Info() (*visitorInfo, error) {
++func (v *visitor) Info() (*visitorInfo, error) { return v.InfoForUser(v.User()) }
++
++// InfoForUser retains shared visitor accounting but queries the request's account.
++func (v *visitor) InfoForUser(u *user.User) (*visitorInfo, error) {
+ 	v.mu.RLock()
+ 	info := v.infoLightNoLock()
+ 	v.mu.RUnlock()
+@@ -492,7 +495,6 @@
+ 	// Attachment stats from database
+ 	var attachmentsBytesUsed int64
+ 	var err error
+-	u := v.User()
+ 	if u != nil {
+ 		attachmentsBytesUsed, err = v.messageCache.AttachmentBytesUsedByUser(u.ID)
+ 	} else {
+diff --git a/db/matrixone/matrixone.go b/db/matrixone/matrixone.go
+new file mode 100644
+--- /dev/null
++++ b/db/matrixone/matrixone.go
+@@ -0,0 +1,50 @@
++// MatrixOne adaptation: explicit opt-in URL; no SQL proxy or fallback database.
++package matrixone
++
++import (
++	"database/sql"
++	"fmt"
++	"github.com/go-sql-driver/mysql"
++	"heckel.io/ntfy/v2/db"
++	"net/url"
++	"strings"
++	"time"
++)
++
++func IsURL(s string) bool { return strings.HasPrefix(s, "matrixone://") }
++func Open(raw string) (*db.Host, error) {
++	u, err := url.Parse(raw)
++	if err != nil || u.Scheme != "matrixone" || u.User == nil || u.Host == "" || u.Path == "" {
++		return nil, fmt.Errorf("invalid MatrixOne database URL")
++	}
++	cfg := mysql.NewConfig()
++	cfg.Net = "tcp"
++	cfg.Addr = u.Host
++	cfg.User = u.User.Username()
++	cfg.Passwd, _ = u.User.Password()
++	cfg.DBName = strings.TrimPrefix(u.Path, "/")
++	cfg.ParseTime = true
++	cfg.MultiStatements = true
++	cfg.InterpolateParams = true
++	cfg.Collation = "utf8mb4_general_ci"
++	cfg.Timeout = 10 * time.Second
++	cfg.ReadTimeout = 30 * time.Second
++	cfg.WriteTimeout = 30 * time.Second
++	d, err := sql.Open("mysql", cfg.FormatDSN())
++	if err != nil {
++		return nil, err
++	}
++	d.SetMaxOpenConns(10)
++	d.SetMaxIdleConns(10)
++	d.SetConnMaxLifetime(60 * time.Second)
++	var version string
++	if err = d.QueryRow("SELECT VERSION()").Scan(&version); err != nil {
++		d.Close()
++		return nil, err
++	}
++	if !strings.Contains(version, "MatrixOne") {
++		d.Close()
++		return nil, fmt.Errorf("MatrixOne backend requires actual MatrixOne server")
++	}
++	return &db.Host{Addr: u.Host, DB: d}, nil
++}
+diff --git a/message/cache_matrixone.go b/message/cache_matrixone.go
+new file mode 100644
+--- /dev/null
++++ b/message/cache_matrixone.go
+@@ -0,0 +1,81 @@
++// MatrixOne adaptation: native SQL and migration runner retained.
++package message
++
++import (
++	"heckel.io/ntfy/v2/db"
++	"heckel.io/ntfy/v2/db/schema"
++	"time"
++)
++
++const (
++	matrixoneSelectScheduledMessageIDsBySeqIDQuery        = "SELECT mid FROM messages WHERE topic = ? AND sequence_id = ? AND published = 0"
++	matrixoneDeleteScheduledBySequenceIDQuery             = "DELETE FROM messages WHERE topic = ? AND sequence_id = ? AND published = 0"
++	matrixoneUpdateMessagesForTopicExpiryQuery            = "UPDATE messages SET expires = ? WHERE topic = ?"
++	matrixoneSelectMessagesByIDQuery                      = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE mid = ?\n\t"
++	matrixoneSelectMessagesSinceTimeQuery                 = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE topic = ? AND time >= ? AND published = 1\n\t\tORDER BY time DESC, id DESC\n\t"
++	matrixoneSelectMessagesSinceTimeIncludeScheduledQuery = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE topic = ? AND time >= ?\n\t\tORDER BY time DESC, id DESC\n\t"
++	matrixoneSelectMessageRowIDQuery                      = "SELECT id FROM messages WHERE mid = ? LIMIT 1"
++	matrixoneSelectMessagesSinceIDQuery                   = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE topic = ? AND id > ? AND published = 1\n\t\tORDER BY time DESC, id DESC\n\t"
++	matrixoneSelectMessagesSinceIDIncludeScheduledQuery   = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE topic = ? AND (id > ? OR published = 0)\n\t\tORDER BY time DESC, id DESC\n\t"
++	matrixoneSelectMessagesLatestQuery                    = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE topic = ? AND published = 1\n\t\tORDER BY time DESC, id DESC\n\t\tLIMIT 1\n\t"
++	matrixoneSelectMessagesDueQuery                       = "\n\t\tSELECT mid, sequence_id, time, event, expires, topic, message, title, priority, tags, click, icon, actions, attachment_name, attachment_type, attachment_size, attachment_expires, attachment_url, sender, `user`, content_type, encoding\n\t\tFROM messages\n\t\tWHERE time <= ? AND published = 0\n\t\tORDER BY time, id\n\t"
++	matrixoneUpdateMessagePublishedQuery                  = "UPDATE messages SET published = 1 WHERE mid = ?"
++	matrixoneSelectMessagesCountQuery                     = "SELECT COUNT(*) FROM messages"
++	matrixoneSelectTopicsQuery                            = "SELECT topic FROM messages GROUP BY topic"
++
++	matrixoneDeleteExpiredMessagesQuery         = "DELETE FROM messages WHERE mid IN (SELECT mid FROM messages WHERE expires <= ? AND published = 1 LIMIT ?)"
++	matrixoneMarkExpiredAttachmentsDeletedQuery = "UPDATE messages SET attachment_deleted = 1 WHERE mid IN (SELECT mid FROM messages WHERE attachment_expires > 0 AND attachment_expires <= ? AND attachment_deleted = 0 LIMIT ?)"
++	matrixoneSelectAttachmentsSizeBySenderQuery = "SELECT IFNULL(SUM(attachment_size), 0) FROM messages WHERE `user` = '' AND sender = ? AND attachment_expires >= ?"
++	matrixoneSelectAttachmentsSizeByUserIDQuery = "SELECT IFNULL(SUM(attachment_size), 0) FROM messages WHERE `user` = ? AND attachment_expires >= ?"
++	matrixoneSelectAttachmentsWithSizesQuery    = "SELECT mid, attachment_size FROM messages WHERE attachment_expires > ? AND attachment_deleted = 0"
++
++	matrixoneSelectStatsQuery       = "SELECT value FROM stats WHERE `key` = 'messages'"
++	matrixoneUpdateStatsQuery       = "UPDATE stats SET value = ? WHERE `key` = 'messages'"
++	matrixoneUpdateMessageTimeQuery = "UPDATE messages SET time = ? WHERE mid = ?"
++)
++
++var matrixoneQueries = queries{
++	insertMessages:                   matrixoneInsertMessages,
++	selectScheduledMessageIDsBySeqID: matrixoneSelectScheduledMessageIDsBySeqIDQuery,
++	deleteScheduledBySequenceID:      matrixoneDeleteScheduledBySequenceIDQuery,
++	updateMessagesForTopicExpiry:     matrixoneUpdateMessagesForTopicExpiryQuery,
++	selectMessagesByID:               matrixoneSelectMessagesByIDQuery,
++	selectMessagesSinceTime:          matrixoneSelectMessagesSinceTimeQuery,
++	selectMessagesSinceTimeScheduled: matrixoneSelectMessagesSinceTimeIncludeScheduledQuery,
++	selectMessageRowID:               matrixoneSelectMessageRowIDQuery,
++	selectMessagesSinceID:            matrixoneSelectMessagesSinceIDQuery,
++	selectMessagesSinceIDScheduled:   matrixoneSelectMessagesSinceIDIncludeScheduledQuery,
++	selectMessagesLatest:             matrixoneSelectMessagesLatestQuery,
++	selectMessagesDue:                matrixoneSelectMessagesDueQuery,
++	deleteExpiredMessages:            matrixoneDeleteExpiredMessagesQuery,
++	updateMessagePublished:           matrixoneUpdateMessagePublishedQuery,
++	selectMessagesCount:              matrixoneSelectMessagesCountQuery,
++	selectTopics:                     matrixoneSelectTopicsQuery,
++	markExpiredAttachmentsDeleted:    matrixoneMarkExpiredAttachmentsDeletedQuery,
++	selectAttachmentsSizeBySender:    matrixoneSelectAttachmentsSizeBySenderQuery,
++	selectAttachmentsSizeByUserID:    matrixoneSelectAttachmentsSizeByUserIDQuery,
++	selectAttachmentsWithSizes:       matrixoneSelectAttachmentsWithSizesQuery,
++	selectStats:                      matrixoneSelectStatsQuery,
++	updateStats:                      matrixoneUpdateStatsQuery,
++	updateMessageTime:                matrixoneUpdateMessageTimeQuery,
++}
++
++func NewMatrixOneStore(d *db.DB, batchSize int, batchTimeout time.Duration) (*Cache, error) {
++	if err := schema.Migrate(d.Primary(), schema.MatrixOne, schemaStore, sqliteCurrentSchemaVersion, matrixoneCreateTables, nil); err != nil {
++		return nil, err
++	}
++	return newCache(d, matrixoneQueries, nil, batchSize, batchTimeout, false), nil
++}
++func matrixoneInsertMessages(rows int) string {
++	return insertMessagesQuery("messages", matrixoneInsertMessageColumns, rows, func(int) string { return "?" })
++}
++
++var matrixoneInsertMessageColumns = append([]string(nil), sqliteInsertMessageColumns...)
++
++func init() {
++	for i, col := range matrixoneInsertMessageColumns {
++		if col == "user" {
++			matrixoneInsertMessageColumns[i] = "`user`"
++		}
++	}
++}
+diff --git a/message/cache_matrixone_schema.go b/message/cache_matrixone_schema.go
+new file mode 100644
+--- /dev/null
++++ b/message/cache_matrixone_schema.go
+@@ -0,0 +1,6 @@
++// MatrixOne adaptation: fresh native schema, failed setup never stamped.
++package message
++
++import "heckel.io/ntfy/v2/db/schema"
++
++var matrixoneCreateTables = schema.AsMigrateFunc("\n\t\tCREATE TABLE IF NOT EXISTS messages (\n\t\t\tid BIGINT PRIMARY KEY AUTO_INCREMENT,\n\t\t\tmid VARCHAR(4096) NOT NULL,\n\t\t\tsequence_id VARCHAR(4096) NOT NULL,\n\t\t\ttime BIGINT NOT NULL,\n\t\t\tevent VARCHAR(4096) NOT NULL,\n\t\t\texpires BIGINT NOT NULL,\n\t\t\ttopic VARCHAR(4096) NOT NULL,\n\t\t\tmessage LONGTEXT NOT NULL,\n\t\t\ttitle LONGTEXT NOT NULL,\n\t\t\tpriority BIGINT NOT NULL,\n\t\t\ttags VARCHAR(4096) NOT NULL,\n\t\t\tclick LONGTEXT NOT NULL,\n\t\t\ticon LONGTEXT NOT NULL,\n\t\t\tactions LONGTEXT NOT NULL,\n\t\t\tattachment_name VARCHAR(4096) NOT NULL,\n\t\t\tattachment_type VARCHAR(4096) NOT NULL,\n\t\t\tattachment_size BIGINT NOT NULL,\n\t\t\tattachment_expires BIGINT NOT NULL,\n\t\t\tattachment_url LONGTEXT NOT NULL,\n\t\t\tattachment_deleted BIGINT NOT NULL,\n\t\t\tsender VARCHAR(4096) NOT NULL,\n\t\t\t`user` VARCHAR(4096) NOT NULL,\n\t\t\tcontent_type VARCHAR(4096) NOT NULL,\n\t\t\tencoding VARCHAR(4096) NOT NULL,\n\t\t\tpublished BIGINT NOT NULL\n\t\t);\n\t\tCREATE INDEX idx_mid ON messages (mid);\n\t\tCREATE INDEX idx_sequence_id ON messages (sequence_id);\n\t\tCREATE INDEX idx_time ON messages (time);\n\t\tCREATE INDEX idx_topic ON messages (topic);\n\t\tCREATE INDEX idx_expires ON messages (expires);\n\t\tCREATE INDEX idx_sender ON messages (sender);\n\t\tCREATE INDEX idx_user ON messages (`user`);\n\t\tCREATE INDEX idx_attachment_expires ON messages (attachment_expires);\n\t\tCREATE TABLE IF NOT EXISTS stats (\n\t\t\t`key` VARCHAR(4096) PRIMARY KEY,\n\t\t\tvalue BIGINT\n\t\t);\n\t\tINSERT INTO stats (`key`, value) VALUES ('messages', 0);\n\t")
+diff --git a/user/manager_matrixone.go b/user/manager_matrixone.go
+new file mode 100644
+--- /dev/null
++++ b/user/manager_matrixone.go
+@@ -0,0 +1,200 @@
++// MatrixOne adaptation: native SQL and migration runner retained.
++package user
++
++import (
++	"heckel.io/ntfy/v2/db"
++	"heckel.io/ntfy/v2/db/schema"
++	"strings"
++)
++
++const (
++	// User queries
++	matrixoneSelectUsersQuery                    = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tORDER BY\n\t\t\tCASE u.role\n\t\t\t\tWHEN 'admin' THEN 1\n\t\t\t\tWHEN 'anonymous' THEN 3\n\t\t\t\tELSE 2\n\t\t\tEND, u.`user`\n\t"
++	matrixoneSelectUserByIDQuery                 = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tWHERE u.id = ?\n\t"
++	matrixoneSelectUserByNameQuery               = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tWHERE `user` = ?\n\t"
++	matrixoneSelectUserByNameOrPrimaryEmailQuery = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tWHERE u.`user` = ?\n\t\t   OR u.id = (SELECT user_id FROM user_email WHERE email = ? AND is_primary = 1)\n\t\tORDER BY CASE WHEN u.`user` = ? THEN 0 ELSE 1 END\n\t\tLIMIT 1\n\t"
++	matrixoneSelectUserByTokenQuery              = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tJOIN user_token tk on u.id = tk.user_id\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tWHERE tk.token = ? AND (tk.expires = 0 OR tk.expires >= ?)\n\t"
++	matrixoneSelectUserByStripeCustomerIDQuery   = "\n\t\tSELECT u.id, u.`user`, u.pass, u.role, u.prefs, u.sync_topic, u.provisioned, u.stats_messages, u.stats_emails, u.stats_calls, u.stripe_customer_id, u.stripe_subscription_id, u.stripe_subscription_status, u.stripe_subscription_interval, u.stripe_subscription_paid_until, u.stripe_subscription_cancel_at, deleted, t.id, t.code, t.name, t.messages_limit, t.messages_expiry_duration, t.emails_limit, t.calls_limit, t.reservations_limit, t.attachment_file_size_limit, t.attachment_total_size_limit, t.attachment_expiry_duration, t.attachment_bandwidth_limit, t.stripe_monthly_price_id, t.stripe_yearly_price_id\n\t\tFROM `user` u\n\t\tLEFT JOIN tier t on t.id = u.tier_id\n\t\tWHERE u.stripe_customer_id = ?\n\t"
++	matrixoneSelectUsernamesQuery                = "\n\t\tSELECT `user`\n\t\tFROM `user`\n\t\tORDER BY\n\t\t\tCASE role\n\t\t\t\tWHEN 'admin' THEN 1\n\t\t\t\tWHEN 'anonymous' THEN 3\n\t\t\t\tELSE 2\n\t\t\tEND, `user`\n\t"
++	matrixoneSelectUserCountQuery                = "SELECT COUNT(*) FROM `user`"
++	matrixoneSelectUserIDFromUsernameQuery       = "SELECT id FROM `user` WHERE `user` = ?"
++	matrixoneInsertUserQuery                     = "INSERT INTO `user` (id, `user`, pass, role, sync_topic, provisioned, created, prefs) VALUES (?, ?, ?, ?, ?, ?, ?, '{}')"
++	matrixoneUpdateUserPassQuery                 = "UPDATE `user` SET pass = ? WHERE `user` = ?"
++	matrixoneUpdateUserRoleQuery                 = "UPDATE `user` SET role = ? WHERE `user` = ?"
++	matrixoneUpdateUserProvisionedQuery          = "UPDATE `user` SET provisioned = ? WHERE `user` = ?"
++	matrixoneUpdateUserPrefsQuery                = "UPDATE `user` SET prefs = ? WHERE id = ?"
++	matrixoneUpdateUserStatsQuery                = "UPDATE `user` SET stats_messages = ?, stats_emails = ?, stats_calls = ? WHERE id = ?"
++	matrixoneUpdateUserStatsResetAllQuery        = "UPDATE `user` SET stats_messages = 0, stats_emails = 0, stats_calls = 0"
++	matrixoneUpdateUserTierQuery                 = "UPDATE `user` SET tier_id = (SELECT id FROM tier WHERE code = ?) WHERE `user` = ?"
++	matrixoneUpdateUserDeletedQuery              = "UPDATE `user` SET deleted = ? WHERE id = ?"
++	matrixoneDeleteUserQuery                     = "DELETE FROM `user` WHERE `user` = ?"
++	matrixoneDeleteUserTierQuery                 = "UPDATE `user` SET tier_id = null WHERE `user` = ?"
++	matrixoneDeleteUsersMarkedQuery              = "DELETE FROM `user` WHERE deleted < ?"
++	matrixoneDeleteUsersProvisionedQuery         = "DELETE FROM `user` WHERE provisioned = 1"
++
++	// Access queries
++	matrixoneSelectTopicPermsQuery            = "\n\t\tSELECT `read`, `write`\n\t\tFROM user_access a\n\t\tJOIN `user` u ON u.id = a.user_id\n\t\tWHERE (u.`user` = ? OR u.`user` = ?) AND ? LIKE a.topic ESCAPE '\\\\'\n\t\tORDER BY u.`user` DESC, LENGTH(a.topic) DESC, a.`write` DESC\n\t"
++	matrixoneSelectAccessCacheAllQuery        = "\n\t\tSELECT u.`user`, a.topic, a.`read`, a.`write`\n\t\tFROM user_access a\n\t\tJOIN `user` u ON u.id = a.user_id\n\t"
++	matrixoneSelectUserAllAccessQuery         = "\n\t\tSELECT user_id, topic, `read`, `write`, provisioned\n\t\tFROM user_access\n\t\tORDER BY LENGTH(topic) DESC, `write` DESC, `read` DESC, topic\n\t"
++	matrixoneSelectUserAccessQuery            = "\n\t\tSELECT topic, `read`, `write`, provisioned\n\t\tFROM user_access\n\t\tWHERE user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t\tORDER BY LENGTH(topic) DESC, `write` DESC, `read` DESC, topic\n\t"
++	matrixoneSelectUserReservationsQuery      = "\n\t\tSELECT a_user.topic, a_user.`read`, a_user.`write`, a_everyone.`read` AS everyone_read, a_everyone.`write` AS everyone_write\n\t\tFROM user_access a_user\n\t\tLEFT JOIN `user` u_everyone ON u_everyone.`user` = ? LEFT JOIN user_access a_everyone ON a_user.topic = a_everyone.topic AND a_everyone.user_id = u_everyone.id\n\t\tWHERE a_user.user_id = a_user.owner_user_id\n\t\t  AND a_user.owner_user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t\tORDER BY a_user.topic\n\t"
++	matrixoneSelectUserReservationsCountQuery = "\n\t\tSELECT COUNT(*)\n\t\tFROM user_access\n\t\tWHERE user_id = owner_user_id\n\t\t  AND owner_user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t"
++	matrixoneSelectUserReservationsOwnerQuery = "\n\t\tSELECT owner_user_id\n\t\tFROM user_access\n\t\tWHERE topic = ?\n\t\t  AND user_id = owner_user_id\n\t"
++	matrixoneSelectUserHasReservationQuery    = "\n\t\tSELECT COUNT(*)\n\t\tFROM user_access\n\t\tWHERE user_id = owner_user_id\n\t\t  AND owner_user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t\t  AND topic = ?\n\t"
++	matrixoneSelectOtherAccessCountQuery      = "\n\t\tSELECT COUNT(*)\n\t\tFROM user_access\n\t\tWHERE (topic = ? OR ? LIKE topic ESCAPE '\\\\')\n\t\t  AND (owner_user_id IS NULL OR owner_user_id != (SELECT id FROM `user` WHERE `user` = ?))\n\t"
++	matrixoneUpsertUserAccessQuery            = "INSERT INTO user_access (user_id,topic,`read`,`write`,owner_user_id,provisioned) SELECT u.id,p.topic,p.can_read,p.can_write,CASE WHEN p.owner_name='' THEN NULL ELSE own.id END,p.provisioned FROM (SELECT ? AS user_name,? AS topic,? AS can_read,? AS can_write,? AS owner_name,? AS owner_lookup,? AS provisioned) p LEFT JOIN `user` u ON u.`user`=p.user_name LEFT JOIN `user` own ON own.`user`=p.owner_lookup ON DUPLICATE KEY UPDATE `read`=VALUES(`read`),`write`=VALUES(`write`),owner_user_id=VALUES(owner_user_id),provisioned=VALUES(provisioned)"
++	matrixoneDeleteUserAccessQuery            = "\n\t\tDELETE FROM user_access\n\t\tWHERE user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t\t   OR owner_user_id = (SELECT id FROM `user` WHERE `user` = ?)\n\t"
++	matrixoneDeleteUserAccessProvisionedQuery = "DELETE FROM user_access WHERE provisioned = 1"
++	matrixoneDeleteTopicAccessQuery           = "\n\t\tDELETE FROM user_access\n\t   \tWHERE (user_id = (SELECT id FROM `user` WHERE `user` = ?) OR owner_user_id = (SELECT id FROM `user` WHERE `user` = ?))\n\t   \t  AND topic = ?\n  \t"
++	matrixoneDeleteAllAccessQuery             = "DELETE FROM user_access"
++
++	// Token queries
++	matrixoneSelectTokenQuery                = "SELECT token, label, last_access, last_origin, expires, provisioned FROM user_token WHERE user_id = ? AND token = ?"
++	matrixoneSelectTokensQuery               = "SELECT token, label, last_access, last_origin, expires, provisioned FROM user_token WHERE user_id = ?"
++	matrixoneSelectTokenCountQuery           = "SELECT COUNT(*) FROM user_token WHERE user_id = ?"
++	matrixoneSelectAllProvisionedTokensQuery = "SELECT token, label, last_access, last_origin, expires, provisioned FROM user_token WHERE provisioned = 1"
++	matrixoneUpsertTokenQuery                = "\n\t\tINSERT INTO user_token (user_id, token, label, last_access, last_origin, expires, provisioned)\n\t\tVALUES (?, ?, ?, ?, ?, ?, ?)\n\t\tON DUPLICATE KEY UPDATE label = VALUES(label), expires = VALUES(expires), provisioned = VALUES(provisioned)\n\t"
++	matrixoneUpdateTokenQuery                = "UPDATE user_token SET label = ?, expires = ? WHERE user_id = ? AND token = ?"
++	matrixoneUpdateTokenLastAccessQuery      = "UPDATE user_token SET last_access = ?, last_origin = ? WHERE token = ?"
++	matrixoneDeleteTokenQuery                = "DELETE FROM user_token WHERE user_id = ? AND token = ?"
++	matrixoneDeleteProvisionedTokenQuery     = "DELETE FROM user_token WHERE token = ?"
++	matrixoneDeleteAllProvisionedTokensQuery = "DELETE FROM user_token WHERE provisioned = 1"
++	matrixoneDeleteAllTokenQuery             = "DELETE FROM user_token WHERE user_id = ?"
++	matrixoneDeleteExpiredTokensQuery        = "DELETE FROM user_token WHERE expires > 0 AND expires < ?"
++	matrixoneDeleteExcessTokensQuery         = "\n\t\tDELETE FROM user_token\n\t\tWHERE user_id = ?\n\t\t  AND (user_id, token) NOT IN (\n\t\t\tSELECT user_id, token\n\t\t\tFROM user_token\n\t\t\tWHERE user_id = ?\n\t\t\tORDER BY expires DESC\n\t\t\tLIMIT ?\n\t\t)\n\t"
++
++	// Tier queries
++	matrixoneInsertTierQuery          = "\n\t\tINSERT INTO tier (id, code, name, messages_limit, messages_expiry_duration, emails_limit, calls_limit, reservations_limit, attachment_file_size_limit, attachment_total_size_limit, attachment_expiry_duration, attachment_bandwidth_limit, stripe_monthly_price_id, stripe_yearly_price_id)\n\t\tVALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n\t"
++	matrixoneUpdateTierQuery          = "\n\t\tUPDATE tier\n\t\tSET name = ?, messages_limit = ?, messages_expiry_duration = ?, emails_limit = ?, calls_limit = ?, reservations_limit = ?, attachment_file_size_limit = ?, attachment_total_size_limit = ?, attachment_expiry_duration = ?, attachment_bandwidth_limit = ?, stripe_monthly_price_id = ?, stripe_yearly_price_id = ?\n\t\tWHERE code = ?\n\t"
++	matrixoneSelectTiersQuery         = "\n\t\tSELECT id, code, name, messages_limit, messages_expiry_duration, emails_limit, calls_limit, reservations_limit, attachment_file_size_limit, attachment_total_size_limit, attachment_expiry_duration, attachment_bandwidth_limit, stripe_monthly_price_id, stripe_yearly_price_id\n\t\tFROM tier\n\t"
++	matrixoneSelectTierByCodeQuery    = "\n\t\tSELECT id, code, name, messages_limit, messages_expiry_duration, emails_limit, calls_limit, reservations_limit, attachment_file_size_limit, attachment_total_size_limit, attachment_expiry_duration, attachment_bandwidth_limit, stripe_monthly_price_id, stripe_yearly_price_id\n\t\tFROM tier\n\t\tWHERE code = ?\n\t"
++	matrixoneSelectTierByPriceIDQuery = "\n\t\tSELECT id, code, name, messages_limit, messages_expiry_duration, emails_limit, calls_limit, reservations_limit, attachment_file_size_limit, attachment_total_size_limit, attachment_expiry_duration, attachment_bandwidth_limit, stripe_monthly_price_id, stripe_yearly_price_id\n\t\tFROM tier\n\t\tWHERE (stripe_monthly_price_id = ? OR stripe_yearly_price_id = ?)\n\t"
++	matrixoneDeleteTierQuery          = "DELETE FROM tier WHERE code = ?"
++
++	// Phone queries
++	matrixoneSelectPhoneNumbersQuery = "SELECT phone_number FROM user_phone WHERE user_id = ?"
++	matrixoneInsertPhoneNumberQuery  = "INSERT INTO user_phone (user_id, phone_number) VALUES (?, ?)"
++	matrixoneDeletePhoneNumberQuery  = "DELETE FROM user_phone WHERE user_id = ? AND phone_number = ?"
++
++	// Email queries
++	matrixoneSelectEmailsQuery            = "SELECT email, is_primary FROM user_email WHERE user_id = ? ORDER BY email"
++	matrixoneInsertEmailQuery             = "INSERT INTO user_email (user_id, email) VALUES (?, ?)"
++	matrixoneInsertEmailIgnoreQuery       = "INSERT INTO user_email (user_id, email) VALUES (?, ?) ON DUPLICATE KEY UPDATE is_primary=is_primary"
++	matrixoneDeleteEmailQuery             = "DELETE FROM user_email WHERE user_id = ? AND email = ?"
++	matrixoneSelectPrimaryEmailQuery      = "SELECT email FROM user_email WHERE user_id = ? AND is_primary = 1"
++	matrixoneSelectUserIDByPrimaryQuery   = "SELECT user_id FROM user_email WHERE email = ? AND is_primary = 1"
++	matrixoneUpdateEmailSetPrimaryQuery   = "UPDATE user_email SET is_primary = 1 WHERE user_id = ? AND email = ?"
++	matrixoneUpdateEmailClearPrimaryQuery = "UPDATE user_email SET is_primary = 0 WHERE user_id = ? AND is_primary = 1"
++
++	// Magic link queries (email verification + password reset)
++	matrixoneInsertMagicLinkQuery         = "INSERT INTO user_magic_link (token_hash, kind, user_id, email, expires, created) VALUES (?, ?, ?, ?, ?, ?)"
++	matrixoneSelectMagicLinkByHashQuery   = "SELECT token_hash, kind, user_id, email, expires, created FROM user_magic_link WHERE token_hash = ?"
++	matrixoneDeleteMagicLinkByHashQuery   = "DELETE FROM user_magic_link WHERE token_hash = ?"
++	matrixoneDeleteVerifyScopeQuery       = "DELETE FROM user_magic_link WHERE kind = ? AND user_id = ? AND email = ?"
++	matrixoneDeleteResetScopeQuery        = "DELETE FROM user_magic_link WHERE kind = ? AND user_id = ?"
++	matrixoneSelectPendingEmailsQuery     = "SELECT email FROM user_magic_link WHERE kind = ? AND user_id = ? ORDER BY email"
++	matrixoneDeleteExpiredMagicLinksQuery = "DELETE FROM user_magic_link WHERE expires < ?"
++
++	// Billing queries
++	matrixoneUpdateBillingQuery = "\n\t\tUPDATE `user`\n\t\tSET stripe_customer_id = ?, stripe_subscription_id = ?, stripe_subscription_status = ?, stripe_subscription_interval = ?, stripe_subscription_paid_until = ?, stripe_subscription_cancel_at = ?\n\t\tWHERE `user` = ?\n\t"
++)
++
++// matrixoneSelectAccessCacheUsersQuery builds the per-users cache-load query
++// with a "?, ?, ..." IN clause sized for n usernames.
++func matrixoneSelectAccessCacheUsersQuery(n int) string {
++	var sb strings.Builder
++	sb.WriteString("SELECT u.`user`, a.topic, a.`read`, a.`write` FROM user_access a JOIN `user` u ON u.id = a.user_id WHERE u.`user` IN (")
++	for i := 0; i < n; i++ {
++		if i > 0 {
++			sb.WriteString(",")
++		}
++		sb.WriteString("?")
++	}
++	sb.WriteString(")")
++	return sb.String()
++}
++
++var matrixoneQueries = queries{
++	selectUserByID:                 matrixoneSelectUserByIDQuery,
++	selectUserByName:               matrixoneSelectUserByNameQuery,
++	selectUserByNameOrPrimaryEmail: matrixoneSelectUserByNameOrPrimaryEmailQuery,
++	selectUserByToken:              matrixoneSelectUserByTokenQuery,
++	selectUserByStripeCustomerID:   matrixoneSelectUserByStripeCustomerIDQuery,
++	selectUsernames:                matrixoneSelectUsernamesQuery,
++	selectUsers:                    matrixoneSelectUsersQuery,
++	selectUserCount:                matrixoneSelectUserCountQuery,
++	selectUserIDFromUsername:       matrixoneSelectUserIDFromUsernameQuery,
++	insertUser:                     matrixoneInsertUserQuery,
++	updateUserPass:                 matrixoneUpdateUserPassQuery,
++	updateUserRole:                 matrixoneUpdateUserRoleQuery,
++	updateUserProvisioned:          matrixoneUpdateUserProvisionedQuery,
++	updateUserPrefs:                matrixoneUpdateUserPrefsQuery,
++	updateUserStats:                matrixoneUpdateUserStatsQuery,
++	updateUserStatsResetAll:        matrixoneUpdateUserStatsResetAllQuery,
++	updateUserTier:                 matrixoneUpdateUserTierQuery,
++	updateUserDeleted:              matrixoneUpdateUserDeletedQuery,
++	deleteUser:                     matrixoneDeleteUserQuery,
++	deleteUserTier:                 matrixoneDeleteUserTierQuery,
++	deleteUsersMarked:              matrixoneDeleteUsersMarkedQuery,
++	deleteUsersProvisioned:         matrixoneDeleteUsersProvisionedQuery,
++	selectTopicPerms:               matrixoneSelectTopicPermsQuery,
++	selectAccessCacheAll:           matrixoneSelectAccessCacheAllQuery,
++	selectAccessCacheUsers:         matrixoneSelectAccessCacheUsersQuery,
++	selectUserAllAccess:            matrixoneSelectUserAllAccessQuery,
++	selectUserAccess:               matrixoneSelectUserAccessQuery,
++	selectUserReservations:         matrixoneSelectUserReservationsQuery,
++	selectUserReservationsCount:    matrixoneSelectUserReservationsCountQuery,
++	selectUserReservationsOwner:    matrixoneSelectUserReservationsOwnerQuery,
++	selectUserHasReservation:       matrixoneSelectUserHasReservationQuery,
++	selectOtherAccessCount:         matrixoneSelectOtherAccessCountQuery,
++	upsertUserAccess:               matrixoneUpsertUserAccessQuery,
++	deleteUserAccess:               matrixoneDeleteUserAccessQuery,
++	deleteUserAccessProvisioned:    matrixoneDeleteUserAccessProvisionedQuery,
++	deleteTopicAccess:              matrixoneDeleteTopicAccessQuery,
++	deleteAllAccess:                matrixoneDeleteAllAccessQuery,
++	selectToken:                    matrixoneSelectTokenQuery,
++	selectTokens:                   matrixoneSelectTokensQuery,
++	selectTokenCount:               matrixoneSelectTokenCountQuery,
++	selectAllProvisionedTokens:     matrixoneSelectAllProvisionedTokensQuery,
++	upsertToken:                    matrixoneUpsertTokenQuery,
++	updateToken:                    matrixoneUpdateTokenQuery,
++	updateTokenLastAccess:          matrixoneUpdateTokenLastAccessQuery,
++	deleteToken:                    matrixoneDeleteTokenQuery,
++	deleteProvisionedToken:         matrixoneDeleteProvisionedTokenQuery,
++	deleteAllProvisionedTokens:     matrixoneDeleteAllProvisionedTokensQuery,
++	deleteAllToken:                 matrixoneDeleteAllTokenQuery,
++	deleteExpiredTokens:            matrixoneDeleteExpiredTokensQuery,
++	deleteExcessTokens:             matrixoneDeleteExcessTokensQuery,
++	insertTier:                     matrixoneInsertTierQuery,
++	selectTiers:                    matrixoneSelectTiersQuery,
++	selectTierByCode:               matrixoneSelectTierByCodeQuery,
++	selectTierByPriceID:            matrixoneSelectTierByPriceIDQuery,
++	updateTier:                     matrixoneUpdateTierQuery,
++	deleteTier:                     matrixoneDeleteTierQuery,
++	selectPhoneNumbers:             matrixoneSelectPhoneNumbersQuery,
++	insertPhoneNumber:              matrixoneInsertPhoneNumberQuery,
++	deletePhoneNumber:              matrixoneDeletePhoneNumberQuery,
++	selectEmails:                   matrixoneSelectEmailsQuery,
++	insertEmail:                    matrixoneInsertEmailQuery,
++	insertEmailIgnore:              matrixoneInsertEmailIgnoreQuery,
++	deleteEmail:                    matrixoneDeleteEmailQuery,
++	selectPrimaryEmail:             matrixoneSelectPrimaryEmailQuery,
++	selectUserIDByPrimary:          matrixoneSelectUserIDByPrimaryQuery,
++	updateEmailSetPrimary:          matrixoneUpdateEmailSetPrimaryQuery,
++	updateEmailClearPrimary:        matrixoneUpdateEmailClearPrimaryQuery,
++	insertMagicLink:                matrixoneInsertMagicLinkQuery,
++	selectMagicLinkByHash:          matrixoneSelectMagicLinkByHashQuery,
++	deleteMagicLinkByHash:          matrixoneDeleteMagicLinkByHashQuery,
++	deleteMagicLinkEmailVerify:     matrixoneDeleteVerifyScopeQuery,
++	deleteMagicLinkResetPassword:   matrixoneDeleteResetScopeQuery,
++	selectPendingEmails:            matrixoneSelectPendingEmailsQuery,
++	deleteExpiredMagicLinks:        matrixoneDeleteExpiredMagicLinksQuery,
++	updateBilling:                  matrixoneUpdateBillingQuery,
++}
++
++func NewMatrixOneManager(d *db.DB, config *Config) (*Manager, error) {
++	if err := schema.Migrate(d.Primary(), schema.MatrixOne, schemaStore, sqliteCurrentSchemaVersion, matrixoneCreateTables, nil); err != nil {
++		return nil, err
++	}
++	return newManager(d, matrixoneQueries, config)
++}
+diff --git a/user/manager_matrixone_schema.go b/user/manager_matrixone_schema.go
+new file mode 100644
+--- /dev/null
++++ b/user/manager_matrixone_schema.go
+@@ -0,0 +1,6 @@
++// MatrixOne adaptation: fresh native schema, failed setup never stamped.
++package user
++
++import "heckel.io/ntfy/v2/db/schema"
++
++var matrixoneCreateTables = schema.AsMigrateFunc("\n\t\tCREATE TABLE IF NOT EXISTS tier (\n\t\t\tid VARCHAR(4096) PRIMARY KEY,\n\t\t\tcode VARCHAR(4096) NOT NULL,\n\t\t\tname VARCHAR(4096) NOT NULL,\n\t\t\tmessages_limit BIGINT NOT NULL,\n\t\t\tmessages_expiry_duration BIGINT NOT NULL,\n\t\t\temails_limit BIGINT NOT NULL,\n\t\t\tcalls_limit BIGINT NOT NULL,\n\t\t\treservations_limit BIGINT NOT NULL,\n\t\t\tattachment_file_size_limit BIGINT NOT NULL,\n\t\t\tattachment_total_size_limit BIGINT NOT NULL,\n\t\t\tattachment_expiry_duration BIGINT NOT NULL,\n\t\t\tattachment_bandwidth_limit BIGINT NOT NULL,\n\t\t\tstripe_monthly_price_id VARCHAR(4096),\n\t\t\tstripe_yearly_price_id VARCHAR(4096)\n\t\t);\n\t\tCREATE UNIQUE INDEX idx_tier_code ON tier (code);\n\t\tCREATE UNIQUE INDEX idx_tier_stripe_monthly_price_id ON tier (stripe_monthly_price_id);\n\t\tCREATE UNIQUE INDEX idx_tier_stripe_yearly_price_id ON tier (stripe_yearly_price_id);\n\t\tCREATE TABLE IF NOT EXISTS `user` (\n\t\t    id VARCHAR(4096) PRIMARY KEY,\n\t\t\ttier_id VARCHAR(4096),\n\t\t\t`user` VARCHAR(4096) NOT NULL,\n\t\t\tpass VARCHAR(4096) NOT NULL,\n\t\t\trole ENUM('anonymous', 'admin', 'user') NOT NULL,\n\t\t\tprefs JSON NOT NULL,\n\t\t\tsync_topic VARCHAR(4096) NOT NULL,\n\t\t\tprovisioned BIGINT NOT NULL,\n\t\t\tstats_messages BIGINT NOT NULL DEFAULT (0),\n\t\t\tstats_emails BIGINT NOT NULL DEFAULT (0),\n\t\t\tstats_calls BIGINT NOT NULL DEFAULT (0),\n\t\t\tstripe_customer_id VARCHAR(4096),\n\t\t\tstripe_subscription_id VARCHAR(4096),\n\t\t\tstripe_subscription_status VARCHAR(4096),\n\t\t\tstripe_subscription_interval VARCHAR(4096),\n\t\t\tstripe_subscription_paid_until BIGINT,\n\t\t\tstripe_subscription_cancel_at BIGINT,\n\t\t\tcreated BIGINT NOT NULL,\n\t\t\tdeleted BIGINT,\n\t\t    FOREIGN KEY (tier_id) REFERENCES tier (id)\n\t\t);\n\t\tCREATE UNIQUE INDEX idx_user ON `user` (`user`);\n\t\tCREATE UNIQUE INDEX idx_user_stripe_customer_id ON `user` (stripe_customer_id);\n\t\tCREATE UNIQUE INDEX idx_user_stripe_subscription_id ON `user` (stripe_subscription_id);\n\t\tCREATE TABLE IF NOT EXISTS user_access (\n\t\t\tuser_id VARCHAR(4096) NOT NULL,\n\t\t\ttopic VARCHAR(4096) NOT NULL,\n\t\t\t`read` BIGINT NOT NULL,\n\t\t\t`write` BIGINT NOT NULL,\n\t\t\towner_user_id VARCHAR(4096),\n\t\t\tprovisioned BIGINT NOT NULL,\n\t\t\tPRIMARY KEY (user_id, topic),\n\t\t\tFOREIGN KEY (user_id) REFERENCES `user` (id) ON DELETE CASCADE,\n\t\t    FOREIGN KEY (owner_user_id) REFERENCES `user` (id) ON DELETE CASCADE\n\t\t);\n\t\tCREATE TABLE IF NOT EXISTS user_token (\n\t\t\tuser_id VARCHAR(4096) NOT NULL,\n\t\t\ttoken VARCHAR(4096) NOT NULL,\n\t\t\tlabel VARCHAR(4096) NOT NULL,\n\t\t\tlast_access BIGINT NOT NULL,\n\t\t\tlast_origin VARCHAR(4096) NOT NULL,\n\t\t\texpires BIGINT NOT NULL,\n\t\t\tprovisioned BIGINT NOT NULL,\n\t\t\tPRIMARY KEY (user_id, token),\n\t\t\tFOREIGN KEY (user_id) REFERENCES `user` (id) ON DELETE CASCADE\n\t\t);\n\t\tCREATE UNIQUE INDEX idx_user_token ON user_token (token);\n\t\tCREATE TABLE IF NOT EXISTS user_phone (\n\t\t\tuser_id VARCHAR(4096) NOT NULL,\n\t\t\tphone_number VARCHAR(4096) NOT NULL,\n\t\t\tPRIMARY KEY (user_id, phone_number),\n\t\t\tFOREIGN KEY (user_id) REFERENCES `user` (id) ON DELETE CASCADE\n\t\t);\n\t\tCREATE TABLE IF NOT EXISTS user_email (\n\t\t\tuser_id VARCHAR(4096) NOT NULL,\n\t\t\temail VARCHAR(4096) NOT NULL,\n\t\t\tis_primary BIGINT NOT NULL DEFAULT (0),\n\t\t\tPRIMARY KEY (user_id, email),\n\t\t\tFOREIGN KEY (user_id) REFERENCES `user` (id) ON DELETE CASCADE\n\t\t);\n\t\tALTER TABLE user_email ADD COLUMN mo_primary_user VARCHAR(4096) GENERATED ALWAYS AS (CASE WHEN is_primary = 1 THEN user_id ELSE NULL END) STORED; CREATE UNIQUE INDEX idx_user_email_primary_user ON user_email (mo_primary_user);\n\t\tALTER TABLE user_email ADD COLUMN mo_primary_email VARCHAR(4096) GENERATED ALWAYS AS (CASE WHEN is_primary = 1 THEN email ELSE NULL END) STORED; CREATE UNIQUE INDEX idx_user_email_primary_addr ON user_email (mo_primary_email);\n\t\tCREATE TABLE IF NOT EXISTS user_magic_link (\n\t\t\ttoken_hash VARCHAR(4096) NOT NULL,\n\t\t\tkind VARCHAR(4096) NOT NULL,\n\t\t\tuser_id VARCHAR(4096) NOT NULL,\n\t\t\temail VARCHAR(4096),\n\t\t\texpires BIGINT NOT NULL,\n\t\t\tcreated BIGINT NOT NULL,\n\t\t\tPRIMARY KEY (token_hash),\n\t\t\tFOREIGN KEY (user_id) REFERENCES `user` (id) ON DELETE CASCADE\n\t\t);\n\t\tCREATE INDEX idx_magic_link_user_kind ON user_magic_link (user_id, kind);\n\t\tINSERT INTO `user` (id, `user`, pass, role, sync_topic, provisioned, created, prefs)\n\t\tVALUES ('" + everyoneID + "', '*', '', 'anonymous', '', false, UNIX_TIMESTAMP(), '{}')\n\t\tON DUPLICATE KEY UPDATE provisioned=provisioned;\n\t")
+diff --git a/server/request_identity_matrixone.go b/server/request_identity_matrixone.go
+new file mode 100644
+--- /dev/null
++++ b/server/request_identity_matrixone.go
+@@ -0,0 +1,29 @@
++package server
++
++import (
++	"heckel.io/ntfy/v2/user"
++	"net/http"
++)
++
++// Distinct from existing context keys. Only maybeAuthenticate for MatrixOne sets this.
++const contextRequestIdentity contextKey = 10101
++
++func requestUser(r *http.Request, v *visitor) *user.User {
++	if u, exists := r.Context().Value(contextRequestIdentity).(*user.User); exists {
++		return u
++	}
++	return v.User()
++}
++func requestUserID(r *http.Request, v *visitor) string {
++	if u := requestUser(r, v); u != nil {
++		return u.ID
++	}
++	return ""
++}
++func (s *Server) publishSyncEventForRequestAsync(v *visitor, u *user.User) {
++	go func() {
++		if err := s.publishSyncEventForUser(v, u); err != nil {
++			logv(v).Err(err).Trace("Error publishing to user's sync topic")
++		}
++	}()
++}

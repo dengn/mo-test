@@ -1,0 +1,13 @@
+{
+  "candidate_main_commit": "21f19ae06305ca2acd253d15123f851899d6b6a1",
+  "candidate_fetched_utc": "2026-10-13T05:51:45Z",
+  "build_started": false,
+  "runtime_verified": false,
+  "available_workspace_bytes": 4530176,
+  "available_tmpfs_bytes": 2152919040,
+  "minimum_build_workspace_bytes": 1073741824,
+  "status": "blocked_before_build",
+  "reason": "Workspace below existing 1GiB build headroom; tmpfs is volatile and consumes near-limit cgroup memory; old SDK/data/archive preserved",
+  "old_main_binary_is_not_current_main": true,
+  "no_new_issue_or_latest_main_fix_claim": true
+}

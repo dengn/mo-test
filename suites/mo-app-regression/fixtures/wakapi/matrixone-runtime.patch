@@ -1,0 +1,78 @@
+diff --git a/config/db.go b/config/db.go
+index 3317261..d8334f3 100644
+--- a/config/db.go
++++ b/config/db.go
+@@ -53,10 +53,10 @@ For Postgres, the story is even a different one.
+ func (c *dbConfig) GetDialector() gorm.Dialector {
+ 	switch c.Dialect {
+ 	case SQLDialectMysql:
+-		return mysql.New(mysql.Config{
++		return matrixoneDialector{mysql.New(mysql.Config{
+ 			DriverName: c.Dialect,
+ 			DSN:        mysqlConnectionString(c),
+-		})
++		}).(*mysql.Dialector)}
+ 	case SQLDialectPostgres:
+ 		return postgres.New(postgres.Config{
+ 			DSN: postgresConnectionString(c),
+diff --git a/config/db_opts.go b/config/db_opts.go
+index 9c25fec..de94d49 100644
+--- a/config/db_opts.go
++++ b/config/db_opts.go
+@@ -2,6 +2,7 @@ package config
+ 
+ import (
+ 	"gorm.io/gorm"
++ "gorm.io/gorm/clause"
+ )
+ 
+ type WakapiDBOpts struct {
+@@ -17,7 +18,17 @@ func (opts WakapiDBOpts) Apply(config *gorm.Config) error {
+ }
+ 
+ func (opts WakapiDBOpts) AfterInitialize(db *gorm.DB) error {
+-	// initial session variables
++	if opts.dbConfig.IsMySQL() {
++  if err := db.Callback().Create().Before("gorm:create").Register("matrixone:do_nothing", func(tx *gorm.DB) {
++   if c,ok := tx.Statement.Clauses["ON CONFLICT"]; ok {
++    if conflict,ok := c.Expression.(clause.OnConflict); ok && conflict.DoNothing {
++     delete(tx.Statement.Clauses,"ON CONFLICT")
++     tx.Statement.AddClause(clause.Insert{Modifier:"IGNORE"})
++    }
++   }
++  }); err != nil { return err }
++ }
++ // initial session variables
+ 	if opts.dbConfig.Type == "cockroach" {
+ 		// https://www.cockroachlabs.com/docs/stable/experimental-features.html#alter-column-types
+ 		if err := db.Exec("SET enable_experimental_alter_column_type_general = true;").Error; err != nil {
+diff --git a/config/matrixone.go b/config/matrixone.go
+new file mode 100644
+index 0000000..47c519b
+--- /dev/null
++++ b/config/matrixone.go
+@@ -0,0 +1,24 @@
++package config
++
++import (
++ "gorm.io/driver/mysql"
++ "gorm.io/gorm"
++)
++
++// MatrixOne omits foreign keys from table_constraints, but exposes them in
++// referential_constraints. Keep all FK creation/enforcement enabled.
++type matrixoneDialector struct { *mysql.Dialector }
++func (d matrixoneDialector) Migrator(db *gorm.DB) gorm.Migrator {
++ return matrixoneMigrator{d.Dialector.Migrator(db).(mysql.Migrator)}
++}
++type matrixoneMigrator struct { mysql.Migrator }
++func (m matrixoneMigrator) HasConstraint(value interface{}, name string) bool {
++ if m.Migrator.HasConstraint(value, name) { return true }
++ var count int64
++ err := m.RunWithValue(value, func(stmt *gorm.Statement) error {
++  constraint, table := m.GuessConstraintInterfaceAndTable(stmt, name)
++  if constraint != nil { name = constraint.GetName() }
++  return m.DB.Raw("SELECT COUNT(*) FROM information_schema.referential_constraints WHERE constraint_schema = ? AND table_name = ? AND constraint_name = ?",m.CurrentDatabase(),table,name).Row().Scan(&count)
++ })
++ return err == nil && count > 0
++}

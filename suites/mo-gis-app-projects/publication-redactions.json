@@ -1,0 +1,27 @@
+{
+  "redactions": [
+    {
+      "path": "suites/mo-gis-app-projects/pygeoapi-native-server.log",
+      "redacted_values": 1
+    },
+    {
+      "path": "suites/mo-gis-app-projects/umap-http.json",
+      "redacted_values": 2
+    }
+  ],
+  "redacted_token_values_not_in_report": true,
+  "excluded": [
+    "projects and vendor runtimes",
+    "python-env",
+    "node_modules/npm-cache",
+    "downloads",
+    "database data",
+    "cache/PID files",
+    "compiled adapters",
+    "runtime GeoServer security material",
+    "session cookies",
+    "RTL dependency script"
+  ],
+  "raw_evidence_location": "/workspace/mo-gis-app-projects",
+  "note": "Inputs/results retained; only actual local CSRF values and debugger PINs redacted. Synthetic local database/app passwords are reproducible fixture values. Publication-script regex corrected during validation; code contains no real debugger PIN."
+}

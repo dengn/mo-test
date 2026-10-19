@@ -1,0 +1,34 @@
+{
+  "mo_commit": "fa7cc1d9b38e3324572a4efc5617033522de0cbf",
+  "engines": {
+    "pg": {
+      "versions": [
+        [
+          "PostgreSQL 18.6 (Debian 18.6-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+          "POSTGIS=\"3.6.4 94d984b\" [EXTENSION] PGSQL=\"180\" GEOS=\"3.14.1-CAPI-1.20.5\" (compiled against GEOS 3.13.1) PROJ=\"9.8.1 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/var/lib/postgresql/.local/share/proj DATABASE_PATH=/usr/share/proj/proj.db\" (compiled against PROJ 9.6.0) LIBXML=\"2.9.14\" LIBJSON=\"0.18\" LIBPROTOBUF=\"1.5.1\" WAGYU=\"0.5.0 (Internal)\""
+        ]
+      ],
+      "rows": {
+        "points": 259,
+        "routes": 16,
+        "zones": 4,
+        "mixed": 8,
+        "planar_points": 259
+      }
+    },
+    "mysql": {
+      "versions": [
+        [
+          "8.0.46"
+        ]
+      ],
+      "rows": {
+        "points": 259,
+        "routes": 16,
+        "zones": 4,
+        "mixed": 8,
+        "planar_points": 259
+      }
+    }
+  }
+}

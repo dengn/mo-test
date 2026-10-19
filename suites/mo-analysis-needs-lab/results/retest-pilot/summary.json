@@ -1,0 +1,94 @@
+{
+  "cases": 10,
+  "passed": 10,
+  "failed": 0,
+  "elapsed_seconds": 0.69374680519104,
+  "code_sha256": {
+    "analytics.py": "584abc2800fb70ac783deb39eff5f8e95fbfdbb8cb48c9336376f87242ca069d",
+    "stages.py": "56484111699b858ad4994cb1200ad1c38374553c1352d46965191c5dad9a6a4d",
+    "scenarios.py": "f5728d4bc3238ade9104d53534de96744cfeae0a9c1a17a399b20221668951ee",
+    "run.py": "080004bde68a0a02d3d1c86152517efc44f0c7578478504a5f0e7a69eacf3079",
+    "native.py": "1525b0b6ca558499921187fbf0527479a2dc3f217284a1e3070fae29a923d7c7",
+    "data.py": "1641cbde9631ee8d601cb19e2cf744f8f15c9c6c86c97d791a923edaf18baa7b"
+  },
+  "initial_failures": 10,
+  "scope": "Final logical-case outcome overlay after client-only NULL handling repair. Initial frozen 100000 records are preserved unchanged, extra execution attempts are not additional logical cases.",
+  "source_audit": {
+    "units": {
+      "rows": 32,
+      "sha256": "86724b47d481e304c2d85884a6b31e6e438e9922e40b45a5b88fc088f9821f0d"
+    },
+    "calendar": {
+      "rows": 96,
+      "sha256": "6f0c3af573cdb83c4487579da714ce42739b9f7ea587327fc5facf1d2981444d"
+    },
+    "attrs": {
+      "rows": 192,
+      "sha256": "5897746f9570ef796f46a71e1b17b4e44f80de2d49649708ad5cff843a8402be"
+    },
+    "observations": {
+      "rows": 7680,
+      "sha256": "c5545f448049961b925cc9376898df1a76a3b983f9d4c55faf4ec6ea0a974235"
+    },
+    "labels": {
+      "rows": 3072,
+      "sha256": "def94ee1f8f965d2c6f9a580fb8fa18f4ccab2df7257662c5631f6db5445ebc9"
+    },
+    "daily": {
+      "rows": 3072,
+      "sha256": "28290dbfa864bf787c0b5e155fe251cdf0c123da1de2dc70cbf4c3e578cb14a1"
+    },
+    "subjects": {
+      "rows": 768,
+      "sha256": "721477c6037487202155a986b75582673d051ad4aa3d24caa1c2bf4de9013ea0"
+    },
+    "outcomes": {
+      "rows": 37632,
+      "sha256": "d0aa932a3367dbfe405e3cac6a5b8bce35bb9bb26ad1003d9dc6fa17a418cecd"
+    },
+    "conversions": {
+      "rows": 1920,
+      "sha256": "d425640b0ddba87c112027b4adcb708b08258ad8b723314d1f877da45aaa1b18"
+    },
+    "touches": {
+      "rows": 5760,
+      "sha256": "6630f1674cbd46394f4aa4e93e4c34d4b7874935d728ee2db69f4f52ed74e4ac"
+    },
+    "identities": {
+      "rows": 192,
+      "sha256": "668243f0ad5246429e75fde06a12e1b6999248e910fff0d614c3795b2677eb47"
+    },
+    "campaigns": {
+      "rows": 6,
+      "sha256": "5b0e575c4d02e6d0eef651c194f0d76388c3732fd03ec33b075bc5a2c9474f40"
+    },
+    "flows": {
+      "rows": 8856,
+      "sha256": "c351d6bc654c837f16408922dc850a8d037aff605c042fbd62332bc326724267"
+    },
+    "gps": {
+      "rows": 10502,
+      "sha256": "4fe517130f2fd6103f76d5bba8cf3e1525577f32df168a33a8ea673c43461fdd"
+    },
+    "fences": {
+      "rows": 8,
+      "sha256": "fa4bc72ee61ab5c74de5ecb25969aa0c2e0d88c494c24723dffd4d55d1b7b74e"
+    },
+    "roads": {
+      "rows": 96,
+      "sha256": "4f032e7b6b394ca99089bfe158592f1a2cf52e65ee9e4b1579b66b4699b91153"
+    },
+    "predictions": {
+      "rows": 5248,
+      "sha256": "540f91e87ef301a2bd2051c9c04204864f84521ff533f4adb56f052369eb2b95"
+    },
+    "changes": {
+      "rows": 1520,
+      "sha256": "d7bed207c51aacd32e9c78f235d2648781797224ca38859f95a559bc12c2f70b"
+    },
+    "deliveries": {
+      "rows": 1020,
+      "sha256": "222dd8572f1440b9c4e51d5c54145bdf96c83dc9d7263f92e3cee84a9b971a92"
+    }
+  }
+}

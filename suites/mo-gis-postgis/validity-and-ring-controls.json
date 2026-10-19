@@ -1,0 +1,62 @@
+[
+  {
+    "engine": "mo",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "type": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "mysql",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "type": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "mo_unclosed_polygon_wkb_hex": "0103000000010000000300000000000000000000000000000000000000000000000000f03f0000000000000000000000000000f03f000000000000f03f",
+    "independent_shapely_decode": "IllegalArgumentException: Points of LinearRing do not form a closed linestring"
+  }
+]

@@ -1,0 +1,221 @@
+[
+  {
+    "project": "Maputnik",
+    "engine": "pg",
+    "phase": "OGC_API_real_application",
+    "workflow": "browser_render_UI_style_edit_export_reimport",
+    "status": "pass",
+    "details": {
+      "GeoJSON_points": 259,
+      "GeoJSON_routes": 16,
+      "GeoJSON_zones": 4,
+      "style_edit": {
+        "radius": 9,
+        "color": "#cc2255"
+      },
+      "exported_style": "maputnik-pg-exported-style.json",
+      "reimport_verified": true,
+      "page_errors": [],
+      "actual_API_responses": [
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/pg-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        }
+      ],
+      "external_asset": "Actual pinned RTL script served from locally downloaded copy; no GIS responses mocked"
+    },
+    "seconds": 13.262
+  },
+  {
+    "project": "Maputnik",
+    "engine": "mo",
+    "phase": "OGC_API_real_application",
+    "workflow": "browser_render_UI_style_edit_export_reimport",
+    "status": "pass",
+    "details": {
+      "GeoJSON_points": 259,
+      "GeoJSON_routes": 16,
+      "GeoJSON_zones": 4,
+      "style_edit": {
+        "radius": 9,
+        "color": "#cc2255"
+      },
+      "exported_style": "maputnik-mo-exported-style.json",
+      "reimport_verified": true,
+      "page_errors": [],
+      "actual_API_responses": [
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-zones/items?f=json&limit=500",
+          "status": 200,
+          "features": 4
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-routes/items?f=json&limit=500",
+          "status": 200,
+          "features": 16
+        },
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        }
+      ],
+      "external_asset": "Actual pinned RTL script served from locally downloaded copy; no GIS responses mocked"
+    },
+    "seconds": 10.367
+  },
+  {
+    "project": "uMap",
+    "engine": "mo",
+    "phase": "hybrid_PostGIS_metadata_MO_data",
+    "workflow": "browser_live_MO_layer_local_geometries_and_popup",
+    "status": "pass",
+    "details": {
+      "remote_MO_features": 259,
+      "local_features": 3,
+      "visible_markers": 257,
+      "SVG_paths": 2,
+      "Unicode_popup": "点位 1 café O'Brien\n×",
+      "API_responses": [
+        {
+          "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+          "status": 200,
+          "features": 259
+        }
+      ],
+      "page_errors": [],
+      "metadata_backend": "PostGIS"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "original_binary_sha256": "5a4c0d40156152f6f9b22aeaa841153cd12ac4feca21838a0179f90b5e2d2cd2",
+  "adapted_binary_sha256": "8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6",
+  "original_archive_retained": true,
+  "first_two_rounds_used_original_release_not_adapted_SDK": true,
+  "first_two_rounds_failed": true,
+  "initial_report_provenance_label_incorrect": true,
+  "no_rounds_relabelled_as_passed": true,
+  "diagnostics": {
+    "round1": "native WebAuthn RPID cannot be an IP address; use loopback localhost",
+    "round2": "original unadapted binary duplicates FK; metadata adapter absent, not a newly confirmed MO bug",
+    "round3_4": "production MX verification rejects example.test, supported optional email left empty; native checks retained",
+    "round5": "Python HTTP headers require Latin1; use original ASCII machine hostname, Unicode remains in JSON business payload"
+  }
+}

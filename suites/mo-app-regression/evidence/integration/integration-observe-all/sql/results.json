@@ -1,0 +1,890 @@
+{
+  "started_at_utc": "2026-10-12T22:45:42Z",
+  "cases": [
+    {
+      "id": "PANIC-01",
+      "schema": "mo_reg_ae6923d81d8a44b4",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE `bookmark` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `url` text NOT NULL,\n  `title` text NOT NULL,\n  `excerpt` text NOT NULL DEFAULT (''),\n  `author` text NOT NULL DEFAULT (''),\n  `public` bool NOT NULL DEFAULT 0,\n  `content` text NOT NULL DEFAULT (''),\n  `html` text NOT NULL DEFAULT (''),\n  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),\n  `has_content` bool NOT NULL DEFAULT 0,\n  `modified_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `bookmark_url_unique` (`url`(255)),\n FULLTEXT (`title`,`excerpt`,`content`),\n  KEY `idx_created_at` (`created_at`),\n  KEY `idx_modified_at` (`modified_at`)\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO bookmark (id,url,title,excerpt,content) VALUES (1,'https://owned.invalid/example','test title','test excerpt','test content')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,url,title,excerpt,author,public,created_at,modified_at,content <> \"\" AS has_content\nFROM bookmark\nWHERE 1 AND (\n    url LIKE '%\"%' OR\n    id IN (SELECT id FROM bookmark\n           WHERE MATCH(title, excerpt, content) AGAINST ('\"' IN BOOLEAN MODE))\n)\nORDER BY id",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: panic runtime error: slice bounds out of range [1:0]: \nruntime.panicBounds64\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/panic.go:236\nruntime.panicBounds\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/asm_amd64.s:2129\ngithub.com/matrixorigin/matrixone/pkg/fulltext.ParsePatternInBooleanMode\n\t/home/runner/work/matrixone/matrixone/pkg/fulltext/fulltext.go:736\ngithub.com/matrixorigin/matrixone/pkg/fulltext.ParsePattern\n\t/home/runner/work/matrixone/matrixone/pkg/fulltext/fulltext.go:1062\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).getFullTextIndexScanSql\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/fulltext.go:156\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyJoinFullTextIndicesWithWrapped\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices_fulltext.go:478\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndicesForProjectionUsingFullTextIndex\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices_fulltext.go:144\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndicesForProject\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:634\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndices\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:483\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndices\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:467\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndices\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:467\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndices\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:467\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).applyIndices\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/apply_indices.go:467\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).createQuery\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/query_builder.go:3248\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.bindAndOptimizeSelectQueryWithValidator\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:68\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.bindAndOptimizeSelectQuery\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:32\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.BuildPlan\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:573\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*BaseOptimizer).Optimize\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/optimize.go:56\ngithub.com/matrixorigin/matrixone/pkg/frontend.buildPlanWithPrepareMode\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3072\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*TxnComputationWrapper).Compile\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/computation_wrapper.go:305\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4395\ngithub.com/matrixorigin/matrixone/pkg/frontend.dispatchStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4301\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithIncrStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4252\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithWorkspace\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4165\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithTxn\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4039\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithResponse\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3998\ngithub.com/matrixorigin/matrixone/pkg/frontend.doComQuery\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4849\ngithub.com/matrixorigin/matrixone/pkg/frontend.ExecRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:5084\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*Routine).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine.go:332\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*RoutineManager).Handler\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine_manager.go:429\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:750\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleMessage\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:719"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "dc764bc8af5b0767384327a890ace6c2b7f082c36391ada62e55214cf88efcef",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.121
+    },
+    {
+      "id": "PANIC-02",
+      "schema": "mo_reg_89bb86916f294e5b",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE `django_content_type` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `app_label` varchar(100) NOT NULL,\n  `model` varchar(100) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE `auth_permission` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `name` varchar(255) NOT NULL,\n  `content_type_id` int NOT NULL,\n  `codename` varchar(100) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),\n  KEY `auth_permission_content_type_id_2f476e4b` (`content_type_id`),\n  CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE wagtailcore_grouppagepermission (\n id INT PRIMARY KEY, permission_type VARCHAR(20) DEFAULT NULL,\n group_id INT NOT NULL, page_id INT NOT NULL, permission_id INT DEFAULT NULL,\n CONSTRAINT permission_fk FOREIGN KEY(permission_id) REFERENCES auth_permission(id)\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO django_content_type VALUES (10001,'wagtailcore','page')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO auth_permission (id,name,content_type_id,codename) VALUES (101,'change page',10001,'change_page'),(102,'add page',10001,'add_page'),(103,'publish page',10001,'publish_page')",
+          "rows": [],
+          "affected_rows": 3,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO wagtailcore_grouppagepermission VALUES (1,'edit',1,1,NULL),(2,'add',1,1,NULL),(3,'publish',1,1,NULL)",
+          "rows": [],
+          "affected_rows": 3,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "UPDATE `wagtailcore_grouppagepermission` SET `permission_id` = (SELECT U0.`id` AS `pk` FROM `auth_permission` U0 INNER JOIN `django_content_type` U1 ON (U0.`content_type_id` = U1.`id`) WHERE (U0.`codename` = (CONCAT_WS('', CASE WHEN (`wagtailcore_grouppagepermission`.`permission_type` = 'edit') THEN 'change' ELSE `wagtailcore_grouppagepermission`.`permission_type` END, '_page')) AND U0.`content_type_id` = 10001) ORDER BY U1.`app_label` ASC, U1.`model` ASC, U0.`codename` ASC LIMIT 1), `permission_type` = CASE WHEN (`wagtailcore_grouppagepermission`.`permission_type` = 'edit') THEN 'change' ELSE `wagtailcore_grouppagepermission`.`permission_type` END WHERE (`wagtailcore_grouppagepermission`.`permission_id` IS NULL OR `wagtailcore_grouppagepermission`.`permission_type` = 'edit')",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: panic unsafe slice cast: from length 16 is not enough for length 72: \ngithub.com/matrixorigin/matrixone/pkg/common/util.UnsafeSliceCastToLength[...]\n\t/home/runner/work/matrixone/matrixone/pkg/common/util/unsafe.go:89\ngithub.com/matrixorigin/matrixone/pkg/container/vector.toSliceOfLengthNoTypeCheck[...]\n\t/home/runner/work/matrixone/matrixone/pkg/container/vector/vector.go:103\ngithub.com/matrixorigin/matrixone/pkg/container/vector.ToSliceNoTypeCheck[...]\n\t/home/runner/work/matrixone/matrixone/pkg/container/vector/vector.go:110\ngithub.com/matrixorigin/matrixone/pkg/container/vector.GenerateFunctionStrParameter\n\t/home/runner/work/matrixone/matrixone/pkg/container/vector/functionTools.go:221\ngithub.com/matrixorigin/matrixone/pkg/sql/plan/function.strCaseFn\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/function/operatorSet.go:495\ngithub.com/matrixorigin/matrixone/pkg/sql/plan/function.caseFn\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/function/operatorSet.go:413\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec.(*FunctionExpressionExecutor).Eval\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/evalExpression.go:1117\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec.(*FunctionExpressionExecutor).Eval\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/evalExpression.go:1072\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/hashjoin.(*container).evalJoinCondition\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/hashjoin/join.go:1035\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/hashjoin.(*container).probe\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/hashjoin/join.go:515\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/hashjoin.(*HashJoin).Call\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/hashjoin/join.go:262\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/home/runner/work/matrixone/matrixone/pkg/vm/types.go:371\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/home/runner/work/matrixone/matrixone/pkg/vm/types.go:383\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/projection/projection.go:62\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/home/runner/work/matrixone/matrixone/pkg/vm/types.go:371\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\n\t/home/runner/work/matrixone/matrixone/pkg/vm/types.go:383\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/connector.(*Connector).Call\n\t/home/runner/work/matrixone/matrixone/pkg/sql/colexec/connector/connector.go:51\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\n\t/home/runner/work/matrixone/matrixone/pkg/vm/types.go:371\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).Run\n\t/home/runner/work/matrixone/matrixone/pkg/vm/pipeline/pipeline.go:71\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).RunWithReader\n\t/home/runner/work/matrixone/matrixone/pkg/vm/pipeline/pipeline.go:59\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).Run\n\t/home/runner/work/matrixone/matrixone/pkg/sql/compile/scope.go:378\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).ParallelRun\n\t/home/runner/work/matrixone/matrixone/pkg/sql/compile/scope.go:728\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun\n\t/home/runner/work/matrixone/matrixone/pkg/sql/compile/scope.go:516\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).RemoteRun\n\t/home/runner/work/matrixone/matrixone/pkg/sql/compile/scope.go:609\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun.func1\n\t/home/runner/work/matrixone/matrixone/pkg/sql/compile/scope.go:476\ngithub.com/panjf2000/ants/v2.(*goWorker).run.func1\n\t/home/runner/go/pkg/mod/github.com/panjf2000/ants/v2@v2.12.0/worker.go:72\nruntime.goexit\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/asm_amd64.s:1771"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "86c76c03e67498b7aa30737847e4eabdad3bd171e4e809cfa770843e311427bc",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.173
+    },
+    {
+      "id": "PANIC-03",
+      "schema": "mo_reg_0e4aefded25c4f61",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE mo_index_probe (id INT PRIMARY KEY, email VARCHAR(254))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "CREATE UNIQUE INDEX mo_unique_email_expression ON mo_index_probe ((LOWER(email)))",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: panic runtime error: invalid memory address or nil pointer dereference: \nruntime.panicmem\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/panic.go:336\nruntime.sigpanic\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/signal_unix.go:931\ngithub.com/matrixorigin/matrixone/pkg/sql/parsers/tree.(*UnresolvedName).ColNameOrigin\n\t/home/runner/work/matrixone/matrixone/pkg/sql/parsers/tree/identifier.go:115\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.buildUniqueIndexTable\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build_ddl.go:2473\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.buildCreateIndex\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build_ddl.go:3687\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.BuildPlan\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:639\ngithub.com/matrixorigin/matrixone/pkg/frontend.buildPlanWithPrepareMode\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3083\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*TxnComputationWrapper).Compile\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/computation_wrapper.go:305\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4395\ngithub.com/matrixorigin/matrixone/pkg/frontend.dispatchStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4301\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithIncrStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4252\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithWorkspace\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4165\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithTxn\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4039\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithResponse\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3998\ngithub.com/matrixorigin/matrixone/pkg/frontend.doComQuery\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4849\ngithub.com/matrixorigin/matrixone/pkg/frontend.ExecRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:5084\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*Routine).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine.go:332\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*RoutineManager).Handler\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine_manager.go:429\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:750\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleMessage\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:719\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleLoop\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:380\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleConn\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:376\nruntime.goexit\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/asm_amd64.s:1771"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "e6f7df4e49f842535951785ce638748b76b839cedbdc5ab6ade33b6f4521ba5b",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.047
+    },
+    {
+      "id": "PANIC-04",
+      "schema": "mo_reg_f1267e42fff94771",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE `django_content_type` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `app_label` varchar(100) NOT NULL,\n  `model` varchar(100) NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO django_content_type VALUES (10002,'home','homepage')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE `wagtailsearch_indexentry` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `object_id` varchar(50) NOT NULL,\n  `title_norm` double NOT NULL,\n  `content_type_id` int NOT NULL,\n  `autocomplete` text DEFAULT NULL,\n  `body` text DEFAULT NULL,\n  `title` text NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `wagtailsearch_indexentry_content_type_id_object_id_bcd7ba73_uniq` (`content_type_id`,`object_id`),\n  KEY `wagtailsearch_indexentry_content_type_id_62ed694f` (`content_type_id`),\n FULLTEXT `fulltext_body`(`body`),\n FULLTEXT `fulltext_title`(`title`),\n FULLTEXT `fulltext_title_body`(`title`,`body`),\n FULLTEXT `fulltext_autocomplete`(`autocomplete`),\n  CONSTRAINT `wagtailsearch_indexe_content_type_id_62ed694f_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT\n)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "INSERT INTO `wagtailsearch_indexentry` (`content_type_id`, `object_id`, `title_norm`, `autocomplete`, `title`, `body`) VALUES (10002, '40001', 1.0, 'Home', 'Home', '')",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: panic runtime error: invalid memory address or nil pointer dereference: \nruntime.panicmem\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/panic.go:336\nruntime.sigpanic\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/signal_unix.go:931\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1128\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.ReCalcNodeStats\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/stats.go:1100\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).tempOptimizeForDML\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/opt_misc.go:1270\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.(*QueryBuilder).finishIrregularIndexMaintenance\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/bind_insert.go:871\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.bindAndOptimizeInsertQuery\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:130\ngithub.com/matrixorigin/matrixone/pkg/sql/plan.BuildPlan\n\t/home/runner/work/matrixone/matrixone/pkg/sql/plan/build.go:583\ngithub.com/matrixorigin/matrixone/pkg/frontend.buildPlanWithPrepareMode\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3049\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*TxnComputationWrapper).Compile\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/computation_wrapper.go:305\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4395\ngithub.com/matrixorigin/matrixone/pkg/frontend.dispatchStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4301\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithIncrStmt\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4252\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithWorkspace\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4165\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithTxn\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4039\ngithub.com/matrixorigin/matrixone/pkg/frontend.executeStmtWithResponse\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:3998\ngithub.com/matrixorigin/matrixone/pkg/frontend.doComQuery\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:4849\ngithub.com/matrixorigin/matrixone/pkg/frontend.ExecRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/mysql_cmd_executor.go:5084\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*Routine).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine.go:332\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*RoutineManager).Handler\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/routine_manager.go:429\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleRequest\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:750\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleMessage\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:719\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleLoop\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:380\ngithub.com/matrixorigin/matrixone/pkg/frontend.(*MOServer).handleConn\n\t/home/runner/work/matrixone/matrixone/pkg/frontend/server.go:376\nruntime.goexit\n\t/opt/hostedtoolcache/go/1.26.4/x64/src/runtime/asm_amd64.s:1771"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "cd95bf0616caaffd8083cb7a30f8b7cd1e97510b27f0565c7f906f22b03dc25d",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.228
+    },
+    {
+      "id": "PASS-GENERATED-UPPER",
+      "schema": "mo_reg_c0b702c7db8d41b7",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE expr_probe(id INT PRIMARY KEY,email VARCHAR(254),email_upper VARCHAR(254) GENERATED ALWAYS AS (UPPER(email)) STORED)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE INDEX idx_upper ON expr_probe(email_upper)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO expr_probe(id,email) VALUES(1,'MiXeD中文😀𠮷@owned.invalid'),(2,NULL)",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,email_upper FROM expr_probe ORDER BY id",
+          "rows": [
+            [
+              1,
+              "MIXED中文😀𠮷@OWNED.INVALID"
+            ],
+            [
+              2,
+              null
+            ]
+          ],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ed38b73ed0906778ec3f2b22fa9d3719424271746e8017115018a33ae21bd801",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.085
+    },
+    {
+      "id": "PASS-JSON-UNICODE",
+      "schema": "mo_reg_edd28e476e964dfc",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE values_probe(id INT PRIMARY KEY,payload JSON,label TEXT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO values_probe VALUES(1,'{\"value\":\"中文 😀𠮷\"}','中文 😀𠮷')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,label,JSON_UNQUOTE(JSON_EXTRACT(payload,'$.value')) FROM values_probe",
+          "rows": [
+            [
+              1,
+              "中文 😀𠮷",
+              "中文 😀𠮷"
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "ef0136846bf253ecb7186280d9e8b604e030316ba6bb4bfe43cffd561eb7881f",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.069
+    },
+    {
+      "id": "PASS-ROLLBACK",
+      "schema": "mo_reg_4727017c6ee242bf",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE txn_probe(id INT PRIMARY KEY,value INT)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO txn_probe VALUES(1,17)",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "START TRANSACTION",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "UPDATE txn_probe SET value=99 WHERE id=1",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "ROLLBACK",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,value FROM txn_probe",
+          "rows": [
+            [
+              1,
+              17
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        }
+      ],
+      "status": "passed",
+      "case_sha256": "bea17ef1e29472973faed86d94ba4d28f412e092808c3442b0359b438dc8f116",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.056
+    },
+    {
+      "id": "SQL-CHECK-DROP-CONSTRAINT",
+      "schema": "mo_reg_8aea818ccf9b49d4",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE checks DROP CONSTRAINT chk_minimum",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: Can't DROP 'chk_minimum'; check that column/key exists"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "fc09cd6c441a47a62f84b1167dbe9750f6a95a231a59ade8022bcb8b188341b4",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.045
+    },
+    {
+      "id": "SQL-CHECK-DROP",
+      "schema": "mo_reg_e6286be617de4988",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE checks(id INT PRIMARY KEY,minimum INT,CONSTRAINT chk_minimum CHECK(minimum>=0))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE checks DROP CHECK chk_minimum",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 29 near \" CHECK chk_minimum\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "76595db4d033e1d748c223d0c10ac74ef18c8ab362dbf31a73769df7027f81b0",
+      "postchecks": [
+        {
+          "sql": "INSERT INTO checks VALUES (1,-1)",
+          "passed": true,
+          "error_code": 3819
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.058
+    },
+    {
+      "id": "SQL-COMBINED-FK",
+      "schema": "mo_reg_df930987c47d4db1",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE parent(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE child(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE child ADD COLUMN parent_id INT NULL, ADD CONSTRAINT combined_fk FOREIGN KEY(parent_id) REFERENCES parent(id)",
+          "rows": null,
+          "error": [
+            20301,
+            "invalid input: unsupported alter option in copy mode: add constraint combined_fk foreign key fk_0 (parent_id) references parent(id)"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "96500cbc146408a6548ea0fbb7775dd5c0f68186b130e032c76fac9fdafe1672",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.084
+    },
+    {
+      "id": "SQL-EXPRESSION-INDEX",
+      "schema": "mo_reg_a9d2593090394b78",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE account_emailaddress(id INT PRIMARY KEY,email VARCHAR(254))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "CREATE INDEX account_email_upper ON account_emailaddress((UPPER(email)))",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: unsupported index which using expression as keypart"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "3bd6573ac5959d2c55d7341ed77895621236743f66d75af80de006282855d367",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.057
+    },
+    {
+      "id": "SQL-FULLTEXT-INSERT-ID",
+      "schema": "mo_reg_6788ab1db3884217",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE id_probe(id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,label VARCHAR(40))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "ALTER TABLE id_probe ADD FULLTEXT label_ft(label)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO id_probe(label) VALUES('small')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,LAST_INSERT_ID() FROM id_probe",
+          "rows": [
+            [
+              1,
+              2
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "65e116fc95a7e98bd5444940a3cec82a671bcf1e3219ad87179b5cac0ee7c5af",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.103
+    },
+    {
+      "id": "SQL-HUGINN-SQLMODE-EMPTY-TOKEN",
+      "schema": "mo_reg_ea6e17c6b6354f8b",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "SET @@SESSION.sql_mode='ONLY_FULL_GROUP_BY,,NO_AUTO_VALUE_ON_ZERO'",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: the value is invalid"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "3835c1cc66c8aa406ea1e9fd541ec99cc95a4703b79c5aa4b0f06ae2956ff55d",
+      "postchecks": [
+        {
+          "sql": "SET @@SESSION.sql_mode='NO_AUTO_VALUE_ON_ZERO'",
+          "passed": true,
+          "rows": []
+        },
+        {
+          "sql": "SELECT @@SESSION.sql_mode",
+          "passed": true,
+          "rows": [
+            [
+              "NO_AUTO_VALUE_ON_ZERO"
+            ]
+          ]
+        },
+        {
+          "sql": "SELECT 1",
+          "passed": true,
+          "rows": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.041
+    },
+    {
+      "id": "SQL-HUGINN-TEXT-CHARSET-COLLATION",
+      "schema": "mo_reg_b23d5396cc7649de",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE h_text(id INT PRIMARY KEY,options TEXT NULL)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO h_text VALUES(1,'AbC 中文 😀𠮷'),(2,'abc 中文 😀𠮷'),(3,NULL)",
+          "rows": [],
+          "affected_rows": 3,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE h_text CHANGE options options text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL",
+          "rows": null,
+          "error": [
+            20105,
+            "not supported: unsupport column definition <nil>"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "2f819486957e3d97425dbf8519b85dbe68d0f718446f7a327c8b2d5a8c220349",
+      "postchecks": [
+        {
+          "sql": "SELECT id,options FROM h_text ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              "AbC 中文 😀𠮷"
+            ],
+            [
+              2,
+              "abc 中文 😀𠮷"
+            ],
+            [
+              3,
+              null
+            ]
+          ]
+        },
+        {
+          "sql": "SELECT id FROM h_text WHERE options='AbC 中文 😀𠮷' ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO h_text VALUES(1,'duplicate')",
+          "passed": true,
+          "error_code": 1062
+        },
+        {
+          "sql": "ALTER TABLE h_text CHANGE options options text DEFAULT NULL",
+          "passed": true,
+          "rows": []
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.162
+    },
+    {
+      "id": "SQL-INDEX-NAME-CASE",
+      "schema": "mo_reg_1fc0f73d18204e8d",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE index_probe(id INT PRIMARY KEY)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE INDEX IDX_mo_probe_test ON index_probe(id)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT INDEX_NAME FROM information_schema.STATISTICS WHERE TABLE_SCHEMA=DATABASE() AND TABLE_NAME='index_probe' AND INDEX_NAME<>'PRIMARY'",
+          "rows": [
+            [
+              "idx_mo_probe_test"
+            ]
+          ],
+          "affected_rows": 1,
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "2b2e4464e6ef49adacbe8cc88d2127090c1397500b8bd3a9e42c010d204ab0fb",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.099
+    },
+    {
+      "id": "SQL-JSON-DEFAULT",
+      "schema": "mo_reg_2bdba4f32dc34116",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "CREATE TABLE json_default (id INT, payload JSON DEFAULT ('{}'))",
+          "rows": null,
+          "error": [
+            20105,
+            "not supported: JSON column 'payload' cannot have default value"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "30f89d3f6f34045e4a6a4c517035c2901563773c3f1343866730a28ce94cd248",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.042
+    },
+    {
+      "id": "SQL-LAST-INSERT-ID-ARG",
+      "schema": "mo_reg_84c4766028464e7b",
+      "steps": [
+        {
+          "phase": "trigger",
+          "sql": "SELECT LAST_INSERT_ID(1)",
+          "rows": null,
+          "error": [
+            20203,
+            "invalid argument function last_insert_id, bad value [BIGINT]"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "ce2bb1b927c579ff75f6d99643840783c248753d079f483b6cd56f8327ea6e81",
+      "postchecks": [],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.031
+    },
+    {
+      "id": "SQL-QUALIFIED-RANK",
+      "schema": "mo_reg_ef5dc1474be24b25",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE rank_source (id INT PRIMARY KEY, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE rank_stage (id INT UNIQUE, `rank` SMALLINT UNSIGNED, global_rank VARCHAR(255))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO rank_source VALUES (1,1,'old'),(2,42,'unchanged 中文')",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO rank_stage VALUES (1,9,'updated 中文')",
+          "rows": [],
+          "affected_rows": 1,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.rank = t2.rank, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 54 near \"rank = t2.rank, t1.global_rank = t2.global_rank WHERE t1.id = t2.id\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "a5e8979fb42a28399d676502f989d2c71d11486c6dd5b8ec9ec09d89b8e62df4",
+      "postchecks": [
+        {
+          "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              1,
+              "old"
+            ],
+            [
+              2,
+              42,
+              "unchanged 中文"
+            ]
+          ]
+        },
+        {
+          "sql": "UPDATE rank_source AS t1, rank_stage AS t2 SET t1.`rank` = t2.`rank`, t1.global_rank = t2.global_rank WHERE t1.id = t2.id",
+          "passed": true,
+          "rows": []
+        },
+        {
+          "sql": "SELECT id,`rank`,global_rank FROM rank_source ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              9,
+              "updated 中文"
+            ],
+            [
+              2,
+              42,
+              "unchanged 中文"
+            ]
+          ]
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.115
+    },
+    {
+      "id": "SQL-SELF-FK-ALTER",
+      "schema": "mo_reg_32bcfc6439d0471c",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE self_probe(id INT PRIMARY KEY,parent_id INT NULL,URL VARCHAR(100),CONSTRAINT fk_self FOREIGN KEY(parent_id) REFERENCES self_probe(id))",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO self_probe VALUES(1,NULL,'parent'),(2,1,'child')",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "ALTER TABLE self_probe MODIFY COLUMN URL VARCHAR(125)",
+          "rows": null,
+          "error": [
+            20101,
+            "internal error: can not find table by id 0: accountId: 0"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "1b6ca1ef6334a235e93db4ad8a05ed2fef7a75e159d9fafc0b38a49bc9d7df84",
+      "postchecks": [
+        {
+          "sql": "SELECT id,parent_id,URL FROM self_probe ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              null,
+              "parent"
+            ],
+            [
+              2,
+              1,
+              "child"
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO self_probe VALUES(3,999,'must reject')",
+          "passed": true,
+          "error_code": 1452
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.081
+    },
+    {
+      "id": "SQL-SUBSCRIPTION-ALIAS",
+      "schema": "mo_reg_fa2811115e604732",
+      "steps": [
+        {
+          "phase": "setup",
+          "sql": "CREATE TABLE doc_alias(id INT PRIMARY KEY,c_sub VARCHAR(200) NULL)",
+          "rows": [],
+          "affected_rows": 0,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "setup",
+          "sql": "INSERT INTO doc_alias VALUES(1,'中文 😀𠮷'),(2,NULL)",
+          "rows": [],
+          "affected_rows": 2,
+          "status": "completed_without_error"
+        },
+        {
+          "phase": "trigger",
+          "sql": "SELECT id,c_sub AS subscription FROM doc_alias ORDER BY id",
+          "rows": null,
+          "error": [
+            1064,
+            "SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 31 near \" subscription FROM doc_alias ORDER BY id\";"
+          ],
+          "status": "known_failure"
+        }
+      ],
+      "status": "known_failure",
+      "case_sha256": "efffb88fdf5441545259b5f00bb372949c77195bcb362a03b11a2f77668a05cd",
+      "postchecks": [
+        {
+          "sql": "SELECT id,c_sub AS `subscription` FROM doc_alias ORDER BY id",
+          "passed": true,
+          "rows": [
+            [
+              1,
+              "中文 😀𠮷"
+            ],
+            [
+              2,
+              null
+            ]
+          ]
+        },
+        {
+          "sql": "INSERT INTO doc_alias(id) VALUES(1)",
+          "passed": true,
+          "error_code": 1062
+        }
+      ],
+      "post_trigger_health": true,
+      "elapsed_seconds": 0.055
+    }
+  ],
+  "policy": "allow-known",
+  "existing_databases_modified": false,
+  "fixtures_preserved": true,
+  "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "runtime_commit_matches": true,
+  "exit_code": 0,
+  "finished_at_utc": "2026-10-12T22:45:44Z"
+}

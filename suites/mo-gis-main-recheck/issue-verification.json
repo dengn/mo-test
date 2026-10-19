@@ -1,0 +1,35 @@
+[
+  {
+    "number": 30032,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30032",
+    "title": "[Bug]: ST_Intersection drops shared-edge and shared-corner intersections between valid polygons",
+    "state": "open",
+    "labels": [
+      "kind/bug",
+      "needs-triage"
+    ],
+    "body_verified": true
+  },
+  {
+    "number": 30033,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30033",
+    "title": "[Bug]: ST_IsValid rejects valid LineStrings with adjacent repeated vertices",
+    "state": "open",
+    "labels": [
+      "kind/bug",
+      "needs-triage"
+    ],
+    "body_verified": true
+  },
+  {
+    "number": 30034,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30034",
+    "title": "[Bug]: ST_GeomFromText accepts unclosed polygon rings and exports unreadable WKB",
+    "state": "open",
+    "labels": [
+      "kind/bug",
+      "needs-triage"
+    ],
+    "body_verified": true
+  }
+]

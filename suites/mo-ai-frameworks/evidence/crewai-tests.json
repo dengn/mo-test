@@ -1,0 +1,34 @@
+{
+  "package_version": "1.15.27",
+  "records": [
+    {
+      "project": "crewAIInc/crewAI",
+      "name": "native_Flow_persist_restore_continue",
+      "backend": "sqlite",
+      "kind": "native_persistence",
+      "status": "PASS",
+      "details": "native @persist Flow.kickoff/start/listen; typed state saved/restored and continued 11→22; append order, separate flows, Unicode, missing/injection-like id; no LLM, async feedback/concurrency not tested",
+      "elapsed_ms": 1196.3925040035974
+    },
+    {
+      "project": "crewAIInc/crewAI",
+      "name": "native_Flow_persist_restore_continue",
+      "backend": "matrixone",
+      "kind": "custom_persistence",
+      "server": "8.0.30-MatrixOne-v",
+      "status": "PASS",
+      "details": "native @persist Flow.kickoff/start/listen; typed state saved/restored and continued 11→22; append order, separate flows, Unicode, missing/injection-like id; no LLM, async feedback/concurrency not tested",
+      "elapsed_ms": 433.17524099256843
+    },
+    {
+      "project": "crewAIInc/crewAI",
+      "name": "native_Flow_persist_restore_continue",
+      "backend": "mysql",
+      "kind": "custom_persistence",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "native @persist Flow.kickoff/start/listen; typed state saved/restored and continued 11→22; append order, separate flows, Unicode, missing/injection-like id; no LLM, async feedback/concurrency not tested",
+      "elapsed_ms": 289.3070259888191
+    }
+  ]
+}

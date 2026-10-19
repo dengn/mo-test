@@ -1,0 +1,141 @@
+{
+  "repo": "apache/superset",
+  "commit": "c83fb2bb1dcfac41ac51bcebd82471f4a7180d18",
+  "files": [
+    {
+      "path": "superset-core/.gitignore",
+      "mode": "100644",
+      "git_blob": "e0a1eee298fdfde5d337a47fa1e4aa06e0d368dc"
+    },
+    {
+      "path": "superset-core/CHANGELOG.md",
+      "mode": "100644",
+      "git_blob": "c6db81dd39d79b25bd2b5191a5ecc5e95bda2ae4"
+    },
+    {
+      "path": "superset-core/LICENSE.txt",
+      "mode": "100644",
+      "git_blob": "56313ab5a54a163e7d46224cb5470a814c3a2436"
+    },
+    {
+      "path": "superset-core/README.md",
+      "mode": "100644",
+      "git_blob": "61fefbac142461fb3b49affeb520ea5a896013b6"
+    },
+    {
+      "path": "superset-core/pyproject.toml",
+      "mode": "100644",
+      "git_blob": "3af044c90d5ac1c8d5939954510275e5534ee9d5"
+    },
+    {
+      "path": "superset-core/src/superset_core/__init__.py",
+      "mode": "100644",
+      "git_blob": "58439993a7445ba523e77235a9036ccddef331f5"
+    },
+    {
+      "path": "superset-core/src/superset_core/common/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/common/daos.py",
+      "mode": "100644",
+      "git_blob": "ab2964f8a7eaf3fa6d36b5c19b0f41a5bf075b68"
+    },
+    {
+      "path": "superset-core/src/superset_core/common/models.py",
+      "mode": "100644",
+      "git_blob": "742be6fa17b27eebffb4ab4a537b03bd9961c4d3"
+    },
+    {
+      "path": "superset-core/src/superset_core/extensions/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/extensions/constants.py",
+      "mode": "100644",
+      "git_blob": "965270d04ce3c34ce8a84cb070446e55abb7889f"
+    },
+    {
+      "path": "superset-core/src/superset_core/extensions/types.py",
+      "mode": "100644",
+      "git_blob": "bfaeba5a43c5facd6aec85bd6c01b7d0f19c5066"
+    },
+    {
+      "path": "superset-core/src/superset_core/mcp/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/mcp/decorators.py",
+      "mode": "100644",
+      "git_blob": "264d079be30fd05f85207fb6bd25ea2e5bf191aa"
+    },
+    {
+      "path": "superset-core/src/superset_core/queries/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/queries/daos.py",
+      "mode": "100644",
+      "git_blob": "fcc86674c3b31855e6e61432670646d75e661da1"
+    },
+    {
+      "path": "superset-core/src/superset_core/queries/models.py",
+      "mode": "100644",
+      "git_blob": "4b8ce5417f10bf55479ea2b6417b0e9179101c5f"
+    },
+    {
+      "path": "superset-core/src/superset_core/queries/query.py",
+      "mode": "100644",
+      "git_blob": "b11d461c443d99dd4fa6035ceacb61f48befb8e5"
+    },
+    {
+      "path": "superset-core/src/superset_core/queries/types.py",
+      "mode": "100644",
+      "git_blob": "1e4d59726574d7e865068f913e80083d091a4fde"
+    },
+    {
+      "path": "superset-core/src/superset_core/rest_api/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/rest_api/api.py",
+      "mode": "100644",
+      "git_blob": "ebcc4b83f4917ecab16588eed1b982f78f5fe186"
+    },
+    {
+      "path": "superset-core/src/superset_core/rest_api/decorators.py",
+      "mode": "100644",
+      "git_blob": "37581713ead01780f4dea2299d6fabb99a842255"
+    },
+    {
+      "path": "superset-core/src/superset_core/tasks/__init__.py",
+      "mode": "100644",
+      "git_blob": "13a83393a9124bf6ec36540556b4808abd47e206"
+    },
+    {
+      "path": "superset-core/src/superset_core/tasks/daos.py",
+      "mode": "100644",
+      "git_blob": "b810edec31a19bef66510b0a75ab6707c4b8dda9"
+    },
+    {
+      "path": "superset-core/src/superset_core/tasks/decorators.py",
+      "mode": "100644",
+      "git_blob": "5785add46249512e1d74385e015f5d1de678e033"
+    },
+    {
+      "path": "superset-core/src/superset_core/tasks/models.py",
+      "mode": "100644",
+      "git_blob": "1dcf70ad1a8bd5a55b5d633425b7981c1f83df27"
+    },
+    {
+      "path": "superset-core/src/superset_core/tasks/types.py",
+      "mode": "100644",
+      "git_blob": "7e4f886f10b2193937c7586c72192d53a5aae98d"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting PyMySQL==1.2.3
+  Downloading pymysql-1.2.3-py3-none-any.whl.metadata (4.2 kB)
+Collecting psycopg==3.3.6 (from psycopg[binary]==3.3.6)
+  Downloading psycopg-3.3.6-py3-none-any.whl.metadata (4.4 kB)
+Requirement already satisfied: typing-extensions>=4.6 in /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages (from psycopg==3.3.6->psycopg[binary]==3.3.6) (4.16.0)
+Collecting psycopg-binary==3.3.6 (from psycopg[binary]==3.3.6)
+  Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+Downloading pymysql-1.2.3-py3-none-any.whl (46 kB)
+Downloading psycopg-3.3.6-py3-none-any.whl (215 kB)
+Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 60.6 MB/s eta 0:00:00
+Installing collected packages: PyMySQL, psycopg-binary, psycopg
+Successfully installed PyMySQL-1.2.3 psycopg-3.3.6 psycopg-binary-3.3.6
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python -m pip install --upgrade pip

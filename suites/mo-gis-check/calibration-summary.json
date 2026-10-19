@@ -1,0 +1,137 @@
+{
+  "statements": 109,
+  "pass": 87,
+  "expected_rejections": 6,
+  "errors": [
+    {
+      "label": "argument_form_0_ddl",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1064,
+        "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 40 near \"(\\'point\\',4326))\";')"
+      }
+    },
+    {
+      "label": "argument_form_0_insert",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.argument_form_0')"
+      }
+    },
+    {
+      "label": "argument_form_0_read",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"argument_form_0\" does not exist')"
+      }
+    },
+    {
+      "label": "argument_form_1_ddl",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1064,
+        "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 40 near \"(type=\\'point\\',srid=4326))\";')"
+      }
+    },
+    {
+      "label": "argument_form_1_insert",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.argument_form_1')"
+      }
+    },
+    {
+      "label": "argument_form_1_read",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"argument_form_1\" does not exist')"
+      }
+    },
+    {
+      "label": "z_coordinates",
+      "error": {
+        "type": "OperationalError",
+        "code": 20301,
+        "message": "(20301, 'invalid input: invalid geometry type')"
+      }
+    },
+    {
+      "label": "spatial_ddl",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1064,
+        "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 74 near \" index geo_idx(g))\";')"
+      }
+    },
+    {
+      "label": "spatial_insert",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+      }
+    },
+    {
+      "label": "spatial_show",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+      }
+    },
+    {
+      "label": "spatial_query",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+      }
+    },
+    {
+      "label": "spatial_explain",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+      }
+    },
+    {
+      "label": "spatial_update",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+      }
+    },
+    {
+      "label": "spatial_after_update",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+      }
+    },
+    {
+      "label": "spatial_delete",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+      }
+    },
+    {
+      "label": "spatial_after_delete",
+      "error": {
+        "type": "ProgrammingError",
+        "code": 1146,
+        "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+      }
+    }
+  ],
+  "tested_binary_commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "latest_main_observed": "080365f0134798026fadf162e01e1a78d56be09d"
+}

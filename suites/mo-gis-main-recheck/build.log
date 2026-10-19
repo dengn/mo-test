@@ -1,0 +1,41 @@
+fatal: No names found, cannot describe anything.
+[Verify Go package graph]
+native provenance: cleaning CGo outputs before rebuilding cpu/release
+make[1]: Entering directory '/workspace/matrixone-gis-latest/cgo'
+rm -f *.o *.a *.so *.dylib
+make -C cuda clean
+make[2]: Entering directory '/workspace/matrixone-gis-latest/cgo/cuda'
+>>> WARNING - libcuda.so not found, CUDA Driver is not installed.  Please re-install the driver. <<<
+rm -f *.o *.a mocl_kernel64.fatbin mytest
+make[2]: Leaving directory '/workspace/matrixone-gis-latest/cgo/cuda'
+make -C cuvs clean
+make[2]: Entering directory '/workspace/matrixone-gis-latest/cgo/cuvs'
+Cleaning up...
+rm -f libmocuvs.so *.o test_cuvs_worker benchmark_cuvs benchmark_filter test_kmeans test_dynb test_ivfpq_filter bench_hostview bench_wiki88 bench_upload_cost
+rm -rf obj
+make[2]: Leaving directory '/workspace/matrixone-gis-latest/cgo/cuvs'
+make[1]: Leaving directory '/workspace/matrixone-gis-latest/cgo'
+make[1]: Entering directory '/workspace/matrixone-gis-latest/thirdparties'
+mkdir -p install
+mkdir -p install/include install/lib
+using verified installed ONNX Runtime 1.26.0 from install/lib/onnxruntime.so
+make[1]: Leaving directory '/workspace/matrixone-gis-latest/thirdparties'
+make[1]: Entering directory '/workspace/matrixone-gis-latest/cgo'
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c mo.c -o mo.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c arith.c -o arith.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c compare.c -o compare.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c logic.c -o logic.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c xcall.c -o xcall.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c usearchex.c -o usearchex.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c bloom.c -o bloom.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c croaring.c -o croaring.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c cbitmap.c -o cbitmap.o
+cc -std=c11 -g -O3 -ffast-math -ftree-vectorize -funroll-loops -Wall -Werror -fPIC -I../thirdparties/install/include -march=haswell -c sorted64.c -o sorted64.o
+cc -L../thirdparties/install/lib -lusearch_c -lroaring -shared -o libmo.so mo.o arith.o compare.o logic.o xcall.o usearchex.o bloom.o croaring.o cbitmap.o sorted64.o
+ar -rcs libmo.a mo.o arith.o compare.o logic.o xcall.o usearchex.o bloom.o croaring.o cbitmap.o sorted64.o
+make[1]: Leaving directory '/workspace/matrixone-gis-latest/cgo'
+[Stage jieba dict]
+rm -rf /workspace/matrixone-gis-latest/dict
+cp -r /workspace/matrixone-gis-latest/pkg/monlp/tokenizer/dict /workspace/matrixone-gis-latest/dict
+[Build binary]
+GOAMD64=v3 GOEXPERIMENT=simd  CGO_CFLAGS="-I/workspace/matrixone-gis-latest/cgo -I/workspace/matrixone-gis-latest/thirdparties/install/include  " go build -mod=readonly   -ldflags=" -extldflags ' -L/workspace/matrixone-gis-latest/cgo -lmo -L/workspace/matrixone-gis-latest/thirdparties/install/lib  -Wl,-rpath,\${ORIGIN}/lib -fopenmp' -X 'github.com/matrixorigin/matrixone/pkg/version.GoVersion=go version go1.27.1 linux/amd64' -X 'github.com/matrixorigin/matrixone/pkg/version.BranchName=HEAD' -X 'github.com/matrixorigin/matrixone/pkg/version.CommitID=0a4db0e' -X 'github.com/matrixorigin/matrixone/pkg/version.BuildTime=1791822159' -X 'github.com/matrixorigin/matrixone/pkg/version.Version='"   -o mo-service ./cmd/mo-service

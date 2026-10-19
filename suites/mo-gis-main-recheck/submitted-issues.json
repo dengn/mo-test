@@ -1,0 +1,23 @@
+[
+  {
+    "finding": "MO-GIS-001",
+    "number": 30032,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30032",
+    "title": "[Bug]: ST_Intersection drops shared-edge and shared-corner intersections between valid polygons",
+    "commit": "0a4db0e6a6517e489a333ad9073dfcdc5d26aff4"
+  },
+  {
+    "finding": "MO-GIS-002",
+    "number": 30033,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30033",
+    "title": "[Bug]: ST_IsValid rejects valid LineStrings with adjacent repeated vertices",
+    "commit": "0a4db0e6a6517e489a333ad9073dfcdc5d26aff4"
+  },
+  {
+    "finding": "MO-GIS-003",
+    "number": 30034,
+    "url": "https://github.com/matrixorigin/matrixone/issues/30034",
+    "title": "[Bug]: ST_GeomFromText accepts unclosed polygon rings and exports unreadable WKB",
+    "commit": "0a4db0e6a6517e489a333ad9073dfcdc5d26aff4"
+  }
+]

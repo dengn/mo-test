@@ -1,0 +1,26 @@
+{
+  "row_count": 1000,
+  "unique_repository_count": 1000,
+  "actually_tested": 61,
+  "business_smoke_passed": 58,
+  "not_run": 939,
+  "snapshot_updated_at_utc": "2026-10-12T17:30:51Z",
+  "files": {
+    "projects-1000.json": {
+      "sha256": "d44effb06aa6c60b5b7ecd6ffac9263219b0ad6e28b56c18f34fadb7e5f60f4f",
+      "bytes": 2694963
+    },
+    "catalog-summary.json": {
+      "sha256": "b1f263cf36aa4c1b40ca04750c7732a0d1cfa5049ff867e16beee4a464d81e8c",
+      "bytes": 2246
+    },
+    "README.md": {
+      "sha256": "16f4c5427761592282e09c483d0ed956ac95e63584860a203e3672ad5caf8a0b",
+      "bytes": 146644
+    },
+    "projects-1000.csv": {
+      "sha256": "ae5cc5e7b06685b56b780e39b815b3cdae2a1695879e8dfcaf6c83581e46a76a",
+      "bytes": 1149715
+    }
+  }
+}

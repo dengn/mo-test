@@ -1,0 +1,5 @@
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /workspace/mo-gis-postgis/web/browser-test.cjs:7:56 {
+  log: [],
+  name: 'TimeoutError'
+}

@@ -1,0 +1,111 @@
+{
+  "app": "muety/wakapi",
+  "version": "2.18.1",
+  "commit": "347f1f45ae2863d9499236471317a76630c5308f",
+  "schema": "mo_reg_wakapi_12234dac1a614543",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    },
+    {
+      "name": "native_core_schema",
+      "passed": true
+    },
+    {
+      "name": "native_heartbeat_foreign_key_retained",
+      "passed": true
+    },
+    {
+      "name": "native_signup_admin",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_admin",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_admin",
+      "passed": true
+    },
+    {
+      "name": "native_signup_owner",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_owner",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_owner",
+      "passed": true
+    },
+    {
+      "name": "native_signup_other",
+      "passed": true
+    },
+    {
+      "name": "native_password_cookie_login_other",
+      "passed": true
+    },
+    {
+      "name": "native_API_key_setup_other",
+      "passed": true
+    },
+    {
+      "name": "native_roles_and_password_hashes",
+      "passed": true
+    },
+    {
+      "name": "native_distinct_keys_exact_SQL",
+      "passed": true
+    },
+    {
+      "name": "wrong_password_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_heartbeat_read_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_API_key_denied",
+      "passed": true
+    },
+    {
+      "name": "other_user_private_read_denied",
+      "passed": true
+    }
+  ],
+  "min_free_mib": 2048,
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "adaptation_patch_sha256": "e3055a765cffc8a770e810361e3b7c8cbea029bc96850376c9ebb015979f66d6",
+  "limitations": [
+    "fresh native schema/pre-post migrations; populated upgrades and complete UI unverified",
+    "basic finite heartbeats only; historical unproved acknowledgments remain unproved",
+    "loopback HTTP with supported insecure_cookies, native auth/rate limits retained",
+    "native leaderboard/cache warming/external import/mail disabled through supported configuration"
+  ],
+  "binary_identity": {
+    "sha256": "8c2f033b23814a1836b21d388a2dca1b35b3a1a23c5754962a2114b4a0c39ad6",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "native_table_count": 14,
+  "signup_HTTP_statuses": {
+    "admin": 200,
+    "owner": 200,
+    "other": 200
+  },
+  "error_type": "UnicodeEncodeError",
+  "failed_stage": "native_heartbeats",
+  "finished_at_utc": "2026-10-13T02:57:33Z"
+}

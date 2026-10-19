@@ -1,0 +1,40 @@
+{
+  "server": [
+    [
+      "8.0.30-MatrixOne-v",
+      "67108864"
+    ]
+  ],
+  "database": "column_boundary_20261012",
+  "deadline_seconds": 300,
+  "pid_before": {
+    "unix_time": 1791790990.8391826,
+    "memory.current": "28019527680",
+    "memory.peak": "29919322112",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu.stat": "usage_usec 111880079489\nuser_usec 86553868771\nsystem_usec 25326210717\nnice_usec 0\nnr_periods 2755932\nnr_throttled 42587\nthrottled_usec 1733280230\nnr_bursts 0\nburst_usec 0",
+    "pid": 191436,
+    "State": "S (sleeping)",
+    "VmHWM": "4399200 kB",
+    "VmRSS": "2825964 kB",
+    "Threads": "22"
+  },
+  "server_log_offset": 64700357,
+  "client_version": "2.2.8",
+  "argv": {
+    "sizes": [
+      1000,
+      10000
+    ],
+    "database": "column_boundary_20261012",
+    "deadline": 300,
+    "resume": false
+  },
+  "binary_sha256": "c12a2f06d12f520b42ab90ef04533f9287d6ca32eb257a616f026182ed6fc55f",
+  "commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "cpu_max": "400000 100000",
+  "memory_max": "34359738368",
+  "installed_pymysql_version": "1.2.3",
+  "kernel": "Linux 6.18.44 x86_64 GNU/Linux",
+  "larger_probe_stop": "The million-column probe was not rerun after the user asked to stop; its recorded timeout is not a supported maximum."
+}

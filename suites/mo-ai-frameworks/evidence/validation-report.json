@@ -1,0 +1,363 @@
+{
+  "status": "PASS",
+  "validated_project_count": 26,
+  "validated_test_count": 43,
+  "groups": [
+    {
+      "group": "core",
+      "projects": [
+        "langchain",
+        "llamaindex",
+        "haystack"
+      ],
+      "expected_tests": [
+        "test_langchain_chat_history",
+        "test_langchain_sql_tool",
+        "test_langchain_filtered_retriever",
+        "test_llamaindex_index_retriever_delete",
+        "test_haystack_pipeline_filter_delete"
+      ],
+      "requirements_sha256": "3affc29934c0a997fdedb41b65fedafd400dd94a68cb0781c30899e7904c4aa1",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langchain_chat_history",
+        "test_langchain_sql_tool",
+        "test_langchain_filtered_retriever",
+        "test_llamaindex_index_retriever_delete",
+        "test_haystack_pipeline_filter_delete"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.756
+    },
+    {
+      "group": "storage",
+      "projects": [
+        "langgraph",
+        "agno",
+        "memori"
+      ],
+      "expected_tests": [
+        "test_langgraph_interrupt_resume_checkpoint",
+        "test_agno_legacy_upsert_session",
+        "test_memori_native_schema_entity"
+      ],
+      "requirements_sha256": "64f9881cd3d09b212691974e652de74c22eeac7d6217005aca2009a6986c6e3f",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langgraph_interrupt_resume_checkpoint",
+        "test_agno_legacy_upsert_session",
+        "test_memori_native_schema_entity"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.055
+    },
+    {
+      "group": "sessions",
+      "projects": [
+        "openai-agents",
+        "pydantic-ai",
+        "google-adk"
+      ],
+      "expected_tests": [
+        "test_openai_function_tool",
+        "test_openai_sqlalchemy_session",
+        "test_pydantic_ai_agent_tool_return",
+        "test_adk_function_tool",
+        "test_adk_database_session"
+      ],
+      "requirements_sha256": "6df5212b56282ccba0ddc61d9ef85875b55cd9f99fb9a2280546101e2489b31b",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_openai_function_tool",
+        "test_openai_sqlalchemy_session",
+        "test_pydantic_ai_agent_tool_return",
+        "test_adk_function_tool",
+        "test_adk_database_session"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.906
+    },
+    {
+      "group": "agents",
+      "projects": [
+        "autogen",
+        "semantic-kernel"
+      ],
+      "expected_tests": [
+        "test_autogen_function_tool",
+        "test_autogen_state_save_load_resume",
+        "test_semantic_kernel_plugin_invoke"
+      ],
+      "requirements_sha256": "10ce8777bfa7d065d2fe6e7ce995dd432be70c7def2db4f89339a5d8bb7649ff",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_autogen_function_tool",
+        "test_autogen_state_save_load_resume",
+        "test_semantic_kernel_plugin_invoke"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.702
+    },
+    {
+      "group": "tools",
+      "projects": [
+        "smolagents",
+        "dspy",
+        "litellm"
+      ],
+      "expected_tests": [
+        "test_smolagents_agent_sql_observation",
+        "test_dspy_react_sql_observation",
+        "test_litellm_sync_async_callback_reopen"
+      ],
+      "requirements_sha256": "c1a967630dc820d57e0d95188c9d219658ce26ac17e4823a3f253671e3533aa0",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_smolagents_agent_sql_observation",
+        "test_dspy_react_sql_observation",
+        "test_litellm_sync_async_callback_reopen"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 5.856
+    },
+    {
+      "group": "memory",
+      "projects": [
+        "mem0"
+      ],
+      "expected_tests": [
+        "test_mem0_memory_lifecycle_filter_reopen",
+        "test_mem0_invalid_batch_rollback",
+        "test_mem0_qdrant_cosine_equivalence",
+        "test_mem0_qdrant_typed_filter_equivalence"
+      ],
+      "requirements_sha256": "3610f88503dda29d86f5a00a98533e45c4a341b821c1cd8c20d7457d716388da",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_mem0_memory_lifecycle_filter_reopen",
+        "test_mem0_invalid_batch_rollback",
+        "test_mem0_qdrant_cosine_equivalence",
+        "test_mem0_qdrant_typed_filter_equivalence"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.554
+    },
+    {
+      "group": "rag",
+      "projects": [
+        "lightrag"
+      ],
+      "expected_tests": [
+        "test_lightrag_matrixone_ingest_query_delete",
+        "test_lightrag_native_reference"
+      ],
+      "requirements_sha256": "d24b91930aac15a45a039f74de3af4c4ccf465be34c2b7acb38f5b84d1abc449",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_lightrag_matrixone_ingest_query_delete",
+        "test_lightrag_native_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.365
+    },
+    {
+      "group": "javascript",
+      "projects": [
+        "langchainjs",
+        "vercel-ai",
+        "mastra"
+      ],
+      "expected_tests": [
+        "test_langchainjs_structured_tool",
+        "test_vercel_ai_tool_execute",
+        "test_mastra_tool_execute"
+      ],
+      "requirements_sha256": "7b697d91fec3f2ece2bf08f43920b2dd6ae99f980d56cb8a223f8c51fb479f71",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langchainjs_structured_tool",
+        "test_vercel_ai_tool_execute",
+        "test_mastra_tool_execute"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.744
+    },
+    {
+      "group": "flow",
+      "projects": [
+        "crewai"
+      ],
+      "expected_tests": [
+        "test_crewai_matrixone_flow_restore_continue",
+        "test_crewai_native_sqlite_reference"
+      ],
+      "requirements_sha256": "f6f1d807598376e4445e559f97c73aaf88bcd1a5e262be34be20abe3b71d6443",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_crewai_matrixone_flow_restore_continue",
+        "test_crewai_native_sqlite_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 5.972
+    },
+    {
+      "group": "scope",
+      "projects": [
+        "agentscope"
+      ],
+      "expected_tests": [
+        "test_agentscope_toolkit_state_restore_continue"
+      ],
+      "requirements_sha256": "211053844fdc3e143d123bfc5234c3e258139e63e673628f21f16f316946a9cf",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_agentscope_toolkit_state_restore_continue"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 1.547
+    },
+    {
+      "group": "camel",
+      "projects": [
+        "camel"
+      ],
+      "expected_tests": [
+        "test_camel_chat_agent_history_restore_continue",
+        "test_camel_native_json_reference"
+      ],
+      "requirements_sha256": "6365ed5d4e2d295885d2894119a1fb1731d16954fd94f0be894a92853f07ffff",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_camel_chat_agent_history_restore_continue",
+        "test_camel_native_json_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.45
+    },
+    {
+      "group": "deep",
+      "projects": [
+        "deepagents"
+      ],
+      "expected_tests": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "requirements_sha256": "dbe27a2aed9ca2c84be058717955bfa48d78a9170070163279eca36f2159b15a",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 4.861
+    },
+    {
+      "group": "interfaces",
+      "projects": [
+        "langextract",
+        "ag-ui"
+      ],
+      "expected_tests": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "requirements_sha256": "b23b218e89dce07bad39d9922027e04020e1addd804345c69051fcbfc0200a97",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.149
+    },
+    {
+      "group": "swarm",
+      "projects": [
+        "swarm"
+      ],
+      "expected_tests": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "requirements_sha256": "6e64657afd8479e3a08b59b979a6d09fbdb02c16b4c9f92d36378f728d384da7",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 1.298
+    }
+  ],
+  "method": "Latest completed passing attempt per group; prior attempts are retained separately, not added to project/test counts",
+  "python": "3.12",
+  "node": "24.19.0",
+  "database_source_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+  "fresh_dependency_install_all_groups": false,
+  "github_actions_run_verified": false
+}

@@ -1,0 +1,29 @@
+{
+  "run_id": "105996862019",
+  "started_utc": "2026-10-13T10:04:05Z",
+  "groups": [
+    {
+      "group": "rag",
+      "projects": [
+        "lightrag"
+      ],
+      "expected_tests": [
+        "test_lightrag_matrixone_ingest_query_delete",
+        "test_lightrag_native_reference"
+      ],
+      "requirements_sha256": "d24b91930aac15a45a039f74de3af4c4ccf465be34c2b7acb38f5b84d1abc449",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_lightrag_matrixone_ingest_query_delete",
+        "test_lightrag_native_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.365
+    }
+  ],
+  "status": "PASS"
+}

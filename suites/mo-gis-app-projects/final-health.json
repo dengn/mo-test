@@ -1,0 +1,77 @@
+{
+  "databases": {
+    "mo": {
+      "counts": {
+        "points": 259,
+        "routes": 16,
+        "zones": 4,
+        "mixed": 8
+      },
+      "point1_restored_longitude_latitude": [
+        [
+          1,
+          3,
+          "POINT(116.3 39.8)"
+        ]
+      ]
+    },
+    "pg": {
+      "counts": {
+        "points": 259,
+        "routes": 16,
+        "zones": 4,
+        "mixed": 8
+      },
+      "point1_restored_longitude_latitude": [
+        [
+          1,
+          3,
+          "POINT(116.3 39.8)"
+        ]
+      ]
+    },
+    "mysql": {
+      "counts": {
+        "points": 259,
+        "routes": 16,
+        "zones": 4,
+        "mixed": 8
+      },
+      "point1_restored_longitude_latitude": [
+        [
+          1,
+          3,
+          "POINT(116.3 39.8)"
+        ]
+      ]
+    }
+  },
+  "HTTP": [
+    {
+      "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+      "status": 200,
+      "features": 259
+    },
+    {
+      "url": "http://127.0.0.1:18880/openapi?f=json",
+      "status": 200,
+      "includes_adapted_collection": true
+    },
+    {
+      "url": "http://127.0.0.1:18881/en/map/gis_5",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18885/",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:18883/geoserver/rest/about/version.json",
+      "status": 200
+    }
+  ],
+  "log_scan": {
+    "log_bytes": 82414,
+    "panic_fatal_race_matches": 0
+  }
+}

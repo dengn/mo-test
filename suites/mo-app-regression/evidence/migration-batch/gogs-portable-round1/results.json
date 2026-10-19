@@ -1,0 +1,37 @@
+{
+  "app": "gogs/gogs",
+  "commit": "dbbd717e923694c36f41b0360515b4374bbe6ee0",
+  "schema": "mo_reg_gogs_d877069543cd4693",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_native_binary",
+      "passed": true
+    },
+    {
+      "name": "actual_matrixone",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": true,
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "pinned vendored XORM table and index metadata recognition"
+  ],
+  "limitations": [
+    "known native concurrent NextIssueIndex race remains; issue writes here are sequential",
+    "full new UI/SSH/mirrors/hooks/plugins/populated upgrades unverified",
+    "periodic cron disabled on this owned test instance"
+  ],
+  "binary_identity": {
+    "sha256": "472668c143db076052594ce046de109203df181f703ad615286ddd9b83b6bf2d",
+    "provenance": "historical_pinned_source_build"
+  },
+  "server_version": "8.0.30-MatrixOne-v4.2.5",
+  "runtime_git_version": "1a44f3d",
+  "error_type": "TimeoutError",
+  "failed_stage": "native_schema",
+  "finished_at_utc": "2026-10-13T01:58:23Z"
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "project": "Maputnik",
+    "status": "error",
+    "errors": [],
+    "api": [],
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('points', { exact: true }).first()\u001b[22m\n"
+  },
+  {
+    "project": "uMap",
+    "status": "loaded",
+    "errors": [],
+    "api": [
+      {
+        "url": "http://127.0.0.1:18880/collections/mo-points/items?f=json&limit=500",
+        "status": 200,
+        "features": 259
+      }
+    ],
+    "leafletMarkers": 257,
+    "leafletPaths": 2
+  }
+]

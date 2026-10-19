@@ -55,3 +55,19 @@ python3 tools/materialize.py --output /tmp/mo-test-restored
 跨库和 ETL 批次验证的是公开场景在 MO 上的实现；未部署六种对照数据库、Snowflake/Fivetran SaaS 或实际 dbt adapter。大多数精确结果用例基于小数据固定预期，大数据压力脚本单列；本次 4 CPU / 32 GiB、单进程 LOG/TN/CN 的结果不能直接证明分布式或 TB 级生产行为。用例实例数也不等于独立功能数。
 
 来源及固定版本记录在每个包的 source-manifest.json。保留了导入代码、公开测试和文档中的原始版权声明；来源项目的许可证仍适用于其对应文件。
+
+
+## Final execution update
+
+All 600,000 main cases have completed. See [the additional 100,000-case final record](suites/mo-stability-500000/EXTRA-100000-FINAL.md), the retained raw statuses, and [submitted issues](ISSUES.md). Rechecks do not increase the main count.
+
+## Additional column and GIS probes
+
+These follow-up probes are separate from the completed 600,000 main cases.
+
+- [Physical column boundary](suites/mo-column-boundary/README.md): 1,000 and 10,000 columns passed; 65,530 passed full-row read/write and forced-flush verification; 65,531/65,532 produced wrong tail reads; 65,533 and 100,000 caused a fatal server panic, reported as [#30011](https://github.com/matrixorigin/matrixone/issues/30011). The million-column probe was discontinued at the user's request. Service recovery and original errors are retained.
+- [Native GIS verification](suites/mo-gis-check/README.md): main and v4.2.5 source contain native GIS types; 106 runtime checks cover 18 type/alias forms, WKB/GeoJSON, SRID, math and spatial index maintenance. All checks matched expectations, including nine explicit unsupported/invalid-input rejections. Tested binary and inspected main revisions are recorded separately.
+
+- [GIS/PostGIS functional and application comparison](suites/mo-gis-postgis/REPORT.md): current main f1fc3f9; 13925 differential cases, 106 type checks, 1582 official BVT checks and 416 Go test/subtest events. Includes OpenLayers, GeoDjango, indexed workflows and SIGKILL recovery. Three confirmed MO defect groups and one reference-side area anomaly are documented with drafts; no new issues have been posted. [GIS introduction history](suites/mo-gis-postgis/HISTORY.md) traces the first main merge to 2026-04-15. Initial setup misconfiguration left the old 6001 cluster unable to replay WAL; original data is preserved and formal GIS tests use an independent healthy 6011 cluster.
+
+- [Latest-main GIS verification and application suitability](suites/mo-gis-main-recheck/README.md): rebuilt main `0a4db0e6`, 81 three-engine constant queries plus 8 stored/admission records; all three confirmed defects persist and were reported in English as #30032/#30033/#30034. New application checks passed; SRID4326 spatial-index pushdown is deliberately disabled while the planar index path works. These follow-ups do not increase the 600000 main-case total.

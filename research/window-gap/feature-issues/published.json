@@ -1,0 +1,122 @@
+[
+  {
+    "key": "groups",
+    "number": 29931,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29931",
+    "title": "[Feature Request]: GROUPS window frames for peer-aware time-series analysis"
+  },
+  {
+    "key": "exclude",
+    "number": 29932,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29932",
+    "title": "[Feature Request]: EXCLUDE frame clauses for leave-one-out and peer-excluded analytics"
+  },
+  {
+    "key": "ignore_nulls",
+    "number": 29933,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29933",
+    "title": "[Feature Request]: IGNORE NULLS and non-NULL value navigation in windows"
+  },
+  {
+    "key": "distinct",
+    "number": 29934,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29934",
+    "title": "[Feature Request]: DISTINCT window aggregates for exact rolling unique metrics"
+  },
+  {
+    "key": "filter",
+    "number": 29935,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29935",
+    "title": "[Feature Request]: FILTER clauses on aggregates and window aggregates"
+  },
+  {
+    "key": "frame_navigation",
+    "number": 29936,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29936",
+    "title": "[Feature Request]: frame-respecting lagInFrame and leadInFrame navigation"
+  },
+  {
+    "key": "derivative",
+    "number": 29937,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29937",
+    "title": "[Feature Request]: non-negative time derivatives for irregular cumulative counters"
+  },
+  {
+    "key": "weighted",
+    "number": 29938,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29938",
+    "title": "[Feature Request]: native weighted sum and average aggregates with window support"
+  },
+  {
+    "key": "pair_stats",
+    "number": 29939,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29939",
+    "title": "[Feature Request]: native correlation and covariance aggregates with window support"
+  },
+  {
+    "key": "moments",
+    "number": 29940,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29940",
+    "title": "[Feature Request]: sum2, skewness and kurtosis aggregate/window primitives"
+  },
+  {
+    "key": "product",
+    "number": 29941,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29941",
+    "title": "[Feature Request]: product aggregates with window support and zero/sign/NULL semantics"
+  },
+  {
+    "key": "extrema",
+    "number": 29942,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29942",
+    "title": "[Feature Request]: extrema positions within sliding frames with deterministic ties"
+  },
+  {
+    "key": "aggregate_over",
+    "number": 29943,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29943",
+    "title": "[Feature Request]: allow max_by and any_value aggregates to compose with OVER"
+  },
+  {
+    "key": "weighted_quantile",
+    "number": 29944,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29944",
+    "title": "[Feature Request]: native exact weighted percentiles with window support"
+  },
+  {
+    "key": "ewm",
+    "number": 29945,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29945",
+    "title": "[Feature Request]: exponential-weighted statistics with explicit decay and NULL policies"
+  },
+  {
+    "key": "topn",
+    "number": 29946,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29946",
+    "title": "[Feature Request]: bounded TopN-by-key window statistics with deterministic ties"
+  },
+  {
+    "key": "local_rank",
+    "number": 29947,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29947",
+    "title": "[Feature Request]: local sliding-window ranks distinct from partition-wide RANK"
+  },
+  {
+    "key": "valid_windows",
+    "number": 29948,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29948",
+    "title": "[Feature Request]: valid-observation windows and reset-aware cumulative state"
+  },
+  {
+    "key": "technical",
+    "number": 29949,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29949",
+    "title": "[Feature Request]: technical-indicator kernels and rolling risk analytics"
+  },
+  {
+    "key": "roadmap",
+    "number": 29950,
+    "url": "https://github.com/matrixorigin/matrixone/issues/29950",
+    "title": "[Feature Request]: window analytics compatibility roadmap with validated ClickHouse/DolphinDB gaps"
+  }
+]

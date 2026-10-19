@@ -1,0 +1,1097 @@
+[
+  {
+    "label": "create_database",
+    "sql": "create database gis_check_20261012",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.8202721870038658
+  },
+  {
+    "label": "use_database",
+    "sql": "use gis_check_20261012",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.029798611998558044
+  },
+  {
+    "label": "geometry_ddl",
+    "sql": "create table t_geometry(id int primary key,g geometry)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.3600415830151178
+  },
+  {
+    "label": "geometry_insert",
+    "sql": "insert into t_geometry values(1,st_geomfromtext('POINT(1 2)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.3348478500265628
+  },
+  {
+    "label": "geometry_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geometry",
+    "rows": [
+      [
+        "POINT",
+        0,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.006339564977679402
+  },
+  {
+    "label": "geometry_show",
+    "sql": "show create table t_geometry",
+    "rows": [
+      [
+        "t_geometry",
+        "CREATE TABLE `t_geometry` (\n  `id` int NOT NULL,\n  `g` geometry DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.005756834987550974
+  },
+  {
+    "label": "point_ddl",
+    "sql": "create table t_point(id int primary key,g point)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.10504278400912881
+  },
+  {
+    "label": "point_insert",
+    "sql": "insert into t_point values(1,st_geomfromtext('POINT(1 2)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.17398589698132128
+  },
+  {
+    "label": "point_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_point",
+    "rows": [
+      [
+        "POINT",
+        0,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.02708364900900051
+  },
+  {
+    "label": "point_show",
+    "sql": "show create table t_point",
+    "rows": [
+      [
+        "t_point",
+        "CREATE TABLE `t_point` (\n  `id` int NOT NULL,\n  `g` point DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.02122896001674235
+  },
+  {
+    "label": "linestring_ddl",
+    "sql": "create table t_linestring(id int primary key,g linestring)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.06393863999983296
+  },
+  {
+    "label": "linestring_insert",
+    "sql": "insert into t_linestring values(1,st_geomfromtext('LINESTRING(0 0,3 4)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.18880258698482066
+  },
+  {
+    "label": "linestring_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_linestring",
+    "rows": [
+      [
+        "LINESTRING",
+        0,
+        "LINESTRING(0 0,3 4)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.010333018959499896
+  },
+  {
+    "label": "linestring_show",
+    "sql": "show create table t_linestring",
+    "rows": [
+      [
+        "t_linestring",
+        "CREATE TABLE `t_linestring` (\n  `id` int NOT NULL,\n  `g` linestring DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.02636349102249369
+  },
+  {
+    "label": "polygon_ddl",
+    "sql": "create table t_polygon(id int primary key,g polygon)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.1775872219586745
+  },
+  {
+    "label": "polygon_insert",
+    "sql": "insert into t_polygon values(1,st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.24860439100302756
+  },
+  {
+    "label": "polygon_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_polygon",
+    "rows": [
+      [
+        "POLYGON",
+        0,
+        "POLYGON((0 0,2 0,2 2,0 2,0 0))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01562081096926704
+  },
+  {
+    "label": "polygon_show",
+    "sql": "show create table t_polygon",
+    "rows": [
+      [
+        "t_polygon",
+        "CREATE TABLE `t_polygon` (\n  `id` int NOT NULL,\n  `g` polygon DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.0285908619989641
+  },
+  {
+    "label": "multipoint_ddl",
+    "sql": "create table t_multipoint(id int primary key,g multipoint)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.2125679329619743
+  },
+  {
+    "label": "multipoint_insert",
+    "sql": "insert into t_multipoint values(1,st_geomfromtext('MULTIPOINT((1 2),(3 4))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.3441790509968996
+  },
+  {
+    "label": "multipoint_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multipoint",
+    "rows": [
+      [
+        "MULTIPOINT",
+        0,
+        "MULTIPOINT(1 2,3 4)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.022997791995294392
+  },
+  {
+    "label": "multipoint_show",
+    "sql": "show create table t_multipoint",
+    "rows": [
+      [
+        "t_multipoint",
+        "CREATE TABLE `t_multipoint` (\n  `id` int NOT NULL,\n  `g` multipoint DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.057582457026001066
+  },
+  {
+    "label": "multilinestring_ddl",
+    "sql": "create table t_multilinestring(id int primary key,g multilinestring)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.15182749094674364
+  },
+  {
+    "label": "multilinestring_insert",
+    "sql": "insert into t_multilinestring values(1,st_geomfromtext('MULTILINESTRING((0 0,3 4),(4 4,5 5))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.46443702903343365
+  },
+  {
+    "label": "multilinestring_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multilinestring",
+    "rows": [
+      [
+        "MULTILINESTRING",
+        0,
+        "MULTILINESTRING((0 0,3 4),(4 4,5 5))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01562436600215733
+  },
+  {
+    "label": "multilinestring_show",
+    "sql": "show create table t_multilinestring",
+    "rows": [
+      [
+        "t_multilinestring",
+        "CREATE TABLE `t_multilinestring` (\n  `id` int NOT NULL,\n  `g` multilinestring DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.027640860993415117
+  },
+  {
+    "label": "multipolygon_ddl",
+    "sql": "create table t_multipolygon(id int primary key,g multipolygon)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.18742454500170425
+  },
+  {
+    "label": "multipolygon_insert",
+    "sql": "insert into t_multipolygon values(1,st_geomfromtext('MULTIPOLYGON(((0 0,2 0,2 2,0 2,0 0)))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.29685604298720136
+  },
+  {
+    "label": "multipolygon_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multipolygon",
+    "rows": [
+      [
+        "MULTIPOLYGON",
+        0,
+        "MULTIPOLYGON(((0 0,2 0,2 2,0 2,0 0)))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01467206800589338
+  },
+  {
+    "label": "multipolygon_show",
+    "sql": "show create table t_multipolygon",
+    "rows": [
+      [
+        "t_multipolygon",
+        "CREATE TABLE `t_multipolygon` (\n  `id` int NOT NULL,\n  `g` multipolygon DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.04684476996771991
+  },
+  {
+    "label": "geometrycollection_ddl",
+    "sql": "create table t_geometrycollection(id int primary key,g geometrycollection)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.20586005999939516
+  },
+  {
+    "label": "geometrycollection_insert",
+    "sql": "insert into t_geometrycollection values(1,st_geomfromtext('GEOMETRYCOLLECTION(POINT(1 2),LINESTRING(0 0,3 4))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.2918367490055971
+  },
+  {
+    "label": "geometrycollection_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geometrycollection",
+    "rows": [
+      [
+        "GEOMETRYCOLLECTION",
+        0,
+        "GEOMETRYCOLLECTION(POINT(1 2),LINESTRING(0 0,3 4))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.1575647580320947
+  },
+  {
+    "label": "geometrycollection_show",
+    "sql": "show create table t_geometrycollection",
+    "rows": [
+      [
+        "t_geometrycollection",
+        "CREATE TABLE `t_geometrycollection` (\n  `id` int NOT NULL,\n  `g` geometrycollection DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.04906387103255838
+  },
+  {
+    "label": "geography_ddl",
+    "sql": "create table t_geography(id int primary key,g geography)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.16660443402361125
+  },
+  {
+    "label": "geography_insert",
+    "sql": "insert into t_geography values(1,st_geomfromtext('POINT(1 2)',4326))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.45006797299720347
+  },
+  {
+    "label": "geography_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geography",
+    "rows": [
+      [
+        "POINT",
+        4326,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.009181713045109063
+  },
+  {
+    "label": "geography_show",
+    "sql": "show create table t_geography",
+    "rows": [
+      [
+        "t_geography",
+        "CREATE TABLE `t_geography` (\n  `id` int NOT NULL,\n  `g` geometry srid 4326 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.049412666994612664
+  },
+  {
+    "label": "geometry32_ddl",
+    "sql": "create table t_geometry32(id int primary key,g geometry32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.19236335600726306
+  },
+  {
+    "label": "geometry32_insert",
+    "sql": "insert into t_geometry32 values(1,st_geomfromtext('POINT(1 2)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.4039045000099577
+  },
+  {
+    "label": "geometry32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geometry32",
+    "rows": [
+      [
+        "POINT",
+        0,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.058824473002459854
+  },
+  {
+    "label": "geometry32_show",
+    "sql": "show create table t_geometry32",
+    "rows": [
+      [
+        "t_geometry32",
+        "CREATE TABLE `t_geometry32` (\n  `id` int NOT NULL,\n  `g` geometry32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.02855687396368012
+  },
+  {
+    "label": "point32_ddl",
+    "sql": "create table t_point32(id int primary key,g point32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.26040594500955194
+  },
+  {
+    "label": "point32_insert",
+    "sql": "insert into t_point32 values(1,st_geomfromtext('POINT(1 2)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.2798100750078447
+  },
+  {
+    "label": "point32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_point32",
+    "rows": [
+      [
+        "POINT",
+        0,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01994675101013854
+  },
+  {
+    "label": "point32_show",
+    "sql": "show create table t_point32",
+    "rows": [
+      [
+        "t_point32",
+        "CREATE TABLE `t_point32` (\n  `id` int NOT NULL,\n  `g` point32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.02061452204361558
+  },
+  {
+    "label": "linestring32_ddl",
+    "sql": "create table t_linestring32(id int primary key,g linestring32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.19802721997257322
+  },
+  {
+    "label": "linestring32_insert",
+    "sql": "insert into t_linestring32 values(1,st_geomfromtext('LINESTRING(0 0,3 4)',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.6044069420313463
+  },
+  {
+    "label": "linestring32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_linestring32",
+    "rows": [
+      [
+        "LINESTRING",
+        0,
+        "LINESTRING(0 0,3 4)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.03410465898923576
+  },
+  {
+    "label": "linestring32_show",
+    "sql": "show create table t_linestring32",
+    "rows": [
+      [
+        "t_linestring32",
+        "CREATE TABLE `t_linestring32` (\n  `id` int NOT NULL,\n  `g` linestring32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.04480704804882407
+  },
+  {
+    "label": "polygon32_ddl",
+    "sql": "create table t_polygon32(id int primary key,g polygon32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.21793295099632815
+  },
+  {
+    "label": "polygon32_insert",
+    "sql": "insert into t_polygon32 values(1,st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.4212889859918505
+  },
+  {
+    "label": "polygon32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_polygon32",
+    "rows": [
+      [
+        "POLYGON",
+        0,
+        "POLYGON((0 0,2 0,2 2,0 2,0 0))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.034861718013416976
+  },
+  {
+    "label": "polygon32_show",
+    "sql": "show create table t_polygon32",
+    "rows": [
+      [
+        "t_polygon32",
+        "CREATE TABLE `t_polygon32` (\n  `id` int NOT NULL,\n  `g` polygon32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.062059107003733516
+  },
+  {
+    "label": "multipoint32_ddl",
+    "sql": "create table t_multipoint32(id int primary key,g multipoint32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.13993169204331934
+  },
+  {
+    "label": "multipoint32_insert",
+    "sql": "insert into t_multipoint32 values(1,st_geomfromtext('MULTIPOINT((1 2),(3 4))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.28473775199381635
+  },
+  {
+    "label": "multipoint32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multipoint32",
+    "rows": [
+      [
+        "MULTIPOINT",
+        0,
+        "MULTIPOINT(1 2,3 4)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.009224596025887877
+  },
+  {
+    "label": "multipoint32_show",
+    "sql": "show create table t_multipoint32",
+    "rows": [
+      [
+        "t_multipoint32",
+        "CREATE TABLE `t_multipoint32` (\n  `id` int NOT NULL,\n  `g` multipoint32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.023797420028131455
+  },
+  {
+    "label": "multilinestring32_ddl",
+    "sql": "create table t_multilinestring32(id int primary key,g multilinestring32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.19378717796644196
+  },
+  {
+    "label": "multilinestring32_insert",
+    "sql": "insert into t_multilinestring32 values(1,st_geomfromtext('MULTILINESTRING((0 0,3 4),(4 4,5 5))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.27143105800496414
+  },
+  {
+    "label": "multilinestring32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multilinestring32",
+    "rows": [
+      [
+        "MULTILINESTRING",
+        0,
+        "MULTILINESTRING((0 0,3 4),(4 4,5 5))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.034178521018475294
+  },
+  {
+    "label": "multilinestring32_show",
+    "sql": "show create table t_multilinestring32",
+    "rows": [
+      [
+        "t_multilinestring32",
+        "CREATE TABLE `t_multilinestring32` (\n  `id` int NOT NULL,\n  `g` multilinestring32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.00526652397820726
+  },
+  {
+    "label": "multipolygon32_ddl",
+    "sql": "create table t_multipolygon32(id int primary key,g multipolygon32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.0897003979771398
+  },
+  {
+    "label": "multipolygon32_insert",
+    "sql": "insert into t_multipolygon32 values(1,st_geomfromtext('MULTIPOLYGON(((0 0,2 0,2 2,0 2,0 0)))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.13800594897475094
+  },
+  {
+    "label": "multipolygon32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_multipolygon32",
+    "rows": [
+      [
+        "MULTIPOLYGON",
+        0,
+        "MULTIPOLYGON(((0 0,2 0,2 2,0 2,0 0)))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.027127098001074046
+  },
+  {
+    "label": "multipolygon32_show",
+    "sql": "show create table t_multipolygon32",
+    "rows": [
+      [
+        "t_multipolygon32",
+        "CREATE TABLE `t_multipolygon32` (\n  `id` int NOT NULL,\n  `g` multipolygon32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01838873402448371
+  },
+  {
+    "label": "geometrycollection32_ddl",
+    "sql": "create table t_geometrycollection32(id int primary key,g geometrycollection32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.35498618899146095
+  },
+  {
+    "label": "geometrycollection32_insert",
+    "sql": "insert into t_geometrycollection32 values(1,st_geomfromtext('GEOMETRYCOLLECTION(POINT(1 2),LINESTRING(0 0,3 4))',0))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.5014448660076596
+  },
+  {
+    "label": "geometrycollection32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geometrycollection32",
+    "rows": [
+      [
+        "GEOMETRYCOLLECTION",
+        0,
+        "GEOMETRYCOLLECTION(POINT(1 2),LINESTRING(0 0,3 4))"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01309909496922046
+  },
+  {
+    "label": "geometrycollection32_show",
+    "sql": "show create table t_geometrycollection32",
+    "rows": [
+      [
+        "t_geometrycollection32",
+        "CREATE TABLE `t_geometrycollection32` (\n  `id` int NOT NULL,\n  `g` geometrycollection32 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01810193801065907
+  },
+  {
+    "label": "geography32_ddl",
+    "sql": "create table t_geography32(id int primary key,g geography32)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.1532630170113407
+  },
+  {
+    "label": "geography32_insert",
+    "sql": "insert into t_geography32 values(1,st_geomfromtext('POINT(1 2)',4326))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.21857565600657836
+  },
+  {
+    "label": "geography32_read",
+    "sql": "select st_geometrytype(g),st_srid(g),st_astext(g) from t_geography32",
+    "rows": [
+      [
+        "POINT",
+        4326,
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.020653907035011798
+  },
+  {
+    "label": "geography32_show",
+    "sql": "show create table t_geography32",
+    "rows": [
+      [
+        "t_geography32",
+        "CREATE TABLE `t_geography32` (\n  `id` int NOT NULL,\n  `g` geometry32 srid 4326 DEFAULT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.009913065994624048
+  },
+  {
+    "label": "argument_form_0_ddl",
+    "sql": "create table argument_form_0(g geometry('point',4326))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1064,
+      "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 40 near \"(\\'point\\',4326))\";')"
+    },
+    "status": "error",
+    "seconds": 0.011025806015823036
+  },
+  {
+    "label": "argument_form_0_insert",
+    "sql": "insert into argument_form_0 values(st_geomfromtext('POINT(1 2)',4326))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.argument_form_0')"
+    },
+    "status": "error",
+    "seconds": 0.011124652985017747
+  },
+  {
+    "label": "argument_form_0_read",
+    "sql": "select st_srid(g),st_x(g),st_y(g) from argument_form_0",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"argument_form_0\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.010142086015548557
+  },
+  {
+    "label": "argument_form_1_ddl",
+    "sql": "create table argument_form_1(g geometry(type='point',srid=4326))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1064,
+      "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 40 near \"(type=\\'point\\',srid=4326))\";')"
+    },
+    "status": "error",
+    "seconds": 0.007981061993632466
+  },
+  {
+    "label": "argument_form_1_insert",
+    "sql": "insert into argument_form_1 values(st_geomfromtext('POINT(1 2)',4326))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.argument_form_1')"
+    },
+    "status": "error",
+    "seconds": 0.009785882022697479
+  },
+  {
+    "label": "argument_form_1_read",
+    "sql": "select st_srid(g),st_x(g),st_y(g) from argument_form_1",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"argument_form_1\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.01755639200564474
+  },
+  {
+    "label": "argument_form_2_ddl",
+    "sql": "create table argument_form_2(g point srid 4326)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.10841765598161146
+  },
+  {
+    "label": "argument_form_2_insert",
+    "sql": "insert into argument_form_2 values(st_geomfromtext('POINT(1 2)',4326))",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.19298228895058855
+  },
+  {
+    "label": "argument_form_2_read",
+    "sql": "select st_srid(g),st_x(g),st_y(g) from argument_form_2",
+    "rows": [
+      [
+        4326,
+        1.0,
+        2.0
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.07273144304053858
+  },
+  {
+    "label": "stored_wkb_widths",
+    "sql": "select length(cast(a.g as varbinary)),length(cast(b.g as varbinary)),length(st_asbinary(b.g)) from t_point a,t_point32 b",
+    "rows": [
+      [
+        21,
+        13,
+        21
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.14978545502526686
+  },
+  {
+    "label": "cartesian_distance",
+    "sql": "select st_distance(st_point(0,0),st_point(3,4))",
+    "rows": [
+      [
+        5.0
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.007092671003192663
+  },
+  {
+    "label": "cartesian_area_length",
+    "sql": "select st_area(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))')),st_length(st_geomfromtext('LINESTRING(0 0,3 4)'))",
+    "rows": [
+      [
+        4.0,
+        5.0
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.06376669002929702
+  },
+  {
+    "label": "geodetic_distance_meters",
+    "sql": "select st_distance(st_geomfromtext('POINT(0 0)',4326),st_geomfromtext('POINT(1 0)',4326))",
+    "rows": [
+      [
+        111195.0802335329
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.009866798995062709
+  },
+  {
+    "label": "contains",
+    "sql": "select st_contains(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))'),st_point(1,1))",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.020816214033402503
+  },
+  {
+    "label": "geojson_io",
+    "sql": "select st_astext(st_geomfromgeojson('{\"type\":\"Point\",\"coordinates\":[1,2]}')),st_asgeojson(st_point(1,2))",
+    "rows": [
+      [
+        "POINT(1 2)",
+        "{\"type\":\"Point\",\"coordinates\":[1,2]}"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.13127328897826374
+  },
+  {
+    "label": "wkb_roundtrip",
+    "sql": "select st_astext(st_geomfromwkb(st_asbinary(g))) from t_point",
+    "rows": [
+      [
+        "POINT(1 2)"
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.006888800009619445
+  },
+  {
+    "label": "subtype_rejection",
+    "sql": "insert into t_point values(2,st_geomfromtext('LINESTRING(0 0,1 1)'))",
+    "error": {
+      "type": "OperationalError",
+      "code": 20301,
+      "message": "(20301, 'invalid input: cannot store LINESTRING in POINT column')"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.03470703400671482
+  },
+  {
+    "label": "subtype_rejection_atomicity",
+    "sql": "select count(*) from t_point",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.03770490305032581
+  },
+  {
+    "label": "srid_mismatch",
+    "sql": "insert into argument_form_2 values(st_geomfromtext('POINT(1 2)',0))",
+    "error": {
+      "type": "OperationalError",
+      "code": 20301,
+      "message": "(20301, 'invalid input: The SRID of the geometry does not match the SRID of the column. The SRID of the geometry is 0, but the SRID of the column is 4326.')"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.0969041739590466
+  },
+  {
+    "label": "unsupported_srid_ddl",
+    "sql": "create table other_srid(g geometry srid 3857)",
+    "rows": [],
+    "status": "pass",
+    "seconds": 0.0952465949812904
+  },
+  {
+    "label": "unsupported_srid_measure",
+    "sql": "select st_distance(st_geomfromtext('POINT(0 0)',3857),st_geomfromtext('POINT(1 0)',3857))",
+    "error": {
+      "type": "OperationalError",
+      "code": 20301,
+      "message": "(20301, 'invalid input: unsupported SRID 3857 for spatial computation; only 0 and 4326 are supported')"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.02936964697437361
+  },
+  {
+    "label": "z_coordinates",
+    "sql": "select st_geomfromtext('POINT Z (1 2 3)')",
+    "error": {
+      "type": "OperationalError",
+      "code": 20301,
+      "message": "(20301, 'invalid input: invalid geometry type')"
+    },
+    "status": "error",
+    "seconds": 0.011596312979236245
+  },
+  {
+    "label": "projection_transform",
+    "sql": "select st_transform(g,3857) from t_point",
+    "error": {
+      "type": "OperationalError",
+      "code": 20105,
+      "message": "(20105, \"not supported: function or operator 'st_transform'\")"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.07178197399480268
+  },
+  {
+    "label": "geometry_primary_key",
+    "sql": "create table bad_geo_pk(g geometry primary key)",
+    "error": {
+      "type": "OperationalError",
+      "code": 20105,
+      "message": "(20105, \"not supported: GEOMETRY column 'g' cannot be in primary key\")"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.007496581005398184
+  },
+  {
+    "label": "geometry_unique_index",
+    "sql": "create unique index bad_geo_unique on t_point(g)",
+    "error": {
+      "type": "OperationalError",
+      "code": 20105,
+      "message": "(20105, \"not supported: GEOMETRY column 'g' cannot be in unique index\")"
+    },
+    "status": "pass_expected_rejection",
+    "seconds": 0.010576923028565943
+  },
+  {
+    "label": "spatial_ddl",
+    "sql": "create table indexed_pts(id int primary key,g point not null,spatial index geo_idx(g))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1064,
+      "message": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 74 near \" index geo_idx(g))\";')"
+    },
+    "status": "error",
+    "seconds": 0.03971913497662172
+  },
+  {
+    "label": "spatial_insert",
+    "sql": "insert into indexed_pts values(1,st_point(1,1)),(2,st_point(8,8)),(3,st_point(0.5,0.5))",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+    },
+    "status": "error",
+    "seconds": 0.04038048500660807
+  },
+  {
+    "label": "spatial_show",
+    "sql": "show create table indexed_pts",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+    },
+    "status": "error",
+    "seconds": 0.026097473979461938
+  },
+  {
+    "label": "spatial_query",
+    "sql": "select id from indexed_pts where st_contains(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))'),g) order by id",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.009870144946034998
+  },
+  {
+    "label": "spatial_explain",
+    "sql": "explain select id from indexed_pts where st_contains(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))'),g) order by id",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.01855417201295495
+  },
+  {
+    "label": "spatial_update",
+    "sql": "update indexed_pts set g=st_point(1.5,1.5) where id=2",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+    },
+    "status": "error",
+    "seconds": 0.018515712989028543
+  },
+  {
+    "label": "spatial_after_update",
+    "sql": "select id from indexed_pts where st_contains(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))'),g) order by id",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.13251330703496933
+  },
+  {
+    "label": "spatial_delete",
+    "sql": "delete from indexed_pts where id=1",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'no such table gis_check_20261012.indexed_pts')"
+    },
+    "status": "error",
+    "seconds": 0.005947050987742841
+  },
+  {
+    "label": "spatial_after_delete",
+    "sql": "select id from indexed_pts where st_contains(st_geomfromtext('POLYGON((0 0,2 0,2 2,0 2,0 0))'),g) order by id",
+    "error": {
+      "type": "ProgrammingError",
+      "code": 1146,
+      "message": "(1146, 'SQL parser error: table \"indexed_pts\" does not exist')"
+    },
+    "status": "error",
+    "seconds": 0.02958017901983112
+  },
+  {
+    "label": "health",
+    "sql": "select 1",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "status": "pass",
+    "seconds": 0.01645760500105098
+  }
+]

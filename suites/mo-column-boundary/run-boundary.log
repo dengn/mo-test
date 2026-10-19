@@ -1,0 +1,19 @@
+START 65532_create 851952
+END 65532_create success 22.598 
+START 65532_metadata_count 121
+END 65532_metadata_count success 0.509 
+START 65532_insert_all 382116
+END 65532_insert_all success 4.899 
+START 65532_select_edges 49
+END 65532_select_edges error 0.138 {'type': 'AssertionError', 'code': (((1, 32766, None),), ((1, 32766, 65532),)), 'message': '(((1, 32766, None),), ((1, 32766, 65532),))'}
+START 65532_select_star 24
+END 65532_select_star error 56.745 {'type': 'AssertionError', 'code': 'wide row mismatch', 'message': 'wide row mismatch'}
+START 65532_update_tail 54
+END 65532_update_tail success 3.737 
+START 65532_verify_update 48
+END 65532_verify_update error 0.125 {'type': 'AssertionError', 'code': (((None,),), ((-65532,),)), 'message': '(((None,),), ((-65532,),))'}
+START 65532_restore_tail 53
+END 65532_restore_tail success 3.555 
+START 65533_create 851965
+END 65533_create error 19.786 {'type': 'OperationalError', 'code': 2013, 'message': "(2013, 'Lost connection to MySQL server during query')"}
+STOP: service health failed; no larger probe submitted

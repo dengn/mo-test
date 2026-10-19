@@ -1,0 +1,37 @@
+{
+  "id": "SQL-FULLTEXT-INSERT-ID",
+  "title": "FULLTEXT index corrupts session insert ID",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE id_probe(id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,label VARCHAR(40))"
+    },
+    {
+      "phase": "setup",
+      "sql": "ALTER TABLE id_probe ADD FULLTEXT label_ft(label)"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO id_probe(label) VALUES('small')"
+    },
+    {
+      "phase": "trigger",
+      "sql": "SELECT id,LAST_INSERT_ID() FROM id_probe",
+      "expected_rows": [
+        [
+          1,
+          1
+        ]
+      ],
+      "known_bad_rows": [
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ]
+}

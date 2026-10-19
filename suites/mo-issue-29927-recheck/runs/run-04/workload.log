@@ -1,0 +1,30 @@
+{"id": "R001", "sql": "alter table race_h alter reindex ann hnsw force_sync", "error": null, "seconds": 0.9349391260184348}
+{"id": "R002", "sql": "alter table race_i alter reindex ann ivfflat lists=16", "error": null, "seconds": 0.8993812080007046}
+{"id": "R003", "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync", "error": null, "seconds": 0.4047630050336011}
+{"id": "R004", "sql": "create index ridx_3 on race_h(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 1.0285304859862663}
+{"id": "R005", "sql": "create index ridx_4 on race_ft(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 0.46467102505266666}
+{"id": "R006", "sql": "alter table race_h alter reindex ann hnsw force_sync", "error": null, "seconds": 1.3710274980403483}
+{"id": "R007", "sql": "alter table race_i alter reindex ann ivfflat lists=16", "error": null, "seconds": 0.4045525199617259}
+{"id": "R008", "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync", "error": null, "seconds": 0.19789212400792167}
+{"id": "R009", "sql": "create index ridx_8 on race_h(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 2.2775131359812804}
+{"id": "R010", "sql": "create index ridx_9 on race_ft(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 0.7551575519610196}
+{"id": "R011", "sql": "alter table race_h alter reindex ann hnsw force_sync", "error": null, "seconds": 2.4654366970062256}
+{"id": "R012", "sql": "alter table race_i alter reindex ann ivfflat lists=16", "error": null, "seconds": 1.1345873480313458}
+{"id": "R013", "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync", "error": null, "seconds": 0.29319967597257346}
+{"id": "R014", "sql": "create index ridx_13 on race_h(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 3.197349316033069}
+{"id": "R015", "sql": "create index ridx_14 on race_ft(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 0.7757645579986274}
+{"id": "R016", "sql": "alter table race_h alter reindex ann hnsw force_sync", "error": null, "seconds": 2.614205510006286}
+{"id": "R017", "sql": "alter table race_i alter reindex ann ivfflat lists=16", "error": null, "seconds": 1.3454575579962693}
+{"id": "R018", "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync", "error": null, "seconds": 0.7317696789978072}
+{"id": "R019", "sql": "create index ridx_18 on race_h(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 3.395625507051591}
+{"id": "R020", "sql": "create index ridx_19 on race_ft(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 0.6958838259452023}
+{"id": "R021", "sql": "alter table race_h alter reindex ann hnsw force_sync", "error": null, "seconds": 2.5504202939919196}
+{"id": "R022", "sql": "alter table race_i alter reindex ann ivfflat lists=16", "error": null, "seconds": 1.2509333639754914}
+{"id": "R023", "sql": "alter table race_ft2 alter reindex txt fulltext2 merge force_sync", "error": null, "seconds": 0.18701562099158764}
+{"id": "R024", "sql": "create index ridx_23 on race_h(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 2.772030125022866}
+{"id": "R025", "sql": "create index ridx_24 on race_ft(n)", "error": "(20706, 'lock options conflict, wait policy is fast fail')", "seconds": 0.8684359239996411}
+{"concurrency": 32, "acknowledged_writes": 182, "missing": [], "corrupt": [], "client_errors": {}, "source_counts": {"race_h": [[527]], "race_i": [[535]], "race_ft": [[555]], "race_ft2": [[565]]}, "fulltext_counts": {"race_ft": [[555]], "race_ft2": [[523]]}, "ft2_visibility_note": "Post-index DML is asynchronous; a stale FT2 query snapshot is a freshness observation, not durable data loss."}
+POST_LOAD show create table race_h (('race_h', "CREATE TABLE `race_h` (\n  `id` bigint NOT NULL,\n  `n` bigint DEFAULT NULL,\n  `v` vecf32(64) DEFAULT NULL,\n  PRIMARY KEY (`id`),\n  KEY `ann` USING hnsw (`v`) op_type 'vector_l2_ops' ,\n  KEY `ridx_3` (`n`),\n  KEY `ridx_8` (`n`),\n  KEY `ridx_13` (`n`),\n  KEY `ridx_18` (`n`),\n  KEY `ridx_23` (`n`)\n)"),)
+POST_LOAD insert into race_h values(%s,%s,%s) []
+POST_LOAD alter table race_h alter reindex ann hnsw force_sync []
+RUN_DATABASE index_race_repro_1791857607

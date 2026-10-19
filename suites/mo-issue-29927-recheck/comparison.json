@@ -1,0 +1,59 @@
+{
+  "issue": 29927,
+  "checked_at": "2026-10-13 Asia/Shanghai",
+  "main_commit": "3e50e1b32d8da61bbbf70c89989fb08b671809de",
+  "main_runtime_commit": "3e50e1b3",
+  "main_runs": 5,
+  "main_passed_runs": 5,
+  "main_acknowledged_background_writes": 1081,
+  "main_post_load_and_post_restart_checks": 454,
+  "main_ddl_operation_groups": 125,
+  "main_fast_fail_DDL_conflicts": 47,
+  "main_background_client_errors": {},
+  "old_commit": "2726fb419b3afa1db2686ae1b2aaca563d1ae214",
+  "old_runs": 3,
+  "old_persistent_failure_runs": 1,
+  "old_acknowledged_background_writes": 608,
+  "transaction_mode_services": [
+    {
+      "service": "old-control",
+      "runtime_commit": "2726fb4",
+      "modes": [
+        "Pessimistic"
+      ],
+      "isolations": [
+        "RC"
+      ]
+    },
+    {
+      "service": "main",
+      "runtime_commit": "3e50e1b3",
+      "modes": [
+        "Pessimistic"
+      ],
+      "isolations": [
+        "RC"
+      ]
+    }
+  ],
+  "fixing_PR_causally_identified": false,
+  "fix_candidates": [
+    29867,
+    29861,
+    29837,
+    29472
+  ],
+  "verdict": "The original persistent corruption reproduces on the reported old binary; it did not reproduce in five latest-main runs, including post-load and post-restart usability/ledger checks.",
+  "panic_log_matches": {
+    "server-initial.log": 0,
+    "server-restarted.log": 0,
+    "server-mode-check.log": 0,
+    "old-control/server-initial.log": 0,
+    "old-control/server-restarted.log": 0,
+    "old-control/server-mode-check.log": 0
+  },
+  "latest_main_final_observation": {
+    "sha": "3e50e1b32d8da61bbbf70c89989fb08b671809de",
+    "title": "test: repair CI TERM handshakes, port candidates, and TopN coverage (#29978)"
+  }
+}

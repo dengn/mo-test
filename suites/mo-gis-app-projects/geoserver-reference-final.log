@@ -1,0 +1,12 @@
+GeoServer pg native datastore_discovery pass
+GeoServer pg native publish_points_routes_zones pass
+GeoServer pg native WFS_features_bbox_attributes pass
+/workspace/mo-gis-app-projects/geoserver_test.py:72: DeprecationWarning: Image.Image.getdata is deprecated and will be removed in Pillow 14 (2027-10-15). Use get_flattened_data instead.
+  occupied=sum(px[3]>0 for px in im.getdata());assert occupied>100,occupied
+GeoServer pg native WMS_png_map_render pass
+GeoServer pg native WFS_T_insert_update_delete_persistence pass
+GeoServer mysql native datastore_discovery pass
+GeoServer mysql native publish_points_routes_zones pass
+GeoServer mysql native WFS_features_bbox_attributes error
+GeoServer mysql native WMS_png_map_render error
+GeoServer mysql native WFS_T_insert_update_delete_persistence error

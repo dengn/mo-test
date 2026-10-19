@@ -1,0 +1,781 @@
+[
+  {
+    "sql": "select version(),git_version(),now(),@@time_zone",
+    "status": "ok",
+    "rows": [
+      [
+        "8.0.30-MatrixOne-v1.3.0",
+        "fa7cc1d9",
+        "2026-10-12 23:45:04",
+        "SYSTEM"
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.001
+  },
+  {
+    "sql": "create database if not exists mo_ttl_capability_20261013",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 1,
+    "seconds": 0.012
+  },
+  {
+    "sql": "use mo_ttl_capability_20261013",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.002
+  },
+  {
+    "sql": "set time_zone='+00:00'",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.001
+  },
+  {
+    "sql": "drop task if exists ttl_cleanup_probe",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.003
+  },
+  {
+    "sql": "drop table if exists native_ttl",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.003
+  },
+  {
+    "sql": "drop table if exists properties_ttl",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.004
+  },
+  {
+    "sql": "drop table if exists events",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.005
+  },
+  {
+    "sql": "create table native_ttl(id int,expires_at datetime) TTL=expires_at",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 55 near \" TTL=expires_at\";')",
+    "error_code": 1064,
+    "seconds": 0.003
+  },
+  {
+    "sql": "create table native_ttl(id int,expires_at datetime) TTL = expires_at + INTERVAL 1 DAY",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 55 near \" TTL = expires_at + INTERVAL 1 DAY\";')",
+    "error_code": 1064,
+    "seconds": 0.0
+  },
+  {
+    "sql": "create table native_ttl(id int,expires_at datetime) TTL = 'expires_at + INTERVAL 1 DAY'",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 55 near \" TTL = \\'expires_at + INTERVAL 1 DAY\\'\";')",
+    "error_code": 1064,
+    "seconds": 0.001
+  },
+  {
+    "sql": "create table native_ttl(id int,expires_at datetime) TTL_ENABLE='ON'",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 62 near \" TTL_ENABLE=\\'ON\\'\";')",
+    "error_code": 1064,
+    "seconds": 0.0
+  },
+  {
+    "sql": "create table native_ttl(id int,expires_at datetime) WITH (ttl='1d')",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 58 near \" (ttl=\\'1d\\')\";')",
+    "error_code": 1064,
+    "seconds": 0.0
+  },
+  {
+    "sql": "create event ttl_mysql_event on schedule every 1 second do select 1",
+    "status": "error",
+    "error": "(1064, 'SQL parser error: You have an error in your SQL syntax; check the manual that corresponds to your MatrixOne server version for the right syntax to use. syntax error at line 1 column 12 near \" event ttl_mysql_event on schedule every 1 second do select 1\";')",
+    "error_code": 1064,
+    "seconds": 0.0
+  },
+  {
+    "sql": "create table properties_ttl(id int,expires_at datetime) properties('ttl'='expires_at','ttl_enable'='true')",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.022
+  },
+  {
+    "sql": "insert into properties_ttl values (1,date_sub(now(),interval 1 day))",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 1,
+    "seconds": 0.005
+  },
+  {
+    "sql": "show create table properties_ttl",
+    "status": "ok",
+    "rows": [
+      [
+        "properties_ttl",
+        "CREATE TABLE `properties_ttl` (\n  `id` int DEFAULT NULL,\n  `expires_at` datetime DEFAULT NULL\n) PROPERTIES('ttl' = 'expires_at', 'ttl_enable' = 'true')"
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.003
+  },
+  {
+    "sql": "create table events(id int primary key,expires_at datetime null,kind varchar(32),index idx_expiry(expires_at))",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.015
+  },
+  {
+    "sql": "insert into events values (1,date_sub(now(),interval 1 day),'already-expired'),(2,date_add(now(),interval 1 day),'future'),(3,null,'no-expiration'),(4,date_add(now(),interval 12 second),'expires-soon')",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 4,
+    "seconds": 0.01
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "create task ttl_cleanup_probe schedule '*/2 * * * * *' timezone 'UTC' as begin delete from events where expires_at <= now(); end",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.023
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.012
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.009
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.007
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.003
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.007
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.006
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.003
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "affected_rows": 4,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "affected_rows": 2,
+    "seconds": 0.002
+  },
+  {
+    "sql": "show task runs for ttl_cleanup_probe limit 8",
+    "status": "ok",
+    "rows": [
+      [
+        1,
+        "ttl_cleanup_probe",
+        "SCHEDULED",
+        "SUCCESS",
+        "2026-10-12 23:45:28 +0000 UTC",
+        "2026-10-12 23:45:28 +0000 UTC",
+        0.028919241,
+        1,
+        2,
+        ""
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.005
+  },
+  {
+    "sql": "alter task ttl_cleanup_probe suspend",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.021
+  },
+  {
+    "sql": "insert into events values (5,date_sub(now(),interval 1 day),'suspended')",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 1,
+    "seconds": 0.007
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        5
+      ]
+    ],
+    "affected_rows": 3,
+    "seconds": 0.002
+  },
+  {
+    "sql": "execute task ttl_cleanup_probe",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.044
+  },
+  {
+    "sql": "select id from events order by id",
+    "status": "ok",
+    "rows": [
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "affected_rows": 2,
+    "seconds": 0.001
+  },
+  {
+    "sql": "select id from properties_ttl order by id",
+    "status": "ok",
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.001
+  },
+  {
+    "sql": "drop task ttl_cleanup_probe",
+    "status": "ok",
+    "rows": [],
+    "affected_rows": 0,
+    "seconds": 0.018
+  },
+  {
+    "sql": "select count(*) from events",
+    "status": "ok",
+    "rows": [
+      [
+        2
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.002
+  },
+  {
+    "sql": "select git_version(),1",
+    "status": "ok",
+    "rows": [
+      [
+        "fa7cc1d9",
+        1
+      ]
+    ],
+    "affected_rows": 1,
+    "seconds": 0.001
+  }
+]

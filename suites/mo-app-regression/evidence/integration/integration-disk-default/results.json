@@ -1,0 +1,22 @@
+{
+  "profile": "controls",
+  "policy": "strict",
+  "started_at_utc": "2026-10-12T22:45:45Z",
+  "jobs": [],
+  "min_free_mib": 2048,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 2,
+  "passed": false,
+  "target": {
+    "server_version": "8.0.30-MatrixOne-v4.2.5",
+    "runtime_git_version": "1a44f3d",
+    "expected_commit": null,
+    "health": true
+  },
+  "free_bytes_at_admission": 338653184,
+  "blocked_error_type": "GateBlocked",
+  "blocked_reason": "Insufficient disk headroom",
+  "finished_at_utc": "2026-10-12T22:45:45Z"
+}

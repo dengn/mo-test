@@ -1,0 +1,31 @@
+{
+  "run_id": "90017e3c46b2",
+  "started_utc": "2026-10-14T05:20:15Z",
+  "groups": [
+    {
+      "group": "swarm",
+      "projects": [
+        "swarm"
+      ],
+      "expected_tests": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "requirements_sha256": "6e64657afd8479e3a08b59b979a6d09fbdb02c16b4c9f92d36378f728d384da7",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 1.298
+    }
+  ],
+  "status": "PASS",
+  "tested_projects": 1,
+  "passed_tests": 2
+}

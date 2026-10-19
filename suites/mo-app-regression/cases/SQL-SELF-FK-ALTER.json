@@ -1,0 +1,53 @@
+{
+  "id": "SQL-SELF-FK-ALTER",
+  "title": "Populated self FK VARCHAR ALTER",
+  "panic": false,
+  "known_issue": true,
+  "fixture_origin": "Fresh reconstruction of previously observed SQL behavior; no original application data",
+  "steps": [
+    {
+      "phase": "setup",
+      "sql": "CREATE TABLE self_probe(id INT PRIMARY KEY,parent_id INT NULL,URL VARCHAR(100),CONSTRAINT fk_self FOREIGN KEY(parent_id) REFERENCES self_probe(id))"
+    },
+    {
+      "phase": "setup",
+      "sql": "INSERT INTO self_probe VALUES(1,NULL,'parent'),(2,1,'child')"
+    },
+    {
+      "phase": "trigger",
+      "sql": "ALTER TABLE self_probe MODIFY COLUMN URL VARCHAR(125)",
+      "expected_error": {
+        "code": 20101,
+        "contains": [
+          "can not find table by id 0"
+        ]
+      }
+    }
+  ],
+  "postchecks": [
+    {
+      "sql": "SELECT id,parent_id,URL FROM self_probe ORDER BY id",
+      "expected_rows": [
+        [
+          1,
+          null,
+          "parent"
+        ],
+        [
+          2,
+          1,
+          "child"
+        ]
+      ]
+    },
+    {
+      "sql": "INSERT INTO self_probe VALUES(3,999,'must reject')",
+      "expected_rejection": {
+        "code": 1452,
+        "contains": [
+          "foreign key constraint fails"
+        ]
+      }
+    }
+  ]
+}

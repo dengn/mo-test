@@ -1,0 +1,23 @@
+[
+  {
+    "wkt": "POLYGON((0 0,1 0,1 1,0 1,0 0))",
+    "postgis_sphere_flag_area": 12281281066.690842,
+    "independent_equal_axes_sphere_area": 12364031909.465616,
+    "mean_radius_retained_wgs84_flattening_area": 12281281066.690844,
+    "absolute_error_against_retained_flattening": 1.9073486328125e-06
+  },
+  {
+    "wkt": "POLYGON((116 39,116.01 39,116.01 39.01,116 39.01,116 39))",
+    "postgis_sphere_flag_area": 959472.1081171036,
+    "independent_equal_axes_sphere_area": 960822.237197876,
+    "mean_radius_retained_wgs84_flattening_area": 959472.1081180573,
+    "absolute_error_against_retained_flattening": 9.5367431640625e-07
+  },
+  {
+    "wkt": "POLYGON((0 70,0.1 70,0.1 70.1,0 70.1,0 70))",
+    "postgis_sphere_flag_area": 42404874.01667786,
+    "independent_equal_axes_sphere_area": 42187122.18721008,
+    "mean_radius_retained_wgs84_flattening_area": 42404874.01667023,
+    "absolute_error_against_retained_flattening": 7.62939453125e-06
+  }
+]

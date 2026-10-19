@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/workspace/ai-matrixone-compat/scripts/test_camel.py", line 7, in <module>
+    from camel.agents import ChatAgent
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/agents/__init__.py", line 15, in <module>
+    from .chat_agent import ChatAgent
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/agents/chat_agent.py", line 60, in <module>
+    from camel.agents._utils import (
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/agents/_utils.py", line 21, in <module>
+    from camel.toolkits import FunctionTool
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/toolkits/__init__.py", line 24, in <module>
+    from .math_toolkit import MathToolkit
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/toolkits/math_toolkit.py", line 18, in <module>
+    from camel.toolkits.base import BaseToolkit
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/toolkits/base.py", line 61, in <module>
+    class BaseToolkit(metaclass=AgentOpsMeta):
+  File "/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/camel/toolkits/base.py", line 68, in BaseToolkit
+    from mcp.server import FastMCP
+ImportError: cannot import name 'FastMCP' from 'mcp.server' (/workspace/ai-matrixone-compat/runtime/camel-env/lib/python3.12/site-packages/mcp/server/__init__.py)

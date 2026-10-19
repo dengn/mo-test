@@ -1,0 +1,39 @@
+[
+  {
+    "table": "geodjango_places_5_2_18_mapped",
+    "ddl": [
+      [
+        "geodjango_places_5_2_18_mapped",
+        "CREATE TABLE `geodjango_places_5_2_18_mapped` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `name` varchar(60) NOT NULL,\n  `location` point NOT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "metadata": [
+      [
+        0,
+        "POINT(116.5 40)"
+      ],
+      [
+        0,
+        "POINT(116.398 39.909)"
+      ]
+    ]
+  },
+  {
+    "table": "geodjango_places_5_2_18_mapped2",
+    "ddl": [
+      [
+        "geodjango_places_5_2_18_mapped2",
+        "CREATE TABLE `geodjango_places_5_2_18_mapped2` (\n  `id` int NOT NULL AUTO_INCREMENT,\n  `name` varchar(60) NOT NULL,\n  `location` point NOT NULL,\n  PRIMARY KEY (`id`)\n)"
+      ]
+    ],
+    "metadata": []
+  },
+  {
+    "malformed_ring": "POLYGON((0 0,1 0,1 1))",
+    "mo_geojson": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  }
+]

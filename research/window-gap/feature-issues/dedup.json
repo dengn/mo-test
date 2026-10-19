@@ -1,0 +1,875 @@
+{
+  "searches": [
+    {
+      "query": "GROUPS window in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "EXCLUDE window in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"IGNORE NULLS\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 26828,
+          "title": "[Bug]: CTAS ignores NULLs synthesized by outer joins and scalar subqueries",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26828"
+        }
+      ]
+    },
+    {
+      "query": "\"DISTINCT\" \"window\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"FILTER\" aggregate in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "lagInFrame",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "leadInFrame",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "nonNegativeDerivative",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"weighted\" aggregate in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"corr\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"covar\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"skew\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 26436,
+          "title": "[Design]: add a terminal spill fallback for extreme join-key skew",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26436"
+        },
+        {
+          "number": 25232,
+          "title": "[Bug] Chaos TPCC (4164cfb/cb94136cf): district-level oorder/order_line consistency check false positive — cross-partition read snapshot skew under chaos",
+          "url": "https://github.com/matrixorigin/matrixone/issues/25232"
+        }
+      ]
+    },
+    {
+      "query": "\"kurtosis\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"prod\" aggregate in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"arg\" \"max\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"TopN\" window in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"ewm\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"moving\" window in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"GROUPS\" \"window\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 28647,
+          "title": "[Task] Maintain Top-ROI assigned bug groups",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28647"
+        },
+        {
+          "number": 28024,
+          "title": "[Bug]: COALESCE and IFNULL CHAR keys lose PAD SPACE semantics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28024"
+        },
+        {
+          "number": 27943,
+          "title": "[Performance]: Add cost-based hash partition execution for ordinary window functions",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27943"
+        },
+        {
+          "number": 28007,
+          "title": "[Bug]: Dev AP q1811 exceeds configured 7200s SQL timeout without cancellation",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28007"
+        },
+        {
+          "number": 27627,
+          "title": "[Bug]: spill-disk admission rejection surfaces as 20101 for ORDER BY, GROUP BY and TOP",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27627"
+        },
+        {
+          "number": 27068,
+          "title": "[Feature Request]: Add a native history-skipping latest-per-series execution path",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27068"
+        },
+        {
+          "number": 29096,
+          "title": "[Bug]: ROLLUP merge-group emits synthetic empty NULL groups and corrupts GROUPING()/aggregates",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29096"
+        },
+        {
+          "number": 27953,
+          "title": "[Bug]: Hash window partition separates GROUPING rows from ordinary NULL partitions",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27953"
+        },
+        {
+          "number": 28031,
+          "title": "[Compatibility]: explicit RESPECT NULLS and NTH_VALUE FROM FIRST window syntax is rejected",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28031"
+        },
+        {
+          "number": 27909,
+          "title": "[Bug]: Ubuntu UT outer timeout with Test_StorageUsageCache active",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27909"
+        },
+        {
+          "number": 28023,
+          "title": "[Bug]: Window sort path splits PAD SPACE CHAR values into different peers",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28023"
+        },
+        {
+          "number": 27574,
+          "title": "[Bug]: signed BIGINT Window RANGE bounds wrap at INT64 extrema and return empty frames",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27574"
+        }
+      ]
+    },
+    {
+      "query": "\"EXCLUDE\" \"window\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 28109,
+          "title": "[Bug]: Jinpan AP Window queries repeatedly exceed 7200-second execution limit",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28109"
+        },
+        {
+          "number": 27943,
+          "title": "[Performance]: Add cost-based hash partition execution for ordinary window functions",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27943"
+        },
+        {
+          "number": 28867,
+          "title": "[Compatibility]: SUM and AVG reject MySQL numeric-convertible character and temporal operands",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28867"
+        },
+        {
+          "number": 29868,
+          "title": "[Bug]: Main Wiki IVF throughput drops across Oct 9-11 (only/POST 970 -> 432 -> 160 QPS); regression attribution pending",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29868"
+        },
+        {
+          "number": 28869,
+          "title": "[Compatibility]: MIN and MAX reject JSON operands accepted by MySQL",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28869"
+        },
+        {
+          "number": 28868,
+          "title": "[Compatibility]: numeric aggregate functions reject JSON operands accepted by MySQL",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28868"
+        },
+        {
+          "number": 29859,
+          "title": "[Bug]: Prepared execute panics when length-encoded parameter length overflows int",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29859"
+        },
+        {
+          "number": 27523,
+          "title": "[Bug]: surviving CN retries killed CN pipeline endpoint for 1000s after replacement is Ready",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27523"
+        },
+        {
+          "number": 29755,
+          "title": "[Bug]: Linux spill cache policy adds repeated writeback overhead to small HashBuild appends after #29646",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29755"
+        },
+        {
+          "number": 27757,
+          "title": "[Bug]: 10M IVFFlat workload intermittently closes RPC/backend connections",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27757"
+        },
+        {
+          "number": 29620,
+          "title": "[Bug]: BigData 1B indexed INSERT fails with rpc stream closed after CN-to-CN read timeout",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29620"
+        },
+        {
+          "number": 27776,
+          "title": "[Bug]: CN 垂直扩容迁移破坏在途分布式 Pipeline",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27776"
+        }
+      ]
+    },
+    {
+      "query": "\"IGNORE NULLS\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 26828,
+          "title": "[Bug]: CTAS ignores NULLs synthesized by outer joins and scalar subqueries",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26828"
+        },
+        {
+          "number": 28031,
+          "title": "[Compatibility]: explicit RESPECT NULLS and NTH_VALUE FROM FIRST window syntax is rejected",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28031"
+        }
+      ]
+    },
+    {
+      "query": "\"window\" \"distinct\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 29917,
+          "title": "[Bug]: Reused prepared window fails on empty input with invalid window output range",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29917"
+        },
+        {
+          "number": 28024,
+          "title": "[Bug]: COALESCE and IFNULL CHAR keys lose PAD SPACE semantics",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28024"
+        },
+        {
+          "number": 25115,
+          "title": "[Bug] Window function fails on partitioned data: internal error: the Window operator currently does not support sending split result of window function",
+          "url": "https://github.com/matrixorigin/matrixone/issues/25115"
+        },
+        {
+          "number": 29484,
+          "title": "[Subtask]: C05 — Unify collation semantics across sort, aggregation, joins and shuffle",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29484"
+        },
+        {
+          "number": 28868,
+          "title": "[Compatibility]: numeric aggregate functions reject JSON operands accepted by MySQL",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28868"
+        },
+        {
+          "number": 28867,
+          "title": "[Compatibility]: SUM and AVG reject MySQL numeric-convertible character and temporal operands",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28867"
+        },
+        {
+          "number": 26066,
+          "title": "[Bug]: Window over large fact table under UNION ALL + outer LIMIT not short-circuited (jinpan join_adv q1004)",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26066"
+        },
+        {
+          "number": 28110,
+          "title": "[Bug]: Jinpan AP Semi/Anti Join queries repeatedly exceed 7200-second execution limit",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28110"
+        },
+        {
+          "number": 29852,
+          "title": "[Bug]: CREATE TABLE can attach a stale incoming foreign key to a replacement table",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29852"
+        },
+        {
+          "number": 28530,
+          "title": "IDC-MO [Performance]: Pool destruction scans the global pointer registry and consumes substantial CN CPU",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28530"
+        },
+        {
+          "number": 29443,
+          "title": "[Subtask]: Roll out on-demand View metadata and retire refresh-specific runtime maintenance",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29443"
+        },
+        {
+          "number": 28131,
+          "title": "[Compatibility]: high-range DECIMAL VAR_POP errors instead of returning DOUBLE",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28131"
+        }
+      ]
+    },
+    {
+      "query": "\"FILTER\" \"aggregate\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 27859,
+          "title": "[Enhancement]: Propagate join uniqueness for bounded aggregate elimination",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27859"
+        },
+        {
+          "number": 27720,
+          "title": "[Enhancement]: Add adaptive partition-parallel execution for exact DISTINCT aggregates",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27720"
+        },
+        {
+          "number": 27858,
+          "title": "[Enhancement]: Simplify constant ORDER BY and HAVING after single-row aggregate elimination",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27858"
+        },
+        {
+          "number": 27856,
+          "title": "[Enhancement]: Extend bounded aggregate elimination to proven non-PK unique keys",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27856"
+        },
+        {
+          "number": 27682,
+          "title": "[Bug]: ClickBench Q30 is significantly slower in MatrixOne than DuckDB",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27682"
+        },
+        {
+          "number": 27857,
+          "title": "[Enhancement]: Exploit proven storage/index order for streaming grouped LIMIT",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27857"
+        },
+        {
+          "number": 28110,
+          "title": "[Bug]: Jinpan AP Semi/Anti Join queries repeatedly exceed 7200-second execution limit",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28110"
+        },
+        {
+          "number": 27665,
+          "title": "[Bug]: significant gap in clickbench query performance between matrixone and duckdb",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27665"
+        },
+        {
+          "number": 26768,
+          "title": "[Task]: Build a robust, resource-aware optimizer beyond TPCH-shaped workloads",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26768"
+        },
+        {
+          "number": 27068,
+          "title": "[Feature Request]: Add a native history-skipping latest-per-series execution path",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27068"
+        },
+        {
+          "number": 20560,
+          "title": "[Tech Request]: refactoring shuffle plan",
+          "url": "https://github.com/matrixorigin/matrixone/issues/20560"
+        },
+        {
+          "number": 24799,
+          "title": "Remote pipeline with variable expression panics when ResolveVariableFunc is missing",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24799"
+        }
+      ]
+    },
+    {
+      "query": "\"weighted average\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 27405,
+          "title": "[Bug]: saveMeta never frees the query-result metadata batch, leaking session mpool memory on every saved query",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27405"
+        }
+      ]
+    },
+    {
+      "query": "\"covariance\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"correlation\" \"function\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 29129,
+          "title": "[Bug]: non-equality correlated aggregate inside a local CTE expands scalar results into duplicate rows",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29129"
+        },
+        {
+          "number": 23084,
+          "title": "Feature Not Supported: Correlated subquery in FROM clause not yet implemented",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23084"
+        },
+        {
+          "number": 29381,
+          "title": "[Bug]: IVFFLAT distance filtering panics when storage Top-K leaves an empty embedding slot",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29381"
+        },
+        {
+          "number": 26955,
+          "title": "[Bug]: correlated outer column in inner HAVING is rejected as an ungrouped local column",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26955"
+        },
+        {
+          "number": 28718,
+          "title": "[Bug]: parallel generate_series emits off-step values and wrong counts",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28718"
+        },
+        {
+          "number": 26210,
+          "title": "[Bug] Chaos (90e3400): TPCC New-Order `20618 r-w conflict` storm (~10.5k / ~43min) right after `task_kill_cn`",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26210"
+        },
+        {
+          "number": 27536,
+          "title": "[Feature Request]: Support explicit MongoDB filters and aggregation pipelines in external table scans",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27536"
+        },
+        {
+          "number": 24737,
+          "title": "[Bug]: Prisma relationJoins (relationLoadStrategy:'join') queries fail (v3.0.11 & 4.0-dev)",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24737"
+        },
+        {
+          "number": 23076,
+          "title": "Feature Not Supported: Nested aggregate functions within CTE queries",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23076"
+        },
+        {
+          "number": 23073,
+          "title": "Feature Not Supported: Nested aggregate functions in SELECT expressions",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23073"
+        },
+        {
+          "number": 24962,
+          "title": "[Bug] IVF l2_only pre-filter recall hangs with severe CN read amplification on 10M wiki dataset",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24962"
+        }
+      ]
+    },
+    {
+      "query": "\"skewness\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"kurtosis\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"argMax\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"atImax\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"firstNot\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"imin\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"quantile\" \"weighted\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 28713,
+          "title": "[Bug]: approx_percentile(x, 0) returns a retained sample instead of the exact minimum",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28713"
+        }
+      ]
+    },
+    {
+      "query": "\"cumulative\" \"window\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 28109,
+          "title": "[Bug]: Jinpan AP Window queries repeatedly exceed 7200-second execution limit",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28109"
+        },
+        {
+          "number": 27403,
+          "title": "[Bug]: Sustained 1 KiB-row REPLACE falls from 400 to 263 rows/s and hits 111–116s failures on Standard v4.1.0",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27403"
+        },
+        {
+          "number": 28007,
+          "title": "[Bug]: Dev AP q1811 exceeds configured 7200s SQL timeout without cancellation",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28007"
+        },
+        {
+          "number": 29606,
+          "title": "[Bug]: Prepared random_ranges regression disables pruning and loses index access with BIGINT bindings",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29606"
+        },
+        {
+          "number": 25144,
+          "title": "[Feature Request]: PERCENTILE_CONT / PERCENTILE_DISC ordered-set aggregate functions",
+          "url": "https://github.com/matrixorigin/matrixone/issues/25144"
+        },
+        {
+          "number": 29868,
+          "title": "[Bug]: Main Wiki IVF throughput drops across Oct 9-11 (only/POST 970 -> 432 -> 160 QPS); regression attribution pending",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29868"
+        },
+        {
+          "number": 24853,
+          "title": "[Feature] Tiered hot/cold/archive data retention policy (Snowflake DATA_RETENTION_TIME_IN_DAYS + Fail-safe style, extended with storage tiers)",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24853"
+        },
+        {
+          "number": 26465,
+          "title": "[BUG] MOI IDC (QA) MO OOM",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26465"
+        },
+        {
+          "number": 27342,
+          "title": "[Bug]: BIT_XOR aggregate is rejected with an OVER clause",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27342"
+        },
+        {
+          "number": 27352,
+          "title": "[Bug]: bounded ROWS sliding window recomputes each frame and scales O(N×W)",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27352"
+        },
+        {
+          "number": 28843,
+          "title": "[Bug]: mixed IVF pre-filter 首次访问 FULLTEXT 复制表时查询超过 100s 并断连",
+          "url": "https://github.com/matrixorigin/matrixone/issues/28843"
+        },
+        {
+          "number": 29571,
+          "title": "[Bug]: UnionOne regresses indexed-write copy and varlen marshal performance vs 4.2",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29571"
+        }
+      ]
+    },
+    {
+      "query": "\"technical\" \"indicator\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 23374,
+          "title": "[Feature Request]: Table Data Analysis and Reading Tool",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23374"
+        }
+      ]
+    },
+    {
+      "query": "\"exponential\" \"moving\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"DISTINCT in window function\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"GROUPS in WINDOW FUNCTION\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"sum2\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 9231,
+          "title": "[Tech Request]: Agg and Window function framework",
+          "url": "https://github.com/matrixorigin/matrixone/issues/9231"
+        },
+        {
+          "number": 10506,
+          "title": "[Bug]: JSON_UNQUOTE parse integer in '+' op got result as string concat",
+          "url": "https://github.com/matrixorigin/matrixone/issues/10506"
+        }
+      ]
+    },
+    {
+      "query": "\"wavg\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"wsum\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"beta\" \"window\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"prod\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 24083,
+          "title": "[Bug]: prod mo 3.0.9 upgrage 2cn oom",
+          "url": "https://github.com/matrixorigin/matrixone/issues/24083"
+        },
+        {
+          "number": 13513,
+          "title": "[Bug]: prod cluster flush stopped",
+          "url": "https://github.com/matrixorigin/matrixone/issues/13513"
+        },
+        {
+          "number": 14846,
+          "title": "[Bug]: PROD环境，对订阅库表执行增加联合主键操作报错[21S01][1136] Column count doesn't match value count at row 1",
+          "url": "https://github.com/matrixorigin/matrixone/issues/14846"
+        }
+      ]
+    },
+    {
+      "query": "\"FILTER\" \"WHERE\" \"window\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"moving\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 26735,
+          "title": "[Bug]: UPDATE moving a row across partitions fails with ExpectedEOB",
+          "url": "https://github.com/matrixorigin/matrixone/issues/26735"
+        }
+      ]
+    },
+    {
+      "query": "\"DolphinDB\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"aggregate\" \"product\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"weighted\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"regression\" \"aggregate\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 10182,
+          "title": "[Tech Request]: Advance aggregate functions, regression and polynomial fitting",
+          "url": "https://github.com/matrixorigin/matrixone/issues/10182"
+        },
+        {
+          "number": 10631,
+          "title": "[Subtask]: docs design for advance aggregate functions, regression and polynomial fitting",
+          "url": "https://github.com/matrixorigin/matrixone/issues/10631"
+        }
+      ]
+    },
+    {
+      "query": "\"skewness\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"MAD\" in:title",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"TopN\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 23974,
+          "title": "[Bug]: Vector TopN pushdown can OOM on uncapped LIMIT",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23974"
+        }
+      ]
+    },
+    {
+      "query": "\"window\" \"rank\" in:title",
+      "isError": false,
+      "issues": [
+        {
+          "number": 23863,
+          "title": "[Bug]:  window function: percent_rank() panic.",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23863"
+        },
+        {
+          "number": 9958,
+          "title": "[Bug]: the result of  window funtion rank() is abnormal.",
+          "url": "https://github.com/matrixorigin/matrixone/issues/9958"
+        }
+      ]
+    },
+    {
+      "query": "\"arg_min\"",
+      "isError": false,
+      "issues": []
+    },
+    {
+      "query": "\"ANY_VALUE\"",
+      "isError": false,
+      "issues": [
+        {
+          "number": 14298,
+          "title": "[Bug]: No statement is returned when query from statement_info at t1 and get 34 rows when query at t2",
+          "url": "https://github.com/matrixorigin/matrixone/issues/14298"
+        },
+        {
+          "number": 9049,
+          "title": "[Tech Request]: Optimize aggregate functions with distinct keyword",
+          "url": "https://github.com/matrixorigin/matrixone/issues/9049"
+        },
+        {
+          "number": 27856,
+          "title": "[Enhancement]: Extend bounded aggregate elimination to proven non-PK unique keys",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27856"
+        },
+        {
+          "number": 29072,
+          "title": "[Compatibility]: Mall-Swarm login fails on functional-dependency GROUP BY",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29072"
+        },
+        {
+          "number": 29325,
+          "title": "[Bug]: prepared JSON aggregates convert typed runtime values to JSON strings",
+          "url": "https://github.com/matrixorigin/matrixone/issues/29325"
+        },
+        {
+          "number": 27730,
+          "title": "[Enhancement]: Eliminate bounded aggregates grouped by a complete primary key",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27730"
+        },
+        {
+          "number": 27855,
+          "title": "[Bug]: AVG on high-precision DECIMAL128 silently returns an incorrect value",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27855"
+        },
+        {
+          "number": 27064,
+          "title": "[Bug]: max_by aggregates fail with internal arity error in tumbling Time Window",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27064"
+        },
+        {
+          "number": 17367,
+          "title": "[Tech Request]: Optimize query for `statement_info` by `response_at`",
+          "url": "https://github.com/matrixorigin/matrixone/issues/17367"
+        },
+        {
+          "number": 27983,
+          "title": "[Feature Request]: functional dependency exception of group by",
+          "url": "https://github.com/matrixorigin/matrixone/issues/27983"
+        },
+        {
+          "number": 23947,
+          "title": "[Feature Request]: INSERT ON DUPLICATE KEY UPDATE - Unify Paths and Fix Semantic Issues",
+          "url": "https://github.com/matrixorigin/matrixone/issues/23947"
+        },
+        {
+          "number": 3265,
+          "title": "[Question]: if GROUP BY alias nor aggregation function not supported, how do we support this kind of SQL?",
+          "url": "https://github.com/matrixorigin/matrixone/issues/3265"
+        }
+      ]
+    },
+    {
+      "query": "\"movingWindowIndex\"",
+      "isError": false,
+      "issues": []
+    }
+  ],
+  "reviewed_existing": [
+    {
+      "number": 28647,
+      "title": "[Task] Maintain Top-ROI assigned bug groups",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/28647"
+    },
+    {
+      "number": 28031,
+      "title": "[Compatibility]: explicit RESPECT NULLS and NTH_VALUE FROM FIRST window syntax is rejected",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/28031"
+    },
+    {
+      "number": 25107,
+      "title": "[Feature Request]: Assorted unimplemented functions & locking/set-op syntax",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25107"
+    },
+    {
+      "number": 27352,
+      "title": "[Bug]: bounded ROWS sliding window recomputes each frame and scales O(N×W)",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27352"
+    },
+    {
+      "number": 25144,
+      "title": "[Feature Request]: PERCENTILE_CONT / PERCENTILE_DISC ordered-set aggregate functions",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25144"
+    },
+    {
+      "number": 10182,
+      "title": "[Tech Request]: Advance aggregate functions, regression and polynomial fitting",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/10182"
+    },
+    {
+      "number": 10631,
+      "title": "[Subtask]: docs design for advance aggregate functions, regression and polynomial fitting",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/10631"
+    },
+    {
+      "number": 27064,
+      "title": "[Bug]: max_by aggregates fail with internal arity error in tumbling Time Window",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27064"
+    },
+    {
+      "number": 9049,
+      "title": "[Tech Request]: Optimize aggregate functions with distinct keyword",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/9049"
+    },
+    {
+      "number": 27342,
+      "title": "[Bug]: BIT_XOR aggregate is rejected with an OVER clause",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27342"
+    }
+  ]
+}

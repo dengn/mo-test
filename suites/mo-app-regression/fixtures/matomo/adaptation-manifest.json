@@ -1,0 +1,42 @@
+{
+  "repo": "matomo-org/matomo",
+  "version": "5.14.1",
+  "commit": "edb949cf54455cb8cbbd7f8c5a36fda8d32f532a",
+  "files": [
+    {
+      "path": "core/Columns/Updater.php",
+      "original_sha256": "790c3f9c7d175996c6bbdd312df356234364b7917ee545ea1aaf2645a374ccac",
+      "adapted_sha256": "b30f0450ea3adca4774c68a2b6ce97b65f479b7042f2a1916a9a0c9eee38ee80"
+    },
+    {
+      "path": "core/DbHelper.php",
+      "original_sha256": "a2eff8b61b405be863ff91a8883a9e615c2cacdd433bd35317ea4a819a4b3fc0",
+      "adapted_sha256": "5410f7c67ed03e5f0d84ff39b83e9c5e638e93363962aaca08802ab3defd918f"
+    },
+    {
+      "path": "core/Db/Schema/Mysql.php",
+      "original_sha256": "6c3d1c58ad8b5dfab5ec510f77dd87b58d1d9dbbf921a69b52ef3c92d74b3ef5",
+      "adapted_sha256": "3d6cb0fc5cbf12dcb08b2c0816216b61fa8490a7a713d963a534bca8bc56252b"
+    },
+    {
+      "path": "core/Db/Adapter/Mysqli.php",
+      "original_sha256": "e62426974c1d673f828ca8c5830d6d728caea3ad687cc977265734a21d471352",
+      "adapted_sha256": "7da1eb1922945750ebdb2d3bbec90077f3c50d66da0b7abc3be3438e95e0cb35"
+    },
+    {
+      "path": "core/Db/Adapter/Pdo/Mysql.php",
+      "original_sha256": "da2c19a9a840f4f7d4df1a01eb694538a22cd0ff396f7f3b869008071066c3b7",
+      "adapted_sha256": "bf130bcc40f83e662af2974d31acfde52286c6ac93add4b9087caacfef512577"
+    },
+    {
+      "path": "core/RankingQuery.php",
+      "original_sha256": "67650e71202e98a49751a96296b2ca9057c2e6bc609e6d5cb9458bea3ce8bc34",
+      "adapted_sha256": "3befd96d65441418031c14410027a9d0583fe8fd491111eb87b90c4e64240e22"
+    },
+    {
+      "path": "core/Sequence.php",
+      "original_sha256": "6141432f2819d3b5be477a1617fb8b84a83821ac3675f3d24fad96f91660f43e",
+      "adapted_sha256": "8e305b877a25448c5c0a534bc37e1463122f1423c3063859942664f166342a39"
+    }
+  ]
+}

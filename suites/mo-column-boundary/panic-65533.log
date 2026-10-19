@@ -1,0 +1,29 @@
+panic: bad column idx 65533, table wide_65533
+
+goroutine 694 [running]:
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/catalog.(*Schema).Finalize(0x84a80d85b30, 0x0?)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/catalog/schema.go:962 +0x748
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/catalog.DefsToSchema({0x84a5bd9fba0, 0xa}, {0x84a72744000, 0xffff, 0x84a50169da0?})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/catalog/model.go:150 +0x767
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.CreateRelation({0x0?, 0x0?}, {0xb5805f0, 0x84ab494eaa0}, {0x84a5bd9fba0?, 0x84a48ada588?}, 0x7451c, {0x84a72744000, 0xffff, 0x12400})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/adaptors.go:42 +0x45
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).HandleCreateRelation(0x84a48adab18?, {0xb54a6f0?, 0x84a86e414f0?}, {0xb58abb8, 0x84a4a0d1830}, 0x84a70064900)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:824 +0x292
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).handleRequests(_, {_, _}, {_, _}, _, _, {{0x84a5b569130, 0x10, 0x10}, ...})
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:318 +0x745
+github.com/matrixorigin/matrixone/pkg/vm/engine/tae/rpc.(*Handle).HandleCommit(_, {_, _}, {{0x84a5b569130, 0x10, 0x10}, 0x0, {0x18ddbf95c19611a3, 0x1, 0x0, ...}, ...}, ...)
+	/workspace/matrixone-latest/pkg/vm/engine/tae/rpc/handle.go:634 +0x32f
+github.com/matrixorigin/matrixone/pkg/txn/storage/tae.(*taeStorage).Commit(_, {_, _}, {{0x84a5b569130, 0x10, 0x10}, 0x0, {0x18ddbf95c19611a3, 0x1, 0x0, ...}, ...}, ...)
+	/workspace/matrixone-latest/pkg/txn/storage/tae/storage.go:186 +0xb1
+github.com/matrixorigin/matrixone/pkg/txn/service.(*service).Commit(0x84a42661b00, {0xb54a6f0, 0x84a86e414f0}, 0x84a3f8e4340, 0x84a51390900)
+	/workspace/matrixone-latest/pkg/txn/service/service_cn_handler.go:278 +0xb42
+github.com/matrixorigin/matrixone/pkg/tnservice.(*store).handleCommit(0x84a446be008, {0xb54a6b8, 0x84a492c3140}, 0x84a3f8e4340, 0x84a51390900)
+	/workspace/matrixone-latest/pkg/tnservice/store_rpc_handler.go:130 +0x19b
+github.com/matrixorigin/matrixone/pkg/txn/rpc.executor.exec({{0xc2ab4977363eabd9, 0x708f85bb849, 0xbc3d080}, {0xb54a6b8, 0x84a492c3140}, 0x84a87925370, 0x84a3f8e4340, {0xb568e10, 0x84a44be5200}, 0x84a3f7da6c0, ...})
+	/workspace/matrixone-latest/pkg/txn/rpc/server.go:535 +0xec
+github.com/matrixorigin/matrixone/pkg/txn/rpc.(*server).handleTxnRequest(0x84a47216e00, {0xb54a6b8, 0x84a47274e10})
+	/workspace/matrixone-latest/pkg/txn/rpc/server.go:509 +0x334
+github.com/matrixorigin/matrixone/pkg/common/stopper.(*Stopper).doRunCancelableTask.func1()
+	/workspace/matrixone-latest/pkg/common/stopper/stopper.go:281 +0x5b
+created by github.com/matrixorigin/matrixone/pkg/common/stopper.(*Stopper).doRunCancelableTask in goroutine 596
+	/workspace/matrixone-latest/pkg/common/stopper/stopper.go:278 +0xba

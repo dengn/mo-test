@@ -1,0 +1,1163 @@
+[
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "POLYGON((0 0,1 0,1 1))"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "rows": [
+      [
+        "0103000000010000000300000000000000000000000000000000000000000000000000F03F0000000000000000000000000000F03F000000000000F03F"
+      ]
+    ],
+    "independent_decode_error": {
+      "class": "GEOSException",
+      "code": "IllegalArgumentException: Points of LinearRing do not form a closed linestring",
+      "sqlstate": null,
+      "message": "IllegalArgumentException: Points of LinearRing do not form a closed linestring"
+    }
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "POLYGON((0 0,1 0,1 1))"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "rows": [
+      [
+        "0103000000010000000300000000000000000000000000000000000000000000000000F03F0000000000000000000000000000F03F000000000000F03F"
+      ]
+    ],
+    "independent_decode_error": {
+      "class": "GEOSException",
+      "code": "IllegalArgumentException: Points of LinearRing do not form a closed linestring",
+      "sqlstate": null,
+      "message": "IllegalArgumentException: Points of LinearRing do not form a closed linestring"
+    }
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "POLYGON((0 0,1 0,1 1))"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "rows": [
+      [
+        "0103000000010000000300000000000000000000000000000000000000000000000000F03F0000000000000000000000000000F03F000000000000F03F"
+      ]
+    ],
+    "independent_decode_error": {
+      "class": "GEOSException",
+      "code": "IllegalArgumentException: Points of LinearRing do not form a closed linestring",
+      "sqlstate": null,
+      "message": "IllegalArgumentException: Points of LinearRing do not form a closed linestring"
+    }
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select encode(st_asbinary(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)),'hex')",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select encode(st_asbinary(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)),'hex')",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select encode(st_asbinary(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)),'hex')",
+    "error": {
+      "class": "InternalError_",
+      "code": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry",
+      "sqlstate": "XX000",
+      "message": "geometry requires more points\nHINT:  \"POLYGON((0 0,1 0,1 1))\" <-- parse error at position 22 within geometry"
+    }
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        true
+      ]
+    ]
+  },
+  {
+    "engine": "pg",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 1,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 2,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 0,2 0,2 1,1 1,1 0))',0)))",
+    "rows": [
+      [
+        "LINESTRING(1 0,1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((1 1,2 1,2 2,1 2,1 1))',0)))",
+    "rows": [
+      [
+        "POINT(1 1)"
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "duplicate_vertex_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,0 0,1 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkt",
+    "finding": "MO-GIS-003",
+    "sql": "select st_astext(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "unclosed_ring_wkb",
+    "finding": "MO-GIS-003",
+    "sql": "select hex(st_aswkb(st_geomfromtext('POLYGON((0 0,1 0,1 1))',0)))",
+    "error": {
+      "class": "OperationalError",
+      "code": 3037,
+      "sqlstate": "22023",
+      "message": "(3037, 'Invalid GIS data provided to function st_geomfromtext.')"
+    }
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_closed_ring_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "valid_simple_line_control",
+    "finding": null,
+    "sql": "select st_isvalid(st_geomfromtext('LINESTRING(0 0,1 0)',0))",
+    "rows": [
+      [
+        1
+      ]
+    ]
+  },
+  {
+    "engine": "mysql",
+    "repeat": 3,
+    "path": "constant",
+    "feature": "positive_area_intersection_control",
+    "finding": null,
+    "sql": "select st_area(st_intersection(st_geomfromtext('POLYGON((0 0,1 0,1 1,0 1,0 0))',0),st_geomfromtext('POLYGON((0.5 0,1.5 0,1.5 1,0.5 1,0.5 0))',0)))",
+    "rows": [
+      [
+        0.5
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "feature": "stored_input_admission",
+    "id": 1,
+    "rows": []
+  },
+  {
+    "engine": "mo",
+    "feature": "stored_input_admission",
+    "id": 2,
+    "rows": []
+  },
+  {
+    "engine": "mo",
+    "feature": "stored_input_admission",
+    "id": 3,
+    "rows": []
+  },
+  {
+    "engine": "mo",
+    "feature": "stored_input_admission",
+    "id": 4,
+    "rows": []
+  },
+  {
+    "engine": "mo",
+    "path": "stored",
+    "feature": "stored_edge_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(g,h)) from repro_geoms where id=1",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "path": "stored",
+    "feature": "stored_corner_intersection",
+    "finding": "MO-GIS-001",
+    "sql": "select st_astext(st_intersection(g,h)) from repro_geoms where id=2",
+    "rows": [
+      [
+        "POLYGON EMPTY"
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "path": "stored",
+    "feature": "stored_duplicate_validity",
+    "finding": "MO-GIS-002",
+    "sql": "select st_isvalid(g) from repro_geoms where id=3",
+    "rows": [
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "engine": "mo",
+    "path": "stored",
+    "feature": "stored_unclosed_geojson",
+    "finding": "MO-GIS-003",
+    "sql": "select st_asgeojson(g) from repro_geoms where id=4",
+    "rows": [
+      [
+        "{\"type\":\"Polygon\",\"coordinates\":[[[0,0],[1,0],[1,1]]]}"
+      ]
+    ]
+  }
+]

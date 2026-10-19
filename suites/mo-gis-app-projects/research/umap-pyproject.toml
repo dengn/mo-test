@@ -1,0 +1,121 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "umap-project"
+dynamic = ["version"]
+description = "Create maps with OpenStreetMap layers in a minute and embed them in your site."
+readme = "README.md"
+authors = [
+  { name = "Yohan Boniface", email = "yb@enix.org" },
+]
+maintainers = [
+  { name = "David Larlet", email = "david@larlet.fr" },
+]
+homepage = "https://github.com/umap-project/umap"
+keywords = ["django", "leaflet", "geodjango", "openstreetmap", "map"]
+requires-python = ">=3.12"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  # Yunohost needs to be pinned at 5.1.X to keep psql==13 compat.
+  "Django>=5.1",
+  "django-agnocomplete==2.2.0",
+  "django-environ==0.14.0",
+  "django-probes==1.8.0",
+  "httpx==0.28.1",
+  "Pillow==12.3.0",
+  "psycopg==3.3.4",
+  "requests==2.34.2",
+  "rcssmin==1.2.2",
+  "rjsmin==1.2.5",
+  "social-auth-core==5.0.2",
+  "social-auth-app-django==6.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "Django==6.0.7",
+  "django-debug-toolbar==7.0.0",
+  "hatch==1.17.1",
+  "ruff==0.15.22",
+  "djlint==1.44.2",
+  "mkdocs==1.6.1",
+  "mkdocs-material==9.7.7",
+  "mkdocs-static-i18n==1.3.1",
+  "vermin==1.8.0",
+  "pymdown-extensions==11.0.1",
+  "isort==8.0.1",
+]
+test = [
+  "daphne==4.2.2",
+  "factory-boy==3.3.3",
+  "playwright>=1.39",
+  "pytest==9.1.1",
+  "pytest-asyncio==1.4.0",
+  "pytest-django==4.12.0",
+  "pytest-playwright==0.8.0",
+  "pytest-rerunfailures==16.4",
+  "pytest-xdist>=3.5.0,<4",
+  "moto[s3]==5.2.2"
+]
+deploy = [
+  "Django==6.0.7",
+]
+s3 = [
+  "django-storages[s3]==1.14.6",
+]
+sync = [
+  "uvicorn==0.52.3",
+  "pydantic==2.13.0",
+  "redis==8.0.1",
+  "websockets==17.0.1",
+]
+
+[project.scripts]
+umap = "umap.bin:main"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/umap",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["umap"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.version]
+path = "umap/__init__.py"
+
+[tool.flake8]
+# Black crazyness.
+max-line-length = 88
+
+[tool.djlint]
+profile="django"
+indent=2
+format_css=true
+blank_line_after_tag="load,extends"
+line_break_after_multiline_tag=true
+
+[tool.ruff.lint]
+# Disable autoremove of unused import.
+unfixable = ["F401"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "umap.tests.settings"
+addopts = "--pdbcls=IPython.terminal.debugger:Pdb --no-migrations --numprocesses auto --reuse-db"
+asyncio_mode = "auto"

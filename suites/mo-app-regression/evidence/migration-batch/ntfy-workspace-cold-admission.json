@@ -1,0 +1,11 @@
+{
+  "app": "ntfy",
+  "passed": false,
+  "build_started": false,
+  "source_blobs_verified": 0,
+  "UI_scope": "placeholder assets; only native API tested",
+  "exit_code": 2,
+  "blocked_reason": "Native Go SDK build requires at least 4 GiB free at admission",
+  "error_type": "RuntimeError",
+  "time_utc": "2026-10-12T23:26:20Z"
+}

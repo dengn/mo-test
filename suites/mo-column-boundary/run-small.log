@@ -1,0 +1,32 @@
+START 1000_create 13035
+END 1000_create success 0.087 
+START 1000_metadata_count 120
+END 1000_metadata_count success 0.06 
+START 1000_insert_all 3922
+END 1000_insert_all success 0.078 
+START 1000_select_edges 48
+END 1000_select_edges success 0.005 
+START 1000_select_star 23
+END 1000_select_star success 0.033 
+START 1000_update_tail 52
+END 1000_update_tail success 0.082 
+START 1000_verify_update 47
+END 1000_verify_update success 0.01 
+START 1000_restore_tail 51
+END 1000_restore_tail success 0.093 
+START 10000_create 130036
+END 10000_create success 1.52 
+START 10000_metadata_count 121
+END 10000_metadata_count success 0.249 
+START 10000_insert_all 48924
+END 10000_insert_all success 0.513 
+START 10000_select_edges 49
+END 10000_select_edges success 0.016 
+START 10000_select_star 24
+END 10000_select_star success 1.33 
+START 10000_update_tail 54
+END 10000_update_tail success 1.132 
+START 10000_verify_update 48
+END 10000_verify_update success 0.053 
+START 10000_restore_tail 53
+END 10000_restore_tail success 0.858 

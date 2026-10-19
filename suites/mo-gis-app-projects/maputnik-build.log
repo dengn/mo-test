@@ -1,0 +1,36 @@
+
+> maputnik@3.1.0 build
+> tsc && vite build --mode=production
+
+vite v7.3.2 building client environment for production...
+transforming...
+✓ 938 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/manifest-BrZzkYP9.json           0.20 kB │ gzip:     0.15 kB
+dist/assets/favicon-DBn6BKLx.ico             1.15 kB
+dist/index.html                              8.17 kB │ gzip:     2.30 kB
+dist/assets/Roboto-Regular-B-HLW1rL.ttf    162.88 kB
+dist/assets/Roboto-Medium-C0z2xw0d.ttf     511.59 kB
+dist/assets/index-CeR5SWEc.css             115.78 kB │ gzip:    19.30 kB
+dist/assets/translation-BGNHuhFm.js          0.20 kB │ gzip:     0.15 kB │ map:      0.10 kB
+dist/assets/translation-C9ujdbWm.js         10.01 kB │ gzip:     4.58 kB │ map:      0.10 kB
+dist/assets/translation-CcF6vdbg.js         10.55 kB │ gzip:     4.29 kB │ map:      0.10 kB
+dist/assets/translation-CniVGPpK.js         10.57 kB │ gzip:     4.22 kB │ map:      0.10 kB
+dist/assets/translation-xtrlBNbA.js         10.64 kB │ gzip:     4.10 kB │ map:      0.10 kB
+dist/assets/translation-DErdfNS6.js         11.03 kB │ gzip:     4.22 kB │ map:      0.10 kB
+dist/assets/translation-a6aNEnxv.js         11.07 kB │ gzip:     4.61 kB │ map:      0.10 kB
+dist/assets/translation-CZCLjgpE.js         11.39 kB │ gzip:     4.23 kB │ map:      0.10 kB
+dist/assets/translation-By0N8Bv5.js         11.80 kB │ gzip:     4.78 kB │ map:      0.10 kB
+dist/assets/index-BryyrpjY.js            4,197.37 kB │ gzip: 1,145.36 kB │ map: 30,003.04 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2m 1s
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

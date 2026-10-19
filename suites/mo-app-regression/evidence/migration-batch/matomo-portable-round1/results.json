@@ -1,0 +1,32 @@
+{
+  "app": "matomo-org/matomo",
+  "version": "5.14.1",
+  "commit": "edb949cf54455cb8cbbd7f8c5a36fda8d32f532a",
+  "schema": "mo_reg_matomo_5442fa9c639041b9",
+  "passed": false,
+  "checks": [
+    {
+      "name": "pinned_FrankenPHP",
+      "passed": true
+    }
+  ],
+  "native_runtime_attempted": false,
+  "official_archive_sha256": "6e2938c9a482fa715a02cacacc490f2e7d6fb1f4068e45de41181089c129080e",
+  "existing_databases_modified": false,
+  "manual_users_or_migration_stamps": false,
+  "min_free_mib": 2048,
+  "source_edits": [
+    "explicit server-version alias",
+    "native Unicode charset and metadata case",
+    "split actual column/index DDL",
+    "match exact missing-table diagnostic",
+    "transactional native sequence allocation",
+    "bounded explicit-order ROW_NUMBER ranking"
+  ],
+  "limitations": [
+    "archived reports/ranking rollup/plugins/import/populated upgrades/wider collation unverified"
+  ],
+  "error_type": "RuntimeError",
+  "failed_stage": "admission",
+  "finished_at_utc": "2026-10-13T01:16:29Z"
+}

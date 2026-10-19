@@ -1,0 +1,168 @@
+[
+  {
+    "stage": "65530_force_flush",
+    "sql_bytes": 65,
+    "sql_sha256": "dd0e09e49cb822f6e69272854c2ac1b415a73b2fd554ab4fcb499d4da102aa26",
+    "before": {
+      "unix_time": 1791800187.1142957,
+      "memory.current": "29717688320",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118621039332\nuser_usec 92371123662\nsystem_usec 26249915669\nnice_usec 0\nnr_periods 2846973\nnr_throttled 43511\nthrottled_usec 1760363484\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 7583551488,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4564104 kB",
+      "VmRSS": "4564104 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65530_force_flush.sql.gz",
+    "affected_rows": 1,
+    "result_rows": 1,
+    "result_columns": 1,
+    "rows": [
+      [
+        "{\n  \"method\": \"Flush\",\n  \"result\": [\n    {\n      \"returnStr\": \"OK\"\n    }\n  ]\n}\n"
+      ]
+    ],
+    "status": "success",
+    "seconds": 0.5076012320350856,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800187.6270375,
+      "memory.current": "29721620480",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118621171640\nuser_usec 92371205267\nsystem_usec 26249966373\nnice_usec 0\nnr_periods 2846978\nnr_throttled 43511\nthrottled_usec 1760363484\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 7587315712,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4567412 kB",
+      "VmRSS": "4567412 kB",
+      "Threads": "15"
+    }
+  },
+  {
+    "stage": "65530_post_flush_star",
+    "sql_bytes": 24,
+    "sql_sha256": "6ad53cfe634e4c1489343d644c167a37074d87229c473be3d6f46e0eb888d2e8",
+    "before": {
+      "unix_time": 1791800187.6276329,
+      "memory.current": "29721534464",
+      "memory.peak": "29919322112",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118621171640\nuser_usec 92371205267\nsystem_usec 26249966373\nnice_usec 0\nnr_periods 2846978\nnr_throttled 43511\nthrottled_usec 1760363484\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 7587315712,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "4567412 kB",
+      "VmRSS": "4567412 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65530_post_flush_star.sql.gz",
+    "affected_rows": 1,
+    "result_rows": 1,
+    "result_columns": 65530,
+    "oracle": "pass",
+    "status": "success",
+    "seconds": 37.57065834995592,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800225.1988714,
+      "memory.current": "30497902592",
+      "memory.peak": "30754164736",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118673929649\nuser_usec 92418774455\nsystem_usec 26255155194\nnice_usec 0\nnr_periods 2847354\nnr_throttled 43514\nthrottled_usec 1760539637\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 8366522368,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "5524752 kB",
+      "VmRSS": "5267240 kB",
+      "Threads": "15"
+    }
+  },
+  {
+    "stage": "65532_post_restart_tail",
+    "sql_bytes": 58,
+    "sql_sha256": "c464ed4392ee7850662b8e351139b2520a84454fc71afae9ef190141a7c6d768",
+    "before": {
+      "unix_time": 1791800225.1996772,
+      "memory.current": "30497902592",
+      "memory.peak": "30754164736",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118673929649\nuser_usec 92418774455\nsystem_usec 26255155194\nnice_usec 0\nnr_periods 2847354\nnr_throttled 43514\nthrottled_usec 1760539637\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 8366522368,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "5524752 kB",
+      "VmRSS": "5267240 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/65532_post_restart_tail.sql.gz",
+    "status": "error",
+    "error": {
+      "type": "OperationalError",
+      "code": 20101,
+      "message": "(20101, 'internal error: panic bad path to read special column 65530: \\ngithub.com/matrixorigin/matrixone/pkg/objectio.readOneBlockWithMeta\\n\\t/workspace/matrixone-latest/pkg/objectio/funcs.go:216\\ngithub.com/matrixorigin/matrixone/pkg/objectio.ReadOneBlock\\n\\t/workspace/matrixone-latest/pkg/objectio/funcs.go:145\\ngithub.com/matrixorigin/matrixone/pkg/objectio/ioutil.readColumnsData\\n\\t/workspace/matrixone-latest/pkg/objectio/ioutil/loadfuncs.go:122\\ngithub.com/matrixorigin/matrixone/pkg/objectio/ioutil.LoadColumnsDataInto\\n\\t/workspace/matrixone-latest/pkg/objectio/ioutil/loadfuncs.go:192\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/tae/blockio.materializeBlockData\\n\\t/workspace/matrixone-latest/pkg/vm/engine/tae/blockio/read.go:904\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/tae/blockio.BlockDataReadInner\\n\\t/workspace/matrixone-latest/pkg/vm/engine/tae/blockio/read.go:1646\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/tae/blockio.blockDataRead\\n\\t/workspace/matrixone-latest/pkg/vm/engine/tae/blockio/read.go:440\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/tae/blockio.BlockDataRead\\n\\t/workspace/matrixone-latest/pkg/vm/engine/tae/blockio/read.go:255\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/readutil.(*reader).read\\n\\t/workspace/matrixone-latest/pkg/vm/engine/readutil/reader.go:1085\\ngithub.com/matrixorigin/matrixone/pkg/vm/engine/readutil.(*reader).Read\\n\\t/workspace/matrixone-latest/pkg/vm/engine/readutil/reader.go:797\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/table_scan.(*TableScan).readBatch.func1\\n\\t/workspace/matrixone-latest/pkg/sql/colexec/table_scan/late_materialization.go:224\\ngithub.com/matrixorigin/matrixone/pkg/vm/process.MeasureWait[...]\\n\\t/workspace/matrixone-latest/pkg/vm/process/operator_analyzer.go:112\\ngithub.com/matrixorigin/matrixone/pkg/vm/process.MeasureFilesystemWait[...]\\n\\t/workspace/matrixone-latest/pkg/vm/process/operator_analyzer.go:148\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/table_scan.(*TableScan).readBatch\\n\\t/workspace/matrixone-latest/pkg/sql/colexec/table_scan/late_materialization.go:223\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/table_scan.(*TableScan).Call\\n\\t/workspace/matrixone-latest/pkg/sql/colexec/table_scan/table_scan.go:143\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone-latest/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone-latest/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/projection.(*Projection).Call\\n\\t/workspace/matrixone-latest/pkg/sql/colexec/projection/projection.go:84\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone-latest/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm.ChildrenCall\\n\\t/workspace/matrixone-latest/pkg/vm/types.go:424\\ngithub.com/matrixorigin/matrixone/pkg/sql/colexec/output.(*Output).Call\\n\\t/workspace/matrixone-latest/pkg/sql/colexec/output/output.go:58\\ngithub.com/matrixorigin/matrixone/pkg/vm.Exec\\n\\t/workspace/matrixone-latest/pkg/vm/types.go:412\\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).Run\\n\\t/workspace/matrixone-latest/pkg/vm/pipeline/pipeline.go:71\\ngithub.com/matrixorigin/matrixone/pkg/vm/pipeline.(*Pipeline).RunWithReader\\n\\t/workspace/matrixone-latest/pkg/vm/pipeline/pipeline.go:59\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).Run\\n\\t/workspace/matrixone-latest/pkg/sql/compile/scope.go:417\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).ParallelRun\\n\\t/workspace/matrixone-latest/pkg/sql/compile/scope.go:1094\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).MergeRun\\n\\t/workspace/matrixone-latest/pkg/sql/compile/scope.go:550\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Scope).RemoteRun\\n\\t/workspace/matrixone-latest/pkg/sql/compile/scope.go:896\\ngithub.com/matrixorigin/matrixone/pkg/sql/compile.(*Compile).run\\n\\t/workspace/matrixone-latest/pkg/sql/compile/compile.go:643\\ngithub.com/matrixorigin/ma"
+    },
+    "seconds": 0.1639616839820519,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800225.364315,
+      "memory.current": "30450630656",
+      "memory.peak": "30754164736",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118674127868\nuser_usec 92418972674\nsystem_usec 26255155194\nnice_usec 0\nnr_periods 2847355\nnr_throttled 43514\nthrottled_usec 1760539637\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 8319201280,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "5524752 kB",
+      "VmRSS": "5267248 kB",
+      "Threads": "15"
+    }
+  },
+  {
+    "stage": "final_health",
+    "sql_bytes": 8,
+    "sql_sha256": "822ae07d4783158bc1912bb623e5107cc9002d519e1143a9c200ed6ee18b6d0f",
+    "before": {
+      "unix_time": 1791800225.3649364,
+      "memory.current": "30450630656",
+      "memory.peak": "30754164736",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118674127887\nuser_usec 92418972693\nsystem_usec 26255155194\nnice_usec 0\nnr_periods 2847355\nnr_throttled 43514\nthrottled_usec 1760539637\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 8319201280,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "5524752 kB",
+      "VmRSS": "5267268 kB",
+      "Threads": "15"
+    },
+    "sql_file": "sql/final_health.sql.gz",
+    "affected_rows": 1,
+    "result_rows": 1,
+    "result_columns": 1,
+    "rows": [
+      [
+        1
+      ]
+    ],
+    "oracle": "pass",
+    "status": "success",
+    "seconds": 0.000762960989959538,
+    "guard_events": [],
+    "after": {
+      "unix_time": 1791800225.3662224,
+      "memory.current": "30450630656",
+      "memory.peak": "30754164736",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.stat": "usage_usec 118674130178\nuser_usec 92418974984\nsystem_usec 26255155194\nnice_usec 0\nnr_periods 2847355\nnr_throttled 43514\nthrottled_usec 1760539637\nnr_bursts 0\nburst_usec 0",
+      "memory_anon_kernel_bytes": 8319201280,
+      "pid": 411382,
+      "State": "S (sleeping)",
+      "VmHWM": "5524752 kB",
+      "VmRSS": "5267268 kB",
+      "Threads": "15"
+    }
+  }
+]

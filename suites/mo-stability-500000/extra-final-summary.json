@@ -1,0 +1,283 @@
+{
+  "main_target": 600000,
+  "main_executed": 600000,
+  "extra": {
+    "mo-corners-50000": {
+      "executed": 50000,
+      "raw_statuses": {
+        "connection_or_runner_error": 620,
+        "pass": 34380,
+        "environment_or_unexpected_error": 515,
+        "pass_expected_rejection": 14485
+      },
+      "coverage": {
+        "total": 50000,
+        "modules": {
+          "tls": 8000,
+          "permissions": 8000,
+          "udf": 10000,
+          "procedure": 10000,
+          "task": 6000,
+          "iceberg": 8000
+        },
+        "families": {
+          "tls.tls12": 1000,
+          "tls.tls13": 1000,
+          "tls.client": 1000,
+          "tls.trusted": 1000,
+          "tls.badca": 1000,
+          "tls.badclient": 1000,
+          "tls.expiredclient": 1000,
+          "tls.badhost": 1000,
+          "permissions.table_read": 1000,
+          "permissions.view_read": 1000,
+          "permissions.deny_insert": 1000,
+          "permissions.deny_update": 1000,
+          "permissions.deny_delete": 1000,
+          "permissions.deny_ddl": 1000,
+          "permissions.deny_catalog_write": 1000,
+          "permissions.deny_escalation": 1000,
+          "udf.sql_nested": 1000,
+          "udf.sql_json": 1000,
+          "udf.python_scalar": 1000,
+          "udf.python_null": 1000,
+          "udf.python_unicode": 1000,
+          "udf.python_vector_batch": 1000,
+          "udf.python_exception": 1000,
+          "udf.python_json": 1000,
+          "udf.python_decimal": 1000,
+          "udf.wrong_arity": 1000,
+          "procedure.if_else": 1000,
+          "procedure.while_loop": 1000,
+          "procedure.repeat_loop": 1000,
+          "procedure.label_loop": 1000,
+          "procedure.nested_scope": 1000,
+          "procedure.inout": 1000,
+          "procedure.json_parameter": 1000,
+          "procedure.atomic_failure": 1000,
+          "procedure.starlark_out": 1000,
+          "procedure.sql_mode_retained": 1000,
+          "task.ct_success": 1000,
+          "task.ct_gate_false": 1000,
+          "task.ct_gate_true": 1000,
+          "task.ct_abort": 1000,
+          "task.ct_error": 1000,
+          "task.ct_idempotent": 1000,
+          "iceberg.filter_aggregate": 1000,
+          "iceberg.group_aggregate": 1000,
+          "iceberg.native_join": 1000,
+          "iceberg.window": 1000,
+          "iceberg.projection": 1000,
+          "iceberg.unicode_filter": 1000,
+          "iceberg.cte": 1000,
+          "iceberg.union": 1000
+        },
+        "unique_operations": 36271
+      }
+    },
+    "mo-enterprise-50000": {
+      "executed": 50000,
+      "raw_statuses": {
+        "pass_expected_rejection": 15999,
+        "pass": 33999,
+        "execution_error": 2
+      },
+      "coverage": {
+        "total": 50000,
+        "modules": {
+          "users_roles": 5000,
+          "multitenant": 10000,
+          "transactions": 15000,
+          "pubsub": 10000,
+          "git4data": 10000
+        },
+        "families": {
+          "users_roles.password_rotation": 1000,
+          "users_roles.role_cycle": 1000,
+          "users_roles.revoke_existing_session": 1000,
+          "users_roles.grant_option_delegate": 1000,
+          "users_roles.active_role_switch": 1000,
+          "multitenant.account_local_identity_corner_a": 1000,
+          "multitenant.account_local_identity_corner_b": 1000,
+          "multitenant.same_pk_distinct_tenants_corner_a": 1000,
+          "multitenant.same_pk_distinct_tenants_corner_b": 1000,
+          "multitenant.reader_no_write": 1000,
+          "multitenant.reader_no_role_admin": 1000,
+          "multitenant.tenant_system_users_hidden": 1000,
+          "multitenant.cannot_claim_accountadmin": 1000,
+          "multitenant.cannot_claim_system_moadmin": 1000,
+          "multitenant.rollback_not_visible_in_other_tenant": 1000,
+          "transactions.commit_visibility": 1000,
+          "transactions.rollback_visibility": 1000,
+          "transactions.dirty_read_forbidden": 1000,
+          "transactions.read_committed_refresh": 1000,
+          "transactions.read_own_mixed_update": 1000,
+          "transactions.delete_rollback": 1000,
+          "transactions.delete_commit": 1000,
+          "transactions.duplicate_then_rollback": 1000,
+          "transactions.autocommit_off": 1000,
+          "transactions.null_json_vector_commit": 1000,
+          "transactions.read_only_snapshot": 1000,
+          "transactions.update_rollback": 1000,
+          "transactions.delete_insert_replacement": 1000,
+          "transactions.savepoint_boundary": 1000,
+          "transactions.disconnect_rollback": 1000,
+          "pubsub.subscribed_projection": 1000,
+          "pubsub.unpublished_table_hidden": 1000,
+          "pubsub.subscription_readonly_insert": 1000,
+          "pubsub.subscription_readonly_update": 1000,
+          "pubsub.unauthorized_subscription": 1000,
+          "pubsub.allowed_account_query": 1000,
+          "pubsub.incremental_publisher_visibility": 1000,
+          "pubsub.local_join_subscription": 1000,
+          "pubsub.subscription_cte_window": 1000,
+          "pubsub.subscriber_b_view": 1000,
+          "git4data.copy_isolation": 1000,
+          "git4data.merge_disjoint_insert": 1000,
+          "git4data.merge_update": 1000,
+          "git4data.merge_delete": 1000,
+          "git4data.conflict_error": 1000,
+          "git4data.conflict_skip": 1000,
+          "git4data.conflict_accept": 1000,
+          "git4data.pick_subset": 1000,
+          "git4data.unique_merge_rejection": 1000,
+          "git4data.schema_type_mismatch": 1000
+        },
+        "unique_operations": 40010
+      },
+      "timeout_rechecks": [
+        {
+          "id": "M046820",
+          "module": "git4data",
+          "family": "git4data.schema_type_mismatch",
+          "status": "pass_expected_rejection",
+          "seconds": 0.719246121996548,
+          "issues": [],
+          "checks": [
+            {
+              "sql": "create table gb6819(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+              "rows": []
+            },
+            {
+              "sql": "insert into gb6819 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+              "rows": []
+            },
+            {
+              "sql": "data branch create table gs6819 from gb6819",
+              "rows": []
+            },
+            {
+              "sql": "alter table gs6819 add column c varchar(20) default 'x'",
+              "rows": []
+            },
+            {
+              "sql": "alter table gb6819 add column c int default 0",
+              "rows": []
+            },
+            {
+              "sql": "data branch diff gs6819 against gb6819",
+              "expected_rejection": {
+                "code": 20101,
+                "message": "(20101, \"internal error: schema compatibility check: column 'c' exists in both schemas but has different types (target: 61, base: 22)\")",
+                "type": "OperationalError"
+              }
+            }
+          ],
+          "tls": null
+        },
+        {
+          "id": "M046822",
+          "module": "git4data",
+          "family": "git4data.merge_disjoint_insert",
+          "status": "pass",
+          "seconds": 1.39883731000009,
+          "issues": [],
+          "checks": [
+            {
+              "sql": "create table gb6821(id int primary key,u bigint unique,n bigint,j json,v vecf32(3))",
+              "rows": []
+            },
+            {
+              "sql": "insert into gb6821 values(1,1,%s,%s,'[1,2,3]'),(2,2,%s,%s,'[4,5,6]'),(3,3,%s,%s,'[7,8,9]')",
+              "rows": []
+            },
+            {
+              "sql": "data branch create table gs6821 from gb6821",
+              "rows": []
+            },
+            {
+              "sql": "insert into gs6821 values(4,4,%s,'{}','[1,2,3]')",
+              "rows": []
+            },
+            {
+              "sql": "insert into gb6821 values(5,5,%s,'{}','[1,2,3]')",
+              "rows": []
+            },
+            {
+              "sql": "data branch merge gs6821 into gb6821",
+              "rows": []
+            },
+            {
+              "sql": "select id,n from gb6821 order by id",
+              "rows": [
+                [
+                  1,
+                  688928
+                ],
+                [
+                  2,
+                  688929
+                ],
+                [
+                  3,
+                  688930
+                ],
+                [
+                  4,
+                  688932
+                ],
+                [
+                  5,
+                  688933
+                ]
+              ]
+            }
+          ],
+          "tls": null
+        }
+      ]
+    }
+  },
+  "issues": [
+    {
+      "key": "index",
+      "title": "[Bug]: Concurrent HNSW reindex and secondary-index DDL leave persistent inconsistent index metadata",
+      "body_file": "/workspace/mo-stability-500000/issues/index.md",
+      "body_bytes": 8132,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29927"
+    },
+    {
+      "key": "tls",
+      "title": "[Bug]: TLS handshake hangs when MySQL SSLRequest and ClientHello arrive together",
+      "body_file": "/workspace/mo-stability-500000/issues/tls.md",
+      "body_bytes": 4276,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29928"
+    },
+    {
+      "key": "publication",
+      "title": "[Bug]: CREATE PUBLICATION IF NOT EXISTS returns a duplicate-key error for an existing publication",
+      "body_file": "/workspace/mo-stability-500000/issues/publication.md",
+      "body_bytes": 1667,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29929"
+    },
+    {
+      "key": "task",
+      "title": "[Bug]: Positive SQL task timeouts below one second silently disable the execution deadline",
+      "body_file": "/workspace/mo-stability-500000/issues/task.md",
+      "body_bytes": 2793,
+      "url": "https://github.com/matrixorigin/matrixone/issues/29930"
+    }
+  ],
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "fatal_log_events": []
+}

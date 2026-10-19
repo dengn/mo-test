@@ -1,0 +1,6 @@
+START 65531_create 851939
+END 65531_create success 20.632 
+START 65531_insert_all 382110
+END 65531_insert_all success 5.33 
+START 65531_select_tail 49
+END 65531_select_tail error 0.123 {'type': 'AssertionError', 'code': (((65529, 65530, None),), ((65529, 65530, 65531),)), 'message': '(((65529, 65530, None),), ((65529, 65530, 65531),))'}

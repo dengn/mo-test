@@ -1,0 +1,653 @@
+[
+  {
+    "query": "repo:matrixorigin/matrixone is:issue ST_Intersection in:title",
+    "total_count": 0,
+    "issues": []
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue ST_IsValid in:title",
+    "total_count": 0,
+    "issues": []
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue unclosed",
+    "total_count": 4,
+    "issues": [
+      {
+        "number": 25739,
+        "title": "[Bug] CN Close stops cleanup after the first subsystem error",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/25739"
+      },
+      {
+        "number": 1296,
+        "title": "[AOE] Support filters upon unclosed segment",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/1296"
+      },
+      {
+        "number": 1293,
+        "title": "unexpected behavior of unclosed segment sparse filter ",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/1293"
+      },
+      {
+        "number": 644,
+        "title": "stale tables cannot be gc'ed due to unclosed relation during compilation phase for some DML",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/644"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue non-closed",
+    "total_count": 226,
+    "issues": [
+      {
+        "number": 27860,
+        "title": "[Enhancement]: Extend proven single-row aggregate laws beyond the initial family",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27860"
+      },
+      {
+        "number": 28437,
+        "title": "[Bug]: Shared CI build artifact upload fails after successful build",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28437"
+      },
+      {
+        "number": 27339,
+        "title": "[Bug]: non-strict VARCHAR truncation emits no 1265 warning over JDBC or SHOW WARNINGS",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27339"
+      },
+      {
+        "number": 27856,
+        "title": "[Enhancement]: Extend bounded aggregate elimination to proven non-PK unique keys",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27856"
+      },
+      {
+        "number": 27340,
+        "title": "[Bug]: non-strict and IGNORE numeric assignments still reject out-of-range values",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27340"
+      },
+      {
+        "number": 27858,
+        "title": "[Enhancement]: Simplify constant ORDER BY and HAVING after single-row aggregate elimination",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27858"
+      },
+      {
+        "number": 28296,
+        "title": "[Compatibility]: correlated scalar LIMIT rejects non-equality, outer ORDER BY, and dynamic bounds",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28296"
+      },
+      {
+        "number": 28026,
+        "title": "[Bug]: DATA BRANCH cannot apply primary-key updates with ON UPDATE CASCADE",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28026"
+      },
+      {
+        "number": 27859,
+        "title": "[Enhancement]: Propagate join uniqueness for bounded aggregate elimination",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27859"
+      },
+      {
+        "number": 29937,
+        "title": "[Feature Request]: non-negative time derivatives for irregular cumulative counters",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29937"
+      },
+      {
+        "number": 28485,
+        "title": "[Bug]: DEGREES exposes and persists infinity for finite DOUBLE input",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28485"
+      },
+      {
+        "number": 27857,
+        "title": "[Enhancement]: Exploit proven storage/index order for streaming grouped LIMIT",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27857"
+      },
+      {
+        "number": 28868,
+        "title": "[Compatibility]: numeric aggregate functions reject JSON operands accepted by MySQL",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28868"
+      },
+      {
+        "number": 28597,
+        "title": "[Compatibility]: lc_time_names is writable but ignored by localized date functions",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28597"
+      },
+      {
+        "number": 27800,
+        "title": "[Performance]: make FULLTEXT2 loaded UUID membership probes allocation-free and evaluate raw-16 zero-copy",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27800"
+      },
+      {
+        "number": 29932,
+        "title": "[Feature Request]: EXCLUDE frame clauses for leave-one-out and peer-excluded analytics",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29932"
+      },
+      {
+        "number": 27728,
+        "title": "[Enhancement]: Stabilize high-NDV GROUP BY planning and VARCHAR shuffle ownership",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27728"
+      },
+      {
+        "number": 29825,
+        "title": "[Bug]: BIGINT UNSIGNED AUTO_INCREMENT exhaustion returns internal allocation-loop error across CNs",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29825"
+      },
+      {
+        "number": 28298,
+        "title": "[Compatibility]: non-equality correlated scalar aggregates reject common query shapes",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28298"
+      },
+      {
+        "number": 27247,
+        "title": "perf(fulltext2): avoid boxing loaded primary keys for runtime-filter probes",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27247"
+      },
+      {
+        "number": 29947,
+        "title": "[Feature Request]: local sliding-window ranks distinct from partition-wide RANK",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29947"
+      },
+      {
+        "number": 28297,
+        "title": "[Compatibility]: outer JOIN ON subqueries referencing both join inputs are rejected",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28297"
+      },
+      {
+        "number": 29259,
+        "title": "[Bug]: checkpoint compact leaves new objects behind when metadata write fails after Sync",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29259"
+      },
+      {
+        "number": 27298,
+        "title": "[Bug]: JDBC getGeneratedKeys is empty for an explicitly supplied AUTO_INCREMENT value",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27298"
+      },
+      {
+        "number": 26088,
+        "title": "[Bug] sysbench1000w Insert Duplicate fails: CN memory pressure (40-41 GiB) causes cascading connection failures",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26088"
+      },
+      {
+        "number": 24144,
+        "title": "taskservice: stale refresh can close active task store and surface as \"sql: database is closed\"",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24144"
+      },
+      {
+        "number": 26742,
+        "title": "[Bug]: TPC-DS 1TB Q64 exhausts HashBuild budget instead of spilling",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26742"
+      },
+      {
+        "number": 28589,
+        "title": "[Bug]: DATA BRANCH misclassifies updates on DECIMAL256 primary keys as inserts",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28589"
+      },
+      {
+        "number": 28013,
+        "title": "fix: complete WAL waiters before append fail-stop",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28013"
+      },
+      {
+        "number": 29258,
+        "title": "[Bug]: checkpoint GC clears a keep-set failure and can delete an object a live table still references",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29258"
+      },
+      {
+        "number": 28238,
+        "title": "[Bug]: INSERT IGNORE maps AUTO_INCREMENT gaps to accepted rows differently from MySQL",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28238"
+      },
+      {
+        "number": 26564,
+        "title": "[Bug]: multi-CN JOIN on a range-partitioned table panics in CombinedRelData.Split",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26564"
+      },
+      {
+        "number": 29950,
+        "title": "[Feature Request]: window analytics compatibility roadmap with validated ClickHouse/DolphinDB gaps",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29950"
+      },
+      {
+        "number": 27757,
+        "title": "[Bug]: 10M IVFFlat workload intermittently closes RPC/backend connections",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27757"
+      },
+      {
+        "number": 29894,
+        "title": "[Bug]: TestCDCNoFullPublicLifecycle flakes when pre-close watermark sampling races reader progress",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29894"
+      },
+      {
+        "number": 29212,
+        "title": "[Bug]: VECTOR_INDEX_SCAN result-column resolution assumes IVFFlat without checking the index algo",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29212"
+      },
+      {
+        "number": 27587,
+        "title": "[Bug]: Kafka progress is discarded by a later failed statement although the earlier Kafka INSERT commits",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27587"
+      },
+      {
+        "number": 29253,
+        "title": "[Bug]: HNSW NewHnswSync orphans model files when DownloadAll fails, and loaded models ignore the resolved spill directory",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29253"
+      },
+      {
+        "number": 29714,
+        "title": "lockservice: Unlock treats broken pipe as terminal and skips binding refresh",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29714"
+      },
+      {
+        "number": 29936,
+        "title": "[Feature Request]: frame-respecting lagInFrame and leadInFrame navigation",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29936"
+      },
+      {
+        "number": 29392,
+        "title": "[Bug]: ISCP timeout causes are reported immediately before timeout",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29392"
+      },
+      {
+        "number": 29090,
+        "title": "[Bug]: IVFFLAT build panics on finite extreme VECF64 values",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29090"
+      },
+      {
+        "number": 29129,
+        "title": "[Bug]: non-equality correlated aggregate inside a local CTE expands scalar results into duplicate rows",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29129"
+      },
+      {
+        "number": 24799,
+        "title": "Remote pipeline with variable expression panics when ResolveVariableFunc is missing",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/24799"
+      },
+      {
+        "number": 28164,
+        "title": "[Compatibility]: ODKU ignores case-insensitive and trailing-space unique collations",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28164"
+      },
+      {
+        "number": 29389,
+        "title": "[Bug]: SQL EXECUTE GREATEST/LEAST with a DECIMAL column regresses prepared precision",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29389"
+      },
+      {
+        "number": 29434,
+        "title": "[Bug]: CDC persists transient target setup/release failures as permanent table errors",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29434"
+      },
+      {
+        "number": 29412,
+        "title": "[Bug]: correlated local CTE computed and nested aggregates lose empty-input row",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29412"
+      },
+      {
+        "number": 28452,
+        "title": "[Bug] HAKeeper client leaks transient backend closure into embedded UT SQL",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28452"
+      },
+      {
+        "number": 29815,
+        "title": "[Bug]: COS replayable PUT fails immediately on plain HTTP EOF despite available safe retry",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29815"
+      },
+      {
+        "number": 29704,
+        "title": "[Bug]: prepared JDBC index metadata returns context canceled in multi-CN Proxy BVT",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29704"
+      },
+      {
+        "number": 29377,
+        "title": "[CI] TestIssue27718ConcurrentSnapshotQuota optimistic_si visibility assertion",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29377"
+      },
+      {
+        "number": 27730,
+        "title": "[Enhancement]: Eliminate bounded aggregates grouped by a complete primary key",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27730"
+      },
+      {
+        "number": 28860,
+        "title": "[Bug]: distinct aggregates split SQL-equal JSON numeric encodings",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28860"
+      },
+      {
+        "number": 29885,
+        "title": "[Bug]: Test_CheckpointChaos2 snapshots files before GCKP rollback completes",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29885"
+      },
+      {
+        "number": 28647,
+        "title": "[Task] Maintain Top-ROI assigned bug groups",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28647"
+      },
+      {
+        "number": 25096,
+        "title": "[Bug]: Default collation is binary/case-sensitive; explicit _ci collations are ignored",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/25096"
+      },
+      {
+        "number": 29146,
+        "title": "[Bug]: prepared INSERT SELECT corrupts base and stored generated-column values",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29146"
+      },
+      {
+        "number": 27353,
+        "title": "[Bug]: MongoDB external table accepts non-NULL DEFAULT but returns NULL",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27353"
+      },
+      {
+        "number": 25866,
+        "title": "[Performance]: Bound memory amplification for join-heavy SQL and preserve pre-OOM attribution",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/25866"
+      },
+      {
+        "number": 28203,
+        "title": "[Bug]: QUOTE returns SQL NULL and uses non-MySQL escaping",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28203"
+      },
+      {
+        "number": 26465,
+        "title": "[BUG] MOI IDC (QA) MO OOM",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26465"
+      },
+      {
+        "number": 28327,
+        "title": "[Bug]: FULLTEXT ORDER BY without WHERE drops non-matching rows",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28327"
+      },
+      {
+        "number": 28921,
+        "title": "[Compatibility]: DATETIME(p) exact-second text output omits declared fractional width",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28921"
+      },
+      {
+        "number": 29196,
+        "title": "[Perf]: INSERT ... ON DUPLICATE KEY UPDATE uses full table scan + DEDUP join for conflict detection (no pk/UK filter pushdown)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29196"
+      },
+      {
+        "number": 29044,
+        "title": "[Bug]: embedded-cluster Close timeout permanently retains admission lease",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29044"
+      },
+      {
+        "number": 29310,
+        "title": "[Bug]: LISTAGG with a NULL delimiter reaches internal panic and binder error",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29310"
+      },
+      {
+        "number": 29882,
+        "title": "CI cleanup failure: embedded watchdog-publication TERM trap exits 92 with live fixture processes",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29882"
+      },
+      {
+        "number": 29184,
+        "title": "[Bug]: Proxy CN draining resets LAST_INSERT_ID on the migrated JDBC session",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29184"
+      },
+      {
+        "number": 29077,
+        "title": "[Bug]: IVFFLAT applies unrecognized distance-range predicates after truncated Top-K",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29077"
+      },
+      {
+        "number": 29273,
+        "title": "[Bug]: classic fulltext BOOLEAN trailing * on a 4+ rune CJK stem does prefix_eq of the whole stem and misses the indexed trigrams",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29273"
+      },
+      {
+        "number": 27811,
+        "title": "[Flaky UT]: MORPC factory-budget test can observe queue-admission timeout under race",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27811"
+      },
+      {
+        "number": 28216,
+        "title": "[Bug]: IPv4-mapped IPv6 addresses lose their mapped identity",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28216"
+      },
+      {
+        "number": 26879,
+        "title": "[Bug]: Prepared DECIMAL arguments in COALESCE/GREATEST/LEAST lose precision and NULL rebinding panics",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26879"
+      },
+      {
+        "number": 29968,
+        "title": "[Bug]: TopN unsupported-order-type UT still rejects T_any after NULL comparator support",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29968"
+      },
+      {
+        "number": 26768,
+        "title": "[Task]: Build a robust, resource-aware optimizer beyond TPCH-shaped workloads",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26768"
+      },
+      {
+        "number": 29634,
+        "title": "[Bug]: 4.2 CDC cannot start after #29431: default internal principal mismatches catalog and failed-state updates are rejected",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29634"
+      },
+      {
+        "number": 29071,
+        "title": "[Bug]: statement_query_type_3.sql intermittently reports stale statement_info DDL accounting in multi-CN PROXY BVT",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29071"
+      },
+      {
+        "number": 27979,
+        "title": "[Bug]: multi-CN system-view lock visibility returns zero active locks",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27979"
+      },
+      {
+        "number": 29331,
+        "title": "[Compatibility]: STR_TO_DATE returns NULL for supported day and week format directives",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29331"
+      },
+      {
+        "number": 29580,
+        "title": "[Performance]: DATETIME-to-DECIMAL predicates repeatedly format and parse each row",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29580"
+      },
+      {
+        "number": 28861,
+        "title": "[Bug]: distinct aggregates split vectors with SQL-equal signed-zero elements",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28861"
+      },
+      {
+        "number": 29571,
+        "title": "[Bug]: UnionOne regresses indexed-write copy and varlen marshal performance vs 4.2",
+        "state": "open",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29571"
+      },
+      {
+        "number": 29620,
+        "title": "[Bug]: BigData 1B indexed INSERT fails with rpc stream closed after CN-to-CN read timeout",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29620"
+      },
+      {
+        "number": 28480,
+        "title": "[Compatibility]: FORMAT locale lookup is case-sensitive and silently falls back to en_US",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28480"
+      },
+      {
+        "number": 29881,
+        "title": "CI race: transaction rollback clears tableCache/tableOps during increment allocator lookup",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29881"
+      },
+      {
+        "number": 27349,
+        "title": "[Bug]: negative temporal INTERVAL Window frame is accepted and returns empty frames",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27349"
+      },
+      {
+        "number": 28854,
+        "title": "[Bug]: percentile aggregates order NaN opposite to WITHIN GROUP ORDER BY",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28854"
+      },
+      {
+        "number": 29011,
+        "title": "[Bug]: early query during async IVFFLAT build pins incomplete centroid cache on one CN",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29011"
+      },
+      {
+        "number": 27712,
+        "title": "[Bug]: IN list with CONCAT expressions causes optimizer stack-overflow crash",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27712"
+      },
+      {
+        "number": 25744,
+        "title": "[Bug]: truncated COM_STMT_CLOSE and COM_STMT_RESET packets enter panic recovery",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/25744"
+      },
+      {
+        "number": 27699,
+        "title": "[Bug]: admission-ready CN filtering can starve lockservice backend discovery during startup",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27699"
+      },
+      {
+        "number": 26994,
+        "title": "[Bug]: prepared COUNT(?) over a table returns 2 instead of the row count",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26994"
+      },
+      {
+        "number": 27827,
+        "title": "[4.1-dev][Flaky test]: parallel embedded-cluster UTs lose HAKeeper progress",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27827"
+      },
+      {
+        "number": 28764,
+        "title": "[Bug]: Ubuntu/x86 race UT has flaky SQL Task store readiness failure",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/28764"
+      },
+      {
+        "number": 29644,
+        "title": "[Bug]: Reversed Prepared BETWEEN bounds panic in persisted secondary-index prefix filtering",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29644"
+      },
+      {
+        "number": 26453,
+        "title": "[Bug]: low agg spill threshold panics on ungrouped COUNT(*)",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26453"
+      },
+      {
+        "number": 27398,
+        "title": "[Bug]: large nullable secondary-index UPDATE misaligns rows and makes DELETE miss rows",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/27398"
+      },
+      {
+        "number": 26691,
+        "title": "[Bug]: OUTER APPLY drops NULL-extended rows for empty table-function output",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/26691"
+      },
+      {
+        "number": 29264,
+        "title": "[Bug]: LocalETLFS.write leaves .tmp files behind when Close or Rename fails",
+        "state": "closed",
+        "url": "https://github.com/matrixorigin/matrixone/issues/29264"
+      }
+    ]
+  },
+  {
+    "query": "repo:matrixorigin/matrixone is:issue polygon ring in:title",
+    "total_count": 0,
+    "issues": []
+  }
+]

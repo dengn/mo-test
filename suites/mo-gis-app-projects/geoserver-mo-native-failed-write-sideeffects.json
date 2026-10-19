@@ -1,0 +1,11 @@
+{
+  "rows_after_failed_workflow": [
+    [
+      9908,
+      456,
+      "POINT(116.315 39.815)"
+    ]
+  ],
+  "interpretation": "Insert and update were separate requests; failure of a later DELETE does not roll them back.",
+  "test_teardown": "Only rows named GIS WFS edit 中文 with kind edit are removed."
+}

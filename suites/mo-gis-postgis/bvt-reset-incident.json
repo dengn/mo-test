@@ -1,0 +1,9 @@
+{
+  "cause": "Official mo-tester initialization removes all non-built-in databases on the selected test endpoint. This reset only our fresh 6011 test databases.",
+  "action": "Rebuilt MO geoms and application fixtures; PG original fixtures retained. No difference-case results were overwritten.",
+  "affected_harness_calls": [
+    "supplement first launch",
+    "GeoDjango52 adapted MO first launch"
+  ],
+  "classification": "harness_reset_not_gis_bug"
+}

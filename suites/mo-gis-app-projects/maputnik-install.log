@@ -1,0 +1,16 @@
+npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@5.0.15: Glob versions prior to v9 are no longer supported
+npm warn deprecated chai-subset@1.6.0: functionality of this lib is built-in to chai now. see more details here: https://github.com/debitoor/chai-subset/pull/85
+npm warn gitignore-fallback No .npmignore file found, using .gitignore for file exclusion. Consider creating a .npmignore file to explicitly control published files.
+npm warn deprecated istanbul@0.4.5: This module is no longer maintained, try this instead:
+npm warn deprecated   npm i nyc
+npm warn deprecated Visit https://istanbul.js.org/integrations for other alternatives.
+
+added 1110 packages in 1m
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

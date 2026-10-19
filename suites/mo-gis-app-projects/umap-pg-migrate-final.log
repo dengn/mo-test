@@ -1,0 +1,8 @@
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+?: (umap.E001) AJAX_PROXY_CACHE_DIR is not set.
+	HINT: Set it to a writable directory in your settings.
+No UMAP_SETTINGS defined in env var. Trying in /etc/umap/umap.conf
+File /etc/umap/umap.conf not found, now trying /workspace/mo-gis-app-projects/python-env/lib/python3.12/site-packages/umap/settings/local.py
+[33mNo regular settings found. You can still use env vars for configuring uMap.[0m

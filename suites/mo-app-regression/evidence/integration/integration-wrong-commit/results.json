@@ -1,0 +1,15 @@
+{
+  "profile": "controls",
+  "policy": "strict",
+  "started_at_utc": "2026-10-12T22:45:45Z",
+  "jobs": [],
+  "min_free_mib": 128,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 2,
+  "passed": false,
+  "blocked_error_type": "GateBlocked",
+  "blocked_reason": "Runtime commit does not match pinned source",
+  "finished_at_utc": "2026-10-12T22:45:45Z"
+}

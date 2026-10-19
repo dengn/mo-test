@@ -1,0 +1,12 @@
+--- a/adminer/drivers/mysql.inc.php
++++ b/adminer/drivers/mysql.inc.php
+@@ -635,6 +635,9 @@
+ 			// https://mariadb.com/kb/en/library/show-columns/, https://github.com/vrana/adminer/pull/359#pullrequestreview-276677186
+ 			preg_match('~^(VIRTUAL|PERSISTENT|STORED)~', $extra, $generated);
+ 			list($type_name, $length, $unsigned) = parse_type($type);
++			if (getenv("MATRIXONE_ADAPTER") === "1" && stripos(connection()->server_info, "MatrixOne") !== false) {
++				$type_name = strtolower($type_name);
++			}
+ 			$default = $row["COLUMN_DEFAULT"];
+ 			if ($default != "") {
+ 				$is_text = preg_match('~text|json~', $type_name);

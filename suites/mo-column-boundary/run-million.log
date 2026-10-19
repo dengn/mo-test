@@ -1,0 +1,3 @@
+START 1000000_create 13000038
+GUARD {"reason": "stage_deadline", "stage": "1000000_create", "connection_id": 273423, "elapsed": 900.4809804740362, "memory_bytes": 5636378624, "cancel": "sent"}
+END 1000000_create error 930.299 {'type': 'OperationalError', 'code': 2013, 'message': "(2013, 'Lost connection to MySQL server during query (timed out)')"}
