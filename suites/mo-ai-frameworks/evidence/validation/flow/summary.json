@@ -1,0 +1,29 @@
+{
+  "run_id": "e05c36b34c6f",
+  "started_utc": "2026-10-14T01:07:10Z",
+  "groups": [
+    {
+      "group": "flow",
+      "projects": [
+        "crewai"
+      ],
+      "expected_tests": [
+        "test_crewai_matrixone_flow_restore_continue",
+        "test_crewai_native_sqlite_reference"
+      ],
+      "requirements_sha256": "f6f1d807598376e4445e559f97c73aaf88bcd1a5e262be34be20abe3b71d6443",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_crewai_matrixone_flow_restore_continue",
+        "test_crewai_native_sqlite_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 5.972
+    }
+  ],
+  "status": "PASS"
+}

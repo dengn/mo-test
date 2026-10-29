@@ -1,0 +1,39 @@
+{
+  "versions": {
+    "langextract": "1.7.1"
+  },
+  "records": [
+    {
+      "project": "google/langextract",
+      "name": "extract_align_document_reopen",
+      "backend": "native",
+      "kind": "native_control",
+      "status": "PASS",
+      "details": "native lx.extract/provider infer/parser/character alignment; typed AnnotatedDocument converted by public helpers, reopen/Unicode/attributes/upsert/tenant/delete; native JSONL reference; malformed provider output explicitly rejected; fixed provider, no extraction-quality or real-model certification",
+      "elapsed_ms": 10.008349025156349
+    },
+    {
+      "project": "google/langextract",
+      "name": "extract_align_document_reopen",
+      "backend": "matrixone",
+      "kind": "custom_integration",
+      "server": "8.0.30-MatrixOne-v",
+      "server_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+      "status": "PASS",
+      "details": "native lx.extract/provider infer/parser/character alignment; typed AnnotatedDocument converted by public helpers, reopen/Unicode/attributes/upsert/tenant/delete; native JSONL reference; malformed provider output explicitly rejected; fixed provider, no extraction-quality or real-model certification",
+      "cleanup": "PASS",
+      "elapsed_ms": 416.83883004589006
+    },
+    {
+      "project": "google/langextract",
+      "name": "extract_align_document_reopen",
+      "backend": "mysql",
+      "kind": "custom_integration",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "native lx.extract/provider infer/parser/character alignment; typed AnnotatedDocument converted by public helpers, reopen/Unicode/attributes/upsert/tenant/delete; native JSONL reference; malformed provider output explicitly rejected; fixed provider, no extraction-quality or real-model certification",
+      "cleanup": "PASS",
+      "elapsed_ms": 279.88716698018834
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "historical_basic_business_pass_count": 58,
-  "independent_native_driver_count": 22,
+  "independent_native_driver_count": 24,
   "SQL_case_count": 20,
   "not_all_historical_apps_automated": true,
   "applications": [
@@ -813,8 +813,9 @@
       "runtime_status": "smoke_passed",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "Official Wagtail 8.0 starter/wheel; all migrations completed with MatrixOne backend. Admin publish and public page API passed. Uses native substring database search because fulltext insert panics; no SAVEPOINT support. Fresh-install permission NOT NULL replaces historical OR CHECK; downgrade unverified. Saturation at 64 produced timeouts; final process restart preserved title, positive/negative native substring searches passed. Initial client cookie/redirect validation failures retained separately.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "8.0"
     },
     {
       "repo": "BookStackApp/BookStack",
@@ -839,8 +840,9 @@
       "runtime_status": "smoke_passed_core_partial",
       "adaptation_status": "source_adapted_and_tested",
       "adaptation_notes": "wpdb drop-in: column case aliases, no-op unique-key update removal, explicit transient numeric cast, DISTINCT term-name ordering. REST post, category association and category count passed. Cron/external updates disabled; plugins and themes not covered; source is 7.2-alpha.",
-      "independent_native_driver": "pending",
-      "strict_OSI_eligibility": "not_reaudited_by_this_project"
+      "independent_native_driver": "implemented",
+      "strict_OSI_eligibility": "not_reaudited_by_this_project",
+      "automated_release": "7.2-alpha-64292"
     }
   ],
   "integration_repository": "dengn/mo-test",

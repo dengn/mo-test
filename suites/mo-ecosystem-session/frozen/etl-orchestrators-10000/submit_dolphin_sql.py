@@ -1,0 +1,18 @@
+import requests,pathlib,json,time,pymysql
+B=pathlib.Path(__file__).resolve().parent;url='http://127.0.0.1:12345/dolphinscheduler';s=requests.Session();receipts=[]
+def call(method,path,**kw):
+ r=s.request(method,url+path,timeout=20,**kw);r.raise_for_status();x=r.json();receipts.append({'method':method,'path':path,'response':x});(B/'dolphin-sql-api-receipts.json').write_text(json.dumps(receipts,indent=2));print(path,x.get('code'),x.get('msg'),flush=True);assert x.get('code')==0,x;return x['data']
+login=call('POST','/login',data={'userName':'admin','userPassword':'dolphinscheduler123'});s.headers['sessionId']=login['sessionId'];project=call('POST','/projects',data={'projectName':'MatrixOne_native_SQL','description':'Additional native SQL/JDBC preflight, not counted in10k cases'})['code'];prefix=f'/projects/{project}';datasets=[]
+for engine,port,password in [('mo',6001,'111'),('mysql',13306,'types-local')]:
+ d=pymysql.connect(host='127.0.0.1',port=port,user='root',password=password,database='orchestrator10000',autocommit=True)
+ with d.cursor() as c:c.execute('CREATE TABLE IF NOT EXISTS ds_native_sql_audit(tag VARCHAR(64),rows_seen BIGINT,sum_rev BIGINT)')
+ d.close()
+ config={'name':'native_sql_'+engine,'type':'MYSQL','host':'127.0.0.1','port':port,'database':'orchestrator10000','userName':'root','password':password,'note':'synthetic local only','other':{'useSSL':'false','allowPublicKeyRetrieval':'true','serverTimezone':'UTC'}}
+ try:
+  call('POST','/datasources/connect',json=config);data=call('POST','/datasources',json=config);print('datasource',data,flush=True);datasets.append((engine,port,data if isinstance(data,int) else data['id']))
+ except Exception as e:(B/'dolphin-sql-preflight-blocked.json').write_text(json.dumps({'engine':engine,'error':str(e),'scope':'Native DS datasource preflight, distinct from successful Shell2k execution'},indent=2));raise
+codes=call('GET',prefix+'/task-definition/gen-task-codes',params={'genNum':2});tasks=[]
+for code,(engine,port,dsid) in zip(codes,datasets):
+ tasks.append({'code':code,'version':1,'name':'Native_SQL_'+engine,'taskType':'SQL','taskParams':{'type':'MYSQL','datasource':dsid,'sql':'INSERT INTO ds_native_sql_audit SELECT \'native_'+engine+'\',COUNT(*),SUM(rev) FROM dolphinscheduler_decimal38_18','sqlType':'1','localParams':[],'preStatements':[],'postStatements':[],'displayRows':10,'title':'MatrixOne JDBC SQL control','groupId':0,'connectionParams':{}},'flag':'YES','taskPriority':'MEDIUM','workerGroup':'default','environmentCode':-1,'failRetryTimes':0,'failRetryInterval':1,'timeoutFlag':'CLOSE','timeout':0,'delayTime':0})
+relations=[{'name':'','preTaskCode':0,'preTaskVersion':0,'postTaskCode':code,'postTaskVersion':1,'conditionType':'NONE','conditionParams':{}} for code in codes]
+data={'name':'Native_SQL_JDBC','locations':'[]','taskDefinitionJson':json.dumps(tasks),'taskRelationJson':json.dumps(relations),'globalParams':'[]','timeout':0,'executionType':'PARALLEL'};wf=call('POST',prefix+'/workflow-definition',data=data)['code'];call('POST',prefix+f'/workflow-definition/{wf}/release',data={'releaseState':'ONLINE','name':data['name']});call('POST',prefix+'/executors/start-workflow-instance',data={'workflowDefinitionCode':wf,'scheduleTime':'','failureStrategy':'END','warningType':'NONE','workflowInstancePriority':'MEDIUM','workerGroup':'default','tenantCode':'default','execType':'START_PROCESS','taskDependType':'TASK_POST','runMode':'RUN_MODE_SERIAL','dryRun':0});(B/'dolphin-sql-runtime-ids.json').write_text(json.dumps({'project_code':project,'workflow_code':wf,'task_codes':codes,'datasources':datasets,'session_id':login['sessionId']},indent=2))

@@ -1,0 +1,15 @@
+{
+  "version": "8.0.30-MatrixOne-v",
+  "commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+  "python": "3.12.14",
+  "packages": {
+    "pydantic-ai-slim": "2.55.0",
+    "openai-agents": "0.23.1",
+    "google-adk": "2.11.0",
+    "sqlalchemy": "2.1.4",
+    "aiomysql": "0.3.2",
+    "greenlet": "3.5.6",
+    "pytest": "8.4.2",
+    "pymysql": "1.2.3"
+  }
+}

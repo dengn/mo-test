@@ -1,0 +1,28 @@
+diff --git a/wagtail/migrations/0086_populate_grouppagepermission_permission.py b/wagtail/migrations/0086_populate_grouppagepermission_permission.py
+index 1ed5a3b..fdad611 100644
+--- a/wagtail/migrations/0086_populate_grouppagepermission_permission.py
++++ b/wagtail/migrations/0086_populate_grouppagepermission_permission.py
+@@ -23,6 +23,23 @@ def populate_grouppagepermission_permission(apps, schema_editor):
+ 
+     page_type = ContentType.objects.get_by_natural_key(Page._meta.app_label, Page._meta.model_name)
+ 
++    if schema_editor.connection.vendor == "mysql":
++        # MatrixOne's correlated UPDATE planner panics for this backfill. Keep
++        # the same rows, permission lookup and normalisation without a subquery.
++        permissions = dict(
++            Permission.objects.filter(content_type=page_type).values_list("codename", "pk")
++        )
++        rows = GroupPagePermission.objects.filter(
++            models.Q(permission__isnull=True) | models.Q(permission_type="edit")
++        ).values_list("pk", "permission_type")
++        for pk, action in rows:
++            action = "change" if action == "edit" else action
++            permission_id = permissions.get(f"{action}_{Page._meta.model_name}")
++            GroupPagePermission.objects.filter(pk=pk).update(
++                permission_id=permission_id, permission_type=action
++            )
++        return
++
+     # Normalise permission_type="edit" to permission_type="change"
+     # and backfill permission from permission_type
+     GroupPagePermission.objects.filter(

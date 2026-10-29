@@ -1,0 +1,322 @@
+{
+  "repository": "matrixorigin/matrixone",
+  "umbrella": 29848,
+  "issues": [
+    {
+      "number": 23070,
+      "title": "MySQL Compatibility: Window function ROW_NUMBER() with VARCHAR ORDER BY fails",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/23070",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 23083,
+      "title": "MySQL Compatibility: JOIN column reference remapping error in nested correlated subqueries",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/23083",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 23684,
+      "title": "[Feature Request]: Load arrow data",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/23684",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 25103,
+      "title": "[Bug]: information_schema gaps break schema-migration tooling",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25103",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 25115,
+      "title": "[Bug] Window function fails on partitioned data: internal error: the Window operator currently does not support sending split result of window function",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25115",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 25288,
+      "title": "[Bug]: RANGE window frame with NULL ORDER BY key differs from MySQL",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25288",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 25451,
+      "title": "[Tech Request]: Intelligent Query Execution Scheduling",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25451",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 25658,
+      "title": "[Bug] CDC data sync fails: Consumer starts but MO receives 0 rows after 30 minutes",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/25658",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 26264,
+      "title": "[Bug] JSONLine external-table projection fails beyond the second column",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/26264",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 26623,
+      "title": "[TestCase]: Java + MyBatis+MO framework scenario testing",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/26623",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 26630,
+      "title": "[Performance] Poor throughput for JDBC / SQL `INSERT INTO ... VALUES` bulk writes (TPC-C load vs PostgreSQL)",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/26630",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 26677,
+      "title": "[Feature Request]: Establish first-class MatrixOne ODBC support and compatibility testing",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/26677",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 27587,
+      "title": "[Bug]: Kafka progress is discarded by a later failed statement although the earlier Kafka INSERT commits",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27587",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 27746,
+      "title": "[Test]: Qualify Flink compatibility with MatrixOne through the MySQL ecosystem",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27746",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 27858,
+      "title": "[Enhancement]: Simplify constant ORDER BY and HAVING after single-row aggregate elimination",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27858",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 27911,
+      "title": "[Bug]: Flink JDBC primary-key upsert rejects no-op VALUES(pk) assignment",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/27911",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 28174,
+      "title": "[Feature Request]: Implement SQL:2023 SQL/PGQ property graphs over relational tables",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/28174",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 28819,
+      "title": "Integer COLUMN_TYPE exposes width zero (for example, BIGINT UNSIGNED(0))",
+      "state": "closed",
+      "url": "https://github.com/matrixorigin/matrixone/issues/28819",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 29275,
+      "title": "[Bug]: catalog logtail recovery abandons slow forced-flush subscriptions, pausing CN transactions for 185s",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29275",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect."
+    },
+    {
+      "number": 29840,
+      "title": "[Bug]: CSV/JSONLINE LOAD silently converts valid empty ENUM/SET values to NULL",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29840",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29840.json"
+    },
+    {
+      "number": 29841,
+      "title": "[Bug]: Decimal128 text parser counts leading zero and loses DECIMAL(38,38) precision",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29841",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29841.json"
+    },
+    {
+      "number": 29842,
+      "title": "[Bug]: Strict JSONLINE LOAD succeeds and silently drops malformed final records at EOF",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29842",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29842.json"
+    },
+    {
+      "number": 29843,
+      "title": "[Bug]: Invalid UTF-8 table identifier is admitted into catalog and causes DROP DATABASE panic",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29843",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29843.json"
+    },
+    {
+      "number": 29844,
+      "title": "[Bug]: External file LOAD bypasses TIME assignment bounds enforced by native INSERT",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29844",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29844.json"
+    },
+    {
+      "number": 29845,
+      "title": "[Feature Request]: Expand and document lossless Arrow/Parquet conversion profiles for extended types",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29845",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29845.json"
+    },
+    {
+      "number": 29846,
+      "title": "[Compatibility]: Ibis MySQL backend maps BIGINT UNSIGNED(64) metadata to unknown instead of uint64",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29846",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29846.json"
+    },
+    {
+      "number": 29847,
+      "title": "[Feature Request]: Transactional publish and recovery contract for writable S3 external tables",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29847",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29847.json"
+    },
+    {
+      "number": 29848,
+      "title": "[Test]: Qualify lossless ecosystem adapters and full Airbyte/NiFi/Kafka Connect recovery pipelines",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29848",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29848.json"
+    },
+    {
+      "number": 29849,
+      "title": "[Compatibility]: LOAD DATA SET NULLIF(@user_variable, ...) blocks Airbyte MySQL destination writes",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29849",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "frozen/etl-orchestrators-10000/load_repro.py",
+        "frozen/etl-orchestrators-10000/run_airbyte.py",
+        "frozen/etl-orchestrators-10000/airbyte_adapter.py"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29849.json"
+    },
+    {
+      "number": 29850,
+      "title": "[Compatibility]: NiFi parameterized MySQL UPSERT rejects unchanged primary-key assignment",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29850",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "archives/runtime-expanded.zip",
+        "archives/runtime-expanded-2.zip"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29850.json"
+    },
+    {
+      "number": 29851,
+      "title": "[Compatibility]: Parenthesized ALTER ADD COLUMN blocks Debezium JDBC schema evolution",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29851",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "archives/runtime-expanded.zip",
+        "archives/runtime-expanded-2.zip"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29851.json"
+    },
+    {
+      "number": 29856,
+      "title": "[Bug]: Kafka JSON projection rejects valid rows in strict mode and returns NULL message offsets in non-strict mode",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29856",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29856.json"
+    },
+    {
+      "number": 29857,
+      "title": "[Feature Request]: Atomic event-ledger and checkpoint sink profiles for Kafka Connect and NiFi",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29857",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "frozen/eos-6/protocol.py",
+        "frozen/eos-6/deterministic.py",
+        "frozen/eos-6/ack_first.py"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29857.json"
+    },
+    {
+      "number": 29876,
+      "title": "[Bug]: Cross-database same-name correlated DELETE silently deletes unmatched rows and breaks dlt incremental merge",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29876",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "frozen/ecosystem-4/dlt_incremental.py",
+        "frozen/ecosystem-4/dlt_incremental_alias.py"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29876.json"
+    },
+    {
+      "number": 29877,
+      "title": "[Bug]: Window ORDER BY scalar constant subquery fails and blocks dlt default merge",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29877",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "frozen/ecosystem-4/dlt_probe.py",
+        "frozen/ecosystem-4/dlt_sorted.py"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29877.json"
+    },
+    {
+      "number": 29878,
+      "title": "[Bug]: ROW_NUMBER ORDER BY literal NULL returns ANY PartitionForOrder error",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29878",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29878.json"
+    },
+    {
+      "number": 29879,
+      "title": "[Compatibility]: BOOL metadata reflects as SQLAlchemy NullType and prevents cloned DDL compilation",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29879",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "published_reproduction_snapshot": "issue-snapshots/29879.json"
+    },
+    {
+      "number": 29923,
+      "title": "[Compatibility]: Alias-qualified JOIN UPDATE rejects ENUM/SET assignment as ambiguous column reference",
+      "state": "open",
+      "url": "https://github.com/matrixorigin/matrixone/issues/29923",
+      "relationship": "Referenced in this session's umbrella issue; related issue, not automatically a new independent defect.",
+      "repro_or_evidence_locations": [
+        "replay/heavy/enum_repro.py",
+        "replay/heavy/enum_workarounds.py",
+        "archives/heavy-5000.zip"
+      ],
+      "published_reproduction_snapshot": "issue-snapshots/29923.json"
+    }
+  ]
+}

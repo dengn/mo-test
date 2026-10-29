@@ -1,0 +1,34 @@
+{
+  "package_version": "0.2.90",
+  "records": [
+    {
+      "project": "camel-ai/camel",
+      "name": "ChatAgent_history_reopen_continue",
+      "backend": "native_json",
+      "kind": "native_reference",
+      "status": "PASS",
+      "details": "native ChatAgent.step + ChatHistoryMemory; public memory setter restores new client, saved context reaches next model request; Unicode/order/namespace/clear; native JsonStorage reference, StubModel, no real inference or concurrent writers",
+      "elapsed_ms": 48.04540902841836
+    },
+    {
+      "project": "camel-ai/camel",
+      "name": "ChatAgent_history_reopen_continue",
+      "backend": "matrixone",
+      "kind": "custom_history",
+      "server": "8.0.30-MatrixOne-v",
+      "status": "PASS",
+      "details": "native ChatAgent.step + ChatHistoryMemory; public memory setter restores new client, saved context reaches next model request; Unicode/order/namespace/clear; native JsonStorage reference, StubModel, no real inference or concurrent writers; invalid mixed batches leave existing rows unchanged",
+      "elapsed_ms": 478.43387501779944
+    },
+    {
+      "project": "camel-ai/camel",
+      "name": "ChatAgent_history_reopen_continue",
+      "backend": "mysql",
+      "kind": "custom_history",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "native ChatAgent.step + ChatHistoryMemory; public memory setter restores new client, saved context reaches next model request; Unicode/order/namespace/clear; native JsonStorage reference, StubModel, no real inference or concurrent writers; invalid mixed batches leave existing rows unchanged",
+      "elapsed_ms": 351.43807297572494
+    }
+  ]
+}

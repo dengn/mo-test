@@ -1,0 +1,37 @@
+{
+  "run_id": "4e5ea1252219",
+  "started_utc": "2026-10-13T08:45:15Z",
+  "groups": [
+    {
+      "group": "core",
+      "projects": [
+        "langchain",
+        "llamaindex",
+        "haystack"
+      ],
+      "expected_tests": [
+        "test_langchain_chat_history",
+        "test_langchain_sql_tool",
+        "test_langchain_filtered_retriever",
+        "test_llamaindex_index_retriever_delete",
+        "test_haystack_pipeline_filter_delete"
+      ],
+      "requirements_sha256": "3affc29934c0a997fdedb41b65fedafd400dd94a68cb0781c30899e7904c4aa1",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langchain_chat_history",
+        "test_langchain_sql_tool",
+        "test_langchain_filtered_retriever",
+        "test_llamaindex_index_retriever_delete",
+        "test_haystack_pipeline_filter_delete"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 3.756
+    }
+  ],
+  "status": "PASS"
+}

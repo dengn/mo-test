@@ -1,0 +1,22 @@
+{
+  "earlier_native_business_checks": 32,
+  "earlier_business_report_passed": true,
+  "native_database_errors_found": 2,
+  "error_signature": "for SELECT DISTINCT, ORDER BY expressions must appear in select list",
+  "error_query_shape": "SELECT DISTINCT t.term_id, tr.object_id ... ORDER BY t.name ASC",
+  "earlier_adapter_sha256": "1eb1267136b79e060a79bf8724bda77abd0499452c4d6a6bdd04927f509663b0",
+  "original_adapter_snapshot": "wordpress-initial-db.php",
+  "raw_private_logs_published": false,
+  "private_log_digests": [
+    {
+      "file": "wordpress-1.log",
+      "sha256": "ac176c11e3cf749f835ac35bf28111465202d238e2b0d6234e4a75e435e55c0f"
+    },
+    {
+      "file": "wordpress-0.log",
+      "sha256": "a691831017d6abde399a42faa0661f3817d2e8ae01dedb84dff37b7c7f98607f"
+    }
+  ],
+  "repaired_adapter_scope": "Add t.name for exact DISTINCT t.term_id prefix in single or multi-column term lookup; existing PK means cardinality unchanged",
+  "new_error_log_gate": "no_native_WordPress_database_error_logs"
+}

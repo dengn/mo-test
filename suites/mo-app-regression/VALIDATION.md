@@ -106,3 +106,25 @@ Strapi第五轮32项通过：原生44表、Super Admin及Author真实注册/密�
 当前22个独立驱动分别通过的原生检查合计616项，本轮新增65项；原54项已迁移18个、还剩36个。1000候选/61历史尝试/58基本通过/939未运行不增加。新增两个load入口、完整冷依赖安装及线上CI尚未执行。Superset源仓库与Strapi monorepo均未修改或推送，本次适配和驱动只在独立mo-test套件中。旧库、旧runtime和原始归档/缓存保持。
 
 Strapi统一入口另一个全新库32项加3项SQL正向对照通过，退出0。二进制字段入场检查额外使用LOWER(data_type)对实际44表schema读回验证为0，保留相同四字节字符断言；所有生成的auth密钥保存在私有凭据文件。两个新增应用的统一入口轮分别记录，未宣称一次全22应用联合运行。Superset首轮完整旧SDK清单按其实际report hash精确恢复保留，供审查早期SDK身份。
+
+
+## WordPress 与 Wagtail：原54项还剩34项
+
+本轮新增WordPress33项、Wagtail46项，共79项。24个驱动分别通过的当前原生检查共695项；原54个待迁移应用已完成20个、剩34个。1000候选/61历史尝试/58基本通过/939未运行不增加，没有把重复回归当成新项目。
+
+WordPress固定历史7.2-alpha-64292源码5028 Git blob，原生网页安装12表、管理员原生密码/cookie/REST nonce、原生应用密码、订阅者、草稿/发布/分类/评论/修订、四字节Unicode逐值SQL、错误应用密码/匿名/订阅者/非法nonce零写入、真实PHP进程重启、应用密码吊销后拒绝通过32项。第一轮错误假设首个草稿必有修订记录；第二轮通过两次原生发布更新核对前后已发布修订，保留第一轮失败。另一个新库从统一入口复跑32项+3项SQL对照通过，退出0，见 wordpress-entry-smoke。不是稳定版WordPress或完整插件/升级/负载认证。
+
+Wagtail官方8.0 wheel与准备SDK核对4250应用文件，只有0086精确适配，其原始内容与固定Git blob一致。41依赖包/10230稳定文件、解释器SHA和独立HomePage fixture受核验。原生185计划节点、222记录（含squashed替代旧迁移）及53表、原生createsuperuser、Django原生create_user/Permission ORM观察者、真实登录和页面表单、草稿/发布版本与修订JSON、页面树/子类关系、Unicode、有效CSRF下权限拒绝、非法CSRF零修订、真实Gunicorn重启及取消发布通过46项。观察者仅获access_admin，无页面权限；原生拒绝会跳回后台并带精确错误消息，不把普通HTTP200算拒绝通过。
+
+前四轮失败逐一保留，见 WAGTAIL-FAILURES.md：计划/recorder断言、漏启用wagtail.users、原生多FULLTEXT写入panic、原生权限跳转断言。第三轮panic已匹配PANIC-04/#29899，在保留的新库经真实表单独立捕获模板/参数和完整SHOW CREATE TABLE；公开的完整复现SQL及触发后健康核对保存，未观察到服务器进程退出。后续业务通过使用历史原生fallback后端，不删除FULLTEXT索引或改写原有失败。未完成本次main候选21f19ae…的运行验证；构建在入场前因资源不足阻止，未重复提issue，未宣称main已修复。
+
+本轮仅运行两个新驱动及各自入口，不声称一次完整重跑24应用。新增load入口、Wagtail完整冷依赖安装、全部UI和线上Actions尚未完成；基本验证使用显式1024MiB缓存SDK入场阈值，load最低2GiB规则保留。
+
+
+Wagtail经统一入口在另一个全新库复跑，46项原生检查加3项SQL正向对照通过，退出0，见 evidence/migration-batch/wagtail-entry-smoke。WordPress和Wagtail各自的统一轮分开保存，未宣称一次完整24应用联合运行。新增SDK身份拒绝与venv路径保护合同测试两项，当前共25项Python合同测试通过；24应用workflow选项和两个新SDK变量已核对。
+
+
+提交前额外复核WordPress旧32项通过轮的原生私有日志，发现两条后台分类查询仍报SELECT DISTINCT排序列未选中；这不影响当时32个业务断言结果，但不能把旧轮称为无数据库错误。完整旧drop-in与结构化日志审计保留于 wordpress-initial-db.php / wordpress-initial-log-audit.json，查询见 wordpress-distinct-term-query.sql。原补丁只覆盖term_id单列查询，新补丁同时覆盖term_id、object_id双列形式，补选由term_id主键唯一决定的name，保持DISTINCT基数。第三轮新库通过新增的“原生WordPress日志无数据库错误”门禁，全部33项通过；当前各驱动检查总数更新为695，本轮两个应用合计79项。未发布新数据库issue，仍未完成本次main运行验证。
+
+
+修补后的WordPress统一入口再次在全新库执行，33项原生检查（含日志零数据库错误）加3项SQL正向对照全部通过、退出0，见 evidence/migration-batch/wordpress-entry-smoke-round2。旧32项入口及其两条后台SQL错误审计保留，不覆盖、不叠加重复计数。同步到mo-test/main的4fcb1c5后保留了已有AI框架回归内容，本批仅修改应用套件及其入口和说明。

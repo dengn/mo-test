@@ -1,0 +1,3402 @@
+{
+  "new_database": "mo_ecosystem_heavy_20261012",
+  "logical_endpoints": [
+    6001,
+    13306
+  ],
+  "table_count": 675,
+  "tables": [
+    {
+      "route": "petl",
+      "profile": "tinyint",
+      "table": "t_petl_tinyint"
+    },
+    {
+      "route": "petl",
+      "profile": "tinyint",
+      "table": "s_petl_tinyint"
+    },
+    {
+      "route": "petl",
+      "profile": "tinyint",
+      "table": "e_petl_tinyint"
+    },
+    {
+      "route": "petl",
+      "profile": "smallint",
+      "table": "t_petl_smallint"
+    },
+    {
+      "route": "petl",
+      "profile": "smallint",
+      "table": "s_petl_smallint"
+    },
+    {
+      "route": "petl",
+      "profile": "smallint",
+      "table": "e_petl_smallint"
+    },
+    {
+      "route": "petl",
+      "profile": "int32",
+      "table": "t_petl_int32"
+    },
+    {
+      "route": "petl",
+      "profile": "int32",
+      "table": "s_petl_int32"
+    },
+    {
+      "route": "petl",
+      "profile": "int32",
+      "table": "e_petl_int32"
+    },
+    {
+      "route": "petl",
+      "profile": "int64",
+      "table": "t_petl_int64"
+    },
+    {
+      "route": "petl",
+      "profile": "int64",
+      "table": "s_petl_int64"
+    },
+    {
+      "route": "petl",
+      "profile": "int64",
+      "table": "e_petl_int64"
+    },
+    {
+      "route": "petl",
+      "profile": "uint64",
+      "table": "t_petl_uint64"
+    },
+    {
+      "route": "petl",
+      "profile": "uint64",
+      "table": "s_petl_uint64"
+    },
+    {
+      "route": "petl",
+      "profile": "uint64",
+      "table": "e_petl_uint64"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal38_18",
+      "table": "t_petl_decimal38_18"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal38_18",
+      "table": "s_petl_decimal38_18"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal38_18",
+      "table": "e_petl_decimal38_18"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal20_0",
+      "table": "t_petl_decimal20_0"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal20_0",
+      "table": "s_petl_decimal20_0"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal20_0",
+      "table": "e_petl_decimal20_0"
+    },
+    {
+      "route": "petl",
+      "profile": "double",
+      "table": "t_petl_double"
+    },
+    {
+      "route": "petl",
+      "profile": "double",
+      "table": "s_petl_double"
+    },
+    {
+      "route": "petl",
+      "profile": "double",
+      "table": "e_petl_double"
+    },
+    {
+      "route": "petl",
+      "profile": "float32",
+      "table": "t_petl_float32"
+    },
+    {
+      "route": "petl",
+      "profile": "float32",
+      "table": "s_petl_float32"
+    },
+    {
+      "route": "petl",
+      "profile": "float32",
+      "table": "e_petl_float32"
+    },
+    {
+      "route": "petl",
+      "profile": "boolean",
+      "table": "t_petl_boolean"
+    },
+    {
+      "route": "petl",
+      "profile": "boolean",
+      "table": "s_petl_boolean"
+    },
+    {
+      "route": "petl",
+      "profile": "boolean",
+      "table": "e_petl_boolean"
+    },
+    {
+      "route": "petl",
+      "profile": "varchar_utf8",
+      "table": "t_petl_varchar_utf8"
+    },
+    {
+      "route": "petl",
+      "profile": "varchar_utf8",
+      "table": "s_petl_varchar_utf8"
+    },
+    {
+      "route": "petl",
+      "profile": "varchar_utf8",
+      "table": "e_petl_varchar_utf8"
+    },
+    {
+      "route": "petl",
+      "profile": "char_padding",
+      "table": "t_petl_char_padding"
+    },
+    {
+      "route": "petl",
+      "profile": "char_padding",
+      "table": "s_petl_char_padding"
+    },
+    {
+      "route": "petl",
+      "profile": "char_padding",
+      "table": "e_petl_char_padding"
+    },
+    {
+      "route": "petl",
+      "profile": "text_long",
+      "table": "t_petl_text_long"
+    },
+    {
+      "route": "petl",
+      "profile": "text_long",
+      "table": "s_petl_text_long"
+    },
+    {
+      "route": "petl",
+      "profile": "text_long",
+      "table": "e_petl_text_long"
+    },
+    {
+      "route": "petl",
+      "profile": "varbinary",
+      "table": "t_petl_varbinary"
+    },
+    {
+      "route": "petl",
+      "profile": "varbinary",
+      "table": "s_petl_varbinary"
+    },
+    {
+      "route": "petl",
+      "profile": "varbinary",
+      "table": "e_petl_varbinary"
+    },
+    {
+      "route": "petl",
+      "profile": "blob",
+      "table": "t_petl_blob"
+    },
+    {
+      "route": "petl",
+      "profile": "blob",
+      "table": "s_petl_blob"
+    },
+    {
+      "route": "petl",
+      "profile": "blob",
+      "table": "e_petl_blob"
+    },
+    {
+      "route": "petl",
+      "profile": "date",
+      "table": "t_petl_date"
+    },
+    {
+      "route": "petl",
+      "profile": "date",
+      "table": "s_petl_date"
+    },
+    {
+      "route": "petl",
+      "profile": "date",
+      "table": "e_petl_date"
+    },
+    {
+      "route": "petl",
+      "profile": "datetime6",
+      "table": "t_petl_datetime6"
+    },
+    {
+      "route": "petl",
+      "profile": "datetime6",
+      "table": "s_petl_datetime6"
+    },
+    {
+      "route": "petl",
+      "profile": "datetime6",
+      "table": "e_petl_datetime6"
+    },
+    {
+      "route": "petl",
+      "profile": "time6",
+      "table": "t_petl_time6"
+    },
+    {
+      "route": "petl",
+      "profile": "time6",
+      "table": "s_petl_time6"
+    },
+    {
+      "route": "petl",
+      "profile": "time6",
+      "table": "e_petl_time6"
+    },
+    {
+      "route": "petl",
+      "profile": "json_object",
+      "table": "t_petl_json_object"
+    },
+    {
+      "route": "petl",
+      "profile": "json_object",
+      "table": "s_petl_json_object"
+    },
+    {
+      "route": "petl",
+      "profile": "json_object",
+      "table": "e_petl_json_object"
+    },
+    {
+      "route": "petl",
+      "profile": "json_scalar",
+      "table": "t_petl_json_scalar"
+    },
+    {
+      "route": "petl",
+      "profile": "json_scalar",
+      "table": "s_petl_json_scalar"
+    },
+    {
+      "route": "petl",
+      "profile": "json_scalar",
+      "table": "e_petl_json_scalar"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal65_30",
+      "table": "t_petl_decimal65_30"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal65_30",
+      "table": "s_petl_decimal65_30"
+    },
+    {
+      "route": "petl",
+      "profile": "decimal65_30",
+      "table": "e_petl_decimal65_30"
+    },
+    {
+      "route": "petl",
+      "profile": "enum",
+      "table": "t_petl_enum"
+    },
+    {
+      "route": "petl",
+      "profile": "enum",
+      "table": "s_petl_enum"
+    },
+    {
+      "route": "petl",
+      "profile": "enum",
+      "table": "e_petl_enum"
+    },
+    {
+      "route": "petl",
+      "profile": "set",
+      "table": "t_petl_set"
+    },
+    {
+      "route": "petl",
+      "profile": "set",
+      "table": "s_petl_set"
+    },
+    {
+      "route": "petl",
+      "profile": "set",
+      "table": "e_petl_set"
+    },
+    {
+      "route": "petl",
+      "profile": "bit64",
+      "table": "t_petl_bit64"
+    },
+    {
+      "route": "petl",
+      "profile": "bit64",
+      "table": "s_petl_bit64"
+    },
+    {
+      "route": "petl",
+      "profile": "bit64",
+      "table": "e_petl_bit64"
+    },
+    {
+      "route": "petl",
+      "profile": "uuid_text",
+      "table": "t_petl_uuid_text"
+    },
+    {
+      "route": "petl",
+      "profile": "uuid_text",
+      "table": "s_petl_uuid_text"
+    },
+    {
+      "route": "petl",
+      "profile": "uuid_text",
+      "table": "e_petl_uuid_text"
+    },
+    {
+      "route": "polars",
+      "profile": "tinyint",
+      "table": "t_polars_tinyint"
+    },
+    {
+      "route": "polars",
+      "profile": "tinyint",
+      "table": "s_polars_tinyint"
+    },
+    {
+      "route": "polars",
+      "profile": "tinyint",
+      "table": "e_polars_tinyint"
+    },
+    {
+      "route": "polars",
+      "profile": "smallint",
+      "table": "t_polars_smallint"
+    },
+    {
+      "route": "polars",
+      "profile": "smallint",
+      "table": "s_polars_smallint"
+    },
+    {
+      "route": "polars",
+      "profile": "smallint",
+      "table": "e_polars_smallint"
+    },
+    {
+      "route": "polars",
+      "profile": "int32",
+      "table": "t_polars_int32"
+    },
+    {
+      "route": "polars",
+      "profile": "int32",
+      "table": "s_polars_int32"
+    },
+    {
+      "route": "polars",
+      "profile": "int32",
+      "table": "e_polars_int32"
+    },
+    {
+      "route": "polars",
+      "profile": "int64",
+      "table": "t_polars_int64"
+    },
+    {
+      "route": "polars",
+      "profile": "int64",
+      "table": "s_polars_int64"
+    },
+    {
+      "route": "polars",
+      "profile": "int64",
+      "table": "e_polars_int64"
+    },
+    {
+      "route": "polars",
+      "profile": "uint64",
+      "table": "t_polars_uint64"
+    },
+    {
+      "route": "polars",
+      "profile": "uint64",
+      "table": "s_polars_uint64"
+    },
+    {
+      "route": "polars",
+      "profile": "uint64",
+      "table": "e_polars_uint64"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal38_18",
+      "table": "t_polars_decimal38_18"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal38_18",
+      "table": "s_polars_decimal38_18"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal38_18",
+      "table": "e_polars_decimal38_18"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal20_0",
+      "table": "t_polars_decimal20_0"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal20_0",
+      "table": "s_polars_decimal20_0"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal20_0",
+      "table": "e_polars_decimal20_0"
+    },
+    {
+      "route": "polars",
+      "profile": "double",
+      "table": "t_polars_double"
+    },
+    {
+      "route": "polars",
+      "profile": "double",
+      "table": "s_polars_double"
+    },
+    {
+      "route": "polars",
+      "profile": "double",
+      "table": "e_polars_double"
+    },
+    {
+      "route": "polars",
+      "profile": "float32",
+      "table": "t_polars_float32"
+    },
+    {
+      "route": "polars",
+      "profile": "float32",
+      "table": "s_polars_float32"
+    },
+    {
+      "route": "polars",
+      "profile": "float32",
+      "table": "e_polars_float32"
+    },
+    {
+      "route": "polars",
+      "profile": "boolean",
+      "table": "t_polars_boolean"
+    },
+    {
+      "route": "polars",
+      "profile": "boolean",
+      "table": "s_polars_boolean"
+    },
+    {
+      "route": "polars",
+      "profile": "boolean",
+      "table": "e_polars_boolean"
+    },
+    {
+      "route": "polars",
+      "profile": "varchar_utf8",
+      "table": "t_polars_varchar_utf8"
+    },
+    {
+      "route": "polars",
+      "profile": "varchar_utf8",
+      "table": "s_polars_varchar_utf8"
+    },
+    {
+      "route": "polars",
+      "profile": "varchar_utf8",
+      "table": "e_polars_varchar_utf8"
+    },
+    {
+      "route": "polars",
+      "profile": "char_padding",
+      "table": "t_polars_char_padding"
+    },
+    {
+      "route": "polars",
+      "profile": "char_padding",
+      "table": "s_polars_char_padding"
+    },
+    {
+      "route": "polars",
+      "profile": "char_padding",
+      "table": "e_polars_char_padding"
+    },
+    {
+      "route": "polars",
+      "profile": "text_long",
+      "table": "t_polars_text_long"
+    },
+    {
+      "route": "polars",
+      "profile": "text_long",
+      "table": "s_polars_text_long"
+    },
+    {
+      "route": "polars",
+      "profile": "text_long",
+      "table": "e_polars_text_long"
+    },
+    {
+      "route": "polars",
+      "profile": "varbinary",
+      "table": "t_polars_varbinary"
+    },
+    {
+      "route": "polars",
+      "profile": "varbinary",
+      "table": "s_polars_varbinary"
+    },
+    {
+      "route": "polars",
+      "profile": "varbinary",
+      "table": "e_polars_varbinary"
+    },
+    {
+      "route": "polars",
+      "profile": "blob",
+      "table": "t_polars_blob"
+    },
+    {
+      "route": "polars",
+      "profile": "blob",
+      "table": "s_polars_blob"
+    },
+    {
+      "route": "polars",
+      "profile": "blob",
+      "table": "e_polars_blob"
+    },
+    {
+      "route": "polars",
+      "profile": "date",
+      "table": "t_polars_date"
+    },
+    {
+      "route": "polars",
+      "profile": "date",
+      "table": "s_polars_date"
+    },
+    {
+      "route": "polars",
+      "profile": "date",
+      "table": "e_polars_date"
+    },
+    {
+      "route": "polars",
+      "profile": "datetime6",
+      "table": "t_polars_datetime6"
+    },
+    {
+      "route": "polars",
+      "profile": "datetime6",
+      "table": "s_polars_datetime6"
+    },
+    {
+      "route": "polars",
+      "profile": "datetime6",
+      "table": "e_polars_datetime6"
+    },
+    {
+      "route": "polars",
+      "profile": "time6",
+      "table": "t_polars_time6"
+    },
+    {
+      "route": "polars",
+      "profile": "time6",
+      "table": "s_polars_time6"
+    },
+    {
+      "route": "polars",
+      "profile": "time6",
+      "table": "e_polars_time6"
+    },
+    {
+      "route": "polars",
+      "profile": "json_object",
+      "table": "t_polars_json_object"
+    },
+    {
+      "route": "polars",
+      "profile": "json_object",
+      "table": "s_polars_json_object"
+    },
+    {
+      "route": "polars",
+      "profile": "json_object",
+      "table": "e_polars_json_object"
+    },
+    {
+      "route": "polars",
+      "profile": "json_scalar",
+      "table": "t_polars_json_scalar"
+    },
+    {
+      "route": "polars",
+      "profile": "json_scalar",
+      "table": "s_polars_json_scalar"
+    },
+    {
+      "route": "polars",
+      "profile": "json_scalar",
+      "table": "e_polars_json_scalar"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal65_30",
+      "table": "t_polars_decimal65_30"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal65_30",
+      "table": "s_polars_decimal65_30"
+    },
+    {
+      "route": "polars",
+      "profile": "decimal65_30",
+      "table": "e_polars_decimal65_30"
+    },
+    {
+      "route": "polars",
+      "profile": "enum",
+      "table": "t_polars_enum"
+    },
+    {
+      "route": "polars",
+      "profile": "enum",
+      "table": "s_polars_enum"
+    },
+    {
+      "route": "polars",
+      "profile": "enum",
+      "table": "e_polars_enum"
+    },
+    {
+      "route": "polars",
+      "profile": "set",
+      "table": "t_polars_set"
+    },
+    {
+      "route": "polars",
+      "profile": "set",
+      "table": "s_polars_set"
+    },
+    {
+      "route": "polars",
+      "profile": "set",
+      "table": "e_polars_set"
+    },
+    {
+      "route": "polars",
+      "profile": "bit64",
+      "table": "t_polars_bit64"
+    },
+    {
+      "route": "polars",
+      "profile": "bit64",
+      "table": "s_polars_bit64"
+    },
+    {
+      "route": "polars",
+      "profile": "bit64",
+      "table": "e_polars_bit64"
+    },
+    {
+      "route": "polars",
+      "profile": "uuid_text",
+      "table": "t_polars_uuid_text"
+    },
+    {
+      "route": "polars",
+      "profile": "uuid_text",
+      "table": "s_polars_uuid_text"
+    },
+    {
+      "route": "polars",
+      "profile": "uuid_text",
+      "table": "e_polars_uuid_text"
+    },
+    {
+      "route": "dask",
+      "profile": "tinyint",
+      "table": "t_dask_tinyint"
+    },
+    {
+      "route": "dask",
+      "profile": "tinyint",
+      "table": "s_dask_tinyint"
+    },
+    {
+      "route": "dask",
+      "profile": "tinyint",
+      "table": "e_dask_tinyint"
+    },
+    {
+      "route": "dask",
+      "profile": "smallint",
+      "table": "t_dask_smallint"
+    },
+    {
+      "route": "dask",
+      "profile": "smallint",
+      "table": "s_dask_smallint"
+    },
+    {
+      "route": "dask",
+      "profile": "smallint",
+      "table": "e_dask_smallint"
+    },
+    {
+      "route": "dask",
+      "profile": "int32",
+      "table": "t_dask_int32"
+    },
+    {
+      "route": "dask",
+      "profile": "int32",
+      "table": "s_dask_int32"
+    },
+    {
+      "route": "dask",
+      "profile": "int32",
+      "table": "e_dask_int32"
+    },
+    {
+      "route": "dask",
+      "profile": "int64",
+      "table": "t_dask_int64"
+    },
+    {
+      "route": "dask",
+      "profile": "int64",
+      "table": "s_dask_int64"
+    },
+    {
+      "route": "dask",
+      "profile": "int64",
+      "table": "e_dask_int64"
+    },
+    {
+      "route": "dask",
+      "profile": "uint64",
+      "table": "t_dask_uint64"
+    },
+    {
+      "route": "dask",
+      "profile": "uint64",
+      "table": "s_dask_uint64"
+    },
+    {
+      "route": "dask",
+      "profile": "uint64",
+      "table": "e_dask_uint64"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal38_18",
+      "table": "t_dask_decimal38_18"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal38_18",
+      "table": "s_dask_decimal38_18"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal38_18",
+      "table": "e_dask_decimal38_18"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal20_0",
+      "table": "t_dask_decimal20_0"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal20_0",
+      "table": "s_dask_decimal20_0"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal20_0",
+      "table": "e_dask_decimal20_0"
+    },
+    {
+      "route": "dask",
+      "profile": "double",
+      "table": "t_dask_double"
+    },
+    {
+      "route": "dask",
+      "profile": "double",
+      "table": "s_dask_double"
+    },
+    {
+      "route": "dask",
+      "profile": "double",
+      "table": "e_dask_double"
+    },
+    {
+      "route": "dask",
+      "profile": "float32",
+      "table": "t_dask_float32"
+    },
+    {
+      "route": "dask",
+      "profile": "float32",
+      "table": "s_dask_float32"
+    },
+    {
+      "route": "dask",
+      "profile": "float32",
+      "table": "e_dask_float32"
+    },
+    {
+      "route": "dask",
+      "profile": "boolean",
+      "table": "t_dask_boolean"
+    },
+    {
+      "route": "dask",
+      "profile": "boolean",
+      "table": "s_dask_boolean"
+    },
+    {
+      "route": "dask",
+      "profile": "boolean",
+      "table": "e_dask_boolean"
+    },
+    {
+      "route": "dask",
+      "profile": "varchar_utf8",
+      "table": "t_dask_varchar_utf8"
+    },
+    {
+      "route": "dask",
+      "profile": "varchar_utf8",
+      "table": "s_dask_varchar_utf8"
+    },
+    {
+      "route": "dask",
+      "profile": "varchar_utf8",
+      "table": "e_dask_varchar_utf8"
+    },
+    {
+      "route": "dask",
+      "profile": "char_padding",
+      "table": "t_dask_char_padding"
+    },
+    {
+      "route": "dask",
+      "profile": "char_padding",
+      "table": "s_dask_char_padding"
+    },
+    {
+      "route": "dask",
+      "profile": "char_padding",
+      "table": "e_dask_char_padding"
+    },
+    {
+      "route": "dask",
+      "profile": "text_long",
+      "table": "t_dask_text_long"
+    },
+    {
+      "route": "dask",
+      "profile": "text_long",
+      "table": "s_dask_text_long"
+    },
+    {
+      "route": "dask",
+      "profile": "text_long",
+      "table": "e_dask_text_long"
+    },
+    {
+      "route": "dask",
+      "profile": "varbinary",
+      "table": "t_dask_varbinary"
+    },
+    {
+      "route": "dask",
+      "profile": "varbinary",
+      "table": "s_dask_varbinary"
+    },
+    {
+      "route": "dask",
+      "profile": "varbinary",
+      "table": "e_dask_varbinary"
+    },
+    {
+      "route": "dask",
+      "profile": "blob",
+      "table": "t_dask_blob"
+    },
+    {
+      "route": "dask",
+      "profile": "blob",
+      "table": "s_dask_blob"
+    },
+    {
+      "route": "dask",
+      "profile": "blob",
+      "table": "e_dask_blob"
+    },
+    {
+      "route": "dask",
+      "profile": "date",
+      "table": "t_dask_date"
+    },
+    {
+      "route": "dask",
+      "profile": "date",
+      "table": "s_dask_date"
+    },
+    {
+      "route": "dask",
+      "profile": "date",
+      "table": "e_dask_date"
+    },
+    {
+      "route": "dask",
+      "profile": "datetime6",
+      "table": "t_dask_datetime6"
+    },
+    {
+      "route": "dask",
+      "profile": "datetime6",
+      "table": "s_dask_datetime6"
+    },
+    {
+      "route": "dask",
+      "profile": "datetime6",
+      "table": "e_dask_datetime6"
+    },
+    {
+      "route": "dask",
+      "profile": "time6",
+      "table": "t_dask_time6"
+    },
+    {
+      "route": "dask",
+      "profile": "time6",
+      "table": "s_dask_time6"
+    },
+    {
+      "route": "dask",
+      "profile": "time6",
+      "table": "e_dask_time6"
+    },
+    {
+      "route": "dask",
+      "profile": "json_object",
+      "table": "t_dask_json_object"
+    },
+    {
+      "route": "dask",
+      "profile": "json_object",
+      "table": "s_dask_json_object"
+    },
+    {
+      "route": "dask",
+      "profile": "json_object",
+      "table": "e_dask_json_object"
+    },
+    {
+      "route": "dask",
+      "profile": "json_scalar",
+      "table": "t_dask_json_scalar"
+    },
+    {
+      "route": "dask",
+      "profile": "json_scalar",
+      "table": "s_dask_json_scalar"
+    },
+    {
+      "route": "dask",
+      "profile": "json_scalar",
+      "table": "e_dask_json_scalar"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal65_30",
+      "table": "t_dask_decimal65_30"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal65_30",
+      "table": "s_dask_decimal65_30"
+    },
+    {
+      "route": "dask",
+      "profile": "decimal65_30",
+      "table": "e_dask_decimal65_30"
+    },
+    {
+      "route": "dask",
+      "profile": "enum",
+      "table": "t_dask_enum"
+    },
+    {
+      "route": "dask",
+      "profile": "enum",
+      "table": "s_dask_enum"
+    },
+    {
+      "route": "dask",
+      "profile": "enum",
+      "table": "e_dask_enum"
+    },
+    {
+      "route": "dask",
+      "profile": "set",
+      "table": "t_dask_set"
+    },
+    {
+      "route": "dask",
+      "profile": "set",
+      "table": "s_dask_set"
+    },
+    {
+      "route": "dask",
+      "profile": "set",
+      "table": "e_dask_set"
+    },
+    {
+      "route": "dask",
+      "profile": "bit64",
+      "table": "t_dask_bit64"
+    },
+    {
+      "route": "dask",
+      "profile": "bit64",
+      "table": "s_dask_bit64"
+    },
+    {
+      "route": "dask",
+      "profile": "bit64",
+      "table": "e_dask_bit64"
+    },
+    {
+      "route": "dask",
+      "profile": "uuid_text",
+      "table": "t_dask_uuid_text"
+    },
+    {
+      "route": "dask",
+      "profile": "uuid_text",
+      "table": "s_dask_uuid_text"
+    },
+    {
+      "route": "dask",
+      "profile": "uuid_text",
+      "table": "e_dask_uuid_text"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "tinyint",
+      "table": "t_duckdb_tinyint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "tinyint",
+      "table": "s_duckdb_tinyint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "tinyint",
+      "table": "e_duckdb_tinyint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "smallint",
+      "table": "t_duckdb_smallint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "smallint",
+      "table": "s_duckdb_smallint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "smallint",
+      "table": "e_duckdb_smallint"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int32",
+      "table": "t_duckdb_int32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int32",
+      "table": "s_duckdb_int32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int32",
+      "table": "e_duckdb_int32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int64",
+      "table": "t_duckdb_int64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int64",
+      "table": "s_duckdb_int64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "int64",
+      "table": "e_duckdb_int64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uint64",
+      "table": "t_duckdb_uint64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uint64",
+      "table": "s_duckdb_uint64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uint64",
+      "table": "e_duckdb_uint64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal38_18",
+      "table": "t_duckdb_decimal38_18"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal38_18",
+      "table": "s_duckdb_decimal38_18"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal38_18",
+      "table": "e_duckdb_decimal38_18"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal20_0",
+      "table": "t_duckdb_decimal20_0"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal20_0",
+      "table": "s_duckdb_decimal20_0"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal20_0",
+      "table": "e_duckdb_decimal20_0"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "double",
+      "table": "t_duckdb_double"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "double",
+      "table": "s_duckdb_double"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "double",
+      "table": "e_duckdb_double"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "float32",
+      "table": "t_duckdb_float32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "float32",
+      "table": "s_duckdb_float32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "float32",
+      "table": "e_duckdb_float32"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "boolean",
+      "table": "t_duckdb_boolean"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "boolean",
+      "table": "s_duckdb_boolean"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "boolean",
+      "table": "e_duckdb_boolean"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varchar_utf8",
+      "table": "t_duckdb_varchar_utf8"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varchar_utf8",
+      "table": "s_duckdb_varchar_utf8"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varchar_utf8",
+      "table": "e_duckdb_varchar_utf8"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "char_padding",
+      "table": "t_duckdb_char_padding"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "char_padding",
+      "table": "s_duckdb_char_padding"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "char_padding",
+      "table": "e_duckdb_char_padding"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "text_long",
+      "table": "t_duckdb_text_long"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "text_long",
+      "table": "s_duckdb_text_long"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "text_long",
+      "table": "e_duckdb_text_long"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varbinary",
+      "table": "t_duckdb_varbinary"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varbinary",
+      "table": "s_duckdb_varbinary"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "varbinary",
+      "table": "e_duckdb_varbinary"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "blob",
+      "table": "t_duckdb_blob"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "blob",
+      "table": "s_duckdb_blob"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "blob",
+      "table": "e_duckdb_blob"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "date",
+      "table": "t_duckdb_date"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "date",
+      "table": "s_duckdb_date"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "date",
+      "table": "e_duckdb_date"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "datetime6",
+      "table": "t_duckdb_datetime6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "datetime6",
+      "table": "s_duckdb_datetime6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "datetime6",
+      "table": "e_duckdb_datetime6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "time6",
+      "table": "t_duckdb_time6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "time6",
+      "table": "s_duckdb_time6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "time6",
+      "table": "e_duckdb_time6"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_object",
+      "table": "t_duckdb_json_object"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_object",
+      "table": "s_duckdb_json_object"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_object",
+      "table": "e_duckdb_json_object"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_scalar",
+      "table": "t_duckdb_json_scalar"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_scalar",
+      "table": "s_duckdb_json_scalar"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "json_scalar",
+      "table": "e_duckdb_json_scalar"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal65_30",
+      "table": "t_duckdb_decimal65_30"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal65_30",
+      "table": "s_duckdb_decimal65_30"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "decimal65_30",
+      "table": "e_duckdb_decimal65_30"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "enum",
+      "table": "t_duckdb_enum"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "enum",
+      "table": "s_duckdb_enum"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "enum",
+      "table": "e_duckdb_enum"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "set",
+      "table": "t_duckdb_set"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "set",
+      "table": "s_duckdb_set"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "set",
+      "table": "e_duckdb_set"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "bit64",
+      "table": "t_duckdb_bit64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "bit64",
+      "table": "s_duckdb_bit64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "bit64",
+      "table": "e_duckdb_bit64"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uuid_text",
+      "table": "t_duckdb_uuid_text"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uuid_text",
+      "table": "s_duckdb_uuid_text"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "profile": "uuid_text",
+      "table": "e_duckdb_uuid_text"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "tinyint",
+      "table": "t_arrow_tinyint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "tinyint",
+      "table": "s_arrow_tinyint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "tinyint",
+      "table": "e_arrow_tinyint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "smallint",
+      "table": "t_arrow_smallint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "smallint",
+      "table": "s_arrow_smallint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "smallint",
+      "table": "e_arrow_smallint"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int32",
+      "table": "t_arrow_int32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int32",
+      "table": "s_arrow_int32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int32",
+      "table": "e_arrow_int32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int64",
+      "table": "t_arrow_int64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int64",
+      "table": "s_arrow_int64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "int64",
+      "table": "e_arrow_int64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uint64",
+      "table": "t_arrow_uint64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uint64",
+      "table": "s_arrow_uint64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uint64",
+      "table": "e_arrow_uint64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal38_18",
+      "table": "t_arrow_decimal38_18"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal38_18",
+      "table": "s_arrow_decimal38_18"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal38_18",
+      "table": "e_arrow_decimal38_18"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal20_0",
+      "table": "t_arrow_decimal20_0"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal20_0",
+      "table": "s_arrow_decimal20_0"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal20_0",
+      "table": "e_arrow_decimal20_0"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "double",
+      "table": "t_arrow_double"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "double",
+      "table": "s_arrow_double"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "double",
+      "table": "e_arrow_double"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "float32",
+      "table": "t_arrow_float32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "float32",
+      "table": "s_arrow_float32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "float32",
+      "table": "e_arrow_float32"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "boolean",
+      "table": "t_arrow_boolean"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "boolean",
+      "table": "s_arrow_boolean"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "boolean",
+      "table": "e_arrow_boolean"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varchar_utf8",
+      "table": "t_arrow_varchar_utf8"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varchar_utf8",
+      "table": "s_arrow_varchar_utf8"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varchar_utf8",
+      "table": "e_arrow_varchar_utf8"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "char_padding",
+      "table": "t_arrow_char_padding"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "char_padding",
+      "table": "s_arrow_char_padding"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "char_padding",
+      "table": "e_arrow_char_padding"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "text_long",
+      "table": "t_arrow_text_long"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "text_long",
+      "table": "s_arrow_text_long"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "text_long",
+      "table": "e_arrow_text_long"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varbinary",
+      "table": "t_arrow_varbinary"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varbinary",
+      "table": "s_arrow_varbinary"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "varbinary",
+      "table": "e_arrow_varbinary"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "blob",
+      "table": "t_arrow_blob"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "blob",
+      "table": "s_arrow_blob"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "blob",
+      "table": "e_arrow_blob"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "date",
+      "table": "t_arrow_date"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "date",
+      "table": "s_arrow_date"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "date",
+      "table": "e_arrow_date"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "datetime6",
+      "table": "t_arrow_datetime6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "datetime6",
+      "table": "s_arrow_datetime6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "datetime6",
+      "table": "e_arrow_datetime6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "time6",
+      "table": "t_arrow_time6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "time6",
+      "table": "s_arrow_time6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "time6",
+      "table": "e_arrow_time6"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_object",
+      "table": "t_arrow_json_object"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_object",
+      "table": "s_arrow_json_object"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_object",
+      "table": "e_arrow_json_object"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_scalar",
+      "table": "t_arrow_json_scalar"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_scalar",
+      "table": "s_arrow_json_scalar"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "json_scalar",
+      "table": "e_arrow_json_scalar"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal65_30",
+      "table": "t_arrow_decimal65_30"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal65_30",
+      "table": "s_arrow_decimal65_30"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "decimal65_30",
+      "table": "e_arrow_decimal65_30"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "enum",
+      "table": "t_arrow_enum"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "enum",
+      "table": "s_arrow_enum"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "enum",
+      "table": "e_arrow_enum"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "set",
+      "table": "t_arrow_set"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "set",
+      "table": "s_arrow_set"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "set",
+      "table": "e_arrow_set"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "bit64",
+      "table": "t_arrow_bit64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "bit64",
+      "table": "s_arrow_bit64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "bit64",
+      "table": "e_arrow_bit64"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uuid_text",
+      "table": "t_arrow_uuid_text"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uuid_text",
+      "table": "s_arrow_uuid_text"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "profile": "uuid_text",
+      "table": "e_arrow_uuid_text"
+    },
+    {
+      "route": "pandas",
+      "profile": "tinyint",
+      "table": "t_pandas_tinyint"
+    },
+    {
+      "route": "pandas",
+      "profile": "tinyint",
+      "table": "s_pandas_tinyint"
+    },
+    {
+      "route": "pandas",
+      "profile": "tinyint",
+      "table": "e_pandas_tinyint"
+    },
+    {
+      "route": "pandas",
+      "profile": "smallint",
+      "table": "t_pandas_smallint"
+    },
+    {
+      "route": "pandas",
+      "profile": "smallint",
+      "table": "s_pandas_smallint"
+    },
+    {
+      "route": "pandas",
+      "profile": "smallint",
+      "table": "e_pandas_smallint"
+    },
+    {
+      "route": "pandas",
+      "profile": "int32",
+      "table": "t_pandas_int32"
+    },
+    {
+      "route": "pandas",
+      "profile": "int32",
+      "table": "s_pandas_int32"
+    },
+    {
+      "route": "pandas",
+      "profile": "int32",
+      "table": "e_pandas_int32"
+    },
+    {
+      "route": "pandas",
+      "profile": "int64",
+      "table": "t_pandas_int64"
+    },
+    {
+      "route": "pandas",
+      "profile": "int64",
+      "table": "s_pandas_int64"
+    },
+    {
+      "route": "pandas",
+      "profile": "int64",
+      "table": "e_pandas_int64"
+    },
+    {
+      "route": "pandas",
+      "profile": "uint64",
+      "table": "t_pandas_uint64"
+    },
+    {
+      "route": "pandas",
+      "profile": "uint64",
+      "table": "s_pandas_uint64"
+    },
+    {
+      "route": "pandas",
+      "profile": "uint64",
+      "table": "e_pandas_uint64"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal38_18",
+      "table": "t_pandas_decimal38_18"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal38_18",
+      "table": "s_pandas_decimal38_18"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal38_18",
+      "table": "e_pandas_decimal38_18"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal20_0",
+      "table": "t_pandas_decimal20_0"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal20_0",
+      "table": "s_pandas_decimal20_0"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal20_0",
+      "table": "e_pandas_decimal20_0"
+    },
+    {
+      "route": "pandas",
+      "profile": "double",
+      "table": "t_pandas_double"
+    },
+    {
+      "route": "pandas",
+      "profile": "double",
+      "table": "s_pandas_double"
+    },
+    {
+      "route": "pandas",
+      "profile": "double",
+      "table": "e_pandas_double"
+    },
+    {
+      "route": "pandas",
+      "profile": "float32",
+      "table": "t_pandas_float32"
+    },
+    {
+      "route": "pandas",
+      "profile": "float32",
+      "table": "s_pandas_float32"
+    },
+    {
+      "route": "pandas",
+      "profile": "float32",
+      "table": "e_pandas_float32"
+    },
+    {
+      "route": "pandas",
+      "profile": "boolean",
+      "table": "t_pandas_boolean"
+    },
+    {
+      "route": "pandas",
+      "profile": "boolean",
+      "table": "s_pandas_boolean"
+    },
+    {
+      "route": "pandas",
+      "profile": "boolean",
+      "table": "e_pandas_boolean"
+    },
+    {
+      "route": "pandas",
+      "profile": "varchar_utf8",
+      "table": "t_pandas_varchar_utf8"
+    },
+    {
+      "route": "pandas",
+      "profile": "varchar_utf8",
+      "table": "s_pandas_varchar_utf8"
+    },
+    {
+      "route": "pandas",
+      "profile": "varchar_utf8",
+      "table": "e_pandas_varchar_utf8"
+    },
+    {
+      "route": "pandas",
+      "profile": "char_padding",
+      "table": "t_pandas_char_padding"
+    },
+    {
+      "route": "pandas",
+      "profile": "char_padding",
+      "table": "s_pandas_char_padding"
+    },
+    {
+      "route": "pandas",
+      "profile": "char_padding",
+      "table": "e_pandas_char_padding"
+    },
+    {
+      "route": "pandas",
+      "profile": "text_long",
+      "table": "t_pandas_text_long"
+    },
+    {
+      "route": "pandas",
+      "profile": "text_long",
+      "table": "s_pandas_text_long"
+    },
+    {
+      "route": "pandas",
+      "profile": "text_long",
+      "table": "e_pandas_text_long"
+    },
+    {
+      "route": "pandas",
+      "profile": "varbinary",
+      "table": "t_pandas_varbinary"
+    },
+    {
+      "route": "pandas",
+      "profile": "varbinary",
+      "table": "s_pandas_varbinary"
+    },
+    {
+      "route": "pandas",
+      "profile": "varbinary",
+      "table": "e_pandas_varbinary"
+    },
+    {
+      "route": "pandas",
+      "profile": "blob",
+      "table": "t_pandas_blob"
+    },
+    {
+      "route": "pandas",
+      "profile": "blob",
+      "table": "s_pandas_blob"
+    },
+    {
+      "route": "pandas",
+      "profile": "blob",
+      "table": "e_pandas_blob"
+    },
+    {
+      "route": "pandas",
+      "profile": "date",
+      "table": "t_pandas_date"
+    },
+    {
+      "route": "pandas",
+      "profile": "date",
+      "table": "s_pandas_date"
+    },
+    {
+      "route": "pandas",
+      "profile": "date",
+      "table": "e_pandas_date"
+    },
+    {
+      "route": "pandas",
+      "profile": "datetime6",
+      "table": "t_pandas_datetime6"
+    },
+    {
+      "route": "pandas",
+      "profile": "datetime6",
+      "table": "s_pandas_datetime6"
+    },
+    {
+      "route": "pandas",
+      "profile": "datetime6",
+      "table": "e_pandas_datetime6"
+    },
+    {
+      "route": "pandas",
+      "profile": "time6",
+      "table": "t_pandas_time6"
+    },
+    {
+      "route": "pandas",
+      "profile": "time6",
+      "table": "s_pandas_time6"
+    },
+    {
+      "route": "pandas",
+      "profile": "time6",
+      "table": "e_pandas_time6"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_object",
+      "table": "t_pandas_json_object"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_object",
+      "table": "s_pandas_json_object"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_object",
+      "table": "e_pandas_json_object"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_scalar",
+      "table": "t_pandas_json_scalar"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_scalar",
+      "table": "s_pandas_json_scalar"
+    },
+    {
+      "route": "pandas",
+      "profile": "json_scalar",
+      "table": "e_pandas_json_scalar"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal65_30",
+      "table": "t_pandas_decimal65_30"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal65_30",
+      "table": "s_pandas_decimal65_30"
+    },
+    {
+      "route": "pandas",
+      "profile": "decimal65_30",
+      "table": "e_pandas_decimal65_30"
+    },
+    {
+      "route": "pandas",
+      "profile": "enum",
+      "table": "t_pandas_enum"
+    },
+    {
+      "route": "pandas",
+      "profile": "enum",
+      "table": "s_pandas_enum"
+    },
+    {
+      "route": "pandas",
+      "profile": "enum",
+      "table": "e_pandas_enum"
+    },
+    {
+      "route": "pandas",
+      "profile": "set",
+      "table": "t_pandas_set"
+    },
+    {
+      "route": "pandas",
+      "profile": "set",
+      "table": "s_pandas_set"
+    },
+    {
+      "route": "pandas",
+      "profile": "set",
+      "table": "e_pandas_set"
+    },
+    {
+      "route": "pandas",
+      "profile": "bit64",
+      "table": "t_pandas_bit64"
+    },
+    {
+      "route": "pandas",
+      "profile": "bit64",
+      "table": "s_pandas_bit64"
+    },
+    {
+      "route": "pandas",
+      "profile": "bit64",
+      "table": "e_pandas_bit64"
+    },
+    {
+      "route": "pandas",
+      "profile": "uuid_text",
+      "table": "t_pandas_uuid_text"
+    },
+    {
+      "route": "pandas",
+      "profile": "uuid_text",
+      "table": "s_pandas_uuid_text"
+    },
+    {
+      "route": "pandas",
+      "profile": "uuid_text",
+      "table": "e_pandas_uuid_text"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "tinyint",
+      "table": "t_sqlalchemy_tinyint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "tinyint",
+      "table": "s_sqlalchemy_tinyint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "tinyint",
+      "table": "e_sqlalchemy_tinyint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "smallint",
+      "table": "t_sqlalchemy_smallint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "smallint",
+      "table": "s_sqlalchemy_smallint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "smallint",
+      "table": "e_sqlalchemy_smallint"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int32",
+      "table": "t_sqlalchemy_int32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int32",
+      "table": "s_sqlalchemy_int32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int32",
+      "table": "e_sqlalchemy_int32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int64",
+      "table": "t_sqlalchemy_int64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int64",
+      "table": "s_sqlalchemy_int64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "int64",
+      "table": "e_sqlalchemy_int64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uint64",
+      "table": "t_sqlalchemy_uint64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uint64",
+      "table": "s_sqlalchemy_uint64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uint64",
+      "table": "e_sqlalchemy_uint64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal38_18",
+      "table": "t_sqlalchemy_decimal38_18"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal38_18",
+      "table": "s_sqlalchemy_decimal38_18"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal38_18",
+      "table": "e_sqlalchemy_decimal38_18"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal20_0",
+      "table": "t_sqlalchemy_decimal20_0"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal20_0",
+      "table": "s_sqlalchemy_decimal20_0"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal20_0",
+      "table": "e_sqlalchemy_decimal20_0"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "double",
+      "table": "t_sqlalchemy_double"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "double",
+      "table": "s_sqlalchemy_double"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "double",
+      "table": "e_sqlalchemy_double"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "float32",
+      "table": "t_sqlalchemy_float32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "float32",
+      "table": "s_sqlalchemy_float32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "float32",
+      "table": "e_sqlalchemy_float32"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "boolean",
+      "table": "t_sqlalchemy_boolean"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "boolean",
+      "table": "s_sqlalchemy_boolean"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "boolean",
+      "table": "e_sqlalchemy_boolean"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varchar_utf8",
+      "table": "t_sqlalchemy_varchar_utf8"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varchar_utf8",
+      "table": "s_sqlalchemy_varchar_utf8"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varchar_utf8",
+      "table": "e_sqlalchemy_varchar_utf8"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "char_padding",
+      "table": "t_sqlalchemy_char_padding"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "char_padding",
+      "table": "s_sqlalchemy_char_padding"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "char_padding",
+      "table": "e_sqlalchemy_char_padding"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "text_long",
+      "table": "t_sqlalchemy_text_long"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "text_long",
+      "table": "s_sqlalchemy_text_long"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "text_long",
+      "table": "e_sqlalchemy_text_long"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varbinary",
+      "table": "t_sqlalchemy_varbinary"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varbinary",
+      "table": "s_sqlalchemy_varbinary"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "varbinary",
+      "table": "e_sqlalchemy_varbinary"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "blob",
+      "table": "t_sqlalchemy_blob"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "blob",
+      "table": "s_sqlalchemy_blob"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "blob",
+      "table": "e_sqlalchemy_blob"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "date",
+      "table": "t_sqlalchemy_date"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "date",
+      "table": "s_sqlalchemy_date"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "date",
+      "table": "e_sqlalchemy_date"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "datetime6",
+      "table": "t_sqlalchemy_datetime6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "datetime6",
+      "table": "s_sqlalchemy_datetime6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "datetime6",
+      "table": "e_sqlalchemy_datetime6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "time6",
+      "table": "t_sqlalchemy_time6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "time6",
+      "table": "s_sqlalchemy_time6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "time6",
+      "table": "e_sqlalchemy_time6"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_object",
+      "table": "t_sqlalchemy_json_object"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_object",
+      "table": "s_sqlalchemy_json_object"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_object",
+      "table": "e_sqlalchemy_json_object"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_scalar",
+      "table": "t_sqlalchemy_json_scalar"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_scalar",
+      "table": "s_sqlalchemy_json_scalar"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "json_scalar",
+      "table": "e_sqlalchemy_json_scalar"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal65_30",
+      "table": "t_sqlalchemy_decimal65_30"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal65_30",
+      "table": "s_sqlalchemy_decimal65_30"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "decimal65_30",
+      "table": "e_sqlalchemy_decimal65_30"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "enum",
+      "table": "t_sqlalchemy_enum"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "enum",
+      "table": "s_sqlalchemy_enum"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "enum",
+      "table": "e_sqlalchemy_enum"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "set",
+      "table": "t_sqlalchemy_set"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "set",
+      "table": "s_sqlalchemy_set"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "set",
+      "table": "e_sqlalchemy_set"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "bit64",
+      "table": "t_sqlalchemy_bit64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "bit64",
+      "table": "s_sqlalchemy_bit64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "bit64",
+      "table": "e_sqlalchemy_bit64"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uuid_text",
+      "table": "t_sqlalchemy_uuid_text"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uuid_text",
+      "table": "s_sqlalchemy_uuid_text"
+    },
+    {
+      "route": "sqlalchemy",
+      "profile": "uuid_text",
+      "table": "e_sqlalchemy_uuid_text"
+    },
+    {
+      "route": "pymysql",
+      "profile": "tinyint",
+      "table": "t_pymysql_tinyint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "tinyint",
+      "table": "s_pymysql_tinyint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "tinyint",
+      "table": "e_pymysql_tinyint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "smallint",
+      "table": "t_pymysql_smallint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "smallint",
+      "table": "s_pymysql_smallint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "smallint",
+      "table": "e_pymysql_smallint"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int32",
+      "table": "t_pymysql_int32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int32",
+      "table": "s_pymysql_int32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int32",
+      "table": "e_pymysql_int32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int64",
+      "table": "t_pymysql_int64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int64",
+      "table": "s_pymysql_int64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "int64",
+      "table": "e_pymysql_int64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uint64",
+      "table": "t_pymysql_uint64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uint64",
+      "table": "s_pymysql_uint64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uint64",
+      "table": "e_pymysql_uint64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal38_18",
+      "table": "t_pymysql_decimal38_18"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal38_18",
+      "table": "s_pymysql_decimal38_18"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal38_18",
+      "table": "e_pymysql_decimal38_18"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal20_0",
+      "table": "t_pymysql_decimal20_0"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal20_0",
+      "table": "s_pymysql_decimal20_0"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal20_0",
+      "table": "e_pymysql_decimal20_0"
+    },
+    {
+      "route": "pymysql",
+      "profile": "double",
+      "table": "t_pymysql_double"
+    },
+    {
+      "route": "pymysql",
+      "profile": "double",
+      "table": "s_pymysql_double"
+    },
+    {
+      "route": "pymysql",
+      "profile": "double",
+      "table": "e_pymysql_double"
+    },
+    {
+      "route": "pymysql",
+      "profile": "float32",
+      "table": "t_pymysql_float32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "float32",
+      "table": "s_pymysql_float32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "float32",
+      "table": "e_pymysql_float32"
+    },
+    {
+      "route": "pymysql",
+      "profile": "boolean",
+      "table": "t_pymysql_boolean"
+    },
+    {
+      "route": "pymysql",
+      "profile": "boolean",
+      "table": "s_pymysql_boolean"
+    },
+    {
+      "route": "pymysql",
+      "profile": "boolean",
+      "table": "e_pymysql_boolean"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varchar_utf8",
+      "table": "t_pymysql_varchar_utf8"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varchar_utf8",
+      "table": "s_pymysql_varchar_utf8"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varchar_utf8",
+      "table": "e_pymysql_varchar_utf8"
+    },
+    {
+      "route": "pymysql",
+      "profile": "char_padding",
+      "table": "t_pymysql_char_padding"
+    },
+    {
+      "route": "pymysql",
+      "profile": "char_padding",
+      "table": "s_pymysql_char_padding"
+    },
+    {
+      "route": "pymysql",
+      "profile": "char_padding",
+      "table": "e_pymysql_char_padding"
+    },
+    {
+      "route": "pymysql",
+      "profile": "text_long",
+      "table": "t_pymysql_text_long"
+    },
+    {
+      "route": "pymysql",
+      "profile": "text_long",
+      "table": "s_pymysql_text_long"
+    },
+    {
+      "route": "pymysql",
+      "profile": "text_long",
+      "table": "e_pymysql_text_long"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varbinary",
+      "table": "t_pymysql_varbinary"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varbinary",
+      "table": "s_pymysql_varbinary"
+    },
+    {
+      "route": "pymysql",
+      "profile": "varbinary",
+      "table": "e_pymysql_varbinary"
+    },
+    {
+      "route": "pymysql",
+      "profile": "blob",
+      "table": "t_pymysql_blob"
+    },
+    {
+      "route": "pymysql",
+      "profile": "blob",
+      "table": "s_pymysql_blob"
+    },
+    {
+      "route": "pymysql",
+      "profile": "blob",
+      "table": "e_pymysql_blob"
+    },
+    {
+      "route": "pymysql",
+      "profile": "date",
+      "table": "t_pymysql_date"
+    },
+    {
+      "route": "pymysql",
+      "profile": "date",
+      "table": "s_pymysql_date"
+    },
+    {
+      "route": "pymysql",
+      "profile": "date",
+      "table": "e_pymysql_date"
+    },
+    {
+      "route": "pymysql",
+      "profile": "datetime6",
+      "table": "t_pymysql_datetime6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "datetime6",
+      "table": "s_pymysql_datetime6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "datetime6",
+      "table": "e_pymysql_datetime6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "time6",
+      "table": "t_pymysql_time6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "time6",
+      "table": "s_pymysql_time6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "time6",
+      "table": "e_pymysql_time6"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_object",
+      "table": "t_pymysql_json_object"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_object",
+      "table": "s_pymysql_json_object"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_object",
+      "table": "e_pymysql_json_object"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_scalar",
+      "table": "t_pymysql_json_scalar"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_scalar",
+      "table": "s_pymysql_json_scalar"
+    },
+    {
+      "route": "pymysql",
+      "profile": "json_scalar",
+      "table": "e_pymysql_json_scalar"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal65_30",
+      "table": "t_pymysql_decimal65_30"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal65_30",
+      "table": "s_pymysql_decimal65_30"
+    },
+    {
+      "route": "pymysql",
+      "profile": "decimal65_30",
+      "table": "e_pymysql_decimal65_30"
+    },
+    {
+      "route": "pymysql",
+      "profile": "enum",
+      "table": "t_pymysql_enum"
+    },
+    {
+      "route": "pymysql",
+      "profile": "enum",
+      "table": "s_pymysql_enum"
+    },
+    {
+      "route": "pymysql",
+      "profile": "enum",
+      "table": "e_pymysql_enum"
+    },
+    {
+      "route": "pymysql",
+      "profile": "set",
+      "table": "t_pymysql_set"
+    },
+    {
+      "route": "pymysql",
+      "profile": "set",
+      "table": "s_pymysql_set"
+    },
+    {
+      "route": "pymysql",
+      "profile": "set",
+      "table": "e_pymysql_set"
+    },
+    {
+      "route": "pymysql",
+      "profile": "bit64",
+      "table": "t_pymysql_bit64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "bit64",
+      "table": "s_pymysql_bit64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "bit64",
+      "table": "e_pymysql_bit64"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uuid_text",
+      "table": "t_pymysql_uuid_text"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uuid_text",
+      "table": "s_pymysql_uuid_text"
+    },
+    {
+      "route": "pymysql",
+      "profile": "uuid_text",
+      "table": "e_pymysql_uuid_text"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "tinyint",
+      "table": "t_mysql_tinyint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "tinyint",
+      "table": "s_mysql_tinyint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "tinyint",
+      "table": "e_mysql_tinyint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "smallint",
+      "table": "t_mysql_smallint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "smallint",
+      "table": "s_mysql_smallint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "smallint",
+      "table": "e_mysql_smallint"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int32",
+      "table": "t_mysql_int32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int32",
+      "table": "s_mysql_int32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int32",
+      "table": "e_mysql_int32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int64",
+      "table": "t_mysql_int64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int64",
+      "table": "s_mysql_int64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "int64",
+      "table": "e_mysql_int64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uint64",
+      "table": "t_mysql_uint64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uint64",
+      "table": "s_mysql_uint64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uint64",
+      "table": "e_mysql_uint64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal38_18",
+      "table": "t_mysql_decimal38_18"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal38_18",
+      "table": "s_mysql_decimal38_18"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal38_18",
+      "table": "e_mysql_decimal38_18"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal20_0",
+      "table": "t_mysql_decimal20_0"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal20_0",
+      "table": "s_mysql_decimal20_0"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal20_0",
+      "table": "e_mysql_decimal20_0"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "double",
+      "table": "t_mysql_double"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "double",
+      "table": "s_mysql_double"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "double",
+      "table": "e_mysql_double"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "float32",
+      "table": "t_mysql_float32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "float32",
+      "table": "s_mysql_float32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "float32",
+      "table": "e_mysql_float32"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "boolean",
+      "table": "t_mysql_boolean"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "boolean",
+      "table": "s_mysql_boolean"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "boolean",
+      "table": "e_mysql_boolean"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varchar_utf8",
+      "table": "t_mysql_varchar_utf8"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varchar_utf8",
+      "table": "s_mysql_varchar_utf8"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varchar_utf8",
+      "table": "e_mysql_varchar_utf8"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "char_padding",
+      "table": "t_mysql_char_padding"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "char_padding",
+      "table": "s_mysql_char_padding"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "char_padding",
+      "table": "e_mysql_char_padding"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "text_long",
+      "table": "t_mysql_text_long"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "text_long",
+      "table": "s_mysql_text_long"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "text_long",
+      "table": "e_mysql_text_long"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varbinary",
+      "table": "t_mysql_varbinary"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varbinary",
+      "table": "s_mysql_varbinary"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "varbinary",
+      "table": "e_mysql_varbinary"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "blob",
+      "table": "t_mysql_blob"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "blob",
+      "table": "s_mysql_blob"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "blob",
+      "table": "e_mysql_blob"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "date",
+      "table": "t_mysql_date"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "date",
+      "table": "s_mysql_date"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "date",
+      "table": "e_mysql_date"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "datetime6",
+      "table": "t_mysql_datetime6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "datetime6",
+      "table": "s_mysql_datetime6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "datetime6",
+      "table": "e_mysql_datetime6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "time6",
+      "table": "t_mysql_time6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "time6",
+      "table": "s_mysql_time6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "time6",
+      "table": "e_mysql_time6"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_object",
+      "table": "t_mysql_json_object"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_object",
+      "table": "s_mysql_json_object"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_object",
+      "table": "e_mysql_json_object"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_scalar",
+      "table": "t_mysql_json_scalar"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_scalar",
+      "table": "s_mysql_json_scalar"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "json_scalar",
+      "table": "e_mysql_json_scalar"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal65_30",
+      "table": "t_mysql_decimal65_30"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal65_30",
+      "table": "s_mysql_decimal65_30"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "decimal65_30",
+      "table": "e_mysql_decimal65_30"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "enum",
+      "table": "t_mysql_enum"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "enum",
+      "table": "s_mysql_enum"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "enum",
+      "table": "e_mysql_enum"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "set",
+      "table": "t_mysql_set"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "set",
+      "table": "s_mysql_set"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "set",
+      "table": "e_mysql_set"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "bit64",
+      "table": "t_mysql_bit64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "bit64",
+      "table": "s_mysql_bit64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "bit64",
+      "table": "e_mysql_bit64"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uuid_text",
+      "table": "t_mysql_uuid_text"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uuid_text",
+      "table": "s_mysql_uuid_text"
+    },
+    {
+      "route": "mysql_connector",
+      "profile": "uuid_text",
+      "table": "e_mysql_uuid_text"
+    }
+  ],
+  "required_before_reuse": [
+    "matching database owner marker",
+    "exact table creation registry",
+    "full DDL plus typed-row archive",
+    "gzip CRC/fileSHA/per-tableSHA verification",
+    "quiescent full readback against case oracles",
+    "recheck unchanged table hash before deletion"
+  ],
+  "proposed_action": "DROP only registered scratch tables after their profile window is archived; retain archive and receipts; recreate next native profile window",
+  "excluded": [
+    "all existing databases including heavy5000 and orchestrator10000",
+    "existing directories",
+    "all S3 buckets",
+    "process/service shutdown",
+    "old round tables"
+  ],
+  "approval": "pending; do not apply without user explicit permission"
+}

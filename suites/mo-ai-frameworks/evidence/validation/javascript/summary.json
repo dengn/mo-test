@@ -1,0 +1,33 @@
+{
+  "run_id": "8bd3ffa30a76",
+  "started_utc": "2026-10-13T10:04:08Z",
+  "groups": [
+    {
+      "group": "javascript",
+      "projects": [
+        "langchainjs",
+        "vercel-ai",
+        "mastra"
+      ],
+      "expected_tests": [
+        "test_langchainjs_structured_tool",
+        "test_vercel_ai_tool_execute",
+        "test_mastra_tool_execute"
+      ],
+      "requirements_sha256": "7b697d91fec3f2ece2bf08f43920b2dd6ae99f980d56cb8a223f8c51fb479f71",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langchainjs_structured_tool",
+        "test_vercel_ai_tool_execute",
+        "test_mastra_tool_execute"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 0.744
+    }
+  ],
+  "status": "PASS"
+}

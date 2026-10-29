@@ -1,0 +1,15 @@
+from runtime import *
+from kafka import KafkaConsumer,TopicPartition
+out={'runtime_ref':REF,'scope':'explicit single-consumer stable event_id adapter: ledger + non-idempotent counter + DB checkpoint in one MO transaction, Kafka ack afterwards; not native connector exactly-once or multi-writer certification','harness_note':'initial adapter aborted after committing event1 because kafka-python 2.2.15 OffsetAndMetadata requires leader_epoch; fixed and rerun from existing ledger; not a database failure','cases':[]}
+def state():
+ c=KafkaConsumer(bootstrap_servers=['127.0.0.1:19092'],group_id='cert3-effect-adapter',enable_auto_commit=False,api_version=(3,0,0));committed=c.committed(TopicPartition('cert3cdc.cert3.eos_events',0));c.close()
+ return {'ledger_count':sql(6001,'cert3','SELECT COUNT(*) FROM eos_ledger')[0][0],'business_counter':sql(6001,'cert3','SELECT n FROM eos_totals WHERE id=1')[0][0],'db_checkpoint':sql(6001,'cert3','SELECT * FROM eos_checkpoint'),'broker_committed_offset':committed}
+def spawn(phase='none',event=-1):
+ marker=B/'adapter-fault-marker.json'
+ if marker.exists():marker.unlink()
+ p=subprocess.Popen(['/workspace/toolchains/python/bin/python',str(B/'effect_adapter.py'),'--pause',phase,'--event',str(event)],stdout=(B/'adapter.log').open('ab'),stderr=subprocess.STDOUT,start_new_session=True);(B/'adapter.pid').write_text(str(p.pid));return p
+def marker():return json.loads((B/'adapter-fault-marker.json').read_text()) if (B/'adapter-fault-marker.json').exists() else False
+p=spawn('before_commit',5);m=poll(marker,80);pre=state();f=kill('adapter','effect_adapter.py');p.wait(timeout=10);poll(lambda:state()['ledger_count']==4,20);post=state();out['cases'].append({'name':'SIGKILL-before-MO-commit','marker':m,'before_fault':pre,'fault':f,'after_disconnect':post,'status':'passed' if post['ledger_count']==post['business_counter']==4 and post['db_checkpoint'][0][2]==3 else 'failed'});dump(B/'exactly-once-effects-result.json',out)
+p=spawn('after_commit',10);m=poll(marker,80);pre=state();f=kill('adapter','effect_adapter.py');p.wait(timeout=10);out['cases'].append({'name':'SIGKILL-after-MO-commit-before-Kafka-ack','marker':m,'committed_state':pre,'fault':f,'status':'passed' if pre['ledger_count']==pre['business_counter']==10 and pre['broker_committed_offset']==9 and pre['db_checkpoint'][0][2]==9 else 'failed'});dump(B/'exactly-once-effects-result.json',out)
+# The first message on this restart is replayed id10; ledger prevents a second increment.
+p=spawn();p.wait(timeout=120);assert p.returncode==0,p.returncode;final=state();source=sql(13306,'cert3','SELECT COUNT(*),SUM(delta) FROM eos_events')[0];out['final']=final;out['source_count_and_sum']=source;out['replayed_messages_skipped']=json.loads((B/'adapter-complete.json').read_text())['deduplicated_this_process'];out['status']='passed_scoped_exactly_once_effects' if final['ledger_count']==source[0] and final['business_counter']==source[1] and out['replayed_messages_skipped']>=1 and all(c['status']=='passed' for c in out['cases']) else 'failed';dump(B/'exactly-once-effects-result.json',out);print(json.dumps(out,ensure_ascii=False,default=str),flush=True)

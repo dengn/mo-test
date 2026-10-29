@@ -1,0 +1,6 @@
+{
+  "approved": true,
+  "user_exact_answer": "允许临时盘隔离续跑",
+  "scope": "New isolated temporary-filesystem MO/MySQL/MinIO;maincases;one tool at a time,2workers,20cases/window,maxused4GiB,minfree2GiB;only registered new SQL scratch tables aftercomplete archive/readback/hash;olddata retained;notdiskthroughput/longrun certification",
+  "time_Asia_Shanghai": "2026-10-12T18:27:52.060263+08:00"
+}

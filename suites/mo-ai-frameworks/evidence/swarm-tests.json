@@ -1,0 +1,41 @@
+{
+  "versions": {
+    "swarm": "0.1.0",
+    "source_commit": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+    "openai": "1.109.1"
+  },
+  "records": [
+    {
+      "project": "openai/swarm",
+      "name": "run_sql_handoff_snapshot_resume",
+      "backend": "native",
+      "kind": "native_control",
+      "status": "PASS",
+      "details": "pinned native Swarm.run/schema/tool dispatch/Result context and Agent handoff; parameterized tenant SQL; custom JSON conversation checkpoint reopens and feeds old tool history into new Swarm request; native in-memory lookup/file reference; model fixture, no built-in Swarm persistence or real inference claim",
+      "elapsed_ms": 3.847546991892159
+    },
+    {
+      "project": "openai/swarm",
+      "name": "run_sql_handoff_snapshot_resume",
+      "backend": "matrixone",
+      "kind": "custom_integration",
+      "server": "8.0.30-MatrixOne-v",
+      "server_commit": "dd38098853ea197699ed3fac3e69dc53975ac061",
+      "status": "PASS",
+      "details": "pinned native Swarm.run/schema/tool dispatch/Result context and Agent handoff; parameterized tenant SQL; custom JSON conversation checkpoint reopens and feeds old tool history into new Swarm request; native in-memory lookup/file reference; model fixture, no built-in Swarm persistence or real inference claim",
+      "cleanup": "PASS",
+      "elapsed_ms": 503.8415169692598
+    },
+    {
+      "project": "openai/swarm",
+      "name": "run_sql_handoff_snapshot_resume",
+      "backend": "mysql",
+      "kind": "custom_integration",
+      "server": "8.4.11",
+      "status": "PASS",
+      "details": "pinned native Swarm.run/schema/tool dispatch/Result context and Agent handoff; parameterized tenant SQL; custom JSON conversation checkpoint reopens and feeds old tool history into new Swarm request; native in-memory lookup/file reference; model fixture, no built-in Swarm persistence or real inference claim",
+      "cleanup": "PASS",
+      "elapsed_ms": 336.88782196259126
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "run_id": "0cbdfe805f14",
+  "started_utc": "2026-10-14T05:18:09Z",
+  "groups": [
+    {
+      "group": "interfaces",
+      "projects": [
+        "langextract",
+        "ag-ui"
+      ],
+      "expected_tests": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "requirements_sha256": "b23b218e89dce07bad39d9922027e04020e1addd804345c69051fcbfc0200a97",
+      "readiness_exit_code": 0,
+      "test_exit_code": 0,
+      "passed": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl",
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ],
+      "problems": [],
+      "missing": [],
+      "cleanup_exit_code": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.149
+    }
+  ],
+  "status": "PASS",
+  "tested_projects": 2,
+  "passed_tests": 4
+}

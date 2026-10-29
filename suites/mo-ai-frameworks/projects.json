@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "groups": {
+    "core": {
+      "module": "tests/test_core.py",
+      "requirements": "requirements/core.txt",
+      "packages": {
+        "langchain-community": "0.4.2",
+        "langchain-core": "1.6.9",
+        "langchain-matrixone": "0.1.0",
+        "matrixone-python-sdk": "0.1.16",
+        "llama-index-core": "0.14.25",
+        "haystack-ai": "3.3.0",
+        "sqlalchemy": "2.1.4",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "storage": {
+      "module": "tests/test_storage.py",
+      "requirements": "requirements/storage.txt",
+      "packages": {
+        "langgraph": "1.2.14",
+        "agno": "3.1.2",
+        "memori": "3.3.6",
+        "sqlalchemy": "2.1.4",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "sessions": {
+      "module": "tests/test_sessions.py",
+      "requirements": "requirements/sessions.txt",
+      "packages": {
+        "pydantic-ai-slim": "2.55.0",
+        "openai-agents": "0.23.1",
+        "google-adk": "2.11.0",
+        "sqlalchemy": "2.1.4",
+        "aiomysql": "0.3.2",
+        "greenlet": "3.5.6",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "agents": {
+      "module": "tests/test_agents.py",
+      "requirements": "requirements/agents.txt",
+      "packages": {
+        "autogen-agentchat": "0.7.5",
+        "autogen-ext": "0.7.5",
+        "semantic-kernel": "1.45.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "memory": {
+      "module": "tests/test_memory.py",
+      "requirements": "requirements/memory.txt",
+      "packages": {
+        "mem0ai": "2.2.1",
+        "qdrant-client": "1.19.1",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "tools": {
+      "module": "tests/test_tools.py",
+      "requirements": "requirements/tools.txt",
+      "packages": {
+        "smolagents": "1.26.0",
+        "dspy": "3.4.1",
+        "litellm": "1.105.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "rag": {
+      "module": "tests/test_rag.py",
+      "requirements": "requirements/rag.txt",
+      "packages": {
+        "lightrag-hku": "1.5.7",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "flow": {
+      "module": "tests/test_flow.py",
+      "requirements": "requirements/flow.txt",
+      "packages": {
+        "crewai": "1.15.27",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "scope": {
+      "module": "tests/test_scope.py",
+      "requirements": "requirements/scope.txt",
+      "packages": {
+        "agentscope": "2.0.10",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "camel": {
+      "module": "tests/test_camel.py",
+      "requirements": "requirements/camel.txt",
+      "packages": {
+        "camel-ai": "0.2.90",
+        "mcp": "1.28.1",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "deep": {
+      "module": "tests/test_deep.py",
+      "requirements": "requirements/deep.txt",
+      "packages": {
+        "deepagents": "0.7.25",
+        "langchain-core": "1.6.10",
+        "langgraph": "1.2.15",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "interfaces": {
+      "module": "tests/test_interfaces.py",
+      "requirements": "requirements/interfaces.txt",
+      "packages": {
+        "langextract": "1.7.1",
+        "ag-ui-protocol": "1.0.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "swarm": {
+      "module": "tests/test_swarm.py",
+      "requirements": "requirements/swarm.txt",
+      "packages": {
+        "swarm": "0.1.0",
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    },
+    "javascript": {
+      "module": "tests/test_javascript.mjs",
+      "requirements": "requirements/javascript.txt",
+      "packages": {
+        "pytest": "8.4.2",
+        "pymysql": "1.2.3"
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "langchain",
+      "repository": "langchain-ai/langchain",
+      "group": "core",
+      "scope": "SQL工具/聊天历史/过滤后的稠密向量Retriever",
+      "source_commit": "b060a7466482ed5dac5fa1ef12e3ad21cccce385",
+      "gate_tests": [
+        "test_langchain_chat_history",
+        "test_langchain_sql_tool",
+        "test_langchain_filtered_retriever"
+      ]
+    },
+    {
+      "id": "llamaindex",
+      "repository": "run-llama/llama_index",
+      "group": "core",
+      "scope": "VectorStoreIndex Retriever、节点/文档映射和删除",
+      "source_commit": "6dd2f3cdd9ce7ff927ea8d46ccee08875bb00f95",
+      "gate_tests": [
+        "test_llamaindex_index_retriever_delete"
+      ]
+    },
+    {
+      "id": "haystack",
+      "repository": "deepset-ai/haystack",
+      "group": "core",
+      "scope": "DocumentWriter/Retriever Pipeline与tenant等值过滤",
+      "source_commit": "c5e13354117d1376d4d8caf0efe77abe80120fc0",
+      "gate_tests": [
+        "test_haystack_pipeline_filter_delete"
+      ]
+    },
+    {
+      "id": "langgraph",
+      "repository": "langchain-ai/langgraph",
+      "group": "storage",
+      "scope": "自定义同步Saver的中断恢复、checkpoint持久化和线程隔离",
+      "source_commit": "b4991f1ba36a2449ab59c38ab71828ee865bff84",
+      "gate_tests": [
+        "test_langgraph_interrupt_resume_checkpoint"
+      ]
+    },
+    {
+      "id": "agno",
+      "repository": "agno-agi/agno",
+      "group": "storage",
+      "scope": "专用engine的legacy VALUES upsert、会话重读",
+      "source_commit": "df4a5861be6e13f508a75378465ef0c595bc49db",
+      "gate_tests": [
+        "test_agno_legacy_upsert_session"
+      ]
+    },
+    {
+      "id": "memori",
+      "repository": "MemoriLabs/Memori",
+      "group": "storage",
+      "scope": "原生MySQL migration与entity创建；无LLM记忆抽取",
+      "source_commit": "574b1ea3e876f100ef82c37817d603eb7e258e59",
+      "gate_tests": [
+        "test_memori_native_schema_entity"
+      ]
+    },
+    {
+      "id": "openai-agents",
+      "repository": "openai/openai-agents-python",
+      "group": "sessions",
+      "scope": "FunctionTool与补VARCHAR/省显式子索引的原生session",
+      "source_commit": "125efa029b4bfd84238bd2c4fd69c3406f802663",
+      "gate_tests": [
+        "test_openai_function_tool",
+        "test_openai_sqlalchemy_session"
+      ]
+    },
+    {
+      "id": "pydantic-ai",
+      "repository": "pydantic/pydantic-ai",
+      "group": "sessions",
+      "scope": "FunctionModel驱动Agent SQL工具和ToolReturn",
+      "source_commit": "69ea1e57201ed59e7d30fbe4a7590d193acecce0",
+      "gate_tests": [
+        "test_pydantic_ai_agent_tool_return"
+      ]
+    },
+    {
+      "id": "google-adk",
+      "repository": "google/adk-python",
+      "group": "sessions",
+      "scope": "FunctionTool与原生DatabaseSessionService",
+      "source_commit": "bcac35a6efb21f176eef9d28d663db247f4e5afd",
+      "gate_tests": [
+        "test_adk_function_tool",
+        "test_adk_database_session"
+      ]
+    },
+    {
+      "id": "autogen",
+      "repository": "microsoft/autogen",
+      "group": "agents",
+      "scope": "FunctionTool与Agent状态保存/恢复/继续；Replay客户端",
+      "source_commit": "027ecf0a379bcc1d09956d46d12d44a3ad9cee14",
+      "gate_tests": [
+        "test_autogen_function_tool",
+        "test_autogen_state_save_load_resume"
+      ]
+    },
+    {
+      "id": "semantic-kernel",
+      "repository": "microsoft/semantic-kernel",
+      "group": "agents",
+      "scope": "原生Kernel插件调用SQL检索",
+      "source_commit": "11f072362e24207da9db55779c0fd73eb15123b1",
+      "gate_tests": [
+        "test_semantic_kernel_plugin_invoke"
+      ]
+    },
+    {
+      "id": "mem0",
+      "repository": "mem0ai/mem0",
+      "group": "memory",
+      "scope": "真实Memory CRUD/重开、Qdrant本地分数/typed filter对照；infer=False",
+      "source_commit": "b7ad69afda6b6ed030347c66d48a13e4de9dec08",
+      "gate_tests": [
+        "test_mem0_memory_lifecycle_filter_reopen",
+        "test_mem0_invalid_batch_rollback",
+        "test_mem0_qdrant_cosine_equivalence",
+        "test_mem0_qdrant_typed_filter_equivalence"
+      ]
+    },
+    {
+      "id": "smolagents",
+      "repository": "huggingface/smolagents",
+      "group": "tools",
+      "scope": "ToolCallingAgent SQL工具循环；确定性Model",
+      "source_commit": "96f33faaf028479119ec8d34507b47694cf14e34",
+      "gate_tests": [
+        "test_smolagents_agent_sql_observation"
+      ]
+    },
+    {
+      "id": "dspy",
+      "repository": "stanfordnlp/dspy",
+      "group": "tools",
+      "scope": "ReAct SQL工具循环；DummyLM",
+      "source_commit": "f1260ff14610286cb295c7d3a5ee2cbfd0ba5cb9",
+      "gate_tests": [
+        "test_dspy_react_sql_observation"
+      ]
+    },
+    {
+      "id": "litellm",
+      "repository": "BerriAI/litellm",
+      "group": "tools",
+      "scope": "completion/acompletion成功回调JSON落库与重复事件幂等；mock_response",
+      "source_commit": "9e2aae8490654e79632d2a666126c5ca0b2da439",
+      "gate_tests": [
+        "test_litellm_sync_async_callback_reopen"
+      ]
+    },
+    {
+      "id": "lightrag",
+      "repository": "HKUDS/LightRAG",
+      "group": "rag",
+      "scope": "KV/vector接入ainsert/naive aquery_data/删除；空图与原生文件对照",
+      "source_commit": "453dce83d6d0354a06e46c8d4029a0895c4e054b",
+      "gate_tests": [
+        "test_lightrag_matrixone_ingest_query_delete",
+        "test_lightrag_native_reference"
+      ]
+    },
+    {
+      "id": "crewai",
+      "repository": "crewAIInc/crewAI",
+      "group": "flow",
+      "scope": "原生Flow persist/start/listen持久化、重开与继续；SQLite对照",
+      "source_commit": "6b93fa0e25a926215ca7bb52a95d4db7d9d7262d",
+      "gate_tests": [
+        "test_crewai_matrixone_flow_restore_continue",
+        "test_crewai_native_sqlite_reference"
+      ]
+    },
+    {
+      "id": "agentscope",
+      "repository": "agentscope-ai/agentscope",
+      "group": "scope",
+      "scope": "Toolkit真实SQL工具与typed AgentState保存/恢复/继续调用；非完整Agent循环",
+      "source_commit": "e4c1e074dee3f0f6cca28ca29e934c4ec0605354",
+      "gate_tests": [
+        "test_agentscope_toolkit_state_restore_continue"
+      ]
+    },
+    {
+      "id": "camel",
+      "repository": "camel-ai/camel",
+      "group": "camel",
+      "scope": "ChatAgent.step/ChatHistoryMemory重开继续；StubModel、原生JSON对照",
+      "source_commit": "24fde60ad739b4be8f8f533fea9ba54256fbc4a2",
+      "gate_tests": [
+        "test_camel_chat_agent_history_restore_continue",
+        "test_camel_native_json_reference"
+      ]
+    },
+    {
+      "id": "deepagents",
+      "repository": "langchain-ai/deepagents",
+      "group": "deep",
+      "scope": "原生文件工具/checkpoint恢复与审批中断恢复；StateBackend、确定性模型",
+      "source_commit": "9f0e39d55a5f31003b206b31b955154f2f1bc49a",
+      "gate_tests": [
+        "test_deepagents_filesystem_matrixone",
+        "test_deepagents_approval_matrixone",
+        "test_deepagents_filesystem_native",
+        "test_deepagents_approval_native"
+      ]
+    },
+    {
+      "id": "langextract",
+      "repository": "google/langextract",
+      "group": "interfaces",
+      "scope": "原生extract/对齐/AnnotatedDocument保存恢复；确定性provider、JSONL对照",
+      "source_commit": "74df59f5d20f3ae854204caf59bc21e28d2157ff",
+      "gate_tests": [
+        "test_langextract_extract_align_matrixone",
+        "test_langextract_native_jsonl"
+      ]
+    },
+    {
+      "id": "ag-ui",
+      "repository": "ag-ui-protocol/ag-ui",
+      "group": "interfaces",
+      "scope": "原生typed Event/SSE编码与自定义事件journal/cursor回放；无浏览器HTTP认证",
+      "source_commit": "2aabfc8cada0b429927e4c256c9cf990a6791e5f",
+      "gate_tests": [
+        "test_ag_ui_protocol_journal_matrixone",
+        "test_ag_ui_native_SSE_reference"
+      ]
+    },
+    {
+      "id": "swarm",
+      "repository": "openai/swarm",
+      "group": "swarm",
+      "scope": "固定源码Swarm.run工具/上下文/Agent交接与自定义会话恢复；模型替身",
+      "source_commit": "6af0b4caf37dca4526dfd98e9fbd8ce36e7eeb22",
+      "gate_tests": [
+        "test_swarm_sql_handoff_state_resume",
+        "test_swarm_native_lookup_file_reference"
+      ]
+    },
+    {
+      "id": "langchainjs",
+      "repository": "langchain-ai/langchainjs",
+      "group": "javascript",
+      "scope": "StructuredTool.invoke/mysql2预编译查询",
+      "source_commit": "b2c113459e362121564e7c5924e1e530f87a92c5",
+      "gate_tests": [
+        "test_langchainjs_structured_tool"
+      ]
+    },
+    {
+      "id": "vercel-ai",
+      "repository": "vercel/ai",
+      "group": "javascript",
+      "scope": "AI SDK tool.execute/mysql2预编译查询",
+      "source_commit": "ba05943b69ad070558bb5bc912da99ec66d7d263",
+      "gate_tests": [
+        "test_vercel_ai_tool_execute"
+      ]
+    },
+    {
+      "id": "mastra",
+      "repository": "mastra-ai/mastra",
+      "group": "javascript",
+      "scope": "createTool.execute/mysql2预编译查询",
+      "source_commit": "4e31d07d07972fae9110f56f4fa71a33a1020102",
+      "gate_tests": [
+        "test_mastra_tool_execute"
+      ]
+    }
+  ],
+  "excluded_from_pass_gate": [
+    "mlflow/mlflow",
+    "langfuse/langfuse",
+    "pgvector/pgvector"
+  ]
+}

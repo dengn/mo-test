@@ -1,0 +1,39 @@
+{
+  "profile": "smoke",
+  "policy": "strict",
+  "started_at_utc": "2026-10-14T08:41:03Z",
+  "jobs": [
+    {
+      "name": "sql",
+      "status": "passed",
+      "exit_code": 0,
+      "case_statuses": {
+        "passed": 3
+      },
+      "elapsed_seconds": 1.016
+    },
+    {
+      "name": "wordpress",
+      "status": "passed",
+      "exit_code": 0,
+      "check_count": 32,
+      "elapsed_seconds": 30.648
+    }
+  ],
+  "min_free_mib": 1024,
+  "existing_databases_modified": false,
+  "new_test_databases_preserved": true,
+  "runtime_logs_excluded_from_artifacts": true,
+  "exit_code": 0,
+  "passed": true,
+  "target": {
+    "server_version": "8.0.30-MatrixOne-v4.2.5",
+    "runtime_git_version": "1a44f3d",
+    "expected_commit": "1a44f3db3056e32975fde86ca0ab69a094996a3f",
+    "health": true
+  },
+  "runtime_root": "/tmp/mo-app-migration-runtime",
+  "free_bytes_at_admission": 1770029056,
+  "workspace_free_bytes_at_admission": 112963584,
+  "finished_at_utc": "2026-10-14T08:41:35Z"
+}

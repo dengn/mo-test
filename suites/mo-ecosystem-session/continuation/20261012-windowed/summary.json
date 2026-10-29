@@ -1,0 +1,38 @@
+{
+  "main_completed": 32431,
+  "main_planned": 160000,
+  "main_remaining": 127569,
+  "main_new_since_original_publication": 4872,
+  "historical_main_total_with_prior20000": 52431,
+  "PETL": {
+    "passed": 5000,
+    "planned": 5000
+  },
+  "pandas": {
+    "passed": 2431,
+    "planned": 5000
+  },
+  "five_read_tools": {
+    "passed": 25000,
+    "scope": "native read only; controls included"
+  },
+  "iceberg_supplement": {
+    "executed": 5000,
+    "passed": 4920,
+    "failed": 80,
+    "scope": "32 physical typed rows per profile/source; read-only supplement; excluded from160000main"
+  },
+  "native_iceberg_failures": {
+    "set_native_list_null_filters": 40,
+    "uuid_null_filters": 40,
+    "SQL_independent_reproduction": "2 full scans pass;4 null/non-null filters fail on directly constructed native values"
+  },
+  "archive_verification": {
+    "windows": 19,
+    "case_hashes_verified_from_full_typed_archives": 2621,
+    "old_PETL_live_full_readback": 4810
+  },
+  "scope": "No new throughput/long-run/cross-system exactly-once certification; all explicit adapters remain declared",
+  "capacity": "User chose expansion>=64GiB; observed32GiB; heavy writers paused; no capacity guard lowered",
+  "old_data_retained": true
+}

@@ -1,0 +1,7 @@
+from runtime import *
+ids=json.loads((B/'nifi-eos-ids.json').read_text());out=json.loads((B/'nifi-exactly-once-result.json').read_text());base='http://127.0.0.1:10088/nifi-api'
+def ni(m,p,x=None):
+ r=requests.request(m,base+p,json=x,timeout=15);r.raise_for_status();return r.json()
+out['final_counter']=sql(6001,'cert3','SELECT n FROM nifi_eos_totals WHERE id=1')[0][0];out['generator_status']=ni('GET','/processors/'+ids['processors']['generate'])['status'];out['writer_status']=ni('GET','/processors/'+ids['processors']['put'])['status'];out['queue']=ni('GET','/connections/'+ids['connection'])['status']['aggregateSnapshot']['flowFilesQueued'];out['status']='native_exactly_once_failed_by_uncertain_commit_retry' if out['final_counter']>=2 and out['generator_status']['aggregateSnapshot']['flowFilesOut']==1 else 'inconclusive';out['harness_note']='status fetch initially used unsupported /processors/{id}/status; corrected to GET /processors/{id} entity status; same completed single-FlowFile run, no reinjection';dump(B/'nifi-exactly-once-result.json',out)
+e=ni('GET','/processors/'+ids['processors']['put']);ni('PUT','/processors/'+ids['processors']['put']+'/run-status',{'revision':e['revision'],'state':'STOPPED'})
+print(json.dumps({'status':out['status'],'counter':out['final_counter'],'generated_flowfiles':out['generator_status']['aggregateSnapshot']['flowFilesOut'],'queue':out['queue']},ensure_ascii=False),flush=True)

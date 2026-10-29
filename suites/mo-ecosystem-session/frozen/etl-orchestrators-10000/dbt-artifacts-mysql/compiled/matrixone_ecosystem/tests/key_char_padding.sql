@@ -1,0 +1,1 @@
+select case_id,id,count(*) AS n from `orchestrator10000`.`out_char_padding` group by case_id,id having count(*)<>1

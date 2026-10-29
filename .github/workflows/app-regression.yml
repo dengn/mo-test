@@ -4,14 +4,14 @@ on:
   workflow_dispatch:
     inputs:
       profile:
-        description: smoke is controls plus twenty-two native apps; defects is a strict failing gate until fixed
+        description: smoke is controls plus twenty-four native apps; defects is a strict failing gate until fixed
         type: choice
         options: [smoke, native, controls, defects, observe, load]
         default: smoke
       app:
         description: Native app selection (use all for SQL-only profiles)
         type: choice
-        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer, phpmyadmin, kanboard, yourls, grafana, matomo, gogs, answer, opencart, wakapi, superset, strapi]
+        options: [all, gotify, blocky, plik, ergo, documize, huginn, ntfy, memos, baikal, freshrss, adminer, phpmyadmin, kanboard, yourls, grafana, matomo, gogs, answer, opencart, wakapi, superset, strapi, wordpress, wagtail]
         default: all
       include_panic:
         description: Explicitly enable panic fixtures on a dedicated instance (defects or observe only)
@@ -66,6 +66,8 @@ jobs:
       MO_PHPMYADMIN_RELEASE_ARCHIVE: ${{ vars.MO_PHPMYADMIN_RELEASE_ARCHIVE }}
       MO_KANBOARD_RELEASE_ARCHIVE: ${{ vars.MO_KANBOARD_RELEASE_ARCHIVE }}
       MO_YOURLS_RELEASE_ARCHIVE: ${{ vars.MO_YOURLS_RELEASE_ARCHIVE }}
+      MO_WAGTAIL_RUNTIME_CONFIG: ${{ vars.MO_WAGTAIL_RUNTIME_CONFIG }}
+      MO_WORDPRESS_SOURCE_TREE: ${{ vars.MO_WORDPRESS_SOURCE_TREE }}
       MO_STRAPI_RUNTIME_CONFIG: ${{ vars.MO_STRAPI_RUNTIME_CONFIG }}
       MO_SUPERSET_RUNTIME_CONFIG: ${{ vars.MO_SUPERSET_RUNTIME_CONFIG }}
       MO_WAKAPI_BINARY: ${{ vars.MO_WAKAPI_BINARY }}

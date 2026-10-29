@@ -1,0 +1,75 @@
+service-type = "TN"
+data-dir = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data"
+
+[log]
+level = "info"
+format = "console"
+max-size = 512
+
+[[fileservice]]
+backend = "DISK-V2"
+data-dir = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data"
+name = "LOCAL"
+
+[[fileservice]]
+backend = "MINIO"
+name = "SHARED"
+
+[fileservice.s3]
+bucket = "heavy-alt-a159dfc751"
+endpoint = "http://127.0.0.1:9002"
+key-prefix = "server/data"
+key-id = "minio"
+key-secret = "<SET_MINIO_PASSWORD>"
+
+[fileservice.cache]
+memory-capacity = "128MB"
+disk-capacity = "64MB"
+disk-path = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data/file-service-cache"
+disk-min-evict-interval = "30s"
+disk-evict-target = 0.8
+
+[[fileservice]]
+backend = "MINIO"
+name = "ETL"
+
+[fileservice.s3]
+bucket = "heavy-alt-a159dfc751"
+endpoint = "http://127.0.0.1:9002"
+key-prefix = "server/etl"
+key-id = "minio"
+key-secret = "<SET_MINIO_PASSWORD>"
+
+[hakeeper-client]
+service-addresses = ["127.0.0.1:32001"]
+
+[tn]
+uuid = "4e19748d-2280-49e1-97a7-8c9ff13b0db2"
+port-base = 19000
+
+[tn.Txn]
+
+[tn.Txn.Storage]
+backend = "TAE"
+fileservice = "SHARED"
+log-backend = "logservice"
+
+[tn.Ckp]
+flush-interval = "60s"
+min-count = 100
+scan-interval = "5s"
+incremental-interval = "300s"
+global-min-count = 60
+
+[tn.LogtailServer]
+rpc-max-message-size = "16KiB"
+rpc-payload-copy-buffer-size = "16KiB"
+rpc-enable-checksum = true
+logtail-collect-interval = "2ms"
+logtail-response-send-timeout = "10s"
+max-logtail-fetch-failure = 10
+
+[observability]
+disableMetric = false
+enable-metric-to-prom = true
+status-port = 17001

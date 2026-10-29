@@ -1,0 +1,237 @@
+{
+  "tools": [
+    {
+      "tool": "PETL",
+      "planned_cases": 5000,
+      "status": "paused_capacity",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 2559,
+      "counts": {
+        "passed": 2559
+      },
+      "independent_readback": "paused-runtime-full-readback.json"
+    },
+    {
+      "tool": "Polars",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Dask",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "DuckDB",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "PyArrow",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "pandas",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "SQLAlchemy",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "PyMySQL",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "mysql-connector-python",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "ConnectorX",
+      "planned_cases": 5000,
+      "status": "completed_read_path",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "scope": "Native read-only component APIs against previously generatedcurrentroundtyped source; querycomplexityand32-256virtualrows percase; notwrite/scenario simulation or nativeexactlyonce",
+      "receipt_sha256": "313cf42bbce5c0158f547bc9e1d8c4b8b870bf7103df83e6ea7966350726013e"
+    },
+    {
+      "tool": "Ibis",
+      "planned_cases": 5000,
+      "status": "completed_read_path",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "scope": "Native read-only component APIs against previously generatedcurrentroundtyped source; querycomplexityand32-256virtualrows percase; notwrite/scenario simulation or nativeexactlyonce",
+      "receipt_sha256": "4b37f5c483440b0cf392e0cd2be22e8588d606accfb03b96ac4aff64380b778a"
+    },
+    {
+      "tool": "Spark",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "DataX",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "SeaTunnel",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Singer",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Flink CDC",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "dlt",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Redpanda Connect",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Kafka Connect/Debezium",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Confluent JDBC",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "kafka-python",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "NiFi",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Airbyte",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Airflow",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "dbt",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "DolphinScheduler",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Fivetran SDK",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "Trino",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "PyIceberg",
+      "planned_cases": 5000,
+      "status": "pending",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash."
+    },
+    {
+      "tool": "MatrixOne Python SDK",
+      "planned_cases": 5000,
+      "status": "completed_read_path",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "scope": "Native read-only component APIs against previously generatedcurrentroundtyped source; querycomplexityand32-256virtualrows percase; notwrite/scenario simulation or nativeexactlyonce",
+      "receipt_sha256": "7ce019a46cc73dd58c57141c13ed79dfbf8a1375d843d7bdbbb285bc77054de8"
+    },
+    {
+      "tool": "ODBC",
+      "planned_cases": 5000,
+      "status": "completed_read_path",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "scope": "Native read-only component APIs against previously generatedcurrentroundtyped source; querycomplexityand32-256virtualrows percase; notwrite/scenario simulation or nativeexactlyonce",
+      "receipt_sha256": "b4952e07c25ba557bb06503ffdfcd7dc80c83ad4f02edacbd5ce3862ee539b6b"
+    },
+    {
+      "tool": "JDBC",
+      "planned_cases": 5000,
+      "status": "completed_read_path",
+      "case_definition": "25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.",
+      "completed_cases": 5000,
+      "counts": {
+        "passed": 5000
+      },
+      "scope": "Native read-only component APIs against previously generatedcurrentroundtyped source; querycomplexityand32-256virtualrows percase; notwrite/scenario simulation or nativeexactlyonce",
+      "receipt_sha256": "b340e668951f68afa95cb19d425d926b27043de79c71d5ba87f8d274e97ccae2"
+    }
+  ],
+  "tool_count": 32,
+  "planned_cases": 160000,
+  "scope": "All actually involved ETL,orchestration,query and client tools; FlightSQL/public property graph/PowerBIDesktop were interface probes only, not executed tools; capability boundaries tracked separately. Fivetran officialSDKlocal only per user. Runtime images omitted previously may require re-provisioning.",
+  "date_Asia_Shanghai": "2026-10-12T07:48:32.526482+08:00",
+  "completed_unique_cases": 27559,
+  "capacity_blocked": "Disk ~700MiB; archive/reuseapproval pending. No currentround tables/dirs/buckets deleted."
+}
