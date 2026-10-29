@@ -1,0 +1,48 @@
+{
+  "metabase": {
+    "url": "http://127.0.0.1:33001",
+    "username_env": "BI_METABASE_USERNAME",
+    "password_env": "BI_METABASE_PASSWORD"
+  },
+  "superset": {
+    "url": "http://127.0.0.1:33000",
+    "username_env": "BI_SUPERSET_USERNAME",
+    "password_env": "BI_SUPERSET_PASSWORD",
+    "version": "6.1.0",
+    "image_digest": "sha256:16b50bbef6648912a79e3293d418fefa743ce555d36c5af6b85d859119ed7f88"
+  },
+  "grafana": {
+    "url": "http://127.0.0.1:33002",
+    "username_env": "BI_GRAFANA_USERNAME",
+    "password_env": "BI_GRAFANA_PASSWORD"
+  },
+  "redash": {
+    "command": ["/path/to/pinned-redash/python", "{driver}", "{input}", "{output}"]
+  },
+  "dataease": {
+    "url": "http://127.0.0.1:33008",
+    "version": "2.10.17",
+    "release_file": "/path/to/dataease-app.jar",
+    "release_sha256": "c00df2275d732eaf137fe5b5951e5554f67e3852ddd0a95bf5fefc74fa5f9154"
+  },
+  "evidence": {
+    "module_root": "/path/to/evidence/node_modules",
+    "command": ["node", "{driver}", "{input}", "{output}"]
+  },
+  "rill": {
+    "binary": "/path/to/rill",
+    "sha256": "REPLACE_WITH_VERIFIED_RILL_BINARY_SHA256"
+  },
+  "zeppelin": {
+    "url": "http://127.0.0.1:33006"
+  },
+  "sqlpad": {
+    "url": "http://127.0.0.1:33003",
+    "username_env": "BI_SQLPAD_USERNAME",
+    "password_env": "BI_SQLPAD_PASSWORD"
+  },
+  "lightdash": {
+    "module_root": "/path/to/lightdash/node_modules",
+    "command": ["node", "{driver}", "{input}", "{output}"]
+  }
+}

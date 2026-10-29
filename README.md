@@ -125,6 +125,13 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 [原始并发索引竞态复测](suites/mo-issue-29927-recheck/README.md)：旧版本 3 轮中 1 轮复现且重启后仍坏；main `3e50e1b3` 五轮通过，负载结束及重启后共 454 项检查通过，1,081 条确认写入无缺失/错值。复测支持原报持续性损坏已修复，尚未确定具体修复 PR。原有主 case 计数不变。
 
 
+
+## BI 与分析 case 自动回归
+
+新增独立的 [BI/复杂分析回归套件](suites/mo-bi-regression/README.md)，纳入 20,000 个分析 case、6,820 个 Metabase 查询构建器 case、其他 BI 共用的 534 个 SQL、800 个 Rill 原生指标、268 个复杂/巨型 SQL 及 spill 回归。确定性输入与独立预期可在新环境重建，真实 BI API/SDK 与 SQL 重放分别登记；输出 JSON/JUnit，严格门禁与保留失败标签的观察模式分开。
+
+[可调用 CI](.github/workflows/bi-regression.yml) · [执行范围与验证](suites/mo-bi-regression/VALIDATION.md)。此套件与原历史批次计数分开，不改 archives、catalog 或旧 manifest，不将跨工具重复执行当成新增唯一 SQL。
+
 ## AI 框架 MatrixOne 自动回归
 
 [AI 框架回归套件](suites/mo-ai-frameworks/README.md)纳入 26 个已适配项目、14 个隔离依赖组、43 个必跑测试；JSON/JUnit 对失败、跳过、缺失与超时严格判失败，带随机测试库和运行归属检查清理。包括 LangChain/LangGraph、LlamaIndex、Haystack、Mem0、LightRAG、OpenAI Agents、ADK、CrewAI、AgentScope、CAMEL 等真实接入角色，模型使用确定性替身。
@@ -143,3 +150,4 @@ python3 tools/ecosystem_materialize.py --output work/ecosystem-session
 ```
 
 13 个归档及逐成员/逐文件 SHA256 清单、冻结源码和可配置的核心/读取重跑入口在独立目录内。校验工具核对索引与原始记录及计划唯一性，恢复拒绝覆盖既有目录，不执行服务生命周期脚本。该组实际 MO 提交为 `652c643666428f1c434e03369834f2a9bead7c27`，与前述数据科学批次版本不同；不代表当前 main、完整长稳或跨系统 exactly-once 已认证。
+

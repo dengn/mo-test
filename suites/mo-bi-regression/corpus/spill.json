@@ -1,0 +1,280 @@
+{
+  "rows": 1048576,
+  "keys": 65536,
+  "queries": {
+    "sort_narrow": "SELECT id,k,amount FROM fact ORDER BY k DESC,id",
+    "sort_wide": "SELECT id,k,amount,payload FROM fact WHERE id<=262144 ORDER BY payload DESC,id",
+    "aggregate_high_cardinality": "SELECT grp,COUNT(*),SUM(amount),MIN(id),MAX(id) FROM fact GROUP BY grp ORDER BY grp",
+    "aggregate_multi_distinct": "SELECT COUNT(DISTINCT id),COUNT(DISTINCT payload),SUM(amount) FROM fact",
+    "aggregate_grouped_distinct": "SELECT grp,COUNT(DISTINCT k),COUNT(DISTINCT payload),SUM(amount) FROM fact GROUP BY grp ORDER BY grp",
+    "aggregate_ordered": "SELECT grp,GROUP_CONCAT(id ORDER BY id SEPARATOR ',') FROM fact GROUP BY grp ORDER BY grp",
+    "window_partitioned": "SELECT id,grp,SUM(amount) OVER(PARTITION BY grp ORDER BY id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) FROM fact WHERE id<=262144 ORDER BY id",
+    "join_inner": "SELECT COUNT(*),SUM(p.payload),SUM(b.payload) FROM probe_keys p JOIN build_keys b ON p.k=b.k",
+    "join_left": "SELECT COUNT(*),SUM(p.payload),SUM(b.payload) FROM probe_keys p LEFT JOIN build_keys b ON p.k=b.k",
+    "join_right": "SELECT COUNT(*),SUM(p.payload),SUM(b.payload) FROM probe_keys p RIGHT JOIN build_keys b ON p.k=b.k",
+    "join_full": "SELECT COUNT(*),SUM(p.payload),SUM(b.payload) FROM probe_keys p FULL JOIN build_keys b ON p.k=b.k",
+    "join_semi": "SELECT COUNT(*),SUM(payload) FROM probe_keys p WHERE p.k IN (SELECT b.k FROM build_keys b)",
+    "join_anti_null_safe": "SELECT COUNT(*),SUM(payload) FROM probe_keys p WHERE NOT EXISTS(SELECT 1 FROM build_keys b WHERE b.k=p.k)",
+    "join_not_in_null": "SELECT COUNT(*),SUM(payload) FROM probe_keys p WHERE p.k NOT IN (SELECT b.k FROM build_keys b)"
+  },
+  "expected": {
+    "sort_narrow": {
+      "rows": 1048576,
+      "sha256": "2c1adf8be2d1ca00df9303399bdbb57eb7c5a05428cb482af8fe01067a511875",
+      "preview": [
+        [
+          "9360",
+          "65520",
+          "346.32"
+        ],
+        [
+          "74881",
+          "65520",
+          "770.597"
+        ],
+        [
+          "140402",
+          "65520",
+          "194.874"
+        ]
+      ],
+      "oracle_s": 6.693
+    },
+    "sort_wide": {
+      "rows": 262144,
+      "sha256": "32565c3b7e703b3263327cc3cb9cfb23bb9c1994460388784179cc187be6abac",
+      "preview": [
+        [
+          "9",
+          "63",
+          "0.333",
+          "行9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ],
+        [
+          "99",
+          "693",
+          "3.663",
+          "行99xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ],
+        [
+          "999",
+          "6993",
+          "36.963",
+          "行999xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ]
+      ],
+      "oracle_s": 1.961
+    },
+    "aggregate_high_cardinality": {
+      "rows": 131071,
+      "sha256": "19a5cee56cc77a5a77d873533c762eecd3ed0070588015a1922bb3a1b011a379",
+      "preview": [
+        [
+          "0",
+          "8",
+          "4586.572",
+          "131071",
+          "1048568"
+        ],
+        [
+          "1",
+          "9",
+          "4586.905",
+          "1",
+          "1048569"
+        ],
+        [
+          "2",
+          "9",
+          "4587.238",
+          "2",
+          "1048570"
+        ]
+      ],
+      "oracle_s": 1.056
+    },
+    "aggregate_multi_distinct": {
+      "rows": 1,
+      "sha256": "cf637a638e1c8903456e97ba2204343c74ed29d3dd2009ad8ae93c7584042c3b",
+      "preview": [
+        [
+          "1048576",
+          "1048576",
+          "522104512.512"
+        ]
+      ],
+      "oracle_s": 0.192
+    },
+    "aggregate_grouped_distinct": {
+      "rows": 131071,
+      "sha256": "b9ec752a4079ae3d644959955c0f145d8ad6029e99c37eb16fac8c8edfb1073f",
+      "preview": [
+        [
+          "0",
+          "8",
+          "8",
+          "4586.572"
+        ],
+        [
+          "1",
+          "9",
+          "9",
+          "4586.905"
+        ],
+        [
+          "2",
+          "9",
+          "9",
+          "4587.238"
+        ]
+      ],
+      "oracle_s": 1.102
+    },
+    "aggregate_ordered": {
+      "rows": 131071,
+      "sha256": "0efb3b3a7e61027bb830bf762b075881003eeca9b891a26fa4ca8c054b076345",
+      "preview": [
+        [
+          "0",
+          "131071,262142,393213,524284,655355,786426,917497,1048568"
+        ],
+        [
+          "1",
+          "1,131072,262143,393214,524285,655356,786427,917498,1048569"
+        ],
+        [
+          "2",
+          "2,131073,262144,393215,524286,655357,786428,917499,1048570"
+        ]
+      ],
+      "oracle_s": 0.834
+    },
+    "window_partitioned": {
+      "rows": 262144,
+      "sha256": "944d0c0102104ccaac9cef50ebf61e6d5e47b00297153b433333180cb5afe7cd",
+      "preview": [
+        [
+          "1",
+          "1",
+          "0.037"
+        ],
+        [
+          "2",
+          "2",
+          "0.074"
+        ],
+        [
+          "3",
+          "3",
+          "0.111"
+        ]
+      ],
+      "oracle_s": 1.716
+    },
+    "join_inner": {
+      "rows": 1,
+      "sha256": "6440a909e56dd50ac20748b81739c6065b441ce65fe35e7733931ace55306cd6",
+      "preview": [
+        [
+          "65536",
+          "2147516416",
+          "458752"
+        ]
+      ],
+      "oracle_s": 0.004
+    },
+    "join_left": {
+      "rows": 1,
+      "sha256": "ae0ea99b81e295f6e0b865d519d7aedb934a4ba7440031371960aee746addb17",
+      "preview": [
+        [
+          "65538",
+          "2147516413",
+          "458752"
+        ]
+      ],
+      "oracle_s": 0.003
+    },
+    "join_right": {
+      "rows": 1,
+      "sha256": "2fb0b0f981829410244ef75a21f693fbeaf02a4bef7e7bc0ca3a4f8f3e9cc8b2",
+      "preview": [
+        [
+          "131072",
+          "2147516416",
+          "2147975158"
+        ]
+      ],
+      "oracle_s": 0.003
+    },
+    "join_full": {
+      "rows": 1,
+      "sha256": "a31045e0d6619ec4dc7fe8850070470e5194d3fb8998eff56936a75d3b3037ea",
+      "preview": [
+        [
+          "131074",
+          "2147516413",
+          "2147975158"
+        ]
+      ],
+      "oracle_s": 0.003
+    },
+    "join_semi": {
+      "rows": 1,
+      "sha256": "a976895be195b6e55881d8f7553c4bc0671b40cc7846af290baa65853af03fd5",
+      "preview": [
+        [
+          "65536",
+          "2147516416"
+        ]
+      ],
+      "oracle_s": 0.003
+    },
+    "join_anti_null_safe": {
+      "rows": 1,
+      "sha256": "6fa9a53aa9083494c05da6916ec26d2aaf7c636a345c10036b53a4c3b7271b32",
+      "preview": [
+        [
+          "2",
+          "-3"
+        ]
+      ],
+      "oracle_s": 0.002
+    },
+    "join_not_in_null": {
+      "rows": 1,
+      "sha256": "f86a7b63ec19fccb016bb41d1cd5eed5934f01f0344c4bfd3607bcb82eeb3ae6",
+      "preview": [
+        [
+          "0",
+          null
+        ]
+      ],
+      "oracle_s": 0.003
+    }
+  },
+  "million_wide_expected": {
+    "rows": 1048576,
+    "sha256": "e4a50f63402e977385d0b5730af2cbe1a1dd15a7d9c94ebf8a66ed02e98a9295",
+    "preview": [
+      [
+        "9",
+        "63",
+        "0.333",
+        "行9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ],
+      [
+        "99",
+        "693",
+        "3.663",
+        "行99xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ],
+      [
+        "999",
+        "6993",
+        "36.963",
+        "行999xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      ]
+    ]
+  }
+}
