@@ -1,0 +1,44 @@
+{
+  "executed_unique_cases": 122,
+  "counts": {
+    "execution_failed": 28,
+    "passed": 90,
+    "fidelity_failed": 4
+  },
+  "datax": {
+    "cases": 66,
+    "passed": 38,
+    "failed": 28,
+    "raw_java21_pre_oracle_failures": 20,
+    "java8_tinyint_append_passed": 20,
+    "real_table_scans": 22,
+    "temporal_staging_adapter_passed": 4
+  },
+  "spark": {
+    "cases": 44,
+    "passed": 40,
+    "failed": 4,
+    "tinyint_append_passed": 20,
+    "real_table_scans": 24
+  },
+  "flink": {
+    "cases": 12,
+    "passed": 12,
+    "failed": 0,
+    "job_id": "01c5f3cd5d6ffecc6ae85cd28de42119",
+    "restored_checkpoint": 3,
+    "sink": "ordinary JDBC at-least-once, not XA/EOS"
+  },
+  "mo_commit": "652c643666428f1c434e03369834f2a9bead7c27",
+  "main_plan_increment": 40,
+  "supplemental_cases": 82,
+  "preflights_and_installation_are_not_cases": true,
+  "scope": "MO16001/MySQL23306 isolated source/control; 2 worker ceiling, serialized tools, 20-case main windows; 5GiB then explicitly approved6GiB tmpfs cap, minimum2GiB free and3GiB estimated memory headroom; no disk throughput/long-soak/HA/XA certification",
+  "version_pins": {
+    "DataX": "DataX3 mysqlreader/mysqlwriter, Groovy2.1.9, Connector/J5.1.47, Java8; preserved Java21 failure",
+    "Spark": "PySpark3.5.7/Java17/ConnectorJ8.4.0",
+    "Flink": "1.20.2/MySQLCDC3.6.0-1.20/JDBC3.3.0-1.20/ConnectorJ8.4.0/Java17"
+  },
+  "verified_archived_sql_windows": 22,
+  "old_data_preserved": true
+}

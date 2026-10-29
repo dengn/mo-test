@@ -130,3 +130,16 @@ Spark Structured Streaming 与 Flink bounded JDBC 各有 10,000 组补测通过�
 [AI 框架回归套件](suites/mo-ai-frameworks/README.md)纳入 26 个已适配项目、14 个隔离依赖组、43 个必跑测试；JSON/JUnit 对失败、跳过、缺失与超时严格判失败，带随机测试库和运行归属检查清理。包括 LangChain/LangGraph、LlamaIndex、Haystack、Mem0、LightRAG、OpenAI Agents、ADK、CrewAI、AgentScope、CAMEL 等真实接入角色，模型使用确定性替身。
 
 [Top100 策展目录](suites/mo-ai-frameworks/catalog/top100.csv)保留 100 项源码初筛、29 项实际接口/原生对照证据，正向门禁不计入 MLflow/Langfuse/pgvector 的原生阻断或对照项。26 项、43 个用例本地全部通过；沿用现有自托管 runner 的 [GitHub Actions](.github/workflows/ai-framework-regression.yml)尚待远端实际执行。此套件独立计数，不修改已有大批次 case 总数。
+
+## 本会话数据生态与 ETL 用例
+
+[完整目录、状态与重跑说明](suites/mo-ecosystem-session/README.md) · [执行索引计数](suites/mo-ecosystem-session/catalog/summary.json) · [32 工具重载状态](suites/mo-ecosystem-session/heavy-status.json)
+
+新增汇集 13 个材料目录，含 ETL/CDC/编排/客户端/压力/EOS 正反例及关联 issue。两轮各 10,000 条主用例已有完整执行记录；最新 32 × 5,000 重载计划中实际执行 27,559 条，剩余 132,441 条未执行。这里保留 **47,559 条主执行记录**，包含 MySQL 对照；预检、原生失败、补测和故障反例另存，不与原有批次混加。Airbyte 原生 MO sink 阻断及 Fivetran 官方 SDK 本地范围明确列出。
+
+```bash
+python3 tools/ecosystem_materialize.py --verify-only
+python3 tools/ecosystem_materialize.py --output work/ecosystem-session
+```
+
+13 个归档及逐成员/逐文件 SHA256 清单、冻结源码和可配置的核心/读取重跑入口在独立目录内。校验工具核对索引与原始记录及计划唯一性，恢复拒绝覆盖既有目录，不执行服务生命周期脚本。该组实际 MO 提交为 `652c643666428f1c434e03369834f2a9bead7c27`，与前述数据科学批次版本不同；不代表当前 main、完整长稳或跨系统 exactly-once 已认证。

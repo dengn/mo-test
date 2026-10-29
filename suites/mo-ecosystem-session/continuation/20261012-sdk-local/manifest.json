@@ -1,0 +1,181 @@
+{
+  "archive": {
+    "path": "evidence.zip",
+    "bytes": 149561,
+    "sha256": "5566976b1405ad9074eef25be844776a26b94620790e49238ca912fc0be1c7b0"
+  },
+  "members": [
+    {
+      "member": "audit-evolved.json",
+      "bytes": 529,
+      "sha256": "75e6ee4794483eb2cf68ef71280855184085bc2f0c2d313de47fdd7570fc64d8"
+    },
+    {
+      "member": "audit-noop.json",
+      "bytes": 526,
+      "sha256": "0af4694e6d1bf77787ab0023cf8cb815bfca730c42e87332d466de0799fadd9b"
+    },
+    {
+      "member": "audit-resumed.json",
+      "bytes": 507,
+      "sha256": "1c2e2bc82d12b060c0b404e3745cdb023ca677423f84e22e6d2083a4d8a438fc"
+    },
+    {
+      "member": "audit_sdk.py",
+      "bytes": 3515,
+      "sha256": "fdb2b4f266252abbe06860f173d646eb2274e4c1eb2c8a0966b27dc7279b9f0a"
+    },
+    {
+      "member": "evolve.log",
+      "bytes": 4300,
+      "sha256": "299f3344f171ec2df5799459c0e49d541d7a56b0f61731fc28b9391c738ba78a"
+    },
+    {
+      "member": "fivetran-project/connector.py",
+      "bytes": 2739,
+      "sha256": "603b96e1a69443113f9ab0a45a770640e66cc06797f0adf2be8d9df1de518dbb"
+    },
+    {
+      "member": "fivetran-project/files/state.json",
+      "bytes": 37,
+      "sha256": "029e3307a50d8633af92618b930982f501012e68281708a8647b578405199ab6"
+    },
+    {
+      "member": "fivetran-project/files/warehouse.db",
+      "bytes": 2633728,
+      "sha256": "1d257ffe62f09a7d276cce25449690400baecc3009c041be80a8fb3879b14d73"
+    },
+    {
+      "member": "fivetran-project/fixtures.json",
+      "bytes": 2480709,
+      "sha256": "361fb8279a54ece4279dc8898cf189189d38fd79098b068d2bbac52828e5b3c6"
+    },
+    {
+      "member": "fivetran-project/operations-base.jsonl",
+      "bytes": 21758,
+      "sha256": "e8f85a88568874d51f566eafa78981c72ca56180ac957882f6852ce3c69fa17a"
+    },
+    {
+      "member": "fivetran-project/operations-evolve.jsonl",
+      "bytes": 21836,
+      "sha256": "99780a71895f5c831189434afe0fcafaa47b7fb7e3f5a6bc09615f32ef0dc114"
+    },
+    {
+      "member": "fivetran-project/requirements.txt",
+      "bytes": 31,
+      "sha256": "376fd6d7e69d98626286e0ae016f16d34c7551b95e9b98f2c8c795f91c2eb943"
+    },
+    {
+      "member": "injected.log",
+      "bytes": 8224,
+      "sha256": "91e7f5f5fa4f99f48bf584b47c7ba84c3bc3d8a94f90ae8934f46a9d2f4c41ad"
+    },
+    {
+      "member": "mo-graceful-stop.json",
+      "bytes": 331,
+      "sha256": "a82e6553505c11bb16d0b660df69d68f84e19362242b1c21e61cf17807744134"
+    },
+    {
+      "member": "noop.log",
+      "bytes": 2727,
+      "sha256": "a8d6ea7dcf950b827dc03230c84ab77ce06d443d082a8226238cd92a27d1c9c3"
+    },
+    {
+      "member": "phase-evolve.json",
+      "bytes": 484,
+      "sha256": "0f6cacb74b3122c871719ecc3551b7867d4010fa124b3f0cad9ae9a3e971116b"
+    },
+    {
+      "member": "phase-injected.json",
+      "bytes": 2133,
+      "sha256": "8676e0a4e4d8fa2c70dd1f3b5a64d7752bc48aa8143a75b6645f173959a9e517"
+    },
+    {
+      "member": "phase-noop.json",
+      "bytes": 484,
+      "sha256": "2e510a7847d862169e5d1e82b8b4ac235bc424e2bb4202662336faadd2fef697"
+    },
+    {
+      "member": "phase-resumed.json",
+      "bytes": 480,
+      "sha256": "db5393b155a1745578a15d6ebc3617dc22352acfe3b45c176b102009a7848baa"
+    },
+    {
+      "member": "prepare_sdk.py",
+      "bytes": 2179,
+      "sha256": "64f16d78ff1d259bb787b742251482352a4585a08c821aa8a30f0bd739ec6c99"
+    },
+    {
+      "member": "publication.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "results-evolved.jsonl",
+      "bytes": 107888,
+      "sha256": "9967c8ff0b80222e03a56975903880b29ab1320dc1cd8b8615881b8dffafd396"
+    },
+    {
+      "member": "results-noop.jsonl",
+      "bytes": 107288,
+      "sha256": "e64833689a5ef5826a618d24a25747cd9dce1a4139bfd45010c6583aebd96ad8"
+    },
+    {
+      "member": "results-resumed.jsonl",
+      "bytes": 107888,
+      "sha256": "efe856d4c38f95e3fde44114da3c83835150856a9dec8aac06886078861a4929"
+    },
+    {
+      "member": "resumed.log",
+      "bytes": 4163,
+      "sha256": "f30cd33ef6b564d62ad7eb452e64ed7553c958c44dc928ebedaf6344df61bf93"
+    },
+    {
+      "member": "sdk_phase.py",
+      "bytes": 1889,
+      "sha256": "08325f608f97f9d22a73ca6973dc48f74da0c37548affc13934d528d9d1dde6a"
+    },
+    {
+      "member": "source-verification.json",
+      "bytes": 15173,
+      "sha256": "89e0de52ebd959aae12903dceba661ccaee7776b144efb36d8ee43bd1bdd199e"
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3736,
+      "sha256": "2690da239d9521569bfd24d14b171b0eb6a709940cec6b47c7a79bfb548eb717"
+    },
+    {
+      "path": "evidence.zip",
+      "bytes": 149561,
+      "sha256": "5566976b1405ad9074eef25be844776a26b94620790e49238ca912fc0be1c7b0"
+    },
+    {
+      "path": "source/audit_sdk.py",
+      "bytes": 3515,
+      "sha256": "fdb2b4f266252abbe06860f173d646eb2274e4c1eb2c8a0966b27dc7279b9f0a"
+    },
+    {
+      "path": "source/connector.py",
+      "bytes": 2739,
+      "sha256": "603b96e1a69443113f9ab0a45a770640e66cc06797f0adf2be8d9df1de518dbb"
+    },
+    {
+      "path": "source/prepare_sdk.py",
+      "bytes": 2179,
+      "sha256": "64f16d78ff1d259bb787b742251482352a4585a08c821aa8a30f0bd739ec6c99"
+    },
+    {
+      "path": "source/sdk_phase.py",
+      "bytes": 1889,
+      "sha256": "08325f608f97f9d22a73ca6973dc48f74da0c37548affc13934d528d9d1dde6a"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1247,
+      "sha256": "0107f67e30fb4726524fc2f958e3fbee15efd7343da3cc2015c173b610f8de2c"
+    }
+  ]
+}

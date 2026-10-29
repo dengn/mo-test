@@ -1,0 +1,242 @@
+{
+  "UTC": "2026-10-12",
+  "scope": "Packaging/portable-entrypoint validation, separate from historical main batch counts.",
+  "configured_smoke_assertions": 2000,
+  "groups": [
+    {
+      "route": "petl",
+      "mode": "native_component_or_explicit_file_SQL_bridge_writer_preflight",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": 25,
+      "scenarios": [
+        "append",
+        "schema_add",
+        "duplicate_rollback_retry",
+        "staging_merge"
+      ],
+      "seeds": [
+        0
+      ],
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/petl-preflight.jsonl"
+    },
+    {
+      "route": "polars",
+      "mode": "native_component_or_explicit_file_SQL_bridge_writer_preflight",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": 25,
+      "scenarios": [
+        "append",
+        "schema_add",
+        "duplicate_rollback_retry",
+        "staging_merge"
+      ],
+      "seeds": [
+        0
+      ],
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/polars-preflight.jsonl"
+    },
+    {
+      "route": "dask",
+      "mode": "native_component_or_explicit_file_SQL_bridge_writer_preflight",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": 25,
+      "scenarios": [
+        "append",
+        "schema_add",
+        "duplicate_rollback_retry",
+        "staging_merge"
+      ],
+      "seeds": [
+        0
+      ],
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/dask-preflight.jsonl"
+    },
+    {
+      "route": "duckdb_parquet_bridge",
+      "mode": "native_component_or_explicit_file_SQL_bridge_writer_preflight",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": 25,
+      "scenarios": [
+        "append",
+        "schema_add",
+        "duplicate_rollback_retry",
+        "staging_merge"
+      ],
+      "seeds": [
+        0
+      ],
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/duckdb_parquet_bridge-preflight.jsonl"
+    },
+    {
+      "route": "arrow_ipc_bridge",
+      "mode": "native_component_or_explicit_file_SQL_bridge_writer_preflight",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": 25,
+      "scenarios": [
+        "append",
+        "schema_add",
+        "duplicate_rollback_retry",
+        "staging_merge"
+      ],
+      "seeds": [
+        0
+      ],
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/arrow_ipc_bridge-preflight.jsonl"
+    },
+    {
+      "route": "connectorx",
+      "mode": "real_native_read_API_with_explicit_projection",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": [
+        "tinyint"
+      ],
+      "scenarios": 10,
+      "seeds": 10,
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/connectorx-reader.jsonl",
+      "scope": "Migration wiring/API/query-path smoke test; does not re-certify all 25 profiles or 5000 cases."
+    },
+    {
+      "route": "ibis",
+      "mode": "real_native_read_API_with_explicit_projection",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": [
+        "tinyint"
+      ],
+      "scenarios": 10,
+      "seeds": 10,
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/ibis-reader.jsonl",
+      "scope": "Migration wiring/API/query-path smoke test; does not re-certify all 25 profiles or 5000 cases."
+    },
+    {
+      "route": "odbc",
+      "mode": "real_native_read_API_with_explicit_projection",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": [
+        "tinyint"
+      ],
+      "scenarios": 10,
+      "seeds": 10,
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/odbc-reader.jsonl",
+      "scope": "Migration wiring/API/query-path smoke test; does not re-certify all 25 profiles or 5000 cases."
+    },
+    {
+      "route": "matrixone_sdk",
+      "mode": "real_native_read_API_with_explicit_projection",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": [
+        "tinyint"
+      ],
+      "scenarios": 10,
+      "seeds": 10,
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/matrixone_sdk-reader.jsonl",
+      "scope": "Migration wiring/API/query-path smoke test; does not re-certify all 25 profiles or 5000 cases."
+    },
+    {
+      "route": "jdbc",
+      "mode": "real_native_read_API_with_explicit_projection",
+      "cases": 200,
+      "statuses": {
+        "passed": 200
+      },
+      "profiles": [
+        "tinyint"
+      ],
+      "scenarios": 10,
+      "seeds": 10,
+      "endpoints": [
+        "MO",
+        "MySQL control"
+      ],
+      "receipt": "validation/jdbc-reader.jsonl",
+      "scope": "Migration wiring/API/query-path smoke test; does not re-certify all 25 profiles or 5000 cases."
+    }
+  ],
+  "native_regressions": {
+    "29923": "MO ENUM/SET 6/6 rejected20301, MySQL and VARCHAR controls12/12 completed",
+    "29849": "MO3/3 rejected20301; MySQL3/3 full rows passed with local_infile enabled temporarily and restored"
+  },
+  "setup_fixes": [
+    {
+      "change": "SQLAlchemy URL uses username instead of DBAPI user",
+      "classification": "migration harness, not MO error"
+    },
+    {
+      "change": "Missing JDBC JAR is rejected before scheduling cases",
+      "initial_attempt": "200 setup failures saved in validation/jdbc-initial-missing-jar.jsonl; not 200 database failures"
+    },
+    {
+      "change": "ODBC emits normal numeric port rather than brace-wrapped numeric port",
+      "initial_attempt": "connect blocked; corrected SELECT1 on both endpoints and200query assertions passed"
+    },
+    {
+      "change": "JDBC JVM starts on main thread; JayDeBeApi query workers explicitly attach as daemon; all connections close before shutdown",
+      "initial_attempt": "200 query oracles passed, process then waited on non-daemon attached threads. Diagnostic SIGQUIT triggered local OpenJDK pthread_getcpuclockid SIGSEGV. Corrected process completed200 and exited0; not a MO kernel failure."
+    }
+  ],
+  "static_check": "portable Python files compiled successfully",
+  "resource_and_lifecycle": "Dedicated mo_ecosystem_publish_20261012 schemas; no previous case tables/directories/buckets deleted; no MO/MySQL/MinIO service stopped.",
+  "receipt_counting": "The 2000 migration assertions and fixture setup are excluded from catalog/executed-main; they repeat existing definitions."
+}

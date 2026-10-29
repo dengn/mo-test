@@ -1,0 +1,38 @@
+{
+  "unique_supplementary_cases": 200,
+  "counts": {
+    "passed": 200
+  },
+  "datatype_profiles": 25,
+  "archived_source_roles": 2,
+  "scenarios": [
+    "upsert_replay",
+    "sparse_update",
+    "delete_reinsert",
+    "checkpoint_resume"
+  ],
+  "case_readback_checks": 600,
+  "fresh_process_phases": [
+    "injected",
+    "resumed",
+    "evolve",
+    "noop"
+  ],
+  "schema_evolution_verified": true,
+  "completed_checkpoint_restart_unchanged": true,
+  "physical_rows": 6400,
+  "active_rows": 6000,
+  "tombstones": 400,
+  "duplicate_primary_keys": 0,
+  "official_SDK": "2.12.1",
+  "official_tester": "2.26.0908.001",
+  "main_completed": 32431,
+  "main_remaining": 127569,
+  "included_in_main_heavy_plan": false,
+  "source_scope": "Archived native Iceberg snapshots whose full-value hashes previously matched MO/MySQL source;50source hashes reverified this run; no live MO query",
+  "destination_scope": "Official local Java source tester/DuckDB;canonical STRING envelope;no native MO destination/SaaS/EOS certification",
+  "disk_total_bytes": 33770192896,
+  "disk_available_bytes": 0,
+  "MO_runtime": "Owned idle test process668920 stopped withSIGTERM atdisk0;data/logs retained",
+  "timestamp_Asia_Shanghai": "2026-10-12T18:01:46.652312+08:00"
+}

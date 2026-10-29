@@ -1,0 +1,171 @@
+from runtime import *
+import random,struct,math,traceback,concurrent.futures,collections,io
+import petl as etl,polars as pl,pyarrow as pa,pyarrow.compute as pc,pyarrow.ipc as ipc,duckdb,pandas as pd,dask,dask.dataframe as dd
+import sqlalchemy as sa
+from sqlalchemy.dialects import mysql
+decimal.getcontext().prec=80
+dask.config.set({'dataframe.convert-string':False,'scheduler':'threads'})
+ROUTES=['petl','polars','dask','duckdb_parquet_bridge','arrow_ipc_bridge']
+SCENARIOS=['append','chunked_append','native_transform','staging_merge','tombstone_delete']
+COLS=['case_id','id','v','label','rev'];ENGINES={}
+def profile(name,ddl,arrow,bind,values):return {'name':name,'ddl':ddl,'arrow':arrow,'bind':bind,'values':values}
+PROFILES=[
+ profile('tinyint','TINYINT',pa.int8(),mysql.TINYINT(),[-128,127,0,1,-1,None]),
+ profile('smallint','SMALLINT',pa.int16(),mysql.SMALLINT(),[-32768,32767,0,1,-1,None]),
+ profile('int32','INT',pa.int32(),mysql.INTEGER(),[-2**31,2**31-1,0,1,-1,None]),
+ profile('int64','BIGINT',pa.int64(),mysql.BIGINT(),[-2**63,2**63-1,9007199254740993,0,-1,None]),
+ profile('uint64','BIGINT UNSIGNED',pa.uint64(),mysql.BIGINT(unsigned=True),[2**64-1,2**63,9007199254740993,0,1,None]),
+ profile('decimal38_18','DECIMAL(38,18)',pa.decimal128(38,18),mysql.DECIMAL(38,18),[decimal.Decimal(x) for x in ['99999999999999999999.999999999999999999','-99999999999999999999.999999999999999999','12345678901234567890.123456789012345678','0.000000000000000001','0']]+[None]),
+ profile('decimal20_0','DECIMAL(20,0)',pa.decimal128(20,0),mysql.DECIMAL(20,0),[decimal.Decimal(x) for x in ['99999999999999999999','-99999999999999999999','9007199254740993','0','1']]+[None]),
+ profile('double','DOUBLE',pa.float64(),mysql.DOUBLE(),[1e200,-1e200,1.2345678901234567,1e-200,0.0,None]),
+ profile('float32','FLOAT',pa.float32(),mysql.FLOAT(),[struct.unpack('f',struct.pack('f',v))[0] for v in [1e30,-1e30,1.23456789,1e-30,0]]+[None]),
+ profile('boolean','BOOLEAN',pa.bool_(),sa.Boolean(),[True,False,True,False,None,None]),
+ profile('varchar_utf8','VARCHAR(256)',pa.string(),sa.String(256),['中文😀','e\u0301/é','quote\'"\\','line\n\r\t','\x00空','',None]),
+ profile('char_padding','CHAR(32)',pa.string(),mysql.CHAR(32),['尾空格  ','中文😀','   ','','quote\'"','x',None]),
+ profile('text_long','TEXT',pa.string(),sa.Text(),['长文😀'*300,'x'*2048,'\n'*32,'',None]),
+ profile('varbinary','VARBINARY(256)',pa.binary(),mysql.VARBINARY(256),[b'\x00\xff\x80',b'',bytes(range(256)),b'\x00'*32,None]),
+ profile('blob','BLOB',pa.binary(),sa.LargeBinary(),[bytes(range(256))*4,b'',b'\x00'*1024,b'\xff'*1024,None]),
+ profile('date','DATE',pa.date32(),sa.Date(),[datetime.date(1000,1,1),datetime.date(9999,12,31),datetime.date(2024,2,29),datetime.date(1970,1,1),None]),
+ profile('datetime6','DATETIME(6)',pa.timestamp('us'),mysql.DATETIME(fsp=6),[datetime.datetime(1000,1,1,0,0,0,1),datetime.datetime(9999,12,31,23,59,59,999999),datetime.datetime(2024,2,29,12,0,0,123456),datetime.datetime(1970,1,1),None]),
+ profile('time6','TIME(6)',pa.duration('us'),mysql.TIME(fsp=6),[datetime.timedelta(hours=838,minutes=59,seconds=59),-datetime.timedelta(hours=838,minutes=59,seconds=59),datetime.timedelta(hours=37,microseconds=999999),-datetime.timedelta(microseconds=1),datetime.timedelta(0),None]),
+ profile('json_object','JSON',pa.string(),sa.Text(),[json.dumps(x,ensure_ascii=False,separators=(',',':')) for x in [{'big':2**64-1,'nested':[None,True,'文😀']},{'a':[],'b':{}},{'escape':'\x00\n\\"'},{},[]]]+[None]),
+ profile('json_scalar','JSON',pa.string(),sa.Text(),['null','true','false','18446744073709551615','"中文😀"','[]',None])]
+def engine(port):
+ if port not in ENGINES:
+  ENGINES[port]=sa.create_engine(f"mysql+pymysql://root:{'111' if port==6001 else 'types-local'}@127.0.0.1:{port}/etl10000",pool_size=4,max_overflow=2,pool_pre_ping=True,connect_args={'read_timeout':45,'write_timeout':45})
+ return ENGINES[port]
+def arrow(rows,p):
+ schema=pa.schema([('case_id',pa.int64()),('id',pa.int64()),('v',p['arrow']),('label',pa.string()),('rev',pa.int64())]);return pa.Table.from_pylist([dict(zip(COLS,r)) for r in rows],schema=schema)
+def frame(rows):return pd.DataFrame({k:pd.Series([r[i] for r in rows],dtype=object if k in ['v','label'] else 'int64') for i,k in enumerate(COLS)})
+def dtypes(p):return {'case_id':sa.BigInteger(),'id':sa.BigInteger(),'v':p['bind'],'label':sa.String(256),'rev':sa.BigInteger()}
+def sqltime(us):
+ sign='-' if us<0 else '';us=abs(us);seconds,micro=divmod(us,1000000);hours,seconds=divmod(seconds,3600);minutes,seconds=divmod(seconds,60);return f'{sign}{hours:02}:{minutes:02}:{seconds:02}.{micro:06}'
+def load(route,p,table,rows,port,token,transform=None):
+ suffix='→ETL'+str(transform) if transform is not None else None
+ if route=='petl':
+  t=etl.wrap([tuple(COLS)]+[tuple(r) for r in rows])
+  if transform is not None:t=t.select(lambda r:r['id']%2==transform%2).convert('label',lambda v:v+suffix).convert('rev',lambda v:v+transform+1)
+  with db(port,autocommit=False) as d:
+   with d.cursor() as c:c.execute('SELECT @@sql_mode');mode=c.fetchone()[0];c.execute('SET SESSION sql_mode=%s',(mode+',ANSI_QUOTES',))
+   etl.appenddb(t,d,table,commit=True)
+ elif route=='polars':
+  t=pl.from_arrow(arrow(rows,p))
+  if transform is not None:t=t.filter(pl.col('id')%2==transform%2).with_columns((pl.col('label')+pl.lit(suffix)).alias('label'),(pl.col('rev')+transform+1).alias('rev'))
+  types=dtypes(p)
+  if p['name']=='time6':t=t.with_columns(pl.col('v').cast(pl.Int64).map_elements(sqltime,return_dtype=pl.String).alias('v'));types['v']=sa.String(32)
+  t.write_database(table,engine(port),if_table_exists='append',engine='sqlalchemy',engine_options={'dtype':types,'chunksize':3})
+ elif route=='dask':
+  t=dd.from_pandas(frame(rows),npartitions=2,sort=False)
+  if transform is not None:t=t[t.id%2==transform%2].assign(label=t.label.map(lambda v:v+suffix,meta=('label','object')),rev=t.rev+transform+1)
+  uri=f"mysql+pymysql://root:{'111' if port==6001 else 'types-local'}@127.0.0.1:{port}/etl10000"
+  t.to_sql(table,uri,if_exists='append',index=False,chunksize=3,dtype=dtypes(p),parallel=False,engine_kwargs={'connect_args':{'read_timeout':45,'write_timeout':45}})
+ elif route=='duckdb_parquet_bridge':
+  path=B/'files'/(token+'.parquet');path.parent.mkdir(exist_ok=True)
+  con=duckdb.connect();con.execute('SET threads=1');input_table=arrow(rows,p)
+  if p['name']=='time6':input_table=input_table.set_column(2,'v',pc.cast(input_table['v'],pa.int64()))
+  con.register('input_rows',input_table)
+  q='SELECT * FROM input_rows'
+  if transform is not None:q='SELECT case_id,id,v,label||? AS label,rev+? AS rev FROM input_rows WHERE id%2=?'
+  t=con.execute(q,[suffix,transform+1,transform%2] if transform is not None else []).fetch_arrow_table()
+  con.register('export_rows',t);con.execute('COPY export_rows TO ? (FORMAT PARQUET)',[str(path)])
+  t=con.execute('SELECT * FROM read_parquet(?)',[str(path)]).fetch_arrow_table();con.close()
+  data=[[r[k] for k in COLS] for r in t.to_pylist()]
+  if p['name']=='time6':
+   for r in data:
+    if r[2] is not None:r[2]=datetime.timedelta(microseconds=r[2])
+  with db(port,autocommit=False) as d,d.cursor() as c:c.executemany('INSERT INTO '+table+' VALUES(%s,%s,%s,%s,%s)',data);d.commit()
+ else:
+  t=arrow(rows,p)
+  if transform is not None:
+   t=t.filter(pc.equal(pc.call_function('bit_wise_and',[t['id'],pa.scalar(1,pa.int64())]),pa.scalar(transform%2,pa.int64())))
+   t=t.set_column(3,'label',pc.binary_join_element_wise(t['label'],pa.scalar(suffix),pa.scalar('')));t=t.set_column(4,'rev',pc.add(t['rev'],transform+1))
+  path=B/'files'/(token+'.arrow');path.parent.mkdir(exist_ok=True)
+  with pa.OSFile(str(path),'wb') as sink:
+   with ipc.new_file(sink,t.schema) as w:w.write_table(t)
+  with pa.memory_map(str(path),'r') as source:t=ipc.open_file(source).read_all()
+  data=[[r[k] for k in COLS] for r in t.to_pylist()]
+  with db(port,autocommit=False) as d,d.cursor() as c:c.executemany('INSERT INTO '+table+' VALUES(%s,%s,%s,%s,%s)',data);d.commit()
+def values(p,seed):
+ vals=p['values'];rnd=random.Random(7001+seed*37+len(p['name']));order=list(range(len(vals)));rnd.shuffle(order)
+ return [vals[j] for j in order]+[vals[rnd.randrange(len(vals))] for _ in range(2)]
+def base_rows(case_id,p,seed):return [[case_id,i,v,'行😀'+str(seed)+'/'+str(i),0] for i,v in enumerate(values(p,seed))]
+def norm_v(v,p):
+ if v is None:return ['sql_null']
+ name=p['name']
+ if name.startswith('json'):return ['json',json.loads(v) if isinstance(v,(str,bytes)) else v]
+ if name.startswith('decimal'):return str(decimal.Decimal(v).normalize())
+ if name in ['varbinary','blob']:return bytes(v).hex()
+ if name=='date':return v.isoformat() if hasattr(v,'isoformat') else str(v)
+ if name=='datetime6':return v.isoformat(timespec='microseconds') if hasattr(v,'isoformat') else str(v)
+ if name=='time6':
+  if isinstance(v,datetime.time):return ((v.hour*3600+v.minute*60+v.second)*1000000+v.microsecond)
+  if isinstance(v,datetime.timedelta):return (v.days*86400+v.seconds)*1000000+v.microseconds
+  return str(v)
+ if name=='float32':return format(float(v),'.6g')
+ if name=='double':return float(v).hex() if float(v)!=0 else '0'
+ if name=='char_padding':return str(v).rstrip(' ')
+ if name=='boolean':return bool(v)
+ if name in ['tinyint','smallint','int32','int64','uint64']:return int(v)
+ return str(v)
+def canon(rows,p):return [[int(r[0]),int(r[1]),norm_v(r[2],p),str(r[3]),int(r[4])] for r in sorted(rows,key=lambda r:(r[0],r[1]))]
+def sha(v):return hashlib.sha256(json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+def tables(route,p):return 't_'+route.split('_')[0]+'_'+p['name'],'s_'+route.split('_')[0]+'_'+p['name']
+def create(route,p,port):
+ for table in tables(route,p):sql('CREATE TABLE IF NOT EXISTS '+table+'(case_id BIGINT,id BIGINT,v '+p['ddl']+',label VARCHAR(256),rev BIGINT,PRIMARY KEY(case_id,id))',port=port)
+def run_case(route,p,scenario,seed,port,case_id,cleanup=False):
+ decimal.getcontext().prec=80
+ t,stage=tables(route,p);token=f'{route}_{p["name"]}_{scenario}_{seed}_{port}';r={'id':token,'logical_case_id':case_id,'route':route,'profile':p['name'],'scenario':scenario,'seed':seed,'port':port,'status':'running','phase':'initial','versions_file':'environment.json'};start_t=time.monotonic();rows=base_rows(case_id,p,seed);expected=[list(v) for v in rows]
+ try:
+  guard()
+  if cleanup:
+   for table in [t,stage]:sql('DELETE FROM '+table+' WHERE case_id=%s',(case_id,),port=port)
+  if scenario=='chunked_append':
+   for j in range(0,len(rows),3):load(route,p,t,rows[j:j+3],port,token+f'_{j}')
+  elif scenario=='native_transform':
+   expected=[[a,i,v,label+'→ETL'+str(seed),rev+seed+1] for a,i,v,label,rev in rows if i%2==seed%2];load(route,p,t,rows,port,token,transform=seed)
+  else:
+   load(route,p,t,rows,port,token)
+   if scenario=='staging_merge':
+    r['phase']='staging_merge';extra=values(p,seed+11);changes=[[case_id,1,extra[0],'更新😀'+str(seed),1],[case_id,3,extra[1],'更新😀'+str(seed),1],[case_id,len(rows),extra[2],'新增😀'+str(seed),1]];load(route,p,stage,changes,port,token+'_delta')
+    with db(port,autocommit=False) as d,d.cursor() as c:
+     c.execute(f'UPDATE {t} AS target JOIN {stage} AS incoming ON target.case_id=incoming.case_id AND target.id=incoming.id SET target.v=incoming.v,target.label=incoming.label,target.rev=incoming.rev WHERE incoming.case_id=%s',(case_id,))
+     c.execute(f'INSERT INTO {t} SELECT incoming.case_id,incoming.id,incoming.v,incoming.label,incoming.rev FROM {stage} AS incoming LEFT JOIN {t} AS target ON target.case_id=incoming.case_id AND target.id=incoming.id WHERE incoming.case_id=%s AND target.id IS NULL',(case_id,));d.commit()
+    byid={x[1]:x for x in expected};byid.update({x[1]:x for x in changes});expected=list(byid.values())
+   elif scenario=='tombstone_delete':
+    r['phase']='tombstone_delete';dead=[1,len(rows)-2];tomb=[[case_id,i,None,'删除😀',-1] for i in dead];load(route,p,stage,tomb,port,token+'_tombstone')
+    with db(port,autocommit=False) as d,d.cursor() as c:c.execute(f'DELETE target FROM {t} AS target JOIN {stage} AS incoming ON target.case_id=incoming.case_id AND target.id=incoming.id WHERE incoming.case_id=%s AND incoming.rev=-1',(case_id,));d.commit()
+    expected=[x for x in expected if x[1] not in dead]
+  r['phase']='row_oracle';actual=sql('SELECT case_id,id,v,label,rev FROM '+t+' WHERE case_id=%s ORDER BY id',(case_id,),port=port);exp=canon(expected,p);act=canon(actual,p);r.update({'expected_rows':len(exp),'actual_rows':len(act),'expected_sha256':sha(exp),'actual_sha256':sha(act),'status':'passed' if exp==act else 'fidelity_failed','field_mismatches':[(e,a) for e,a in zip(exp,act) if e!=a][:3]})
+  if exp!=act:r['expected_sample']=exp[:3];r['actual_sample']=act[:3]
+ except Exception as e:r.update({'status':'execution_failed','error_type':type(e).__name__,'error':str(e)[:2500],'traceback':traceback.format_exc()[-6000:]})
+ r['elapsed_s']=time.monotonic()-start_t;return r
+def caseid(route_idx,profile_idx,scenario_idx,seed):return 1+(((route_idx*20+profile_idx)*5+scenario_idx)*10+seed)
+def plan():
+ return [{'id':f'{route}_{p["name"]}_{sc}_{seed}_{port}','route':route,'profile':p['name'],'scenario':sc,'seed':seed,'port':port,'logical_case_id':caseid(ri,pi,si,seed)} for ri,route in enumerate(ROUTES) for pi,p in enumerate(PROFILES) for si,sc in enumerate(SCENARIOS) for seed in range(10) for port in [6001,13306]]
+if __name__=='__main__':
+ dump(B/'case-plan.json',{'planned_cases':10000,'logical_parameter_combinations':5000,'counts':'5 routes x20 profiles x5 scenarios x10 seeds x2 target endpoints; controls counted explicitly; no crash repetitions counted as extra components','routes':ROUTES,'profiles':[{'name':p['name'],'sql':p['ddl'],'arrow':str(p['arrow'])} for p in PROFILES],'scenarios':SCENARIOS,'adapter_conditions':{'petl':'DBAPI append with ANSI_QUOTES session mode','polars_time':'explicit signed-microsecond -> exact SQL TIME text with String bind; default duration sink failure retained','duckdb_time':'signed microseconds int64 envelope in Parquet -> timedelta SQL binding; native negative interval limitation retained','dask':'dataframe.convert-string=false; explicit bind dtypes; no source float coercion','json':'explicit canonical UTF8 JSON text binding to precreated JSON column','float32_oracle':'six significant digits at FLOAT32 precision; not bit-for-bit DOUBLE certification','char_oracle':'SQL CHAR trailing-space trimming is part of declared semantics','bridge_routes':'DuckDB/Arrow file roundtrip plus explicit PyMySQL SQL sink, not native official database sink','merge_delete':'explicit tested SQL adapter with alias-qualified joins; not native CDC/delete propagation or default dlt merge'},'cases':plan()})
+ if '--preflight' in sys.argv:
+  output=[]
+  for ri,route in enumerate(ROUTES):
+   for pi,p in enumerate(PROFILES):
+    for port in [6001,13306]:
+     create(route,p,port);r=run_case(route,p,'append',0,port,100000+ri*100+pi,cleanup=True);output.append(r);print(r['id'],r['status'],r.get('error','')[:150],flush=True);dump(B/'preflight-result.json',output)
+ else:
+  results_path=B/'results.jsonl';finished={}
+  if results_path.exists():
+   for line in results_path.read_text().splitlines():
+    r=json.loads(line);finished[r['id']]=r
+  counts=collections.Counter(x['status'] for x in finished.values());progress={'planned':10000,'completed':len(finished),'counts':dict(counts),'start_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat()};dump(B/'progress.json',progress)
+  for ri,route in enumerate(ROUTES):
+   for pi,p in enumerate(PROFILES):
+    for port in [6001,13306]:create(route,p,port)
+    for si,sc in enumerate(SCENARIOS):
+     for seed in range(10):
+      for port in [6001,13306]:
+       key=f'{route}_{p["name"]}_{sc}_{seed}_{port}'
+       if key in finished:continue
+       r=run_case(route,p,sc,seed,port,caseid(ri,pi,si,seed));
+       with results_path.open('a') as f:f.write(json.dumps(r,ensure_ascii=False,default=str)+'\n')
+       finished[key]=r;counts[r['status']]+=1
+       if len(finished)%50==0:progress.update({'completed':len(finished),'counts':dict(counts),'last':r['id'],'UTC':datetime.datetime.now(datetime.timezone.utc).isoformat(),'resources':resources()});dump(B/'progress.json',progress);print('PROGRESS',len(finished),dict(counts),r['id'],flush=True)
+  dump(B/'completion.json',{'completed':len(finished),'counts':dict(counts),'finished_UTC':datetime.datetime.now(datetime.timezone.utc).isoformat()})

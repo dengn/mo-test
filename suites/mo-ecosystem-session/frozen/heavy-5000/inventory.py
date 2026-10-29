@@ -1,0 +1,6 @@
+import pathlib,json,datetime
+B=pathlib.Path(__file__).resolve().parent
+names=['PETL','Polars','Dask','DuckDB','PyArrow','pandas','SQLAlchemy','PyMySQL','mysql-connector-python','ConnectorX','Ibis','Spark','DataX','SeaTunnel','Singer','Flink CDC','dlt','Redpanda Connect','Kafka Connect/Debezium','Confluent JDBC','kafka-python','NiFi','Airbyte','Airflow','dbt','DolphinScheduler','Fivetran SDK','Trino','PyIceberg','MatrixOne Python SDK','ODBC','JDBC']
+rows=[{'tool':n,'planned_cases':5000,'status':'pending','case_definition':'25 datatype profiles x10 complex scenarios x10 deterministic seeds x2 endpoints; controls included explicitly. Case is scenario+row-set oracle, not one DAG/task/crash.'} for n in names]
+(B/'tool-inventory.json').write_text(json.dumps({'tools':rows,'tool_count':len(rows),'planned_cases':len(rows)*5000,'scope':'All actually involved ETL,orchestration,query and client tools; FlightSQL/public property graph/PowerBIDesktop were interface probes only, not executed tools; capability boundaries tracked separately. Fivetran officialSDKlocal only per user. Runtime images omitted previously may require re-provisioning.','date_Asia_Shanghai':datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat()},ensure_ascii=False,indent=2))
+print('TOOLS',len(rows),'CASES',len(rows)*5000)

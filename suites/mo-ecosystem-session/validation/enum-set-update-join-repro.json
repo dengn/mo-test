@@ -1,0 +1,314 @@
+[
+  {
+    "kind": "enum",
+    "port": 6001,
+    "repeat": 0,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "red"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "port": 6001,
+    "repeat": 1,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "red"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "port": 6001,
+    "repeat": 2,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "red"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "port": 13306,
+    "repeat": 0,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "中文😀"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "port": 13306,
+    "repeat": 1,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "中文😀"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "port": 13306,
+    "repeat": 2,
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "中文😀"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 6001,
+    "repeat": 0,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "a"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 6001,
+    "repeat": 1,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "a"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 6001,
+    "repeat": 2,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")",
+    "rows": [
+      [
+        1,
+        "a"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 13306,
+    "repeat": 0,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 13306,
+    "repeat": 1,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "port": 13306,
+    "repeat": 2,
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 6001,
+    "repeat": 0,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 6001,
+    "repeat": 1,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 6001,
+    "repeat": 2,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 13306,
+    "repeat": 0,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 13306,
+    "repeat": 1,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "varchar",
+    "port": 13306,
+    "repeat": 2,
+    "sql": "UPDATE repro_varchar_target AS target JOIN repro_varchar_stage AS incoming ON target.id=incoming.id SET target.v=incoming.v",
+    "status": "completed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  }
+]

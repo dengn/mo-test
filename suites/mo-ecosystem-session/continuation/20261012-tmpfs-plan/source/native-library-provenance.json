@@ -1,0 +1,661 @@
+{
+  "read_only_container": "mo-types-mysql",
+  "copies": [
+    {
+      "name": "burmesedict.dict",
+      "bytes": 254448,
+      "sha256": "99f1b2afe6672bc495a872e85dd5ed2be5ffc4d9b8377deff2dbc18a2b4538e5"
+    },
+    {
+      "name": "char.brk",
+      "bytes": 13360,
+      "sha256": "2a0e1730d20a0dde9611149e9fcf12a0f945cb22bfaa681a8fd6091f71796251"
+    },
+    {
+      "name": "cjdict.dict",
+      "bytes": 2007296,
+      "sha256": "3850478c713b2004cbb96ef4b9f049caf16d6faf32a883d2e63c09659d0c59c7"
+    },
+    {
+      "name": "cnvalias.icu",
+      "bytes": 64016,
+      "sha256": "e833f51cb0a0874388cfef50c165af672cf2178c497b9d1bc70270744becf24b"
+    },
+    {
+      "name": "de.res",
+      "bytes": 2992,
+      "sha256": "a08312a9303b1373f7129bdb6ebd798cb39073476f75d30f1602c0c6a99c05b2"
+    },
+    {
+      "name": "el.res",
+      "bytes": 160,
+      "sha256": "de0af623cf2c0440bfd567bb89116f02c78dc666b7fe3f62baaa47315937ebe3"
+    },
+    {
+      "name": "en.res",
+      "bytes": 1776,
+      "sha256": "74c5fbfbfc3517d5383a84f9cbfbd0e3ab7c47fbdd09320d0429938fdb6ca984"
+    },
+    {
+      "name": "en_US.res",
+      "bytes": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "name": "en_US_POSIX.res",
+      "bytes": 160,
+      "sha256": "f0b36c871bf8cde086d24478f43c465de47a62ad267922022f0b2cf29bc5f94c"
+    },
+    {
+      "name": "es.res",
+      "bytes": 2176,
+      "sha256": "4db4b3ef626368fa010b546855296c5fa1556e5843d62fa5647e19bbe25cfdc6"
+    },
+    {
+      "name": "fi.res",
+      "bytes": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "name": "fr.res",
+      "bytes": 1200,
+      "sha256": "d95b1d5e778b175096289618ba726c7f31844609cdd1a69b5bb6748873f2d7ce"
+    },
+    {
+      "name": "it.res",
+      "bytes": 688,
+      "sha256": "86b433f7a2456522c6c9310e6a23d7783e414f72c66dd5d4643096225caeec6a"
+    },
+    {
+      "name": "ja.res",
+      "bytes": 2784,
+      "sha256": "2cf394b51397cf3bc8f172275e1a956ee243658caa1120ef13c809ba276aeb5a"
+    },
+    {
+      "name": "khmerdict.dict",
+      "bytes": 445552,
+      "sha256": "080582d61636c7f9039d65bc37452d100faa07f3ba7f5e21aa32aa1672441413"
+    },
+    {
+      "name": "ko.res",
+      "bytes": 544,
+      "sha256": "7af4ffd62b4dffaf18f453701fd37361f6c3c2d05a1edce201c45f37949f882c"
+    },
+    {
+      "name": "laodict.dict",
+      "bytes": 162624,
+      "sha256": "b044d4232c2fea926b88f6047c4efcd683e7cf0573cf9f60990aa7500c60ef0c"
+    },
+    {
+      "name": "libabsl_bad_any_cast_impl.so",
+      "bytes": 15072,
+      "sha256": "dec5e4f90b7a3443047684dba8ffe9c77e94b0220b12db3e1f48cd9b43b7b6eb"
+    },
+    {
+      "name": "libabsl_bad_optional_access.so",
+      "bytes": 15072,
+      "sha256": "b7e3c8cccfb485b1a2f5e560b460724458eda1f521053b2e2ae0d3e3cf6531a2"
+    },
+    {
+      "name": "libabsl_bad_variant_access.so",
+      "bytes": 15072,
+      "sha256": "bd23b0b90e18b429de8f48e94976da14477d9cd9387db9c2e3963c3a706a4418"
+    },
+    {
+      "name": "libabsl_base.so",
+      "bytes": 24480,
+      "sha256": "6777611ab807146b37b7d4ecd9cd5ba11935932212f6a13c6943b28b338fcdf9"
+    },
+    {
+      "name": "libabsl_city.so",
+      "bytes": 15184,
+      "sha256": "06cf02e823f021180092f4e7eafd4d2b496039b8dd8c216d7b9606ee9e14065a"
+    },
+    {
+      "name": "libabsl_civil_time.so",
+      "bytes": 32312,
+      "sha256": "6a4d70377bc823b0f3accf9ade1871780b331c383c6056b6df6e5bf01533645c"
+    },
+    {
+      "name": "libabsl_cord.so",
+      "bytes": 107832,
+      "sha256": "8793c594a596cd5df77ac2be7e1be6ecbb0c5751cc775c6da6907e6284e8b83b"
+    },
+    {
+      "name": "libabsl_cord_internal.so",
+      "bytes": 111192,
+      "sha256": "9944a69bdf5d8d0929391c38fcbd34243180677b2743b997af9b6aa24f9c2efa"
+    },
+    {
+      "name": "libabsl_cordz_functions.so",
+      "bytes": 15432,
+      "sha256": "80175f9e8f19abcb8504aa381c4a9430f43acd997f5ce3f7983abdca03514db5"
+    },
+    {
+      "name": "libabsl_cordz_handle.so",
+      "bytes": 19896,
+      "sha256": "6c8c5396fc4fb58c6238d25f16b6339836101b50e0f31b7add7734ca146c7c89"
+    },
+    {
+      "name": "libabsl_cordz_info.so",
+      "bytes": 28272,
+      "sha256": "ce01f2f6f8faf79b503bfe769ae5330c9865b98a3eb45ff9871cad90d8bc237b"
+    },
+    {
+      "name": "libabsl_cordz_sample_token.so",
+      "bytes": 15208,
+      "sha256": "900f38f9aac930e608cec14c5c935d33d06967aa3fa4c9ca3476bd76b2c493b9"
+    },
+    {
+      "name": "libabsl_crc32c.so",
+      "bytes": 28216,
+      "sha256": "da65c95cec876d58c9125ba6d68b9141debad9406a18b9f14be31e5ee3b57aa8"
+    },
+    {
+      "name": "libabsl_crc_cord_state.so",
+      "bytes": 28528,
+      "sha256": "7a0f37902ba73c2c5f5a865ba127a354e387bfe5121a425e174d10f3a7bf6d36"
+    },
+    {
+      "name": "libabsl_crc_cpu_detect.so",
+      "bytes": 15648,
+      "sha256": "d01109634ff1b27c376d806fbb93cb0f67a53784bad6ee39d71bd083b8417ff6"
+    },
+    {
+      "name": "libabsl_crc_internal.so",
+      "bytes": 23976,
+      "sha256": "c28a85ffcd14a69ea4d3aef1b72302e9cfc9a498d22e567761a16c0ee0e3ef3a"
+    },
+    {
+      "name": "libabsl_debugging_internal.so",
+      "bytes": 24088,
+      "sha256": "e85a7d05d2b6dfabb01526f9d69641ef4744e86f2cac51947128a44f16f70839"
+    },
+    {
+      "name": "libabsl_demangle_internal.so",
+      "bytes": 40824,
+      "sha256": "2a1b7853bc067465a969df3cb6c19449ef56a2059eb1cea6241e115d85732bb5"
+    },
+    {
+      "name": "libabsl_die_if_null.so",
+      "bytes": 15512,
+      "sha256": "3ff9308b9dab8f9becceca42adbf7c1d2c27f4f49ad30e330a561fd10d39498d"
+    },
+    {
+      "name": "libabsl_examine_stack.so",
+      "bytes": 15424,
+      "sha256": "c57242b2a9687b9c150c454c7d6c251b9c596f2f8e47fcf0290be7503f0e2b31"
+    },
+    {
+      "name": "libabsl_exponential_biased.so",
+      "bytes": 15288,
+      "sha256": "104eda959b0fd630efc8e433807357f3ca3cb71c3b4a5d2e61ce44b10e4fae42"
+    },
+    {
+      "name": "libabsl_failure_signal_handler.so",
+      "bytes": 21248,
+      "sha256": "cc927acb91ab6caf2d599508dc0e3bf78dc5d0ad827fc490e35146aadac26bde"
+    },
+    {
+      "name": "libabsl_flags.so",
+      "bytes": 15056,
+      "sha256": "14bb75fff591ff7536d4823cc1387efd04e1a76a84a469b65d61ab4a1f7bdc2c"
+    },
+    {
+      "name": "libabsl_flags_commandlineflag.so",
+      "bytes": 15264,
+      "sha256": "34e971d05f19b868c2cbd61f6e6e3452be5b8c19018361c08709a3a37fd4466d"
+    },
+    {
+      "name": "libabsl_flags_commandlineflag_internal.so",
+      "bytes": 15288,
+      "sha256": "44aaf5fb8005ea5f69ce77835c9c6e06de7d1bc176bc8f72d885dabb3fcf9945"
+    },
+    {
+      "name": "libabsl_flags_config.so",
+      "bytes": 24312,
+      "sha256": "be01dd49e0e80c1d853b16704c6193964dd0241a1e6345441679e89b2ac064cc"
+    },
+    {
+      "name": "libabsl_flags_internal.so",
+      "bytes": 41120,
+      "sha256": "639c52935fa9e06f09e2ee2f462d0c617b8514231daeffae61386e583b4e75d9"
+    },
+    {
+      "name": "libabsl_flags_marshalling.so",
+      "bytes": 44944,
+      "sha256": "68075bc5537edc98317c891e9de9a75a6f46c79547b1ecf7d79987fe3c8e07aa"
+    },
+    {
+      "name": "libabsl_flags_parse.so",
+      "bytes": 91720,
+      "sha256": "f02ff3adac5d9ec18149d870ad3a4acea3a3cc7683aca15fc8e452d51b941ca6"
+    },
+    {
+      "name": "libabsl_flags_private_handle_accessor.so",
+      "bytes": 15200,
+      "sha256": "d62fcacf30bd9feb3de5d5f6b0b30b2e1f86180a1c5d010020aad60f6f1cc4ba"
+    },
+    {
+      "name": "libabsl_flags_program_name.so",
+      "bytes": 15728,
+      "sha256": "1dda962a83e39f2d0a1149fdb77845d8699d52ac798a0134fba7bc6f6f9b50aa"
+    },
+    {
+      "name": "libabsl_flags_reflection.so",
+      "bytes": 45624,
+      "sha256": "46af153c6c0c091a17c847a40b7d159043b525da4742d22fb735fb3f6c9e9ba1"
+    },
+    {
+      "name": "libabsl_flags_usage.so",
+      "bytes": 19808,
+      "sha256": "2caf661988e144d22cde52a9eb963e53f8a9512d680972dc63dff59519187ff0"
+    },
+    {
+      "name": "libabsl_flags_usage_internal.so",
+      "bytes": 57848,
+      "sha256": "c538f2c2c81fa8dde30e99164ee1d588bf039d26e876b5f85c9f58b905bb6a5e"
+    },
+    {
+      "name": "libabsl_graphcycles_internal.so",
+      "bytes": 32336,
+      "sha256": "8089f0373116a053e6b94b0ccb739508c0ab215874d293e99bbc1e3d2beacca8"
+    },
+    {
+      "name": "libabsl_hash.so",
+      "bytes": 15272,
+      "sha256": "1331911a886b061f05b9ed36ff41737d0b58cc000af2c3830198aab3e06615fd"
+    },
+    {
+      "name": "libabsl_hashtablez_sampler.so",
+      "bytes": 19952,
+      "sha256": "f1a98105e26ebae734f472ee41962917c5d198e5b28548bd943d41ed6e289c51"
+    },
+    {
+      "name": "libabsl_int128.so",
+      "bytes": 28272,
+      "sha256": "199fec48b22939fec3bdc0c4c19e6c2bc5fe591e8fba699225b5707c7fc08299"
+    },
+    {
+      "name": "libabsl_kernel_timeout_internal.so",
+      "bytes": 19480,
+      "sha256": "7d1eddc632620739d135a42909149f6c91c9644666bc3dc6835ca1b5608a61b9"
+    },
+    {
+      "name": "libabsl_leak_check.so",
+      "bytes": 15168,
+      "sha256": "6d5bd8399ce9dbc0d387b934344c691214c83f1e8a25837c71a702ff7e860649"
+    },
+    {
+      "name": "libabsl_log_entry.so",
+      "bytes": 15064,
+      "sha256": "ad610ee69cda427ee902949da5bd8d1ceaa9f09666ccc02e11bf872dfe8334b2"
+    },
+    {
+      "name": "libabsl_log_flags.so",
+      "bytes": 28736,
+      "sha256": "58d66a8f6a5cc535834361ffcfad277c8fcc709a756a1e443ffb544452e8fb99"
+    },
+    {
+      "name": "libabsl_log_globals.so",
+      "bytes": 20040,
+      "sha256": "e5e7c71ec14474d3e2abde19a4862ff7fda3ec786bdd9f7ec79dc93b61a43402"
+    },
+    {
+      "name": "libabsl_log_initialize.so",
+      "bytes": 15192,
+      "sha256": "35584692975b3c0c5278c9b421c1fad9a6c766ef5ac3033600ac46d214c3bf66"
+    },
+    {
+      "name": "libabsl_log_internal_check_op.so",
+      "bytes": 32488,
+      "sha256": "c9498873bcd27749b267dfdfcb6fc5739da3a5b6ca638ca659237f1ca5b8fb6c"
+    },
+    {
+      "name": "libabsl_log_internal_conditions.so",
+      "bytes": 15528,
+      "sha256": "ab09b7209c943dc842f83d0580b10b3f49aae8f2441e38ff10853cd67478e1a4"
+    },
+    {
+      "name": "libabsl_log_internal_format.so",
+      "bytes": 19624,
+      "sha256": "138a89f86f0e8ba15c4fa9354b34947a1a9ae0f24c3a6a4ac084bc51d6146575"
+    },
+    {
+      "name": "libabsl_log_internal_globals.so",
+      "bytes": 15608,
+      "sha256": "26706941f24d1eabd750fc50fd82df525db2968c6890358f5a2a537d0128ad03"
+    },
+    {
+      "name": "libabsl_log_internal_log_sink_set.so",
+      "bytes": 24448,
+      "sha256": "c83828e8266f35c7ad501af3fc674d28871176c6f5cc9ddfd1447666f40046b9"
+    },
+    {
+      "name": "libabsl_log_internal_message.so",
+      "bytes": 49720,
+      "sha256": "42acfd70ef50dc4275de470f361baf77248f56560b81ea83738c01a01c4551b0"
+    },
+    {
+      "name": "libabsl_log_internal_nullguard.so",
+      "bytes": 15160,
+      "sha256": "27756393bd8d4b8fdd460cf4720b15bfe50a936ce79d44a7847f784b6b953bad"
+    },
+    {
+      "name": "libabsl_log_internal_proto.so",
+      "bytes": 15360,
+      "sha256": "dc06eaa2b8adfd1ad47a67212b85e5f2e84ad520b6905e7eae05cfc75139c595"
+    },
+    {
+      "name": "libabsl_log_severity.so",
+      "bytes": 15288,
+      "sha256": "4c1e47a51af3a6febe13b9da926ff67b235cd5ade05721608b627efc064f133f"
+    },
+    {
+      "name": "libabsl_log_sink.so",
+      "bytes": 15288,
+      "sha256": "fef0c63acd5925353c55f31144c1e3fa248cb6def00d5d1f17d4e3ec6229600a"
+    },
+    {
+      "name": "libabsl_low_level_hash.so",
+      "bytes": 15168,
+      "sha256": "61dcbee524fdfef09556dd3d2a16a3fa4c4b2a899ed9a13eb916b9a795bb50ef"
+    },
+    {
+      "name": "libabsl_malloc_internal.so",
+      "bytes": 24288,
+      "sha256": "8af70ffe1f0c4dbce5e747506180a4a8dcf13d207187da0b8d92276844d6ed7a"
+    },
+    {
+      "name": "libabsl_periodic_sampler.so",
+      "bytes": 15464,
+      "sha256": "e52aaece20b43f06e9f359068289ed3fd62bf0abca06bf11b3f4a4bb0f34ff21"
+    },
+    {
+      "name": "libabsl_random_distributions.so",
+      "bytes": 23920,
+      "sha256": "2539d70dcfb55f4698b06a70fccbf30fcdc72485496998dc25a3e767d8e93d81"
+    },
+    {
+      "name": "libabsl_random_internal_distribution_test_util.so",
+      "bytes": 28144,
+      "sha256": "79f021d4cf07b60c0e6c52b996e7f16e461177d298efa6a86252d823228aedf7"
+    },
+    {
+      "name": "libabsl_random_internal_platform.so",
+      "bytes": 19264,
+      "sha256": "5572f5b81539419c7342123f34e133859fe3267862205d10e3915acc266e4833"
+    },
+    {
+      "name": "libabsl_random_internal_pool_urbg.so",
+      "bytes": 20112,
+      "sha256": "cd01393e1c13846a60900165112d92fe277cdbb594a1d8e8288d18b5948ae346"
+    },
+    {
+      "name": "libabsl_random_internal_randen.so",
+      "bytes": 15496,
+      "sha256": "3a8d18323cacbbe291ceff50284b749f96f4f774bd2a7193759cca7a3b9b58b4"
+    },
+    {
+      "name": "libabsl_random_internal_randen_hwaes.so",
+      "bytes": 15184,
+      "sha256": "a3167f34ed1a2bc0410608cf4909d7cf94d3f507db603dd67a59791b1df5712c"
+    },
+    {
+      "name": "libabsl_random_internal_randen_hwaes_impl.so",
+      "bytes": 15296,
+      "sha256": "8dd6d803244b3700c9a6be6705672c37d8cf704bcf6d79815f9c10ec9dca970f"
+    },
+    {
+      "name": "libabsl_random_internal_randen_slow.so",
+      "bytes": 19368,
+      "sha256": "a6414430f9691f32a3c65a050e52cdb194c10ffe1ca5258f05974ce7cb61501b"
+    },
+    {
+      "name": "libabsl_random_internal_seed_material.so",
+      "bytes": 15536,
+      "sha256": "d5db005ac43115b20222e741fafb9cbf7aaa8e81b9aaded02b90730bc7c5519b"
+    },
+    {
+      "name": "libabsl_random_seed_gen_exception.so",
+      "bytes": 15376,
+      "sha256": "55c642901fdbd90b14cb2bc8781aabd810601c8b2cffd2dec3d55da66b693429"
+    },
+    {
+      "name": "libabsl_random_seed_sequences.so",
+      "bytes": 15632,
+      "sha256": "3b5313dde7c19d6609d7ac8b7a44de783c5cea67d8e7e0a02f2d4273cc57cc1c"
+    },
+    {
+      "name": "libabsl_raw_hash_set.so",
+      "bytes": 15472,
+      "sha256": "cc73f3472ed5068fbe379a155049b90728fcbbfd99be0c06993e0b9d3bdbad2a"
+    },
+    {
+      "name": "libabsl_raw_logging_internal.so",
+      "bytes": 15848,
+      "sha256": "f1038a2412563494f80a5313ccc16456d89b941247897a7baac0b6c3d44b06a6"
+    },
+    {
+      "name": "libabsl_scoped_set_env.so",
+      "bytes": 15616,
+      "sha256": "af6b9740faad9d7c0b1668904f43cf18a65c5681d173fe838d782641b87cd4e9"
+    },
+    {
+      "name": "libabsl_spinlock_wait.so",
+      "bytes": 15200,
+      "sha256": "58029ef2cb750dac96ea1a7ae9d8642f736fb7dd5efaf075fc98bc6f31ca9735"
+    },
+    {
+      "name": "libabsl_stacktrace.so",
+      "bytes": 23784,
+      "sha256": "2da9c8333caebc4a3d1577a3c54412a4b829eed9b2ddd7efce040e058368a3e0"
+    },
+    {
+      "name": "libabsl_status.so",
+      "bytes": 49568,
+      "sha256": "276c4615d370161197bd9ecfbe58d94757669ee6c2fc85f75f8cd479d1ced8b4"
+    },
+    {
+      "name": "libabsl_statusor.so",
+      "bytes": 24216,
+      "sha256": "baecaedc73b1e4d030c25823035f4d6c4aab6c669d3774feee3a646a47d847a8"
+    },
+    {
+      "name": "libabsl_str_format_internal.so",
+      "bytes": 104296,
+      "sha256": "c5c6e3a96d27fae4288e8882b67763a511c68911ae18081e2e0e680436d2b380"
+    },
+    {
+      "name": "libabsl_strerror.so",
+      "bytes": 15656,
+      "sha256": "3d099be85535ff65d849eb48717e4d6ea60de686d94e9899eacfdf89aa71cf1d"
+    },
+    {
+      "name": "libabsl_string_view.so",
+      "bytes": 15064,
+      "sha256": "a4c26089df6da5154e5e5ef397bdc267762a43a95ea683f87ebce64e4b10c3f3"
+    },
+    {
+      "name": "libabsl_strings.so",
+      "bytes": 177192,
+      "sha256": "5e905663c3dbcf45643d2466c370b115f743b20df9d14a5523567729b0418566"
+    },
+    {
+      "name": "libabsl_strings_internal.so",
+      "bytes": 19504,
+      "sha256": "5d6e2556ad616e2187350b3a8f93060dafddc790c81d7e944f136d623edb06c7"
+    },
+    {
+      "name": "libabsl_symbolize.so",
+      "bytes": 32744,
+      "sha256": "e2074f0f41f7f8e8ad4ab5c2b3f89c80d136ae30c4a480d47cecaf3062feef4f"
+    },
+    {
+      "name": "libabsl_synchronization.so",
+      "bytes": 62328,
+      "sha256": "c8627c9f4baa2b08206b75eedfeef855adea97f89c96b79397340ccde6d4e17d"
+    },
+    {
+      "name": "libabsl_throw_delegate.so",
+      "bytes": 19648,
+      "sha256": "2262a194abc02824530f0ae99c79aa081ddeb6a5e46ad387ce66b29cd1fe1013"
+    },
+    {
+      "name": "libabsl_time.so",
+      "bytes": 82608,
+      "sha256": "bdc63c08a6005d8ff748827c0210d05b667fce9aaade3c1b8fe14b2dbf873ac3"
+    },
+    {
+      "name": "libabsl_time_zone.so",
+      "bytes": 128912,
+      "sha256": "f12ab27e9b19e0ef34f316cd92f6543c39667913eb56a8bbcbce3bf1d5a0bbea"
+    },
+    {
+      "name": "libaio.so.1.0.1",
+      "bytes": 16448,
+      "sha256": "16307bb2dfaf254abec78cf39d98a296778293818dffb0ee50c429ea5f4d0345"
+    },
+    {
+      "name": "libfido2.so.1.15.0",
+      "bytes": 322360,
+      "sha256": "a5407516987ccaab28b0e954964bbba387e78f04486b6cc7c9f61b6e86bcbe5a"
+    },
+    {
+      "name": "libprotobuf-lite.so.24.4.0",
+      "bytes": 525352,
+      "sha256": "6d5bdb8e9d55fce55370d28626c9672f2a4a829273398429e5c9cfc0b62fc079"
+    },
+    {
+      "name": "libprotobuf.so.24.4.0",
+      "bytes": 3232088,
+      "sha256": "a8f030bf5bc512a8bddc965f201961783bd7fc6db527db31cb6c00aee5935794"
+    },
+    {
+      "name": "line.brk",
+      "bytes": 73232,
+      "sha256": "f8cd15f438d9fa65ff49de922d15affa9ce265d1abf80a73138801015c57de4c"
+    },
+    {
+      "name": "line_cj.brk",
+      "bytes": 73264,
+      "sha256": "c87df2dae2f91152dc730c8ef67db90893b2bc03257be8e740002f7ac4bb2746"
+    },
+    {
+      "name": "line_loose.brk",
+      "bytes": 75392,
+      "sha256": "9fced216b2c859c83b0ed5bdb383d4e966d83b96efba1c70a89e0106ddc1e107"
+    },
+    {
+      "name": "line_loose_cj.brk",
+      "bytes": 80928,
+      "sha256": "82178ed973312864aab2c54beff3e58f7c4b0c5c50bb40e5a0b6a0f59cf6b38c"
+    },
+    {
+      "name": "line_loose_phrase_cj.brk",
+      "bytes": 86336,
+      "sha256": "5768526c010a78a2b8f5d19ed8db15a08b0490652343d82cd8c50e169640d527"
+    },
+    {
+      "name": "line_normal.brk",
+      "bytes": 73120,
+      "sha256": "66069ccbc23cb0f63ed965a87f393af791fe66cc8f873ca400a6fcd2c92bfeab"
+    },
+    {
+      "name": "line_normal_cj.brk",
+      "bytes": 74224,
+      "sha256": "e85343e49ff4b1e13c9ffd5c940798e5f115ef5a90d30fce3921bd06de24b055"
+    },
+    {
+      "name": "line_normal_phrase_cj.brk",
+      "bytes": 79424,
+      "sha256": "cd6160b0fcbe651952a4ace22c3b969cacb4cc98d9fefde14c43391ed842ebf5"
+    },
+    {
+      "name": "line_phrase_cj.brk",
+      "bytes": 78416,
+      "sha256": "154ba9a8ab4b3b3183bcbf758fc5aca5f10cac9efb80eb584a41a876db5ee30e"
+    },
+    {
+      "name": "pt.res",
+      "bytes": 2288,
+      "sha256": "200c5c8d1a5d1ef45a57b40517cb966842ce9fa63d0147f8f6fb210a8a8dbefe"
+    },
+    {
+      "name": "res_index.res",
+      "bytes": 240,
+      "sha256": "0ef57bf600536ec93b119a45e72df7033a41e790e9693dfc27ec307d4fbd806e"
+    },
+    {
+      "name": "root.res",
+      "bytes": 800,
+      "sha256": "49a4511b6d9430b5d0c8938e4f7275a35723fb48febd6e6aa198367cfcc6681a"
+    },
+    {
+      "name": "ru.res",
+      "bytes": 336,
+      "sha256": "9e934ecf7041a7aead1c5aa813582e36b21565fb626e762cf6247c709d936614"
+    },
+    {
+      "name": "sent.brk",
+      "bytes": 19920,
+      "sha256": "201c63fbd84e3068f4a9f87c40d1acee56e98d55ce9c13d49aca1efccee45e59"
+    },
+    {
+      "name": "sent_el.brk",
+      "bytes": 19936,
+      "sha256": "99b68579f3d559d89df07fbb5d7d750369a229be068bc8b7615b39a752e59e37"
+    },
+    {
+      "name": "sv.res",
+      "bytes": 80,
+      "sha256": "ee066818c0bfc2e92c9f4486f3087c3669b998786b0363a04467136d80c00d8b"
+    },
+    {
+      "name": "thaidict.dict",
+      "bytes": 126144,
+      "sha256": "ea47ae521cea65077bf047a75d1e9d28c495ec2f8cf4d2734fcb65a888229be9"
+    },
+    {
+      "name": "title.brk",
+      "bytes": 12272,
+      "sha256": "db249734898a13360e54e00e21bcf67aa1f2b16b355ceff5d1ca65a3a7c38083"
+    },
+    {
+      "name": "uemoji.icu",
+      "bytes": 13296,
+      "sha256": "011733fe9b3401dabc6ec4c87cce8503a81fbe8b1c8548353fade634b95c99f5"
+    },
+    {
+      "name": "ulayout.icu",
+      "bytes": 14224,
+      "sha256": "e3c39ae4966544703e89ac80fc64ed3b55f00a2ef67d810635dc010245ba154b"
+    },
+    {
+      "name": "unames.icu",
+      "bytes": 337136,
+      "sha256": "262483b0171456733567fd1e3d2a7768373c181463a26ceb092fc250f081ad36"
+    },
+    {
+      "name": "word.brk",
+      "bytes": 22960,
+      "sha256": "c866c32a0b51947d331281dc555f8e3c979f8f292045a17165e42bc03d977224"
+    },
+    {
+      "name": "word_POSIX.brk",
+      "bytes": 22976,
+      "sha256": "d0c1f161990711c689546b72304a11a793806ec2313f98faec25097ac2be3733"
+    },
+    {
+      "name": "zh.res",
+      "bytes": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646"
+    },
+    {
+      "name": "zh_Hant.res",
+      "bytes": 272,
+      "sha256": "35e7c34f5b94dda401bfc8d79c88dacc80a6985d821df44b5b8b667eacfe3646"
+    }
+  ],
+  "bytes": 10893288
+}

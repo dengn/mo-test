@@ -1,0 +1,62 @@
+[
+  {
+    "kind": "enum",
+    "name": "single_table_bound",
+    "sql": "UPDATE repro_enum_target SET v=%s WHERE id=1",
+    "status": "passed",
+    "rows": [
+      [
+        1,
+        "中文😀"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "enum",
+    "name": "join_explicit_cast",
+    "sql": "UPDATE repro_enum_target AS target JOIN repro_enum_stage AS incoming ON target.id=incoming.id SET target.v=CAST(incoming.v AS CHAR)",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")"
+  },
+  {
+    "kind": "enum",
+    "name": "rename_incoming_column",
+    "sql": "UPDATE repro_enum_target AS target JOIN (SELECT id,v AS incoming_value FROM repro_enum_stage) AS incoming ON target.id=incoming.id SET target.v=incoming.incoming_value",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'incoming_value'\")"
+  },
+  {
+    "kind": "set",
+    "name": "single_table_bound",
+    "sql": "UPDATE repro_set_target SET v=%s WHERE id=1",
+    "status": "passed",
+    "rows": [
+      [
+        1,
+        "文"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "kind": "set",
+    "name": "join_explicit_cast",
+    "sql": "UPDATE repro_set_target AS target JOIN repro_set_stage AS incoming ON target.id=incoming.id SET target.v=CAST(incoming.v AS CHAR)",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'v'\")"
+  },
+  {
+    "kind": "set",
+    "name": "rename_incoming_column",
+    "sql": "UPDATE repro_set_target AS target JOIN (SELECT id,v AS incoming_value FROM repro_set_stage) AS incoming ON target.id=incoming.id SET target.v=incoming.incoming_value",
+    "status": "failed",
+    "error": "(20301, \"invalid input: ambiguous column reference 'incoming_value'\")"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "completed": 5000,
+  "counts": {
+    "passed": 4920,
+    "execution_failed": 80
+  },
+  "elapsed_s": 46.09145166599774,
+  "scope": "5000 supplementary real native typed Iceberg scans; does not reduce original pending heavy write/recovery cases",
+  "old_data_retained": true
+}

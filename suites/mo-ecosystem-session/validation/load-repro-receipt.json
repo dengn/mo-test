@@ -1,0 +1,137 @@
+[
+  {
+    "logical_endpoint": 6001,
+    "repeat": 0,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "execution_failed",
+    "error": "(20301, 'invalid input: the nullif func first param is not UnresolvedName form')"
+  },
+  {
+    "logical_endpoint": 6001,
+    "repeat": 1,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "execution_failed",
+    "error": "(20301, 'invalid input: the nullif func first param is not UnresolvedName form')"
+  },
+  {
+    "logical_endpoint": 6001,
+    "repeat": 2,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "execution_failed",
+    "error": "(20301, 'invalid input: the nullif func first param is not UnresolvedName form')"
+  },
+  {
+    "logical_endpoint": 13306,
+    "repeat": 0,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "passed",
+    "actual": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "logical_endpoint": 13306,
+    "repeat": 1,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "passed",
+    "actual": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  },
+  {
+    "logical_endpoint": 13306,
+    "repeat": 2,
+    "sql": "LOAD DATA LOCAL INFILE %s INTO TABLE airbyte_load_repro FIELDS TERMINATED BY '\\t' LINES TERMINATED BY '\\n' (id,@v) SET v=NULLIF(@v,'NULL')",
+    "fixture": "1\talpha\n2\tNULL\n",
+    "expected": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ],
+    "status": "passed",
+    "actual": [
+      [
+        1,
+        "alpha"
+      ],
+      [
+        2,
+        null
+      ]
+    ]
+  }
+]

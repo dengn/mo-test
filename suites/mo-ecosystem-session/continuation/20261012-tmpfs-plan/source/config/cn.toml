@@ -1,0 +1,66 @@
+service-type = "CN"
+data-dir = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data"
+
+[log]
+level = "info"
+format = "console"
+max-size = 512
+
+[[fileservice]]
+backend = "DISK-V2"
+data-dir = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data"
+name = "LOCAL"
+
+[[fileservice]]
+backend = "MINIO"
+name = "SHARED"
+
+[fileservice.s3]
+bucket = "heavy-alt-a159dfc751"
+endpoint = "http://127.0.0.1:9002"
+key-prefix = "server/data"
+key-id = "minio"
+key-secret = "<SET_MINIO_PASSWORD>"
+
+[fileservice.cache]
+memory-capacity = "128MB"
+disk-capacity = "64MB"
+disk-path = "/tmp/mo-heavy-alternative-20261012/runtime/mo-data/file-service-cache"
+disk-min-evict-interval = "30s"
+disk-evict-target = 0.8
+
+[[fileservice]]
+backend = "MINIO"
+name = "ETL"
+
+[fileservice.s3]
+bucket = "heavy-alt-a159dfc751"
+endpoint = "http://127.0.0.1:9002"
+key-prefix = "server/etl"
+key-id = "minio"
+key-secret = "<SET_MINIO_PASSWORD>"
+
+[hakeeper-client]
+service-addresses = ["127.0.0.1:32001"]
+
+[cn]
+uuid = "79465e38-eacb-4c0f-bf59-532de35174c3"
+port-base = 18000
+
+[cn.Engine]
+type = "distributed-tae"
+
+[cn.frontend]
+port = 16001
+
+[observability]
+disableMetric = false
+enable-metric-to-prom = true
+status-port = 17001
+
+[cn.frontend.iceberg]
+enable = true
+enable-write = true
+enable-delete = true
+enable-dml = true
+enable-maintenance = true

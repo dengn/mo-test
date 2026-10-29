@@ -1,0 +1,91 @@
+from core import *
+import re
+PROFILES.extend([
+ profile('decimal65_30','DECIMAL(65,30)',pa.string(),mysql.DECIMAL(65,30),[decimal.Decimal('9'*35+'.'+'9'*30),decimal.Decimal('-'+'9'*35+'.'+'9'*30),decimal.Decimal('9007199254740993.123456789012345678901234567890'),decimal.Decimal('0.000000000000000000000000000001'),decimal.Decimal(0),None]),
+ profile('enum','ENUM(\'\',\'red\',\'中文😀\')',pa.string(),mysql.ENUM('','red','中文😀'),['','red','中文😀','red','',None]),
+ profile('set','SET(\'a\',\'文\')',pa.string(),mysql.SET('a','文'),['','a','文','a,文','',None]),
+ profile('bit64','BIT(64)',pa.uint64(),mysql.BIT(length=64),[0,1,2**63,2**64-1,9007199254740993,None]),
+ profile('uuid_text','CHAR(36)',pa.string(),mysql.CHAR(36),['00000000-0000-0000-0000-000000000000','ffffffff-ffff-ffff-ffff-ffffffffffff','550e8400-e29b-41d4-a716-446655440000','00000000-0000-0000-0000-000000000001',None])])
+_old_arrow=arrow
+# Decimal65 exceeds several engines' native decimal limits; this precise text column is an explicit adapter.
+def arrow(rows,p):
+ if p['name']=='decimal65_30':rows=[[r[0],r[1],format(r[2],'f') if r[2] is not None else None,r[3],r[4]] for r in rows]
+ return _old_arrow(rows,p)
+import core as original
+original.arrow=arrow
+_old_norm=norm_v
+def norm_v(v,p):
+ if v is None:return ['sql_null']
+ if p['name']=='bit64':return int.from_bytes(v,'big') if isinstance(v,(bytes,bytearray,memoryview)) else int(v)
+ if p['name']=='set':return sorted(v.split(',')) if isinstance(v,str) and v else (sorted(v) if isinstance(v,(set,frozenset)) else [])
+ return _old_norm(v,p)
+def canon(rows,p):return [[int(r[0]),int(r[1]),norm_v(r[2],p),str(r[3]),int(r[4])] for r in sorted(rows,key=lambda r:(r[0],r[1]))]
+def base_rows(cid,p,seed):
+ n=[32,64,128,64,256,32,128,256,64,128][seed];vs=values(p,seed);filler=('压测😀x'*512) if seed in [4,7] else ('混合x'*32)
+ return [[cid,i,vs[i%len(vs)],f'租户{cid%16}/seed{seed}/row{i}/'+filler,0] for i in range(n)]
+def expected(cid,p,scenario,seed):
+ rows=base_rows(cid,p,seed);exp=[r.copy() for r in rows];changes=[];dead=list(range(1,len(rows),4))
+ if scenario=='native_transform':exp=[[a,i,v,l+'→ETL'+str(seed),r+seed+1] for a,i,v,l,r in rows if i%2==seed%2]
+ if scenario in ['staging_merge','replay_merge']:
+  vs=values(p,seed+11);changes=[[cid,i,vs[(i+seed)%len(vs)],'复杂更新😀/'+str(seed)+'/'+str(i),1] for i in range(0,len(rows),3)]+[[cid,len(rows)+j,vs[j%len(vs)],'复杂新增😀/'+str(seed)+'/'+str(j),1] for j in range(max(1,len(rows)//8))];byid={r[1]:r for r in rows};byid.update({r[1]:r for r in changes});exp=list(byid.values())
+ if scenario in ['tombstone_delete','delete_reinsert']:exp=[r for r in exp if r[1] not in dead]
+ if scenario=='delete_reinsert':
+  vs=values(p,seed+17);changes=[[cid,i,vs[i%len(vs)],'删除后重插😀/'+str(i),2] for i in dead[::2]];exp+=changes
+ return rows,exp,changes,dead
+PROFILE_LOCKS=collections.defaultdict(threading.Lock)
+def merge(t,stage,cid,port):
+ with db(port,autocommit=False) as d,d.cursor() as c:
+  c.execute(f'UPDATE {t} AS target JOIN {stage} AS incoming ON target.case_id=incoming.case_id AND target.id=incoming.id SET target.v=incoming.v,target.label=incoming.label,target.rev=incoming.rev WHERE incoming.case_id=%s',(cid,));c.execute(f'INSERT INTO {t} SELECT incoming.case_id,incoming.id,incoming.v,incoming.label,incoming.rev FROM {stage} AS incoming LEFT JOIN {t} AS target ON target.case_id=incoming.case_id AND target.id=incoming.id WHERE incoming.case_id=%s AND target.id IS NULL',(cid,));d.commit()
+def run_case(route,p,scenario,seed,port,cid,cleanup=True):
+ decimal.getcontext().prec=100;t,stage=tables(route,p);token=f'{route}_{p["name"]}_{scenario}_{seed}_{port}';start=time.monotonic();r={'id':token,'tool':route,'profile':p['name'],'scenario':scenario,'seed':seed,'port':port,'logical_case_id':cid,'path':'configured_native_component_or_explicit_file_SQL_bridge','phase':'initial'};rows,exp,changes,dead=expected(cid,p,scenario,seed)
+ try:
+  guard()
+  if cleanup:
+   for table in [t,stage]:sql('DELETE FROM '+table+' WHERE case_id=%s',(cid,),port=port)
+  if scenario=='chunked_append':
+   for i in range(0,len(rows),17):load(route,p,t,rows[i:i+17],port,token+f'_{i}')
+  elif scenario=='parallel_chunked':
+   parts=[rows[i::4] for i in range(4)]
+   with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+    futures=[pool.submit(load,route,p,t,part,port,token+f'_partition{j}') for j,part in enumerate(parts)]
+    for f in futures:f.result()
+   r['native_load_partitions']=4
+  elif scenario=='native_transform':load(route,p,t,rows,port,token,transform=seed)
+  elif scenario=='duplicate_rollback_retry':
+   r['phase']='duplicate_stage';rejected=False
+   try:load(route,p,stage,rows+[rows[0]],port,token+'_invalid')
+   except Exception as e:
+    if not re.search('duplicate|1062|constraint|primary.key',str(e),re.I):raise
+    r['native_duplicate_rejection']=str(e)[:500];rejected=True
+   if not rejected:raise AssertionError('native duplicate input accepted unexpectedly')
+   r['stage_partial_rows_after_rejection']=sql('SELECT COUNT(*) FROM '+stage+' WHERE case_id=%s',(cid,),port=port)[0][0];sql('DELETE FROM '+stage+' WHERE case_id=%s',(cid,),port=port);load(route,p,stage,rows,port,token+'_valid');r['phase']='explicit_effect_rollback'
+   with db(port,autocommit=False) as d,d.cursor() as c:c.execute(f'INSERT INTO {t} SELECT * FROM {stage} WHERE case_id=%s',(cid,));d.rollback()
+   count=sql('SELECT COUNT(*) FROM '+t+' WHERE case_id=%s',(cid,),port=port)[0][0];assert count==0,('partial rollback',count)
+   with db(port,autocommit=False) as d,d.cursor() as c:c.execute(f'INSERT INTO {t} SELECT * FROM {stage} WHERE case_id=%s',(cid,));d.commit()
+   r['effect_rollback_rows']=0;r['scope']='Native staging input failure; final effects rollback/retry is explicitSQLadapter,notnativecomponentEOS'
+  elif scenario=='schema_add':
+   evo='e_'+route.split('_')[0]+'_'+p['name']
+   with PROFILE_LOCKS[(evo,port)]:
+    sql('CREATE TABLE IF NOT EXISTS '+evo+'(case_id BIGINT,id BIGINT,v '+p['ddl']+',label VARCHAR(8192),rev BIGINT,PRIMARY KEY(case_id,id))',port=port);sql('DELETE FROM '+evo,port=port)
+    try:sql('ALTER TABLE '+evo+' DROP COLUMN added_tag',port=port)
+    except pymysql.MySQLError as e:
+     if not re.search('not exist|unknown|1091|not found',str(e),re.I):raise
+    load(route,p,evo,rows[:len(rows)//2],port,token+'_before_ddl');sql('ALTER TABLE '+evo+" ADD COLUMN added_tag VARCHAR(64) DEFAULT '演进😀'",port=port);load(route,p,evo,rows[len(rows)//2:],port,token+'_after_ddl');added=sql('SELECT added_tag,COUNT(*) FROM '+evo+' GROUP BY added_tag',port=port);assert added==(('演进😀',len(rows)),),added
+    with db(port,autocommit=False) as d,d.cursor() as c:c.execute(f'INSERT INTO {t} SELECT case_id,id,v,label,rev FROM {evo} WHERE case_id=%s',(cid,));d.commit()
+    r['schema_added_default_rows']=len(rows);r['scope']='Target DDL adapter adds explicit column/default; nativecomponent writesbefore/afterDDL; notautomaticCDC schemaevolution'
+  else:
+   load(route,p,t,rows,port,token)
+   if scenario in ['staging_merge','replay_merge']:
+    r['phase']='delta_merge';load(route,p,stage,changes,port,token+'_delta');merge(t,stage,cid,port)
+    if scenario=='replay_merge':
+     sql('DELETE FROM '+stage+' WHERE case_id=%s',(cid,),port=port);load(route,p,stage,changes,port,token+'_replay');merge(t,stage,cid,port);r['replay_scope']='Idempotent constant-value effect SQLadapter; notnonidempotentEOS'
+   if scenario in ['tombstone_delete','delete_reinsert']:
+    tomb=[[cid,i,None,'删除标记😀',-1] for i in dead];load(route,p,stage,tomb,port,token+'_tombs')
+    with db(port,autocommit=False) as d,d.cursor() as c:c.execute(f'DELETE target FROM {t} AS target JOIN {stage} AS incoming ON target.case_id=incoming.case_id AND target.id=incoming.id WHERE incoming.case_id=%s AND incoming.rev=-1',(cid,));d.commit()
+    if scenario=='delete_reinsert':load(route,p,t,changes,port,token+'_reinsert')
+  r['phase']='full_value_oracle';actual=sql('SELECT case_id,id,v,label,rev FROM '+t+' WHERE case_id=%s ORDER BY id',(cid,),port=port);a=canon(actual,p);e=canon(exp,p);r.update(status='passed' if a==e else 'fidelity_failed',input_rows=len(rows),expected_rows=len(e),actual_rows=len(a),expected_sha256=sha(e),actual_sha256=sha(a))
+  if a!=e:r.update(expected_sample=e[:2],actual_sample=a[:2])
+ except Exception as e:r.update(status='execution_failed',error_type=type(e).__name__,error=str(e)[:1800],traceback=traceback.format_exc()[-4000:])
+ r['elapsed_s']=time.monotonic()-start;return r
+def caseid(pi,si,seed):return 1+(pi*10+si)*10+seed
+def plan(tool):return [{'id':f'{tool}_{p["name"]}_{sc}_{seed}_{port}','tool':tool,'profile':p['name'],'scenario':sc,'seed':seed,'port':port,'logical_case_id':caseid(pi,si,seed),'input_rows':[32,64,128,64,256,32,128,256,64,128][seed]} for pi,p in enumerate(PROFILES) for si,sc in enumerate(SCENARIOS) for seed in range(10) for port in [6001,13306]]
